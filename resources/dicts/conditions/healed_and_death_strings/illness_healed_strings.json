@@ -78,5 +78,17 @@
         "m_c picks themself up out of their nest and begins the day anew, a fresh conviction in their heart."
     ],
 	"malnourished": ["WARNING: this string should never appear, nutrition are handled only in freshkill events."],
-	"starving": ["WARNING: this string should never appear, nutrition are handled only in freshkill events."]
+	"starving": ["WARNING: this string should never appear, nutrition are handled only in freshkill events."],
+    "seasonal depression": [
+        "m_c knows that they're better then their mind, and with the change of season comes a new conviction to keep surviving.",
+        "m_c's recent bout of fatigue seems to have ended",
+        "As the weather warms, m_c finally feels able to blink the recent fatigue away.",
+        "m_c wakes to the new dawn with a lightness in their chest and paws that has long been missed.",
+        "With the sounds of the songbirds in their ears m_c finds that the weight of fog over them has risen.",
+        "As m_c observes the first growth of Newleaf they feel like a new cat.",
+        "m_c can feel their tail swish with rekindled hope and trust in their own paws.",
+        "As Newleaf creeps closer the heavy weight in m_c's bones begins to fade. Finally they feel like they can rise with the sun rather than wishing it would leave them to sleep.",
+        "As m_c observes the first growth of the season they feel like a new cat.",
+        "As the season changes the heavy weight in m_c's bones begins to fade. Finally they feel like they can rise with the sun rather than wishing it would leave them to sleep."
+    ]
 }

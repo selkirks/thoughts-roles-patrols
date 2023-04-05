@@ -158,5 +158,22 @@
             "r_c sees m_c headed towards the medicine cat den, wincing with every step, and ducks inside to prepare a nest for them in the darkest, quietest corner possible.",
             "m_c wakes up with pounding head pain and horrible light sensitivity. They curl up as tightly in their nest as they can, screwing their eyes shut and flattening their ears. There's no way they'll get work done today."
         ]
+    },
+    "depression": {
+        "lasting grief": [
+            "r_c lays comfortingly beside m_c, purring as they try to comfort them. Their grief seems worse then normal, to a place not even herbs or words can fix.",
+            "m_c walks out of camp, alone, wailing into the sky of everything thats ever hurt them. Their heart hurt too much, too bad, for them to keep it inside.",
+            "m_c heads behind their den, scratching out another mark in the ground. Another day they lived without the one they grieve. They had to keep going, but it hurt every day.",
+            "m_c curls up in their den, alone, crying softly. Everything reminded them of the one they grieve, and it made their grief so much worse. Today was another day."
+        ]
+    },
+    "autism": {
+        "hyperfixation": [
+            "m_c has been seen focusing on pretty pebbles and feathers they've been finding around their territory. When r_c confronts them about it, m_c explains they just like the objects. They're pretty.",
+            "Today m_c was caught holding some kind of kittypet toy in their jaws, they looked embarrassed and only mumbled that it looked fluffy. m_c admits it was worth stealing.",
+            "m_c has been thinking about this one particular spot in their territory for days now, and seems to be constantly going back to that spot. Even sneaking away in the night.",
+            "m_c's collection of shiny objects was found in their nest, confronted about it m_c simply states they couldn't help it, they were shiny! So Shiny.",
+            "m_c has been exploring a really particular part of the territory, explaining everything they found and seen with gleeful vigor."
+        ]
     }
 }

@@ -639,5 +639,35 @@
         "herbs": [
             "thyme"
         ]
+    },
+    "seasonal depression": {
+        "severity": "major",
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "medicine_mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "duration": 6,
+        "medicine_duration": 6,
+        "infectiousness": 0,
+        "risks": [],
+        "herbs": [
+            "juniper",
+            "thyme",
+            "poppy"
+        ]
     }
 }

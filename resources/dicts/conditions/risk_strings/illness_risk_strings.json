@@ -77,6 +77,12 @@
             "m_c wakes from yet another nightmare, feeling as though they're being haunted by the ghost of the one they grieve.",
             "m_c wakes and wails, their dreams haunted by visions of their dead loved one.",
             "m_c jolts awake and immediately leaves the den to clear their head, hoping some fresh night air will help them cope with the sadness and memories."
+        ],
+        "depression": [
+            "m_c hasn't stirred from their nest in the medicine den in days, sunk deep in their grief that never seemed to go away. r_c carefully places herbs in front of m_c, but there wasn't anything more they could do then simply be there for m_c.",
+            "m_c nearly wails when they wake up, alone again. Their heart aches deeply for who they grieve, feeling like their heart would never feel whole again.",
+            "m_c stared blankly up at the sky, feeling less motivated to do anything, their mind fogged with grief and despair.",
+            "m_c stalked out of camp, clawing at the ground as they went. It was so unfair, all of it, why did StarClan take them away? Why curse them with this darkness inside of them?"
         ]
     }
 }

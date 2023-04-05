@@ -541,6 +541,10 @@
             {
                 "name": "constant nightmares",
                 "chance": 20
+            },
+            {
+                "name": "fear paralysis",
+                "chance": 50
             }
         ],
         "herbs": [
@@ -605,5 +609,167 @@
             "poppy",
             "juniper"
         ]
+    },
+    "autism": {
+        "severity": "minor",
+        "congenital": "always",
+        "moons_until": 3,
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+            {
+                "name": "hyperfixation",
+                "chance": 10
+            },
+            {
+                "name": "nonverbal",
+                "chance": 40
+            }
+        ],
+        "herbs": [ ]
+    },
+    "ocd": {
+        "severity": "minor",
+        "congenital": "always",
+        "moons_until": 3,
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+        ],
+        "herbs":[ ]
+    },
+    "depression": {
+        "severity": "minor",
+        "congenital": "sometimes",
+        "moons_until": 2,
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+            {
+                "name": "grief stricken",
+                "chance": 40
+            },
+            {
+                "name": "lasting grief",
+                "chance": 50
+            },
+            {
+                "name": "seasonal depression",
+                "chance": 30
+            }
+        ],
+        "herbs": [ 
+            "thyme",
+            "juniper",
+            "poppy"
+        ]
+    },
+    "boundless energy": {
+        "severity": "minor",
+        "congenital": "always",
+        "moons_until": 2,
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "illness_infectiousness":[
+        ],
+        "risks": [
+        ],
+        "herbs":[
+            "poppy",
+            "juniper",
+            "chamomile"
+         ]
+    },
+    "antisocial": {
+            "severity": "minor",
+            "congenital": "always",
+            "moons_until": 2,
+            "mortality": {
+                "newborn": 0,
+                "kitten": 0,
+                "adolescent": 0,
+                "young adult": 0,
+                "adult": 0,
+                "senior adult": 0,
+                "senior": 0
+            },
+            "illness_infectiousness":[
+            ],
+            "risks": [
+            ],
+            "herbs":[
+                "poppy",
+                "juniper",
+                "chamomile"
+             ]
+    },
+    "anxiety": {
+        "severity": "minor",
+        "congenital": "sometimes",
+        "moons_until": 2,
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+            {
+                "name": "paranoia",
+                "chance": 30
+            },
+            {
+                "name": "induced hallucinations",
+                "chance": 80
+            },
+            {
+                "name": "indecision",
+                "chance": 20
+            },
+            {
+                "name": "anxiety attack",
+                "chance": 30
+            }
+        ],
+        "herbs": []
     }
 }
