@@ -758,7 +758,7 @@
                 "chance": 30
             },
             {
-                "name": "induced hallucinations",
+                "name": "hallucinations",
                 "chance": 80
             },
             {
@@ -768,8 +768,28 @@
             {
                 "name": "anxiety attack",
                 "chance": 30
+            },
+            {
+                "name": "panic attack",
+                "chance": 30
+            },
+            {
+                "name": "shock",
+                "chance": 60
+            },
+            {
+                "name": "vivid daydreams",
+                "chance": 30
+            },
+            {
+                "name": "impulsivity",
+                "chance": 10
             }
         ],
-        "herbs": []
+        "herbs": [
+            "chamomile",
+            "thyme",
+            "poppy"
+        ]
     }
 }

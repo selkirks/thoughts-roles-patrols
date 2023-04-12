@@ -175,5 +175,98 @@
             "m_c's collection of shiny objects was found in their nest, confronted about it m_c simply states they couldn't help it, they were shiny! So Shiny.",
             "m_c has been exploring a really particular part of the territory, explaining everything they found and seen with gleeful vigor."
         ]
-    }
+    },
+    "ocd": {
+		"anxiety attack": [
+			"r_c can understand that m_c has more trouble than most keeping calm and talks with them about why they feel extra anxious when they fail to fully check the camp before doing their patrols.",
+			"m_c starts to think about a possibility that scares them and their mind fills with fog and their heart beats erratically and they panic waking up a friend.",
+			"A clanmate sits beside m_c and lets them ramble on as they start to catastrophize.",
+			"m_c starts crying because they didn't check the camp fully before leaving that morning."
+		],
+		"indecision": [
+			"r_c reassures m_c that it's alright to take some time to make a decision on things.",
+			"m_c has been sitting in place for most of the afternoon, seeming to be stuck on what to do.",
+			"Pacing around the camp m_c doesn't seem to be able to solidly make a decision.",
+			"m_c keeps fretting and worrying about what choices to make."
+		],
+		"compulsions": [
+			"r_c sits back and watches as m_c comes in just to reorder and count the herbs in the medicine den.",
+			"m_c decided to reorganise the entire freshkill pile into multiple piles of prey sorted by size.",
+			"Rather than just doing their job, m_c had to go back and forth between the camp and the start of the patrol route before they nodded and could proceed.",
+			"m_c has to stop every few minutes to shake off their paws.",
+			"When settling down to sleep, m_c has to get up and check the front of the den three times.",
+			"m_c keeps grooming the same spot on their pelt.",
+			"m_c keeps repeating behaviours and when asked can only explain that they need to do them."
+			],
+		"hyperfixation": [
+			"r_c is always grateful for m_c's help sorting through the herbs in the medicine den. They're always a good helper.",
+			"m_c has been really focused on the warrior code recently and keeps parroting the rules at everyone.",
+			"While it's nice that m_c cares so much about the code some of their clanmates are getting tired of been pulled up over every little thing.",
+			"m_c has been really focused on catching enough prey to feed everyone.",
+			"m_c has been eagerly practising battle moves every time they're awake.",
+			"m_c has been eagerly practising hunting techniques every time they're awake."
+			],
+		"paranoia": [
+			"r_c gently speaks to m_c. Talking at length with them about the herbs in the medicine den trying to assure them that they're safe.",
+			"m_c is wandering around the camp somehow convinced that the world will be ending soon and rather listless.",
+			"m_c refuses to eat the prey on the freshkill pile, instead going out each day to catch even fresher prey for themselves.",
+			"While the rest of the clan settles down for the night m_c is getting up every few hours to check and make sure that things are still safe and fine.",
+			"m_c keeps waking up their denmates to get them to check just one more time if they're sure the camp is secure.",
+			"They're not paranoid, m_c insists that it's just the proper level of caution as they check for the third time that afternoon that the nursery is secure."
+		]
+	},
+    "anxiety": {
+		"anxiety attack": [
+			"It's not uncommon for m_c to come into the medicine den with worries and troubles swirling around their head. r_c has a specific pile of herbs set aside just for when they need them. Or simply for when they need to talk.",
+			"m_c's tail lashes, fur standing uncomfortably on end as they share some of the anxieties bothering them with a clanmate.",
+			"The sunshine offers no relief to m_c as they pace around the camp entry on edge.",
+			"m_c keeps going in circles, worriedly pacing and unable to settle down to sleep properly."
+		],
+		"panic attack": [
+			"r_c is doing a general den check for m_c when they notice that their breathing is coming particularly harshly.",
+			"Nobody is sure what happened, one second m_c is fine the next they're darting across the camp ears pressed down and fur all on end.",
+			"m_c has been pacing circles around the camp, fur on end and looking as if they're going to snap.",
+			"Tail lashing and fur on edge m_c reports to the medicine cat for reassurance.",
+			"m_c has been struggling to breathe, some of the clan worried about white cough but it seems to be just a bit of panic."
+		],
+		"indecision": [
+			"r_c gently sits beside m_c as they stand in place eyes wide struggling to decide what they want to do.",
+			"m_c keeps going back and forth between their options and isn't able to commit to any of them.",
+			"m_c's keeps second guessing their own opinion and is told they don't have to decide today if it's too hard."
+		],
+		"impulsivity": [
+			"r_c has noticed that m_c is running themselves thin jumping into things before they can overthink.",
+			"m_c took a piece of prey from the pile and spent the rest of the day looking like they might cry.",
+			"m_c has been volunteering for everything this moon without thinking.",
+            "m_c comes into the medicine den sheepishly asking if r_c needs any herbs because they found a bush and plucked it before asking."
+		],
+		"vivid daydreams": [
+			"r_c consults with m_c about their daydreaming, reassuring them that it's a perfectly fine coping mechanism.",
+			"m_c babbles into the air paws twitching as if they were sleeping with a particularly loud dream.",
+			"Rather than socialising with the rest of the clan, m_c has been withdrawing into themselves and their head to escape the pressing anxiety.",
+			"m_c sits quietly in the corner of the camp finding happiness in their own internal world.",
+			"Between bouts of anxiety, m_c is calming themselves down by retreating away from the world around them."
+		],
+		"hallucinations": [
+			"r_c talks m_c through the things that they're seeing and hearing. It helps m_c to more firmly ground themselves in reality.",
+			"m_c struggles to understand what is really there or not as the shadows seem to hold impossible things.",
+			"Sometimes when m_c sleeps they half wake up and there's things on top of them.",
+			"m_c feels frozen, rooted in place as something large pinches and pokes at them.",
+			"m_c admits to a clanmate that they're not sure if they can actually trust their ears and what they're hearing anymore."
+		],
+		"shock": [
+			"r_c talks softly with m_c while they stare blankly at the wall shaking.",
+			"After all the anxiety that m_c's had this week they lie in the back of the den and stare at the wall completely worn out.",
+			"m_c shivers in their nest, curling their tail around them and pressing their ears down.",
+			"The moon has been rough, m_c can barely keep their paws stable as they head towards the medicine den to ask for something to ease the pressure."
+		],
+        "paranoia": [
+			"r_c gently speaks to m_c. Talking at length with them about the herbs in the medicine den trying to assure them that they're safe.",
+			"m_c is wandering around the camp somehow convinced that the world will be ending soon and rather listless.",
+			"m_c refuses to eat the prey on the freshkill pile, instead going out each day to catch even fresher prey for themselves.",
+			"While the rest of the clan settles down for the night m_c is getting up every few hours to check and make sure that things are still safe and fine.",
+			"m_c keeps waking up their denmates to get them to check just one more time if they're sure the camp is secure.",
+			"They're not paranoid, m_c insists that it's just the proper level of caution as they check for the third time that afternoon that the nursery is secure."
+		]
+}
 }
