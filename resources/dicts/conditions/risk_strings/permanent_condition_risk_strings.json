@@ -268,5 +268,13 @@
 			"m_c keeps waking up their denmates to get them to check just one more time if they're sure the camp is secure.",
 			"They're not paranoid, m_c insists that it's just the proper level of caution as they check for the third time that afternoon that the nursery is secure."
 		]
-}
+    },
+ "thunderous spirit": {
+            "lightning roots": [
+                "r_c notices that m_c is becoming more dependent and clingy with one of their clanmates, and invites them to talk about it",
+                "m_c can't stop thinking about one of their clanmates and cannot bear the thought of not being near them to the point it is disrupting their duties.",
+                "no one understands m_c apart from that one special cat in their life, atleast that is what their thunderous spirit is making them think. They refuse to be apart from them and will lash out at any clanmate that tries to seperate them."
+            ]
+        }
+    
 }
