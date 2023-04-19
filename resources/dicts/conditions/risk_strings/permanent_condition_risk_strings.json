@@ -268,5 +268,44 @@
 			"m_c keeps waking up their denmates to get them to check just one more time if they're sure the camp is secure.",
 			"They're not paranoid, m_c insists that it's just the proper level of caution as they check for the third time that afternoon that the nursery is secure."
 		]
-}
+	},
+	"fibro": {
+        "joint pain": [
+            "r_c can only set aside a nest and some herbs as m_c comes in complaining of joint pain.",
+			"m_c's been complaing for days, {PRONOUN/m_c/poss} joints seem to be giving them particular trouble this moon.",
+			"After the work that m_c has put into helping the apprentices care for the elders {PRONOUN/m_c/subject} {VERB/m_c/are/is} left with aches all over."
+        ],
+        "running nose": [
+			"r_c worriedly ferries m_c to the medicine den when {PRONOUN/r_c/subject} noticed them sniffing more than usual.",
+			"m_c's nose has begun to run on and off this moon.",
+			"After all the work m_c has done this moon {PRONOUN/m_c/subject} {VERB/m_c/have/has} begun to sneeze."
+        ],
+		"stomachache": [
+			"r_c sighs when m_c comes in with the complaint of a stomachache, hopefully it's just something {PRONOUN/m_c/subject} ate.",
+			"m_c rolls onto {PRONOUN/m_c/poss} back in {PRONOUN/m_c/poss} nest, too uncomfortable to doze on {PRONOUN/m_c/poss} stomache."
+		],
+		"sore": [
+			"r_c gently scolds m_c when {PRONOUN/m_c/subject} {VERB/m_c/come/comes} into the medicine den, it looks like working too hard without taking breaks has made {PRONOUN/m_c/object} particularly sore.",
+			"After all the effort that {PRONOUN/m_c/subject} put into helping out the elders this moon, m_c has made {PRONOUN/m_c/self} sore. Not that it stops {PRONOUN/m_c/object} from taking pride in the effort.",
+			"m_c doesn't regret the extra work {PRONOUN/m_c/subject} put into helping this moon, even as {PRONOUN/m_c/subject} {VERB/m_c/wince/winces} simply walking back over to {PRONOUN/m_c/poss} nest.",
+			"Simply brushing up against someone makes m_c let out winces and little yowls of pain.",
+			"m_c lazes about in a sunbeam, watching content as {PRONOUN/m_c/poss} clanmates gather together for training that {PRONOUN/m_c/subject} {VERB/m_c/are/is} going to spot for."
+		],
+		"headache": [
+			"r_c fusses with the herbs as m_c comes into the den wincing with each blink. {PRONOUN/r_c/subject} gently {VERB/r_c/ease/eases} {PRONOUN/m_c/object} to a quiet and dark corner of the den to rest.",
+			"m_c refuses to uncurl from within the den as the morning sunlight comes in, wincing as a dull throb echoes in {PRONOUN/m_c/poss} skull."
+		],
+		"severe headache": [
+			"r_c worriedly comes over to the den when told that nobody's seen m_c out yet. Turns out {PRONOUN/m_c/subject} {VERB/m_c/are/is} curled up tightly in {PRONOUN/m_c/poss} nest whimpering from the pain in {PRONOUN/m_c/poss} head.",
+			"m_c's barely able to make {PRONOUN/m_c/poss} way to the medicine den, the pain throbbing from {PRONOUN/m_c/poss} head throughout {PRONOUN/m_c/poss} whole body making the world spin.",
+			"To the distress of {PRONOUN/m_c/poss} denmates m_c has spent the day silently shaking, barely able to get out the information that {PRONOUN/m_c/poss} head hurts.",
+			"Barely coherent m_c swallows the herbs delivered to {PRONOUN/m_c/object} by {PRONOUN/m_c/poss} clanmates, hopefully this pain will pass soon."
+		],
+		"paralyzed": [
+			"When r_c comes over to check m_c after complaints of tingling in {PRONOUN/m_c/poss} legs, it's to inform {PRONOUN/m_c/object} it's because {PRONOUN/m_c/poss} legs aren't working properly anymore.",
+			"m_c has been complaining of tingling in {PRONOUN/m_c/poss} legs for days, one day it stops. {PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} relieved, until {PRONOUN/m_c/subject} {VERB/m_c/try/tries} to move again.",
+			"When m_c attempts to get up from {PRONOUN/m_c/poss} bed {PRONOUN/m_c/subject} {VERB/m_c/let/lets} out a yowl of distress, it would appear that only half of {PRONOUN/m_c/object} has gotten up.",
+			"After a few moons of on and off falling over m_c finds one morning that {PRONOUN/m_c/subject} no longer {VERB/m_c/have/has} to worry about falling."
+		]
+    }	
 }
