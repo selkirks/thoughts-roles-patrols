@@ -126,7 +126,12 @@
             "r_c gently asks m_c to turn over, and winces when they do. The strain of birth isn't healing as r_c had hoped it might, and instead the area looks swollen and painful.",
             "m_c tries not to hiss as their litter suckles. They love them, they do, but giving birth was so painful, and the area feels swollen and infected now."
 
-        ]
+        ],
+		"turmoiled litter": [
+			"m_c tiredly asks r_c if there is something wrong with {PRONOUN/m_c/object}, {PRONOUN/m_c/subject} just can't seem to bond with {PRONOUN/m_c/poss} litter at all.",
+			"Staring at {PRONOUN/m_c/poss} litter m_c wonders what is wrong with {PRONOUN/m_c/object}. {PRONOUN/m_c/subject/CAP} should be happy, overjoyed at this but instead all {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} is hollow and tired.",
+			"While {PRONOUN/m_c/poss} litter plays around the nursery m_c can only curl in the nest and feel the weight of the world pressing down on {PRONOUN/m_c/object}, how could {PRONOUN/m_c/subject} possibly manage to do this?"
+		]
     },
     "water in their lungs": {
         "running nose": [
@@ -160,7 +165,11 @@
             "r_c gives m_c the poppy seeds they ask for, to help them sleep, but it worries them that m_c's shock has lingered so long.",
             "m_c wakes again from another nightmare, feeling adrenaline rush through their veins as they try not to bolt. It feels like days since they've been able to sleep through the night, and it's wearing them down."
 
-        ]
+        ],
+		"anxiety": [
+			"r_c has noticed that while the shock has gone it's replaced in m_c with a certain kind of worry that {PRONOUN/m_c/subject} {VERB/m_c/wear/wears} like a cloud of dust on {PRONOUN/m_c/poss} pelt.",
+			"m_c has found that since {PRONOUN/m_c/poss} shock has faded it's been replaced with an itch under {PRONOUN/m_c/poss} fur and a certain kind of jumpiness that they {PRONOUN/m_c/subject} can't explain."
+		]
     },
     "shivering": {
         "frostbite": [

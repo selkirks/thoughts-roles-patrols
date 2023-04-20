@@ -84,5 +84,86 @@
             "m_c stared blankly up at the sky, feeling less motivated to do anything, their mind fogged with grief and despair.",
             "m_c stalked out of camp, clawing at the ground as they went. It was so unfair, all of it, why did StarClan take them away? Why curse them with this darkness inside of them?"
         ]
-    }
+    },
+	"anxiety attack": {
+		"panic attack": [
+			"r_c carefully remains outside of m_c's personal space and attempts to count with {PRONOUN/m_c/object}, desperately hoping the distraction will prevent {PRONOUN/m_c/poss} anxiety from further progressing to full panic.",
+			"m_c's tail lashes, eyes darting around the camp. {PRONOUN/m_c/poss/CAP} paws dig into the dirt of the denfloor and {PRONOUN/m_c/subject} {VERB/m_c/look/looks} moments away from bolting at the slightest movement.",
+			"Instead of fading the anxiety only seems to build and build until m_c feels like {PRONOUN/m_c/subject} can't breathe, everything is dangerous and wrong and {PRONOUN/m_c/subject} {VERB/m_c/need/needs} out, out.",
+			"It's irrational, there's nothing there, {PRONOUN/m_c/subject} {VERB/m_c/are/is} not in any danger here. m_c keeps reminding {PRONOUN/m_c/self} over and over as {PRONOUN/m_c/poss} chest grows tighter and tighter.",
+			"{PRONOUN/m_c/subject} can't breathe, m_c can't breathe drowning on land, drowning in the panic that floods {PRONOUN/m_c/poss} body putting all {PRONOUN/m_c/poss} fur on end."
+			],
+		"paranoia": [
+			"m_c watches r_c with wary eyes, tail twitching and ears pressed low. r_c carefully broadcasts and exaggerates {PRONOUN/r_c/poss} every movement to try and make {PRONOUN/m_c/object} feel a bit more secure.",
+			"After working {PRONOUN/m_c/self} into such anxiety m_c finds {PRONOUN/m_c/self} struggling to get back out of it and on edge for the rest of the day.",
+			"m_c refuses to let {PRONOUN/m_c/self} calm down, sure that there is something wrong and dangerous out there.",
+			"While there is no reason to worry m_c refuses to see it that way and stands stiffly at the camp entry fur all on end and ears raised to hear absolutely everything."
+		]
+	},
+	"panic attack": {
+		"constant nightmares": [
+			"After all the panicking m_c weakly crawls on {PRONOUN/m_c/poss} belly to r_c asking for anything to help with the paranoia induced nightmares {PRONOUN/m_c/subject} {VERB/m_c/have/has} been suffering from.",
+			"m_c wakes up panting from {PRONOUN/m_c/poss} nest, paws still twitching with the desperate need to run and escape. It's just a nightmare, just one of many.",
+			"Another nightmare drags m_c down, leaving {PRONOUN/m_c/object} tired and hollow looking the next day to the worry of {PRONOUN/m_c/poss} clanmates."
+		],
+		"shock": [
+			"While the panic has faded away now m_c stares almost blankly, eyes darting making r_c worried that {PRONOUN/m_c/subject} {VERB/m_c/have/has} gone into a state of shock.",
+			"m_c's heart still races, pounding and echoing in {PRONOUN/m_c/poss} ears, they should be calm but {PRONOUN/m_c/subject} can't calm down. Panic continues to vividly repeat in {PRONOUN/m_c/poss} mind.",
+			"Around and around in circles the fear echoes, feeling more and more like a loop that's trapping m_c into a state of shock."
+		],
+		"anxiety": [
+			"After the panic has faded away, m_c still seems to be on edge. r_c sits and talks with {PRONOUN/m_c/object} about how {PRONOUN/m_c/subject} might have anxiety that wasn't discovered until now.",
+			"m_c still feels like {PRONOUN/m_c/subject} {VERB/m_c/are/is} on the verge of panic. Thoughts going around and around frantically chasing each other like a dog after it's own tail."
+		],
+		"paranoia": [
+			"m_c refuses to take the herbs that r_c is offering {PRONOUN/m_c/object}, convinced that they might be dangerous and not actually helpful.",
+			"After all the panic and anxiety, m_c has been twitching, muttering things that sound more and more paranoid.",
+			"{PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} just double checking things, just making sure the camp is secure m_c tells {PRONOUN/m_c/self}.",
+			"m_c noses at {PRONOUN/m_c/poss} food and bedding for the third time today convinced that there's something in it that will harm {PRONOUN/m_c/object}."
+		]
+	},	
+	"seasonal lethargy": {
+		"depression": [
+			"Something is wrong, m_c looks up at r_c, something is wrong and the heavy blanket of tiredness hasn't left yet. r_c can only shake {PRONOUN/r_c/poss} head, it would appear that {PRONOUN/m_c/poss} soul has become weighted down and heavy.",
+			"m_c watches the camp change, {PRONOUN/m_c/subject} {VERB/m_c/watch/watches} as the dawn rises and just wonder why {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} feel any lighter yet.",
+			"Usually with the warmth and the frost m_c finds that the heavy weight of exhaustion has left, but now all {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} like is curling back up again and never leaving the den.",
+			"Something in m_c's chest feels tight, feels numb really. A weight that {PRONOUN/m_c/subject} {VERB/m_c/have/has} to carry around for the rest of {PRONOUN/m_c/poss} life."
+		]
+	},
+	"vivid daydreams": {
+		"hallucinations": [
+			"Something is really wrong, r_c worriedly fusses over m_c as {PRONOUN/m_c/poss} escapism seems to blend into {PRONOUN/m_c/poss} reality.",
+			"m_c seems to be struggling to distinguish where {PRONOUN/m_c/poss} dream ends and reality begins to the distress of {PRONOUN/m_c/poss} clanmates.",
+			"While {PRONOUN/m_c/poss} clanmates watch over {PRONOUN/m_c/object} m_c's eyes track and follow in distress things that only {PRONOUN/m_c/subject} can seem to see.",
+			"m_c shivers in their den, the shadows on the walls and out the corner of {PRONOUN/m_c/poss} eyes making monsters.",
+			"All dreams have risk of becoming nightmares, and these are no different as sleeplessness and escapism don't mix well. m_c shivers as {PRONOUN/m_c/subject} {VERB/m_c/struggle/struggles} to find where reality actually is.",
+			"m_c has the horrible realisation that this isn't a daydream anymore."
+		]
+	},
+	"zoomies": {
+		"bruises": [
+			"After zooming around for most of the day m_c comes over to r_c's den to sheepishly ask for some help with the new bruises {PRONOUN/m_c/subject} {VERB/m_c/have/has} obtained.",
+			"No serious harm has come to m_c from {PRONOUN/m_c/poss} zooming, just a few extra knocks and bruises.",
+			"m_c trots into camp unabashed, only slightly wincing from a couple of bruises."
+		]
+	},
+	"compulsions": {
+		"bruises": [
+			"r_c understandingly helps m_c to soothe {PRONOUN/m_c/poss} bruises.",
+			"Some of m_c's compulsions included knocking {PRONOUN/m_c/self} and it's left {PRONOUN/m_c/object} with a couple of bruises."
+		]
+	}
+	"sleeplessness": {
+		"ongoing sleeplessness": [
+			"r_c sits with m_c long into the night, just letting {PRONOUN/m_c/object} lean against {PRONOUN/r_c/object} tired and exhausted. m_c just wonders when, if ever sleep will come again.",
+			"Longer and longer time seems to stretch with m_c been unable to get any sleep.",
+			"m_c's sleeplessness doesn't seem to be leaving {PRONOUN/m_c/object} alone as {PRONOUN/r_c/subject} {VERB/m_c/take/takes} more and more night time patrols just to keep busy."
+		],
+		"hallucinations": [
+			"r_c gently herds m_c into the medicine den where {PRONOUN/m_c/subject} can have some quiet and slightly less shadows to jump at.",
+			"m_c has gotten so tired that {PRONOUN/m_c/subject} {VERB/m_c/are/is} beginning to lose focus on the images and sounds {PRONOUN/m_c/subject} {VERB/m_c/hear/hears}.",
+			"Due to m_c's tiredness from lack of sleep {PRONOUN/m_c/subject} {VERB/m_c/keep/keeps} hearing things.",
+			"m_c walks into a tree because {PRONOUN/m_c/subject} thought there was a squirrel darting into a hole at it's base."
+		]
+	}	
 }

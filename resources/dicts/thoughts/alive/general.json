@@ -1762,5 +1762,152 @@
             "newborn",
             "kitten"
         ]
-    }
+    },
+    {
+        "id": "fibro_to_alive_gen",
+        "thoughts": [
+            "Is having a bad day",
+			"Hisses when a clanmate accidentally brushes against {PRONOUN/m_c/object}",
+			"Wishes that {PRONOUN/m_c/subject} {VERB/m_c/could/can} have just one day without pain",
+			"Baps r_c because {PRONOUN/r_c/subject} came slightly too close",
+			"Wishes that r_c would leave {PRONOUN/m_c/object} alone for a minute",
+			"Is having a moment of peace in a sunbeam",
+			"Wonders if {PRONOUN/m_c/subject} could make it out of camp today",
+			"Wonders if it would be better if {PRONOUN/m_c/subject} had an injury to explain the pain",
+			"Is making up stories for why {PRONOUN/m_c/subject} {VERB/m_c/are/is} in pain all the time",
+			"Wishes that r_c could be in {PRONOUN/m_c/poss} paws for the day",
+			"Is trying {PRONOUN/m_c/poss} best",
+			"Doesn't want to take {PRONOUN/m_c/poss} painkiller herbs today for fear of been fuzzy",
+			"Is wincing as {PRONOUN/m_c/subject} {VERB/m_c/walk/walks} around camp",
+			"Doesn't want to leave the nest today"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "fibro"
+            ]
+        },
+        "random_status_constraint": [
+            "kitten",
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },	
+    {
+        "id": "starwalker_to_alive_gen",
+        "thoughts": [
+            "Is running around in circles",
+			"Is collecting shiny rocks",
+			"Is collecting interesting feathers",
+			"Is talking about how interesting rats are",
+			"Is pretending {PRONOUN/m_c/subject} {VERB/m_c/are/is} a rat",
+			"Is talking with r_c about rats",
+			"Is talking about the story that rats brought the clans medicine",
+			"Is comparing the Clans structure to the Packs",
+			"Is talking about the Packs",
+			"Wonders if {PRONOUN/m_c/subject}{VERB/m_c/'re/ is} actually a peltshifter in cat form",
+			"Talks to r_c about how curious peltshifters are",
+			"Talks to r_c about the Packs",
+			"Wonders if the clan could make an agreement with the Packs",
+			"Wonders about the Mother Moon",
+			"Wonders if the Sun really is a dog",
+			"Is collecting old bits of shed and looks like crying",
+			"Is carefully burying the bones of prey",
+			"Is chasing {PRONOUN/m_c/poss} own tail",
+			"Is playing with a leaf",
+			"Is collecting leaves",
+			"Cried because someone threw out {PRONOUN/m_c/poss} collection",
+			"Is eagerly talking with r_c about different plants around the territory",
+			"Collected some deathberries and refuses to throw them out because they're pretty",
+			"Is talking all about deathberries",
+			"Is talking about deathberries and the theory of reincarnation",
+			"Wonders if the death tree is an omen",
+			"Is studying herblore with the medicine cat",
+			"Wonders if {PRONOUN/m_c/subject} should be a mediator",
+			"Wonders if {PRONOUN/m_c/subject} should be a medicine cat",
+			"Wonders if {PRONOUN/m_c/subject} should be a warrior",
+			"Is currently mad at r_c for something small",
+			"Is mad at r_c for stepping on {PRONOUN/m_c/poss} collection",
+			"Refuses to eat {PRONOUN/m_c/poss} prey because it's texture is wrong",
+			"Is really focused on the birds in the territory",
+			"Is talking with r_c about the different birds in the territory",
+			"Is talking with r_c about how it would feel to fly",
+			"Is squishing {PRONOUN/m_c/poss} paws in mud on purpose",
+			"Wandered off for a swim and is still damp",
+			"Rolled in the medicine den's catmint",
+			"Was telling stories to the kittens",
+			"Thinks that rats are great actually",
+			"Wonders if {PRONOUN/m_c/subject} {VERB/m_c/need/needs} a service rat",
+			"Is babbling at r_c about hares",
+			"Is talking about the differences between hares and rabbits",
+			"Boasts {PRONOUN/m_c/subject} {VERB/m_c/could/can} easily catch a hare",
+			"Is pretending {PRONOUN/m_c/subject} {VERB/m_c/are/is} a hare",
+			"Is pretending {PRONOUN/m_c/subject} {VERB/m_c/are/is} a dog",
+			"Is practicing speaking in Fang"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "starwalker"
+            ]
+        },
+        "random_status_constraint": [
+            "kitten",
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },	
+    {
+        "id": "starwalker_to_med_gen",
+        "thoughts": [
+            "Doesn't like been treated as if {PRONOUN/m_c/subject} {VERB/m_c/are/is} a forever kitten",
+			"Feels like r_c is mocking {PRONOUN/m_c/object}",
+			"Came to r_c with some concerns about something {PRONOUN/m_c/subject} saw",
+			"Is talking about omens with r_c",
+			"Doesn't like the clan whispering as if {PRONOUN/m_c/subject} {VERB/m_c/are/is} a prophecy cat",
+			"Sometimes wonders why {PRONOUN/m_c/subject} couldn't be born normal",
+			"Is talking to the r_c about some concerns",
+			"Doesn't think that r_c believes in {PRONOUN/m_c/object}",
+			"Doesn't like the smell of the medicine den"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "starwalker"
+            ]
+        },
+        "main_status_constraint": [
+            "apprentice",
+            "mediator apprentice",
+            "warrior",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ],
+        "random_status_constraint": [
+            "medicine cat apprentice",
+            "medicine cat"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    }	
 ]

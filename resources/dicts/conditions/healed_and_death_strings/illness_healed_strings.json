@@ -83,12 +83,86 @@
         "m_c knows that they're better then their mind, and with the change of season comes a new conviction to keep surviving.",
         "m_c's recent bout of fatigue seems to have ended",
         "As the weather warms, m_c finally feels able to blink the recent fatigue away.",
-        "m_c wakes to the new dawn with a lightness in their chest and paws that has long been missed.",
-        "With the sounds of the songbirds in their ears m_c finds that the weight of fog over them has risen.",
-        "As m_c observes the first growth of Newleaf they feel like a new cat.",
-        "m_c can feel their tail swish with rekindled hope and trust in their own paws.",
-        "As Newleaf creeps closer the heavy weight in m_c's bones begins to fade. Finally they feel like they can rise with the sun rather than wishing it would leave them to sleep.",
-        "As m_c observes the first growth of the season they feel like a new cat.",
-        "As the season changes the heavy weight in m_c's bones begins to fade. Finally they feel like they can rise with the sun rather than wishing it would leave them to sleep."
-    ]
+		"m_c wakes to the new dawn with a lightness in {PRONOUN/m_c/poss} chest and paws that has long been missed.",
+		"With the sounds of the songbirds in {PRONOUN/m_c/poss} ears m_c finds that the weight of fog over {PRONOUN/m_c/object} has risen.",
+		"As m_c observes the first growth of the season they feel like a new cat.",
+		"m_c feels {PRONOUN/m_c/poss} tail swish with rekindled hope and trust in {PRONOUN/m_c/poss} own paws.",
+		"As the season changes the heavy weight in m_c's bones begins to fade. Finally they feel like they can rise with the sun rather than wishing it would leave {PRONOUN/m_c/object} to sleep."
+	],
+	"lethargy": [
+		"After some moons the weight that's been in m_c's limbs has lifted and they finally leave {PRONOUN/m_c/poss} nest feeling rejuvinated.",
+		"While still somewhat tired, m_c is able to greet the dawn with the swish of {PRONOUN/m_c/poss} tail and a flick of {PRONOUN/m_c/poss} ears.",
+		"m_c feels {PRONOUN/m_c/poss} tail swish with rekindled hope and trust in {PRONOUN/m_c/poss} own paws.",
+		"m_c is able to raise {PRONOUN/m_c/poss} sun and face the dawn with renewed energy.",
+		"They might always be a bit tired and wrung out but m_c finds that it's the small things that make the days brighter."
+	],
+	"nonverbal": [
+		"While cats are surprised to see m_c speaking again it is welcomed easily.",
+		"m_c cracks a joke at the gathering and makes some of the cats from the other clans laugh.",
+		"m_c chats with some of {PRONOUN/m_c/poss} denmates comfortable and at ease."
+	],
+	"special interest": [
+		"While the intensity of m_c's love for the subject has faded it's not gone in the least and {PRONOUN/m_c/subject} {VERB/m_c/are/is} still ready to chat off another cat's ears if prompted.",
+		"m_c's able to refocus {PRONOUN/m_c/self} and stay on task, without always bringing {PRONOUN/m_c/poss} special interest into it.",
+		"m_c has some listlessness when {PRONOUN/m_c/poss} interest fades to slightly less all consuming.",
+		"m_c will always love {PRONOUN/m_c/poss} special interest, but can also make room for new interests."
+	],
+	"hyperfixation": [
+		"m_c is no longer hyperfixated on a topic.",
+		"m_c has returned to {PRONOUN/m_c/poss} regular daily activities."
+	],
+	"stimming": [
+		"For the moment, m_c has calmed {PRONOUN/m_c/poss} stimming.",
+		"m_c's stimming has become slightly less obvious.",
+		"After bouncing all around in {PRONOUN/m_c/poss} excitement m_c has calmed down.",
+		"m_c's stimming has calmed {PRONOUN/m_c/object} back down.",
+		"m_c's finished self soothing with {PRONOUN/m_c/poss} stimming."
+	],
+	"indecision": [
+		"After a long period of deliberation m_c has made a decision.",
+		"m_c no longer feels trapped by indecision."
+	],
+	"impulsivity": [
+		"m_c has a clear head and is thinking through {PRONOUN/m_c/poss} decisions once more.",
+		"While still a bit twitchy and eager m_c has slowed down {PRONOUN/m_c/poss} decisions."
+	],
+	"vivid daydreams": [
+		"After all the daydreaming m_c feels once more able to engage with reality.",
+		"m_c's stopped daydreaming.",
+		"m_c is a lot more relaxed and feels able to focus completely on {PRONOUN/m_c/poss} tasks."
+	],
+	"hallucinations": [
+		"m_c is relieved when {PRONOUN/m_c/poss} head clears and {PRONOUN/m_c/subject} {VERB/m_c/are/is} no longer experiencing confusion or distress over what they see and hear.",
+		"m_c's stopped halucinating things."
+	],
+	"zoomies": [
+		"m_c has calmed back down from all {PRONOUN/m_c/poss} zooming around.",
+		"After all {PRONOUN/m_c/poss} zooming m_c has calmed down.",
+		"The clan is relieved to see m_c is calm and collected once more.",
+		"m_c is no longer zooming around the camp like a particularly young kitten."
+	],
+	"compulsions": [
+		"With some relief m_c finds that {PRONOUN/m_c/subject} {VERB/m_c/are/is} able to balance {PRONOUN/m_c/poss} compulasions throughout the day.",
+		"m_c has figured out a way to factor {PRONOUN/m_c/poss} compulsions more naturally into {PRONOUN/m_c/poss} routine.",
+		"m_c's been able to reorganize {PRONOUN/m_c/object}selves and {PRONOUN/m_c/poss} compulsions."
+	],
+	"turmoiled litter": [
+		"With much relief m_c is feeling a bit more like {PRONOUN/m_c/object}self.",
+		"m_c could almost cry as a weight they weren't fully conscious of seems to lift.",
+		"m_c purrs as {PRONOUN/m_c/poss} kittens roll around {PRONOUN/m_c/object}, finally feeling like they can move on.",
+		"Sometimes a bond isn't instant and m_c finds that's alright."		
+	],
+	"sleeplessness": [
+		"m_c is so relieved to just get a somewhat peaceful nights sleep once more.",
+		"Once more m_c is able to sleep. At least for now."
+	],
+	"burn out": [
+		"m_c is back on {PRONOUN/m_c/poss} paws after burn out.",
+		"m_c is no longer tired and exhausted from burn out."
+	],
+	"ear buzzing": [
+		"There is so much relief from m_c that {PRONOUN/m_c/poss} ears are no longer buzzing with flies.",
+		"m_c purrs when {PRONOUN/m_c/poss} ears stop tinkling.",
+		"m_c sits and shares tongues freely with {PRONOUN/m_c/poss} clanmates, no longer shaking {PRONOUN/m_c/poss} head to try and hear better."
+	]	
 }

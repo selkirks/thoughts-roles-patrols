@@ -103,6 +103,11 @@
         "m_c sleeps seperately from their parent and denmates, liking their own nest that they can decorate and keep to how they like it. r_c explains to their concerned parent that they could have ocd, and it's nothing serious.",
         "m_c hisses when some of their denmates playfight near their nest, quick to realign what they knocked out of place. Their parent scolds them for this but m_c complains that it makes them anxious when their things are out of place.",
         "m_c was seen sneaking out of camp and trotting towards a puddle, and rolling in it, seeming happy once they shake off the remaining water. When confronted, m_c just says water makes them feel cleaner."
-    ]
-
+    ],
+	"fibro": [
+		"After moons of m_c complaining of pains through {PRONOUN/m_c/poss} kithood, r_c sits back and softly explains that this pain will follow {PRONOUN/m_c/object} through {PRONOUN/m_c/poss} whole life and {PRONOUN/r_c/subject} can only offer temporary relief.",
+		"m_c insists that {PRONOUN/m_c/subject} {VERB/m_c/are/is} not lying, {PRONOUN/r_c/subject} {VERB/m_c/have/has} pains all the time. It doesn't look like it'll ever go away.",
+		"Unlike other kittens m_c keeps {PRONOUN/m_c/self} mostly curled up in the nursery, constantly complaining of pains throughout {PRONOUN/m_c/poss} body.",
+		"When touched by another, m_c lets out yowls of pain. It's distressing for everyone that they can't really help."
+	]
 }

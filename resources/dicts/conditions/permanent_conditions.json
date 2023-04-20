@@ -610,7 +610,7 @@
             "juniper"
         ]
     },
-    "autism": {
+    "starwalker": {
         "severity": "minor",
         "congenital": "always",
         "moons_until": 3,
@@ -627,14 +627,37 @@
         ],
         "risks": [
             {
+                "name": "special interest",
+                "chance": 5
+            },
+            {
                 "name": "hyperfixation",
                 "chance": 10
             },
+			{
+				"name": "stimming",
+				"chance": 5
+			},
             {
                 "name": "nonverbal",
                 "chance": 40
-            }
-        ],
+            },
+			{
+				"name": "anxiety attack",
+				"chance": 30
+			},
+			{
+				"name": "seasonal lethargy",
+				"chance": 30
+			},
+			{
+				"name": "absence",
+				"chance": 40
+			},
+			{
+				"name": "vivid daydreams",
+				"chance": 30
+			}
         "herbs": [ ]
     },
     "ocd": {
@@ -653,11 +676,35 @@
         "illness_infectiousness": [
         ],
         "risks": [
+            {
+                "name": "anxiety attack",
+                "chance": 30
+            },
+            {
+                "name": "indecision",
+                "chance": 20
+            }, 
+            {
+                "name": "compulsions",
+                "chance": 10
+            },
+            {
+                "name": "hyperfixation",
+                "chance": 20
+            },
+            {
+                "name": "paranoia",
+                "chance": 90
+            }
         ],
-        "herbs":[ ]
+        "herbs":[
+			"chamomile",
+			"juniper",
+			"betony"
+		]
     },
-    "depression": {
-        "severity": "minor",
+    "heavy soul": {
+        "severity": "major",
         "congenital": "sometimes",
         "moons_until": 2,
         "mortality": {
@@ -677,13 +724,21 @@
                 "chance": 40
             },
             {
-                "name": "lasting grief",
-                "chance": 50
-            },
-            {
-                "name": "seasonal depression",
+                "name": "seasonal lethargy",
                 "chance": 30
-            }
+            },
+			{
+				"name": "lethargy",
+				"chance": 15
+			},
+			{
+				"name": "anxiety attack",
+				"chance": 40
+			},
+			{
+				"name": "absence",
+				"chance": 25
+			}
         ],
         "herbs": [ 
             "thyme",
@@ -707,6 +762,30 @@
         "illness_infectiousness":[
         ],
         "risks": [
+			{
+				"name": "zoomies",
+				"chance": 25
+			},
+			{
+				"name": "absence",
+				"chance": 25
+			},
+			{
+				"name": "vivid daydreams",
+				"chance": 80
+			},
+			{
+				"name": "hyperfixation",
+				"chance": 25
+			},
+            {
+                "name": "indecision",
+                "chance": 20
+            },
+            {
+                "name": "impulsivity",
+                "chance": 15
+            }
         ],
         "herbs":[
             "poppy",
@@ -791,5 +870,105 @@
             "thyme",
             "poppy"
         ]
-    }
+    },
+	"fibro": {
+		"severity": "major",
+		"congenital": "always",
+		"moons_until": 4,
+		"mortality": {
+			"newborn": 0,
+			"kitten": 0,
+			"adolescent": 0,
+			"young adult": 0,
+			"adult": 0,
+			"senior adult": 0,
+			"senior": 0
+		},
+		"illness_infectiousness": [],
+		"risks": [
+			{
+				"name": "joint pain",
+				"chance": 30
+			},
+			{
+				"name": "running nose",
+				"chance": 50
+			},
+			{
+				"name": "stomachache",
+				"chance": 50
+			},
+			{
+                "name": "sore",
+                "chance": 10
+            },
+			{
+				"name": "headache",
+				"chance": 10
+			},
+			{
+				"name": "severe headache",
+				"chance": 20
+			},			
+			{
+				"name": "paralyzed",
+				"chance": 90
+			}
+	],
+	"herbs": [
+		"poppy",
+		"raspberry",
+		"juniper",
+		"ragwort",
+		"thyme",
+		"catmint"
+		]
+	},
+    "ongoing sleeplessness": {
+        "severity": "major",
+        "congenital": "never",
+        "moons_until": 0,
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+			{
+				"name": "sleeplessness",
+				"chance": 10
+			},
+			{
+				"name": "lethargy",
+				"chance": 30
+			},
+            {
+				"name": "impulsivity",
+				"chance": 20
+			},			
+			{
+				"name": "hallucinations",
+				"chance": 10
+			},
+			{
+				"name": "constant nightmares",
+				"chance": 10
+			},
+			{
+				"name": "ear buzzing",
+				"chance": 20
+			}			
+        ],
+        "herbs": [
+            "honey",
+            "chamomile",
+            "poppy"
+		]
+    }	
 }

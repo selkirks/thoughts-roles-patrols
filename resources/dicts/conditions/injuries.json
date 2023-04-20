@@ -843,7 +843,11 @@
             {
                 "name": "an infected wound",
                 "chance": 15
-            }
+            },
+			{
+				"name": "turmoiled litter",
+				"chance": 20
+			}
         ],
         "also_got": [
             "blood loss"
@@ -996,7 +1000,11 @@
             {
                 "name": "lingering shock",
                 "chance": 15
-            }
+            },
+			{
+				"name": "anxiety",
+				"chance": 15
+			}
         ],
         "also_got": [],
         "cause_permanent": [
