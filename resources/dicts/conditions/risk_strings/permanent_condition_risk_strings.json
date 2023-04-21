@@ -445,5 +445,12 @@
 			"Due to m_c's lack of proper sleep it's no surprise to r_c when {PRONOUN/m_c/subject} {VERB/m_c/come/comes} in complaining of a buzzing in {PRONOUN/m_c/poss} ears that's not helping anything.",
 			"m_c grumbles about the ringing in {PRONOUN/m_c/poss} ears like the bell on a kittypet's collar."
 		]
+	},
+ "thunderous spirit": {
+		"lightning roots": [
+			"r_c notices that m_c is becoming more dependent and clingy with one of their clanmates, and invites them to talk about it",
+			"m_c can't stop thinking about one of their clanmates and cannot bear the thought of not being near them to the point it is disrupting their duties.",
+			"no one understands m_c apart from that one special cat in their life, atleast that is what their thunderous spirit is making them think. They refuse to be apart from them and will lash out at any clanmate that tries to seperate them."
+		]
 	}
 }
