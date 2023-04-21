@@ -81,7 +81,9 @@
     "starwalker": [
        "m_c has been having issues socializing with their denmates, they find it uncomfortable and terrifying. r_c gently tells m_c that they don't need to do what they don't like. But, they suspect they have Autism.",
        "m_c is just like any other kit, rolling around and batting at bugs they find. They're a bit louder, a bit more brash and doesn't seem to understand social cues. m_c might have Austim.",
-       "m_c doesn't seem to be a big fan of eye contact, their eyes often drift from their parents face and they don't take well to social queues."
+       "m_c doesn't seem to be a big fan of eye contact, their eyes often drift from their parents face and they don't take well to social queues.",
+       "m_c has always felt different from other cats. They dont know how to socialise and they are always told that they act weird. They find out that they are a Starwalker, and thats why they feel this way.",
+       "The feeling of certain things, like leaves touching their fur, or the noise of scratching, always seems much worse to m_c. They think they are just being dramatic until they discover that they are a Starwalker."
 
     ],
     "heavy soul": [
@@ -90,10 +92,11 @@
         "A denmate wonders why m_c won't play with anyone, and they try to become friends and play with them. m_c agrees to play with them, but don't seem too energetic about it.",
         "m_c has seemed more sluggish then the other kits their age, less energetic. Less focused on the reality and more lost in their thoughts."
     ],
-    "boundless energy": [
-        "m_c mewled and whined like any other kit, but their energy was through the nursery's roof and driving the queens mad, to the point they called r_c over just to see if they have anything to calm the rambunctious child. The medicine cat just chuckled, maybe the kit simply had boundless energy, and they had the right herb for it.",
+    "comet spirit": [
+        "m_c mewled and whined like any other kit, but their energy was through the nursery's roof and driving the queens mad, to the point they called r_c over just to see if they have anything to calm the rambunctious child. The medicine cat just chuckled, maybe the kit simply had a comet spirit, and they had the right herb for it.",
         "m_c was racing around the camp like an absolute whirlwind, getting under every cats paws, the warriors shake their heads and the queens sigh but as long as m_c doesn't get into trouble, they'll just have to deal with their energy.",
-        "m_c talked long into the afternoon about the bugs they saw, and how they're so cool and how they run away when you paw at them!"
+        "m_c talked long into the afternoon about the bugs they saw, and how they're so cool and how they run away when you paw at them!",
+        "m_c thinks that they are lazy, and thats why their brain and body wont let them do certain tasks, but after speaking to a clanmate, they think they might have a comet spirit, and they arent lazy after all."
     ],
     "antisocial": [
        "m_c has been getting into arguments with the other kits recently. They don't seem to understand what they did wrong, and don't seem bothered when other cats are upset with them. r_c understands they're not trying to upset anyone, they're just antisocial.",
@@ -109,5 +112,19 @@
 		"m_c insists that {PRONOUN/m_c/subject} {VERB/m_c/are/is} not lying, {PRONOUN/r_c/subject} {VERB/m_c/have/has} pains all the time. It doesn't look like it'll ever go away.",
 		"Unlike other kittens m_c keeps {PRONOUN/m_c/self} mostly curled up in the nursery, constantly complaining of pains throughout {PRONOUN/m_c/poss} body.",
 		"When touched by another, m_c lets out yowls of pain. It's distressing for everyone that they can't really help."
-	]
+	],
+    "thunderous spirit": [
+        "r_c notices m_c struggles with strong and intense emotions and suggests that they may have a thunderous spirit.",
+        "m_c has a strong fear of abandonment and being left behind, to the point it is affecting their relationships.",
+        "While talking to another cat, m_c explains that they feel emotions so strongly that some days it feels like their emotions are going to explode from their fur. Their clanmate encourages them to talk to the medicine cat, and m_c discovers that they have a thunderous spirit.",
+        "Some of m_c's clanmates notice that sometimes m_c behaves recklessly and struggles to trust others, and they tell them that they may have a thunderous spirit."
+    ],
+    "otherwordly mind": [
+        "r_c notices that m_c sees and hears things that other cats cant, and suggests that theyhave an otherwodly mind.",
+        "m_c often has strong believes that no other cat has, like how they can talk to birds or was once a powerful leader",
+        "Clanmates are worried about m_c, as sometimes the words they are saying are gibberish, or theyll stop randomly in a conversation. Paired with other factors, m_c speaks to a medicine cat",
+        "A queen in the nursery notices that m_c keeps on complaining about a scary monster which they cant see, and they speak to some other clanmates about it.",
+        "m_c cannot help but repeat what others say, they have to! Their clanmates think this is apart of something bigger",
+        "m_c is constantly worried that someone or something is after them, and sometimes belives that cats have poisoned their prey or put thorns in their nest. Their clanmates talk to a medicine cat about it."
+    ]
 }
