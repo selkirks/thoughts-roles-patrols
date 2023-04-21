@@ -217,5 +217,14 @@
     "severe headache": [
         "m_c's headache is gone.",
         "m_c breathes a small sigh of relief. Finally, the deep throbbing in {PRONOUN/m_c/poss} head has subsided."
-    ]
+    ],
+	"rash": [
+		"Thankfully for m_c the rash {PRONOUN/m_c/subject} {VERB/m_c/have/has} been suffering from has cleared up.",
+		"m_c is grateful that {PRONOUN/m_c/subject} {VERB/m_c/are/is} able to go about {PRONOUN/m_c/poss} day without any more itching or dry skin under {PRONOUN/m_c/poss} fur.",
+		"m_c purrs in satisfaction able to once more clean {PRONOUN/m_c/self} without any extra irritation from a rash."
+	],
+	"wrenched claws": [
+		"m_c is so relieved when the ache in {PRONOUN/m_c/poss} paws finally goes away.",
+		"m_c flexes {PRONOUN/m_c/poss} paws, checking if {PRONOUN/m_c/poss} claws are still there. That was such a scary experience."
+	]
 }

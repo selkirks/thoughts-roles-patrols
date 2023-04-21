@@ -398,7 +398,15 @@
             {
                 "name": "deaf",
                 "chance": 80
-            }
+            },
+			{
+				"name": "nonverbal",
+				"chance": 20
+			},
+			{
+				"name": "ear buzzing",
+				"chance": 15
+			}
         ],
         "herbs": []
     },
@@ -418,6 +426,10 @@
         "illness_infectiousness": [
         ],
         "risks": [
+			{
+				"name": "nonverbal",
+				"chance": 20
+			}	
         ],
         "herbs": []
 
@@ -469,6 +481,14 @@
             {
                 "name": "seizure",
                 "chance": 10
+            },
+            {
+                "name": "absence",
+                "chance": 10
+            },			
+            {
+                "name": "spasms",
+                "chance": 10
             }
         ],
         "herbs": [
@@ -495,7 +515,15 @@
             {
                 "name": "running nose",
                 "chance": 20
-            }
+            },
+			{
+				"name": "rash",
+				"chance": 45
+			},
+			{
+				"name": "ear buzzing",
+				"chance": 20
+			}
         ],
         "herbs": []
     },
@@ -572,7 +600,11 @@
             {
                 "name": "grief stricken",
                 "chance": 50
-            }
+            },
+			{
+				"name": "heavy soul",
+				"chance": 120
+			}
         ],
         "herbs": [
             "thyme",
@@ -720,6 +752,10 @@
         ],
         "risks": [
             {
+                "name": "lasting grief",
+                "chance": 50
+            },			
+			{
                 "name": "grief stricken",
                 "chance": 40
             },
@@ -970,5 +1006,39 @@
             "chamomile",
             "poppy"
 		]
-    }	
+    },
+    "declawed": {
+        "severity": "major",
+        "congenital": "never",
+        "moons_until": 0,
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+            {
+                "name": "an infected wound",
+                "chance": 70
+            },
+            {
+                "name": "sore",
+                "chance": 10
+            },
+			{
+				"name": "joint pain",
+				"chance": 10
+			}
+        ],
+        "herbs": [
+            "juniper",
+            "ragwort"
+        ]
+    }
 }

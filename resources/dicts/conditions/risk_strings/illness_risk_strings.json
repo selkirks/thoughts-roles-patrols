@@ -53,7 +53,11 @@
             "Embarrassed, m_c reports to r_c that {PRONOUN/m_c/poss} stomachache is now having consequences at the other end of {PRONOUN/m_c/poss} digestive system. r_c, as non-squeamish as all medicine cats, tells m_c that it's now very important {PRONOUN/m_c/subject} {VERB/m_c/keep/keeps} drinking water, as the diarrhea will make {PRONOUN/m_c/object} lose it quickly.",
             "m_c is now spending more time at the dirtplace than in camp, as {PRONOUN/m_c/poss} stomachache has progressed to diarrhea."
 
-        ]
+        ],
+		"constipation": [
+			"With some worry m_c goes to r_c to embarrassingly talk about how {PRONOUN/m_c/subject} {VERB/m_c/haven't/hasn't} been able to properly go to the dirtplace. r_c patiently encourages {PRONOUN/m_c/object} to have more water and {PRONOUN/m_c/poss} herbs to keep up energy.",
+			"It would seem the bloat from m_c's stomache has made it more difficult for {PRONOUN/m_c/object} to properly go, {PRONOUN/m_c/poss} clanmates worry seeing them straining for hours at the dirtplace stuck."
+    	]
     },
     "fleas": {
         "torn pelt": [
@@ -64,6 +68,29 @@
             "Raw hairless patches are forming on m_c's pelt as {PRONOUN/m_c/subject} {VERB/m_c/scratch/scraches} and {VERB/m_c/scratch/scratches} at {PRONOUN/m_c/poss} fleas."
         ]
     },
+    "seizure": {
+		"bruises": [
+			"r_c gently tends to m_c once the shaking has stopped. Asking them where it hurts and fluffing up the nest to try and soothe the new bruises.",
+			"m_c pants, gingerly wincing as {PRONOUN/m_c/subject} {VERB/m_c/shift/shifts} in {PRONOUN/m_c/poss} nest.",
+			"Even with the softest nest {PRONOUN/m_c/subject} could find, m_c still finds that {PRONOUN/m_c/subject} {VERB/m_c/hurt/hurts} beneath their fur."
+		],
+		"sore": [
+			"After ensuring that m_c is alright and secure, r_c gently massages the aches out of {PRONOUN/m_c/poss} body.",
+			"m_c whines, it's not enough just that {PRONOUN/m_c/subject} {VERB/m_c/are/is} still slightly shaking from residules, now all {PRONOUN/m_c/poss} muscles ache too.",
+			"If m_c close {PRONOUN/m_c/poss} eyes the pain isn't quite so bad, just a dull throb really. But it doesn't easily let them rest after {PRONOUN/m_c/poss} seizure."
+		]
+	},
+	"spasms": {
+		"bruises": [
+			"Once m_c's limb stops spasming r_c carefully comes and checks {PRONOUN/m_c/object} over. It would seem {PRONOUN/m_c/subject} {VERB/m_c/have/has} a few new bruises.",
+			"m_c sighs once {PRONOUN/m_c/poss} limb returns to {PRONOUN/m_c/poss} control, stretching it out and wincing when it feels tender."
+		],
+		"sore": [
+			"m_c complains to r_c that after all the spasming {PRONOUN/m_c/poss} limb feels tender and sore.",
+			"m_c winces, awkwardly trying to massage {PRONOUN/m_c/poss} limb to soothe the aching muscles.",
+			"Relaxing in {PRONOUN/m_c/poss} nest it's all m_c can do to brace against the pulse of pain from where {PRONOUN/m_c/subject} knocked {PRONOUN/m_c/poss} limbs too hard."
+		]
+	},
     "grief stricken": {
         "lasting grief": [
             "m_c gazes blankly at the wall of the medicine den, not acknowledging r_c beside {PRONOUN/m_c/object}. r_c sighs and sits beside {PRONOUN/m_c/object}, hoping that {PRONOUN/r_c/poss} presence can provide some comfort.",
@@ -152,7 +179,15 @@
 			"r_c understandingly helps m_c to soothe {PRONOUN/m_c/poss} bruises.",
 			"Some of m_c's compulsions included knocking {PRONOUN/m_c/self} and it's left {PRONOUN/m_c/object} with a couple of bruises."
 		]
-	}
+	},
+	"turmoiled litter": {
+		"world tired": [
+			"m_c comes to r_c with ears and tail low. {PRONOUN/m_c/subject/CAP} {VERB/m_c/admit/admits} that {PRONOUN/m_c/subject} {VERB/m_c/are/is} struggling and are a bit scared about what {PRONOUN/m_c/subject} might do if left alone.",
+			"m_c's heart aches watching {PRONOUN/m_c/poss} kittens, watching the world in general.",
+			"These emotions are like a blanket of snow covering m_c and leaving {PRONOUN/m_c/object} shivering and wondering when the world will warm up once more.",
+			"m_c blankly stares at {PRONOUN/m_c/poss} kittens and clanmates feeling so very, very exhausted and worn."
+		]
+	},
 	"sleeplessness": {
 		"ongoing sleeplessness": [
 			"r_c sits with m_c long into the night, just letting {PRONOUN/m_c/object} lean against {PRONOUN/r_c/object} tired and exhausted. m_c just wonders when, if ever sleep will come again.",

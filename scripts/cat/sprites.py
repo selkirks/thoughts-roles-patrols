@@ -127,6 +127,10 @@ class Sprites():
                 ["TAILSCAR", "SNOUT", "CHEEK", "SIDE", "THROAT", "TAILBASE", "BELLY", "TOETRAP", "SNAKE",
                  "LEGBITE", "NECKBITE", "FACE"]):
             sprites.make_group('scars', (a, 2), f'scars{i}')
+        #disability mod related
+        for a, i in enumerate(
+                ["RASH", "DECLAWED"]):
+            sprites.make_group('disabilityscars', (a, 2), f'scars{i}')
         # missing parts
         for a, i in enumerate(
                 ["LEFTEAR", "RIGHTEAR", "NOTAIL", "NOLEFTEAR", "NORIGHTEAR", "NOEAR", "HALFTAIL", "NOPAW"]):

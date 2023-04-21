@@ -300,13 +300,14 @@ class Condition_Events():
             "LEFTBLIND": ["one bad eye", "failing eyesight"],
             "RIGHTBLIND": ["one bad eye", "failing eyesight"],
             "BOTHBLIND": ["blind"],
-            "RATBITE": ["weak leg"]
+            "RATBITE": ["weak leg"],
+            "DECLAWED": ["declawed"]
         }
 
         scarless_conditions = [
             "weak leg", "paralyzed", "raspy lungs", "wasting disease", "blind", "failing eyesight", "one bad eye",
             "partial hearing loss", "deaf", "constant joint pain", "constantly dizzy", "recurring shock",
-            "lasting grief", "adhd", "depression", "autism", "ocd", "antisocial", "anxiety"
+            "lasting grief", "adhd", "heavy soul", "starwalker", "ocd", "antisocial", "anxiety", "fibro"
         ]
 
         got_condition = False
@@ -361,8 +362,8 @@ class Condition_Events():
             "heat exhaustion": "heat stroke",
             "stomachache": "diarrhea",
             "grief stricken": "lasting grief",
-            "grief stricken": "depression",
-            "lasting grief": "depression",
+            "grief stricken": "heavy soul",
+            "lasting grief": "heavy soul"
         }
         # ---------------------------------------------------------------------------- #
         #                         handle currently sick cats                           #
@@ -454,6 +455,7 @@ class Condition_Events():
         injury_progression = {
             "poisoned": "redcough",
             "shock": "lingering shock"
+            "wretched claws": "declawed"
         }
 
         # need to hold this number so that we can check if the leader has died
@@ -579,7 +581,7 @@ class Condition_Events():
             "one bad eye": "failing eyesight",
             "failing eyesight": "blind",
             "partial hearing loss": "deaf",
-            "lasting grief": "depression"
+            "lasting grief": "heavy soul"
         }
 
         conditions = deepcopy(cat.permanent_condition)

@@ -1389,6 +1389,63 @@
             "juniper"
         ]
     },
+    "rash":{
+        "duration": 3,
+        "severity": "minor",
+        "medicine_duration": 1,
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "illness_infectiousness": [],
+        "risks": [
+            {
+                "name": "torn pelt",
+                "chance": 40
+            }
+        ],
+        "also_got": [],
+        "cause_permanent": [],
+        "herbs": [
+            "poppy",
+			"comfrey",
+			"elder_leaves"
+        ]
+    },		
+    "wrenched claws":{
+        "duration": 2,
+        "severity": "major",
+        "medicine_duration": 1,
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "illness_infectiousness": [],
+        "risks": [],
+        "also_got": [
+            "bruises",
+            "sore",
+            "joint pain"
+        ],
+        "cause_permanent": [
+			"declawed"	
+        ],
+        "herbs": [
+            "juniper",
+            "ragwort",
+            "daisy"
+        ]
+    },		
     "pregnant": {
         "duration": 2,
         "severity": "major",

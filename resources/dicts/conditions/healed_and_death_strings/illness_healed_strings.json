@@ -79,7 +79,7 @@
     ],
 	"malnourished": ["WARNING: this string should never appear, nutrition are handled only in freshkill events."],
 	"starving": ["WARNING: this string should never appear, nutrition are handled only in freshkill events."],
-    "seasonal depression": [
+    "seasonal lethargy": [
         "m_c knows that they're better then their mind, and with the change of season comes a new conviction to keep surviving.",
         "m_c's recent bout of fatigue seems to have ended",
         "As the weather warms, m_c finally feels able to blink the recent fatigue away.",
@@ -95,6 +95,13 @@
 		"m_c feels {PRONOUN/m_c/poss} tail swish with rekindled hope and trust in {PRONOUN/m_c/poss} own paws.",
 		"m_c is able to raise {PRONOUN/m_c/poss} sun and face the dawn with renewed energy.",
 		"They might always be a bit tired and wrung out but m_c finds that it's the small things that make the days brighter."
+	],
+	"world tired": [
+		"While {PRONOUN/m_c/subject} {VERB/m_c/are/is} still not back to normal m_c is able to feel much more together.",
+		"m_c thanks Starclan for the life they've been given and the chances they have to make it better.",
+		"m_c has gotten over {PRONOUN/m_c/poss} world tiredness.",
+		"After some long talks with {PRONOUN/m_c/poss} clanmates m_c has been reassured that they are loved and cared for.",
+		"m_c has found a hobby and something to remind {PRONOUN/m_c/object} that the world isn't all bad things."
 	],
 	"nonverbal": [
 		"While cats are surprised to see m_c speaking again it is welcomed easily.",

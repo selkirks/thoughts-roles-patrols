@@ -622,5 +622,85 @@
        "cat_skill": null,
        "other_cat_trait": null,
        "other_cat_skill": null
-    }
+    },     
+    {
+        "injury": "rash",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+			"scar",
+			"RASH"
+        ],
+        "event_text": "m_c was out on a walk alone when {PRONOUN/m_c/subject} heard a dog approaching! {PRONOUN/m_c/subject/CAP} crawled into a nearby bush to hide only to discover to {PRONOUN/m_c/poss} dismay it was poison ivy.",
+        "cat_trait": ["nervous", "wise", "insecure", "careful", "calm", "sneaky", "strange"],
+        "cat_skill": ["smart", "very smart", "extremely smart"],
+        "history_text": {
+            "scar": "m_c got a scar from a poison-ivy rash.",
+            "reg_death": "m_c died from exposure to poison ivy."
+        },
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "injury": "wrenched claws",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "scar",
+            "DECLAWED"
+        ],
+        "event_text": "m_c was captured by twolegs, but managed to escape and return home",
+        "history_text": {
+            "scar": "m_c was scarred when they were taken by Twolegs.",
+            "reg_death": "m_c died after they were taken away by Twolegs."
+        },
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "injury": "wrenched claws",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "scar",
+            "DECLAWED"
+        ],
+        "event_text": "m_c got curious while out wandering the territory and got captured briefly by twolegs.",
+        "history_text": {
+            "scar": "m_c was scarred when they were taken by Twolegs.",
+            "reg_death": "m_c died after they were taken away by Twolegs."
+        },
+        "cat_trait": ["strange"],
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "injury": "wrenched claws",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "scar",
+            "DECLAWED"
+        ],
+        "event_text": "Thinking that {PRONOUN/m_c/subject} could easily fight a twoleg m_c went out into the territory hissing and spitting only to come back subdued.",
+        "history_text": {
+            "scar": "m_c was scarred when they were taken by Twolegs.",
+            "reg_death": "m_c died after they were taken away by Twolegs."
+        },
+        "cat_trait": ["vengeful", "ambitious", "bloodthirsty"],
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
 ]
