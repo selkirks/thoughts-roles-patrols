@@ -1,6 +1,7 @@
 import random
 
 from scripts.cat.cats import Cat
+from scripts.cat.history import History
 from scripts.conditions import get_amount_cat_for_one_medic, medical_cats_condition_fulfilled
 from scripts.game_structure.game_essentials import game
 
@@ -13,16 +14,14 @@ class Scar_Events():
     """All events with a connection to conditions."""
 
     def __init__(self) -> None:
+        self.history = History()
         self.event_sums = 0
         self.had_one_event = False
-        pass
 
     def handle_scars(self, cat, injury_name):
         """ 
         This function handles the scars
         """
-        
-        scar_text = cat.possible_scar
 
         chance = int(random.random() * 13 - cat.injuries[injury_name]["moons_with"])
         if chance <= 0:
@@ -30,10 +29,15 @@ class Scar_Events():
         amount_per_med = get_amount_cat_for_one_medic(game.clan)
         if medical_cats_condition_fulfilled(game.cat_class.all_cats.values(), amount_per_med):
             chance += 3
+        if injury_name == "wrenched claws":
+            chance = random.randint(0, 15)
         if len(cat.scars) < 4 and chance <= 6:
 
             # move potential scar text into displayed scar text
-            cat.scar_event.append(scar_text)
+            self.history.add_death_or_scars(cat,
+                                            condition=injury_name,
+                                            scar=True
+                                            )
 
             specialty = None  # Scar to be set
 
@@ -79,6 +83,12 @@ class Scar_Events():
             quill_scars = [
                 "QUILLCHUNK", "QUILLSCRATCH"
             ]
+            rash_scars = [
+                "RASH"
+            ]
+            declawed_scars = [
+                "DECLAWED"
+            ]
 
             scar_pool = []
 
@@ -108,6 +118,10 @@ class Scar_Events():
                 scar_pool = eye_scars
             elif injury_name == "quilled by porcupine":
                 scar_pool = quill_scars
+            elif injury_name == "rash":
+                scar_pool = rash_scars
+            elif injury_name == "wrenched claws":
+                scar_pool = declaw_scars
 
             for scar in cat.scars:
                 if scar:
@@ -190,12 +204,15 @@ class Scar_Events():
                     event_string = f"{cat.name}'s {injury_name} has healed so well that you can't even tell it happened."
                 scar_given = None
         else:
+            self.history.remove_possible_death_or_scars(cat, injury_name)
             if injury_name == "poisoned":
                 event_string = f"{cat.name} has recovered fully from the poison."
+            if injury_name == "wrenched claws":
+                event_string = f"That was a close call but luckily {cat.name}'s wrenched claws are back to full working order."
             else:
                 event_string = f"{cat.name}'s {injury_name} has healed so well that you can't even tell it happened."
+
             scar_given = None
 
-        cat.possible_scar = None  # reset potential scar text
         return event_string, scar_given
 
