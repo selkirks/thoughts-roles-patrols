@@ -210,7 +210,7 @@ sprites = Sprites(spriteSize)
 
 for x in [
     'lineart', 'singlecolours', 'speckledcolours', 'tabbycolours',
-    'whitepatches', 'eyes', 'eyes2', 'skin', 'scars', 'missingscars',
+    'whitepatches', 'eyes', 'eyes2', 'skin', 'scars', 'disabilityscars', 'missingscars',
     'collars', 'bellcollars', 'bowcollars', 'nyloncollars',
     'bengalcolours', 'marbledcolours', 'rosettecolours', 'smokecolours', 'tickedcolours', 
     'mackerelcolours', 'classiccolours', 'sokokecolours', 'agouticolours', 'singlestripecolours', 
