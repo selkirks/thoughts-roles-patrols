@@ -183,5 +183,40 @@
         "random_living_status": [
             "living"
         ]
-	}	
+	},
+	{
+        "id": "ocd_medicine_cat_apprentice",
+        "thoughts": [
+            "Is intently focusing on the herbs they're sorting.",
+			"Forgot to eat today and is stressing about it to their denmates",
+			"Is recounting the herbs and making sure they're even",
+			"Is sorting the herbs into piles based on size",
+			"Is double checking that none of the herbs have gone bad",
+			"Talking to r_c about an issue they came into the den about last week",
+			"Was seen chucking out day old herbs",
+			"Is crying to r_c because they don't think they're good enough to be a medicine cat",
+			"Cries while sorting the moss for the nests",
+			"Cries because the cobwebs aren't even around the den"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "ocd"
+            ]
+        },
+        "random_status_constraint": [
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+	}
+	
 ]
