@@ -1048,7 +1048,7 @@
     ]
 },
 {
-    "id": "twise_warrior_to_living_apprentices",
+    "id": "wise_warrior_to_living_apprentices",
     "thoughts": [
         "Is telling stories to a very interested bunch of apprentices",
         "Instills their wisdom into some rowdy apprentices" 
@@ -1062,5 +1062,32 @@
     "random_living_status": [
         "living"
     ]
+},
+{
+    "id": "declawed_warrior",
+    "thoughts": [
+        "Flexes their sore paws in frustration",
+		"Refuses to give up on their dreams",
+		"Is determined to show that they can still be a real warrior",
+		"Put in extra effort this moon",
+		"Still has their teeth to bite any and all challengers",
+		"Is still just as capable as any other cat",
+		"Doesn't accept been looked down on from anyone",
+		"Volunteers for the dawn patrol",
+		"Is having a bit of a hard day",
+		"Is practicing battle moves that don't require claws",
+		"Misses their claws deeply",
+		"Feels insecure after meeting a cat from another clan at the border",
+		"Goes on a solo hunt to keep busy"
+    ],
+	"main_status_constraint": [
+		"apprentice",
+		"warrior"
+	],
+        "perm_conditions": {
+            "m_c": [
+                "declawed"
+            ]
+        }
 }
 ]

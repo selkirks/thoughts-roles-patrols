@@ -1918,6 +1918,132 @@
         ]
     },
     {
+        "id": "grieving_gen",
+        "thoughts": [
+            "Feels like {PRONOUN/m_c/subject} {VERB/m_c/want/wants} to be alone for today",
+			"Is missing r_c like {PRONOUN/r_c/subject} vanished yesterday",
+			"Wonders if r_c is alright wherever {PRONOUN/r_c/subject} are",
+			"Thought they saw r_c the other day... but it was only a trick of light",
+			"Wonders if this grief will ever leave {PRONOUN/m_c/object}",
+			"Curls up in the den and refuses to leave",
+			"Wanders around the camp listlessly looking for a cat who's not there",
+			"Is feeling sad today",
+			"Looks up at the stars and wonders if r_c is looking back",
+			"Wonders if r_c found {PRONOUN/r_c/poss} way safely to StarClan or not"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "lasting grief"
+            ]
+        },
+        "relationship_constraint": [
+            "parent/child",
+			"siblings",
+			"mentor/app",
+			"app/mentor",
+			"mates",
+			"littermates"
+        ],		
+        "random_living_status": [
+            "starclan",
+			"darkforest",
+			"unknownresidence"
+        ]
+    },		
+    {
+        "id": "anxiety_to_alive_gen",
+        "thoughts": [
+            "Is freaking out about {PRONOUN/m_c/poss} own shadow",
+			"Refuses to leave the den today",
+			"Is overgrooming",
+			"Sits and worries with {PRONOUN/m_c/poss} paws",
+			"Goes to the medicine cat about {PRONOUN/m_c/poss} anxieties",
+			"Is talking with r_c with {PRONOUN/m_c/poss} tail twitching",
+			"Has too many thoughts and is breathing harshly",
+			"Is struggling to deal with {PRONOUN/m_c/poss} emotions",
+			"Is struggling to keep {PRONOUN/m_c/self} steady",
+			"Feels guilty about eating the mouse on the prey pile",
+			"Regrets eating today",
+			"Regrets not eating today",
+			"Wonders if {PRONOUN/m_c/subject} should leave the clan behind",
+			"Feels like a burden",
+			"Feels like {PRONOUN/m_c/subject} {VERB/m_c/are/is} a fake",
+			"Feels like everyone is looking at {PRONOUN/m_c/object} and judging",
+			"Worries that {PRONOUN/m_c/subject} {VERB/m_c/are/is} not worthy of been a member of c_n",
+			"Is struggling to breathe"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "anxiety"
+            ]
+        },
+        "random_status_constraint": [
+            "kitten",
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "heavy_soul_to_alive_gen",
+        "thoughts": [
+            "Feels very low today",
+			"Is too tired to leave the den",
+			"Mumbles something to r_c about been tired",
+			"Is having a hard moon",
+			"Looks up to the stars and wonders who's watching back",
+			"Feels like {PRONOUN/m_c/subject} {VERB/m_c/are/is} drowning in {PRONOUN/m_c/poss} own fur",
+			"Doesn't know if {PRONOUN/m_c/subject} {VERB/m_c/know/knows} how to feel happy anymore",
+			"Is worried about what {PRONOUN/m_c/subject} might do if left alone",
+			"Is talking about r_c about how heavy the world is",
+			"Is worried about r_c",
+			"Is worried {PRONOUN/m_c/subject} will never feel happy again",
+			"Wonders why the world feels full of fog",
+			"Forewent eating today",
+			"Curls up in the den and refuses to leave",
+			"Pretends to be happy in front of the kittens",
+			"Reassures r_c that it's alright to feel sad sometimes",
+			"Reassures r_c that {PRONOUN/m_c/subject} {VERB/m_c/are/is} okay",
+			"Is appreciative that r_c chose to help {PRONOUN/m_c/object} today",
+			"Feels tired",
+			"Feels sad",
+			"Doesn't want to eat because {PRONOUN/m_c/subject} {VERB/m_c/are/is} too tired",
+			"Doesn't feel like it's worth leaving camp today",
+			"Had a rare moment of happiness while sleeping in a sunbeam",
+			"Is talking to r_c about StarClan",
+			"Is wondering what is the true meaning of life"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "heavy soul"
+            ]
+        },
+        "random_status_constraint": [
+            "kitten",
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
         "id": "declawed_to_alive_gen",
         "thoughts": [
             "Is crying at the pain in {PRONOUN/m_c/poss} paws",

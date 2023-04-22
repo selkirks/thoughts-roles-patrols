@@ -142,5 +142,46 @@
             "bloodthirsty",
             "cold"
         ]
-    }
+    },
+	{
+        "id": "starwalker_medicine_cat_apprentice",
+        "thoughts": [
+            "Is intently focusing on the herbs they're sorting.",
+			"Forgot to eat today and is wondering if anyone will notice if they take prey in the night",
+			"Is doing circles around the medicine cat den",
+			"Chattering to r_c all about the herbs that they're learning.",
+			"Is intently watching as spiders spin cobwebs in the corner of the medicine den",
+			"Swishing their tail happily while they sort herbs",
+			"Volunteers to collect extra herbs for their mentor.",
+			"Is dilligently checking up on their sick clanmates.",
+			"Chatters to nobody about their favourite herbs.",
+			"Wonders about the first medicine cats.",
+			"Has heard that rats know how to cure Carrionplace Disease",
+			"Is worrying about r_c",
+			"Is worrying that they have forgotten something while sorting the herbs",
+			"Keeps rolling in the catmint to try and calm down",
+			"Hopes that their medicine cat name will end in -wing",
+			"Didn't hear r_c calling their name and was surprised when they looked up from the herbs"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "starwalker"
+            ],
+		},
+        "random_status_constraint": [
+            "kitten",
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+	}	
 ]
