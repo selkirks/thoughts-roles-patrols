@@ -103,7 +103,7 @@
 		"m_c is so relieved to be able to trust in {PRONOUN/m_c/poss} clan and {PRONOUN/m_c/object}selves again."
 	],
 	"absence": [
-		"m_c has come back to {PRONOUN/m_c/object}selves after been absent.",
+		"m_c has come back to {PRONOUN/m_c/self} after been absent.",
 		"Between blinks m_c stretches out, continuing on {PRONOUN/m_c/poss} day as normal."
 	],
 	"spasms": [
@@ -111,7 +111,7 @@
 		"m_c is able to get all of {PRONOUN/m_c/poss} paws underneath {PRONOUN/m_c/object} without issues."
 	],
 	"seasonal lethargy": [
-		"m_c knows that they're better then their mind, and with the change of season comes a new conviction to keep surviving.",
+		"m_c knows that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} better then {PRONOUN/m_c/poss} mind, and with the change of season comes a new conviction to keep surviving.",
 		"m_c's recent bout of fatigue seems to have ended",
 		"As the weather warms, m_c finally feels able to blink the recent fatigue away.",
 		"m_c wakes to the new dawn with a lightness in {PRONOUN/m_c/poss} chest and paws that has long been missed.",
@@ -185,7 +185,7 @@
 		"m_c's been able to reorganize {PRONOUN/m_c/object}selves and {PRONOUN/m_c/poss} compulsions."
 	],
 	"turmoiled litter": [
-		"With much relief m_c is feeling a bit more like {PRONOUN/m_c/object}self.",
+		"With much relief m_c is feeling a bit more like {PRONOUN/m_c/self}.",
 		"m_c could almost cry as a weight they weren't fully conscious of seems to lift.",
 		"m_c purrs as {PRONOUN/m_c/poss} kittens roll around {PRONOUN/m_c/object}, finally feeling like they can move on.",
 		"Sometimes a bond isn't instant and m_c finds that's alright."
