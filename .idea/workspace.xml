@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ce42a407-0f2f-4ee3-bcef-95649ffaedf8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/clangen.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/clangen.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/dicts/lead_ceremony_df.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/dicts/lead_ceremony_df.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/dicts/lead_ceremony_sc.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/dicts/lead_ceremony_sc.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/cat/cats.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/cat/cats.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/dicts/conditions/permanent_conditions.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/dicts/conditions/permanent_conditions.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,13 +22,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/tkdbl/Documents/GitHub/clangen&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "D:/WC Clan Gen/OGUpdate/DISABILITIES/clangen-disabilities-and-disorders-mod"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\tkdbl\Documents\GitHub\clangen\resources" />
@@ -81,15 +78,16 @@
       <method v="2" />
     </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="clangen" />
+      <module name="clangen-disabilities-and-disorders-mod" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="D:\WC Clan Gen\OGUpdate\DISABILITIES\clangen-disabilities-and-disorders-mod\venv\Scripts\python.exe" />
+      <option name="SDK_NAME" value="Python 3.10 (clangen-disabilities-and-disorders-mod)" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
@@ -101,6 +99,11 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Python.count_patrols" />
+      <item itemvalue="Python.count_patrols (1)" />
+      <item itemvalue="Python.main" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
