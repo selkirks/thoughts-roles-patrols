@@ -454,7 +454,7 @@ class Condition_Events():
 
         injury_progression = {
             "poisoned": "redcough",
-            "shock": "lingering shock"
+            "shock": "lingering shock",
             "wretched claws": "declawed"
         }
 
