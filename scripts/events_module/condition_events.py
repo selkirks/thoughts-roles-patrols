@@ -70,6 +70,14 @@ class Condition_Events():
                 # create event text
                 if chosen_illness in ["running nose", "stomachache", "seasonal depression"]:
                     event_string = f"{cat.name} has gotten a {chosen_illness}."
+                elif chosen_illness in ['anxiety attack']:
+                    event_string = f"{cat.name} has gotten an {chosen_illness}."
+                elif chosen_illness in ['zoomies']:
+                    event_string = f"{cat.name} has gotten the {chosen_illness}."
+                elif event_string in ['sleeplessness']:
+                    chosen_illness = f"{cat.name} has been unable to get any sleep."
+                elif chosen_illness in ['burn out']:
+                    event_string = f"{cat.name} has gotten burnt out."
                 else:
                     event_string = f"{cat.name} has gotten {chosen_illness}."
 
