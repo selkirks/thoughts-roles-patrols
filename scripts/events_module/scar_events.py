@@ -121,7 +121,7 @@ class Scar_Events():
             elif injury_name == "rash":
                 scar_pool = rash_scars
             elif injury_name == "wrenched claws":
-                scar_pool = declaw_scars
+                scar_pool = declawed_scars
 
             for scar in cat.scars:
                 if scar:
