@@ -166,7 +166,7 @@
         "perm_conditions": {
             "m_c": [
                 "starwalker"
-            ],
+            ]
 		},
         "random_status_constraint": [
             "kitten",
