@@ -79,6 +79,33 @@
     ],
 	"malnourished": ["WARNING: this string should never appear, nutrition are handled only in freshkill events."],
 	"starving": ["WARNING: this string should never appear, nutrition are handled only in freshkill events."],
+    "constipation": [
+		"After longer than m_c would like to admit, {PRONOUN/m_c/poss} constipation has passed.",
+		"With relief m_c finds that {PRONOUN/m_c/poss} trips to the dirtplace will once more end in a timely manner."
+	],
+	"anxiety attack": [
+		"After a short while, m_c has calmed back down from {PRONOUN/m_c/poss} anxiety, no longer worrying about a threat that's not there.",
+		"m_c has spent the time talking with {PRONOUN/m_c/poss} clanmates and has realised that there's nothing to worry about.",
+		"Despite some lingering anxiety, m_c has calmed down and is able to feel secure in the knowledge that the clan is secure.",
+		"m_c feels much better after some rest and time spent watching the clan thrive."
+	],
+	"panic attack": [
+		"Despite still struggling a little bit m_c has mostly calmed down from {PRONOUN/m_c/poss} panic and feels able to take up {PRONOUN/m_c/poss} duties once more.",
+		"While {PRONOUN/m_c/poss} chest still races a bit as they leave the den, m_c is able to keep a clear head and rejoin {PRONOUN/m_c/poss} clanmates.",
+		"With the help of {PRONOUN/m_c/poss} clanmates m_c has steadied {PRONOUN/m_c/poss} breathing once more and feels ready to face the challenges of the day."
+	],
+    "paranoia": [
+		"m_c's taken a while, but after so long stewing in {PRONOUN/m_c/poss} own head it's a relief to be able to greet {PRONOUN/m_c/poss} clanmates without any sort of suspcions of danger anymore.",
+		"m_c is so relieved to be able to trust in {PRONOUN/m_c/poss} clan and {PRONOUN/m_c/object}selves again."
+	],
+	"absence": [
+        "m_c has come back to {PRONOUN/m_c/object}selves after been absent.",
+        "Between blinks m_c stretches out, continuing on {PRONOUN/m_c/poss} day as normal."
+    ],	
+    "spasms": [
+        "Despite some lingering twitching m_c's recovered from {PRONOUN/m_c/poss} spasm.",
+        "m_c is able to get all of {PRONOUN/m_c/poss} paws underneath {PRONOUN/m_c/object} without issues."
+    ],
     "seasonal lethargy": [
         "m_c knows that they're better then their mind, and with the change of season comes a new conviction to keep surviving.",
         "m_c's recent bout of fatigue seems to have ended",
