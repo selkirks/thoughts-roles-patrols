@@ -191,8 +191,8 @@
 		"Once more m_c is able to sleep. At least for now."
 	],
 	"burn out": [
-		"m_c is back on {PRONOUN/m_c/poss} paws after burn out.",
-		"m_c is no longer tired and exhausted from burn out."
+		"m_c is back on {PRONOUN/m_c/poss} paws after bring burnt out.",
+		"m_c is no longer tired and exhausted from being burnt out."
 	],
 	"ear buzzing": [
 		"There is so much relief from m_c that {PRONOUN/m_c/poss} ears are no longer buzzing with flies.",
