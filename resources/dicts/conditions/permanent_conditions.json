@@ -1061,6 +1061,10 @@
             {
                 "name": "lightning roots",
                 "chance": 10
+            },
+            {
+                "name": "black and white cloud",
+                "chance": 10
             }
 
         ],

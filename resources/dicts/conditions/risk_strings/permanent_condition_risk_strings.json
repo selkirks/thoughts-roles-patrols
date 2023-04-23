@@ -547,6 +547,11 @@
 			"r_c notices that m_c is becoming more dependent and clingy with one of {PRONOUN/m_c/poss} clanmates, and invites {PRONOUN/m_c/object} to talk about it",
 			"m_c can't stop thinking about one of {PRONOUN/m_c/poss} clanmates and cannot bear the thought of not being near them to the point it is disrupting {PRONOUN/m_c/poss} duties.",
 			"no one understands m_c apart from that one special cat in {PRONOUN/m_c/poss} life, atleast that is what {PRONOUN/m_c/poss} thunderous spirit is making {PRONOUN/m_c/object} think. {PRONOUN/m_c/subject/CAP} {VERB/m_c/refuse/refuses} to be apart from them and will lash out at any clanmate that tries to seperate them."
+		],
+		"black and white cloud": [
+			"r_c notices that m_c cannot think rationally, and is lashing out at every cat around {PRONOUN/m_c/object}.",
+			"m_c thinks that no cat has any flaws and that everycat is perfect, and its affecting {PRONOUN/m_c/poss} relationships. A black and white cloud has covered {PRONOUN/m_c/poss} vision.",
+			"m_c goes around camp saying that {PRONOUN/m_c/subject} hate everything and everyone. {PRONOUN/m_c/poss} clanmates think that a black and white cloud has covered {PRONOUN/m_c/poss} vision."
 		]
 	}
 }
