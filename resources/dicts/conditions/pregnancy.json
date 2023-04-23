@@ -89,6 +89,15 @@
       "This will all be worth it, m_c groans, promising {PRONOUN/m_c/self} that as the pains of afterbirth rock {PRONOUN/m_c/poss} exhausted and bleeding body.",
       "m_c chokes down the herbs given to {PRONOUN/m_c/object}, retching at the taste but knowing {PRONOUN/m_c/subject} {VERB/m_c/need/need} them to stop the blood loss. "
     ],
+	"turmoiled_birth": [
+	  "After all the weeks of waiting, m_c's {insert} is finally here! So why is it that {PRONOUN/m_c/subject} can't truly feel happy about it.",
+	  "m_c lies panting, looking at {PRONOUN/m_c/poss} {insert}, something feels hollow and raw.",
+	  "Something must be wrong, after the birth m_c hasn barely looked at the {insert} {PRONOUN/m_c/subject} just had.",
+	  "After all the difficulty of the birth, cats are surprised when m_c refuses to accept that the {insert} {VERB/m_c/are/is} {PRONOUN/m_c/inposs}.",
+	  "m_c chokes denying, denying that the {insert} means anything.",
+	  "Despite all their purring and preening about the new {insert}, the clan can see that something about the whole event is bothering m_c.",
+	  "Something in m_c's proud expression and {PRONOUN/m_c/poss} purring seems fake."
+	],
 	"outside_alone": [
 		"Rumour's reaches the clan, that m_c gave birth to a {insert}."
 	],

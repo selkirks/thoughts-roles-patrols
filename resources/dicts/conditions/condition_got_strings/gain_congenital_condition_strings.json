@@ -81,12 +81,15 @@
         "Rather than go outside in the bright sunlight to play with {PRONOUN/m_c/poss} littermates, m_c prefers to huddle by {PRONOUN/m_c/self} in the dark and quiet of the medicine cat den, {PRONOUN/m_c/poss} head hurting too much to move."
     ],
     "starwalker": [
-       "m_c has been having issues socializing with their denmates, they find it uncomfortable and terrifying. r_c gently tells m_c that they don't need to do what they don't like. But, they suspect they have Autism.",
-       "m_c is just like any other kit, rolling around and batting at bugs they find. They're a bit louder, a bit more brash and doesn't seem to understand social cues. m_c might have Austim.",
-       "m_c doesn't seem to be a big fan of eye contact, their eyes often drift from their parents face and they don't take well to social queues.",
-       "m_c has always felt different from other cats. They dont know how to socialise and they are always told that they act weird. They find out that they are a Starwalker, and thats why they feel this way.",
-       "The feeling of certain things, like leaves touching their fur, or the noise of scratching, always seems much worse to m_c. They think they are just being dramatic until they discover that they are a Starwalker."
-
+	   "m_c has been having issues socializing with {PRONOUN/m_c/poss} denmates, {PRONOUN/m_c/subject} {VERB/m_c/find/finds} it uncomfortable and somewhat terrifying. r_c understanding talks with {PRONOUN/m_c/object} about it saying {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} have to force {PRONOUN/m_c/self} into it.",
+       "m_c is just like any other kit, rolling around and batting at bugs {PRONOUN/m_c/subject} {VERB/m_c/find/finds}. {PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} a bit louder, a bit more brash and doesn't seem to understand social cues. m_c might be a starwalker",
+       "m_c doesn't seem to be a big fan of eye contact, {PRONOUN/r_c/poss} eyes often drift from {PRONOUN/r_c/poss} parents face and {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} take well to social cues."	,
+       "m_c has always felt different from other cats. {PRONOUN/m_c/subject/CAP} {VERB/m_c/don't/doesn't} know how to socialise and are always told that {PRONOUN/m_c/subject} {VERB/m_c/act/acts} weird. {PRONOUN/m_c/subject/CAP} find out that {PRONOUN/m_c/poss} {VERB/m_c/are/is} a Starwalker, and that's why {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} this way.",
+       "The feeling of certain things, like leaves touching {PRONOUN/m_c/poss} fur, or the noise of scratching, always seems much worse to m_c. {PRONOUN/m_c/subject/CAP} {VERB/m_c/think/thinks} {PRONOUN/m_c/subject} {VERB/m_c/are/is} just being dramatic until they discover that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} a Starwalker.",
+	   "While the other kittens are rolling around m_c is more interested in talking with the clan's medicine cat and soaking up information about Starclan.",
+	   "m_c struggles to change {PRONOUN/r_c/poss} routine, preferring to do things one way alone.",
+	   "While the other kittens in the clan are out making multiple friends m_c prefers to stick with one or two particular cats and shies away from others.",
+	   "When it comes to trying out new games and nesting material m_c keeps making faces and looking very upset."
     ],
 	"anxiety": [
 		"r_c's growing very used to m_c coming into the medicine den with a twitching tail and pressed down ears. They sit together with r_c purring as {PRONOUN/r_c/subject} steadily {VERB/r_c/answer/answers} all the rapid-fire worried questions.",

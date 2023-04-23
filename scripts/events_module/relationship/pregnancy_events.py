@@ -311,6 +311,11 @@ class Pregnancy_Events():
             self.history.add_death_or_scars(cat, text=death_event, death=True)
         elif clan.game_mode != 'classic' and not cat.outside:  # if cat doesn't die, give recovering from birth
             cat.get_injured("recovering from birth", event_triggered=True)
+            turmoil = random.randint(1, 100)
+            if turmoil <= 20:
+                cat.get_ill("turmoiled litter", event_triggered=True)
+                possible_events = events["birth"]["turmoiled_birth"]
+                event_list.append(choice(possible_events))
             if 'blood loss' in cat.injuries:
                 if cat.status == 'leader':
                     death_event = (f" died after a harsh kitting.")
