@@ -2197,5 +2197,24 @@
             "random_living_status": [
                 "living"
             ]
+        },
+        {
+            "id": "strong_soul_to_alive_gen",
+            "thoughts": [
+                "Can't stop crying",
+                "Had a nightmare that r_c abbandoned {PRONOUN/m_c/object}",
+                "Doesn't want to be left alone"
+            ],
+            "perm_conditions": {
+                "m_c": [
+                    "strong soul"
+                ]
+            },
+            "random_status_constraint": [
+                "kitten"
+            ],
+            "random_living_status": [
+                "living"
+            ]
         }
 ]
