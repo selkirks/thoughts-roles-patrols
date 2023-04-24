@@ -99,10 +99,10 @@
 	  "Something in m_c's proud expression and {PRONOUN/m_c/poss} purring seems fake."
 	],
 	"outside_alone": [
-		"Rumour's reaches the clan, that m_c gave birth to a {insert}."
+		"Rumors reach the Clan that m_c gave birth to a {insert}."
 	],
 	"outside_in_clan":[
-		"r_c heard a rumour, that m_c had a litter.",
+		"r_c heard a rumor that m_c had a litter.",
 		"r_c thinks that m_c should have had {PRONOUN/m_c/poss} litter by now."
 	],
 	"outside_death": [
