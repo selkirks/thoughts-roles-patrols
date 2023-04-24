@@ -247,14 +247,6 @@
 			"m_c's head spins and {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} like every blink the world around {PRONOUN/m_c/object} speeds away. Leaving {PRONOUN/m_c/object} disoriented and lost.",
 			"Between one blink and the next m_c feels like {PRONOUN/m_c/poss} soul has jumped and the world is somewhat under water.",
 			"m_c's denmates carefully make sure that there's nothing too out of place for when {PRONOUN/m_c/poss} mind comes back to {PRONOUN/m_c/object}."
-		],
-		"world tired": [
-			"m_c curls up in the medicine den, softly admitting to r_c that {PRONOUN/m_c/subject} just {VERB/m_c/want/wants} it to stop.",
-			"The world keeps spinning and spinning and just feels too much for m_c",
-			"Sometimes m_c wishes that the world would slow down or even stop for a short while. Just a small break and moment of peace.",
-			"m_c lies in {PRONOUN/m_c/poss} nest so completely exhausted, {PRONOUN/m_c/subject} should go to the medicine den but don't know if {PRONOUN/m_c/subject} could bring themselves to raise.",
-			"The world is too much, too loud, too bright, it's all m_c can do to hold {PRONOUN/m_c/self} tight and avoid thinking that {PRONOUN/m_c/subject} {VERB/m_c/wish/wishes} it would go away.",
-			"m_c has been talking a lot more with {PRONOUN/m_c/poss} denmates about StarClan."
 		]
     },
 	"comet spirit": {
@@ -435,13 +427,6 @@
 			"While the rest of the clan settles down for the night m_c is getting up every few hours to check and make sure that things are still safe and fine.",
 			"m_c keeps waking up {PRONOUN/m_c/poss} denmates to get them to check just one more time if they're really sure the camp is secure.",
 			"{PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} not paranoid, m_c insists that it's just the proper level of caution as {PRONOUN/m_c/subject} {VERB/m_c/check/checks} for the third time that afternoon that the nursery is secure."
-		],
-		"world tired": [
-			"m_c wanders into the medicine den late at night to talk to r_c about how {PRONOUN/m_c/subject}{VERB/m_c/'ve/ has} been having scary thoughts about {PRONOUN/m_c/self} this moon.",
-			"The nights feel to drag on longer and longer, m_c twitching and unable to sleep as {PRONOUN/m_c/subject} {VERB/m_c/keep/keeps} irrationally wondering if {PRONOUN/m_c/subject}'ll even wake up in the morning.",
-			"m_c refuses to go out on patrols, scared that {PRONOUN/m_c/subject} might do something bad.",
-			"{PRONOUN/m_c/poss/CAP} denmates are struggling to reassure m_c that things will get better and {PRONOUN/m_c/subject} {VERB/m_c/are/is} not a bad cat.",
-			"m_c has been talking a lot more with {PRONOUN/m_c/poss} denmates about StarClan."
 		]
 	},
 	"constant roaming pain": {
@@ -516,12 +501,6 @@
 		"ear buzzing": [
 			"Due to m_c's lack of proper sleep it's no surprise to r_c when {PRONOUN/m_c/subject} {VERB/m_c/come/comes} in complaining of a buzzing in {PRONOUN/m_c/poss} ears that's not helping anything.",
 			"m_c grumbles about the ringing in {PRONOUN/m_c/poss} ears like the bell on a kittypet's collar."
-		],
-		"world tired": [
-			"r_c patiently sits with m_c as {PRONOUN/m_c/subject} {VERB/m_c/wonder/wonders} if {PRONOUN/m_c/subject} {VERB/m_c/could/can} ever fix {PRONOUN/m_c/poss} sleeplessness. It's made {PRONOUN/m_c/object} so worn out.",
-			"m_c's brain feels like it's in a permanent fog, {PRONOUN/m_c/subject} so desperately and dearly want to sleep and debate if it would be worth it if {PRONOUN/m_c/subject} could never wake up.",
-			"m_c wonders how many poppy seeds is too many.",
-			"m_c has been talking a lot more with {PRONOUN/m_c/poss} denmates about StarClan."			
 		]
 	},
 	"declawed": {

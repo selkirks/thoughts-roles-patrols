@@ -26,6 +26,21 @@
 
 
     "general": {
+
+        "allow shell farm": [
+            "Allow triggering topics (hover)",
+            "Triggering topics such as self harm and suicidal thoughts will be allowed.",
+            false
+        ],
+
+        "warriorified names": [
+            "Use warriors names for the new conditions",
+            "IE: use starwalker instead of autism",
+            true
+        ],
+
+
+        
         "dark mode": [
             "Dark Mode",
             "Camp backgrounds will match with the mode: nighttime for Dark mode and daytime for Light mode.",

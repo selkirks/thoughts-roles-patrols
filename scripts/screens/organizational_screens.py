@@ -50,6 +50,7 @@ class StartScreen(Screens):
     def __init__(self, name=None):
         super().__init__(name)
         self.warning_label = None
+        self.warning_hover = None
         self.bg = pygame.image.load("resources/images/menu.png").convert()
         self.bg = pygame.transform.scale(self.bg, (screen_x, screen_y))
         self.social_buttons = {}
@@ -133,6 +134,7 @@ class StartScreen(Screens):
         self.settings_button.kill()
         self.error_label.kill()
         self.warning_label.kill()
+        self.warning_hover.kill()
         self.update_button.kill()
         self.quit.kill()
         self.closebtn.kill()
@@ -277,10 +279,23 @@ class StartScreen(Screens):
                 ChangelogPopup(game.switches['last_screen'])
 
         self.warning_label = pygame_gui.elements.UITextBox(
-            "Warning: this game includes some mild descriptions of gore.",
+            "<b>Trigger Warning:</b> This mod contains triggering topics (hover)",
             scale(pygame.Rect((100, 1244), (1400, 60))),
             object_id="#default_dark",
             manager=MANAGER)
+        
+        self.warning_hover = UIImageButton(
+                    scale(pygame.Rect((100, 1244), (1400, 60))),
+                    "",
+                    object_id="#blank_button",
+                    manager=MANAGER,
+                    tool_tip_text="""<b>This mod contains:</b>
+Self Harm
+Suicidal thoughts
+
+These are on a setting that is off by default""".replace("\n", "<br>"),
+                    starting_height=2
+                )
 
         if game.clan is not None and game.switches['error_message'] == '':
             self.continue_button.enable()
