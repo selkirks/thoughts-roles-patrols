@@ -846,7 +846,7 @@
             },
 			{
 				"name": "turmoiled litter",
-				"chance": 20
+				"chance": 0
 			}
         ],
         "also_got": [
