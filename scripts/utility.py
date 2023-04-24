@@ -1488,6 +1488,30 @@ def get_text_box_theme(theme_name=""):
             return theme_name
 
 
+def get_condition_name(condition: str):
+    """
+    switches out condition names based on the setting
+    """
+
+    if game.settings['warriorified names']:
+        return condition
+    
+    swap_dict = {
+        "budding spirit": "Dissociative Identity Disorder",
+        "comet spirit": "ADHD",
+        "constant roaming pain": "Fibromyalgia",
+        "jellyfish joints": "Hypermobility",
+        "otherworldly mind": "Psychosis/Schizophrenia",
+        "shattered soul": "Other Specified Dissociative Disorder",
+        "starwalker": "Autism",
+        "thunderous spirit": "Borderline Personality Disorder"
+    }
+
+    if condition.casefold() in swap_dict:
+        return swap_dict[condition.casefold()]
+    return condition
+
+
 def quit(savesettings=False, clearevents=False):
     """
     Quits the game, avoids a bunch of repeated lines
