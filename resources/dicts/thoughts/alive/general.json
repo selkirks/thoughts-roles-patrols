@@ -2079,5 +2079,70 @@
         "random_living_status": [
             "living"
         ]
-    }
+    },
+        {
+            "id": "otherworldy_mind_to_alive_gen",
+            "thoughts": [
+                "Thought {PRONOUN/m_c/subject} could speak to birds today",
+                "Is questioning whether or not r_c is real",
+                "Feels confused",
+                "Doesn't trust r_c",
+                "Sees a bird following {PRONOUN/m_c/object} around",
+                "Is repeating what everycat around {PRONOUN/m_c/object} says",
+                "Is repeating whatever r_c says"
+            ],
+            "perm_conditions": {
+                "m_c": [
+                    "otherworldy mind"
+                ]
+            },
+            "random_status_constraint": [
+                "kitten",
+                "apprentice",
+                "medicine cat apprentice",
+                "mediator apprentice",
+                "warrior",
+                "medicine cat",
+                "mediator",
+                "deputy",
+                "leader",
+                "elder"
+            ],
+            "random_living_status": [
+                "living"
+            ]
+        },
+        {
+            "id": "strong_soul_to_alive_gen",
+            "thoughts": [
+                "Is feeling too much",
+                "Is scared r_c is going to abbandon {PRONOUN/m_c/object}",
+                "is scared of being left behind",
+                "Is struggling to trust their clanmates",
+                "Is being impulsive",
+                "Feels ontop of the world",
+                "Is begging r_c not to abbandon {PRONOUN/m_c/object}",
+                "Is feeling really, really good today!"
+            ],
+            "perm_conditions": {
+                "m_c": [
+                    "strong soul"
+                ]
+            },
+            "random_status_constraint": [
+                "kitten",
+                "apprentice",
+                "medicine cat apprentice",
+                "mediator apprentice",
+                "warrior",
+                "medicine cat",
+                "mediator",
+                "deputy",
+                "leader",
+                "elder"
+            ],
+            "random_living_status": [
+                "living"
+            ]
+        }
 ]
