@@ -131,11 +131,11 @@
 		"Unlike other kittens m_c keeps {PRONOUN/m_c/self} mostly curled up in the nursery, constantly complaining of pains throughout {PRONOUN/m_c/poss} body.",
 		"When touched by another, m_c lets out yowls of pain. It's distressing for everyone that they can't really help {PRONOUN/m_c/object}."
 	],
-    "thunderous spirit": [
-        "r_c notices m_c struggles with strong and intense emotions and suggests that {PRONOUN/m_c/subject} may have a thunderous spirit.",
+    "strong soul": [
+        "r_c notices m_c struggles with strong and intense emotions and thinks that {PRONOUN/m_c/subject} may have a strong soul.",
         "m_c has a strong fear of abandonment and being left behind, to the point it is affecting {PRONOUN/m_c/poss} relationships.",
-        "While talking to another cat, m_c explains that {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} emotions so strongly that some days it feels like {PRONOUN/m_c/poss} emotions are going to explode from {PRONOUN/m_c/object}. {PRONOUN/m_c/poss/CAP} clanmate encourages them to talk to the medicine cat, and m_c discovers that {PRONOUN/m_c/subject} {VERB/m_c/have/has} a thunderous spirit.",
-        "Some of m_c's clanmates notice that sometimes m_c behaves recklessly and struggles to trust others, and they tell {PRONOUN/m_c/object} that {PRONOUN/m_c/subject} may have a thunderous spirit."
+        "While talking to another cat, m_c explains that {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} emotions so strongly that some days it feels like {PRONOUN/m_c/poss} emotions are going to explode from {PRONOUN/m_c/object}. {PRONOUN/m_c/poss/CAP} clanmate encourages them to talk to the medicine cat, and m_c discovers that {PRONOUN/m_c/subject} {VERB/m_c/have/has} a strong soul.",
+        "Some of m_c's clanmates notice that sometimes m_c behaves recklessly and struggles to trust others, and they tell {PRONOUN/m_c/object} that {PRONOUN/m_c/subject} may has a strong soul."
     ],
     "otherwordly mind": [
         "r_c notices that m_c sees and hears things that other cats can't, and suggests that {PRONOUN/m_c/subject} {VERB/m_c/have/has} an otherwordly mind.",
