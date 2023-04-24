@@ -2117,7 +2117,7 @@
             "thoughts": [
                 "Is feeling too much",
                 "Is scared r_c is going to abbandon {PRONOUN/m_c/object}",
-                "is scared of being left behind",
+                "Is scared of being left behind",
                 "Is struggling to trust their clanmates",
                 "Is being impulsive",
                 "Feels ontop of the world",
@@ -2140,6 +2140,59 @@
                 "deputy",
                 "leader",
                 "elder"
+            ],
+            "random_living_status": [
+                "living"
+            ]
+        },
+        {
+            "id": "antisocial_to_alive_gen",
+            "thoughts": [
+                "Is confused why another cat is upset at {PRONOUN/m_c/object}",
+                "Got into an argument with another cat",
+                "Is spending some time by {PRONOUN/m_c/self}",
+                "Just wants to be left alone right now",
+                "Is feeling irritable",
+                "Took a walk to get some peace and quiet"
+            ],
+            "perm_conditions": {
+                "m_c": [
+                    "antisocial"
+                ]
+            },
+            "random_status_constraint": [
+                "kitten",
+                "apprentice",
+                "medicine cat apprentice",
+                "mediator apprentice",
+                "warrior",
+                "medicine cat",
+                "mediator",
+                "deputy",
+                "leader",
+                "elder"
+            ],
+            "random_living_status": [
+                "living"
+            ]
+        },
+        {
+            "id": "otherworldy_mind_to_alive_gen",
+            "thoughts": [
+                "Wants the monsters to go away",
+                "Is scared of the monster following {PRONOUN/m_c/object} around",
+                "Is making friends with the monster following {PRONOUN/m_c/object} around",
+                "Is talking to a cat that is invisible",
+                "Is having a conversation with a bird",
+                "Is hiding from something the other kits can't see"
+            ],
+            "perm_conditions": {
+                "m_c": [
+                    "otherworldy mind"
+                ]
+            },
+            "random_status_constraint": [
+                "kitten"
             ],
             "random_living_status": [
                 "living"
