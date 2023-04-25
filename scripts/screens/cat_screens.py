@@ -1037,7 +1037,10 @@ class ProfileScreen(Screens):
                 if the_cat.permanent_condition[condition]['born_with'] is True and \
                         the_cat.permanent_condition[condition]["moons_until"] != -2:
                     continue
-                output += 'has a permanent condition'
+                elif "declawed" in the_cat.permanent_condition:
+                    output += 'declawed'
+                else:
+                    output += 'has a permanent condition'
 
                 # NEWLINE ----------
                 output += "\n"
@@ -1055,6 +1058,14 @@ class ProfileScreen(Screens):
                 output += 'grieving!'
             elif "fleas" in the_cat.illnesses:
                 output += 'flea-ridden!'
+            elif "puppyspace" in the_cat.illnesses:
+                output += 'in puppyspace'
+            elif "kittenspace" in the_cat.illnesses:
+                output += 'in kittenspace'
+            elif "lethargy" or "seasonal lethargy" in the_cat.illnesses:
+                output += 'experiencing lethargy'
+            elif "indecision" in the_cat.illnesses:
+                output += 'indecisive'
             else:
                 output += 'sick!'
 
