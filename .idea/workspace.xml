@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ce42a407-0f2f-4ee3-bcef-95649ffaedf8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/dicts/thoughts/alive/general.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/dicts/thoughts/alive/general.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/dicts/thoughts/alive/kitten.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/dicts/thoughts/alive/kitten.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/events_module/condition_events.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/events_module/condition_events.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,13 +26,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "D:/WC Clan Gen/OGUpdate/FantasyCats/main.py"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/WC Clan Gen/OGUpdate/FantasyCats/main.py&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\tkdbl\Documents\GitHub\clangen\resources" />

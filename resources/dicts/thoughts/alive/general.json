@@ -1785,11 +1785,12 @@
 			"Is trying {PRONOUN/m_c/poss} best",
 			"Doesn't want to take {PRONOUN/m_c/poss} painkiller herbs today for fear of been fuzzy",
 			"Is wincing as {PRONOUN/m_c/subject} {VERB/m_c/walk/walks} around camp",
-			"Doesn't want to leave the nest today"
+			"Doesn't want to leave the nest today",
+			"Is surprised to discover a new injury and struggling to remember where {PRONOUN/m_c/subject} got it"
         ],
         "perm_conditions": {
             "m_c": [
-                "fibro"
+                "constant roaming pain"
             ]
         },
         "random_status_constraint": [
@@ -2080,141 +2081,100 @@
             "living"
         ]
     },
-        {
-            "id": "otherworldy_mind_to_alive_gen",
-            "thoughts": [
-                "Thought {PRONOUN/m_c/subject} could speak to birds today",
-                "Is questioning whether or not r_c is real",
-                "Feels confused",
-                "Doesn't trust r_c",
-                "Sees a bird following {PRONOUN/m_c/object} around",
-                "Is repeating what everycat around {PRONOUN/m_c/object} says",
-                "Is repeating whatever r_c says"
-            ],
-            "perm_conditions": {
-                "m_c": [
-                    "otherworldy mind"
-                ]
-            },
-            "random_status_constraint": [
-                "kitten",
-                "apprentice",
-                "medicine cat apprentice",
-                "mediator apprentice",
-                "warrior",
-                "medicine cat",
-                "mediator",
-                "deputy",
-                "leader",
-                "elder"
-            ],
-            "random_living_status": [
-                "living"
-            ]
-        },
-        {
-            "id": "strong_soul_to_alive_gen",
-            "thoughts": [
-                "Is feeling too much",
-                "Is scared r_c is going to abbandon {PRONOUN/m_c/object}",
-                "Is scared of being left behind",
-                "Is struggling to trust their clanmates",
-                "Is being impulsive",
-                "Feels ontop of the world",
-                "Is begging r_c not to abbandon {PRONOUN/m_c/object}",
-                "Is feeling really, really good today!"
-            ],
-            "perm_conditions": {
-                "m_c": [
-                    "strong soul"
-                ]
-            },
-            "random_status_constraint": [
-                "kitten",
-                "apprentice",
-                "medicine cat apprentice",
-                "mediator apprentice",
-                "warrior",
-                "medicine cat",
-                "mediator",
-                "deputy",
-                "leader",
-                "elder"
-            ],
-            "random_living_status": [
-                "living"
-            ]
-        },
-        {
-            "id": "antisocial_to_alive_gen",
-            "thoughts": [
-                "Is confused why another cat is upset at {PRONOUN/m_c/object}",
-                "Got into an argument with another cat",
-                "Is spending some time by {PRONOUN/m_c/self}",
-                "Just wants to be left alone right now",
-                "Is feeling irritable",
-                "Took a walk to get some peace and quiet"
-            ],
-            "perm_conditions": {
-                "m_c": [
-                    "antisocial"
-                ]
-            },
-            "random_status_constraint": [
-                "kitten",
-                "apprentice",
-                "medicine cat apprentice",
-                "mediator apprentice",
-                "warrior",
-                "medicine cat",
-                "mediator",
-                "deputy",
-                "leader",
-                "elder"
-            ],
-            "random_living_status": [
-                "living"
-            ]
-        },
-        {
-            "id": "otherworldy_mind_to_alive_gen",
-            "thoughts": [
-                "Wants the monsters to go away",
-                "Is scared of the monster following {PRONOUN/m_c/object} around",
-                "Is making friends with the monster following {PRONOUN/m_c/object} around",
-                "Is talking to a cat that is invisible",
-                "Is having a conversation with a bird",
-                "Is hiding from something the other kits can't see"
-            ],
-            "perm_conditions": {
-                "m_c": [
-                    "otherworldy mind"
-                ]
-            },
-            "random_status_constraint": [
-                "kitten"
-            ],
-            "random_living_status": [
-                "living"
-            ]
-        },
-        {
-            "id": "strong_soul_to_alive_gen",
-            "thoughts": [
-                "Can't stop crying",
-                "Had a nightmare that r_c abbandoned {PRONOUN/m_c/object}",
-                "Doesn't want to be left alone"
-            ],
-            "perm_conditions": {
-                "m_c": [
-                    "strong soul"
-                ]
-            },
-            "random_status_constraint": [
-                "kitten"
-            ],
-            "random_living_status": [
-                "living"
-            ]
-        }
+	{
+		"id": "otherworldy_mind_to_alive_gen",
+		"thoughts": [
+			"Thought {PRONOUN/m_c/subject} could speak to birds today",
+			"Is questioning whether or not r_c is real",
+			"Feels confused",
+			"Doesn't trust r_c",
+			"Sees a bird following {PRONOUN/m_c/object} around",
+			"Is repeating what everycat around {PRONOUN/m_c/object} says",
+			"Is repeating whatever r_c says"
+		],
+		"perm_conditions": {
+			"m_c": [
+				"otherworldy mind"
+			]
+		},
+		"random_status_constraint": [
+			"kitten",
+			"apprentice",
+			"medicine cat apprentice",
+			"mediator apprentice",
+			"warrior",
+			"medicine cat",
+			"mediator",
+			"deputy",
+			"leader",
+			"elder"
+		],
+		"random_living_status": [
+			"living"
+		]
+	},
+	{
+		"id": "strong_soul_to_alive_gen",
+		"thoughts": [
+			"Is feeling too much",
+			"Is scared r_c is going to abbandon {PRONOUN/m_c/object}",
+			"Is scared of being left behind",
+			"Is struggling to trust their clanmates",
+			"Is being impulsive",
+			"Feels ontop of the world",
+			"Is begging r_c not to abbandon {PRONOUN/m_c/object}",
+			"Is feeling really, really good today!"
+		],
+		"perm_conditions": {
+			"m_c": [
+				"strong soul"
+			]
+		},
+		"random_status_constraint": [
+			"kitten",
+			"apprentice",
+			"medicine cat apprentice",
+			"mediator apprentice",
+			"warrior",
+			"medicine cat",
+			"mediator",
+			"deputy",
+			"leader",
+			"elder"
+		],
+		"random_living_status": [
+			"living"
+		]
+	},
+	{
+		"id": "antisocial_to_alive_gen",
+		"thoughts": [
+			"Is confused why another cat is upset at {PRONOUN/m_c/object}",
+			"Got into an argument with another cat",
+			"Is spending some time by {PRONOUN/m_c/self}",
+			"Just wants to be left alone right now",
+			"Is feeling irritable",
+			"Took a walk to get some peace and quiet"
+		],
+		"perm_conditions": {
+			"m_c": [
+				"antisocial"
+			]
+		},
+		"random_status_constraint": [
+			"kitten",
+			"apprentice",
+			"medicine cat apprentice",
+			"mediator apprentice",
+			"warrior",
+			"medicine cat",
+			"mediator",
+			"deputy",
+			"leader",
+			"elder"
+		],
+		"random_living_status": [
+			"living"
+		]
+	}
 ]
