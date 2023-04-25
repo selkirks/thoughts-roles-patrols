@@ -575,11 +575,11 @@
                 "chance": 50
             },
             {
-                "name": "in kittenspace",
+                "name": "kittenspace",
                 "chance": 10
             },
             {
-                "name": "in puppyspace",
+                "name": "puppyspace",
                 "chance": 10
             }
         ],
@@ -699,11 +699,11 @@
 				"chance": 30
 			},
             {
-                "name": "in kittenspace",
+                "name": "kittenspace",
                 "chance": 10
             },
             {
-                "name": "in puppyspace",
+                "name": "puppyspace",
                 "chance": 10
             }
         ],
@@ -746,11 +746,11 @@
                 "chance": 90
             },
             {
-                "name": "in kittenspace",
+                "name": "kittenspace",
                 "chance": 10
             },
             {
-                "name": "in puppyspace",
+                "name": "puppyspace",
                 "chance": 10
             }
         ],
@@ -926,11 +926,11 @@
                 "chance": 10
             },
             {
-                "name": "in kittenspace",
+                "name": "kittenspace",
                 "chance": 10
             },
             {
-                "name": "in puppyspace",
+                "name": "puppyspace",
                 "chance": 10
             }
         ],
@@ -1099,11 +1099,11 @@
                 "chance": 10
             },
             {
-                "name": "in kittenspace",
+                "name": "kittenspace",
                 "chance": 10
             },
             {
-                "name": "in puppyspace",
+                "name": "puppyspace",
                 "chance": 10
             }
 
@@ -1127,11 +1127,11 @@
         ],
         "risks": [
             {
-                "name": "in kittenspace",
+                "name": "kittenspace",
                 "chance": 10
             },
             {
-                "name": "in puppyspace",
+                "name": "puppyspace",
                 "chance": 10
             }
         ],
