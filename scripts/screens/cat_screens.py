@@ -930,7 +930,6 @@ class ProfileScreen(Screens):
                     else:
                         output += 'former mate: ' + prev_mates[0]
 
-
         if not the_cat.dead:
             # NEWLINE ----------
             output += "\n"
@@ -1281,7 +1280,7 @@ class ProfileScreen(Screens):
                 new_text = (event_text_adjust(Cat,
                                               scar["text"],
                                               self.the_cat,
-                                              scar["involved"]))
+                                              Cat.fetch_cat(scar["involved"])))
                 if moons:
                     new_text += f" (Moon {scar['moon']})"
 
@@ -2006,7 +2005,7 @@ class ProfileScreen(Screens):
                     starting_height=2, manager=MANAGER)
                 self.exile_cat_button.disable()
 
-            if not self.the_cat.dead and not self.the_cat.exiled and not self.the_cat.outside:
+            if not self.the_cat.dead:
                 self.kill_cat_button.enable()
             else:
                 self.kill_cat_button.disable()
