@@ -238,6 +238,44 @@
         "main_trait_constraint": [
             "troublesome"
         ]
-    }
+    },
+	{
+		"id": "otherworldy_mind_to_alive_gen",
+		"thoughts": [
+			"Wants the monsters to go away",
+			"Is scared of the monster following {PRONOUN/m_c/object} around",
+			"Is making friends with the monster following {PRONOUN/m_c/object} around",
+			"Is talking to a cat that is invisible",
+			"Is having a conversation with a bird",
+			"Is hiding from something the other kits can't see"
+		],
+		"perm_conditions": {
+			"m_c": [
+				"otherworldy mind"
+			]
+		},
+		"random_living_status": [
+			"living"
+		]
+	},
+	{
+		"id": "strong_soul_to_alive_gen",
+		"thoughts": [
+			"Can't stop crying",
+			"Had a nightmare that r_c abbandoned {PRONOUN/m_c/object}",
+			"Doesn't want to be left alone"
+		],
+		"perm_conditions": {
+			"m_c": [
+				"strong soul"
+			]
+		},
+		"random_status_constraint": [
+			"kitten"
+		],
+		"random_living_status": [
+			"living"
+		]
+	}
 ]
 
