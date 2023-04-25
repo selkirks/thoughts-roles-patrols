@@ -188,7 +188,17 @@
 			"m_c has slipped into a more puppy like headspace, {PRONOUN/m_c/subject} are worried about this but r_c assures that {PRONOUN/m_c/subject} are just in puppyspace, and thats okay." ,
 			"m_c, despite being too old to play pretend, act's more dog like sometimes. It is possible {PRONOUN/m_c/subject} are in puppyspace." 
 		]
-    },
+		,
+		"kitten regressor": [
+			"m_c feels younger than the age {PRONOUN/m_c/poss} body is.  {PRONOUN/m_c/subject} talked to r_c about it, worried something is wrong with {PRONOUN/m_c/object}, but {PRONOUN/m_c/subject} assured {PRONOUN/m_c/object} what {PRONOUN/m_c/subject} are feeling is perfectly normal,  {PRONOUN/m_c/subject} they are just a kitten regressor. ",
+			"m_c, despite being old for a kit, act's younger then {PRONOUN/m_c/subject} are. It is possible {PRONOUN/m_c/subject} is a kitten regressor." 
+		],
+
+		"puppy regressor": [
+            "m_c has slipped into a more puppy like headspace, {PRONOUN/m_c/subject} are worried about this but r_c assures that {PRONOUN/m_c/subject} are just a puppy regressor, and thats okay." ,
+            "m_c, despite being too old to play pretend, act's more dog like sometimes. It is possible m_c is a puppy regressor." 
+		]
+	},
     "lasting grief": {
         "grief stricken": [
             "r_c presses {PRONOUN/r_c/self} against m_c's side and purrs in the most comforting way {PRONOUN/r_c/subject} can. m_c remains still and staring, {PRONOUN/m_c/poss} eyes full of a deep sadness.",
@@ -255,8 +265,17 @@
 			"m_c's head spins and {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} like every blink the world around {PRONOUN/m_c/object} speeds away. Leaving {PRONOUN/m_c/object} disoriented and lost.",
 			"Between one blink and the next m_c feels like {PRONOUN/m_c/poss} soul has jumped and the world is somewhat under water.",
 			"m_c's denmates carefully make sure that there's nothing too out of place for when {PRONOUN/m_c/poss} mind comes back to {PRONOUN/m_c/object}."
+		],
+		"kitten regressor": [
+			"m_c feels younger than the age {PRONOUN/m_c/poss} body is.  {PRONOUN/m_c/subject} talked to r_c about it, worried something is wrong with {PRONOUN/m_c/object}, but {PRONOUN/m_c/subject} assured {PRONOUN/m_c/object} what {PRONOUN/m_c/subject} are feeling is perfectly normal,  {PRONOUN/m_c/subject} they are just a kitten regressor. ",
+			"m_c, despite being old for a kit, act's younger then {PRONOUN/m_c/subject} are. It is possible {PRONOUN/m_c/subject} is a kitten regressor." 
+		],
+
+		"puppy regressor": [
+            "m_c has slipped into a more puppy like headspace, {PRONOUN/m_c/subject} are worried about this but r_c assures that {PRONOUN/m_c/subject} are just a puppy regressor, and thats okay." ,
+            "m_c, despite being too old to play pretend, act's more dog like sometimes. It is possible m_c is a puppy regressor." 
 		]
-    },
+	},
 	"comet spirit": {
 		"zoomies": [
 			"r_c watches bemused as m_c dashes into {PRONOUN/r_c/poss} den, bounces around cheerfully babbling something before zooming off again into the camp.",
@@ -289,6 +308,16 @@
 			"Before anyone has told {PRONOUN/m_c/object} to m_c went out on a patrol alone.",
 			"m_c keeps picking up shiny things.",
 			"While out on patrol m_c keeps racing off at the slightest sight of anything in {PRONOUN/m_c/poss} peripheral."
+		]
+		,
+		"kitten regressor": [
+			"m_c feels younger than the age {PRONOUN/m_c/poss} body is.  {PRONOUN/m_c/subject} talked to r_c about it, worried something is wrong with {PRONOUN/m_c/object}, but {PRONOUN/m_c/subject} assured {PRONOUN/m_c/object} what {PRONOUN/m_c/subject} are feeling is perfectly normal,  {PRONOUN/m_c/subject} they are just a kitten regressor. ",
+			"m_c, despite being old for a kit, act's younger then {PRONOUN/m_c/subject} are. It is possible {PRONOUN/m_c/subject} is a kitten regressor." 
+		],
+
+		"puppy regressor": [
+            "m_c has slipped into a more puppy like headspace, {PRONOUN/m_c/subject} are worried about this but r_c assures that {PRONOUN/m_c/subject} are just a puppy regressor, and thats okay." ,
+            "m_c, despite being too old to play pretend, act's more dog like sometimes. It is possible m_c is a puppy regressor." 
 		]
 	},
     "starwalker": {
@@ -351,6 +380,15 @@
 		"puppyspace": [
 			"m_c has slipped into a more puppy like headspace, {PRONOUN/m_c/subject} are worried about this but r_c assures that {PRONOUN/m_c/subject} are just in puppyspace, and thats okay." ,
 			"m_c, despite being too old to play pretend, act's more dog like sometimes. It is possible {PRONOUN/m_c/subject} are in puppyspace." 
+		],
+		"kitten regressor": [
+			"m_c feels younger than the age {PRONOUN/m_c/poss} body is.  {PRONOUN/m_c/subject} talked to r_c about it, worried something is wrong with {PRONOUN/m_c/object}, but {PRONOUN/m_c/subject} assured {PRONOUN/m_c/object} what {PRONOUN/m_c/subject} are feeling is perfectly normal,  {PRONOUN/m_c/subject} they are just a kitten regressor. ",
+			"m_c, despite being old for a kit, act's younger then {PRONOUN/m_c/subject} are. It is possible {PRONOUN/m_c/subject} is a kitten regressor." 
+		],
+
+		"puppy regressor": [
+            "m_c has slipped into a more puppy like headspace, {PRONOUN/m_c/subject} are worried about this but r_c assures that {PRONOUN/m_c/subject} are just a puppy regressor, and thats okay." ,
+            "m_c, despite being too old to play pretend, act's more dog like sometimes. It is possible m_c is a puppy regressor." 
 		]
     },
 	"ocd": {
@@ -398,6 +436,15 @@
 		"puppyspace": [
 			"m_c has slipped into a more puppy like headspace, {PRONOUN/m_c/subject} are worried about this but r_c assures that {PRONOUN/m_c/subject} are just in puppyspace, and thats okay." ,
 			"m_c, despite being too old to play pretend, act's more dog like sometimes. It is possible {PRONOUN/m_c/subject} are in puppyspace." 
+		],
+		"kitten regressor": [
+			"m_c feels younger than the age {PRONOUN/m_c/poss} body is.  {PRONOUN/m_c/subject} talked to r_c about it, worried something is wrong with {PRONOUN/m_c/object}, but {PRONOUN/m_c/subject} assured {PRONOUN/m_c/object} what {PRONOUN/m_c/subject} are feeling is perfectly normal,  {PRONOUN/m_c/subject} they are just a kitten regressor. ",
+			"m_c, despite being old for a kit, act's younger then {PRONOUN/m_c/subject} are. It is possible {PRONOUN/m_c/subject} is a kitten regressor." 
+		],
+
+		"puppy regressor": [
+            "m_c has slipped into a more puppy like headspace, {PRONOUN/m_c/subject} are worried about this but r_c assures that {PRONOUN/m_c/subject} are just a puppy regressor, and thats okay." ,
+            "m_c, despite being too old to play pretend, act's more dog like sometimes. It is possible m_c is a puppy regressor." 
 		]
 	},
     "anxiety": {
@@ -458,7 +505,16 @@
 		],
 		"puppyspace": [
 			"m_c has slipped into a more puppy like headspace, {PRONOUN/m_c/subject} are worried about this but r_c assures that {PRONOUN/m_c/subject} are just in puppyspace, and thats okay." ,
-			"m_c, despite being too old to play pretend, act's more dog like sometimes. It is possible {PRONOUN/m_c/subject} are in puppyspace." 
+			"m_c, despite being too old to play pretend, act's more dog like sometimes. I,t is possible {PRONOUN/m_c/subject} are in puppyspace." 
+		],
+		"kitten regressor": [
+			"m_c feels younger than the age {PRONOUN/m_c/poss} body is.  {PRONOUN/m_c/subject} talked to r_c about it, worried something is wrong with {PRONOUN/m_c/object}, but {PRONOUN/m_c/subject} assured {PRONOUN/m_c/object} what {PRONOUN/m_c/subject} are feeling is perfectly normal,  {PRONOUN/m_c/subject} they are just a kitten regressor. ",
+			"m_c, despite being old for a kit, act's younger then {PRONOUN/m_c/subject} are. It is possible {PRONOUN/m_c/subject} is a kitten regressor." 
+		],
+
+		"puppy regressor": [
+            "m_c has slipped into a more puppy like headspace, {PRONOUN/m_c/subject} are worried about this but r_c assures that {PRONOUN/m_c/subject} are just a puppy regressor, and thats okay." ,
+            "m_c, despite being too old to play pretend, act's more dog like sometimes. It is possible m_c is a puppy regressor." 
 		]
 	},
 	"constant roaming pain": {
@@ -557,7 +613,7 @@
 		"strong attachement": [
 			"r_c notices that m_c is becoming more dependent and clingy with one of {PRONOUN/m_c/poss} clanmates, and invites {PRONOUN/m_c/object} to talk about it",
 			"m_c can't stop thinking about one of {PRONOUN/m_c/poss} clanmates and cannot bear the thought of not being near them to the point it is disrupting {PRONOUN/m_c/poss} duties.",
-			"no one understands m_c apart from that one special cat in {PRONOUN/m_c/poss} life, atleast that is what {PRONOUN/m_c/poss} strong soul is making {PRONOUN/m_c/object} think. {PRONOUN/m_c/subject/CAP} {VERB/m_c/refuse/refuses} to be apart from them and will lash out at any clanmate that tries to seperate them."
+			"No one understands m_c apart from that one special cat in {PRONOUN/m_c/poss} life, atleast that is what {PRONOUN/m_c/poss} strong soul is making {PRONOUN/m_c/object} think. {PRONOUN/m_c/subject/CAP} {VERB/m_c/refuse/refuses} to be apart from them and will lash out at any clanmate that tries to seperate them."
 		],
 		"black and white cloud": [
 			"r_c notices that m_c cannot think rationally, and is lashing out at every cat around {PRONOUN/m_c/object}.",
@@ -571,8 +627,18 @@
 		"puppyspace": [
 			"m_c has slipped into a more puppy like headspace, {PRONOUN/m_c/subject} are worried about this but r_c assures that {PRONOUN/m_c/subject} are just in puppyspace, and thats okay." ,
 			"m_c, despite being too old to play pretend, act's more dog like sometimes. It is possible {PRONOUN/m_c/subject} are in puppyspace." 
+		],
+		"kitten regressor": [
+			"m_c feels younger than the age {PRONOUN/m_c/poss} body is.  {PRONOUN/m_c/subject} talked to r_c about it, worried something is wrong with {PRONOUN/m_c/object}, but {PRONOUN/m_c/subject} assured {PRONOUN/m_c/object} what {PRONOUN/m_c/subject} are feeling is perfectly normal,  {PRONOUN/m_c/subject} they are just a kitten regressor. ",
+			"m_c, despite being old for a kit, act's younger then {PRONOUN/m_c/subject} are. It is possible {PRONOUN/m_c/subject} is a kitten regressor." 
+		],
+
+		"puppy regressor": [
+            "m_c has slipped into a more puppy like headspace, {PRONOUN/m_c/subject} are worried about this but r_c assures that {PRONOUN/m_c/subject} are just a puppy regressor, and thats okay." ,
+            "m_c, despite being too old to play pretend, act's more dog like sometimes. It is possible m_c is a puppy regressor." 
 		]
-	},
+	}
+	,
 	"otherwordly mind": {
 		
 		"kittenspace": [
@@ -582,6 +648,15 @@
 		"puppyspace": [
 			"m_c has slipped into a more puppy like headspace, {PRONOUN/m_c/subject} are worried about this but r_c assures that {PRONOUN/m_c/subject} are just in puppyspace, and thats okay." ,
 			"m_c, despite being too old to play pretend, act's more dog like sometimes. It is possible {PRONOUN/m_c/subject} are in puppyspace." 
+		],
+		"kitten regressor": [
+			"m_c feels younger than the age {PRONOUN/m_c/poss} body is.  {PRONOUN/m_c/subject} talked to r_c about it, worried something is wrong with {PRONOUN/m_c/object}, but {PRONOUN/m_c/subject} assured {PRONOUN/m_c/object} what {PRONOUN/m_c/subject} are feeling is perfectly normal,  {PRONOUN/m_c/subject} they are just a kitten regressor. ",
+			"m_c, despite being old for a kit, act's younger then {PRONOUN/m_c/subject} are. It is possible {PRONOUN/m_c/subject} is a kitten regressor." 
+		],
+
+		"puppy regressor": [
+            "m_c has slipped into a more puppy like headspace, {PRONOUN/m_c/subject} are worried about this but r_c assures that {PRONOUN/m_c/subject} are just a puppy regressor, and thats okay." ,
+            "m_c, despite being too old to play pretend, act's more dog like sometimes. It is possible m_c is a puppy regressor." 
 		]
 	}
 }
