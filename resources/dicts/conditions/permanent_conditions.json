@@ -581,6 +581,14 @@
             {
                 "name": "puppyspace",
                 "chance": 10
+            },
+            {
+                "name": "kitten regressor",
+                "chance": 10
+            },
+            {
+                "name": "puppy regressor",
+                "chance": 10
             }
         ],
         "herbs": [
@@ -705,6 +713,14 @@
             {
                 "name": "puppyspace",
                 "chance": 10
+            },
+            {
+                "name": "kitten regressor",
+                "chance": 10
+            },
+            {
+                "name": "puppy regressor",
+                "chance": 10
             }
         ],
         "herbs": [ ]
@@ -751,6 +767,14 @@
             },
             {
                 "name": "puppyspace",
+                "chance": 10
+            },
+            {
+                "name": "kitten regressor",
+                "chance": 10
+            },
+            {
+                "name": "puppy regressor",
                 "chance": 10
             }
         ],
@@ -926,11 +950,11 @@
                 "chance": 10
             },
             {
-                "name": "kittenspace",
+                "name": "kitten regressor",
                 "chance": 10
             },
             {
-                "name": "puppyspace",
+                "name": "puppy regressor",
                 "chance": 10
             }
         ],
@@ -1105,6 +1129,14 @@
             {
                 "name": "puppyspace",
                 "chance": 10
+            },
+            {
+                "name": "kitten regressor",
+                "chance": 10
+            },
+            {
+                "name": "puppy regressor",
+                "chance": 10
             }
 
         ],
@@ -1133,7 +1165,88 @@
             {
                 "name": "puppyspace",
                 "chance": 10
+            },
+            {
+                "name": "kitten regressor",
+                "chance": 10
+            },
+            {
+                "name": "puppy regressor",
+                "chance": 10
             }
+        ],
+        "herbs":[]
+    },		
+    "otherwordly mind": {
+        "severity": "minor",
+        "congenital": "always",
+        "moons_until": 2,
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "illness_infectiousness":[
+        ],
+        "risks": [
+            {
+                "name": "kittenspace",
+                "chance": 10
+            },
+            {
+                "name": "puppyspace",
+                "chance": 10
+            },
+            {
+                "name": "kitten regressor",
+                "chance": 10
+            },
+            {
+                "name": "puppy regressor",
+                "chance": 10
+            }
+        ],
+        "herbs":[]
+    },		
+    "kitten regressor": {
+        "severity": "minor",
+        "congenital": "never",
+        "moons_until": 2,
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "illness_infectiousness":[
+        ],
+        "risks": [
+        ],
+        "herbs":[]
+    },		
+    "puppy regressor": {
+        "severity": "minor",
+        "congenital": "never",
+        "moons_until": 2,
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "illness_infectiousness":[
+        ],
+        "risks": [
         ],
         "herbs":[]
     }
