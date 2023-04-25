@@ -1388,7 +1388,7 @@
 			"daisy"
 		]
     },
-    "kittenspace": {
+    "in kittenspace": {
         "severity": "major",
         "mortality": {
             "newborn": 0,
@@ -1415,7 +1415,7 @@
         "herbs": [
 		]
     },
-    "puppyspace": {
+    "in puppyspace": {
         "severity": "major",
         "mortality": {
             "newborn": 0,
