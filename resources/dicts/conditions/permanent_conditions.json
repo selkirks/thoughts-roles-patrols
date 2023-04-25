@@ -1177,7 +1177,7 @@
         ],
         "herbs":[]
     },		
-    "otherwordly mind": {
+    "snow vision": {
         "severity": "minor",
         "congenital": "always",
         "moons_until": 2,
@@ -1193,22 +1193,6 @@
         "illness_infectiousness":[
         ],
         "risks": [
-            {
-                "name": "kittenspace",
-                "chance": 10
-            },
-            {
-                "name": "puppyspace",
-                "chance": 10
-            },
-            {
-                "name": "kitten regressor",
-                "chance": 10
-            },
-            {
-                "name": "puppy regressor",
-                "chance": 10
-            }
         ],
         "herbs":[]
     },		
