@@ -180,11 +180,11 @@
             "r_c sits with m_c, listening to {PRONOUN/m_c/poss} troubles and providing a comforting, sympathetic ear. m_c has had a rough moon, haunted by constant nightmares.",
             "Haunted by the memories of {PRONOUN/m_c/poss} past, m_c gets so little sleep this month that {PRONOUN/m_c/subject} {VERB/m_c/find/finds} {PRONOUN/m_c/self} unable to function."
         ],
-		"in kittenspace": [
+		"kittenspace": [
 			"Sometimes m_c feels younger than the age {PRONOUN/m_c/poss} body is.  {PRONOUN/m_c/subject} talked to r_c about it, worried something is wrong with {PRONOUN/m_c/object}, but {PRONOUN/m_c/subject} assured {PRONOUN/m_c/object} what {PRONOUN/m_c/subject} are feeling is perfectly normal, {PRONOUN/m_c/poss} brain is just in kittenspace",
 			"m_c, despite being old for a kit, act's younger then {PRONOUN/m_c/subject} are sometimes. It is possible {PRONOUN/m_c/subject} are in kittenspace." 
 		],
-		"in puppyspace": [
+		"puppyspace": [
 			"m_c has slipped into a more puppy like headspace, {PRONOUN/m_c/subject} are worried about this but r_c assures that {PRONOUN/m_c/subject} are just in puppyspace, and thats okay." ,
 			"m_c, despite being too old to play pretend, act's more dog like sometimes. It is possible {PRONOUN/m_c/subject} are in puppyspace." 
 		]
@@ -344,11 +344,11 @@
 			"Sometimes m_c will narrate events and stories to the kits so fanciful.",
 			"Using daydreaming m_c admits that {PRONOUN/m_c/subject}{VERB/m_c/'ve/ has} been practicing what {PRONOUN/m_c/subject} will talk with {PRONOUN/m_c/poss} clanmates about."
 		],
-		"in kittenspace": [
+		"kittenspace": [
 			"Sometimes m_c feels younger than the age {PRONOUN/m_c/poss} body is.  {PRONOUN/m_c/subject} talked to r_c about it, worried something is wrong with {PRONOUN/m_c/object}, but {PRONOUN/m_c/subject} assured {PRONOUN/m_c/object} what {PRONOUN/m_c/subject} are feeling is perfectly normal, {PRONOUN/m_c/poss} brain is just in kittenspace",
 			"m_c, despite being old for a kit, act's younger then {PRONOUN/m_c/subject} are sometimes. It is possible {PRONOUN/m_c/subject} are in kittenspace." 
 		],
-		"in puppyspace": [
+		"puppyspace": [
 			"m_c has slipped into a more puppy like headspace, {PRONOUN/m_c/subject} are worried about this but r_c assures that {PRONOUN/m_c/subject} are just in puppyspace, and thats okay." ,
 			"m_c, despite being too old to play pretend, act's more dog like sometimes. It is possible {PRONOUN/m_c/subject} are in puppyspace." 
 		]
@@ -391,11 +391,11 @@
 			"m_c keeps waking up {PRONOUN/m_c/poss} denmates to get them to check just one more time if {PRONOUN/m_c/subject} is really sure the camp is secure.",
 			"{PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} not paranoid, m_c insists that it's just the proper level of caution as {PRONOUN/m_c/subject} {VERB/m_c/check/checks} for the third time that afternoon that the nursery is secure."
 		],
-		"in kittenspace": [
+		"kittenspace": [
 			"Sometimes m_c feels younger than the age {PRONOUN/m_c/poss} body is.  {PRONOUN/m_c/subject} talked to r_c about it, worried something is wrong with {PRONOUN/m_c/object}, but {PRONOUN/m_c/subject} assured {PRONOUN/m_c/object} what {PRONOUN/m_c/subject} are feeling is perfectly normal, {PRONOUN/m_c/poss} brain is just in kittenspace",
 			"m_c, despite being old for a kit, act's younger then {PRONOUN/m_c/subject} are sometimes. It is possible {PRONOUN/m_c/subject} are in kittenspace." 
 		],
-		"in puppyspace": [
+		"puppyspace": [
 			"m_c has slipped into a more puppy like headspace, {PRONOUN/m_c/subject} are worried about this but r_c assures that {PRONOUN/m_c/subject} are just in puppyspace, and thats okay." ,
 			"m_c, despite being too old to play pretend, act's more dog like sometimes. It is possible {PRONOUN/m_c/subject} are in puppyspace." 
 		]
@@ -452,11 +452,11 @@
 			"m_c keeps waking up {PRONOUN/m_c/poss} denmates to get them to check just one more time if {PRONOUN/m_c/subject} is really sure the camp is secure.",
 			"{PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} not paranoid, m_c insists that it's just the proper level of caution as {PRONOUN/m_c/subject} {VERB/m_c/check/checks} for the third time that afternoon that the nursery is secure."
 		],
-		"in kittenspace": [
+		"kittenspace": [
 			"Sometimes m_c feels younger than the age {PRONOUN/m_c/poss} body is.  {PRONOUN/m_c/subject} talked to r_c about it, worried something is wrong with {PRONOUN/m_c/object}, but {PRONOUN/m_c/subject} assured {PRONOUN/m_c/object} what {PRONOUN/m_c/subject} are feeling is perfectly normal, {PRONOUN/m_c/poss} brain is just in kittenspace",
 			"m_c, despite being old for a kit, act's younger then {PRONOUN/m_c/subject} are sometimes. It is possible {PRONOUN/m_c/subject} are in kittenspace." 
 		],
-		"in puppyspace": [
+		"puppyspace": [
 			"m_c has slipped into a more puppy like headspace, {PRONOUN/m_c/subject} are worried about this but r_c assures that {PRONOUN/m_c/subject} are just in puppyspace, and thats okay." ,
 			"m_c, despite being too old to play pretend, act's more dog like sometimes. It is possible {PRONOUN/m_c/subject} are in puppyspace." 
 		]
@@ -564,22 +564,22 @@
 			"m_c thinks that no cat has any flaws and that everycat is perfect, and its affecting {PRONOUN/m_c/poss} relationships. A black and white cloud has covered {PRONOUN/m_c/poss} vision.",
 			"m_c goes around camp saying that {PRONOUN/m_c/subject} hate everything and everyone. {PRONOUN/m_c/poss} clanmates think that a black and white cloud has covered {PRONOUN/m_c/poss} vision."
 		],
-		"in kittenspace": [
+		"kittenspace": [
 			"Sometimes m_c feels younger than the age {PRONOUN/m_c/poss} body is.  {PRONOUN/m_c/subject} talked to r_c about it, worried something is wrong with {PRONOUN/m_c/object}, but {PRONOUN/m_c/subject} assured {PRONOUN/m_c/object} what {PRONOUN/m_c/subject} are feeling is perfectly normal, {PRONOUN/m_c/poss} brain is just in kittenspace",
 			"m_c, despite being old for a kit, act's younger then {PRONOUN/m_c/subject} are sometimes. It is possible {PRONOUN/m_c/subject} are in kittenspace." 
 		],
-		"in puppyspace": [
+		"puppyspace": [
 			"m_c has slipped into a more puppy like headspace, {PRONOUN/m_c/subject} are worried about this but r_c assures that {PRONOUN/m_c/subject} are just in puppyspace, and thats okay." ,
 			"m_c, despite being too old to play pretend, act's more dog like sometimes. It is possible {PRONOUN/m_c/subject} are in puppyspace." 
 		]
 	},
 	"otherwordly mind": {
 		
-		"in kittenspace": [
+		"kittenspace": [
 			"Sometimes m_c feels younger than the age {PRONOUN/m_c/poss} body is.  {PRONOUN/m_c/subject} talked to r_c about it, worried something is wrong with {PRONOUN/m_c/object}, but {PRONOUN/m_c/subject} assured {PRONOUN/m_c/object} what {PRONOUN/m_c/subject} are feeling is perfectly normal, {PRONOUN/m_c/poss} brain is just in kittenspace",
 			"m_c, despite being old for a kit, act's younger then {PRONOUN/m_c/subject} are sometimes. It is possible {PRONOUN/m_c/subject} are in kittenspace." 
 		],
-		"in puppyspace": [
+		"puppyspace": [
 			"m_c has slipped into a more puppy like headspace, {PRONOUN/m_c/subject} are worried about this but r_c assures that {PRONOUN/m_c/subject} are just in puppyspace, and thats okay." ,
 			"m_c, despite being too old to play pretend, act's more dog like sometimes. It is possible {PRONOUN/m_c/subject} are in puppyspace." 
 		]
