@@ -573,6 +573,14 @@
             {
                 "name": "fear paralysis",
                 "chance": 50
+            },
+            {
+                "name": "in kittenspace",
+                "chance": 10
+            },
+            {
+                "name": "in puppyspace",
+                "chance": 10
             }
         ],
         "herbs": [
@@ -689,7 +697,15 @@
 			{
 				"name": "vivid daydreams",
 				"chance": 30
-			}
+			},
+            {
+                "name": "in kittenspace",
+                "chance": 10
+            },
+            {
+                "name": "in puppyspace",
+                "chance": 10
+            }
         ],
         "herbs": [ ]
     },
@@ -728,6 +744,14 @@
             {
                 "name": "paranoia",
                 "chance": 90
+            },
+            {
+                "name": "in kittenspace",
+                "chance": 10
+            },
+            {
+                "name": "in puppyspace",
+                "chance": 10
             }
         ],
         "herbs":[
@@ -900,6 +924,14 @@
             {
                 "name": "impulsivity",
                 "chance": 10
+            },
+            {
+                "name": "in kittenspace",
+                "chance": 10
+            },
+            {
+                "name": "in puppyspace",
+                "chance": 10
             }
         ],
         "herbs": [
@@ -1042,7 +1074,7 @@
             "ragwort"
         ]
 	},
-    "thunderous spirit": {
+    "strong soul": {
         "severity": "minor",
         "congenital": "always",
         "moons_until": 2,
@@ -1059,7 +1091,19 @@
         ],
         "risks": [
             {
-                "name": "lightning roots",
+                "name": "strong attachement",
+                "chance": 10
+            },
+            {
+                "name": "black and white cloud",
+                "chance": 10
+            },
+            {
+                "name": "in kittenspace",
+                "chance": 10
+            },
+            {
+                "name": "in puppyspace",
                 "chance": 10
             }
 
@@ -1082,7 +1126,14 @@
         "illness_infectiousness":[
         ],
         "risks": [
-
+            {
+                "name": "in kittenspace",
+                "chance": 10
+            },
+            {
+                "name": "in puppyspace",
+                "chance": 10
+            }
         ],
         "herbs":[]
     }

@@ -179,7 +179,15 @@
         "constant nightmares": [
             "r_c sits with m_c, listening to {PRONOUN/m_c/poss} troubles and providing a comforting, sympathetic ear. m_c has had a rough moon, haunted by constant nightmares.",
             "Haunted by the memories of {PRONOUN/m_c/poss} past, m_c gets so little sleep this month that {PRONOUN/m_c/subject} {VERB/m_c/find/finds} {PRONOUN/m_c/self} unable to function."
-        ]
+        ],
+		"in kittenspace": [
+			"Sometimes m_c feels younger than the age {PRONOUN/m_c/poss} body is.  {PRONOUN/m_c/subject} talked to r_c about it, worried something is wrong with {PRONOUN/m_c/object}, but {PRONOUN/m_c/subject} assured {PRONOUN/m_c/object} what {PRONOUN/m_c/subject} are feeling is perfectly normal, {PRONOUN/m_c/poss} brain is just in kittenspace",
+			"m_c, despite being old for a kit, act's younger then {PRONOUN/m_c/subject} are sometimes. It is possible {PRONOUN/m_c/subject} are in kittenspace." 
+		],
+		"in puppyspace": [
+			"m_c has slipped into a more puppy like headspace, {PRONOUN/m_c/subject} are worried about this but r_c assures that {PRONOUN/m_c/subject} are just in puppyspace, and thats okay." ,
+			"m_c, despite being too old to play pretend, act's more dog like sometimes. It is possible {PRONOUN/m_c/subject} are in puppyspace." 
+		]
     },
     "lasting grief": {
         "grief stricken": [
@@ -272,11 +280,11 @@
 			"m_c's clanmates purr in amusement listening to {PRONOUN/m_c/poss} rapid babbling."
 		],
 		"indecision": [
-			"m_c comes in to see r_c, tail twitching as they consult with {PRONOUN/r_c/object} on how to make decision making easier.",
+			"m_c comes in to see r_c, tail twitching as {PRONOUN/m_c/subject} consult with {PRONOUN/r_c/object} on how to make decision making easier.",
 			"m_c stands beside the camp entry way somewhat frozen talking with the deputy about what patrol to potentially go on."
 		],
 		"impulsivity": [
-			"r_c sighs as they watch m_c racing around camp and leaping into decisions without fully thinking.",
+			"r_c sighs as {PRONOUN/m_c/subject} watch m_c racing around camp and leaping into decisions without fully thinking.",
 			"m_c steps up as a volunteer for a patrol before fully listening to what it involves.",
 			"Before anyone has told {PRONOUN/m_c/object} to m_c went out on a patrol alone.",
 			"m_c keeps picking up shiny things.",
@@ -285,11 +293,11 @@
 	},
     "starwalker": {
 		"special interest": [
-            "m_c has been seen focusing on pretty pebbles and feathers they've been finding around their territory. When r_c confronts them about it, m_c explains they just like the objects. They're pretty.",
-            "Today m_c was caught holding some kind of kittypet toy in their jaws, they looked embarrassed and only mumbled that it looked fluffy. m_c admits it was worth stealing.",
-            "m_c has been thinking about this one particular spot in their territory for days now, and seems to be constantly going back to that spot. Even sneaking away in the night.",
-            "m_c's collection of shiny objects was found in their nest, confronted about it m_c simply states they couldn't help it, they were shiny! So Shiny.",
-            "m_c has been exploring a really particular part of the territory, explaining everything they found and seen with gleeful vigor.",
+            "m_c has been seen focusing on pretty pebbles and feathers {PRONOUN/m_c/subject} has been finding around {PRONOUN/m_c/poss} territory. When r_c confronts them about it, m_c explains {PRONOUN/m_c/subject} just like the objects. They're pretty.",
+            "Today m_c was caught holding some kind of kittypet toy in {PRONOUN/m_c/poss} jaws, {PRONOUN/m_c/subject} looked embarrassed and only mumbled that it looked fluffy. m_c admits it was worth stealing.",
+            "m_c has been thinking about this one particular spot in {PRONOUN/m_c/poss} territory for days now, and seems to be constantly going back to that spot. Even sneaking away in the night.",
+            "m_c's collection of shiny objects was found in {PRONOUN/m_c/poss} nest, confronted about it m_c simply states {PRONOUN/m_c/subject} couldn't help it, {PRONOUN/m_c/subject} were shiny! So Shiny.",
+            "m_c has been exploring a really particular part of the territory, explaining everything {PRONOUN/m_c/subject} found and seen with gleeful vigor.",
 			"Some of {PRONOUN/m_c/poss} clanmates are struggling to keep m_c on topic as {PRONOUN/m_c/subject} {VERB/m_c/keep/keeps} losing focus when it's not about {PRONOUN/m_c/poss} latest interest.",
 			"m_c has been collecting a lot of things recently about one topic. {PRONOUN/m_c/subject/CAP} will eagerly talk a cat's ears off if allowed to.",
 			"Every patrol that m_c has gone on has heard about {PRONOUN/m_c/poss} latest interest, it's nice to see {PRONOUN/m_c/object} so happy about finding something new to enjoy.",
@@ -323,7 +331,7 @@
 		"seasonal lethargy": [
 			"m_c comes into r_c's den feeling incredibly tired and stressed from the changing of the season. r_c reassures {PRONOUN/m_c/object} it's alright and {PRONOUN/m_c/subject} {VERB/m_c/can/could} take a break if really needed to.",
 			"As the season changes become more and more obvious m_c curls further into {PRONOUN/m_c/poss} nest trying to pretend things aren't changing so drastically.",
-			"m_c is frustrated and upset as the season changes, clawing at {PRONOUN/m_c/poss} nesting material and hating that a fog descends on them that nothing {PRONOUN/m_c/subject} {VERB/m_c/do/does} seems to fix."
+			"m_c is frustrated and upset as the season changes, clawing at {PRONOUN/m_c/poss} nesting material and hating that a fog descends on {PRONOUN/m_c/object} that nothing {PRONOUN/m_c/subject} {VERB/m_c/do/does} seems to fix."
 		],
 		"absence": [
 			"There's a kind of fuzz in m_c's head as {PRONOUN/m_c/subject} {VERB/m_c/go/goes} to r_c to complain about losing time between blinks.",
@@ -335,6 +343,14 @@
 			"More and more often m_c retreats into {PRONOUN/m_c/poss} own world in {PRONOUN/m_c/poss} head, tail lashing as {PRONOUN/m_c/subject} {VERB/m_c/envision/envisions} things that only {PRONOUN/m_c/subject} can see.",
 			"Sometimes m_c will narrate events and stories to the kits so fanciful.",
 			"Using daydreaming m_c admits that {PRONOUN/m_c/subject}{VERB/m_c/'ve/ has} been practicing what {PRONOUN/m_c/subject} will talk with {PRONOUN/m_c/poss} clanmates about."
+		],
+		"in kittenspace": [
+			"Sometimes m_c feels younger than the age {PRONOUN/m_c/poss} body is.  {PRONOUN/m_c/subject} talked to r_c about it, worried something is wrong with {PRONOUN/m_c/object}, but {PRONOUN/m_c/subject} assured {PRONOUN/m_c/object} what {PRONOUN/m_c/subject} are feeling is perfectly normal, {PRONOUN/m_c/poss} brain is just in kittenspace",
+			"m_c, despite being old for a kit, act's younger then {PRONOUN/m_c/subject} are sometimes. It is possible {PRONOUN/m_c/subject} are in kittenspace." 
+		],
+		"in puppyspace": [
+			"m_c has slipped into a more puppy like headspace, {PRONOUN/m_c/subject} are worried about this but r_c assures that {PRONOUN/m_c/subject} are just in puppyspace, and thats okay." ,
+			"m_c, despite being too old to play pretend, act's more dog like sometimes. It is possible {PRONOUN/m_c/subject} are in puppyspace." 
 		]
     },
 	"ocd": {
@@ -372,14 +388,22 @@
 			"m_c is wandering around the camp somehow convinced that the world will be ending soon and rather listless.",
 			"m_c refuses to eat the prey on the freshkill pile, instead going out each day to catch even fresher prey for {PRONOUN/m_c/self}.",
 			"While the rest of the clan settles down for the night m_c is getting up every few hours to check and make sure that things are still safe and fine.",
-			"m_c keeps waking up {PRONOUN/m_c/poss} denmates to get them to check just one more time if they're really sure the camp is secure.",
+			"m_c keeps waking up {PRONOUN/m_c/poss} denmates to get them to check just one more time if {PRONOUN/m_c/subject} is really sure the camp is secure.",
 			"{PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} not paranoid, m_c insists that it's just the proper level of caution as {PRONOUN/m_c/subject} {VERB/m_c/check/checks} for the third time that afternoon that the nursery is secure."
+		],
+		"in kittenspace": [
+			"Sometimes m_c feels younger than the age {PRONOUN/m_c/poss} body is.  {PRONOUN/m_c/subject} talked to r_c about it, worried something is wrong with {PRONOUN/m_c/object}, but {PRONOUN/m_c/subject} assured {PRONOUN/m_c/object} what {PRONOUN/m_c/subject} are feeling is perfectly normal, {PRONOUN/m_c/poss} brain is just in kittenspace",
+			"m_c, despite being old for a kit, act's younger then {PRONOUN/m_c/subject} are sometimes. It is possible {PRONOUN/m_c/subject} are in kittenspace." 
+		],
+		"in puppyspace": [
+			"m_c has slipped into a more puppy like headspace, {PRONOUN/m_c/subject} are worried about this but r_c assures that {PRONOUN/m_c/subject} are just in puppyspace, and thats okay." ,
+			"m_c, despite being too old to play pretend, act's more dog like sometimes. It is possible {PRONOUN/m_c/subject} are in puppyspace." 
 		]
 	},
     "anxiety": {
 		"anxiety attack": [
 			"It's not uncommon for m_c to come into the medicine den with worries and troubles swirling around {PRONOUN/m_c/poss} head. r_c has a specific pile of herbs set aside just for when {PRONOUN/m_c/subject} {VERB/m_c/need/needs} them. Or simply for when {PRONOUN/m_c/poss} {VERB/m_c/need/needs} to talk.",
-			"m_c's tail lashes, fur standing uncomfortably on end as {PRONOUN/m_c/subject} {VERB/m_c/share/shares} some of the anxieties bothering them with a clanmate.",
+			"m_c's tail lashes, fur standing uncomfortably on end as {PRONOUN/m_c/subject} {VERB/m_c/share/shares} some of the anxieties bothering {PRONOUN/m_c/object} with a clanmate.",
 			"The sunshine offers no relief to m_c as {PRONOUN/m_c/subject} {VERB/m_c/pace/paces} around the camp entry on edge.",
 			"m_c keeps going in circles, worriedly pacing and unable to settle down to sleep properly."
 		],
@@ -425,8 +449,16 @@
 			"m_c is wandering around the camp somehow convinced that the world will be ending soon and rather listless.",
 			"m_c refuses to eat the prey on the freshkill pile, instead going out each day to catch even fresher prey for {PRONOUN/m_c/self}.",
 			"While the rest of the clan settles down for the night m_c is getting up every few hours to check and make sure that things are still safe and fine.",
-			"m_c keeps waking up {PRONOUN/m_c/poss} denmates to get them to check just one more time if they're really sure the camp is secure.",
+			"m_c keeps waking up {PRONOUN/m_c/poss} denmates to get them to check just one more time if {PRONOUN/m_c/subject} is really sure the camp is secure.",
 			"{PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} not paranoid, m_c insists that it's just the proper level of caution as {PRONOUN/m_c/subject} {VERB/m_c/check/checks} for the third time that afternoon that the nursery is secure."
+		],
+		"in kittenspace": [
+			"Sometimes m_c feels younger than the age {PRONOUN/m_c/poss} body is.  {PRONOUN/m_c/subject} talked to r_c about it, worried something is wrong with {PRONOUN/m_c/object}, but {PRONOUN/m_c/subject} assured {PRONOUN/m_c/object} what {PRONOUN/m_c/subject} are feeling is perfectly normal, {PRONOUN/m_c/poss} brain is just in kittenspace",
+			"m_c, despite being old for a kit, act's younger then {PRONOUN/m_c/subject} are sometimes. It is possible {PRONOUN/m_c/subject} are in kittenspace." 
+		],
+		"in puppyspace": [
+			"m_c has slipped into a more puppy like headspace, {PRONOUN/m_c/subject} are worried about this but r_c assures that {PRONOUN/m_c/subject} are just in puppyspace, and thats okay." ,
+			"m_c, despite being too old to play pretend, act's more dog like sometimes. It is possible {PRONOUN/m_c/subject} are in puppyspace." 
 		]
 	},
 	"constant roaming pain": {
@@ -521,11 +553,35 @@
 			"With much pain m_c limps {PRONOUN/m_c/poss} way to the medicine den, paws feeling stiff and awkward."
 		]
     },
- "thunderous spirit": {
-		"lightning roots": [
+ "strong soul": {
+		"strong attachement": [
 			"r_c notices that m_c is becoming more dependent and clingy with one of {PRONOUN/m_c/poss} clanmates, and invites {PRONOUN/m_c/object} to talk about it",
 			"m_c can't stop thinking about one of {PRONOUN/m_c/poss} clanmates and cannot bear the thought of not being near them to the point it is disrupting {PRONOUN/m_c/poss} duties.",
-			"no one understands m_c apart from that one special cat in {PRONOUN/m_c/poss} life, atleast that is what {PRONOUN/m_c/poss} thunderous spirit is making {PRONOUN/m_c/object} think. {PRONOUN/m_c/subject/CAP} {VERB/m_c/refuse/refuses} to be apart from them and will lash out at any clanmate that tries to seperate them."
+			"no one understands m_c apart from that one special cat in {PRONOUN/m_c/poss} life, atleast that is what {PRONOUN/m_c/poss} strong soul is making {PRONOUN/m_c/object} think. {PRONOUN/m_c/subject/CAP} {VERB/m_c/refuse/refuses} to be apart from them and will lash out at any clanmate that tries to seperate them."
+		],
+		"black and white cloud": [
+			"r_c notices that m_c cannot think rationally, and is lashing out at every cat around {PRONOUN/m_c/object}.",
+			"m_c thinks that no cat has any flaws and that everycat is perfect, and its affecting {PRONOUN/m_c/poss} relationships. A black and white cloud has covered {PRONOUN/m_c/poss} vision.",
+			"m_c goes around camp saying that {PRONOUN/m_c/subject} hate everything and everyone. {PRONOUN/m_c/poss} clanmates think that a black and white cloud has covered {PRONOUN/m_c/poss} vision."
+		],
+		"in kittenspace": [
+			"Sometimes m_c feels younger than the age {PRONOUN/m_c/poss} body is.  {PRONOUN/m_c/subject} talked to r_c about it, worried something is wrong with {PRONOUN/m_c/object}, but {PRONOUN/m_c/subject} assured {PRONOUN/m_c/object} what {PRONOUN/m_c/subject} are feeling is perfectly normal, {PRONOUN/m_c/poss} brain is just in kittenspace",
+			"m_c, despite being old for a kit, act's younger then {PRONOUN/m_c/subject} are sometimes. It is possible {PRONOUN/m_c/subject} are in kittenspace." 
+		],
+		"in puppyspace": [
+			"m_c has slipped into a more puppy like headspace, {PRONOUN/m_c/subject} are worried about this but r_c assures that {PRONOUN/m_c/subject} are just in puppyspace, and thats okay." ,
+			"m_c, despite being too old to play pretend, act's more dog like sometimes. It is possible {PRONOUN/m_c/subject} are in puppyspace." 
+		]
+	},
+	"otherwordly mind": {
+		
+		"in kittenspace": [
+			"Sometimes m_c feels younger than the age {PRONOUN/m_c/poss} body is.  {PRONOUN/m_c/subject} talked to r_c about it, worried something is wrong with {PRONOUN/m_c/object}, but {PRONOUN/m_c/subject} assured {PRONOUN/m_c/object} what {PRONOUN/m_c/subject} are feeling is perfectly normal, {PRONOUN/m_c/poss} brain is just in kittenspace",
+			"m_c, despite being old for a kit, act's younger then {PRONOUN/m_c/subject} are sometimes. It is possible {PRONOUN/m_c/subject} are in kittenspace." 
+		],
+		"in puppyspace": [
+			"m_c has slipped into a more puppy like headspace, {PRONOUN/m_c/subject} are worried about this but r_c assures that {PRONOUN/m_c/subject} are just in puppyspace, and thats okay." ,
+			"m_c, despite being too old to play pretend, act's more dog like sometimes. It is possible {PRONOUN/m_c/subject} are in puppyspace." 
 		]
 	}
 }

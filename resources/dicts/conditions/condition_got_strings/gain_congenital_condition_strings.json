@@ -105,8 +105,7 @@
 		"Counting and recounting, m_c keeps doing things a certain number of times and when asked {PRONOUN/m_c/subject} just says it's a reasonable number of times.",
 		"Around and around, m_c keeps asking the same questions not settled even when the answer is the same every time.",
 		"m_c has little habits that {PRONOUN/m_c/subject} {VERB/m_c/keep/keeps} repeating like grooming {PRONOUN/m_c/poss} paws in a particular order or waving {PRONOUN/m_c/poss} tail at someone multiple times before even saying a greeting.",
-		"When it comes to cleaning the den, m_c is the best helper and very particular. Even if {PRONOUN/m_c/subject} {VERB/m_c/seem/seems} to need to place an item multiple times before it's just right.",
-		"m_c has to do certain things six times over, like having to look behind {PRONOUN/m_c/object} every six steps, or {PRONOUN/m_c/subject} {VERB/m_c/get/gets} very uncomfortable and borderline panicked"
+		"When it comes to cleaning the den, m_c is the best helper and very particular. Even if {PRONOUN/m_c/subject} {VERB/m_c/seem/seems} to need to place an item multiple times before it's just right."
 	],
 	"comet spirit": [
         "m_c mewled and whined like any other kit, but {PRONOUN/m_c/poss} energy was through the nursery's roof and driving the queens mad, to the point they called r_c over just to see if {PRONOUN/r_c/subject} {VERB/r_c/have/has} anything to calm the rambunctious child. The medicine cat just chuckled, maybe the kit simply has a comet spirit, {PRONOUN/r_c/subject} had the right herb for it.",
@@ -131,14 +130,14 @@
 		"Unlike other kittens m_c keeps {PRONOUN/m_c/self} mostly curled up in the nursery, constantly complaining of pains throughout {PRONOUN/m_c/poss} body.",
 		"When touched by another, m_c lets out yowls of pain. It's distressing for everyone that they can't really help {PRONOUN/m_c/object}."
 	],
-    "thunderous spirit": [
-        "r_c notices m_c struggles with strong and intense emotions and suggests that {PRONOUN/m_c/subject} may have a thunderous spirit.",
+    "strong soul": [
+        "r_c notices m_c struggles with strong and intense emotions and thinks that {PRONOUN/m_c/subject} may have a strong soul.",
         "m_c has a strong fear of abandonment and being left behind, to the point it is affecting {PRONOUN/m_c/poss} relationships.",
-        "While talking to another cat, m_c explains that {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} emotions so strongly that some days it feels like {PRONOUN/m_c/poss} emotions are going to explode from {PRONOUN/m_c/object}. {PRONOUN/m_c/poss/CAP} clanmate encourages them to talk to the medicine cat, and m_c discovers that {PRONOUN/m_c/subject} {VERB/m_c/have/has} a thunderous spirit.",
-        "Some of m_c's clanmates notice that sometimes m_c behaves recklessly and struggles to trust others, and they tell {PRONOUN/m_c/object} that {PRONOUN/m_c/subject} may have a thunderous spirit."
+        "While talking to another cat, m_c explains that {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} emotions so strongly that some days it feels like {PRONOUN/m_c/poss} emotions are going to explode from {PRONOUN/m_c/object}. {PRONOUN/m_c/poss/CAP} clanmate encourages them to talk to the medicine cat, and m_c discovers that {PRONOUN/m_c/subject} {VERB/m_c/have/has} a strong soul.",
+        "Some of m_c's clanmates notice that sometimes m_c behaves recklessly and struggles to trust others, and they tell {PRONOUN/m_c/object} that {PRONOUN/m_c/subject} may has a strong soul."
     ],
     "otherwordly mind": [
-        "r_c notices that m_c sees and hears things that other cats can't, and suggests that {PRONOUN/m_c/subject} {VERB/m_c/have/has} an otherwodly mind.",
+        "r_c notices that m_c sees and hears things that other cats can't, and suggests that {PRONOUN/m_c/subject} {VERB/m_c/have/has} an otherwordly mind.",
         "m_c often has strong believes that no other cat has, like how {PRONOUN/m_c/subject} can talk to birds or was once a powerful leader",
         "Clanmates are worried about m_c, as sometimes the words {PRONOUN/m_c/subject} are saying are gibberish, or {PRONOUN/m_c/subject}'ll stop randomly in a conversation. Paired with other factors, m_c speaks to a medicine cat",
         "A queen in the nursery notices that m_c keeps on complaining about a scary monster which {PRONOUN/m_c/subject} can't see, and they speak to some other clanmates about it.",
