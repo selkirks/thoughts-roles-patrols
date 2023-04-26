@@ -532,12 +532,19 @@
 			"r_c sighs when m_c comes in with the complaint of a stomachache, hopefully it's just something {PRONOUN/m_c/subject} ate.",
 			"m_c rolls onto {PRONOUN/m_c/poss} back in {PRONOUN/m_c/poss} nest, too uncomfortable to doze on {PRONOUN/m_c/poss} stomache."
 		],
+,
 		"sore": [
 			"r_c gently scolds m_c when {PRONOUN/m_c/subject} {VERB/m_c/come/comes} into the medicine den, it looks like working too hard without taking breaks has made {PRONOUN/m_c/object} particularly sore.",
 			"After all the effort that {PRONOUN/m_c/subject} put into helping out the elders this moon, m_c has made {PRONOUN/m_c/self} sore. Not that it stops {PRONOUN/m_c/object} from taking pride in the effort.",
 			"m_c doesn't regret the extra work {PRONOUN/m_c/subject} put into helping this moon, even as {PRONOUN/m_c/subject} {VERB/m_c/wince/winces} simply walking back over to {PRONOUN/m_c/poss} nest.",
-			"Simply brushing up against someone makes m_c let out winces and little yowls of pain.",
 			"m_c lazes about in a sunbeam, watching content as {PRONOUN/m_c/poss} clanmates gather together for training that {PRONOUN/m_c/subject} {VERB/m_c/are/is} going to spot for."
+		],
+		"acute pain": [
+			"r_c winces at the whimpers and shudders that m_c is doing. {PRONOUN/r_c/subject/CAP} {VERB/r_c/know/knows} that {PRONOUN/m_c/poss} is in a lot of pain and are only able to do so much with the herbs that {PRONOUN/r_c/subject} {VERB/m_c/have/has}.",
+			"m_c whimpers, whole body shaking as {PRONOUN/m_c/subject} {VERB/m_c/try/tries} to take the herbs given to {PRONOUN/m_c/object}. It's hard when the world spins and swims from all the pain.",
+			"A lot of m_c's clanmates are worried about {PRONOUN/m_c/object} due to how m_c refuses to move from the sheer pain of it.",
+			"Simply brushing up against someone makes m_c let out winces and little yowls of pain.",
+			"m_c's curled in {PRONOUN/m_c/poss} nest shaking, unable to move without letting out cries of pain."
 		],
 		"headache": [
 			"r_c fusses with the herbs as m_c comes into the den wincing with each blink. {PRONOUN/r_c/subject} gently {VERB/r_c/ease/eases} {PRONOUN/m_c/object} to a quiet and dark corner of the den to rest.",
@@ -554,6 +561,11 @@
 			"m_c has been complaining of tingling in {PRONOUN/m_c/poss} legs for days, one day it stops. {PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} relieved, until {PRONOUN/m_c/subject} {VERB/m_c/try/tries} to move again.",
 			"When m_c attempts to get up from {PRONOUN/m_c/poss} bed {PRONOUN/m_c/subject} {VERB/m_c/let/lets} out a yowl of distress, it would appear that only half of {PRONOUN/m_c/object} has gotten up.",
 			"After a few moons of on and off falling over m_c finds one morning that {PRONOUN/m_c/subject} no longer {VERB/m_c/have/has} to worry about falling."
+		],
+		"rash": [
+			"With more than a little frustration m_c goes to r_c complaining about the rash that's growing beneath {PRONOUN/m_c/poss} fur.",
+			"m_c keeps scratching at a single spot, it looks like there's a rash forming.",
+			"m_c hisses while grooming, looks like the skin under {PRONOUN/m_c/poss} fur is starting to get flaky and patchy with a stress induced rash."
 		]
     },
 	"ongoing sleeplessness": {

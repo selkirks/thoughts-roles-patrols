@@ -996,6 +996,10 @@
                 "chance": 10
             },
 			{
+				"name": "acute pain",
+				"chance": 30
+			},
+			{
 				"name": "headache",
 				"chance": 10
 			},
@@ -1006,6 +1010,10 @@
 			{
 				"name": "paralyzed",
 				"chance": 90
+			},
+			{
+				"name": "rash",
+				"chance": 40
 			}
 	],
 	"herbs": [
