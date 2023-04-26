@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ce42a407-0f2f-4ee3-bcef-95649ffaedf8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/resources/dicts/thoughts/alive/general.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/dicts/thoughts/alive/general.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/dicts/thoughts/alive/kitten.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/dicts/thoughts/alive/kitten.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/events_module/condition_events.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/events_module/condition_events.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/dicts/conditions/permanent_conditions.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/dicts/conditions/permanent_conditions.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/dicts/conditions/risk_strings/permanent_condition_risk_strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/dicts/conditions/risk_strings/permanent_condition_risk_strings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
