@@ -146,7 +146,7 @@
     ],
     "snow vision": [
         "r_c notices that m_c struggles to see in the dark, more so than the other kits. {PRONOUN/m_c/subject} {VERB/m_c/speaks/speak} to m_c and discover that m_c has snow vision.",
-        "m_c is permanently seeing a snowey effect in their vision, and when {PRONOUN/m_c/subject} {VERB/m_c/speaks/speak} to a medicine cat about it, {PRONOUN/m_c/subject} {VERB/m_c/discovers/discover} that they have snow vision.",
+        "m_c is permanently seeing a snowy effect in their vision, and when {PRONOUN/m_c/subject} {VERB/m_c/speaks/speak} to a medicine cat about it, {PRONOUN/m_c/subject} {VERB/m_c/discovers/discover} that they have snow vision.",
         "Clanmates are annoyed that m_c always refuses to go on night patrols, and when they confront them about it they discover its because m_c stuggles to see in the dark, and they realise that m_c has snow vison."
     ]
 }
