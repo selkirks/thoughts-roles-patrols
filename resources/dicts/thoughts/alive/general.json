@@ -1786,6 +1786,7 @@
 			"Doesn't want to take {PRONOUN/m_c/poss} painkiller herbs today for fear of been fuzzy",
 			"Is wincing as {PRONOUN/m_c/subject} {VERB/m_c/walk/walks} around camp",
 			"Doesn't want to leave the nest today",
+			"Is curled up and crying about the pain",
 			"Is surprised to discover a new injury and struggling to remember where {PRONOUN/m_c/subject} got it"
         ],
         "perm_conditions": {
@@ -1970,7 +1971,29 @@
 			"Feels like {PRONOUN/m_c/subject} {VERB/m_c/are/is} a fake",
 			"Feels like everyone is looking at {PRONOUN/m_c/object} and judging",
 			"Worries that {PRONOUN/m_c/subject} {VERB/m_c/are/is} not worthy of been a member of c_n",
-			"Is struggling to breathe"
+			"Is struggling to breathe",
+			"Is scared of {PRONOUN/m_c/poss} own thoughts",
+			"Worries {PRONOUN/m_c/subject} {VERB/m_c/are/is} a bad cat",
+			"Fears waking up and trying to do {PRONOUN/m_c/poss} duties",
+			"Doesn't want to go on patrols",
+			"Fears going on patrols",
+			"Worries {PRONOUN/m_c/subject} might somehow start a war with another clan",
+			"Struggles to believe {PRONOUN/m_c/poss} clanmates",
+			"Wonders if StarClan approves of {PRONOUN/m_c/object}",
+			"Wishes to see a StarClan cat",
+			"Hates morning patrols",
+			"Doesn't enjoy waking up with {PRONOUN/m_c/poss} heart racing",
+			"Is in flight mode",
+			"Feels like the world is watching {PRONOUN/m_c/object}",
+			"Fears been a mentor",
+			"Has the shakes",
+			"Accidentally bit the inside of {PRONOUN/m_c/poss} cheek",
+			"Thinks {PRONOUN/m_c/subject} somehow broke the code",
+			"Got a bad feeling",
+			"Is feeling like doom is over the horizon",
+			"Wants to talk to r_c about {PRONOUN/m_c/poss} fears",
+			"Is worried for r_c",
+			"Has a sore jaw after grinding {PRONOUN/m_c/poss} teeth anxiously"
         ],
         "perm_conditions": {
             "m_c": [
@@ -2020,11 +2043,76 @@
 			"Doesn't feel like it's worth leaving camp today",
 			"Had a rare moment of happiness while sleeping in a sunbeam",
 			"Is talking to r_c about StarClan",
-			"Is wondering what is the true meaning of life"
+			"Is wondering what is the true meaning of life",
+			"Wishes the world would slow down sometimes",
+			"Stumbled over {PRONOUN/m_c/poss} own paws",
+			"Accidentally made a clanmate upset and doesn't know what {PRONOUN/m_c/subject} said wrong",
+			"Wonders if {PRONOUN/m_c/subject} can get away with sleeping all day",
+			"Feels the weight of the world is on {PRONOUN/m_c/object}",
+			"The world is too loud this moon",
+			"The world is too bright this moon",
+			"Wonders if {PRONOUN/m_c/subject} might have kittens one day",
+			"Feels a longing for {PRONOUN/m_c/poss} kithood days",
+			"Is purring listening to r_c talk about {PRONOUN/r_c/poss} day",
+			"Is listening to the Medicine Cat despite not wanting to",
+			"Is worried about the future",
+			"Wonders what it would be like to mentor an apprentice",
+			"Wishes that r_c would slow down a little bit",
+			"Wants r_c to know {PRONOUN/m_c/subject} enjoy the company",
+			"Is struggling to keep up with grooming"
         ],
         "perm_conditions": {
             "m_c": [
                 "heavy soul"
+            ]
+        },
+        "random_status_constraint": [
+            "kitten",
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "sleepless_to_alive_gen",
+        "thoughts": [
+            "Wonders when {PRONOUN/m_c/subject} slept last",
+			"Worries about disturbing the rest of the camp at night",
+			"Wishes {PRONOUN/m_c/subject} could sleep",
+			"Is glaring at poppy seeds",
+			"Wishes r_c would sleep quieter",
+			"Counts the stars and wonders if any are cats {PRONOUN/m_c/subject} {VERB/m_c/know/knows}",
+			"Forgot what {PRONOUN/m_c/subject} {VERB/m_c/were/was} doing in the middle of a task",
+			"Walked into a tree and hopes nobody noticed",
+			"Is seeing double of all {PRONOUN/m_c/poss} clanmates",
+			"Is scared to talk to the medicine cat about {PRONOUN/m_c/poss} sleeping habits",
+			"Missed what should have been an easy catch",
+			"Forgot that r_c was one of {PRONOUN/m_c/poss} clanmates the other day",
+			"Forgot r_c existed the other day",
+			"Is worried that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} losing sight",
+			"Jolted back to awareness in the middle of the thunderpath not knowing how {PRONOUN/m_c/subject} got there",
+			"Stopped taking poppy because {PRONOUN/m_c/subject} lost track of how many {PRONOUN/m_c/subject} already took",
+			"Is speaking nonsense as patrol reports",
+			"Brought back a stick for the prey pile",
+			"Forgot where the exit to camp was",
+			"Got startled by a leaf falling on {PRONOUN/m_c/poss} head",
+			"Is tasting colours",
+			"Is seeing sounds",
+			"Tripped over r_c the other day",
+			"Stumbled into r_c because {PRONOUN/m_c/subject} midjudged how close they were"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "ongoing sleeplessness"
             ]
         },
         "random_status_constraint": [
