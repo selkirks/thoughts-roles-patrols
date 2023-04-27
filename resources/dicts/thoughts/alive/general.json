@@ -2108,7 +2108,7 @@
 			"Is tasting colours",
 			"Is seeing sounds",
 			"Tripped over r_c the other day",
-			"Stumbled into r_c because {PRONOUN/m_c/subject} midjudged how close they were"
+			"Stumbled into r_c because {PRONOUN/m_c/subject} misjudged how close they were"
         ],
         "perm_conditions": {
             "m_c": [
