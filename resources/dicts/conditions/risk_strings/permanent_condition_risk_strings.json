@@ -532,7 +532,6 @@
 			"r_c sighs when m_c comes in with the complaint of a stomachache, hopefully it's just something {PRONOUN/m_c/subject} ate.",
 			"m_c rolls onto {PRONOUN/m_c/poss} back in {PRONOUN/m_c/poss} nest, too uncomfortable to doze on {PRONOUN/m_c/poss} stomache."
 		],
-,
 		"sore": [
 			"r_c gently scolds m_c when {PRONOUN/m_c/subject} {VERB/m_c/come/comes} into the medicine den, it looks like working too hard without taking breaks has made {PRONOUN/m_c/object} particularly sore.",
 			"After all the effort that {PRONOUN/m_c/subject} put into helping out the elders this moon, m_c has made {PRONOUN/m_c/self} sore. Not that it stops {PRONOUN/m_c/object} from taking pride in the effort.",
