@@ -4399,6 +4399,36 @@
             }
         }
   },
+  "#send_logs_button":
+  {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/sendlogs.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/sendlogs_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/sendlogs_hover.png"
+            }
+        }
+  },
+  "#send_logs_button2":
+  {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/sendlogs.png"
+            }
+        }
+  },
   "#greenleaf_toggle_button":
   {
         "prototype": "#image_button",
