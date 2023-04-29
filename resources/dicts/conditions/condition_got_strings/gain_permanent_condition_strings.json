@@ -129,8 +129,12 @@
             "m_c demands to know when {PRONOUN/m_c/subject}'ll stop freezing in fear at what {PRONOUN/m_c/subject} {VERB/m_c/know/knows} are just memories. r_c doesn't have answers, but {PRONOUN/r_c/subject} {VERB/r_c/comfort/comforts} {PRONOUN/r_c/poss} Clanmate, saying that forcing {PRONOUN/m_c/self} to be okay is just hurting m_c.",
             "r_c tells m_c that {PRONOUN/r_c/subject} have no way to stop dreams or memories, only poppy seeds to help r_c sleep. Perhaps the memories will fade with time.",
             "m_c jumps, then realizes that it was just a leaf blowing in the wind. {PRONOUN/m_c/subject/CAP} {VERB/m_c/feel/feels} exhausted, and {PRONOUN/m_c/poss} memories feel like a trap that rears up to bite {PRONOUN/m_c/object} whenever {PRONOUN/m_c/subject} {VERB/m_c/relax/relaxes}."
-
-        ]
+        ],
+		"anxiety": [
+			"r_c has noticed that while the shock has gone it's replaced in m_c with a certain kind of worry that {PRONOUN/m_c/subject} {VERB/m_c/wear/wears} like a cloud of dust on {PRONOUN/m_c/poss} pelt.",
+			"r_c shakes {PRONOUN/r_c/poss} head as m_c shakes. While the shock is gone, it seems to have left {PRONOUN/m_c/object} with a lingering sense of anxiety.",
+			"m_c has found that since {PRONOUN/m_c/poss} shock has faded it's been replaced with an itch under {PRONOUN/m_c/poss} fur and a certain kind of jumpiness that they {PRONOUN/m_c/subject} can't explain."
+		]	
     },
     "head damage": {
         "failing eyesight": [

@@ -1000,11 +1000,7 @@
             {
                 "name": "lingering shock",
                 "chance": 15
-            },
-			{
-				"name": "anxiety",
-				"chance": 15
-			}
+            }
         ],
         "also_got": [],
         "cause_permanent": [
@@ -1035,7 +1031,8 @@
         ],
         "also_got": [],
         "cause_permanent": [
-            "recurring shock"
+            "recurring shock",
+			"anxiety"
         ],
         "herbs": [
             "thyme",

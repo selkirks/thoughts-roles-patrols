@@ -165,11 +165,7 @@
             "r_c gives m_c the poppy seeds {PRONOUN/m_c/subject} {VERB/m_c/ask/asks} for, to help {PRONOUN/m_c/object} sleep, but it worries {PRONOUN/r_c/object} that m_c's shock has lingered so long.",
             "m_c wakes again from another nightmare, feeling adrenaline rush through {PRONOUN/m_c/poss} veins as {PRONOUN/m_c/subject} {VERB/m_c/try/tries} not to bolt. It feels like days since {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} been able to sleep through the night, and it's wearing {PRONOUN/m_c/object} down."
 
-        ],
-		"anxiety": [
-			"r_c has noticed that while the shock has gone it's replaced in m_c with a certain kind of worry that {PRONOUN/m_c/subject} {VERB/m_c/wear/wears} like a cloud of dust on {PRONOUN/m_c/poss} pelt.",
-			"m_c has found that since {PRONOUN/m_c/poss} shock has faded it's been replaced with an itch under {PRONOUN/m_c/poss} fur and a certain kind of jumpiness that they {PRONOUN/m_c/subject} can't explain."
-		]
+        ]
     },
     "shivering": {
         "frostbite": [
