@@ -1279,9 +1279,10 @@
         "illness_infectiousness":[
         ],
         "risks": [
-			{
-				"name": "stomachache",
-				"chance": 5
+            {
+                "name": "stomachache",
+                "chance": 5
+            },
 			{
                 "name": "diarrhea",
                 "chance": 10
