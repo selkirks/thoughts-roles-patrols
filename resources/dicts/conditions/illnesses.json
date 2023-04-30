@@ -171,7 +171,7 @@
         "infectiousness": 15,
         "risks": [
             {
-                "name": "whitecough",
+                "name": "silvercough",
                 "chance": 10
             }
         ],
@@ -309,7 +309,11 @@
             {
                 "name": "whitecough",
                 "chance": 15
-            }
+            },
+			{
+				"name": "silvercough",
+				"chance": 15
+			}
         ],
         "herbs": [
             "ragwort",
@@ -318,6 +322,50 @@
         ]
     },
     "whitecough": {
+        "severity": "major",
+        "mortality": {
+            "newborn": 15,
+            "kitten": 15,
+            "adolescent": 60,
+            "young adult": 70,
+            "adult": 70,
+            "senior adult": 70,
+            "senior": 15
+        },
+        "medicine_mortality": {
+            "newborn": 20,
+            "kitten": 20,
+            "adolescent": 80,
+            "young adult": 90,
+            "adult": 90,
+            "senior adult": 90,
+            "senior": 20
+        },
+        "duration": 3,
+        "medicine_duration": 2,
+        "infectiousness": 30,
+        "risks": [
+            {
+                "name": "greencough",
+                "chance": 18
+            },
+            {
+                "name": "silvercough",
+                "chance": 5
+            }			
+        ],
+        "herbs": [
+            "catmint",
+            "plantain",
+            "tansy",
+            "mullein",
+            "juniper",
+            "ragwort",
+            "poppy",
+            "moss"
+        ]
+    },
+    "silvercough": {
         "severity": "major",
         "mortality": {
             "newborn": 10,
@@ -356,7 +404,7 @@
             "poppy",
             "moss"
         ]
-    },
+    },	
     "yellowcough": {
         "severity": "major",
         "mortality": {

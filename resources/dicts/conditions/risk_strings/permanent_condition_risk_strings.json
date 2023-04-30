@@ -81,7 +81,11 @@
         "whitecough": [
             "r_c worst fears are realized, as whitecough has infected m_c with {PRONOUN/m_c/poss} weakened lungs.",
             "m_c's weak lungs have left {PRONOUN/m_c/subject} coughing and wheezing this moon, unable to resist potential sickness."
-        ]
+        ],
+		"silvercough": [
+			"It's the season for whitecough and silver cough, despite r_c helping m_c to take extra precautions {PRONOUN/m_c/subject} {VERB/m_c/sit/sits} miserably curled up in the den with silvercough.",
+			"m_c's weakened lungs leave them unable to propely fight off the sickness this moon. Coughing and spluttering {PRONOUN/m_c/subject} {VERB/m_c/find/finds} a nice nest to wait it out."
+		]
     },
     "wasting disease": {
         "running nose": [
@@ -720,6 +724,10 @@
 		"whitecough": [
 			"Unsurprising to r_c, as whitecough season comes around m_c's longcough comes with {PRONOUN/m_c/object} complaining of chills and aches.",
 			"m_c always has a cough, it's no wonder that {PRONOUN/m_c/subject} missed when that cough became an illness."
+		],
+		"silvercough": [
+			"It's whitecough season again, and r_c's been checking each clanmate for the illness. m_c's surprised when r_c shakes {PRONOUN/r_c/poss} head and calls {PRONOUN/m_c/object} inot the den, it seems {PRONOUN/m_c/poss} usual cough has masked the silvercough.",
+			"m_c's coughing has been a lot worse, a lot more frequent recently. Talking to the medicine cat {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} unsurprised to discover it's compounded by silvercough."
 		]
 	}
 }

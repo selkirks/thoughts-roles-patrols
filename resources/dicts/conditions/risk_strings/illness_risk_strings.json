@@ -1,51 +1,76 @@
 {
+    "seizure": {
+		"bruises": [
+			"r_c gently tends to m_c once the shaking has stopped. Asking them where it hurts and fluffing up the nest to try and soothe the new bruises.",
+			"m_c pants, gingerly wincing as {PRONOUN/m_c/subject} {VERB/m_c/shift/shifts} in {PRONOUN/m_c/poss} nest.",
+			"Even with the softest nest {PRONOUN/m_c/subject} could find, m_c still finds that {PRONOUN/m_c/subject} {VERB/m_c/hurt/hurts} beneath their fur."
+		],
+		"sore": [
+			"After ensuring that m_c is alright and secure, r_c gently massages the aches out of {PRONOUN/m_c/poss} body.",
+			"m_c whines, it's not enough just that {PRONOUN/m_c/subject} {VERB/m_c/are/is} still slightly shaking from residules, now all {PRONOUN/m_c/poss} muscles ache too.",
+			"If m_c close {PRONOUN/m_c/poss} eyes the pain isn't quite so bad, just a dull throb really. But it doesn't easily let them rest after {PRONOUN/m_c/poss} seizure."
+		]
+	},
     "greencough": {
         "yellowcough": [
              "There has to be a solution - if r_c tries hard enough, surely {PRONOUN/r_c/subject} can still save m_c from the yellowcough {PRONOUN/m_c/poss} greencough has progressed to.",
              "m_c sits in the medicine cat den, miserable, coughing so hard it feels like {PRONOUN/m_c/subject} can barely get a breath in. {PRONOUN/m_c/poss/CAP} greencough has progressed to yellowcough, and the outlook looks grim."
-
-        ]
+        ],
+		"longcough": [
+			"Despite all of m_c's tiredness and fever having left {PRONOUN/m_c/object}, r_c struggles to help get rid of the last lingering cough... it seems like it might never leave.",
+			"While m_c's greencough seems to be gone, the coughing itself stubbornly lingers. {PRONOUN/m_c/subject/CAP} {VERB/m_c/don't/doesn't} know if it'll ever go away coming in bursts randomly."
+		]
     },
     "kittencough": {
-        "whitecough": [
-            "r_c quietly tells m_c's parent that {PRONOUN/r_c/subject} {VERB/r_c/need/needs} to move m_c to the medicine cat den. m_c's kittencough has progressed to whitecough.",
+        "silvercough": [
+            "r_c quietly tells m_c's parent that {PRONOUN/r_c/subject} {VERB/r_c/need/needs} to move m_c to the medicine cat den. m_c's kittencough has progressed to silvercough.",
             "m_c coughs pathetically, wondering why it's not getting better, and why {PRONOUN/m_c/subject} {VERB/m_c/have/has} to be in the stinky medicine cat den now."
-
         ]
     },
     "an infected wound": {
         "a festering wound": [
             "The stink of infection has strengthened and worsened. r_c mutters about different herbs, as m_c watches {PRONOUN/r_c/object} change yet another poultice that probably won't work.",
             "m_c swears {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} been cleaning it, but {PRONOUN/m_c/poss} wound has begun to fester like week-old prey."
-
         ]
     },
     "running nose": {
         "whitecough": [
-            "r_c moves m_c to the medicine cat den, where the whitecough that {PRONOUN/m_c/poss} running nose has turned into is more easily monitored.",
-            "m_c brings {PRONOUN/m_c/self} to the medicine cat den, concerned {PRONOUN/m_c/poss} running nose only seems to be getting worse."
-
-        ]
+            "r_c attempts to move m_c to the medicine cat den, where the whitecough that {PRONOUN/m_c/poss} running nose has turned into is more easily monitored.",
+            "m_c brings {PRONOUN/m_c/self} to the medicine cat den, concerned {PRONOUN/m_c/poss} running nose only seems to be getting worse.",
+			"Despite {PRONOUN/m_c/poss} running nose only getting worse, m_c refuses to stay in the medicine den because it's only a little whitecough."
+        ],
+		"silvercough": [
+			"r_c herds m_c gently to the medicine den as {PRONOUN/m_c/subject} {VERB/m_c/cough/coughs}. There the silvercough can be more easily monitored and treated.",
+			"m_c brings {PRONOUN/m_c/self} to the medicine den, not only is {PRONOUN/m_c/poss} running nose not going away, it seems to be getting worse instead.",
+			"Miserably, m_c coughs and sneezing {PRONOUN/m_c/poss} way to the medicine den, it seems {PRONOUN/m_c/poss} running nose has turned into silvercough."
+		]
     },
     "whitecough": {
         "greencough":[
             "r_c searches through {PRONOUN/r_c/poss} herb stores. m_c's whitecough has progressed to greencough, greatly worrying {PRONOUN/r_c/object}.",
             "m_c coughs, feeling like {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} hacking up half {PRONOUN/m_c/poss} lungs. This is definitely worse than whitecough ever gets."
-
-        ]
+        ],
+		"silvercough": [
+			"r_c herds m_c to the medicine den, scolding {PRONOUN/m_c/object} for the lack of care for {PRONOUN/m_c/self}. Now the whitecough has become a more severe silvercough.",
+			"Due to the stubborn lack of nestrest m_c is now miserably curled up in the medicine den, coughing with silvercough instead."
+		]
     },
+    "silvercough": {
+        "greencough":[
+            "r_c searches through {PRONOUN/r_c/poss} herb stores. m_c's silvercough has progressed to greencough, greatly worrying {PRONOUN/r_c/object}.",
+            "m_c coughs, feeling like {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} hacking up half {PRONOUN/m_c/poss} lungs. This is definitely worse than silvercough ever gets."
+        ]
+    },	
     "yellowcough": {
         "redcough": [
              "r_c spots the specks of blood in the bedding where m_c has been coughing, and swallows a wail of despair. If {PRONOUN/m_c/poss} yellowcough has progressed to redcough, it's a death sentence.",
              "m_c is going to be fine. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} sure of it. {PRONOUN/m_c/poss/CAP} lungs don't hurt nearly as much anymore, and if there's blood in {PRONOUN/m_c/poss} mouth when {PRONOUN/m_c/subject} {VERB/m_c/finish/finishes} a coughing fit, what of it?"
-
         ]
     },
     "heat exhaustion": {
         "heat stroke": [
             "r_c squeezes the damp moss onto m_c's forehead, as {PRONOUN/m_c/subject} {VERB/m_c/lie/lies} completely drained and panting. This is more than heat exhaustion, m_c will need time to recover from this heat stroke.",
             "m_c dazedly rolls around in {PRONOUN/m_c/poss} nest, searching for a cooler spot. {PRONOUN/m_c/poss/CAP} exhaustion is beyond just a little thing, and {PRONOUN/m_c/poss} confused brain still has enough observational power to recognise full heat stroke."
-
         ]
     },
     "stomachache": {
@@ -67,18 +92,6 @@
             "Raw hairless patches are forming on m_c's pelt as {PRONOUN/m_c/subject} {VERB/m_c/scratch/scraches} and {VERB/m_c/scratch/scratches} at {PRONOUN/m_c/poss} fleas."
         ]
     },
-    "seizure": {
-		"bruises": [
-			"r_c gently tends to m_c once the shaking has stopped. Asking them where it hurts and fluffing up the nest to try and soothe the new bruises.",
-			"m_c pants, gingerly wincing as {PRONOUN/m_c/subject} {VERB/m_c/shift/shifts} in {PRONOUN/m_c/poss} nest.",
-			"Even with the softest nest {PRONOUN/m_c/subject} could find, m_c still finds that {PRONOUN/m_c/subject} {VERB/m_c/hurt/hurts} beneath their fur."
-		],
-		"sore": [
-			"After ensuring that m_c is alright and secure, r_c gently massages the aches out of {PRONOUN/m_c/poss} body.",
-			"m_c whines, it's not enough just that {PRONOUN/m_c/subject} {VERB/m_c/are/is} still slightly shaking from residules, now all {PRONOUN/m_c/poss} muscles ache too.",
-			"If m_c close {PRONOUN/m_c/poss} eyes the pain isn't quite so bad, just a dull throb really. But it doesn't easily let them rest after {PRONOUN/m_c/poss} seizure."
-		]
-	},
 	"spasms": {
 		"bruises": [
 			"Once m_c's limb stops spasming r_c carefully comes and checks {PRONOUN/m_c/object} over. It would seem {PRONOUN/m_c/subject} {VERB/m_c/have/has} a few new bruises.",
