@@ -21,6 +21,8 @@ from scripts.housekeeping.update import self_update, UpdateChannel, get_latest_v
 from scripts.utility import scale, quit, update_sprite
 from scripts.game_structure.game_essentials import game, MANAGER
 from scripts.housekeeping.version import get_version_info
+from scripts.sendlogs import send_logs
+from re import match
 
 
 class SaveCheck(UIWindow):
