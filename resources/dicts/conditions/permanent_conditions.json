@@ -1030,13 +1030,13 @@
         "congenital": "never",
         "moons_until": 0,
         "mortality": {
-            "newborn": 0,
-            "kitten": 0,
-            "adolescent": 0,
-            "young adult": 0,
-            "adult": 0,
-            "senior adult": 0,
-            "senior": 0
+            "newborn": 200,
+            "kitten": 200,
+            "adolescent": 200,
+            "young adult": 200,
+            "adult": 200,
+            "senior adult": 200,
+            "senior": 200
         },
         "illness_infectiousness": [
         ],
@@ -1241,5 +1241,70 @@
         "risks": [
         ],
         "herbs":[]
+    },
+    "irritable bowels": {
+        "severity": "minor",
+        "congenital": "sometimes",
+        "moons_until": 3,
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "illness_infectiousness":[
+        ],
+        "risks": [
+			{
+				"name": "stomachache",
+				"chance": 5
+			{
+                "name": "diarrhea",
+                "chance": 10
+            },
+			{
+				"name": "constipation",
+				"chance": 15
+			},
+			{
+				"name": "nest wetting",
+				"chance": 25
+			}
+        ],
+        "herbs": [
+            "juniper",
+            "mallow",
+            "ragwort",
+            "poppy"
+        ]
+    },
+    "longcough": {
+        "severity": "minor",
+        "congenital": "never",
+        "moons_until": 3,
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+            {
+                "name": "whitecough",
+                "chance": 15
+            }
+        ],
+        "herbs": [
+            "betony",
+            "mullein"
+        ]
     }
 }

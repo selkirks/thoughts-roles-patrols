@@ -52,7 +52,6 @@
         "diarrhea": [
             "Embarrassed, m_c reports to r_c that {PRONOUN/m_c/poss} stomachache is now having consequences at the other end of {PRONOUN/m_c/poss} digestive system. r_c, as non-squeamish as all medicine cats, tells m_c that it's now very important {PRONOUN/m_c/subject} {VERB/m_c/keep/keeps} drinking water, as the diarrhea will make {PRONOUN/m_c/object} lose it quickly.",
             "m_c is now spending more time at the dirtplace than in camp, as {PRONOUN/m_c/poss} stomachache has progressed to diarrhea."
-
         ],
 		"constipation": [
 			"With some worry m_c goes to r_c to embarrassingly talk about how {PRONOUN/m_c/subject} {VERB/m_c/haven't/hasn't} been able to properly go to the dirtplace. r_c patiently encourages {PRONOUN/m_c/object} to have more water and {PRONOUN/m_c/poss} herbs to keep up energy.",
@@ -192,5 +191,19 @@
 			"Due to m_c's tiredness from lack of sleep {PRONOUN/m_c/subject} {VERB/m_c/keep/keeps} hearing things.",
 			"m_c walks into a tree because {PRONOUN/m_c/subject} thought there was a squirrel darting into a hole at it's base."
 		]
-	}	
+	},
+	"nest wetting": {
+		"sleeplessness": [
+			"r_c wakes bleerily as little m_c paws into the medicine den. {PRONOUN/m_c/poss/CAP} looks rather ashamed and sheepish as {PRONOUN/m_c/subject} {VERB/m_c/explain/explains} the issue.",
+			"m_c can't seem to get a good night's sleep with all the wet nesting around {PRONOUN/m_c/object}.",
+			"Awkwardly m_c spends the nights wandering around camp, it's better than waking up in wet nesting again."
+		]
+	},
+	"night dirtplacing": {
+		"sleeplessness": [
+			"Reluctantly m_c goes to talk to r_c. The frequent trips to the dirtplace all night have left {PRONOUN/m_c/object} unable to sleep.",
+			"With some shock m_c realises that the sun is rising already, and {PRONOUN/m_c/subject} {VERB/m_c/haven't/hasn't} gotten any sleep at all.",
+			"Before m_c knows what is happening it's already morning and {PRONOUN/m_c/object} {VERB/m_c/haven't/hasn't} slept yet."
+		]
+	}
 }

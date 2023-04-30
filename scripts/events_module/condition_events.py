@@ -65,6 +65,8 @@ class Condition_Events():
                 # if a non-kitten got kittencough, switch it to whitecough instead
                 if chosen_illness == 'kittencough' and cat.status != 'kitten':
                     chosen_illness = 'whitecough'
+                elif chosen_illness == 'nest wetting' and cat.status not in ['kitten', 'apprentice']:
+                    chosen_illness = 'night dirtplacing'
                 # make em sick
                 cat.get_ill(chosen_illness)
 
@@ -380,9 +382,15 @@ class Condition_Events():
             "an infected wound": "a festering wound",
             "heat exhaustion": "heat stroke",
             "stomachache": "diarrhea",
+            "stomachache": "constipation",
             "grief stricken": "lasting grief",
             "grief stricken": "heavy soul",
-            "lasting grief": "heavy soul"
+            "lasting grief": "heavy soul",
+            "anxiety attack": "panic attack",
+            "panic attack": "shock",
+            "panic attack": "paranoia",
+            "sleeplessness": "ongoing sleeplessness",
+            "nest wetting": "night dirtplacing"
         }
         # ---------------------------------------------------------------------------- #
         #                         handle currently sick cats                           #

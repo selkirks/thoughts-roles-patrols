@@ -202,5 +202,15 @@
 		"There is so much relief from m_c that {PRONOUN/m_c/poss} ears are no longer buzzing with flies.",
 		"m_c purrs when {PRONOUN/m_c/poss} ears stop tinkling.",
 		"m_c sits and shares tongues freely with {PRONOUN/m_c/poss} clanmates, no longer shaking {PRONOUN/m_c/poss} head to try and hear better."
+	],
+	"nest wetting": [
+		"After the embarrassment, m_c is relieved to wake up once more in a clean nest.",
+		"m_c's no longer wetting the nest and is welcomed back in.",
+		"m_c purrs when they wake up in nice clean moss."
+	],
+	"night dirtplacing": [
+		"m_c is able to once more sleep through the night without having to get up for the dirtplace.",
+		"To the relief of {PRONOUN/m_c/poss} denmates, m_c hasn't disturbed the den in the night anymore.",
+		"m_c rolls over in {PRONOUN/m_c/poss} nest, finally well rested without any night time trips to the dirtplace."
 	]
 }
