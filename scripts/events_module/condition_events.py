@@ -333,6 +333,9 @@ class Condition_Events():
 =======
             "constant roaming pain", "strong soul", "otherworldly mind", "kitten regressor", "puppy regressor", "snow vision",
             "echoing shock"
+<<<<<<< HEAD
+>>>>>>> 148ed26c1be9d88b648cd049c1d307ef8b07e2cd
+=======
 >>>>>>> 148ed26c1be9d88b648cd049c1d307ef8b07e2cd
         ]
 
