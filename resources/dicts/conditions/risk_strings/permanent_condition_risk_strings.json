@@ -175,6 +175,24 @@
 			"m_c complains that {PRONOUN/m_c/poss} ears feel full of dandelion fluff and feathers."
 		]
     },
+	"constantly dizzy": {
+		"headache": [
+			"r_c startles when m_c trips {PRONOUN/m_c/poss} way into the medicine den. Rather awkwardly, m_c explains it's to ask for a couple of herbs to get rid of the spinning in {PRONOUN/m_c/poss} head.",
+			"Miserably m_c goes about {PRONOUN/m_c/poss} day, {PRONOUN/m_c/poss} swimming vision and swaying world has left {PRONOUN/m_c/object} with a bit of a headache.",
+			"After walking accidentally into a tree that m_c swears snuck up on {PRONOUN/m_c/object}... {PRONOUN/m_c/subject} {VERB/m_c/have/has} been left with a throbbing headache."
+		],
+		"ear buzzing": [
+			"r_c checks and rechecks m_c's ears for {PRONOUN/m_c/object}. No matter how much {PRONOUN/r_c/subject} {VERB/r_c/peer/peers} in, nothing reveals itself to be causing the horrible ringing m_c complains of.",
+			"m_c buries {PRONOUN/m_c/poss} head into the nesting around {PRONOUN/m_c/object}, it doesn't stop the sharp pain and ringing in {PRONOUN/m_c/poss} ears at all.",
+			"m_c dizzily sways around camp, the swaying made worse due to the sharp painful ringing in one ear."
+		],
+		"dizziness": [
+			"r_c helps m_c to keep on {PRONOUN/m_c/poss} paws as {PRONOUN/r_c/subject} {VERB/m_c/guide/guides} {PRONOUN/m_c/object} towards the medicine den and a comfortable nest to rest until the period of dizziness passes.",
+			"m_c feels like the whole world is swaying, it appears that {PRONOUN/m_c/poss} dizziness is worse than usual today.",
+			"Walking around the camp, m_c keeps stumbling and tripping. {PRONOUN/m_c/poss/CAP} vision can't focus and keeps swimming as the whole world keeps swaying.",
+			"The world is refusing to stay still for m_c and {PRONOUN/m_c/subject} {VERB/m_c/keep/keeps} complaining about needing the help."
+		]
+	},
     "recurring shock": {
         "constant nightmares": [
             "r_c sits with m_c, listening to {PRONOUN/m_c/poss} troubles and providing a comforting, sympathetic ear. m_c has had a rough moon, haunted by constant nightmares.",

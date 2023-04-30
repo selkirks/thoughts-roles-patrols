@@ -1142,12 +1142,13 @@
             }
         ],
         "also_got": [
+			"dizziness"
         ],
         "cause_permanent": [
             "failing eyesight",
             "one bad eye",
             "blind",
-            "loss of balance",
+            "constantly dizzy",
             "partial hearing loss",
             "persistent headaches"
         ],
