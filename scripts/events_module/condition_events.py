@@ -375,10 +375,13 @@ class Condition_Events():
         event_list = []
         illness_progression = {
             "running nose": "whitecough",
-            "kittencough": "whitecough",
-            "whitecough": "yellowcough",
+            "kittencough": "silvercough",
+            "whitecough": "greencough",
             "greencough": "yellowcough",
             "yellowcough": "redcough",
+            "running nose": "silvercough",
+            "silvercough": "greencough",
+            "whitecough": "silvercough",
             "an infected wound": "a festering wound",
             "heat exhaustion": "heat stroke",
             "stomachache": "diarrhea",
