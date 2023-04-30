@@ -125,6 +125,11 @@
 		]
     },
     "deaf": {
+		"mute": [
+			"r_c has noticed m_c getting quieter and quieter as time goes on. Coming over to check on {PRONOUN/m_c/object} {PRONOUN/r_c/subject} {VERB/r_c/discover/discovers} that m_c's voice has left {PRONOUN/m_c/object}.",
+			"m_c's awkward volume control has faded away until all {PRONOUN/m_c/poss} words are just too hard for {PRONOUN/m_c/poss} clanmates to hear.",
+			"After struggling for so long to be heard, m_c has settled into a calm silence."
+		],
 		"nonverbal": [
 			"r_c sits with m_c trading signs back and forth when {PRONOUN/m_c/subject} {VERB/m_c/stop/stops} speaking.",
 			"Nobody minds when m_c has a few bad days and chooses to just use sign to communicate rather than trying to strain to speak.",

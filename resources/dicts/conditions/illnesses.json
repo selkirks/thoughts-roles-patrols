@@ -977,6 +977,10 @@
         "medicine_duration": 2,
         "infectiousness": 0,
         "risks": [
+			{
+				"name": "mute",
+				"chance": 90
+			}
 		],
         "herbs": [
 			"honey",

@@ -156,6 +156,14 @@
 			"Something in m_c's chest feels tight, feels numb really. A weight that {PRONOUN/m_c/subject} {VERB/m_c/have/has} to carry around for the rest of {PRONOUN/m_c/poss} life."
 		]
 	},
+	"nonverbal": {
+		"mute": [
+			"After all this time some of the clan thinks that m_c should have started speaking again. r_c simply shakes their head, it's not up to those cats to demand that.",
+			"m_c simply shakes {PRONOUN/m_c/poss} head when a clanmate asks if {PRONOUN/m_c/subject} {VERB/m_c/are/is} going to start speaking again soon.",
+			"The clan doesn't think twice about m_c's silence, that's just how {PRONOUN/m_c/subject} {VERB/m_c/are/is}.",
+			"m_c softly pads out into the clearing, {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} need to use words to talk. {PRONOUN/m_c/poss} cat-sign is loud enough."
+		]
+	},
 	"vivid daydreams": {
 		"hallucinations": [
 			"Something is really wrong, r_c worriedly fusses over m_c as {PRONOUN/m_c/poss} escapism seems to blend into {PRONOUN/m_c/poss} reality.",

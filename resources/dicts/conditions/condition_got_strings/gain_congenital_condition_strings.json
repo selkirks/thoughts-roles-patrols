@@ -148,5 +148,16 @@
         "r_c notices that m_c struggles to see in the dark, more so than the other kits. {PRONOUN/m_c/subject} {VERB/m_c/speaks/speak} to m_c and discover that m_c has snow vision.",
         "m_c is permanently seeing a snowy effect in their vision, and when {PRONOUN/m_c/subject} {VERB/m_c/speaks/speak} to a medicine cat about it, {PRONOUN/m_c/subject} {VERB/m_c/discovers/discover} that they have snow vision.",
         "Clanmates are annoyed that m_c always refuses to go on night patrols, and when they confront them about it they discover its because m_c stuggles to see in the dark, and they realise that m_c has snow vison."
-    ]
+    ],
+	"irritable bowels": [
+		"r_c is very carefully preparing yet another mixture of belly soothing herbs for m_c. {PRONOUN/r_c/subject}{VERB/m_c/'re/'s} worried about the consistancy of {PRONOUN/m_c/poss} issues.",
+		"m_c is yet again complaining about having a stomachache, this is becomming upsettingly common.",
+		"The parents of m_c worry when {PRONOUN/m_c/subject} {VERB/m_c/struggles/struggle} to properly eat and use the dirtplace, always in some form of discomfort."
+	],	
+	"mute": [
+		"When m_c's parents come in with {PRONOUN/m_c/object} to visit r_c it's about worries with {PRONOUN/m_c/object} not speaking. After some tests r_c sits back and gently explains it's likely that m_c's mute.",
+		"Initially there was some confusion over why m_c wasn't speaking, it's soon cleared up that there's nothing wrong {PRONOUN/m_c/subject} {VERB/m_c/are/is} just mute.",
+		"m_c has never needed words to speak, fluent enough with {PRONOUN/m_c/poss} body language and the clan adapts to help {PRONOUN/m_c/object} be heard even in {PRONOUN/m_c/poss} silence.",
+		"Nobody knew silence could be so loud until m_c arrived."
+	]
 }

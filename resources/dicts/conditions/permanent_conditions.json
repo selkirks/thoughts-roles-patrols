@@ -427,9 +427,13 @@
         ],
         "risks": [
 			{
+				"name": "mute",
+				"chance": 120
+			},
+			{
 				"name": "nonverbal",
 				"chance": 20
-			}	
+			}			
         ],
         "herbs": []
 
@@ -1024,7 +1028,24 @@
 		"thyme",
 		"catmint"
 		]
-	},
+	},	
+    "mute": {
+        "severity": "minor",
+        "congenital": "sometimes",
+        "moons_until": 4,
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "illness_infectiousness":[],
+        "risks": [],
+        "herbs":[]
+    },	
     "ongoing sleeplessness": {
         "severity": "major",
         "congenital": "never",
