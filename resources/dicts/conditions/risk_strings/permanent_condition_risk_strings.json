@@ -81,7 +81,11 @@
         "whitecough": [
             "r_c worst fears are realized, as whitecough has infected m_c with {PRONOUN/m_c/poss} weakened lungs.",
             "m_c's weak lungs have left {PRONOUN/m_c/subject} coughing and wheezing this moon, unable to resist potential sickness."
-        ]
+        ],
+		"silvercough": [
+			"It's the season for whitecough and silver cough, despite r_c helping m_c to take extra precautions {PRONOUN/m_c/subject} {VERB/m_c/sit/sits} miserably curled up in the den with silvercough.",
+			"m_c's weakened lungs leave them unable to propely fight off the sickness this moon. Coughing and spluttering {PRONOUN/m_c/subject} {VERB/m_c/find/finds} a nice nest to wait it out."
+		]
     },
     "wasting disease": {
         "running nose": [
@@ -199,6 +203,11 @@
 		]
 	},
     "recurring shock": {
+        "shock": [
+			"r_c watches as m_c wakes yet again with flattened ears and a racing heart. It seems {PRONOUN/m_c/poss} shock has returned this moon, fresh as the day it first occurred.",
+			"m_c's shock feels fresh, the event from the past flashing before {PRONOUN/m_c/poss} eyes and making {PRONOUN/m_c/object} shake and shiver wishing to just curl back up in the den and not leave.",
+			"Breathing harshly m_c creeps around the camp towards the medicine den, every step shaky and weak."
+		],
         "constant nightmares": [
             "r_c sits with m_c, listening to {PRONOUN/m_c/poss} troubles and providing a comforting, sympathetic ear. m_c has had a rough moon, haunted by constant nightmares.",
             "Haunted by the memories of {PRONOUN/m_c/poss} past, m_c gets so little sleep this month that {PRONOUN/m_c/subject} {VERB/m_c/find/finds} {PRONOUN/m_c/self} unable to function."
@@ -220,6 +229,61 @@
 		"puppy regressor": [
             "m_c has slipped into a more puppy like headspace, {PRONOUN/m_c/subject} are worried about this but r_c assures that {PRONOUN/m_c/subject} are just a puppy regressor, and thats okay." ,
             "m_c, despite being too old to play pretend, act's more dog like sometimes. It is possible m_c is a puppy regressor." 
+		],
+		"anxiety attack": [
+			"In the middle of the night m_c wakes up r_c, tail tucked into {PRONOUN/m_c/poss} side. {PRONOUN/m_c/subject/CAP} just {VERB/m_c/need/needs} to talk about the anxieties chasing themselves around in {PRONOUN/m_c/poss} head.",
+			"m_c breathes harshly walking around camp, struggling to fight back against the irrational thoughts and memories in {PRONOUN/m_c/poss} head.",
+			"m_c can't get the thoughts and feelings releated to {PRONOUN/m_c/poss} memories out of {PRONOUN/m_c/poss} head this moon."
+		],
+		"paranoia": [
+			"m_c struggles to trust the words of reassurance that r_c is telling {PRONOUN/m_c/object}. After all {PRONOUN/r_c/subject} probably {VERB/r_c/are/is} lying right?",
+			"Shaking {PRONOUN/m_c/poss} head m_c refuses to leave the self imposed vigil that {PRONOUN/m_c/subject} {VERB/m_c/sit/sits}.",
+			"Awkwardly m_c keeps interrupting {PRONOUN/m_c/poss} clanmates and insisting on taking over tasks to do them 'properly'."
+		]
+	},
+	"echoing shock": {
+		"shock": [
+			"m_c talks to r_c with a tremble in {PRONOUN/m_c/poss} voice. {PRONOUN/m_c/subject/CAP} {VERB/m_c/don't/doesn't} even know the proper words to explain the mess of {PRONOUN/m_c/poss} feelings, but r_c sits to offer {PRONOUN/m_c/object} comfort anyway.",
+			"m_c feels hot and cold, {PRONOUN/m_c/poss} body unable to decide and leaving {PRONOUN/m_c/object} shaking unable to process the mess within.",
+			"While nothing bad has happened recently m_c still wakes with a racing heart and tremble that refuses to leave {PRONOUN/m_c/object}."
+		],
+		"sleeplessness": [
+			"m_c's been avoiding sleeping more and more, r_c can understand it, but still {PRONOUN/r_c/subject} {VERB/m_c/try/tries} to talk with {PRONOUN/m_c/object} about the what fears are keep {PRONOUN/m_c/object} awake.",
+			"It isn't something that m_c can explain, {PRONOUN/m_c/poss} avoidance of sleep from something deeper within.",
+			"As m_c takes yet another night patrol {PRONOUN/m_c/poss} clanmates can only take notice of how worn down {PRONOUN/m_c/subject} {VERB/m_c/seem/seems}."
+		],
+		"kittenspace": [
+			"Sometimes m_c feels younger than the age {PRONOUN/m_c/poss} body is.  {PRONOUN/m_c/subject} talked to r_c about it, worried something is wrong with {PRONOUN/m_c/object}, but {PRONOUN/m_c/subject} assured {PRONOUN/m_c/object} what {PRONOUN/m_c/subject} are feeling is perfectly normal, {PRONOUN/m_c/poss} brain is just in kittenspace",
+			"m_c, despite being old for a kit, act's younger then {PRONOUN/m_c/subject} are sometimes. It is possible {PRONOUN/m_c/subject} are in kittenspace." 
+		],
+		"puppyspace": [
+			"m_c has slipped into a more puppy like headspace, {PRONOUN/m_c/subject} are worried about this but r_c assures that {PRONOUN/m_c/subject} are just in puppyspace, and thats okay." ,
+			"m_c, despite being too old to play pretend, act's more dog like sometimes. It is possible {PRONOUN/m_c/subject} are in puppyspace." 
+		]
+		,
+		"kitten regressor": [
+			"m_c feels younger than the age {PRONOUN/m_c/poss} body is.  {PRONOUN/m_c/subject} talked to r_c about it, worried something is wrong with {PRONOUN/m_c/object}, but {PRONOUN/m_c/subject} assured {PRONOUN/m_c/object} what {PRONOUN/m_c/subject} are feeling is perfectly normal,  {PRONOUN/m_c/subject} they are just a kitten regressor. ",
+			"m_c, despite being old for a kit, act's younger then {PRONOUN/m_c/subject} are. It is possible {PRONOUN/m_c/subject} is a kitten regressor." 
+		],
+
+		"puppy regressor": [
+            "m_c has slipped into a more puppy like headspace, {PRONOUN/m_c/subject} are worried about this but r_c assures that {PRONOUN/m_c/subject} are just a puppy regressor, and thats okay." ,
+            "m_c, despite being too old to play pretend, act's more dog like sometimes. It is possible m_c is a puppy regressor." 
+		],
+		"paranoia": [
+			"r_c struggles to sooth m_c as {PRONOUN/m_c/subject} {VERB/m_c/refuse/refuses} to hear anything from a 'traitorous' cat like r_c.",
+			"m_c feels like the whole of the world and the clan is against {PRONOUN/m_c/object}.",
+			"Staring up at the sky, m_c lashes {PRONOUN/m_c/poss} tail and presses ears firmly down, has everyone abandoned {PRONOUN/m_c/object}."
+		],
+		"lethargy": [
+			"Recently m_c's been feeling so worn down. It's all that {PRONOUN/m_c/subject} can do to explain to r_c the awful overwhelming feeling that prickles just beneath {PRONOUN/m_c/poss} fur.",
+			"Despite the cheerful air around the rest of the clan, m_c refuses to leave the den, curled up and feeling rather miserable.",
+			"m_c's been feeling awfully tired lately, like a heavy fog is weighing down {PRONOUN/m_c/poss} paws."
+		],
+		"dizziness": [
+			"Speaking to r_c, m_c struggles to explain the feeling of lightheaded dizziness that's been overtaking {PRONOUN/m_c/object}.",
+			"m_c's been more on edge recently, swaying on {PRONOUN/m_c/poss} paws and strugling to walk straight.",
+			"While physically m_c is fine, something in {PRONOUN/m_c/poss} head seems backwards and it's hard to keep {PRONOUN/m_c/self} centered and balanced. Instead {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} feeling dizzy and lightheaded constantly."
 		]
 	},
     "lasting grief": {
@@ -720,6 +784,10 @@
 		"whitecough": [
 			"Unsurprising to r_c, as whitecough season comes around m_c's longcough comes with {PRONOUN/m_c/object} complaining of chills and aches.",
 			"m_c always has a cough, it's no wonder that {PRONOUN/m_c/subject} missed when that cough became an illness."
+		],
+		"silvercough": [
+			"It's whitecough season again, and r_c's been checking each clanmate for the illness. m_c's surprised when r_c shakes {PRONOUN/r_c/poss} head and calls {PRONOUN/m_c/object} inot the den, it seems {PRONOUN/m_c/poss} usual cough has masked the silvercough.",
+			"m_c's coughing has been a lot worse, a lot more frequent recently. Talking to the medicine cat {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} unsurprised to discover it's compounded by silvercough."
 		]
 	}
 }

@@ -145,7 +145,7 @@
         "m_c is constantly worried that someone or something is after {PRONOUN/m_c/object}, and sometimes belives that cats have poisoned {PRONOUN/m_c/poss} prey or put thorns in {PRONOUN/m_c/poss} nest. {PRONOUN/m_c/poss/CAP} clanmates talk to a medicine cat about it."
     ],
     "snow vision": [
-        "r_c notices that m_c struggles to see in the dark, more so than the other kits. {PRONOUN/m_c/subject} {VERB/m_c/speaks/speak} to m_c and discover that m_c has snow vision.",
+        "r_c notices that m_c struggles to see in the dark, more so than the other kits. {PRONOUN/m_c/subject} {VERB/r_c/speak/speaks} to m_c and discover that m_c has snow vision.",
         "m_c is permanently seeing a snowy effect in their vision, and when {PRONOUN/m_c/subject} {VERB/m_c/speaks/speak} to a medicine cat about it, {PRONOUN/m_c/subject} {VERB/m_c/discovers/discover} that they have snow vision.",
         "Clanmates are annoyed that m_c always refuses to go on night patrols, and when they confront them about it they discover its because m_c stuggles to see in the dark, and they realise that m_c has snow vison."
     ],
@@ -159,5 +159,12 @@
 		"Initially there was some confusion over why m_c wasn't speaking, it's soon cleared up that there's nothing wrong {PRONOUN/m_c/subject} {VERB/m_c/are/is} just mute.",
 		"m_c has never needed words to speak, fluent enough with {PRONOUN/m_c/poss} body language and the clan adapts to help {PRONOUN/m_c/object} be heard even in {PRONOUN/m_c/poss} silence.",
 		"Nobody knew silence could be so loud until m_c arrived."
+	],
+    "loose body": [
+		"r_c is getting a little tired of treating m_c's painful, loose and clicky joints, and {PRONOUN/r_c/subject} {VERB/m_c/realise/realises} that theres a reason m_c is in {PRONOUN/r_c/poss} den so often.",
+		"m_c has always been a trickster, showing off {PRONOUN/m_c/poss} strechy skin and bendy joints, but they soon feel the pain that comes from it and realises why {PRONOUN/m_c/poss} body feels this way.",
+		"m_c has to go to the dirtplace very frequently, and getting there always hurts {PRONOUN/m_c/poss} joints. {PRONOUN/m_c/subject} thought this was normal, but after speaking to some other cats, they realise its not.",
+		"After speaking to some of their clanmates, m_c discovers that not every cat is in pain all the time.",
+        "m_c is always tired and always in pain, and {PRONOUN/m_c/subject} {VERB/m_c/decide/decides} it's time to speak to a medicine cat."
 	]
 }

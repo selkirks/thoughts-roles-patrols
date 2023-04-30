@@ -328,7 +328,12 @@ class Condition_Events():
             "weak leg", "paralyzed", "raspy lungs", "wasting disease", "blind", "failing eyesight", 
             "one bad eye", "partial hearing loss", "deaf", "constant joint pain", "constantly dizzy", 
             "recurring shock", "lasting grief", "adhd", "heavy soul", "starwalker", "ocd", "antisocial", "anxiety", 
+<<<<<<< HEAD
+            "constant roaming pain", "strong soul", "otherworldly mind", "kitten regressor", "puppy regressor", "snow vision", "loose body",
+=======
             "constant roaming pain", "strong soul", "otherworldly mind", "kitten regressor", "puppy regressor", "snow vision",
+            "echoing shock"
+>>>>>>> 148ed26c1be9d88b648cd049c1d307ef8b07e2cd
         ]
 
         got_condition = False
@@ -375,10 +380,13 @@ class Condition_Events():
         event_list = []
         illness_progression = {
             "running nose": "whitecough",
-            "kittencough": "whitecough",
-            "whitecough": "yellowcough",
+            "kittencough": "silvercough",
+            "whitecough": "greencough",
             "greencough": "yellowcough",
             "yellowcough": "redcough",
+            "running nose": "silvercough",
+            "silvercough": "greencough",
+            "whitecough": "silvercough",
             "an infected wound": "a festering wound",
             "heat exhaustion": "heat stroke",
             "stomachache": "diarrhea",
@@ -608,7 +616,9 @@ class Condition_Events():
             "one bad eye": "failing eyesight",
             "failing eyesight": "blind",
             "partial hearing loss": "deaf",
-            "lasting grief": "heavy soul"
+            "lasting grief": "heavy soul",
+            "recurring shock": "echoing shock",
+            "echoing shock": "recurring shock"
         }
 
         conditions = deepcopy(cat.permanent_condition)

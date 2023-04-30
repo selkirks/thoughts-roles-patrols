@@ -570,6 +570,11 @@
         "illness_infectiousness": [
         ],
         "risks": [
+        "risks": [
+            {
+				"name": "shock",
+				"chance": 15
+			},
             {
                 "name": "constant nightmares",
                 "chance": 20
@@ -593,7 +598,66 @@
             {
                 "name": "puppy regressor",
                 "chance": 10
-            }
+            },
+			{
+				"name": "anxiety attack",
+				"chance": 20
+			},
+			{
+				"name": "paranoia",
+				"chance": 20
+			}
+        ],
+        "herbs": [
+            "thyme",
+            "juniper",
+            "poppy"
+        ]
+    },
+    "echoing shock": {
+        "severity": "major",
+        "congenital": "never",
+        "moons_until": 0,
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+            {
+				"name": "shock",
+				"chance": 15
+			},
+			{
+                "name": "sleeplessness",
+                "chance": 20
+            },
+			{
+				"name": "kittenspace",
+				"chance": 15
+			},
+			{
+				"name": "puppyspace",
+				"chance": 15
+			},
+			{
+				"name": "paranoia",
+				"chance": 20
+			},
+			{
+				"name": "lethargy",
+				"chance": 25
+			},
+			{
+				"name": "dizziness",
+				"chance": 20
+			}
         ],
         "herbs": [
             "thyme",
@@ -1322,11 +1386,34 @@
             {
                 "name": "whitecough",
                 "chance": 15
-            }
+            },
+			{
+				"name": "silvercough",
+				"chance": 15
+			}
         ],
         "herbs": [
             "betony",
             "mullein"
         ]
+    },		
+    "loose body": {
+        "severity": "minor",
+        "congenital": "always",
+        "moons_until": 2,
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "illness_infectiousness":[
+        ],
+        "risks": [
+        ],
+        "herbs":[]
     }
 }
