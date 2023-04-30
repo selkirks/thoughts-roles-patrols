@@ -328,15 +328,9 @@ class Condition_Events():
             "weak leg", "paralyzed", "raspy lungs", "wasting disease", "blind", "failing eyesight", 
             "one bad eye", "partial hearing loss", "deaf", "constant joint pain", "constantly dizzy", 
             "recurring shock", "lasting grief", "adhd", "heavy soul", "starwalker", "ocd", "antisocial", "anxiety", 
-<<<<<<< HEAD
-            "constant roaming pain", "strong soul", "otherworldly mind", "kitten regressor", "puppy regressor", "snow vision", "loose body",
-=======
             "constant roaming pain", "strong soul", "otherworldly mind", "kitten regressor", "puppy regressor", "snow vision",
-            "echoing shock"
-<<<<<<< HEAD
->>>>>>> 148ed26c1be9d88b648cd049c1d307ef8b07e2cd
-=======
->>>>>>> 148ed26c1be9d88b648cd049c1d307ef8b07e2cd
+            "echoing shock", "loose body"
+            
         ]
 
         got_condition = False
