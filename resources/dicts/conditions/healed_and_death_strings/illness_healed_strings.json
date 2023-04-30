@@ -203,6 +203,14 @@
 		"m_c purrs when {PRONOUN/m_c/poss} ears stop tinkling.",
 		"m_c sits and shares tongues freely with {PRONOUN/m_c/poss} clanmates, no longer shaking {PRONOUN/m_c/poss} head to try and hear better."
 	],
+	"kittenspace": [
+		"After rolling around like a kitten m_c feels secure enough to resume {PRONOUN/m_c/poss} duties.",
+		"m_c is no longer in kittenspace and back on duty."
+	],
+	"puppyspace": [
+		"m_c is no longer acting like a puppy anymore.",
+		"m_c has calmed down enough to no longer need to be in puppyspace."
+	],
 	"nest wetting": [
 		"After the embarrassment, m_c is relieved to wake up once more in a clean nest.",
 		"m_c's no longer wetting the nest and is welcomed back in.",

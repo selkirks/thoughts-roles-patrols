@@ -130,7 +130,11 @@
             {
                 "name": "yellowcough",
                 "chance": 60
-            }
+            },
+			{
+				"name": "longcough",
+				"chance": 120
+			}
         ],
         "herbs": [
             "catmint",
