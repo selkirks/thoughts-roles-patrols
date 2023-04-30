@@ -418,5 +418,20 @@
     "default": "indigo nylon collar",
     "plural": "indigo nylon collars",
     "singular": "indigo nylon collar"
+  },
+  "BALL": {
+    "default": "ball",
+    "plural": "balls",
+    "singular": "ball"
+  },
+  "BLANKIE": {
+    "default": "blankie",
+    "plural": "blankies",
+    "singular": "blankie"
+  },
+  "MOUSE": {
+    "default": "mouse",
+    "plural": "mice",
+    "singular": "mouse"
   }
 }

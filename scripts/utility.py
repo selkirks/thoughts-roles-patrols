@@ -34,6 +34,9 @@ from scripts.cat.pelts import (
     plant_accessories,
     wild_accessories,
     collars,
+    ball_accessories,
+    blankie_accessories,
+    mouse_accessories
 )
 from scripts.game_structure.game_essentials import game, screen_x, screen_y
 
@@ -1397,6 +1400,15 @@ def update_sprite(cat):
             new_sprite.blit(sprites.sprites['acc_wild' + cat.accessory + cat_sprite], (0, 0))
         elif cat.accessory in collars:
             new_sprite.blit(sprites.sprites['collars' + cat.accessory + cat_sprite], (0, 0))
+        
+        #dismod
+
+        if cat.accessory in ball_accessories:
+            new_sprite.blit(sprites.sprites['acc_dismod' + cat.accessory + cat_sprite], (0, 0))
+        elif cat.accessory in blankie_accessories:
+            new_sprite.blit(sprites.sprites['acc_dismod' + cat.accessory + cat_sprite], (0, 0))
+        elif cat.accessory in mouse_accessories:
+            new_sprite.blit(sprites.sprites['acc_dismod' + cat.accessory + cat_sprite], (0, 0))
 
         # Apply fading fog
         if cat.opacity <= 97 and not cat.prevent_fading and game.settings["fading"]:

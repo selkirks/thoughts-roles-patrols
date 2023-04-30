@@ -307,6 +307,12 @@ collars = [
     "BLACKNYLON", "SPIKESNYLON", "WHITENYLON", "PINKNYLON", "PURPLENYLON", "MULTINYLON", "INDIGONYLON",
 ]
 
+#dismod
+
+ball_accessories = ["BALL"]
+blankie_accessories = ["BLANKIE"]
+mouse_accessories = ["MOUSE"]
+
 tabbies = ["Tabby", "Ticked", "Mackerel", "Classic", "Sokoke", "Agouti"]
 spotted = ["Speckled", "Rosette"]
 plain = ["SingleColour", "TwoColour", "Smoke", "Singlestripe"]

@@ -32,7 +32,7 @@
     "rat bite": {
         "an infected wound": [
             "r_c talks as {PRONOUN/r_c/subject} {VERB/r_c/apply/applies} a strange paste to m_c's rat bite, and tells {PRONOUN/m_c/object} that, because it's becoming infected, this will be a daily routine.",
-            "It seems inevitable that all rat bites are nasty, so m_c isn't really surprised when {PRONOUN/m_c/poss} rat bite starts to show signs of infection."\
+            "It seems inevitable that all rat bites are nasty, so m_c isn't really surprised when {PRONOUN/m_c/poss} rat bite starts to show signs of infection."
         ],
         "a festering wound": [
             "The worried look in r_c's eyes as {PRONOUN/r_c/subject} {VERB/r_c/examine/examines} m_c's acrid rat bite makes m_c's heart sink.",
@@ -151,7 +151,7 @@
             "r_c massages m_c's paw pads, looking for signs that blood flow is returning to them. This has definitely crossed the line into frostbite.",
             "m_c says that {PRONOUN/m_c/poss} extremities feel like they're being pricked by claws, and numbness soon follows. That's a sign of frostbite.",
             "The skin of m_c's extremities is a worrying black and blue, one of {PRONOUN/m_c/poss} friends spends some time licking at the cold bits of skin but they seem to be frostbitten."
-
+        ]
     },
     "dehydrated": {
         "heat exhaustion": [

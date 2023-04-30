@@ -570,7 +570,6 @@
         "illness_infectiousness": [
         ],
         "risks": [
-        "risks": [
             {
 				"name": "shock",
 				"chance": 15
