@@ -1457,7 +1457,12 @@
             "senior": 0
         },
         "illness_infectiousness": [],
-        "risks": [],
+        "risks": [
+			{
+				"name": "an infected wound",
+				"chance": 20
+			}
+		],
         "also_got": [
             "bruises",
             "sore",

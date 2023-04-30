@@ -225,5 +225,12 @@
 			"After all the scratching {PRONOUN/m_c/subject} {VERB/m_c/have/has} done at the rash it's not a surprise that m_c has torn up {PRONOUN/m_c/poss} pelt.",
 			"All m_c's frantic itching has left {PRONOUN/m_c/poss} fur looking rather patchy in places."
 		]
+	},
+	"wrenched claws": {
+		"an infected wound": [
+			"Much to m_c's distress {PRONOUN/m_c/poss} paw has started to get more and more sore. When {PRONOUN/m_c/subject} {VERB/m_c/go/goes} to complain to r_c about it, {PRONOUN/r_c/subject} {VERB/r_c/look/looks} quite worried and explains it might be infected.",
+			"m_c's paws look all swollen and have begun to smell a bit around where {PRONOUN/m_c/poss} claws have been pulled.",
+			"Hissing m_c awkwardly pads {PRONOUN/m_c/poss} way over to the medicine den. {PRONOUN/m_c/poss} poor paws feeling set aflame."
+		]
 	}
 }
