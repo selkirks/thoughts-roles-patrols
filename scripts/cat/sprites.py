@@ -133,8 +133,8 @@ class Sprites():
             sprites.make_group('disabilityscars', (a, 2), f'scars{i}')
         
         #dismod accessories
-        for a, i in enumerate(["BALL", "MOUSE", "MOSS"])
-        sprites.make_group('disabilityaccs', (0, 0), f'acc_dismod')
+        for a, i in enumerate(["BALL", "MOUSE", "MOSS"]):
+            sprites.make_group('disabilityaccs', (0, 0), f'acc_dismod')
         # missing parts
         for a, i in enumerate(
                 ["LEFTEAR", "RIGHTEAR", "NOTAIL", "NOLEFTEAR", "NORIGHTEAR", "NOEAR", "HALFTAIL", "NOPAW"]):
