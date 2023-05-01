@@ -349,10 +349,15 @@
         },
         "illness_infectiousness": [
         ],
-        "risks": [{
+        "risks": [
+			{
                 "name": "failing eyesight",
                 "chance": 80
-            }
+            },
+			{
+				"name": "headache",
+				"chance": 25
+			}
         ],
         "herbs": []
     },
@@ -375,7 +380,15 @@
             {
                 "name": "blind",
                 "chance": 50
-            }
+            },
+			{
+				"name": "headache",
+				"chance": 25
+			},
+			{
+				"name": "severe headache",
+				"chance": 30
+			}
         ],
         "herbs": []
     },

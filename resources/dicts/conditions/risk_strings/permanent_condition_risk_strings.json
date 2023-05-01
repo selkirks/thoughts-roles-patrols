@@ -105,14 +105,28 @@
         "failing eyesight": [
             "m_c wanders directly into a rock on {PRONOUN/m_c/poss} bad side, and r_c takes {PRONOUN/m_c/object} aside. Softly, {PRONOUN/r_c/subject} {VERB/r_c/tell/tells} m_c {PRONOUN/m_c/poss} bad vision is progressing.",
             "m_c has noticed {PRONOUN/m_c/poss} vision growing blurrier and blurrier."
-
-        ]
+        ],
+		"headache": [
+			"While it's only a minor irritation at best, m_c still goes to talk to r_c about the dull ache in {PRONOUN/m_c/poss} head.",
+			"With m_c's bad eye and all the squinting {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} done it's no wonder {PRONOUN/m_c/poss} head is starting to complain.",
+			"m_c knows the day isn't starting well when there's a dull thumping in {PRONOUN/m_c/poss} head."
+		]
     },
     "failing eyesight": {
         "blind": [
             "m_c's vision seems to narrow and darken day by day. Now with only a vague sense of light and shadow, there's nothing more r_c can do to help {PRONOUN/m_c/object}.",
             "m_c's eyesight had only been getting worse and now it seems to have finally left altogether."
-        ]
+        ],
+		"headache": [
+			"r_c talks to m_C, checking in on {PRONOUN/m_c/object} when {PRONOUN/r_c/subject} {VERB/r_c/notice/notices} that {PRONOUN/m_c/subject} {VERB/m_c/were/was} wincing more.",
+			"Despite the dull throbbing in {PRONOUN/m_c/poss} head, m_c still raises and elects to do {PRONOUN/m_c/poss} chores for the day.",
+			"While m_c's head hurts, it's not enough for {PRONOUN/m_c/object} to worry about beyond drinking a bit more water and taking lighter patrols."
+		],
+		"severe headache": [
+			"In misery m_c slinks into r_c's medicine den, head down and wincing from the rattling pain in {PRONOUN/m_c/poss} head.",
+			"When m_c woke up this morning, {PRONOUN/m_c/subject} decided to just roll back over and squeeze {PRONOUN/m_c/poss} eyes shut in the hopes of avoiding the splitting pain.",
+			"m_c miserably moves to the very back of the den, maybe the darkness will soothing the pain making {PRONOUN/m_c/poss} vision swim all the worse."
+		]
     },
     "partial hearing loss": {
         "deaf": [

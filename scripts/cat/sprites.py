@@ -133,9 +133,8 @@ class Sprites():
             sprites.make_group('disabilityscars', (a, 2), f'scars{i}')
         
         #dismod accessories
-        sprites.make_group('transmoss', (0, 0), f'acc_dismodBLANKIE')
-        sprites.make_group('transball', (0, 0), f'acc_dismodBALL')
-        sprites.make_group('transmouse', (0, 0), f'acc_dismodMOUSE')
+        for a, i in enumerate(["BALL", "MOUSE", "MOSS"])
+        sprites.make_group('disabilityaccs', (0, 0), f'acc_dismod')
         # missing parts
         for a, i in enumerate(
                 ["LEFTEAR", "RIGHTEAR", "NOTAIL", "NOLEFTEAR", "NORIGHTEAR", "NOEAR", "HALFTAIL", "NOPAW"]):
@@ -221,7 +220,7 @@ for x in [
     'mackerelcolours', 'classiccolours', 'sokokecolours', 'agouticolours', 'singlestripecolours', 
     'shadersnewwhite', 'lineartdead', 'tortiepatchesmasks', 
     'medcatherbs', 'lineartdf', 'lightingnew', 'fademask',
-    'fadestarclan', 'fadedarkforest', 'transmoss', 'transball', 'transmouse'
+    'fadestarclan', 'fadedarkforest', 'disabilityaccs'
 
 ]:
     if 'lineart' in x and game.config['fun']['april_fools']:
