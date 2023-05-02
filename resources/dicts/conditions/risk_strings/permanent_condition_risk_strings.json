@@ -803,5 +803,29 @@
 			"It's whitecough season again, and r_c's been checking each clanmate for the illness. m_c's surprised when r_c shakes {PRONOUN/r_c/poss} head and calls {PRONOUN/m_c/object} inot the den, it seems {PRONOUN/m_c/poss} usual cough has masked the silvercough.",
 			"m_c's coughing has been a lot worse, a lot more frequent recently. Talking to the medicine cat {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} unsurprised to discover it's compounded by silvercough."
 		]
+	},
+	"loose body": {
+		"dislocated joint": [
+			"m_c has to go to r_c's den again after aother of {PRONOUN/m_c/poss} joints slips out of place.",
+			"m_c dislocated {PRONOUN/m_c/poss} elbow, again."
+		],
+		"constipation": [
+			"r_c chuckles as m_c shuffles into {PRONOUN/r_c/poss} den asking for some herbs to help with dirtplacing.",
+			"m_c is very fustrated after {PRONOUN/m_c/subject} {VERB/m_c/discover/discovers}  {PRONOUN/m_c/subject} {VERB/m_c/are/is} are having a bit of dirtplacing trouble."
+		],
+		"severe headache": [
+			"r_chas to rush to m_c's den to give them some herbs as m_c's headache is so painful {PRONOUN/m_c/subject} cannot move.",
+			"m_c lies in {PRONOUN/m_c/poss} nest clutching {PRONOUN/m_c/poss} head in pain."
+		],
+		"headache": [
+			"m_c goes to r_c and asks if {PRONOUN/r_c/subject} {VERB/m_c/have/has} any herbs for {PRONOUN/m_c/poss} banging headache.",
+			"m_c's mind is clouded by a dull ache that wont go away.",
+			"m_c sighs when {PRONOUN/m_c/subject} {VERB/m_c/wake/wakes} up and realise that {PRONOUN/m_c/subject} {VERB/m_c/are/is} in pain again."
+		],
+		"sore": [
+			"r_c goes to m_c's den to give them some herbs as {PRONOUN/m_c/subject} {VERB/m_c/are/is} feeling extra sore this moon.",
+			"m_c's joints are hurting more than normally this moon.",
+			"m_c overdid it last moon and is now feeling the consequences."
+		]
 	}
 }
