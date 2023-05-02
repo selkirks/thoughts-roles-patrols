@@ -1085,7 +1085,7 @@ class ProfileScreen(Screens):
                 output += 'in puppyspace'
             elif "kittenspace" in the_cat.illnesses:
                 output += 'in kittenspace'
-            elif "lethargy" or "seasonal lethargy" in the_cat.illnesses:
+            elif the_cat.illnesses in ["lethargy", "seasonal lethargy"]:
                 output += 'experiencing lethargy'
             elif "indecision" in the_cat.illnesses:
                 output += 'indecisive'
