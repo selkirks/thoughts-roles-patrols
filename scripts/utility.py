@@ -1538,7 +1538,7 @@ def get_condition_name(condition: str):
         "otherworldly mind": "Psychosis/Schizophrenia",
         "shattered soul": "Other Specified Dissociative Disorder",
         "starwalker": "Autism",
-        "thunderous spirit": "Borderline Personality Disorder"
+        "strong soul": "Borderline Personality Disorder"
     }
 
     if condition.casefold() in swap_dict:
