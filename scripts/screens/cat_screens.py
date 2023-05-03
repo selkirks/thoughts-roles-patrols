@@ -1076,7 +1076,9 @@ class ProfileScreen(Screens):
                 output += 'pregnant!'
             else:
                 output += "injured!"
-        elif the_cat.is_ill():
+            output += "\n"
+
+        if the_cat.is_ill():
             if "grief stricken" in the_cat.illnesses:
                 output += 'grieving!'
             elif "fleas" in the_cat.illnesses:
