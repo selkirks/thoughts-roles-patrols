@@ -85,7 +85,7 @@ class Condition_Events():
                 elif chosen_illness == "seasonal lethargy":
                     event_string = f"{cat.name} is experiencing some {chosen_illness} this season."
                 elif chosen_illness in ['nest wetting', 'night dirtplacing']:
-                    event_string = f"To their embarrassment {cat.name} is experiencing {chosen_illness}."
+                    event_string = f"Somewhat embarrassingly {cat.name} is experiencing {chosen_illness}."
                 else:
                     event_string = f"{cat.name} has gotten {chosen_illness}."
 
