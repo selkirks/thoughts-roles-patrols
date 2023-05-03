@@ -1425,6 +1425,26 @@
         "illness_infectiousness":[
         ],
         "risks": [
+			{
+				"name": "dislocated joint",
+				"chance": 15
+			},
+            {
+				"name": "constipation",
+				"chance": 15
+			},
+            {
+				"name": "severe headache",
+				"chance": 15
+			},
+            {
+				"name": "headache",
+				"chance": 15
+			},
+            {
+				"name": "sore",
+				"chance": 15
+			}
         ],
         "herbs":[]
     }
