@@ -220,7 +220,7 @@ for x in [
     'mackerelcolours', 'classiccolours', 'sokokecolours', 'agouticolours', 'singlestripecolours', 
     'shadersnewwhite', 'lineartdead', 'tortiepatchesmasks', 
     'medcatherbs', 'lineartdf', 'lightingnew', 'fademask',
-    'fadestarclan', 'fadedarkforest', 'disabilityaccs'
+    'fadestarclan', 'fadedarkforest', 'disabilityaccs', 'lazyeye', 'lazyeye2'
 
 ]:
     if 'lineart' in x and game.config['fun']['april_fools']:
@@ -247,11 +247,15 @@ for a, i in enumerate(
         'DARKBLUE', 'GREY', 'CYAN', 'EMERALD', 'HEATHERBLUE', 'SUNLITICE']):
     sprites.make_group('eyes', (a, 0), f'eyes{i}')
     sprites.make_group('eyes2', (a, 0), f'eyes2{i}')
+    sprites.make_group('lazyeye', (a, 0), f'lazyeye{i}')
+    sprites.make_group('lazyeye2', (a, 0), f'lazyeye2{i}')
 for a, i in enumerate(
         ['COPPER', 'SAGE', 'COBALT', 'PALEBLUE', 'BRONZE', 'SILVER',
         'PALEYELLOW', 'GOLD', 'GREENYELLOW']):
     sprites.make_group('eyes', (a, 1), f'eyes{i}')
     sprites.make_group('eyes2', (a, 1), f'eyes2{i}')
+    sprites.make_group('lazyeye', (a, 0), f'lazyeye{i}')
+    sprites.make_group('lazyeye2', (a, 0), f'lazyeye2{i}')
 
 # white patches
 for a, i in enumerate(['FULLWHITE', 'ANY', 'TUXEDO', 'LITTLE', 'COLOURPOINT', 'VAN', 'ANYTWO',
