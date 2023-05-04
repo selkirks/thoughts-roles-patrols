@@ -39,6 +39,11 @@
 		"m_c no longer has whitecough.",
 		"m_c's whitecough is gone."
 	],
+	"silvercough": [
+        "m_c has recovered from silvercough.",
+        "m_c no longer has silvercough.",
+        "m_c's silvercough is gone."
+	],
 	"yellowcough": [
 		"m_c has survived yellowcough.",
 		"m_c has recovered from yellowcough.",
