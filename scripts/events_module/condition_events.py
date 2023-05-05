@@ -331,7 +331,7 @@ class Condition_Events():
             "one bad eye", "partial hearing loss", "deaf", "constant joint pain", "constantly dizzy", 
             "recurring shock", "lasting grief", "adhd", "heavy soul", "starwalker", "ocd", "antisocial", "anxiety", 
             "constant roaming pain", "strong soul", "otherworldly mind", "kitten regressor", "puppy regressor", "snow vision",
-            "echoing shock", "loose body"
+            "echoing shock", "loose body", "longcough", "burning light"
             
         ]
 
@@ -616,7 +616,8 @@ class Condition_Events():
             "partial hearing loss": "deaf",
             "lasting grief": "heavy soul",
             "recurring shock": "echoing shock",
-            "echoing shock": "recurring shock"
+            "echoing shock": "recurring shock",
+            "burning light": "blind"
         }
 
         conditions = deepcopy(cat.permanent_condition)

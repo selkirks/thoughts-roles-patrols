@@ -159,6 +159,11 @@
 			"After all the panic and anxiety, m_c has been twitching, muttering things that sound more and more paranoid.",
 			"{PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} just double checking things, just making sure the camp is secure m_c tells {PRONOUN/m_c/self}.",
 			"m_c noses at {PRONOUN/m_c/poss} food and bedding for the third time today convinced that there's something in it that will harm {PRONOUN/m_c/object}."
+		],
+		"dizziness": [
+			"Shaking on {PRONOUN/m_c/poss} paws m_c goes to r_c struggling to retain balance after all the panic.",
+			"Because of m_c's panic {PRONOUN/m_c/poss} head has become really fuzzy and left {PRONOUN/m_c/object} a bit disorientated.",
+			"From all of the panic m_c's head is spinning and {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} not sure {PRONOUN/m_c/subject} can trust {PRONOUN/m_c/poss} own paws."
 		]
 	},	
 	"seasonal lethargy": {
@@ -211,6 +216,11 @@
 			"m_c has gotten so tired that {PRONOUN/m_c/subject} {VERB/m_c/are/is} beginning to lose focus on the images and sounds {PRONOUN/m_c/subject} {VERB/m_c/hear/hears}.",
 			"Due to m_c's tiredness from lack of sleep {PRONOUN/m_c/subject} {VERB/m_c/keep/keeps} hearing things.",
 			"m_c walks into a tree because {PRONOUN/m_c/subject} thought there was a squirrel darting into a hole at it's base."
+		],
+		"dizziness": [
+			"From m_c's lack of sleep r_c has noticed that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} struggling to remain upright.",
+			"Worried m_c has noticed that {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} more floaty than usual on {PRONOUN/m_c/poss} paws and dizzy.",
+			"m_c wishes the world would remain still as {PRONOUN/m_c/subject} walked around the camp."
 		]
 	},
 	"nest wetting": {

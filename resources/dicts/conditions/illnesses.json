@@ -781,6 +781,10 @@
 			{
 				"name": "paranoia",
 				"chance": 50
+			},
+			{
+				"name": "dizziness",
+				"chance": 15
 			}
 		],
         "herbs": [
@@ -1377,6 +1381,10 @@
 			{
 				"name": "hallucinations",
 				"chance": 50
+			},
+			{
+				"name": "dizziness",
+				"chance": 25
 			}
 		],
         "herbs": [
