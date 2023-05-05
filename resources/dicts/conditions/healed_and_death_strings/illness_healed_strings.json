@@ -225,5 +225,10 @@
 		"m_c is able to once more sleep through the night without having to get up for the dirtplace.",
 		"To the relief of {PRONOUN/m_c/poss} denmates, m_c hasn't disturbed the den in the night anymore.",
 		"m_c rolls over in {PRONOUN/m_c/poss} nest, finally well rested without any night time trips to the dirtplace."
+	],
+	"dizziness": [
+		"m_c's brief bout of dizziness has ended.",
+		"To m_c's relief {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} able to raise from {PRONOUN/m_c/poss} nest without falling back down.",
+		"m_c is no longer feeling dizzed when {PRONOUN/m_c/subject} {VERB/m_c/stand/stands} up."
 	]
 }
