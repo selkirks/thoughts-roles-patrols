@@ -433,5 +433,10 @@
     "default": "mouse",
     "plural": "mice",
     "singular": "mouse"
+  },
+  "BONE": {
+    "default": "a rubber bone",
+    "plural": "rubber bones",
+    "singular": "a rubber bone"
   }
 }

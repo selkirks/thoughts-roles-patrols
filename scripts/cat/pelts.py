@@ -312,6 +312,7 @@ collars = [
 ball_accessories = ["BALL"]
 blankie_accessories = ["BLANKIE"]
 mouse_accessories = ["MOUSE"]
+bone_accessories = ["BONE"]
 
 tabbies = ["Tabby", "Ticked", "Mackerel", "Classic", "Sokoke", "Agouti"]
 spotted = ["Speckled", "Rosette"]
