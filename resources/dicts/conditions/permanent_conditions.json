@@ -1471,5 +1471,36 @@
 			}
         ],
         "herbs":[]
-    }
+    },
+    "burning light": {
+        "severity": "minor",
+        "congenital": "sometimes",
+        "moons_until": 2,
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "illness_infectiousness":[
+        ],
+        "risks": [
+			{
+				"name": "sunblindness",
+				"chance": 25
+			},
+			{
+				"name": "headache",
+				"chance": 30
+			},
+			{
+				"name": "severe headache",
+				"chance": 50
+			}
+        ],
+        "herbs":[]
+    }	
 }

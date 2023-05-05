@@ -220,6 +220,12 @@
 			"With much distress m_c asks r_c why {PRONOUN/m_c/poss} eyesight only seems to be partially back. With a solemn shake of the head r_c informs {PRONOUN/m_c/object} it looks like the temporary sunblindness might have damaged {PRONOUN/m_c/poss} eyes more than initially assumed.",
 			"r_c gently guides m_c around the camp, testing {PRONOUN/m_c/poss} eyesight together it looks as though {PRONOUN/m_c/poss} eyesight might be failing.",
 			"m_c's sunblindness is gone, but {PRONOUN/m_c/subject} still {VERB/m_c/find/finds} {PRONOUN/m_c/self} squinting and struggling to see."
+		],
+		"burning light": [
+			"Despite m_c's vision clearing back up {PRONOUN/m_c/subject} still {VERB/m_c/complain/complains} at r_c about how much the sun is hurting {PRONOUN/m_c/poss} eyes.",
+			"m_c is wincing everytime {PRONOUN/m_c/subject} {VERB/m_c/try/tries} to leave r_c's den. r_c thinks it might be permenant burning light.",
+			"m_c decides that the sun is evil and {PRONOUN/m_c/poss} enemy, clearly it's trying to blind {PRONOUN/m_c/poss}.",
+			"While the day is too harsh for m_c, {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} happy to take up the more quiet nighttime patrols. Even if just to avoid the sun."
 		]
 	}
 }
