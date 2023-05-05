@@ -173,7 +173,11 @@
             {
                 "name": "phantom pain",
                 "chance": 10
-            }
+            },
+			{
+				"name": "dizziness",
+				"chance": 45
+			}
         ],
         "herbs": [
             "juniper",
@@ -563,7 +567,15 @@
             {
                 "name": "headache",
                 "chance": 20
-            }
+            },
+			{
+				"name": "ear buzzing",
+				"chance": 20
+			},
+			{
+				"name": "dizziness",
+				"chance": 15
+			}
         ],
         "herbs": []
     },
@@ -801,7 +813,11 @@
             {
                 "name": "puppy regressor",
                 "chance": 10
-            }
+            },
+			{
+				"name": "sunblindness",
+				"chance": 45
+			}
         ],
         "herbs": [ ]
     },
@@ -1161,7 +1177,11 @@
 			{
 				"name": "ear buzzing",
 				"chance": 20
-			}			
+			},
+			{
+				"name": "dizziness",
+				"chance": 25
+			}
         ],
         "herbs": [
             "honey",
@@ -1298,6 +1318,10 @@
         "illness_infectiousness":[
         ],
         "risks": [
+			{
+				"name": "sunblindness",
+				"chance": 25
+			}
         ],
         "herbs":[]
     },		

@@ -57,7 +57,13 @@
         "phantom pain": [
             "r_c can't give m_c answers - {PRONOUN/m_c/poss} tail is gone, and yet the pain in it remains.",
             "m_c can't understand how an appendage that isn't there can possibly itch so badly, but it's driving {PRONOUN/m_c/object} insane."
-        ]
+        ],
+		"dizziness": [
+			"r_c carefully tries to coach m_c through {PRONOUN/m_c/poss} exercises, standing by ready to catch {PRONOUN/m_c/object} at any loss of balance.",
+			"Without {PRONOUN/m_c/poss} tail, m_c's struggling to rebalance {PRONOUN/m_c/self} properly.",
+			"m_c's been struggling to do regular hunting duties, struggling to rebalance {PRONOUN/m_c/self} for crouches.",
+			"Unsurprisingly the lack of tail still catches m_c off guard sometimes when {PRONOUN/m_c/subject} {VERB/m_c/slip/slips} into old habits only to tumble over {PRONOUN/m_c/poss} own paws."
+		]
     },
     "paralyzed": {
         "an infected wound": [
@@ -490,7 +496,13 @@
 		"puppy regressor": [
             "m_c has slipped into a more puppy like headspace, {PRONOUN/m_c/subject} are worried about this but r_c assures that {PRONOUN/m_c/subject} are just a puppy regressor, and thats okay." ,
             "m_c, despite being too old to play pretend, act's more dog like sometimes. It is possible m_c is a puppy regressor." 
-		]
+		],
+		"sunblindness": [
+			"Seeing m_c been guided towards the medicine den r_c slips inside to make sure that everything is tucked away safely and neatly in preparation.",
+			"m_c winces at both the pain in {PRONOUN/m_c/poss} eyes as well as the fact that {PRONOUN/m_c/subject} can't really see and can only hear the clammour of {PRONOUN/m_c/poss} clanmates around {PRONOUN/m_c/object}.",
+			"m_c curses {PRONOUN/m_c/poss} sensitive eyes, now {PRONOUN/m_c/subject} {VERB/m_c/have/has} to spend time recovering from the glare of the sun.",
+			"The light of the sun reflecting off the grass and pools of water on the ground have caused m_c's eyes to ache and {PRONOUN/m_c/poss} vision to vanish."
+		],		
     },
 	"ocd": {
 		"anxiety attack": [
@@ -701,6 +713,17 @@
 		"ear buzzing": [
 			"Due to m_c's lack of proper sleep it's no surprise to r_c when {PRONOUN/m_c/subject} {VERB/m_c/come/comes} in complaining of a buzzing in {PRONOUN/m_c/poss} ears that's not helping anything.",
 			"m_c grumbles about the ringing in {PRONOUN/m_c/poss} ears like the bell on a kittypet's collar."
+		],
+		"dizziness": [
+			"Sheepishly m_c tells r_c that when {PRONOUN/m_c/subject} {VERB/m_c/stand/stands} up {PRONOUN/m_c/poss} head gets really light-headed and makes {PRONOUN/m_c/object} dizzy.",
+			"Upon standing up, m_c immediately has to sit back down. Too lightheaded and dizzy to retain {PRONOUN/m_c/poss} balance.",
+			"m_c's been stumbling around the camp more than usual, dizzy and lightheaded from the lack of proper sleep."
+		],
+		"sunblindness": [
+			"m_c sheepishly explains to r_c that {PRONOUN/m_c/subject} got distracted and wound up looking too long up into the sky today.",
+			"Due to m_c's lack of sleep {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} found that {PRONOUN/m_c/poss} eyes are more sensitive than usual and are experiencing some temporary blindness.",
+			"In the glare of the sun m_c hisses because it makes {PRONOUN/m_c/poss} eyes burn.",
+			"m_c shakes {PRONOUN/m_c/poss} head and ducks back into the den, the world outside is just particularly blinding."			
 		]
 	},
 	"declawed": {
@@ -792,6 +815,13 @@
 			"Sheepishly m_c goes to ask r_c for help clearing out {PRONOUN/m_c/poss} soiled nest with fresh clean moss.",
 			"m_c shamefully has to ask the apprentices for help cleaning up the mess that {PRONOUN/m_c/poss} nest currently is.",
 			"Awkwardly m_c moves {PRONOUN/m_c/poss} soiled nesting out of the den, how embarrassing."
+		]
+	},
+	"snow vision": {
+		"sunblindness": [
+			"m_c loudly complains to r_c about the flares and spots that now take up {PRONOUN/m_c/poss} vision leaving {PRONOUN/m_c/object} unable to properly see at all.",
+			"After waking up and stepping out of the den, m_c is hissing at the light and how it burns in {PRONOUN/m_c/poss} eyes over the snow sparkles.",
+			"m_c talks to a clanmate about how the snow in {PRONOUN/m_c/poss} vision is catching the light too much and turning into flares."
 		]
 	},
 	"longcough": {

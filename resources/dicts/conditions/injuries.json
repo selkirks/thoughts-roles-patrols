@@ -1476,7 +1476,39 @@
             "ragwort",
             "daisy"
         ]
-    },		
+    },	
+    "sunblindness":{
+        "duration": 2,
+        "severity": "major",
+        "medicine_duration": 1,
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [],
+        "also_got": [
+        ],
+        "cause_permanent": [
+            "failing eyesight"
+        ],
+        "herbs": [
+            "cobwebs",
+            "goldenrod",
+            "marigold",
+            "oak_leaves",
+            "wild_garlic",
+            "juniper",
+            "ragwort",
+            "moss"
+        ]
+    },	
     "pregnant": {
         "duration": 2,
         "severity": "major",

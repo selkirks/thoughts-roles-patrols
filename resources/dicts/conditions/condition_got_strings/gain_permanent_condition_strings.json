@@ -214,6 +214,12 @@
 			"r_c frustratedly hisses over the state of m_c's paws and claws. Curse those horrible peltshifters who did this.",
 			"Curse them, curse those peltshifters for taking m_c away and bringing {PRONOUN/m_c/object} back without {PRONOUN/m_c/poss} claws."
 		]
+	},
+	"sunblindness": {
+		"failing eyesight": [
+			"With much distress m_c asks r_c why {PRONOUN/m_c/poss} eyesight only seems to be partially back. With a solemn shake of the head r_c informs {PRONOUN/m_c/object} it looks like the temporary sunblindness might have damaged {PRONOUN/m_c/poss} eyes more than initially assumed.",
+			"r_c gently guides m_c around the camp, testing {PRONOUN/m_c/poss} eyesight together it looks as though {PRONOUN/m_c/poss} eyesight might be failing.",
+			"m_c's sunblindness is gone, but {PRONOUN/m_c/subject} still {VERB/m_c/find/finds} {PRONOUN/m_c/self} squinting and struggling to see."
+		]
 	}
-
 }

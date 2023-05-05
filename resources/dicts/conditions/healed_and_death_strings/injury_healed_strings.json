@@ -226,5 +226,10 @@
 	"wrenched claws": [
 		"m_c is so relieved when the ache in {PRONOUN/m_c/poss} paws finally goes away.",
 		"m_c flexes {PRONOUN/m_c/poss} paws, checking if {PRONOUN/m_c/poss} claws are still there. That was such a scary experience."
+	],
+	"sunblindness": [
+		"m_c is so relieved to be able to blink {PRONOUN/m_c/poss} eyes and find that once more {PRONOUN/m_c/subject} {VERB/m_c/are/is} able to see the world around {PRONOUN/m_c/object}.",
+		"There's a lot of purring from m_c as {PRONOUN/m_c/subject} {VERB/m_c/greet/greets} {PRONOUN/m_c/poss} friends and family in the clan.",
+		"m_c can blink {PRONOUN/m_c/poss} comfortably without any lingering pain from the brightness outside anymore."
 	]
 }
