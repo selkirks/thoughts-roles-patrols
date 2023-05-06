@@ -2058,7 +2058,7 @@
 			"Is worried about the future",
 			"Wonders what it would be like to mentor an apprentice",
 			"Wishes that r_c would slow down a little bit",
-			"Wants r_c to know {PRONOUN/m_c/subject} enjoy the company",
+			"Wants r_c to know {PRONOUN/m_c/subject} {VERB/m_c/enjoy/enjoys} the company",
 			"Is struggling to keep up with grooming"
         ],
         "perm_conditions": {
