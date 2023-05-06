@@ -131,10 +131,7 @@ class Sprites():
         for a, i in enumerate(
                 ["RASH", "DECLAWED"]):
             sprites.make_group('disabilityscars', (a, 2), f'scars{i}')
-        
-        #dismod accessories
-        for a, i in enumerate(["BALL", "MOUSE", "MOSS", "BONE"]):
-            sprites.make_group('disabilityaccs', (0, 0), f'acc_dismod')
+            
         # missing parts
         for a, i in enumerate(
                 ["LEFTEAR", "RIGHTEAR", "NOTAIL", "NOLEFTEAR", "NORIGHTEAR", "NOEAR", "HALFTAIL", "NOPAW"]):
@@ -191,6 +188,10 @@ class Sprites():
             sprites.make_group('nyloncollars', (a, 1), f'collars{i}')
         for a, i in enumerate(["PINKNYLON", "PURPLENYLON", "MULTINYLON", "INDIGONYLON"]):
             sprites.make_group('nyloncollars', (a, 2), f'collars{i}')
+
+        #dismod accessories
+        for a, i in enumerate(["BALL", "MOUSE", "MOSSBLANKIE", "BONE"]):
+            sprites.make_group('disabilityaccs', (a, 0), f'acc_dismod{i}')
 
 # get the width and height of the spritesheet
 lineart = pygame.image.load('sprites/lineart.png')

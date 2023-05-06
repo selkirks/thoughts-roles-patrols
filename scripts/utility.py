@@ -1402,7 +1402,7 @@ def update_sprite(cat):
         
         #dismod
 
-        if cat.accessory in toy_accessories:
+        elif cat.accessory in toy_accessories:
             new_sprite.blit(sprites.sprites['acc_dismod' + cat.accessory + cat_sprite], (0, 0))
         elif cat.accessory in blankie_accessories:
             new_sprite.blit(sprites.sprites['acc_dismod' + cat.accessory + cat_sprite], (0, 0))

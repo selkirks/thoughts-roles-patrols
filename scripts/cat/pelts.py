@@ -310,7 +310,7 @@ collars = [
 #dismod
 
 toy_accessories = ["BALL", "MOUSE", "BONE"]
-blankie_accessories = ["BLANKIE"]
+blankie_accessories = ["MOSSBLANKIE"]
 
 tabbies = ["Tabby", "Ticked", "Mackerel", "Classic", "Sokoke", "Agouti"]
 spotted = ["Speckled", "Rosette"]
