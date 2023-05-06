@@ -34,9 +34,8 @@ from scripts.cat.pelts import (
     plant_accessories,
     wild_accessories,
     collars,
-    ball_accessories,
-    blankie_accessories,
-    toy_accessories
+    toy_accessories,
+    blankie_accessories
 )
 from scripts.game_structure.game_essentials import game, screen_x, screen_y
 
