@@ -156,6 +156,24 @@
         "event_text": "m_c and r_c spend the evening chasing cicadas around camp. m_c keeps a trophy of {PRONOUN/m_c/poss} catch on {PRONOUN/m_c/poss} pelt.",
         "accessories": ["CICADA WINGS"]
      },
+    {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "event_text": "While out on an adventure m_c found an interesting object in the territory and decided to keep it.",
+        "accessories": ["TOY"]
+    },
+    {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "event_text": "After sneaking out of the territory m_c has come back with an acc_singular that {PRONOUN/m_c/subject} {VERB/m_c/find/finds} comforting.",
+        "accessories": ["TOY"]
+    },
+    {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "event_text": "m_c found a nice acc_singular that {PRONOUN/m_c/subject} decided to keep and wear on {PRONOUN/m_c/poss} pelt.",
+        "accessories": ["BLANKIE"]
+    },	
      {
         "camp": "any",
         "tags": ["Greenleaf", "other_cat",  "other_cat_mate", "to_both", "platonic"],

@@ -34,6 +34,8 @@ from .pelts import (
     yellow_eyes,
     pelt_colours,
     tortiepatterns,
+    toy_accessories,
+    blankie_accessories
     )
 from scripts.cat.sprites import Sprites
 from scripts.game_structure.game_essentials import game
@@ -419,7 +421,9 @@ def init_accessories(cat):
     if acc_display_choice == 1:
         cat.acc_display = choice([
             choice(plant_accessories),
-            choice(wild_accessories)
+            choice(wild_accessories),
+            choice(toy_accessories),
+            choice(blankie_accessories)
         ])
     else:
         cat.acc_display = None
