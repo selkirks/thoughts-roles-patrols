@@ -166,5 +166,8 @@
 		"m_c has to go to the dirtplace very frequently, and getting there always hurts {PRONOUN/m_c/poss} joints. {PRONOUN/m_c/subject} thought this was normal, but after speaking to some other cats, {PRONOUN/m_c/subject} realise its not.",
 		"After speaking to some of their clanmates, m_c discovers that not every cat is in pain all the time.",
         "m_c is always tired and always in pain, and {PRONOUN/m_c/subject} {VERB/m_c/decide/decides} it's time to speak to a medicine cat."
+	],
+	"burning light": [
+		"Walking out of the nursery for the first time, m_c mewls and rushes back inside, crying about how the light burns their eyes and they don't want to go outside. r_c is brought over to explain that unlike most cats m_c suffers from burning light, and there isn't much they can do to help but just wait out the burn."
 	]
 }
