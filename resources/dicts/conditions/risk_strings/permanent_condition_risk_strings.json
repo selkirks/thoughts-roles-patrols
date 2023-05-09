@@ -834,6 +834,32 @@
 			"m_c's coughing has been a lot worse, a lot more frequent recently. Talking to the medicine cat {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} unsurprised to discover it's compounded by silvercough."
 		]
 	},
+	"jellyfish joints": {
+		"joint pain": [
+		"m_c smiles softly at the pile of moss before {PRONOUN/m_c/object}. {PRONOUN/m_c/poss} joints may ache, but m_c is happy that the Queens and Elders will have fresh moss from the highest spots to sleep in.",
+			"m_c is beginning to regret showing off how far {PRONOUN/m_c/subject} can stretch. {PRONOUN/m_c/poss} joints didn’t like it that’s for sure…",
+			"m_c softly hisses in pain. {PRONOUN/m_c/poss} joints are screaming at {PRONOUN/m_c/object} again."
+	],
+		"sore": [
+		"After going on a long walk, m_c’s muscles protest. m_c makes the slow trudge to the medicine cat den. Seems like it’s going to be a long moon.",
+		"m_c winces, its been a few days and {PRONOUN/m_c/subject} still ache all over. {PRONOUN/m_c/subject} sigh and pad over to the medicine den for some herbs to help with the pain."
+	],
+		"sprain": [
+		"Mousedung! m_c tripped and where most cats would just fall on {PRONOUN/m_c/poss} chest, m_c fell on {PRONOUN/m_c/poss} paw, and then {PRONOUN/m_c/poss} shoulder and then sprained {PRONOUN/m_c/poss} paw in the process.",
+		"m_c ran too quickly and twisted {PRONOUN/m_c/poss} paw! Off to the medicine den again…"
+	],
+		"dislocated joint": [
+		"Crack! m_c sighs, getting help from {PRONOUN/m_c/poss} clanmates to get into the medicine den, to relocate {PRONOUN/m_c/poss} joint.",
+		"As m_c limps to the medicine cat den, {PRONOUN/m_c/subject} think that maybe {PRONOUN/m_c/subject} should have woke up the clanmate who slept on {PRONOUN/m_c/poss} leg.",
+		"subluxated joint": [
+		"m_c lets out a hiss of pain and {PRONOUN/m_c/poss} concerned clanmates help {PRONOUN/m_c/object} to the medicine cat den. While nothing looks wrong, {PRONOUN/m_c/poss} clanmates trust that m_c knows what {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} talking about when {PRONOUN/m_c/subject} say that {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} subluxated {PRONOUN/m_c/poss} joint.",
+		"Their joints have been hurting for a few days now, so m_c decides to go to the medicine cat den. Only for r_c to say that they subluxated their shoulder. Oops…",
+		"With a startled hiss, m_c staggers back from training. The cat {PRONOUN/m_c/subject}{VERB/m_c/'re/'s}e training with pauses, “Are you alright?” {PRONOUN/r_c/subject} {VERB/r_c/mew/mews}. m_c informs {PRONOUN/r_c/object} that no, {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} not alright and {PRONOUN/m_c/subject}'d like to stop this and go to the medicine den. {PRONOUN/m_c/poss} clanmate nods and helps {PRONOUN/m_c/object} to the medicine den.",
+		"As m_c limps to the medicine cat den, {PRONOUN/m_c/subject} think that maybe {PRONOUN/m_c/subject} should have woke up the clanmate who slept on {PRONOUN/m_c/poss} leg.",
+		"{PRONOUN/m_c/poss} joints have been hurting for a few days now, so m_c decides to go to the medicine cat den. Only for r_c to say that {PRONOUN/m_c/subject} subluxated {PRONOUN/m_c/poss} shoulder. Oops…"	
+	]
+},
+
 	"loose body": {
 		"dislocated joint": [
 			"m_c has to go to r_c's den again after aother of {PRONOUN/m_c/poss} joints slips out of place.",
