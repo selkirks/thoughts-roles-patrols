@@ -425,9 +425,9 @@
     "singular": "ball"
   },
   "MOSSBLANKIE": {
-    "default": "blankie",
-    "plural": "blankies",
-    "singular": "blankie"
+    "default": "moss blanket",
+    "plural": "patches of moss",
+    "singular": "patch of moss"
   },
   "MOUSE": {
     "default": "mouse",
