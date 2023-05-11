@@ -183,7 +183,7 @@
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
         "event_text": "m_c found a nice acc_singular that {PRONOUN/m_c/subject} decided to keep and wear on {PRONOUN/m_c/poss} pelt.",
-        "accessories": ["BLANKIE"]
+        "accessories": ["MOSSBLANKIE"]
     },	
      {
         "camp": "any",
