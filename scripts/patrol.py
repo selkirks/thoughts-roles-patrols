@@ -617,6 +617,7 @@ class Patrol():
             needed_tags.append("minor_injury")
             needed_tags.append("cold_injury")
             needed_tags.append("hot_injury")
+            needed_tags.append("regression")
         elif chosen_tag in ["less_prey", "prey"]:
             if chosen_tag == "prey":
                 not_allowed_tag = "death"
