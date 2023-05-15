@@ -23,7 +23,7 @@ def verify_token(token: str) -> bool:
     """
     verifies the token is valid
     """
-    with requests.get("https://silverpelt.lvna.me/clantoken/" + token) as response:
+    with requests.get("https://fringe.silverpelt.lvna.me/clantoken/" + token) as response:
         if response.status_code == 200:
             return True
         else:
@@ -43,7 +43,7 @@ def upload_save(token: str, progress: UITextBoxTweaked, callback: callable):
             
     # upload the save
     with open(os.path.join(get_temp_dir(), "save.zip"), 'rb') as f:
-        req = requests.post("https://silverpelt.lvna.me/save/", files={'file': f}, headers={'token': token})
+        req = requests.post("https://fringe.silverpelt.lvna.me/save/", files={'file': f}, headers={'token': token})
     
     if req.status_code == 200:
         progress.set_text("Save uploaded successfully!")
