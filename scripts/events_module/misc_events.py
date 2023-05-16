@@ -152,7 +152,7 @@ class MiscEvents():
             acc_list.extend(collars)
         if "TOY" in possible_accs:
             acc_list.extend(toy_accessories)
-        if "BLANKIE" in possible_accs:
+        if "MOSSBLANKIE" in possible_accs:
             acc_list.extend(blankie_accessories)
 
         for acc in possible_accs:

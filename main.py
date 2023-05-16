@@ -26,7 +26,6 @@ from scripts.housekeeping.stream_duplexer import UnbufferedStreamDuplexer
 from scripts.housekeeping.datadir import get_log_dir, setup_data_dir
 from scripts.housekeeping.version import get_version_info, VERSION_NAME
 
-from scripts.debugmode import debugmode
 
 directory = os.path.dirname(__file__)
 if directory:
@@ -72,7 +71,7 @@ logging.root.addHandler(file_handler)
 logging.root.addHandler(stream_handler)
 
 
-prune_logs(logs_to_keep=2, retain_empty_logs=False)
+prune_logs(logs_to_keep=10, retain_empty_logs=False)
 
 
 def log_crash(logtype, value, tb):
@@ -119,6 +118,7 @@ from scripts.game_structure.discord_rpc import _DiscordRPC
 from scripts.cat.sprites import sprites
 from scripts.clan import clan_class
 from scripts.utility import get_text_box_theme, quit, scale  # pylint: disable=redefined-builtin
+from scripts.debugmode import debugmode
 import pygame_gui
 import pygame
 
@@ -174,7 +174,7 @@ else:
 if get_version_info().is_source_build or get_version_info().is_dev():
     dev_watermark = pygame_gui.elements.UILabel(
         scale(pygame.Rect((990, 1321), (600, 100))),
-        "Disablilty Mod:",
+        "Disability Mod:",
         object_id="#dev_watermark"
     )
 
@@ -192,7 +192,7 @@ disabled_cursor = pygame.cursors.Cursor(pygame.SYSTEM_CURSOR_ARROW)
 
 
 while True:
-    time_delta = clock.tick(30) / 1000.0
+    time_delta = clock.tick(game.switches['fps']) / 1000.0
     if game.switches['cur_screen'] not in ['start screen']:
         if game.settings['dark mode']:
             screen.fill((57, 50, 36))
