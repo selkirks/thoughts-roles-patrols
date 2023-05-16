@@ -858,7 +858,7 @@
 			"As m_c limps to the medicine cat den, {PRONOUN/m_c/subject} think that maybe {PRONOUN/m_c/subject} should have woke up the clanmate who slept on {PRONOUN/m_c/poss} leg.",
 			"{PRONOUN/m_c/poss} joints have been hurting for a few days now, so m_c decides to go to the medicine cat den. Only for r_c to say that {PRONOUN/m_c/subject} subluxated {PRONOUN/m_c/poss} shoulder. Oops…"	
 	]
-},
+	},
 
 	"loose body": {
 		"dislocated joint": [
