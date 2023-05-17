@@ -843,11 +843,7 @@
             {
                 "name": "an infected wound",
                 "chance": 15
-            },
-			{
-				"name": "turmoiled litter",
-				"chance": 0
-			}
+            }
         ],
         "also_got": [
             "blood loss"
