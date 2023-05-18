@@ -204,7 +204,7 @@
         "herbs": []
     },
     "paralyzed": {
-        "severity": "severe",
+        "severity": "major",
         "congenital": "sometimes",
         "moons_until": 0,
         "mortality": {
@@ -274,13 +274,13 @@
         "congenital": "sometimes",
         "moons_until": 1,
         "mortality": {
-            "newborn": 10,
-            "kitten": 10,
-            "adolescent": 40,
-            "young adult": 75,
-            "adult": 65,
-            "senior adult": 40,
-            "senior": 10
+            "newborn": 60,
+            "kitten": 60,
+            "adolescent": 70,
+            "young adult": 125,
+            "adult": 125,
+            "senior adult": 70,
+            "senior": 60
         },
         "illness_infectiousness": [
             {
@@ -1502,5 +1502,43 @@
 			}
         ],
         "herbs":[]
+    },
+    "constant rash":{
+        "severity": "minor",
+        "congenital": "sometimes",
+        "moons_until": 3,
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "illness_infectiousness": [],
+        "risks": [
+			{
+				"name": "rash",
+				"chance": 10
+			},
+			{
+                "name": "torn pelt",
+                "chance": 40
+            },
+			{
+				"name": "running nose",
+				"chance": 40
+			},
+			{
+				"name": "whitecough",
+				"chance": 35
+			}
+        ],
+        "herbs": [
+            "poppy",
+			"comfrey",
+			"elder_leaves"
+        ]
     }	
 }

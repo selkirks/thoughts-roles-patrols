@@ -730,7 +730,7 @@
 		"an infected wound": [
 			"r_c hisses as m_c limps into the medicine den. {PRONOUN/r_c/subject/CAP} {VERB/r_c/don't/doesn't} even have to check to know there's something wrong with m_c's paws.",
 			"m_c can barely walk. {PRONOUN/m_c/poss} paws are angry and swollen.",
-			"Once again m_c finds {PRONOUN/m_c/self} cursing the peltshifters who done this to {PRONOUN/m_c/object} as {PRONOUN/m_c/poss} paws burn and ache painfully around {PRONOUN/m_c/poss} toes."
+			"Once again m_c finds {PRONOUN/m_c/self} cursing the twolegs who done this to {PRONOUN/m_c/object} as {PRONOUN/m_c/poss} paws burn and ache painfully around {PRONOUN/m_c/poss} toes."
 		],
 		"sore": [
 			"r_c sympathetically provides wrappings for m_c's sore paws. The wounds healed but still aching.",

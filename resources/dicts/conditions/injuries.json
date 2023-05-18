@@ -1404,7 +1404,9 @@
             }
         ],
         "also_got": [],
-        "cause_permanent": [],
+        "cause_permanent": [
+			"constant rash"
+		],
         "herbs": [
             "poppy",
 			"comfrey",
