@@ -594,8 +594,7 @@
 		"hallucinations": [
 			"r_c talks m_c through the things that {PRONOUN/m_c/subject} {VERB/m_c/are/is} seeing and hearing. It helps m_c to more firmly ground {PRONOUN/m_c/self} in reality.",
 			"m_c struggles to understand what is really there or not as the shadows seem to hold impossible things.",
-			"Sometimes when m_c sleeps {PRONOUN/m_c/subject} half {VERB/m_c/wake/wakes} up and there's things on top of {PRONOUN/m_c/object}.",
-			"m_c feels frozen, rooted in place as something large pinches and pokes at {PRONOUN/m_c/object}.",
+			"Sometimes when m_c is half asleep it feels as if there are creatures climbing up over {PRONOUN/m_c/poss} body conspiring to keep {PRONOUN/m_c/object} awake.",
 			"m_c admits to a clanmate that {PRONOUN/m_c/subject} {VERB/m_c/are/is} not sure if {PRONOUN/m_c/subject} can actually trust {PRONOUN/m_c/poss} ears and what {PRONOUN/m_c/subject} {VERB/m_c/are/is} hearing anymore."
 		],
 		"shock": [
@@ -605,12 +604,12 @@
 			"The moon has been rough, m_c can barely keep {PRONOUN/m_c/poss} paws stable as {PRONOUN/m_c/subject} {VERB/m_c/head/heads} towards the medicine den to ask for something to ease the pressure."
 		],
 		"paranoia": [
-			"r_c gently speaks to m_c. Talking at length with {PRONOUN/m_c/object} about the herbs in the medicine den trying to assure {PRONOUN/m_c/object} that {PRONOUN/m_c/subject} {VERB/m_c/are/is} safe.",
-			"m_c is wandering around the camp somehow convinced that the world will be ending soon and rather listless.",
-			"m_c refuses to eat the prey on the freshkill pile, instead going out each day to catch even fresher prey for {PRONOUN/m_c/self}.",
-			"While the rest of the clan settles down for the night m_c is getting up every few hours to check and make sure that things are still safe and fine.",
-			"m_c keeps waking up {PRONOUN/m_c/poss} denmates to get them to check just one more time if {PRONOUN/m_c/subject} is really sure the camp is secure.",
-			"{PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} not paranoid, m_c insists that it's just the proper level of caution as {PRONOUN/m_c/subject} {VERB/m_c/check/checks} for the third time that afternoon that the nursery is secure."
+			"Even with all of r_c's assurances, m_c is certain that there is something out there hunting for {PRONOUN/m_c/object}.",
+			"m_c feels frozen, rooted in place as it feels like something large looms in the shadows hunting specifically for {PRONOUN/m_c/object}",	
+			"No matter what m_c's clanmates say, {PRONOUN/m_c/subject} {VERB/m_c/refuse/refuses} to let {PRONOUN/m_c/self} calm down. If {PRONOUN/m_c/subject} {VERB/m_c/drop/drops} {PRONOUN/m_c/poss} guard that's when danger will strike.",
+			"m_c is convinced that something bad will happen, refusing to stop pacing and checking the camp for anything out of place, even a stray leaf seeming to be a threat.",
+			"With a loud refusal, m_c insists it's not paranoia. {PRONOUN/m_c/subject/CAP} just {VERB/m_c/know/knows} that there is a danger out there after the clan.",
+			"m_c keeps checking in on the medicine cats, asking over and over about any signs from StarClan this moon."
 		],
 		"kittenspace": [
 			"Sometimes m_c feels younger than the age {PRONOUN/m_c/poss} body is.  {PRONOUN/m_c/subject} talked to r_c about it, worried something is wrong with {PRONOUN/m_c/object}, but {PRONOUN/m_c/subject} assured {PRONOUN/m_c/object} what {PRONOUN/m_c/subject} are feeling is perfectly normal, {PRONOUN/m_c/poss} brain is just in kittenspace",
