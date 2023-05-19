@@ -1216,6 +1216,10 @@
 			{
 				"name": "joint pain",
 				"chance": 10
+			},
+			{
+				"name": "acute pain",
+				"chance": 20
 			}
         ],
         "herbs": [

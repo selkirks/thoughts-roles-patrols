@@ -741,6 +741,12 @@
 			"m_c talks with r_c in the medicine den about the soreness in the joints of {PRONOUN/m_c/poss} paws.",
 			"m_c hisses as {PRONOUN/m_c/subject} {VERB/m_c/try/tries} to walk, the joints in {PRONOUN/m_c/poss} paws feeling off and unbalanced.",
 			"With much pain m_c limps {PRONOUN/m_c/poss} way to the medicine den, paws feeling stiff and awkward."
+		],
+		"acute pain": [
+			"r_c helps m_c around the camp, offering support so that {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} have to place too much weight on {PRONOUN/m_c/poss} painful and swollen looking paws.",
+			"m_c's wincing with every step, biting {PRONOUN/m_c/poss} own tongue to not yowl from the pulsing ache within {PRONOUN/m_c/poss} paws.",
+			"There's no shame for m_c to shake {PRONOUN/m_c/poss} head and refuse to leave the den with the pain in {PRONOUN/m_c/poss} paws this moon.",
+			"With much relief m_c's been taking a break this moon, soaking {PRONOUN/m_c/poss} paws in a herbal paste and relaxing to recover from pain."
 		]
     },
  "strong soul": {
