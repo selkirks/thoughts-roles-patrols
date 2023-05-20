@@ -1607,5 +1607,48 @@
 			"comfrey",
 			"elder_leaves"
         ]
-    }	
+    },
+    "constant fatigue": {
+        "severity": "major",
+        "congenital": "never",
+        "moons_until": 0,
+        "mortality": {
+            "newborn": 160,
+            "kitten": 160,
+            "adolescent": 170,
+            "young adult": 200,
+            "adult": 200,
+            "senior adult": 170,
+            "senior": 160
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+			{
+				"name": "sleeplessness",
+				"chance": 10
+			},
+			{
+				"name": "lethargy",
+				"chance": 30
+			},
+			{
+				"name": "nightmares",
+				"chance": 10
+			},
+			{
+				"name": "dizziness",
+				"chance": 25
+			},
+			{
+				"name": "sleep paralysis",
+				"chance": 50
+			}
+        ],
+        "herbs": [
+            "honey",
+            "chamomile",
+            "poppy"
+		]
+    }
 }

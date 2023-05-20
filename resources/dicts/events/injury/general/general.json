@@ -712,7 +712,7 @@
            "Leaf-fall",
            "Leaf-bare"
        ],
-       "event_text": "Poor m_c has gotten an ear-ache this moon.",
+       "event_text": "Poor m_c has gotten an earache this moon.",
        "history_text": null,
        "cat_trait": null,
        "cat_skill": null,
@@ -729,6 +729,22 @@
            "Leaf-bare"
        ],
        "event_text": "After m_c visits the medicine den over some dizziness it turns out that {PRONOUN/m_c/subject} just {VERB/m_c/has/have} a small earache.",
+       "history_text": null,
+       "cat_trait": null,
+       "cat_skill": null,
+       "other_cat_trait": null,
+       "other_cat_skill": null
+    },    
+	{
+       "injury": "fatigue",
+       "camp": "any",
+       "tags": [
+           "Newleaf",
+           "Greenleaf",
+           "Leaf-fall",
+           "Leaf-bare"
+       ],
+       "event_text": "Despite sleeping, m_c still feels absolutely exhausted, it would seem that {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} gotten some fatigue.",
        "history_text": null,
        "cat_trait": null,
        "cat_skill": null,

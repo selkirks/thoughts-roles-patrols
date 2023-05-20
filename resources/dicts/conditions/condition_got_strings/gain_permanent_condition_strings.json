@@ -234,5 +234,12 @@
 			"m_c decides that the sun is evil and {PRONOUN/m_c/poss} enemy, clearly it's trying to blind {PRONOUN/m_c/poss}.",
 			"While the day is too harsh for m_c, {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} happy to take up the more quiet nighttime patrols. Even if just to avoid the sun."
 		]
+	},
+	"fatigue": {
+		"constant fatigue": [
+			"r_c reassures m_c that it's alright if {PRONOUN/m_c/subject} still {VERB/m_c/feel/feels} exhausted, {PRONOUN/m_c/poss} fatigue just might be constant.",
+			"Despite following all of r_c's instructions m_c still seems to be experiencing ongoing and constant fatigue.",
+			"m_c feels only mildly better after {PRONOUN/m_c/poss} long rest, the fatigue seems to want to be a constant companion."
+		]
 	}
 }

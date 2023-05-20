@@ -1543,7 +1543,47 @@
             "poppy",
             "juniper"
         ]
-    },	
+    },				
+    "fatigue": {
+        "duration": 4,
+        "severity": "minor",
+        "medicine_duration": 3,
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+			{
+				"name": "sleeplessness",
+				"chance": 25
+			},
+			{
+				"name": "nightmares",
+				"chance": 10
+			},
+			{
+				"name": "dizziness",
+				"chance": 20
+			}
+		],
+        "also_got": [
+        ],
+        "cause_permanent": [
+			"constant fatigue"
+        ],
+        "herbs": [
+            "honey",
+            "chamomile",
+            "poppy"
+        ]
+    },
     "pregnant": {
         "duration": 2,
         "severity": "major",
