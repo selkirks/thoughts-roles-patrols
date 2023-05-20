@@ -231,5 +231,9 @@
 		"m_c is so relieved to be able to blink {PRONOUN/m_c/poss} eyes and find that once more {PRONOUN/m_c/subject} {VERB/m_c/are/is} able to see the world around {PRONOUN/m_c/object}.",
 		"There's a lot of purring from m_c as {PRONOUN/m_c/subject} {VERB/m_c/greet/greets} {PRONOUN/m_c/poss} friends and family in the clan.",
 		"m_c can blink {PRONOUN/m_c/poss} comfortably without any lingering pain from the brightness outside anymore."
+	],
+	"earache": [
+		"m_c purrs over and over again so happy that {PRONOUN/m_c/poss} ears no longer ache.",
+		"m_c's earache has cleared up."
 	]
 }

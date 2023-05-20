@@ -600,7 +600,7 @@
 				"chance": 15
 			},
             {
-                "name": "constant nightmares",
+                "name": "nightmares",
                 "chance": 20
             },
             {
@@ -630,6 +630,10 @@
 			{
 				"name": "paranoia",
 				"chance": 20
+			},
+			{
+				"name": "sleep paralysis",
+				"chance": 45
 			}
         ],
         "herbs": [
@@ -681,6 +685,10 @@
 			{
 				"name": "dizziness",
 				"chance": 20
+			},
+			{
+				"name": "sleep paralysis",
+				"chance": 45
 			}
         ],
         "herbs": [
@@ -919,6 +927,10 @@
 			{
 				"name": "absence",
 				"chance": 25
+			},
+			{
+				"name": "sleep paralysis",
+				"chance": 45
 			}
         ],
         "herbs": [ 
@@ -1052,7 +1064,11 @@
             {
                 "name": "puppy regressor",
                 "chance": 10
-            }
+            },
+			{
+				"name": "sleep paralysis",
+				"chance": 45
+			}
         ],
         "herbs": [
             "chamomile",
@@ -1171,7 +1187,7 @@
 				"chance": 10
 			},
 			{
-				"name": "constant nightmares",
+				"name": "nightmares",
 				"chance": 10
 			},
 			{
@@ -1181,6 +1197,10 @@
 			{
 				"name": "dizziness",
 				"chance": 25
+			},
+			{
+				"name": "sleep paralysis",
+				"chance": 45
 			}
         ],
         "herbs": [
@@ -1506,6 +1526,49 @@
 			}
         ],
         "herbs":[]
+    },
+    "constant nightmares": {
+        "severity": "major",
+        "congenital": "never",
+        "moons_until": 1,
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "illness_infectiousness":[
+        ],
+        "risks": [
+			{
+				"name": "sleeplessness",
+				"chance": 15
+			},
+			{
+				"name": "nightmares",
+				"chance": 5
+			},
+			{
+				"name": "anxiety attack",
+				"chance": 15
+			},
+			{
+				"name": "paranoia",
+				"chance": 45
+			},
+			{
+				"name": "sleep paralysis",
+				"chance": 25
+			}
+        ],
+        "herbs": [
+            "juniper",
+            "thyme",
+            "poppy"
+        ]
     },
     "constant rash":{
         "severity": "minor",

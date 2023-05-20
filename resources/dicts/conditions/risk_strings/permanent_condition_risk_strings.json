@@ -228,8 +228,8 @@
 			"m_c's shock feels fresh, the event from the past flashing before {PRONOUN/m_c/poss} eyes and making {PRONOUN/m_c/object} shake and shiver wishing to just curl back up in the den and not leave.",
 			"Breathing harshly m_c creeps around the camp towards the medicine den, every step shaky and weak."
 		],
-        "constant nightmares": [
-            "r_c sits with m_c, listening to {PRONOUN/m_c/poss} troubles and providing a comforting, sympathetic ear. m_c has had a rough moon, haunted by constant nightmares.",
+        "nightmares": [
+            "r_c sits with m_c, listening to {PRONOUN/m_c/poss} troubles and providing a comforting, sympathetic ear. m_c has had a rough moon, haunted by nightmares.",
             "Haunted by the memories of {PRONOUN/m_c/poss} past, m_c gets so little sleep this month that {PRONOUN/m_c/subject} {VERB/m_c/find/finds} {PRONOUN/m_c/self} unable to function."
         ],
 		"kittenspace": [
@@ -705,7 +705,7 @@
 			"It's becoming increasingly harder for m_c to understand where reality starts and ends. Figures and shapes dance around {PRONOUN/m_c/object} just outside {PRONOUN/m_c/poss} vision.",
 			"m_c jumps as a clanmate brushes against {PRONOUN/m_c/object}, fur all on end as {PRONOUN/m_c/subject} {VERB/m_c/admit/admits} surprise that the other cat is actually real."
 		],
-		"constant nightmares": [
+		"nightmares": [
 			"m_c comes in to see r_c, picking up some poppy seeds in the hope for some temporary completely dream free sleep.",
 			"m_c whimpers as {PRONOUN/m_c/subject} {VERB/m_c/wake/wakes} up, pressing {PRONOUN/m_c/poss} ears flat. Bad enough {PRONOUN/m_c/subject} hardly {VERB/m_c/sleep/sleeps}, now what little they do get is plagued with nightmares."
 		],
@@ -845,8 +845,8 @@
 			"m_c dislocated {PRONOUN/m_c/poss} elbow, again."
 		],
 		"constipation": [
-			"r_c chuckles as m_c shuffles into {PRONOUN/r_c/poss} den asking for some herbs to help with dirtplacing.",
-			"m_c is very fustrated after {PRONOUN/m_c/subject} {VERB/m_c/discover/discovers}  {PRONOUN/m_c/subject} {VERB/m_c/are/is} are having a bit of dirtplacing trouble."
+			"r_c chuckles as m_c shuffles into {PRONOUN/r_c/poss} den asking for some herbs to help with dirtmaking.",
+			"m_c is very fustrated after {PRONOUN/m_c/subject} {VERB/m_c/discover/discovers}  {PRONOUN/m_c/subject} {VERB/m_c/are/is} are having a bit of dirtmaking trouble."
 		],
 		"severe headache": [
 			"r_chas to rush to m_c's den to give them some herbs as m_c's headache is so painful {PRONOUN/m_c/subject} cannot move.",

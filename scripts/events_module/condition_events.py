@@ -66,7 +66,7 @@ class Condition_Events():
                 if chosen_illness == 'kittencough' and cat.status != 'kitten':
                     chosen_illness = 'whitecough'
                 elif chosen_illness == 'nest wetting' and cat.status not in ['kitten', 'apprentice']:
-                    chosen_illness = 'night dirtplacing'
+                    chosen_illness = 'night dirtmaking'
                 # make em sick
                 cat.get_ill(chosen_illness)
 
@@ -84,8 +84,10 @@ class Condition_Events():
                     event_string = f"{cat.name} has worked up into an {chosen_illness}."
                 elif chosen_illness == "seasonal lethargy":
                     event_string = f"{cat.name} is experiencing some {chosen_illness} this season."
-                elif chosen_illness in ['nest wetting', 'night dirtplacing']:
+                elif chosen_illness in ['nest wetting', 'night dirtmaking']:
                     event_string = f"Somewhat embarrassingly {cat.name} is experiencing {chosen_illness}."
+                elif chosen_illness == "nightmares":
+                    event_string = f"{cat.name} has been struggling recently with nightmares."
                 else:
                     event_string = f"{cat.name} has gotten {chosen_illness}."
 
@@ -331,7 +333,7 @@ class Condition_Events():
             "one bad eye", "partial hearing loss", "deaf", "constant joint pain", "constantly dizzy", 
             "recurring shock", "lasting grief", "adhd", "heavy soul", "starwalker", "ocd", "antisocial", "anxiety", 
             "constant roaming pain", "strong soul", "otherworldly mind", "kitten regressor", "puppy regressor", "snow vision",
-            "echoing shock", "loose body", "longcough", "burning light"
+            "echoing shock", "irritable bowels", "loose body", "longcough", "burning light", "constant nightmares", "constant rash"
             
         ]
 
@@ -397,7 +399,7 @@ class Condition_Events():
             "panic attack": "shock",
             "panic attack": "paranoia",
             "sleeplessness": "ongoing sleeplessness",
-            "nest wetting": "night dirtplacing"
+            "nest wetting": "night dirtmaking"
         }
         # ---------------------------------------------------------------------------- #
         #                         handle currently sick cats                           #

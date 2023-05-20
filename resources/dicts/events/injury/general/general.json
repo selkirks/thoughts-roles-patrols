@@ -702,5 +702,37 @@
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
+    },
+    {
+       "injury": "earache",
+       "camp": "any",
+       "tags": [
+           "Newleaf",
+           "Greenleaf",
+           "Leaf-fall",
+           "Leaf-bare"
+       ],
+       "event_text": "Poor m_c has gotten an ear-ache this moon.",
+       "history_text": null,
+       "cat_trait": null,
+       "cat_skill": null,
+       "other_cat_trait": null,
+       "other_cat_skill": null
+    },    
+	{
+       "injury": "earache",
+       "camp": "any",
+       "tags": [
+           "Newleaf",
+           "Greenleaf",
+           "Leaf-fall",
+           "Leaf-bare"
+       ],
+       "event_text": "After m_c visits the medicine den over some dizziness it turns out that {PRONOUN/m_c/subject} just {VERB/m_c/has/have} a small earache.",
+       "history_text": null,
+       "cat_trait": null,
+       "cat_skill": null,
+       "other_cat_trait": null,
+       "other_cat_skill": null
     }
 ]

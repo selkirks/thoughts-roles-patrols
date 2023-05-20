@@ -111,7 +111,7 @@
             "m_c wishes desperately to hear the voice of {PRONOUN/m_c/poss} loved one again, to see their face and smell their scent. The reality of the situation makes m_c want to wail into the sky.",
             "m_c realizes one day that this grief will never leave and {PRONOUN/m_c/subject}'ll just have to learn to live with it, there's nothing else to do."
         ],
-        "constant nightmares": [
+        "nightmares": [
             "m_c heads to the medicine den, hoping that r_c will give {PRONOUN/m_c/object} some poppy seeds to help dampen the nightmares that have been plaguing {PRONOUN/m_c/object}.",
             "m_c wakes from yet another nightmare, feeling as though {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} being haunted by the ghost of the one {PRONOUN/m_c/subject} {VERB/m_c/grieve/grieves}.",
             "m_c wakes and wails, {PRONOUN/m_c/poss} dreams haunted by visions of {PRONOUN/m_c/poss} dead loved one.",
@@ -140,7 +140,7 @@
 		]
 	},
 	"panic attack": {
-		"constant nightmares": [
+		"nightmares": [
 			"After all the panicking m_c weakly crawls on {PRONOUN/m_c/poss} belly to r_c asking for anything to help with the paranoia induced nightmares {PRONOUN/m_c/subject} {VERB/m_c/have/has} been suffering from.",
 			"m_c wakes up panting from {PRONOUN/m_c/poss} nest, paws still twitching with the desperate need to run and escape. It's just a nightmare, just one of many.",
 			"Another nightmare drags m_c down, leaving {PRONOUN/m_c/object} tired and hollow looking the next day to the worry of {PRONOUN/m_c/poss} clanmates."
@@ -230,7 +230,7 @@
 			"Awkwardly m_c spends the nights wandering around camp, it's better than waking up in wet nesting again."
 		]
 	},
-	"night dirtplacing": {
+	"night dirtmaking": {
 		"sleeplessness": [
 			"Reluctantly m_c goes to talk to r_c. The frequent trips to the dirtplace all night have left {PRONOUN/m_c/object} unable to sleep.",
 			"With some shock m_c realises that the sun is rising already, and {PRONOUN/m_c/subject} {VERB/m_c/haven't/hasn't} gotten any sleep at all.",
