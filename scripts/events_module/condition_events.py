@@ -393,8 +393,7 @@ class Condition_Events():
             "grief stricken": "heavy soul",
             "lasting grief": "heavy soul",
             "anxiety attack": "panic attack",
-            "panic attack": "shock",
-            "panic attack": "paranoia",
+            "panic attack": ["shock", "paranoia"],
             "sleeplessness": "ongoing sleeplessness",
             "nest wetting": "night dirtmaking"
         }
