@@ -1613,7 +1613,7 @@
 			},
 			{
 				"name": "fatigue",
-				"chance" 45
+				"chance": 45
 			}
         ],
         "herbs":[]

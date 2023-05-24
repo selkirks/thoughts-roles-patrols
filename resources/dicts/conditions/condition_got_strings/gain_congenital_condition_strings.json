@@ -171,7 +171,7 @@
 		"Walking out of the nursery for the first time, m_c mewls and rushes back inside, crying about how the light burns their eyes and they don't want to go outside. r_c is brought over to explain that unlike most cats m_c suffers from burning light, and there isn't much they can do to help but just wait out the burn.",
 		"Whenever m_c steps out of the nursery {PRONOUN/m_c/subject} {VERB/m_c/whine/whines} and {VERB/m_c/retreat/retreats} back inside.",
 		"While {PRONOUN/m_c/poss} nurserymates are already freely exploring and playing around the camp, m_c whimpers and complains about the evil sun trying to blind {PRONOUN/m_c/object}.",
-		"m_c hates going outside, {PRONOUN/m_c/subject} alway {VERB/m_c/complain/complains} about the burning in {PRONOUN/m_c/poss} eyes.",
+		"m_c hates going outside, {PRONOUN/m_c/subject} alway {VERB/m_c/complain/complains} about the burning in {PRONOUN/m_c/poss} eyes."
 	],
 	"disrupted senses": [
 		"r_c talks with m_c's parents about how much more sensitive {PRONOUN/m_c/subject} {VERB/m_c/seem/seems} than other kittens. After some observation it seems that m_c might just have some disrupted senses.",

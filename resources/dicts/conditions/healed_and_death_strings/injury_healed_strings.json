@@ -232,6 +232,15 @@
 		"There's a lot of purring from m_c as {PRONOUN/m_c/subject} {VERB/m_c/greet/greets} {PRONOUN/m_c/poss} friends and family in the clan.",
 		"m_c can blink {PRONOUN/m_c/poss} comfortably without any lingering pain from the brightness outside anymore."
 	],
+	"overstimulation": [
+		"m_c is no longer overstimulated.",
+		"After some time in a calmer environment m_c's been able to deal with {PRONOUN/m_c/poss} overstimulation."
+	],
+	"understimulation": [
+		"m_c's no longer stressed and understimulated.",
+		"After utilizing some of {PRONOUN/m_c/poss} old toys from kittenhood m_c is no longer understimulated.",
+		"m_c's purring has helped {PRONOUN/m_c/object} stablize {PRONOUN/m_c/poss} understimulation."
+	],
 	"earache": [
 		"m_c purrs over and over again so happy that {PRONOUN/m_c/poss} ears no longer ache.",
 		"m_c's earache has cleared up."
