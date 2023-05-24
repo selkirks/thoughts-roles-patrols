@@ -152,11 +152,11 @@ class MiscEvents():
             acc_list.extend(collars)
         if "TOY" in possible_accs:
             acc_list.extend(toy_accessories)
-        if "MOSSBLANKIE" in possible_accs:
+        if "BLANKIE" in possible_accs:
             acc_list.extend(blankie_accessories)
 
         for acc in possible_accs:
-            if acc not in ["WILD", "PLANT", "COLLAR"]:
+            if acc not in ["WILD", "PLANT", "COLLAR", "TOY", "BLANKIE"]:
                 acc_list.append(acc)
 
         if ("NOTAIL" or "HALFTAIL") in cat.scars:

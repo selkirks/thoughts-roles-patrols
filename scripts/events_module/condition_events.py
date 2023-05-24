@@ -333,7 +333,8 @@ class Condition_Events():
             "one bad eye", "partial hearing loss", "deaf", "constant joint pain", "constantly dizzy", 
             "recurring shock", "lasting grief", "adhd", "heavy soul", "starwalker", "ocd", "antisocial", "anxiety", 
             "constant roaming pain", "strong soul", "otherworldly mind", "kitten regressor", "puppy regressor", "snow vision",
-            "echoing shock", "irritable bowels", "loose body", "longcough", "burning light", "constant nightmares", "constant rash"
+            "echoing shock", "irritable bowels", "loose body", "longcough", "burning light", "disrupted senses", 
+            "constant nightmares", "constant rash"
             
         ]
 
@@ -380,19 +381,15 @@ class Condition_Events():
         cat.healed_condition = False
         event_list = []
         illness_progression = {
-            "running nose": "whitecough",
+            "running nose": ["whitecough", "silvercough"],
             "kittencough": "silvercough",
-            "whitecough": "greencough",
-            "greencough": "yellowcough",
-            "yellowcough": "redcough",
-            "running nose": "silvercough",
+            "whitecough": ["greencough", "silvercough"],
             "silvercough": "greencough",
-            "whitecough": "silvercough",
+            "greencough": "yellowcough",
             "an infected wound": "a festering wound",
             "heat exhaustion": "heat stroke",
-            "stomachache": "diarrhea",
-            "stomachache": "constipation",
-            "grief stricken": "lasting grief",
+            "stomachache": ["diarrhea", "constipation"],
+            "nighmares": "constant nightmares",
             "grief stricken": "heavy soul",
             "lasting grief": "heavy soul",
             "anxiety attack": "panic attack",
@@ -619,7 +616,7 @@ class Condition_Events():
             "lasting grief": "heavy soul",
             "recurring shock": "echoing shock",
             "echoing shock": "recurring shock",
-            "burning light": "blind"
+            "burning light": ["blind", "disrupted senses"]
         }
 
         conditions = deepcopy(cat.permanent_condition)

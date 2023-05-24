@@ -606,8 +606,16 @@
         "infectiousness": 0,
         "risks": [
 			{
+				"name": "sleeplessness",
+				"chance": 25
+			},
+			{
 				"name": "constant nightmares",
 				"chance": 75
+			},
+			{
+				"name": "anxiety attack",
+				"chance": 25
 			},
 			{
 				"name": "sleep paralysis",
@@ -1396,6 +1404,14 @@
 			},
 			{
 				"name": "dizziness",
+				"chance": 25
+			},
+			{
+				"name": "nightmares",
+				"chance": 25
+			},
+			{
+				"name": "sleep paralysis",
 				"chance": 25
 			}
 		],

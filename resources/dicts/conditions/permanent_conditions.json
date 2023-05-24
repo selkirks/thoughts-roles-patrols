@@ -634,6 +634,10 @@
 			{
 				"name": "sleep paralysis",
 				"chance": 45
+			},
+			{
+				"name": "fatigue",
+				"chance": 15
 			}
         ],
         "herbs": [
@@ -720,6 +724,10 @@
 			{
 				"name": "heavy soul",
 				"chance": 120
+			},
+			{
+				"name": "fatigue",
+				"chance": 25
 			}
         ],
         "herbs": [
@@ -825,6 +833,14 @@
 			{
 				"name": "sunblindness",
 				"chance": 45
+			},
+			{
+				"name": "overstimulation",
+				"chance": 35
+			},
+			{
+				"name": "understimulation",
+				"chance": 35
 			}
         ],
         "herbs": [ ]
@@ -931,6 +947,10 @@
 			{
 				"name": "sleep paralysis",
 				"chance": 45
+			},
+			{
+				"name": "fatigue",
+				"chance": 25
 			}
         ],
         "herbs": [ 
@@ -978,7 +998,11 @@
             {
                 "name": "impulsivity",
                 "chance": 15
-            }
+            },
+			{
+				"name": "understimulation",
+				"chance": 45
+			}
         ],
         "herbs":[
             "poppy",
@@ -1126,6 +1150,10 @@
 			{
 				"name": "rash",
 				"chance": 40
+			},
+			{
+				"name": "fatigue",
+				"chance": 25
 			}
 	],
 	"herbs": [
@@ -1201,6 +1229,10 @@
 			{
 				"name": "sleep paralysis",
 				"chance": 45
+			},
+			{
+				"name": "fatigue",
+				"chance": 30
 			}
         ],
         "herbs": [
@@ -1450,6 +1482,10 @@
 			{
 				"name": "silvercough",
 				"chance": 15
+			},
+			{
+				"name": "fatigue",
+				"chance": 15
 			}
         ],
         "herbs": [
@@ -1527,6 +1563,61 @@
         ],
         "herbs":[]
     },
+    "disrupted senses": {
+        "severity": "minor",
+        "congenital": "sometimes",
+        "moons_until": 2,
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "illness_infectiousness":[
+        ],
+        "risks": [
+			{
+				"name": "sunblindness",
+				"chance": 25
+			},
+			{
+				"name": "headache",
+				"chance": 15
+			},
+			{
+				"name": "severe headache",
+				"chance": 45
+			},
+			{
+				"name": "ear buzzing",
+				"chance": 25
+			},
+			{
+				"name": "stomachache",
+				"chance": 15
+			},
+			{
+				"name": "rash",
+				"chance": 15
+			},
+			{
+				"name": "overstimulation",
+				"chance": 10
+			},
+			{
+				"name": "understimulation",
+				"chance": 30
+			},
+			{
+				"name": "fatigue",
+				"chance" 45
+			}
+        ],
+        "herbs":[]
+    },
     "constant nightmares": {
         "severity": "major",
         "congenital": "never",
@@ -1548,10 +1639,6 @@
 				"chance": 15
 			},
 			{
-				"name": "nightmares",
-				"chance": 5
-			},
-			{
 				"name": "anxiety attack",
 				"chance": 15
 			},
@@ -1561,6 +1648,10 @@
 			},
 			{
 				"name": "sleep paralysis",
+				"chance": 25
+			},
+			{
+				"name": "fatigue",
 				"chance": 25
 			}
         ],
@@ -1639,6 +1730,10 @@
 			{
 				"name": "dizziness",
 				"chance": 25
+			},
+			{
+				"name": "understimulation",
+				"chance": 30
 			},
 			{
 				"name": "sleep paralysis",

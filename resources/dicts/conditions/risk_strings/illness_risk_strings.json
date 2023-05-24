@@ -81,7 +81,30 @@
 		"constipation": [
 			"With some worry m_c goes to r_c to embarrassingly talk about how {PRONOUN/m_c/subject} {VERB/m_c/haven't/hasn't} been able to properly go to the dirtplace. r_c patiently encourages {PRONOUN/m_c/object} to have more water and {PRONOUN/m_c/poss} herbs to keep up energy.",
 			"It would seem the bloat from m_c's stomache has made it more difficult for {PRONOUN/m_c/object} to properly go, {PRONOUN/m_c/poss} clanmates worry seeing them straining for hours at the dirtplace stuck."
-    	]
+    	],
+		"irritable bowels": [
+			"m_c uncomfortably talks with r_c about how even after the stomachache's passed something still seems to be a bit irritated i {PRONOUN/m_c/poss} belly.",
+			"While m_c's stomachache has passed there's a lingering sense that something within is wrong. {PRONOUN/m_c/subject/CAP} still {VERB/m_c/feel/feels} a bit bloated and off."
+		]
+	},
+    "nightmares": {
+		"sleeplessness": [
+			"Not too surprisingly r_c has found that m_c's nightmares are making {PRONOUN/r_c/object} have issues with sleeping.",
+			"m_c lies in {PRONOUN/m_c/poss} nest staring out towards the entryway to the den. {PRONOUN/m_c/subject/CAP} really wants to sleep but can't because of all the nightmares.",
+			"Between the nightmares and {PRONOUN/m_c/poss} whirling mind m_c is finding it harder and harder to settle down for the night."
+		],
+		"constant nightmares": [
+			"No matter how much m_c works with r_c talking about the nightmares, they don't seem to want to leave.",
+			"m_c's nightmares look to be here to stay."
+		],
+		"anxiety attack": [
+			"m_c's woken up with anxieties plaguing {PRONOUN/m_c/object}, not even r_c can help talk over the irrational thoughts.",
+			"Waking up from a particularly bad nightmare, m_c paces around camp on edge for the rest of the day."
+		],
+		"sleep paralysis": [
+			"Poor r_c doesn't know how to help m_c when {PRONOUN/m_c/subject} {VERB/m_c/come/comes} to {PRONOUN/r_c/object} complaining about shadowy beasts stalking in the early hours of the morning.",
+			"m_c wakes up frozen with beasts looming over {PRONOUN/m_c/object}."
+		]
     },
     "fleas": {
         "torn pelt": [
@@ -221,7 +244,27 @@
 			"From m_c's lack of sleep r_c has noticed that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} struggling to remain upright.",
 			"Worried m_c has noticed that {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} more floaty than usual on {PRONOUN/m_c/poss} paws and dizzy.",
 			"m_c wishes the world would remain still as {PRONOUN/m_c/subject} walked around the camp."
+		],
+		"nightmares": [
+			"r_c worriedly watches over m_c as in the first bit of sleep {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} managed to get for a while {PRONOUN/m_c/subject} {VERB/m_c/thrash/thrashes} and whimpers in the grasp of a nightmare.",
+			"Poor m_c's been experiencing nightmares in the few moments that {PRONOUN/m_c/subject} {VERB/m_c/do/does} manage to sleep.",
+			"Due to m_c's exhaustion what little sleep {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} gotten has been plagued with nightmares."
+		],
+		"sleep paralysis": [
+			"r_c is surprised to find m_c coming to talk to {PRONOUN/r_c/object}. Slowly m_c explains that {PRONOUN/m_c/subject} {VERB/m_c/think/thinks} that cats of the dark forest are trying to drag {PRONOUN/m_c/object} there.",
+			"In the early hours of the morning poor m_c finds {PRONOUN/m_c/self} frozen, feeling like a creature is crawling all over {PRONOUN/m_c/object} that {PRONOUN/m_c/subject} can't quite see."
 		]
+	},
+	"sleep paralysis": {
+		"nightmares": [
+			"r_c listens with worry as m_c explains that the figures stalking {PRONOUN/m_c/object} have chased {PRONOUN/m_c/object} into {PRONOUN/m_c/poss} dreams.",
+			"Poor m_c trembles in {PRONOUN/m_c/poss} sleep, fighting against nightmares borne from the creatures stalking {PRONOUN/m_c/object}."
+		],
+		"constant nightmares": [
+			"When r_c notices that m_c looks very tired recently {PRONOUN/r_c/subject}{VERB/m_c/'re/'s} worry is only made worse when the answer is constant nightmares.",
+			"m_c feels cursed, the shadowy creatures that make {PRONOUN/m_c/object} frozen and incapable have found their way into permanent residence in m_c's head."
+		]
+	},
 	},
 	"nest wetting": {
 		"sleeplessness": [
