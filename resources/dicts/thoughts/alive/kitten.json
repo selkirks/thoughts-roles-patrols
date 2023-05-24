@@ -276,6 +276,21 @@
 		"random_living_status": [
 			"living"
 		]
-	}
+	},	
+    {
+        "id": "disruptedsenses_kit",
+        "thoughts": [
+            "Complains loudly about how the world hates {PRONOUN/m_c/object}",
+			"Cries about how the world is too much",
+			"Is overwhelmed by all the sensations around {PRONOUN/m_c/object}",
+			"Wants to snuggle but doesn't like the feeling of touch",
+			"Doesn't like how much of the world there is"
+            ],
+        "perm_conditions": {
+            "m_c": [
+                "disrupted senses"
+            ]
+        }
+    }
 ]
 
