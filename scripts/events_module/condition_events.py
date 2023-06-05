@@ -10,7 +10,7 @@ from scripts.cat.history import History
 from scripts.cat.pelts import Pelt
 from scripts.conditions import medical_cats_condition_fulfilled, get_amount_cat_for_one_medic
 from scripts.utility import event_text_adjust, get_med_cats, change_relationship_values, change_clan_relations, \
-    history_text_adjust, get_condition_name
+    history_text_adjust
 from scripts.game_structure.game_essentials import game
 from scripts.events_module.scar_events import Scar_Events
 from scripts.events_module.generate_events import GenerateEvents
@@ -70,7 +70,6 @@ class Condition_Events():
                 # make em sick
                 cat.get_ill(chosen_illness)
 
-                chosen_illness = get_condition_name(chosen_illness)
                 # create event text
                 if chosen_illness in ["running nose", "stomachache"]:
                     event_string = f"{cat.name} has gotten a {chosen_illness}."
