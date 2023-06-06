@@ -1012,11 +1012,20 @@ class Pelt():
         if cat.pelt.white_patches:
             if cat.pelt.white_patches == "FULLWHITE":
                 # If the cat is fullwhite, discard all other information. They are just white. 
-                color_name = "white"
-            if cat.pelt.white_patches in Pelt.mostly_white and cat.pelt.name != "Calico":
-                color_name = f"white and {color_name}"
-            elif cat.pelt.name != "Calico":
-                color_name = f"{color_name} and white"
+                if cat.pelt.white_patches_tint != "none":
+                    color_name = f"stained {cat.pelt.white_patches_tint}"
+                else:
+                    color_name = f"white"
+            if cat.pelt.white_patches in Pelt.high_white + Pelt.mostly_white and cat.pelt.name != "Calico":
+                if cat.pelt.white_patches_tint != "none":            
+                    color_name = f"{color_name} with patches of {cat.pelt.white_patches_tint}"
+                else: 
+                    color_name = f"{color_name} with patches of white" 
+            elif cat.pelt.white_patches in Pelt.little_white + Pelt.mid_white and cat.pelt.name != "Calico":
+                if cat.pelt.white_patches_tint != "none":            
+                    color_name = f"{color_name} with small patches of {cat.pelt.white_patches_tint}"
+                else: 
+                    color_name = f"{color_name} with small patches of white" 
         
         if cat.pelt.points:
             color_name = f"{color_name} point"
@@ -1044,7 +1053,8 @@ class Pelt():
                 "NOPAW": "three legs", 
                 "NOLEFTEAR": "a missing ear", 
                 "NORIGHTEAR": "a missing ear",
-                "NOEAR": "no ears"
+                "NOEAR": "no ears",
+                "DECLAWED": "missing claws"
             }
 
             additional_details = []
