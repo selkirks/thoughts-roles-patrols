@@ -491,7 +491,7 @@
 			"unscathed_common": "p_l finds a kittypet collapsed by the Thunderpath, wailing for their housefolk. p_l comforts them, asking why they were left here. The kittypet can only shake their head, explaining in a very kitten-like tone that they don't know. Still they're welcomed to come and join c_n with ease."
 		],
 		"fail_text": [
-			"unscathed_common":"{PRONOUN/p_l/subject/CAP} {VERB/p_l/discover/discovers} the cooling body of a kittypet; it seems they attempted to run after their Twolegs, but was run over by another monster. p_l silently sends a prayer for the kittypet, and can't help but to curse the Twolegs who abandoned such a loyal cat."
+			"unscathed_common": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/discover/discovers} the cooling body of a kittypet; it seems they attempted to run after their Twolegs, but was run over by another monster. p_l silently sends a prayer for the kittypet, and can't help but to curse the Twolegs who abandoned such a loyal cat."
 		],
 		"min_cats": 2,
 		"max_cats": 6,
