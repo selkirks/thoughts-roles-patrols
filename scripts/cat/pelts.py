@@ -1013,7 +1013,7 @@ class Pelt():
             if cat.pelt.white_patches == "FULLWHITE":
                 # If the cat is fullwhite, discard all other information. They are just white. 
                 if cat.pelt.white_patches_tint != "none":
-                    color_name = f"stained {cat.pelt.white_patches_tint}"
+                    color_name = f"{cat.pelt.white_patches_tint}"
                 else:
                     color_name = f"white"
             if cat.pelt.white_patches in Pelt.high_white + Pelt.mostly_white and cat.pelt.name != "Calico":
