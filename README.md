@@ -7,9 +7,9 @@ A mod for the Clangen fan-edit game, that adds new disorders and disabilities to
 ## Downloads
 Note: These are developer builds and are not guaranteed to work!
 We do not give support to developer builds!
-- [Windows 10+](https://nightly.link/Sparrow-Moon/clangen-disabilities-and-disorders-mod/workflows/build/development/Clangen_Win64_Windows10%2B)
-- [macOS](https://nightly.link/Sparrow-Moon/clangen-disabilities-and-disorders-mod/workflows/build/development/Clangen_macOS64.dmg)
-- [Linux](https://nightly.link/Sparrow-Moon/clangen-disabilities-and-disorders-mod/workflows/build/development/Clangen_Linux64_glibc2.35%2B.tar.xz)
+- [Windows 10+](https://nightly.link/Sparrow-Moon/clangen-disabilities-and-disorders-mod/workflows/build/development/Clangen_Win64_Windows10%2B.zip)
+- [macOS](https://nightly.link/Sparrow-Moon/clangen-disabilities-and-disorders-mod/workflows/build/development/Clangen_macOS64.dmg.zip)
+- [Linux](https://nightly.link/Sparrow-Moon/clangen-disabilities-and-disorders-mod/workflows/build/development/Clangen_Linux64_glibc2.35%2B.tar.xz.zip)
 
 Alternatively, you can see [All Supported Systems](https://nightly.link/Sparrow-Moon/clangen-disabilities-and-disorders-mod/workflows/build/development)
 
