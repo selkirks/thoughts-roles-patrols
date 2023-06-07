@@ -378,19 +378,23 @@ class Condition_Events():
         cat.healed_condition = False
         event_list = []
         illness_progression = {
-            "running nose": ["whitecough", "silvercough"],
+            "running nose": "whitecough", 
+            "running nose": "silvercough",
             "kittencough": "silvercough",
-            "whitecough": ["greencough", "silvercough"],
+            "whitecough": "greencough", 
+            "whitecough": "silvercough",
             "silvercough": "greencough",
             "greencough": "yellowcough",
             "an infected wound": "a festering wound",
             "heat exhaustion": "heat stroke",
-            "stomachache": ["diarrhea", "constipation"],
+            "stomachache": "diarrhea", 
+            "stomachache": "constipation",
             "nighmares": "constant nightmares",
             "grief stricken": "heavy soul",
             "lasting grief": "heavy soul",
             "anxiety attack": "panic attack",
-            "panic attack": ["shock", "paranoia"],
+            "panic attack": "shock", 
+            "panic attack": "paranoia",
             "sleeplessness": "ongoing sleeplessness",
             "nest wetting": "night dirtmaking"
         }
@@ -613,7 +617,7 @@ class Condition_Events():
             "lasting grief": "heavy soul",
             "recurring shock": "echoing shock",
             "echoing shock": "recurring shock",
-            "burning light": ["blind", "disrupted senses"]
+            "burning light": "blind"
         }
 
         conditions = deepcopy(cat.permanent_condition)

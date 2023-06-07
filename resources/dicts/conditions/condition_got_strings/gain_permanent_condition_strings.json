@@ -249,7 +249,7 @@
 		"burning light": [
 			"Despite m_c's vision clearing back up {PRONOUN/m_c/subject} still {VERB/m_c/complain/complains} at r_c about how much the sun is hurting {PRONOUN/m_c/poss} eyes.",
 			"m_c is wincing everytime {PRONOUN/m_c/subject} {VERB/m_c/try/tries} to leave r_c's den. r_c thinks it might be permenant burning light.",
-			"m_c decides that the sun is evil and {PRONOUN/m_c/poss} enemy, clearly it's trying to blind {PRONOUN/m_c/poss}.",
+			"m_c decides that the sun is evil and {PRONOUN/m_c/poss} enemy, clearly it's trying to blind {PRONOUN/m_c/object}.",
 			"While the day is too harsh for m_c, {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} happy to take up the more quiet nighttime patrols. Even if just to avoid the sun."
 		]
 	},
