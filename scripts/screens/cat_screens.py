@@ -1905,6 +1905,10 @@ class ProfileScreen(Screens):
                 insert = "has been sick for"
                 if name == 'grief stricken':
                     insert = 'has been grieving for'
+                if name in 'kittenspace:'
+                    insert = 'has been in kittenspace for'
+                if name in 'puppyspace:'
+                    insert = 'has been in puppyspace for'
                 if moons_with != 1:
                     text_list.append(f"{insert} {moons_with} moons")
                 else:
