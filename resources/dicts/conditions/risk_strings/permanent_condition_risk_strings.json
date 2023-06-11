@@ -932,10 +932,9 @@
 		],
 		"subluxated joint": [
 			"m_c lets out a hiss of pain and {PRONOUN/m_c/poss} concerned clanmates help {PRONOUN/m_c/object} to the medicine cat den. While nothing looks wrong, {PRONOUN/m_c/poss} clanmates trust that m_c knows what {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} talking about when {PRONOUN/m_c/subject} say that {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} subluxated {PRONOUN/m_c/poss} joint.",
-			"{PRONOUN/m_c/poss} joints have been hurting for a few days now, so m_c decides to go to the medicine cat den. Only for r_c to say that {PRONOUN/m_c/subject} subluxated {PRONOUN/m_c/poss} shoulder. Oops…",
-			"With a startled hiss, m_c staggers back from training. The cat {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} training with pauses, “Are you alright?” {PRONOUN/r_c/subject} {VERB/r_c/mew/mews}. m_c informs {PRONOUN/r_c/object} that no, {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} not alright and {PRONOUN/m_c/subject}'d like to stop this and go to the medicine den. {PRONOUN/m_c/poss} clanmate nods and helps {PRONOUN/m_c/object} to the medicine den.",
-			"As m_c limps to the medicine cat den, {PRONOUN/m_c/subject} think that maybe {PRONOUN/m_c/subject} should have woke up the clanmate who slept on {PRONOUN/m_c/poss} leg.",
-			"{PRONOUN/m_c/poss} joints have been hurting for a few days now, so m_c decides to go to the medicine cat den. Only for r_c to say that {PRONOUN/m_c/subject} subluxated {PRONOUN/m_c/poss} shoulder. Oops…"	
+			"{PRONOUN/m_c/poss} joints have been hurting for a few days now, so m_c decides to go to the medicine cat den. Only for the medicine cat to say that {PRONOUN/m_c/subject} subluxated {PRONOUN/m_c/poss} shoulder. Oops...",
+			"With a startled hiss, m_c staggers back from training. The cat {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} training with pauses, asking about {PRONOUN/m_c/poss} wellbeing. m_c informs them that no, {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} not alright and {PRONOUN/m_c/subject}'d like to stop this and go to the medicine den. {PRONOUN/m_c/poss} clanmate nods and helps {PRONOUN/m_c/object} to the medicine den.",
+			"As m_c limps to the medicine cat den, {PRONOUN/m_c/subject} {VERB/m_c/think/thinks} that maybe {PRONOUN/m_c/subject} should have woke up the clanmate who slept on {PRONOUN/m_c/poss} leg."
 		]
 	},
 
