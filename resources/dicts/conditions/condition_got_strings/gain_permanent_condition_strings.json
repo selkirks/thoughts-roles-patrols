@@ -64,6 +64,13 @@
             "m_c needs pain relief far more often these days, the joint {PRONOUN/m_c/subject} dislocated giving {PRONOUN/m_c/object} trouble."
         ]
     },
+    "subluxated joint": {
+        "constant joint pain": [
+            "It feels like {PRONOUN/m_c/poss} formerly subluxated joint just isn't the same anymore. r_c is understanding, but prepares m_c for the possibility that this could be permanent.",
+            "r_c explains to m_c that subluxating a joint can have permanent consequences. The pain m_c is feeling could be permanent.",
+            "m_c needs pain relief far more often these days, the joint {PRONOUN/m_c/subject} subluxated giving {PRONOUN/m_c/object} trouble."
+        ]
+    },	
     "mangled tail":{
         "lost their tail": [
             "r_c helps m_c bury {PRONOUN/m_c/poss} tail wordlessly, hoping the ritual brings {PRONOUN/m_c/object} closure to the trauma of losing it.",
