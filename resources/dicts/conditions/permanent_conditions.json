@@ -1494,18 +1494,19 @@
         ]
     },		
     "jellyfish joints": {
-	"severity": "minor",
-	"congenital": "always",
-	"moons until": 5,
-	"mortality": {
-		"kitten": 0,
-		"adolescent": 0,
-		"young adult": 0,
-		"adult": 0,
-		"senior adult": 0,
-		"senior": 0
+		"severity": "minor",
+		"congenital": "always",
+		"moons until": 5,
+		"mortality": {
+			"kitten": 0,
+			"adolescent": 0,
+			"young adult": 0,
+			"adult": 0,
+			"senior adult": 0,
+			"senior": 0
 		},
-		"illness_infectiousness": [],
+		"illness_infectiousness": [
+        ],
 		"risks": [
 			{
 				"name": "dislocated joint",

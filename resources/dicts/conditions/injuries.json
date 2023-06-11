@@ -475,7 +475,8 @@
 		"senior adult": 0,
 		"senior": 0
 	},
-	"illness_inffection": [],
+	"illness_infectiousness": [
+	],
 	"risks": [],
         "also_got": [
             "bruises",
