@@ -62,6 +62,34 @@
         "other_cat_skill": null
     },
     {
+        "injury": "subluxated joint",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c misstepped and slipped from a rock, subluxating a joint.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "injury": "subluxated joint",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c slipped on some rocks and subluxated their leg.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
         "injury": "sprain",
         "tags": [
             "Newleaf",
