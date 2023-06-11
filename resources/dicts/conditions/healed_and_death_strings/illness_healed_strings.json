@@ -69,11 +69,11 @@
 		"m_c's stomachache has left.",
 		"m_c no longer has a stomachache."
 	],
-	"constant nightmares": [
-		"m_c's constant nightmares have finally calmed.",
+	"nightmares": [
+		"m_c's nightmares have finally calmed.",
 		"m_c was struggling with a recent flood of nightmares, but thankfully they seem to have stopped.",
 		"m_c's nightmares have stopped.",
-		"m_c is no longer having constant nightmares."
+		"m_c is no longer having nightmares."
 	],
 	"grief stricken": [
 		"m_c will always feel {PRONOUN/m_c/poss} grief, but time has softened it, at least a little.",
@@ -131,13 +131,6 @@
 		"m_c feels {PRONOUN/m_c/poss} tail swish with rekindled hope and trust in {PRONOUN/m_c/poss} own paws.",
 		"m_c is able to raise {PRONOUN/m_c/poss} sun and face the dawn with renewed energy.",
 		"They might always be a bit tired and wrung out but m_c finds that it's the small things that make the days brighter."
-	],
-	"world tired": [
-		"While {PRONOUN/m_c/subject} {VERB/m_c/are/is} still not back to normal m_c is able to feel much more together.",
-		"m_c thanks Starclan for the life they've been given and the chances they have to make it better.",
-		"m_c has gotten over {PRONOUN/m_c/poss} world tiredness.",
-		"After some long talks with {PRONOUN/m_c/poss} clanmates m_c has been reassured that they are loved and cared for.",
-		"m_c has found a hobby and something to remind {PRONOUN/m_c/object} that the world isn't all bad things."
 	],
 	"nonverbal": [
 		"While cats are surprised to see m_c speaking again it is welcomed easily.",
@@ -199,6 +192,10 @@
 		"m_c is so relieved to just get a somewhat peaceful nights sleep once more.",
 		"Once more m_c is able to sleep. At least for now."
 	],
+	"sleep paralysis": [
+		"m_c's no longer stuck in {PRONOUN/m_c/poss} nest frozen awake.",
+		"With relief m_c's recent bout of sleep paralysis seems to have passed."
+	],	
 	"burn out": [
 		"m_c is back on {PRONOUN/m_c/poss} paws after bring burnt out.",
 		"m_c is no longer tired and exhausted from being burnt out."
@@ -221,7 +218,7 @@
 		"m_c's no longer wetting the nest and is welcomed back in.",
 		"m_c purrs when they wake up in nice clean moss."
 	],
-	"night dirtplacing": [
+	"night dirtmaking": [
 		"m_c is able to once more sleep through the night without having to get up for the dirtplace.",
 		"To the relief of {PRONOUN/m_c/poss} denmates, m_c hasn't disturbed the den in the night anymore.",
 		"m_c rolls over in {PRONOUN/m_c/poss} nest, finally well rested without any night time trips to the dirtplace."

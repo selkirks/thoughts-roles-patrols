@@ -1,3 +1,14 @@
+<strong>DISABILITY MOD USERS</strong>
+Please note that we are changing the mod's
+saves folder from %localappdata%/Clangen/ClangenBeta
+to %localappdata%/Clangen/Disabilitymod! If
+you are updating please be sure to move your
+saves over! If you need help with this change
+ask in our discord, <a href=https://discord.gg/YBFWTR7syr>Here</a>
+
+
+
+
 <strong>v0.8.4</strong>
 - fixed a crash when there was only one cat left in the clan
 - fixed some issues with the new name code

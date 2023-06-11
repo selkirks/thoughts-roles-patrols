@@ -1100,7 +1100,7 @@
     {
         "id": "cold_apprentices",
         "thoughts": [
-            "Is hoping {PRONOUN/m_c/subject} name will end in -claw"
+            "Is hoping {PRONOUN/m_c/poss} name will end in -claw"
         ],
         "main_status_constraint": [
             "apprentice",
@@ -2140,11 +2140,11 @@
 			"Almost fell out of a tree today",
 			"Is wincing each step {PRONOUN/m_c/subject} {VERB/m_c/take/takes}",
 			"Is grooming {PRONOUN/m_c/poss} sore paws",
-			"Doesn't understand why peltshifters would do this",
+			"Doesn't understand why twolegs would do this",
 			"Doesn't understand how kittypets could live like this",
 			"Hates the fact {PRONOUN/m_c/subject} {VERB/M_c/don't/doesn't} have claws anymore",
 			"Isn't ready for practicing with r_c today",
-			"Is warning {PRONOUN/m_c/poss} clanmates about the worst that peltshifters can do",
+			"Is warning {PRONOUN/m_c/poss} clanmates about the worst that twolegs can do",
 			"Is making up a dramatic story about the loss of {PRONOUN/m_c/poss} claws"
         ],
         "perm_conditions": {
@@ -2288,5 +2288,44 @@
 		"random_living_status": [
 			"living"
 		]
-	}
+	},
+    {
+        "id": "disruptedsenses_to_alive_gen",
+        "thoughts": [
+            "Has been struggling to hear {PRONOUN/m_c/poss} clanmates clearly recently",
+			"Got surprised by a clanmate",
+			"Doesn't like any of the prey on the pile",
+			"Doesn't want to eat {PRONOUN/m_c/poss} travel herbs",
+			"Doesn't like the feeling of the ground today",
+			"Doesn't like the wind in {PRONOUN/m_c/poss} fur",
+			"Finds r_c's voice annoying",
+			"Wonders if {PRONOUN/m_c/subject} can fight the sun",
+			"Wishes it were nighttime already",
+			"Is sneezing from all the pollen in the air",
+			"Doesn't enjoy the feeling of hunting",
+			"Complains to r_c about the taste in {PRONOUN/m_c/poss} mouth",
+			"Doesn't like how overstimulating the world is",
+			"Finds the world understimulating sometimes"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "disrupted senses"
+            ]
+        },
+        "random_status_constraint": [
+            "kitten",
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    }	
 ]

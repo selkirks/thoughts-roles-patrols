@@ -24,7 +24,9 @@
             "torn ear",
             "blood loss"
         ],
-        "cause_permanent": [],
+        "cause_permanent": [
+			"echoing shock"
+		],
         "herbs": [
             "cobwebs",
             "goldenrod",
@@ -102,7 +104,9 @@
             "torn pelt",
             "blood loss"
         ],
-        "cause_permanent": [],
+        "cause_permanent": [
+			"echoing shock"
+		],
         "herbs": [
             "cobwebs",
             "goldenrod",
@@ -843,11 +847,7 @@
             {
                 "name": "an infected wound",
                 "chance": 15
-            },
-			{
-				"name": "turmoiled litter",
-				"chance": 0
-			}
+            }
         ],
         "also_got": [
             "blood loss"
@@ -967,7 +967,8 @@
         "also_got": [],
         "cause_permanent": [
             "lost their tail",
-            "lost a leg"
+            "lost a leg",
+			"recurring shock"
         ],
         "herbs": [
             "cobwebs",
@@ -1032,6 +1033,7 @@
         "also_got": [],
         "cause_permanent": [
             "recurring shock",
+			"echoing shock",
 			"anxiety"
         ],
         "herbs": [
@@ -1150,7 +1152,8 @@
             "blind",
             "constantly dizzy",
             "partial hearing loss",
-            "persistent headaches"
+            "persistent headaches",
+			"disrupted senses"
         ],
         "herbs": [
             "juniper",
@@ -1408,7 +1411,9 @@
             }
         ],
         "also_got": [],
-        "cause_permanent": [],
+        "cause_permanent": [
+			"constant rash"
+		],
         "herbs": [
             "poppy",
 			"comfrey",
@@ -1469,7 +1474,8 @@
             "joint pain"
         ],
         "cause_permanent": [
-			"declawed"	
+			"declawed",
+			"recurring shock"
         ],
         "herbs": [
             "juniper",
@@ -1510,6 +1516,144 @@
             "moss"
         ]
     },	
+    "earache": {
+        "duration": 1,
+        "severity": "minor",
+        "medicine_duration": 1,
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+			{
+				"name": "an infected wound",
+				"chance": 25
+			},
+			{
+				"name": "ear buzzing",
+				"chance": 10
+			}
+        ],
+        "also_got": [
+			"dizziness"
+        ],
+        "cause_permanent": [
+			"partial hearing loss"
+        ],
+        "herbs": [
+            "poppy",
+            "juniper"
+        ]
+    },
+    "overstimulation":{
+        "duration": 3,
+        "severity": "major",
+        "medicine_duration": 2,
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [],
+        "also_got": [
+        ],
+        "cause_permanent": [
+            "burning light",
+			"disrupted senses"
+        ],
+        "herbs": [
+			"thyme",
+			"poppy",
+			"catmint",
+            "moss"
+        ]
+    },
+    "understimulation":{
+        "duration": 3,
+        "severity": "major",
+        "medicine_duration": 2,
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+			{
+				"name": "anxiety attack",
+				"chance": 10
+			}
+		],
+        "also_got": [
+        ],
+        "cause_permanent": [
+			"disrupted senses"
+        ],
+        "herbs": [
+			"thyme",
+			"poppy",
+			"catmint",
+            "moss"
+        ]
+    },					
+    "fatigue": {
+        "duration": 4,
+        "severity": "minor",
+        "medicine_duration": 3,
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+			{
+				"name": "sleeplessness",
+				"chance": 25
+			},
+			{
+				"name": "nightmares",
+				"chance": 10
+			},
+			{
+				"name": "dizziness",
+				"chance": 20
+			}
+		],
+        "also_got": [
+        ],
+        "cause_permanent": [
+			"constant fatigue"
+        ],
+        "herbs": [
+            "honey",
+            "chamomile",
+            "poppy"
+        ]
+    },
     "pregnant": {
         "duration": 2,
         "severity": "major",

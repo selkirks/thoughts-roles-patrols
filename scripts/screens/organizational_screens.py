@@ -24,11 +24,12 @@ from .base_screens import Screens
 
 from requests.exceptions import ConnectionError, HTTPError
 from scripts.cat.cats import Cat
+from scripts.clan import Clan
 from scripts.game_structure.image_button import UIImageButton
 from scripts.utility import get_text_box_theme, scale, quit  # pylint: disable=redefined-builtin
 import pygame_gui
 from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
-from scripts.game_structure.windows import DeleteCheck, UpdateAvailablePopup, ChangelogPopup, SaveError, SendLogsPopup, SendSavesPopup
+from scripts.game_structure.windows import DeleteCheck, UpdateAvailablePopup, ChangelogPopup, SaveError
 from scripts.game_structure.discord_rpc import _DiscordRPC
 from scripts.game_structure import image_cache
 from ..housekeeping.datadir import get_data_dir, get_cache_dir
@@ -51,7 +52,6 @@ class StartScreen(Screens):
     def __init__(self, name=None):
         super().__init__(name)
         self.warning_label = None
-        self.warning_hover = None
         self.bg = pygame.image.load("resources/images/menu.png").convert()
         self.bg = pygame.transform.scale(self.bg, (screen_x, screen_y))
         self.social_buttons = {}
@@ -67,10 +67,8 @@ class StartScreen(Screens):
             elif platform.system() == 'Linux':
                 subprocess.Popen(['xdg-open', event.link_target])
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
-            if game.switches['window_open']:
-                return
             screens = {
-                self.continue_button: 'clan screen',
+                self.continue_button: 'camp screen',
                 self.switch_clan_button: 'switch clan screen',
                 self.new_clan_button: 'make clan screen',
                 self.settings_button: 'settings screen',
@@ -85,25 +83,14 @@ class StartScreen(Screens):
                 elif platform.system() == 'Linux':
                     subprocess.Popen(['xdg-open', get_data_dir()])
                 return
-            elif event.ui_element == self.send_logs_button:
-                self.error_box.kill()
-                self.error_label.kill()
-                self.error_gethelp.kill()
-                self.closebtn.kill()
-                self.open_data_directory_button.kill()
-                self.send_logs_button.kill()
-                game.switches['error_message'] = ''
-                game.switches['traceback'] = ''
-                SendLogsPopup(game.switches['last_screen'])
             elif event.ui_element == self.closebtn:
                 self.error_box.kill()
                 self.error_label.kill()
                 self.error_gethelp.kill()
                 self.closebtn.kill()
                 self.open_data_directory_button.kill()
-                self.send_logs_button.kill()
-                game.switches['error_message'] = ''
-                game.switches['traceback'] = ''
+                #game.switches['error_message'] = ''
+                #game.switches['traceback'] = ''
             elif event.ui_element == self.update_button:
                 UpdateAvailablePopup(game.switches['last_screen'])
             elif event.ui_element == self.quit:
@@ -131,7 +118,7 @@ class StartScreen(Screens):
                     subprocess.Popen(['xdg-open', "https://twitter.com/OfficialClangen"])
         elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
             if (event.key == pygame.K_RETURN or event.key == pygame.K_SPACE) and self.continue_button.is_enabled:
-                self.change_screen('clan screen')
+                self.change_screen('camp screen')
 
     def on_use(self):
         """
@@ -151,7 +138,6 @@ class StartScreen(Screens):
         self.settings_button.kill()
         self.error_label.kill()
         self.warning_label.kill()
-        self.warning_hover.kill()
         self.update_button.kill()
         self.quit.kill()
         self.closebtn.kill()
@@ -234,19 +220,8 @@ class StartScreen(Screens):
             manager=MANAGER
         )
 
-        self.send_logs_button = UIImageButton(
-            scale(pygame.Rect((1040, 1070), (218, 60))),
-            "",
-            object_id="#send_logs_button",
-            manager=MANAGER,
-            starting_height=0,
-            tool_tip_text="This will allow you to"
-                          " send your logs to the"
-                          " Clangen team.")
-
-
         self.open_data_directory_button = UIImageButton(
-            scale(pygame.Rect((1040, 1020), (320, 60))),
+            scale(pygame.Rect((1040, 1020), (356, 60))),
             "",
             object_id="#open_data_directory_button",
             manager=MANAGER,
@@ -265,7 +240,6 @@ class StartScreen(Screens):
         self.error_label.hide()
         self.error_gethelp.hide()
         self.open_data_directory_button.hide()
-        self.send_logs_button.hide()
         self.closebtn.hide()
 
         self.update_button = UIImageButton(scale(pygame.Rect((1154, 50), (382.5, 75))), "",
@@ -308,35 +282,20 @@ class StartScreen(Screens):
                 ChangelogPopup(game.switches['last_screen'])
 
         self.warning_label = pygame_gui.elements.UITextBox(
-            "<b>Trigger Warning:</b> This mod contains triggering topics (hover)",
+            "Warning: this game includes some mild descriptions of gore.",
             scale(pygame.Rect((100, 1244), (1400, 60))),
             object_id="#default_dark",
             manager=MANAGER)
+
         
-        self.warning_hover = UIImageButton(
-                    scale(pygame.Rect((100, 1244), (1400, 60))),
-                    "",
-                    object_id="#blank_button",
-                    manager=MANAGER,
-                    tool_tip_text="""<b>This mod contains:</b>
-Self Harm
-Suicidal thoughts
-
-These are on a setting that is off by default""".replace("\n", "<br>"),
-                    starting_height=2
-                )
-
         if game.clan is not None and game.switches['error_message'] == '':
             self.continue_button.enable()
-            if len(game.switches['clan_list']) > 1:
-                self.switch_clan_button.enable()
-            else:
-                self.switch_clan_button.disable()
-        elif game.clan is not None and game.switches['error_message']:
-            self.continue_button.disable()
-            self.switch_clan_button.enable()
         else:
             self.continue_button.disable()
+        
+        if len(game.switches['clan_list']) > 1:
+            self.switch_clan_button.enable()
+        else:
             self.switch_clan_button.disable()
 
         if game.switches['error_message']:
@@ -352,7 +311,6 @@ These are on a setting that is off by default""".replace("\n", "<br>"),
             self.error_label.show()
             self.error_gethelp.show()
             self.open_data_directory_button.show()
-            self.send_logs_button.show()
 
             if get_version_info().is_sandboxed:
                 self.open_data_directory_button.hide()
@@ -401,7 +359,7 @@ class SwitchClanScreen(Screens):
 
                 for page in self.clan_buttons:
                     if event.ui_element in page:
-                        game.clan.switch_clans(
+                        Clan.switch_clans(
                             self.clan_name[self.page][page.index(
                                 event.ui_element)])
                         
@@ -640,12 +598,6 @@ class SettingsScreen(Screens):
                     except OSError:
                         logger.exception("Failed to call to xdg-open.")
                 return
-            elif event.ui_element == self.send_logs_button:
-                self.change_screen('start screen')
-                SendLogsPopup(game.switches['last_screen'])
-            elif event.ui_element == self.send_saves_button:
-                self.change_screen('start screen')
-                SendSavesPopup(game.switches['last_screen'])
             elif event.ui_element == self.save_settings_button:
                 self.save_settings()
                 try:
@@ -764,14 +716,24 @@ class SettingsScreen(Screens):
             object_id="#save_settings_button",
             manager=MANAGER)
 
-        self.fullscreen_toggle = UIImageButton(
-            scale(pygame.Rect((1234, 50), (316, 72))),
-            "",
-            object_id="#toggle_fullscreen_button",
-            manager=MANAGER,
-            tool_tip_text="This will close the game. "
-                          "When you reopen, fullscreen"
-                          " will be toggled. ")
+        if game.settings['fullscreen']:
+            self.fullscreen_toggle = UIImageButton(
+                scale(pygame.Rect((1234, 50), (316, 72))),
+                "",
+                object_id="#toggle_fullscreen_button",
+                manager=MANAGER,
+                tool_tip_text="This will close the game. "
+                            "When you reopen, the game"
+                            " will be windowed. ")
+        else:
+            self.fullscreen_toggle = UIImageButton(
+                scale(pygame.Rect((1234, 50), (316, 72))),
+                "",
+                object_id="#toggle_fullscreen_button",
+                manager=MANAGER,
+                tool_tip_text="This will close the game. "
+                            "When you reopen, the game"
+                            " will be fullscreen. ")
 
         self.open_data_directory_button = UIImageButton(
             scale(pygame.Rect((50, 1290), (356, 60))),
@@ -781,26 +743,6 @@ class SettingsScreen(Screens):
             tool_tip_text="Opens the data directory. "
                           "This is where save files "
                           "and logs are stored.")
-        
-        self.send_logs_button = UIImageButton(
-            scale(pygame.Rect((1332, 1290), (218, 60))),
-            "",
-            object_id="#send_logs_button",
-            manager=MANAGER,
-            tool_tip_text="This will allow you to"
-                          " send your logs to the"
-                          " Clangen team.",
-            starting_height=5)
-    
-        self.send_saves_button = UIImageButton(
-            scale(pygame.Rect((1332, 1220), (218, 60))),
-            "",
-            object_id="#send_logs_button",
-            manager=MANAGER,
-            starting_height=5,
-            tool_tip_text="This will allow you to"
-                          " send your saves to the"
-                          " Clangen discord!")
 
         if get_version_info().is_sandboxed:
             self.open_data_directory_button.hide()
@@ -848,10 +790,6 @@ class SettingsScreen(Screens):
         del self.fullscreen_toggle
         self.open_data_directory_button.kill()
         del self.open_data_directory_button
-        self.send_logs_button.kill()
-        del self.send_logs_button
-        self.send_saves_button.kill()
-        del self.send_saves_button
 
         game.settings = self.settings_at_open
 
@@ -944,7 +882,7 @@ class SettingsScreen(Screens):
 
         self.checkboxes_text['info_text_box'] = pygame_gui.elements.UITextBox(
             self.info_text,
-            scale(pygame.Rect((0, 0), (1200, 8000))),
+            scale(pygame.Rect((0, 0), (1150, 8000))),
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
             container=self.checkboxes_text["info_container"],
             manager=MANAGER)
@@ -961,6 +899,7 @@ class SettingsScreen(Screens):
                     object_id="#blank_button",
                     container=self.checkboxes_text["info_container"],
                     manager=MANAGER,
+                    starting_height=2
                 ),
             else:
                 self.tooltip[f'tip{i}'] = UIImageButton(
@@ -969,12 +908,13 @@ class SettingsScreen(Screens):
                     object_id="#blank_button",
                     container=self.checkboxes_text["info_container"],
                     manager=MANAGER,
-                    tool_tip_text=tooltip
+                    tool_tip_text=tooltip,
+                    starting_height=2
                 ),
 
             i += 1
         self.checkboxes_text["info_container"].set_scrollable_area_dimensions(
-            (1150 / 1600 * screen_x, 4300 / 1400 * screen_y))
+            (1150 / 1600 * screen_x, (i * 56 + y_pos + 550) / 1400 * screen_y))
 
     def open_lang_settings(self):
         """Open Language Settings"""

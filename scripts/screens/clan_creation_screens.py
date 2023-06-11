@@ -247,9 +247,16 @@ class MakeClanScreen(Screens):
                     event.ui_element.disable()
 
         elif event.ui_element in [self.elements["cat" + str(u)] for u in range(0, 12)]:
-            self.selected_cat = event.ui_element.return_cat_object()
-            self.refresh_cat_images_and_info(self.selected_cat)
-            self.refresh_text_and_buttons()
+            if pygame.key.get_mods() & pygame.KMOD_SHIFT:
+                clicked_cat = event.ui_element.return_cat_object()
+                if clicked_cat.age not in ["newborn", "kitten", "adolescent"]:
+                    self.leader = clicked_cat
+                    self.selected_cat = None
+                    self.open_choose_deputy()
+            else:
+                self.selected_cat = event.ui_element.return_cat_object()
+                self.refresh_cat_images_and_info(self.selected_cat)
+                self.refresh_text_and_buttons()
         elif event.ui_element == self.elements['select_cat']:
             self.leader = self.selected_cat
             self.selected_cat = None
@@ -264,7 +271,13 @@ class MakeClanScreen(Screens):
             self.selected_cat = None
             self.open_choose_leader()
         elif event.ui_element in [self.elements["cat" + str(u)] for u in range(0, 12)]:
-            if event.ui_element.return_cat_object() != self.leader:
+            if pygame.key.get_mods() & pygame.KMOD_SHIFT:
+                clicked_cat = event.ui_element.return_cat_object()
+                if clicked_cat.age not in ["newborn", "kitten", "adolescent"]:
+                    self.deputy = clicked_cat
+                    self.selected_cat = None
+                    self.open_choose_med_cat()
+            elif event.ui_element.return_cat_object() != self.leader:
                 self.selected_cat = event.ui_element.return_cat_object()
                 self.refresh_cat_images_and_info(self.selected_cat)
                 self.refresh_text_and_buttons()
@@ -279,7 +292,13 @@ class MakeClanScreen(Screens):
             self.selected_cat = None
             self.open_choose_deputy()
         elif event.ui_element in [self.elements["cat" + str(u)] for u in range(0, 12)]:
-            if event.ui_element.return_cat_object():
+            if pygame.key.get_mods() & pygame.KMOD_SHIFT:
+                clicked_cat = event.ui_element.return_cat_object()
+                if clicked_cat.age not in ["newborn", "kitten", "adolescent"]:
+                    self.med_cat = clicked_cat
+                    self.selected_cat = None
+                    self.open_choose_members()
+            elif event.ui_element.return_cat_object():
                 self.selected_cat = event.ui_element.return_cat_object()
                 self.refresh_cat_images_and_info(self.selected_cat)
                 self.refresh_text_and_buttons()
@@ -301,9 +320,16 @@ class MakeClanScreen(Screens):
                 self.refresh_text_and_buttons()
         elif event.ui_element in [self.elements["cat" + str(u)] for u in range(0, 12)]:
             if event.ui_element.return_cat_object():
-                self.selected_cat = event.ui_element.return_cat_object()
-                self.refresh_cat_images_and_info(self.selected_cat)
-                self.refresh_text_and_buttons()
+                if pygame.key.get_mods() & pygame.KMOD_SHIFT and len(self.members) < 7:
+                    clicked_cat = event.ui_element.return_cat_object()
+                    self.members.append(clicked_cat)
+                    self.selected_cat = None
+                    self.refresh_cat_images_and_info(None)
+                    self.refresh_text_and_buttons()
+                else:
+                    self.selected_cat = event.ui_element.return_cat_object()
+                    self.refresh_cat_images_and_info(self.selected_cat)
+                    self.refresh_text_and_buttons()
         elif event.ui_element == self.elements['select_cat']:
             self.members.append(self.selected_cat)
             self.selected_cat = None
@@ -411,7 +437,7 @@ class MakeClanScreen(Screens):
 
     def handle_saved_clan_event(self, event):
         if event.ui_element == self.elements["continue"]:
-            self.change_screen('clan screen')
+            self.change_screen('camp screen')
 
     def exit_screen(self):
         self.main_menu.kill()
@@ -679,7 +705,8 @@ class MakeClanScreen(Screens):
             self.elements['cat_name'].show()
             self.elements['cat_info'].set_text(selected.gender + "\n" +
                                                str(selected.age + "\n" +
-                                                   str(selected.trait)))
+                                                   str(selected.personality.trait) + "\n" +
+                                                   str(selected.skills.skill_string())))
             self.elements['cat_info'].show()
         else:
             self.elements['next_step'].disable()
@@ -713,6 +740,7 @@ class MakeClanScreen(Screens):
                 self.elements["cat" + str(u)] = UISpriteButton(
                     scale(pygame.Rect((column_poss[0], 260 + 100 * u), (100, 100))),
                     game.choose_cats[u].sprite,
+                    tool_tip_text=self._get_cat_tooltip_string(game.choose_cats[u]),
                     cat_object=game.choose_cats[u], manager=MANAGER)
         for u in range(6, 12):
             if "cat" + str(u) in self.elements:
@@ -732,7 +760,13 @@ class MakeClanScreen(Screens):
                 self.elements["cat" + str(u)] = UISpriteButton(
                     scale(pygame.Rect((column_poss[1], 260 + 100 * (u - 6)), (100, 100))),
                     game.choose_cats[u].sprite,
+                    tool_tip_text=self._get_cat_tooltip_string(game.choose_cats[u]),
                     cat_object=game.choose_cats[u], manager=MANAGER)
+
+    def _get_cat_tooltip_string(self, cat: Cat):
+        """Get tooltip for cat. Tooltip displays name, sex, age group, and trait."""
+
+        return f"<b>{cat.name}</b><br>{cat.gender}<br>{cat.age}<br>{cat.personality.trait}"
 
     def open_game_mode(self):
         # Clear previous screen
@@ -772,7 +806,7 @@ class MakeClanScreen(Screens):
         self.elements['mode_details'] = pygame_gui.elements.UITextBox("", scale(pygame.Rect((650, 320), (810, 922))),
                                                                       object_id="#text_box_30_horizleft_pad_40_40",
                                                                       manager=MANAGER)
-        self.elements['mode_name'] = pygame_gui.elements.UITextBox("", scale(pygame.Rect((850, 270), (400, 100))),
+        self.elements['mode_name'] = pygame_gui.elements.UITextBox("", scale(pygame.Rect((850, 270), (400, 55))),
                                                                    object_id="#text_box_30_horizcenter_light",
                                                                    manager=MANAGER)
 
@@ -875,7 +909,7 @@ class MakeClanScreen(Screens):
             self.elements['roll3'].hide()
 
         # info for chosen cats:
-        self.elements['cat_info'] = pygame_gui.elements.UITextBox("", scale(pygame.Rect((880, 520), (200, 200))),
+        self.elements['cat_info'] = pygame_gui.elements.UITextBox("", scale(pygame.Rect((880, 500), (230, 250))),
                                                                   visible=False,
                                                                   object_id=get_text_box_theme(
                                                                       "#text_box_22_horizleft_spacing_95"),
@@ -1134,8 +1168,8 @@ class MakeClanScreen(Screens):
                          self.leader,
                          self.deputy,
                          self.med_cat,
-                         self.biome_selected, game.switches['world_seed'],
-                         game.switches['camp_site'], convert_camp[self.selected_camp_tab],
+                         self.biome_selected,
+                         convert_camp[self.selected_camp_tab],
                          self.game_mode, self.members,
                          starting_season=self.selected_season)
         game.clan.create_clan()

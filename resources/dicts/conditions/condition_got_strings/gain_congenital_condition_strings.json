@@ -96,7 +96,7 @@
 		"When most kittens are already curiously looking around and exploring the camp, m_c is still hiding behind {PRONOUN/m_c/poss} parents and very awkwardly batting at leaves before running back into the nursery to hide.",
 		"It's normal for a kitten to get startled by new things, but even after identifying something m_c stares at it with wide eyes as if it would attack {PRONOUN/m_c/object}.",
 		"No matter how many reassurances {PRONOUN/m_c/poss} parents give them m_c still worries about each action that {PRONOUN/m_c/subject} {VERB/m_c/take/takes}.",
-		"m_c took {PRONOUN/r_c/poss} prey from the pile and then cried because {PRONOUN/m_c/subject} thought it might mean the rest of the clan wouldn't have enough."		
+		"m_c took {PRONOUN/m_c/poss} prey from the pile and then cried because {PRONOUN/m_c/subject} thought it might mean the rest of the clan wouldn't have enough."		
 	],	
 	"ocd": [
 	    "m_c sleeps seperately from {PRONOUN/m_c/poss} parent and denmates, liking {PRONOUN/r_c/poss} own nest that {PRONOUN/m_c/subject} can decorate and keep to how they like it. r_c explains to {PRONOUN/r_c/poss{} concerned parent that {PRONOUN/m_c/subject} could have ocd, and it's nothing serious.",
@@ -169,6 +169,22 @@
 	],
 	"burning light": [
 		"Walking out of the nursery for the first time, m_c mewls and rushes back inside, crying about how the light burns their eyes and they don't want to go outside. r_c is brought over to explain that unlike most cats m_c suffers from burning light, and there isn't much they can do to help but just wait out the burn.",
-        "Walking out of the nursery for the first time, m_c mewls and rushes back inside, crying about how the light burns their eyes and they don't want to go outside. r_c is brought over to explain that unlike most cats m_c suffers from burning light, and there isn't much they can do to help but just wait out the burn."
+		"Whenever m_c steps out of the nursery {PRONOUN/m_c/subject} {VERB/m_c/whine/whines} and {VERB/m_c/retreat/retreats} back inside.",
+		"While {PRONOUN/m_c/poss} nurserymates are already freely exploring and playing around the camp, m_c whimpers and complains about the evil sun trying to blind {PRONOUN/m_c/object}.",
+		"m_c hates going outside, {PRONOUN/m_c/subject} alway {VERB/m_c/complain/complains} about the burning in {PRONOUN/m_c/poss} eyes."
+	],
+	"disrupted senses": [
+		"r_c talks with m_c's parents about how much more sensitive {PRONOUN/m_c/subject} {VERB/m_c/seem/seems} than other kittens. After some observation it seems that m_c might just have some disrupted senses.",
+		"Whenever m_c steps out of the nursery {PRONOUN/m_c/subject} {VERB/m_c/whine/whines} and {VERB/m_c/retreat/retreats} back inside.",
+		"While {PRONOUN/m_c/poss} nurserymates are already freely exploring and playing around the camp, m_c whimpers and complains about the evil sun trying to blind {PRONOUN/m_c/object}.",
+		"m_c hates going outside, {PRONOUN/m_c/subject} alway {VERB/m_c/complain/complains} about the burning in {PRONOUN/m_c/poss} eyes.",
+		"m_c is always complaining about how everyone else in the clan around {PRONOUN/m_c/object} is just too loud.",
+		"It often seems to take m_c multiple attempts before {PRONOUN/m_c/subject} can understand what {PRONOUN/m_c/poss} clanmates are trying to tell {PRONOUN/m_c/object}.",
+		"m_c complains often about how the nest around {PRONOUN/m_c/object} feels like against {PRONOUN/m_c/poss} pelt."
+	],
+	"constant rash": [
+		"r_c has noticed that little m_c is often scratching at {PRONOUN/m_c/self} throughout the season, it would seem that {PRONOUN/m_c/subject} {VERB/m_c/have/has} a near constant recurring rash.",
+		"No matter how much care m_c takes to follow the instructions given to {PRONOUN/m_c/object} by the medicine cat, nothing seems to keep the rash away.",
+		"m_c's a particularly grumpy kitten, mostly because {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} constantly itching and in pain from a rash that refuses to leave."
 	]
 }
