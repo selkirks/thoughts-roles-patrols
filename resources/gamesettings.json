@@ -63,7 +63,7 @@
         ],
 		"moons and seasons": [
             "Show moons and seasons widget",
-            "Displays clan age and current clan season on several pages",
+            "Displays Clan age and current Clan season on several pages",
             false
         ],
         "den labels": [
@@ -123,7 +123,7 @@
         ],
         "discord": [
             "Enable Discord integration",
-            "Discord will show info about your clan, including your Clan name",
+            "Discord will show info about your Clan, including your Clan name",
             false
         ],
         "showxp": [
@@ -149,7 +149,7 @@
     },
     "relation": {
         "random relation": [
-            "Randomize relationship values when creating clan",
+            "Randomize relationship values when creating Clan",
             "Clan founder cats will start the game with established relationships.",
             true
         ],
