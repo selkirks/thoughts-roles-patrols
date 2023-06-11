@@ -334,7 +334,7 @@ class Condition_Events():
             "recurring shock", "lasting grief", "adhd", "heavy soul", "starwalker", "ocd", "antisocial", "anxiety", 
             "constant roaming pain", "strong soul", "otherworldly mind", "kitten regressor", "puppy regressor", "snow vision",
             "echoing shock", "irritable bowels", "loose body", "longcough", "burning light", "disrupted senses", 
-            "constant nightmares", "constant rash"
+            "constant nightmares", "constant rash", "jellyfish joints"
             
         ]
 
@@ -380,27 +380,15 @@ class Condition_Events():
         starting_life_count = game.clan.leader_lives
         cat.healed_condition = False
         event_list = []
-        illness_progression = {
-            "running nose": "whitecough", 
-            "running nose": "silvercough",
-            "kittencough": "silvercough",
-            "whitecough": "greencough", 
-            "whitecough": "silvercough",
-            "silvercough": "greencough",
-            "greencough": "yellowcough",
-            "an infected wound": "a festering wound",
-            "heat exhaustion": "heat stroke",
-            "stomachache": "diarrhea", 
-            "stomachache": "constipation",
-            "nighmares": "constant nightmares",
-            "grief stricken": "heavy soul",
-            "lasting grief": "heavy soul",
-            "anxiety attack": "panic attack",
-            "panic attack": "shock", 
-            "panic attack": "paranoia",
-            "sleeplessness": "ongoing sleeplessness",
-            "nest wetting": "night dirtmaking"
-        }
+        base_illness = ["running nose", "kittencough", "whitecough", "silvercough", "greencough",
+                        "yellowcough", "an infected wound", "heat exhaustion", "stomachache",
+                        "nightmares", "anxiety attack", "panic attack", "sleeplessness",
+                        "ticks", "nest wetting"]
+        progression = [["whitecough", "silvercough"], "silvercough", ["silvercough", "greencough"], "greencough",
+                        "yellowcough", "redcough", "a festering wound", "heat stroke", ["diarrhea", "constipation"],
+                        "constant nightmares", "panic attack", ["shock", "paranoia"], "ongoing sleeplessness", 
+                        ["tick bites", "severe tick bites"], "night dirtmaking"]
+        illness_progression = dict(zip(base_illness, progression))
         # ---------------------------------------------------------------------------- #
         #                         handle currently sick cats                           #
         # ---------------------------------------------------------------------------- #
