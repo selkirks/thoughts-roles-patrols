@@ -1505,7 +1505,7 @@
 		"senior adult": 0,
 		"senior": 0
 		},
-		"illness_inffection": [],
+		"illness_infectiousness": [],
 		"risks": [
 			{
 				"name": "dislocated joint",
@@ -1526,13 +1526,13 @@
 			{
 				"name": "joint pain",
 				"chance": 40
-			},
+			}
 		],
 		"herbs": [
 			"cobwebs",
 			"burdock",
 			"moss",
-			"ragwort",
+			"ragwort"
 		]
 	},
     "loose body": {
