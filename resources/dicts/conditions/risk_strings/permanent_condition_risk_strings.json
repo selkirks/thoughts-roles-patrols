@@ -436,14 +436,16 @@
 		],
 		"indecision": [
 			"m_c comes in to see r_c, tail twitching as {PRONOUN/m_c/subject} consult with {PRONOUN/r_c/object} on how to make decision making easier.",
-			"m_c stands beside the camp entry way somewhat frozen talking with the deputy about what patrol to potentially go on."
+			"m_c stands beside the camp entry way somewhat frozen talking with the deputy about what patrol to potentially go on.",
+			"m_c sits, tail tip twitching as {PRONOUN/m_c/subject} try to decided what prey to eat."
 		],
 		"impulsivity": [
 			"r_c sighs as {PRONOUN/m_c/subject} watch m_c racing around camp and leaping into decisions without fully thinking.",
 			"m_c steps up as a volunteer for a patrol before fully listening to what it involves.",
 			"Before anyone has told {PRONOUN/m_c/object} to m_c went out on a patrol alone.",
 			"m_c keeps picking up shiny things.",
-			"While out on patrol m_c keeps racing off at the slightest sight of anything in {PRONOUN/m_c/poss} peripheral."
+			"While out on patrol m_c keeps racing off at the slightest sight of anything in {PRONOUN/m_c/poss} peripheral.",
+			"m_c comes into the medicine den sheepishly asking if r_c needs any herbs because {PRONOUN/m_c/subject} found a bush and plucked it before asking."
 		]
 		,
 		"kitten regressor": [
