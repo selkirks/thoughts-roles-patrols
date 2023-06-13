@@ -1496,7 +1496,7 @@
     "jellyfish joints": {
 		"severity": "minor",
 		"congenital": "always",
-		"moons until": 5,
+		"moons_until": 5,
 		"mortality": {
 			"kitten": 0,
 			"adolescent": 0,
