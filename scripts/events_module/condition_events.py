@@ -89,7 +89,7 @@ class Condition_Events():
                     event_string = f"{cat.name} has been struggling recently with nightmares."
                 elif chosen_illness in ['kittenspace', 'puppyspace']:
                     event_string = f"{cat.name} has been acting a bit different than usual recently." \
-                                   f"it seems like {cat.name} may have gone into {chosen_illness}."
+                                   f" It seems like {cat.name} may have gone into {chosen_illness}."
                 else:
                     event_string = f"{cat.name} has gotten {chosen_illness}."
 
