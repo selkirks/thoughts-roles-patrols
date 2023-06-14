@@ -514,25 +514,82 @@
     },
     {
         "camp": "any",
-        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "tags": [
+			"Newleaf", 
+			"Greenleaf", 
+			"Leaf-fall", 
+			"Leaf-bare"
+		],
         "event_text": "While out on an adventure m_c found an interesting object in the territory and decided to keep it.",
-        "accessories": ["TOY"]
+        "accessories": [
+			"TOY"
+		]
     },
     {
         "camp": "any",
-        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "tags": [
+			"Newleaf", 
+			"Greenleaf", 
+			"Leaf-fall", 
+			"Leaf-bare"
+		],
         "event_text": "After sneaking out of the territory m_c has come back with an acc_singular that {PRONOUN/m_c/subject} {VERB/m_c/find/finds} comforting.",
-        "accessories": ["TOY"]
+        "accessories": [
+			"TOY"
+		]
     },
     {
         "camp": "any",
-        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "tags": [
+			"Newleaf", 
+			"Greenleaf", 
+			"Leaf-fall", 
+			"Leaf-bare"
+		],
         "event_text": "m_c found a nice acc_singular that {PRONOUN/m_c/subject} decided to keep and wear on {PRONOUN/m_c/poss} pelt.",
-        "accessories": ["BLANKIE"]
+        "accessories": [
+			"BLANKIE"
+		]
     },	
-     {
+    {
         "camp": "any",
-        "tags": ["Greenleaf", "other_cat", "other_cat_mate", "to_both", "platonic"],
+        "tags": [
+			"Greenleaf", 
+			"other_cat", 
+			"other_cat_mate", 
+			"to_both", 
+			"platonic"
+		],
         "event_text": "It's tough working in such extreme heat. m_c and r_c spend their evening relaxing together and cooling down in the shade."
-     }
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-bare",
+            "Leaf-fall",
+            "skill_trait_required"
+        ],
+        "event_text": "m_c's dreams are filled with flashing teeth and blood-scent. {PRONOUN/m_c/subject/CAP} {VERB/m_c/wake/wakes} up screaming.",
+        "cat_trait": null,
+        "cat_skill": [
+            "DARK,0"
+        ]
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-bare",
+            "Leaf-fall",
+            "skill_trait_required"
+        ],
+        "event_text": "m_c thought {PRONOUN/m_c/subject} saw a familar wispy form lingering at the edge of camp, but the ghost disappeared before {PRONOUN/m_c/subject} could be sure.",
+        "cat_trait": null,
+        "cat_skill": [
+            "GHOST,0"
+        ]
+    }
 ]
