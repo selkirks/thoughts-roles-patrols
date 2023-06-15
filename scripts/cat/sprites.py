@@ -123,7 +123,7 @@ class Sprites():
         #disability mod related
         for a, i in enumerate(
                 ["RASH", "DECLAWED"]):
-            sprites.make_group('disabilityscars', (a, 2), f'scars{i}')
+            sprites.make_group('disabilityscars', (a, 0), f'scars{i}')
             
         # missing parts
         for a, i in enumerate(
