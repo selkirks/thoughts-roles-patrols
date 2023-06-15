@@ -25,7 +25,7 @@
             "blood loss"
         ],
         "cause_permanent": [
-			"echoing shock"
+			"recurring shock"
 		],
         "herbs": [
             "cobwebs",
@@ -65,7 +65,9 @@
             "torn pelt",
             "blood loss"
         ],
-        "cause_permanent": [],
+        "cause_permanent": [
+            "recurring shock"
+        ],
         "herbs": [
             "cobwebs",
             "goldenrod",
@@ -105,7 +107,7 @@
             "blood loss"
         ],
         "cause_permanent": [
-			"echoing shock"
+			"recurring shock"
 		],
         "herbs": [
             "cobwebs",
@@ -145,7 +147,9 @@
             "torn pelt",
             "blood loss"
         ],
-        "cause_permanent": [],
+        "cause_permanent": [
+            "recurring shock"
+        ],
         "herbs": [
             "cobwebs",
             "goldenrod",
@@ -181,7 +185,8 @@
             }
         ],
         "also_got": [
-            "poisoned"
+            "poisoned",
+            "recurring shock"
         ],
         "cause_permanent": [],
         "herbs": [
@@ -226,7 +231,8 @@
             }
         ],
         "also_got": [
-            "torn pelt"
+            "torn pelt",
+            "shock"
         ],
         "cause_permanent": [],
         "herbs": [
@@ -328,7 +334,8 @@
             "bruises"
         ],
         "cause_permanent": [
-            "crooked jaw"
+            "crooked jaw",
+            "recurring shock"
         ],
         "herbs": [
             "cobwebs",
@@ -371,7 +378,8 @@
         ],
         "cause_permanent": [
             "weak leg",
-            "twisted leg"
+            "twisted leg",
+            "recurring shock"
         ],
         "herbs": [
             "cobwebs",
@@ -416,7 +424,8 @@
         "cause_permanent": [
             "lost a leg",
             "weak leg",
-            "twisted leg"
+            "twisted leg",
+            "recurring shock"
         ],
         "herbs": [
             "cobwebs",
@@ -571,7 +580,8 @@
             "blood loss"
         ],
         "cause_permanent": [
-            "lost their tail"
+            "lost their tail",
+            "recurring shock"
         ],
         "herbs": [
             "cobwebs",
@@ -808,7 +818,8 @@
         ],
         "also_got": [],
         "cause_permanent": [
-            "partial hearing loss"
+            "partial hearing loss",
+            "recurring shock"
         ],
         "herbs": [
             "cobwebs",
@@ -848,6 +859,7 @@
         "cause_permanent": [
             "lost a leg",
             "lost their tail",
+            "recurring shock",
             "moss",
             "dandelion",
             "poppy"
@@ -927,7 +939,8 @@
         ],
         "also_got": [],
         "cause_permanent": [
-            "raspy lungs"
+            "raspy lungs",
+            "recurring shock"
         ],
         "herbs": [
             "juniper",
@@ -959,7 +972,9 @@
                 "chance": 25
             }
         ],
-        "also_got": [],
+        "also_got": [
+            "shock"
+        ],
         "cause_permanent": [
         ],
         "herbs": [
@@ -1181,6 +1196,7 @@
             "failing eyesight",
             "one bad eye",
             "blind",
+            "recurring shock",
             "constantly dizzy",
             "partial hearing loss",
             "persistent headaches",
@@ -1219,7 +1235,8 @@
         "cause_permanent": [
             "blind",
             "one bad eye",
-            "failing eyesight"
+            "failing eyesight",
+            "recurring shock"
         ],
         "herbs": [
             "cobwebs",
@@ -1297,9 +1314,8 @@
         "also_got": [
         ],
         "cause_permanent": [
-            "paralyzed"
-        ],
-        "herbs": [
+            "paralyzed",
+            "recurring shock",
             "juniper",
             "ragwort",
             "poppy"
