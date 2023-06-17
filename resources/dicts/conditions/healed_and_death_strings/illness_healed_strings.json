@@ -227,5 +227,13 @@
 		"m_c's brief bout of dizziness has ended.",
 		"To m_c's relief {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} able to raise from {PRONOUN/m_c/poss} nest without falling back down.",
 		"m_c is no longer feeling dizzed when {PRONOUN/m_c/subject} {VERB/m_c/stand/stands} up."
+	],
+	"word loss": [
+		"With a bit of help from {PRONOUN/m_c/poss} clanmates, m_c is able to speak in full sentances again.",
+		"After a bit of stumbling and fumbling, m_c has found words that are like what {PRONOUN/m_c/subject} {VERB/m_c/were/was} trying to say."
+	],
+	"information loss": [
+		"After m_c got clarification, m_c understands what {PRONOUN/m_c/poss} clanmates were trying to tell {PRONOUN/m_c/object}.",
+		"When a clanmate gives m_c instructions piece by piece instead of all at once, {PRONOUN/m_c/poss} were able to do the task to completion."
 	]
 }
