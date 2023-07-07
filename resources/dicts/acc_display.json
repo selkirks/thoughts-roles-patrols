@@ -439,18 +439,18 @@
     "plural": "rubber bones",
     "singular": "a rubber bone"
   },
-  "disability-flags-fin": {
+  "DISFLAG": {
     "default": "a disability pride flag",
     "plural": "disabled pride flags",
     "singular": "a disability flag"
   },
-  "zebra-flag-fin": {
+  "ZEBFLAG": {
     "default": "a zebra pride pride flag",
     "plural": "hypermobile pride flags",
     "singular": "a hypermobile pride flag"
   },
-  "Autism-Flags": {
-    "default": "a autism pride flag",
+  "AUTISMFLAG": {
+    "default": "an autism pride flag",
     "plural": "autism pride flags",
     "singualar": "autism pride flag"
   }

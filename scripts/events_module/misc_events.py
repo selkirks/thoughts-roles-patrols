@@ -154,8 +154,10 @@ class MiscEvents():
             acc_list.extend(Pelt.toy_accessories)
         if "BLANKIE" in possible_accs:
             acc_list.extend(Pelt.blankie_accessories)
+        if "FLAG" in possible_accs:
+            acc_list.extend(Pelt.flag_accessories)
         for acc in possible_accs:
-            if acc not in ["WILD", "PLANT", "COLLAR", "TOY", "BLANKIE"]:
+            if acc not in ["WILD", "PLANT", "COLLAR", "TOY", "BLANKIE", "FLAG"]:
                 acc_list.append(acc)
 
         if ("NOTAIL" or "HALFTAIL") in cat.pelt.scars:

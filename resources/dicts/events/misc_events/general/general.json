@@ -561,7 +561,7 @@
         ],
         "event_text": "m_c found something to be proud of!",
         "accessories": [
-            "disability-flags-fin"
+            "FLAG"
         ]
     },
     {
@@ -572,9 +572,9 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c found something to be proud of!",
+        "event_text": "m_c found a twoleg cloth that radiates pride.",
         "accessories": [
-            "zebra-flag-fin"
+            "FLAG"
         ]
     },	
     {
@@ -585,9 +585,9 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c found something to be proud of!",
+        "event_text": "m_c found a acc_singular that makes them happy.",
         "accessories": [
-            "Autism-Flags"
+            "FLAG"
         ]
     },
     {

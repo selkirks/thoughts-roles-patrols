@@ -185,6 +185,8 @@ class Sprites():
         #dismod accessories
         for a, i in enumerate(["BALL", "MOUSE", "MOSSBLANKIE", "BONE"]):
             sprites.make_group('disabilityaccs', (a, 0), f'acc_dismod{i}')
+        for a, i in enumerate(["AUTISMFLAG", "DISFLAG", "ZEBFLAG"]):
+            sprites.make_group('disabilityaccs', (a, 1), f'acc_dismod{i}')
 
 # get the width and height of the spritesheet
 lineart = pygame.image.load('sprites/lineart.png')

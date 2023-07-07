@@ -84,6 +84,7 @@ class Pelt():
     ]
     toy_accessories = ["BALL", "MOUSE", "BONE"]
     blankie_accessories = ["MOSSBLANKIE"]
+    flag_accessories = ["AUTISMFLAG", "DISFLAG", "ZEBFLAG"]
     
     tabbies = ["Tabby", "Ticked", "Mackerel", "Classic", "Sokoke", "Agouti"]
     spotted = ["Speckled", "Rosette"]
@@ -658,7 +659,8 @@ class Pelt():
         if acc_display_choice == 1:
             self.accessory = choice([
                 choice(Pelt.plant_accessories),
-                choice(Pelt.wild_accessories)
+                choice(Pelt.wild_accessories),
+                choice(Pelt.flag_accessories)
             ])
         else:
             self.accessory = None
