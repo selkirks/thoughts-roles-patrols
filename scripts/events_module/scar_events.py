@@ -70,7 +70,8 @@ class Scar_Events():
     ]
     declawed_scars = [
         "DECLAWED"
-    
+    ]
+
     scar_allowed = {
         "bite-wound": canid_scars,
         "cat-bite": bite_scars,
