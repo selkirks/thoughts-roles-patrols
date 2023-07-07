@@ -1010,6 +1010,22 @@ class Pelt():
                         color_name = f"{color_name} mottled"
                 else:
                     color_name = f"{color_name} {cat.pelt.name.lower()}"
+        
+        if cat.pelt.points:
+            color_name = f"{color_name} point"
+            if "ginger point" in color_name:
+                color_name.replace("ginger point", "flame point")
+
+        if "white and white" in color_name:
+            color_name = color_name.replace("white and white", "white")
+
+        # Now it's time for gender
+        if cat.genderalign in ["female", "trans female"]:
+            color_name = f"{color_name} she-cat"
+        elif cat.genderalign in ["male", "trans male"]:
+            color_name = f"{color_name} tom"
+        else:
+            color_name = f"{color_name} cat"
 
         if cat.pelt.white_patches:
             if cat.pelt.white_patches == "FULLWHITE":
@@ -1028,22 +1044,6 @@ class Pelt():
                     color_name = f"{color_name} with small patches of {cat.pelt.white_patches_tint}"
                 else: 
                     color_name = f"{color_name} with small patches of white" 
-        
-        if cat.pelt.points:
-            color_name = f"{color_name} point"
-            if "ginger point" in color_name:
-                color_name.replace("ginger point", "flame point")
-
-        if "white and white" in color_name:
-            color_name = color_name.replace("white and white", "white")
-
-        # Now it's time for gender
-        if cat.genderalign in ["female", "trans female"]:
-            color_name = f"{color_name} she-cat"
-        elif cat.genderalign in ["male", "trans male"]:
-            color_name = f"{color_name} tom"
-        else:
-            color_name = f"{color_name} cat"
 
         # Here is the place where we can add some additional details about the cat, for the full non-short one. 
         # These include notable missing limbs, vitiligo, long-furred-ness, and 3 or more scars. 
