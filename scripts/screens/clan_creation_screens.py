@@ -236,7 +236,7 @@ class MakeClanScreen(Screens):
             create_example_cats()  # create new cats
             self.selected_cat = None  # Your selected cat now no longer exists. Sad. They go away.
             if self.elements['error_message']:
-                self.elements['error_message'].kill()
+                self.elements['error_message'].hide()
             self.refresh_cat_images_and_info()  # Refresh all the images.
             self.rolls_left -= 1
             if game.config["clan_creation"]["rerolls"] == 3:
@@ -706,7 +706,7 @@ class MakeClanScreen(Screens):
             self.elements['cat_info'].set_text(selected.gender + "\n" +
                                                str(selected.age + "\n" +
                                                    str(selected.personality.trait) + "\n" +
-                                                   str(selected.skills.skill_string(short=True))))
+                                                   str(selected.skills.skill_string())))
             self.elements['cat_info'].show()
         else:
             self.elements['next_step'].disable()
@@ -752,7 +752,7 @@ class MakeClanScreen(Screens):
                     cat_object=game.choose_cats[u], manager=MANAGER)
             elif game.choose_cats[u] in [self.leader, self.deputy, self.med_cat] + self.members:
                 self.elements["cat" + str(u)] = UISpriteButton(
-                    scale(pygame.Rect((1400, 250 + 100 * (u - 6)), (100, 100))),
+                    scale(pygame.Rect((1400, 260 + 100 * (u - 6)), (100, 100))),
                     game.choose_cats[u].sprite,
                     cat_object=game.choose_cats[u], manager=MANAGER)
                 self.elements["cat" + str(u)].disable()
@@ -921,7 +921,9 @@ class MakeClanScreen(Screens):
                                                                   manager=MANAGER)
 
         self.elements['select_cat'] = UIImageButton(scale(pygame.Rect((468, 696), (664, 104))), "",
-                                                    object_id="#nine_lives_button", visible=False, manager=MANAGER)
+                                                    object_id="#nine_lives_button", 
+                                                    starting_height=2,
+                                                    visible=False, manager=MANAGER)
         # Error message, to appear if you can't choose that cat.
         self.elements['error_message'] = pygame_gui.elements.UITextBox(
             "Too young to become leader",
@@ -951,7 +953,7 @@ class MakeClanScreen(Screens):
         self.clan_name_header()
 
         # info for chosen cats:
-        self.elements['cat_info'] = pygame_gui.elements.UITextBox("", scale(pygame.Rect((880, 520), (200, 200))),
+        self.elements['cat_info'] = pygame_gui.elements.UITextBox("", scale(pygame.Rect((880, 520), (230, 250))),
                                                                   visible=False,
                                                                   object_id=get_text_box_theme(
                                                                       "#text_box_22_horizleft_spacing_95"),
@@ -963,7 +965,9 @@ class MakeClanScreen(Screens):
                                                                   manager=MANAGER)
 
         self.elements['select_cat'] = UIImageButton(scale(pygame.Rect((418, 696), (768, 104))), "",
-                                                    object_id="#support_leader_button", visible=False, manager=MANAGER)
+                                                    object_id="#support_leader_button", 
+                                                    starting_height=2,
+                                                    visible=False, manager=MANAGER)
         # Error message, to appear if you can't choose that cat.
         self.elements['error_message'] = pygame_gui.elements.UITextBox(
             "Too young to become deputy",
@@ -993,7 +997,7 @@ class MakeClanScreen(Screens):
 
         # info for chosen cats:
         self.elements['cat_info'] = pygame_gui.elements.UITextBox("",
-                                                                  scale(pygame.Rect((880, 520), (200, 200))),
+                                                                  scale(pygame.Rect((880, 520), (230, 250))),
                                                                   visible=False,
                                                                   object_id=get_text_box_theme(
                                                                       "#text_box_22_horizleft_spacing_95"),
@@ -1008,6 +1012,7 @@ class MakeClanScreen(Screens):
         self.elements['select_cat'] = UIImageButton(scale(pygame.Rect((520, 684), (612, 116))),
                                                     "",
                                                     object_id="#aid_clan_button",
+                                                    starting_height=2,
                                                     visible=False,
                                                     manager=MANAGER)
         # Error message, to appear if you can't choose that cat.
@@ -1042,7 +1047,7 @@ class MakeClanScreen(Screens):
 
         # info for chosen cats:
         self.elements['cat_info'] = pygame_gui.elements.UITextBox("",
-                                                                  scale(pygame.Rect((880, 520), (200, 200))),
+                                                                  scale(pygame.Rect((880, 520), (230, 250))),
                                                                   visible=False,
                                                                   object_id=get_text_box_theme(
                                                                       "#text_box_22_horizleft_spacing_95"),
@@ -1056,6 +1061,7 @@ class MakeClanScreen(Screens):
         self.elements['select_cat'] = UIImageButton(scale(pygame.Rect((706, 720), (190, 60))),
                                                     "",
                                                     object_id="#recruit_button",
+                                                    starting_height=2,
                                                     visible=False,
                                                     manager=MANAGER)
 

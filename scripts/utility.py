@@ -123,9 +123,9 @@ def get_cats_same_age(cat, Relationship, range=10):  # pylint: disable=redefined
             continue
 
         if inter_cat.ID not in cat.relationships:
-            cat.relationships[inter_cat.ID] = Relationship(cat, inter_cat)
+            cat.create_one_relationship(inter_cat)
             if cat.ID not in inter_cat.relationships:
-                inter_cat.relationships[cat.ID] = Relationship(inter_cat, cat)
+                inter_cat.create_one_relationship(cat)
             continue
 
         if inter_cat.moons <= cat.moons + range and inter_cat.moons <= cat.moons - range:
@@ -144,9 +144,9 @@ def get_free_possible_mates(cat, Relationship):
             continue
 
         if inter_cat.ID not in cat.relationships:
-            cat.relationships[inter_cat.ID] = Relationship(cat, inter_cat)
+            cat.create_one_relationship(inter_cat)
             if cat.ID not in inter_cat.relationships:
-                inter_cat.relationships[cat.ID] = Relationship(inter_cat, cat)
+                inter_cat.create_one_relationship(cat)
             continue
 
         if inter_cat.is_potential_mate(cat, for_love_interest=True) and cat.is_potential_mate(inter_cat,
@@ -370,8 +370,7 @@ def create_new_cat(Cat,
                     if age > leeway:
                         continue
                     possible_conditions.append(condition)
-                # print(possible_conditions, str(new_cat.name), new_cat.moons)
-
+                    
                 if possible_conditions:
                     chosen_condition = choice(possible_conditions)
                     born_with = False
@@ -559,9 +558,9 @@ def get_cats_of_romantic_interest(cat, Relationship):
             continue
 
         if inter_cat.ID not in cat.relationships:
-            cat.relationships[inter_cat.ID] = Relationship(cat, inter_cat)
+            cat.create_one_relationship(inter_cat)
             if cat.ID not in inter_cat.relationships:
-                inter_cat.relationships[cat.ID] = Relationship(inter_cat, cat)
+                inter_cat.create_one_relationship(cat)
             continue
 
         if cat.relationships[inter_cat.ID].romantic_love > 0:
@@ -843,7 +842,7 @@ def find_special_list_types(text):
         senses.append("sight")
         text = text.replace("_sight", "")
     if "_sound" in text:
-        senses.append("_sight")
+        senses.append("sound")
         text = text.replace("_sight", "")
     if "_smell" in text:
         text = text.replace("_smell", "")
@@ -863,7 +862,7 @@ def find_special_list_types(text):
 
 def history_text_adjust(text,
                         other_clan_name,
-                        clan):
+                        clan,other_cat_rc=None):
     """
     we want to handle history text on its own because it needs to preserve the pronoun tags and cat abbreviations.
     this is so that future pronoun changes or name changes will continue to be reflected in history
@@ -872,6 +871,8 @@ def history_text_adjust(text,
         text = text.replace("o_c", other_clan_name)
     if "c_n" in text:
         text = text.replace("c_n", clan.name)
+    if "r_c" in text and other_cat_rc:
+        text = text.replace("r_c", str(other_cat_rc.name))
     return text
 
 def ongoing_event_text_adjust(Cat, text, clan=None, other_clan_name=None):
@@ -917,7 +918,8 @@ def event_text_adjust(Cat,
                       other_cat=None,
                       other_clan_name=None,
                       new_cat=None,
-                      clan=None):
+                      clan=None,
+                      murder_reveal=False):
     """
     This function takes the given text and returns it with the abbreviations replaced appropriately
     :param Cat: Always give the Cat class
@@ -927,6 +929,7 @@ def event_text_adjust(Cat,
     :param other_clan_name: The other clan involved in the event
     :param new_cat: The cat taking the place of n_c
     :param clan: The player's Clan
+    :param murder_reveal: Whether or not this event is a murder reveal
     :return: the adjusted text
     """
 
@@ -958,6 +961,10 @@ def event_text_adjust(Cat,
             clan_name = str(game.clan.name)
 
     text = text.replace("c_n", clan_name + "Clan")
+
+    if murder_reveal:
+        victim = Cat.fetch_cat(cat.history.murder["victim"])
+        text = text.replace("mur_c", victim.name)
 
     # Dreams and Omens
     text, senses, list_type = find_special_list_types(text)
@@ -1464,6 +1471,9 @@ def get_special_date() -> SpecialDate:
 # ---------------------------------------------------------------------------- #
 #                                     OTHER                                    #
 # ---------------------------------------------------------------------------- #
+
+def chunks(L, n):
+    return [L[x: x + n] for x in range(0, len(L), n)]
 
 def is_iterable(y):
     try:

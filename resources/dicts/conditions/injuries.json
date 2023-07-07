@@ -1395,6 +1395,7 @@
             "juniper"
         ]
     },
+
     "severe headache": {
         "duration": 1,
         "severity": "major",

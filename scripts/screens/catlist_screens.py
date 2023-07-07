@@ -510,7 +510,6 @@ class StarClanScreen(Screens):
             elif event.key == pygame.K_RIGHT:
                 self.change_screen('patrol screen')
 
-
     def exit_screen(self):
         self.hide_menu_buttons()
         self.starclan_button.kill()
@@ -545,6 +544,7 @@ class StarClanScreen(Screens):
                 self.dead_cats.append(the_cat)
 
     def screen_switches(self):
+        Cat.sort_cats()
         # Determine the dead, non-exiled cats.
         self.get_dead_cats()
 
