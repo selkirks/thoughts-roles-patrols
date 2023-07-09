@@ -1655,20 +1655,19 @@ class ProfileScreen(Screens):
         # collect details for illnesses
         if name in self.the_cat.illnesses:
             # moons with condition
-            keys = self.the_cat.illnesses[name].keys()
-            if 'moons_with' in keys:  # need to check if it exists for older saves
-                moons_with = game.clan.age - self.the_cat.illnesses[name]["moon_start"]
-                insert = "has been sick for"
-                if name == 'grief stricken':
-                    insert = 'has been grieving for'
-                if name in 'kittenspace':
-                    insert = 'has been in kittenspace for'
-                if name in 'puppyspace':
-                    insert = 'has been in puppyspace for'
-                if moons_with != 1:
-                    text_list.append(f"{insert} {moons_with} moons")
-                else:
-                    text_list.append(f"{insert} 1 moon")
+            moons_with = game.clan.age - self.the_cat.illnesses[name]["moon_start"]
+            insert = "has been sick for"
+
+            if name == 'grief stricken':
+                insert = 'has been grieving for'
+            if name in 'kittenspace':
+                insert = 'has been in kittenspace for'
+            if name in 'puppyspace':
+                insert = 'has been in puppyspace for'
+            if moons_with != 1:
+                text_list.append(f"{insert} {moons_with} moons")
+            else:
+                text_list.append(f"{insert} 1 moon")
 
             if self.the_cat.illnesses[name]['infectiousness'] != 0:
                 text_list.append("infectious!")
