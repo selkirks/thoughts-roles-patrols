@@ -13,32 +13,40 @@
     "GOLDEN": "warm",
     "GINGER": "warm",
     "DARKGINGER": "warm",
-    "SIENNA": "brown",
-    "LIGHTBROWN": "brown",
-    "LILAC": "brown",
-    "BROWN": "brown",
-    "GOLDEN-BROWN": "brown",
-    "DARKBROWN": "brown",
-    "CHOCOLATE": "brown"
+    "SIENNA": "warm",
+    "LIGHTBROWN": "warm",
+    "LILAC": "warm",
+    "BROWN": "warm",
+    "GOLDEN-BROWN": "warm",
+    "DARKBROWN": "warm",
+    "CHOCOLATE": "warm"
   },
   "possible_tints": {
-    "basic": ["pink", "gray", "red", "orange", "none"],
-    "warm": ["yellow", "purple"],
-    "cool": ["blue", "purple", "black"],
-    "white": ["yellow"],
-    "monochrome": ["blue", "black"],
-    "brown": ["yellow", "purple", "black"]
+    "basic": ["pink", "gray", "red", "black", "orange", "yellow", 
+				"purple", "blue", "green", "forest", "lilac", "scarlett",
+				"birch", "olive", "night", "none"],
+    "warm": ["yellow", "orange", "red", "birch", "scarlett", "olive"],
+    "cool": ["blue", "purple", "green", "forest", "lilac", "night"],
+    "white": ["yellow", "gray", "lilac", "birch", "olive"],
+    "monochrome": ["blue", "green", "birch", "night"]
   },
   "tint_colours":
   {
-    "pink": [253, 237, 237],
-    "gray": [225, 225, 225],
-    "red": [248, 226, 228],
-    "black": [195, 195, 195],
-    "orange": [255, 247, 235],
-    "yellow": [250, 248, 225],
-    "purple": [235, 225, 244],
-    "blue": [218, 237, 245],
+    "pink": [228,209,217],
+    "gray": [166,166,166],
+    "red": [199,161,161],
+    "black": [56,50,49],
+    "orange": [225,194,165],
+    "yellow": [237,233,179],
+    "purple": [204,193,213],
+    "blue": [193,218,228],
+	"green": [198,228,193],
+	"forest": [161,181,168],
+	"lilac": [238,214,240],
+	"scarlett": [128,111,114],
+	"birch": [104,94,86],
+	"olive": [177,181,164],
+	"night": [111,112,128]
     "none": null
   }
 }
