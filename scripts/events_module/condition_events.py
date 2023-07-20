@@ -84,7 +84,7 @@ class Condition_Events():
                 elif chosen_illness == "anxiety attack":
                     event_string = f"{cat.name} has worked up into an {chosen_illness}."
                 elif chosen_illness == "seasonal lethargy":
-                    event_string = f"{cat.name} is experiencing some {chosen_illness} this season."
+                    event_string = f"{cat.name} is experiencing some {chosen_illness}."
                 elif chosen_illness in ['nest wetting', 'night dirtmaking']:
                     event_string = f"Somewhat embarrassingly {cat.name} is experiencing {chosen_illness}."
                 elif chosen_illness == "nightmares":

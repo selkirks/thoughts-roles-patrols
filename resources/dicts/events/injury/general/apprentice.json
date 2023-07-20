@@ -1266,5 +1266,19 @@
             "adventurous"
         ],
         "other_cat_skill": null
+    },
+    {
+        "injury": "tick bites",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "In the process of helping out with the ticks in the elders den, poor m_c suffered from some tick bites {PRONOUN/m_c/self}.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
     }
 ]

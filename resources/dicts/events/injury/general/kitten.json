@@ -148,5 +148,57 @@
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
+    },
+    {
+        "injury": "overstimulation",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "Due to the loudness and chaos of the camp poor m_c's gotten incredibly overwhelmed.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "injury": "overstimulation",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c has been withdrawing more and more from {PRONOUN/m_c/poss} clanmates, shaking and overwhelmed with the activity all around.",
+        "cat_trait": [
+			"quiet",
+			"insecure",
+			"nervous",
+			"lonesome"
+		],
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "injury": "overstimulation",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "Because of {PRONOUN/m_c/poss} quieter nature, poor m_c's found it a bit difficult to find peace playing in the camp.",
+        "cat_trait": [
+			"quiet",
+			"insecure",
+			"nervous",
+			"lonesome"
+		],
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
     }
 ]
