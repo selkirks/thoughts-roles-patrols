@@ -9,8 +9,8 @@
 		"burn out": 3,
 		"ear buzzing": 5,
 		"nest wetting": 10,
-		"kittenspace": 50,
-		"puppyspace": 50
+		"kittenspace": 10,
+		"puppyspace": 10
     },
     "Greenleaf":{
         "fleas": 2,
@@ -21,7 +21,7 @@
 		"sleeplessness": 10,
 		"ear buzzing": 5,
 		"nest wetting": 10,
-		"kittenspace": 50
+		"kittenspace": 10
     },
     "Leaf-fall":{
         "fleas": 50,
@@ -35,7 +35,7 @@
 		"ear buzzing": 5,
 		"nest wetting": 20,
 		"silvercough": 4,
-		"puppyspace": 50
+		"puppyspace": 10
     },
     "Leaf-bare":{
         "fleas": 90,
@@ -51,7 +51,7 @@
 		"nest wetting": 20,
 		"silvercough": 4,
 		"nightmares": 10,
-		"kittenspace": 50,
-		"puppyspace": 50
+		"kittenspace": 10,
+		"puppyspace": 10
     }
 }
