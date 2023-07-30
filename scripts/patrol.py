@@ -478,8 +478,8 @@ class Patrol():
             # tag, which forces s_c to be r_c instead. 
             if "rc_has_stat" in self.patrol_event.tags:
                 return True if kitty == self.patrol_random_cat else False
-
-            return True if kitty == self.patrol_leader else False
+            else:
+                return True if kitty == self.patrol_leader else False
 
         # normal, 3+ cat p_l and r_c 
         # filtering, where stat cat must be
@@ -708,6 +708,11 @@ class Patrol():
             # makes sure the leader isn't present if they're not supposed to be
             if "no_leader" in patrol.tags:
                 if "leader" in self.patrol_statuses:
+                    continue
+                    
+            # makes sure the deputy isn't present if they're not supposed to be
+            if "no_deputy" in patrol.tags:
+                if "deputy" in self.patrol_statuses:
                     continue
 
             # cruel season tag check
