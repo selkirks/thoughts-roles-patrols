@@ -87,10 +87,8 @@ class Patrol():
         else:
             print("ERROR: NO POSSIBLE NORMAL PATROLS FOUND for: ", self.patrol_statuses)
             raise RuntimeError
-        if final_romance_patrols:
-            romantic_event_choice = choice(final_romance_patrols) 
-        else:
-            romantic_event_choice = None
+        
+        romantic_event_choice = choice(final_romance_patrols) if final_romance_patrols else None
         
         if romantic_event_choice and Patrol.decide_if_romantic(romantic_event_choice, 
                                                                self.patrol_leader, 
@@ -168,21 +166,23 @@ class Patrol():
         # DETERMINE PATROL LEADER
         # sets medcat as leader if they're in the patrol
         if "medicine cat" in self.patrol_statuses:
-            med_index = self.patrol_statuses.index("medicine cat")
-            self.patrol_leader = self.patrol_cats[med_index]
+            index = self.patrol_statuses.index("medicine cat")
+            self.patrol_leader = self.patrol_cats[index]
         # If there is no medicine cat, but there is a medicine cat apprentice, set them as the patrol leader.
         # This prevents warrior from being treated as medicine cats in medicine cat patrols.
         elif "medicine cat apprentice" in self.patrol_statuses:
-            med_index = self.patrol_statuses.index("medicine cat apprentice")
-            self.patrol_leader = self.patrol_cats[med_index]
+            index = self.patrol_statuses.index("medicine cat apprentice")
+            self.patrol_leader = self.patrol_cats[index]
             # then we just make sure that this app will also be app1
             self.patrol_apprentices.remove(self.patrol_leader)
             self.patrol_apprentices = [self.patrol_leader] + self.patrol_apprentices
         # sets leader as patrol leader
-        elif clan.leader and clan.leader in self.patrol_cats:
-            self.patrol_leader = clan.leader
-        elif clan.deputy and clan.deputy in self.patrol_cats:
-            self.patrol_leader = clan.deputy
+        elif "leader" in self.patrol_statuses:
+            index = self.patrol_statuses.index("leader")
+            self.patrol_leader = self.patrol_cats[index]
+        elif "deputy" in self.patrol_statuses:
+            index = self.patrol_statuses.index("deputy")
+            self.patrol_leader = self.patrol_cats[index]
         else:
             # Get the oldest cat
             possible_leader = [i for i in self.patrol_cats if i.status not in 
@@ -205,11 +205,13 @@ class Patrol():
         # DETERMINE RANDOM CAT
         #Find random cat
         if len(patrol_cats) > 1:
-            possible_random_cats = [i for i in patrol_cats if i != self.patrol_leader]
+            possible_random_cats = [i for i in patrol_cats if i.ID != self.patrol_leader.ID]
             self.patrol_random_cat = choice(possible_random_cats)
         else:
-            possible_random_cats = [i for i in patrol_cats]
-            self.patrol_random_cat = choice(possible_random_cats)
+            self.patrol_random_cat = choice(patrol_cats)
+            
+        print("Patrol Leader:", str(self.patrol_leader.name))
+        print("Random Cat:", str(self.patrol_random_cat.name))
 
     def get_possible_patrols(self, current_season, biome, all_clans, patrol_type,
                              game_setting_disaster=game.settings['disasters']):
@@ -306,9 +308,38 @@ class Patrol():
             elif clan_hostile:
                 possible_patrols.extend(self.generate_patrol_events(self.OTHER_CLAN_HOSTILE))
 
-        final_patrols, final_romance_patrols = self.filter_patrols(possible_patrols, biome, patrol_size, current_season,
-                                                                   patrol_type)
+        final_patrols, final_romance_patrols = self. get_filtered_patrols(possible_patrols, biome, patrol_size, current_season,
+                                                                          patrol_type)
 
+        # This is a debug option. If the patrol_id set isn "debug_ensure_patrol" is possible, 
+        # make it the *only* possible patrol
+        if isinstance(game.config["patrol_generation"]["debug_ensure_patrol_id"], str):
+            for _pat in final_patrols:
+                if _pat.patrol_id == game.config["patrol_generation"]["debug_ensure_patrol_id"]:
+                    final_patrols = [_pat]
+                    print(f"debug_ensure_patrol_id: " 
+                          f'"{game.config["patrol_generation"]["debug_ensure_patrol_id"]}" '
+                           "is a possible normal patrol, and was set as the only "
+                           "normal patrol option")
+                    break
+            else:
+                print(f"debug_ensure_patrol_id: "
+                      f'"{game.config["patrol_generation"]["debug_ensure_patrol_id"]}" '
+                      "is not a possible normal patrol.")
+            
+            for _pat in final_romance_patrols:
+                if _pat.patrol_id == game.config["patrol_generation"]["debug_ensure_patrol_id"]:
+                    final_romance_patrols = [_pat]
+                    print(f"debug_ensure_patrol_id: " 
+                          f'"{game.config["patrol_generation"]["debug_ensure_patrol_id"]}" '
+                           "is a possible romantic patrol, and was set as the only "
+                           "romantic patrol option")
+                    break
+            else:
+                print(f"debug_ensure_patrol_id: "
+                      f'"{game.config["patrol_generation"]["debug_ensure_patrol_id"]}" '
+                      "is not a possible romantic patrol.")
+            
         return final_patrols, final_romance_patrols
 
     def check_constraints(self, patrol):
@@ -617,16 +648,18 @@ class Patrol():
         print("final romance chance:", chance_of_romance_patrol)
         return not int(random.random() * chance_of_romance_patrol)
 
-    def filter_patrols(self, possible_patrols, biome, patrol_size, current_season, patrol_type):
+    def _filter_patrols(self, possible_patrols, biome, patrol_size, current_season, patrol_type):
         filtered_patrols = []
         romantic_patrols = []
-        self.filter_count = 0
 
         # makes sure that it grabs patrols in the correct biomes, season, with the correct number of cats
         for patrol in possible_patrols:
             if not self.check_constraints(patrol):
                 continue
-            if patrol.patrol_id in self.used_patrols:
+            
+            # Don't check for repeat patrols if ensure_patrol_id is being used. 
+            if not isinstance(game.config["patrol_generation"]["debug_ensure_patrol_id"], str) and \
+                    patrol.patrol_id in self.used_patrols:
                 continue
 
             if patrol_size < patrol.min_cats:
@@ -758,24 +791,20 @@ class Patrol():
         if patrol_type == 'hunting':
             filtered_patrols = self.balance_hunting(filtered_patrols)
 
-        if not filtered_patrols:
-            if self.filter_count == 1:
-                # error message will print from patrol_screens.py once this is returned
-                return filtered_patrols, romantic_patrols
-            self.filter_count += 1
-            self.used_patrols.clear()
-            print('used patrols cleared', self.used_patrols)
-            filtered_patrols, romantic_patrols = self.repeat_filter(possible_patrols, biome, patrol_size,
-                                                                    current_season, patrol_type)
-        else:
-            # reset this when we succeed in finding a patrol
-            self.filter_count = 0
         return filtered_patrols, romantic_patrols
 
-    def repeat_filter(self, possible_patrols, biome, patrol_size, current_season, patrol_type):
-        print('repeating filter')
-        filtered_patrols, romantic_patrols = self.filter_patrols(possible_patrols, biome, patrol_size, current_season,
-                                                                 patrol_type)
+    def get_filtered_patrols(self, possible_patrols, biome, patrol_size, current_season, patrol_type):
+        
+        filtered_patrols, romantic_patrols = self._filter_patrols(possible_patrols, biome, patrol_size, current_season,
+                                                                  patrol_type)
+        
+        if not filtered_patrols:
+            print('No normal patrols possible. Repeating filter with used patrols cleared.')
+            self.used_patrols.clear()
+            print('used patrols cleared', self.used_patrols)
+            filtered_patrols, romantic_patrols = self._filter_patrols(possible_patrols, biome, patrol_size,
+                                                                      current_season, patrol_type)    
+        
         return filtered_patrols, romantic_patrols
 
     def get_patrol_art(self):

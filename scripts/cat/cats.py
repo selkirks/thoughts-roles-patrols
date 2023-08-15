@@ -563,15 +563,16 @@ class Cat():
                     cat.get_ill("grief stricken", event_triggered=True, severity="major")
             
             # If major grief fails, but there are still very_high or high values, 
-            # fail to minor grief. 
-            elif very_high_values or high_values:
+            # it can fail to to minor grief. If they have a family relation, bypass the roll. 
+            elif (very_high_values or high_values) and \
+                    (family_relation != "general" or not int(random() * 5)):
             
                 grief_type = "minor"
                 
-                # These minor grief message will be applied as throughts. 
+                # These minor grief message will be applied as thoughts. 
                 minor_grief_messages = (
                             "Told a fond story at r_c's vigil",
-                            "Bargins with StarClan, begging them to send r_c back",
+                            "Bargains with StarClan, begging them to send r_c back",
                             "Sat all night at r_c's vigil",
                             "Will never forget r_c",
                             "Prays that r_c is safe in StarClan",
@@ -582,6 +583,7 @@ class Cat():
                 if body: 
                     minor_grief_messages += (
                         "Helped bury r_c, leaving {PRONOUN/r_c/poss} favorite prey at the grave",
+                        "Slips out of camp to visit r_c's grave"
                     )
 
                 
