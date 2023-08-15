@@ -133,7 +133,7 @@ class Sprites():
             'mackerelcolours', 'classiccolours', 'sokokecolours', 'agouticolours', 'singlestripecolours', 
             'shadersnewwhite', 'lineartdead', 'tortiepatchesmasks', 
             'medcatherbs', 'lineartdf', 'lightingnew', 'fademask',
-            'fadestarclan', 'fadedarkforest'
+            'fadestarclan', 'fadedarkforest', 'disabilityscars', 'disabilityaccs'
 
         ]:
             if 'lineart' in x and game.config['fun']['april_fools']:
