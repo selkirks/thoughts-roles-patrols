@@ -135,6 +135,7 @@ class Pelt():
                  white_patches:str=None,
                  eye_color:str="BLUE",
                  eye_colour2:str=None,
+                 lazy_eye:str=None,
                  tortiebase:str=None,
                  tortiecolour:str=None,
                  pattern:str=None,
@@ -160,6 +161,7 @@ class Pelt():
         self.white_patches = white_patches
         self.eye_colour = eye_color
         self.eye_colour2 = eye_colour2
+        self.lazy_eye = lazy_eye
         self.tortiebase = tortiebase
         self.pattern = pattern
         self.tortiepattern = tortiepattern
@@ -325,6 +327,12 @@ class Pelt():
             elif self.eye_colour in Pelt.green_eyes:
                 eye_choice = choice([Pelt.yellow_eyes, Pelt.blue_eyes])
                 self.eye_colour2 = choice(eye_choice)
+
+        lazy = random.randint(0, 50)
+        if lazy == 0:
+            self.lazy_eye = self.eye_colour
+            if self.eye_colour2 != None:
+                self.lazy_eye = self.eye_colour2
 
     def pattern_color_inheritance(self, parents: tuple=(), gender="female"):
         # setting parent pelt categories

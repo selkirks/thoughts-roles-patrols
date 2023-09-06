@@ -127,7 +127,7 @@ class Sprites():
 
         for x in [
             'lineart', 'singlecolours', 'speckledcolours', 'tabbycolours',
-            'whitepatches', 'eyes', 'eyes2', 'skin', 'scars', 'missingscars',
+            'whitepatches', 'eyes', 'eyes2', 'lazyeyes', 'skin', 'scars', 'missingscars',
             'collars', 'bellcollars', 'bowcollars', 'nyloncollars',
             'bengalcolours', 'marbledcolours', 'rosettecolours', 'smokecolours', 'tickedcolours', 
             'mackerelcolours', 'classiccolours', 'sokokecolours', 'agouticolours', 'singlestripecolours', 
@@ -160,11 +160,13 @@ class Sprites():
                 'DARKBLUE', 'GREY', 'CYAN', 'EMERALD', 'HEATHERBLUE', 'SUNLITICE']):
             self.make_group('eyes', (a, 0), f'eyes{i}')
             self.make_group('eyes2', (a, 0), f'eyes2{i}')
+            self.make_group('lazyeyes', (a, 0), f'lazyeyes{i}')
         for a, i in enumerate(
                 ['COPPER', 'SAGE', 'COBALT', 'PALEBLUE', 'BRONZE', 'SILVER',
                 'PALEYELLOW', 'GOLD', 'GREENYELLOW']):
             self.make_group('eyes', (a, 1), f'eyes{i}')
             self.make_group('eyes2', (a, 1), f'eyes2{i}')
+            self.make_group('lazyeyes', (a, 1), f'lazyeyes{i}')
 
         # white patches
         for a, i in enumerate(['FULLWHITE', 'ANY', 'TUXEDO', 'LITTLE', 'COLOURPOINT', 'VAN', 'ANYTWO',
