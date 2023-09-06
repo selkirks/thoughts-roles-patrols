@@ -3,6 +3,7 @@ from random import choice, randint, sample, random, choices, getrandbits, randra
 from typing import Dict, List, Any
 import os.path
 import itertools
+import sys
 
 from .history import History
 from .skills import CatSkills
@@ -206,10 +207,14 @@ class Cat():
         self.permanent_condition = {}
         self.df = False
         self.experience_level = None
-        self.no_kits = False
         
+        # Various behavior toggles
+        self.no_kits = False
+        self.no_mates = False
+        self.no_retire = False
         self.prevent_fading = False  # Prevents a cat from fading.
-        self.faded_offspring = []  # Stores of a list of faded offspring, for family page purposes.
+        
+        self.faded_offspring = []  # Stores of a list of faded offspring, for relation tracking purposes
 
         self.faded = faded  # This is only used to flag cat that are faded, but won't be added to the faded list until
         # the next save.
@@ -371,6 +376,15 @@ class Cat():
 
     def __repr__(self):
         return "CAT OBJECT:" + self.ID
+    
+    def __eq__(self, other):
+        if not isinstance(other, Cat):
+            return False
+        
+        return self.ID == other.ID
+    
+    def __hash__(self):
+        return hash(self.ID)
 
     @property
     def mentor(self):
@@ -395,8 +409,6 @@ class Cat():
 
         body - defaults to True, use this to mark if the body was recovered so
         that grief messages will align with body status
-
-        died_by_condition - defaults to False, use this to mark if the cat is dying via a condition.
 
         May return some additional text to add to the death event.
         """
@@ -1331,8 +1343,8 @@ class Cat():
     def relationship_interaction(self):
         """Randomly choose a cat of the Clan and have a interaction with them."""
         # if the cat has no relationships, skip
-        if not self.relationships or len(self.relationships) < 1:
-            return
+        #if not self.relationships or len(self.relationships) < 1:
+        #    return
 
         cats_to_choose = [iter_cat for iter_cat in Cat.all_cats.values() if iter_cat.ID != self.ID and \
                           not iter_cat.outside and not iter_cat.exiled and not iter_cat.dead]
@@ -2024,17 +2036,30 @@ class Cat():
     def is_potential_mate(self,
                           other_cat: Cat,
                           for_love_interest: bool = False,
-                          age_restriction: bool = True):
+                          age_restriction: bool = True,
+                          first_cousin_mates:bool = False):
         """
             Checks if this cat is potential mate for the other cat.
             There are no restrictions if the current cat already has a mate or not (this allows poly-mates).
         """
+        
+        try:
+            first_cousin_mates = game.clan.clan_settings["first cousin mates"]
+        except:
+            if 'unittest' not in sys.modules:
+                raise
+                
+        
         # just to be sure, check if it is not the same cat
         if self.ID == other_cat.ID:
             return False
+        
+        #No Mates Check
+        if self.no_mates or other_cat.no_mates:
+            return False
 
         # Inheritance check
-        if self.is_related(other_cat, game.settings["first cousin mates"]):
+        if self.is_related(other_cat, first_cousin_mates):
             return False
 
         # check exiled, outside, and dead cats
@@ -2048,8 +2073,10 @@ class Cat():
 
             # the +1 is necessary because both might not already aged up
             # if only one is aged up at this point, later they are more moons apart than the setting defined
-            if self.age != other_cat.age and abs(self.moons - other_cat.moons) > game.config["mates"]["age_range"] + 1:
-                return False
+            # game_config boolian "override_same_age_group" disables the same-age group check.
+            if game.config["mates"].get("override_same_age_group", False) or self.age != other_cat.age:
+                if abs(self.moons - other_cat.moons) > game.config["mates"]["age_range"] + 1:
+                    return False
 
         age_restricted_ages = ["newborn", "kitten", "adolescent"]
         if self.age in age_restricted_ages or other_cat.age in age_restricted_ages:
@@ -2057,8 +2084,14 @@ class Cat():
                 return False
 
         # check for mentor
-        is_former_mentor = (other_cat.ID in self.former_apprentices or self.ID in other_cat.former_apprentices or other_cat.ID in self.apprentice or self.ID in other_cat.apprentice)
-        if is_former_mentor and not game.settings['romantic with former mentor']:
+        
+        # Current mentor
+        if other_cat.ID in self.apprentice or self.ID in other_cat.apprentice:
+            return False
+        
+        #Former mentor
+        is_former_mentor = (other_cat.ID in self.former_apprentices or self.ID in other_cat.former_apprentices)
+        if is_former_mentor and not game.clan.clan_settings['romantic with former mentor']:
             return False
 
         return True
@@ -2089,6 +2122,7 @@ class Cat():
                 self_relationship.trust -= 10
                 self_relationship.mate = False
                 if fight:
+                    self_relationship.romantic_love -= 20
                     self_relationship.platonic_like -= 30
 
             if not other_cat.dead:
@@ -2101,6 +2135,7 @@ class Cat():
                 other_relationship.trust -= 10
                 other_relationship.mate = False
                 if fight:
+                    self_relationship.romantic_love -= 20
                     other_relationship.platonic_like -= 30
 
         self.mate.remove(other_cat.ID)
@@ -2365,7 +2400,7 @@ class Cat():
         direct_related = cat1.is_sibling(cat2) or cat1.is_parent(cat2) or cat2.is_parent(cat1)
         indirect_related = cat1.is_uncle_aunt(cat2) or \
                            cat2.is_uncle_aunt(cat1)
-        if not game.settings["first cousin mates"]:
+        if not game.clan.clan_settings["first cousin mates"]:
             indirect_related = indirect_related or cat1.is_cousin(cat2)
         related = direct_related or indirect_related
 
@@ -2450,7 +2485,7 @@ class Cat():
             mediator.experience += max(randint(1, 6), 1)
 
         no_romantic_mentor = False
-        if not game.settings['romantic with former mentor']:
+        if not game.clan.clan_settings['romantic with former mentor']:
             if cat2.ID in cat1.former_apprentices or cat1.ID in cat2.former_apprentices:
                 no_romantic_mentor = True
 
@@ -2861,6 +2896,8 @@ class Cat():
                 "dead": self.dead,
                 "paralyzed": self.pelt.paralyzed,
                 "no_kits": self.no_kits,
+                "no_retire": self.no_retire,
+                "no_mates": self.no_mates,
                 "exiled": self.exiled,
                 "pelt_name": self.pelt.name,
                 "pelt_color": self.pelt.colour,

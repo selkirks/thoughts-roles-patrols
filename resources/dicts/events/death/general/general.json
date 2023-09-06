@@ -16,10 +16,7 @@
         "history_text": {
             "reg_death": "m_c was secretly murdered by r_c.",
             "reg_murder_unrevealed": "m_c was murdered by an unknown killer."
-        },
-        "other_cat_skill": [
-            "CLEVER,1"
-        ]
+        }
     },
     {
         "camp": "any",
@@ -740,7 +737,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "death_text": "m_c is suddently struck by a sharp pain in their chest. , {PRONOUN/m_c/subject}",
+        "death_text": "m_c is suddenly struck by a sharp pain in their chest. {PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} found later that day, cold.",
         "history_text": {
             "reg_death": "m_c died of a heart attack."
         },

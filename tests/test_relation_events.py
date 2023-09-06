@@ -63,7 +63,8 @@ class SameSexAdoptions(unittest.TestCase):
             second_parent=cat2,
             single_parentage=single_parentage,
             allow_affair=allow_affair,
-            same_sex_birth=False
+            same_sex_birth=False,
+            same_sex_adoption=True
         )
         self.assertTrue(can_have_kits)
         self.assertTrue(kits_are_adopted)
@@ -118,7 +119,7 @@ class Mates(unittest.TestCase):
         relationship2.platonic_like = 100
 
         # then
-        self.assertFalse(Romantic_Events.check_if_new_mate(relationship1,relationship2,cat1,cat2)[0])
+        self.assertFalse(Romantic_Events.check_if_new_mate(cat1,cat2)[0])
 
     def test_platonic_apprentice_mating(self):
         # given
@@ -137,7 +138,7 @@ class Mates(unittest.TestCase):
         relationship2.platonic_like = 100
 
         # then
-        self.assertFalse(Romantic_Events.check_if_new_mate(relationship1,relationship2,cat1,cat2)[0])
+        self.assertFalse(Romantic_Events.check_if_new_mate(cat1,cat2)[0])
 
     def test_romantic_kitten_mating(self):
         # given
@@ -156,7 +157,7 @@ class Mates(unittest.TestCase):
         relationship2.romantic_love = 100
 
         # then
-        self.assertFalse(Romantic_Events.check_if_new_mate(relationship1,relationship2,cat1,cat2)[0])
+        self.assertFalse(Romantic_Events.check_if_new_mate(cat1,cat2)[0])
 
     def test_romantic_apprentice_mating(self):
         # given
@@ -175,4 +176,4 @@ class Mates(unittest.TestCase):
         relationship2.romantic_love = 100
 
         # then
-        self.assertFalse(Romantic_Events.check_if_new_mate(relationship1,relationship2,cat1,cat2)[0])
+        self.assertFalse(Romantic_Events.check_if_new_mate(cat1,cat2)[0])

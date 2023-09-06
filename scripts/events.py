@@ -11,7 +11,7 @@ import random
 import traceback
 
 from scripts.cat.history import History
-from scripts.patrol import Patrol
+from scripts.patrol.patrol import Patrol
 
 import ujson
 
@@ -25,7 +25,7 @@ from scripts.events_module.relation_events import Relation_Events
 from scripts.events_module.condition_events import Condition_Events
 from scripts.events_module.death_events import Death_Events
 from scripts.events_module.freshkill_pile_events import Freshkill_Events
-from scripts.events_module.disaster_events import DisasterEvents
+#from scripts.events_module.disaster_events import DisasterEvents
 from scripts.events_module.outsider_events import OutsiderEvents
 from scripts.event_class import Single_Event
 from scripts.game_structure.game_essentials import game
@@ -239,7 +239,7 @@ class Events:
         GenerateEvents.clear_loaded_events()
 
         # autosave
-        if game.settings.get('autosave') is True and game.clan.age % 5 == 0:
+        if game.clan.clan_settings.get('autosave') and game.clan.age % 5 == 0:
             try:
                 game.save_cats()
                 game.clan.save_clan()
@@ -273,7 +273,7 @@ class Events:
                 game.cur_events_list.append(
                     Single_Event(text, "other_clans", cat.ID))
 
-        if game.settings['become_mediator']:
+        if game.clan.clan_settings['become_mediator']:
             # Note: These chances are large since it triggers every moon.
             # Checking every moon has the effect giving older cats more chances to become a mediator
             _ = game.config["roles"]["become_mediator_chances"]
@@ -615,7 +615,7 @@ class Events:
         text = [
             'After a long journey, m_c has finally returned home to c_n.',
             'm_c was found at the border, tired, but happy to be home.',
-            "m_c strides into camp, much to the everyone's suprise. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} home!",
+            "m_c strides into camp, much to the everyone's surprise. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} home!",
             "{PRONOUN/m_c/subject/CAP} met so many friends on {PRONOUN/m_c/poss} jouney, but c_n is where m_c truly belongs. With a tearful goodbye, " 
                 "{PRONOUN/m_c/subject} {VERB/m_c/return/returns} home."
         ]
@@ -664,7 +664,7 @@ class Events:
         """
         TODO: DOCS
         """
-        if game.settings["fading"] and not cat.prevent_fading \
+        if game.clan.clan_settings["fading"] and not cat.prevent_fading \
                 and cat.ID != game.clan.instructor.ID and not cat.faded:
 
             age_to_fade = game.config["fading"]["age_to_fade"]
@@ -815,7 +815,7 @@ class Events:
 
         # relationships have to be handled separately, because of the ceremony name change
         if not cat.dead or cat.outside:
-            Relation_Events.handle_relationships(cat)
+           Relation_Events.handle_relationships(cat)
 
         # now we make sure ill and injured cats don't get interactions they shouldn't
         if cat.is_ill() or cat.is_injured():
@@ -1016,7 +1016,7 @@ class Events:
                 game.clan.medicine_cat = cat
 
             # retiring to elder den
-            if cat.status in ['warrior', 'deputy'] and len(cat.apprentice) < 1 and cat.moons > 114:
+            if not cat.no_retire and cat.status in ['warrior', 'deputy'] and len(cat.apprentice) < 1 and cat.moons > 114:
                 # There is some variation in the age. 
                 if cat.moons > 140 or not int(random.random() * (-0.7 * cat.moons + 100)):
                     if cat.status == 'deputy':
@@ -1126,7 +1126,7 @@ class Events:
                 "medicine cat apprentice"
             ]:
 
-                if game.settings["12_moon_graduation"]:
+                if game.clan.clan_settings["12_moon_graduation"]:
                     _ready = cat.moons >= 12
                 else:
                     _ready = (cat.experience_level not in ["untrained", "trainee"] and
@@ -1134,7 +1134,7 @@ class Events:
                              or cat.moons >= game.config["graduation"]["max_apprentice_age"][cat.status]
 
                 if _ready:
-                    if game.settings["12_moon_graduation"]:
+                    if game.clan.clan_settings["12_moon_graduation"]:
                         preparedness = "prepared"
                     else:
                         if cat.moons == game.config["graduation"]["min_graduating_age"]:
@@ -1576,9 +1576,8 @@ class Events:
             # Otherwise, other_cat is None
             other_cat = None
 
-        if not int(
-                random.random() * chance
-        ) and cat.age != 'kitten' and cat.age != 'adolescent' and not self.new_cat_invited:
+        if not int(random.random() * chance) and \
+                cat.age != 'kitten' and cat.age != 'adolescent' and not self.new_cat_invited:
             self.new_cat_invited = True
 
             enemy_clan = None
@@ -1682,7 +1681,7 @@ class Events:
             return True
 
         # disaster death chance
-        if game.settings.get('disasters'):
+        if game.clan.clan_settings.get('disasters'):
             if not random.getrandbits(9):  # 1/512
                 self.handle_mass_extinctions(cat)
                 return True
@@ -2064,7 +2063,7 @@ class Events:
         """Checks if a new deputy needs to be appointed, and appointed them if needed. """
         if (not game.clan.deputy or game.clan.deputy.dead
                 or game.clan.deputy.outside or game.clan.deputy.status == "elder"):
-            if game.settings.get('deputy'):
+            if game.clan.clan_settings.get('deputy'):
 
                 # This determines all the cats who are eligible to be deputy.
                 possible_deputies = list(
