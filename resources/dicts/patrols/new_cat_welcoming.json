@@ -2254,5 +2254,348 @@
                 "outsider_rep": -2
             }
         ]
+    },
+	{
+        "patrol_id": "gen_bord_abandonedkittypet4",
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["border"],
+        "tags": ["new_cat"],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {
+            "normal adult": [1, 6]
+        },
+        "weight": 20,
+        "intro_text": "The patrol hears a cat begging for their housefolk to come back, just barely legible over the sound of a monster speeding away.",
+        "decline_text": "p_l decides it's none of {PRONOUN/p_l/poss} business, and resumes {PRONOUN/p_l/poss} patrol.",
+        "chance_of_success": 30,
+        "success_outcomes": [
+            {
+                "text": "p_l finds a kittypet collapsed by the Thunderpath, wailing for their housefolk. p_l comforts them, asking why they were left here. The only explanation they have is that they're sick.. perhaps they were too much of a burden? p_l offers them a place in c_n, at least until they're better. They tentatively accept, looking longingly at the Thunderpath as they're led away.",
+                "exp": 15,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "new_cat": [
+                    ["kittypet", "backstory:kittypet4"]
+                ],
+                "outsider_rep": 1,
+                "injury": [
+                    {
+                        "cats": ["n_c:0"],
+                        "injuries": ["sickness"],
+                        "no_results": true
+                    }
+                ]
+            },
+            {
+                "text": "p_l finds a kittypet collapsed by the Thunderpath, wailing for their housefolk. p_l comforts them, asking why they were left here. The kittypet can only shake their head, explaining in a very kitten-like tone that they don't know. Still they're welcomed to come and join c_n with ease.",
+                "exp": 15,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "new_cat": [
+                    ["kittypet", "backstory:kittypet4"]
+                ],
+                "outsider_rep": 1,
+                "injury": [
+                    {
+                        "cats": ["n_c:0"],
+                        "injuries": ["kittenspace"],
+                        "no_results": true
+                    }
+                ]
+            }			
+        ],
+        "fail_outcomes": [
+            {
+                "text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/discover/discovers} the cooling body of a kittypet; it seems they attempted to run after their Twolegs, but was run over by another monster. p_l silently sends a prayer for the kittypet, and can't help but to curse the Twolegs who abandoned such a loyal cat.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": -1,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ],
+        "antag_fail_outcomes": [
+            {
+                "text": "The kittypet tries to make a run for it, when suddenly they collapse! When p_l comes closer, {PRONOUN/p_l/subject} can smell the sickness coming off the kittypet's pelt. {PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} to resume the border patrol - it's not {PRONOUN/p_l/poss} problem anymore.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": -1
+            }
+        ],
+        "antag_success_outcomes": [
+            {
+                "text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/tell/tells} the kittypet that they aren't welcome here, but after {PRONOUN/p_l/subject} {VERB/p_l/hear/hears} that the kittypet is ill, {PRONOUN/p_l/subject} {VERB/p_l/agree/agrees} to carry them to a nearby Twoleg den to find help.",
+                "exp": 15,
+                "weight": 20,
+                "outsider_rep": -2
+            }
+        ]
+    },
+	{
+        "patrol_id": "gen_bord_abandonedkittypet5",
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["border"],
+        "tags": ["new_cat"],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {
+            "normal adult": [1, 6]
+        },
+        "weight": 20,
+        "intro_text": "The patrol hears a cat begging for their housefolk to come back, just barely legible over the sound of a monster speeding away.",
+        "decline_text": "p_l decides it's none of {PRONOUN/p_l/poss} business, and resumes {PRONOUN/p_l/poss} patrol.",
+        "chance_of_success": 30,
+        "success_outcomes": [
+            {
+                "text": "At the Thunderpath p_l comes across a kittypet wailing for their housefolk to please come back. Upon seeing the patrol the kittypet fluffs up, racing away before anyone can say anything.",
+                "exp": 15,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "new_cat": [
+                    ["kittypet", "meeting"]
+                ],
+                "outsider_rep": 1,
+                "injury": [
+                    {
+                        "cats": ["n_c:0"],
+                        "injuries": ["sickness"],
+                        "no_results": true
+                    }
+                ]
+            },
+            {
+                "text": "p_l finds a kittypet collapsed by the Thunderpath, wailing for their housefolk. p_l comforts them, asking why they were left here. The kittypet can only shake their head, clearly not in the state of mind to understand or explain. p_l invites them back to join c_n.",
+                "exp": 15,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "new_cat": [
+                    ["kittypet", "backstory:kittypet4"]
+                ],
+                "outsider_rep": 1,
+                "injury": [
+                    {
+                        "cats": ["n_c:0"],
+                        "injuries": ["regressed"],
+                        "no_results": true
+                    }
+                ]
+            }			
+        ],
+        "fail_outcomes": [
+            {
+                "text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/discover/discovers} the cooling body of a kittypet; it seems they attempted to run after their Twolegs, but was run over by another monster. p_l silently sends a prayer for the kittypet, and can't help but to curse the Twolegs who abandoned such a loyal cat.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": -1,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ],
+        "antag_fail_outcomes": [
+            {
+                "text": "The kittypet tries to make a run for it, when suddenly they collapse! When p_l comes closer, {PRONOUN/p_l/subject} can smell the sickness coming off the kittypet's pelt. {PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} to resume the border patrol - it's not {PRONOUN/p_l/poss} problem anymore.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": -1
+            }
+        ],
+        "antag_success_outcomes": [
+            {
+                "text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/tell/tells} the kittypet that they aren't welcome here, but after {PRONOUN/p_l/subject} {VERB/p_l/hear/hears} that the kittypet is ill, {PRONOUN/p_l/subject} {VERB/p_l/agree/agrees} to carry them to a nearby Twoleg den to find help.",
+                "exp": 15,
+                "weight": 20,
+                "outsider_rep": -2
+            }
+        ]
+    },
+	{
+        "patrol_id": "gen_bord_abandonedkittypet6",
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["border"],
+        "tags": ["new_cat"],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {
+            "normal adult": [1, 6]
+        },
+        "weight": 20,
+        "intro_text": "The patrol hears a cat begging for their housefolk to come back, just barely legible over the sound of a monster speeding away.",
+        "decline_text": "p_l decides it's none of {PRONOUN/p_l/poss} business, and resumes {PRONOUN/p_l/poss} patrol.",
+        "chance_of_success": 30,
+        "success_outcomes": [
+            {
+                "text": "p_l finds a kittypet collapsed by the Thunderpath, wailing for their housefolk. p_l comforts them, asking why they were left here. The kittypet can only shake their head, seemingly unable to find the words to explain, to the patrol's relief they're at least willing to follow them back to c_n even casting glances back longingly.",
+                "exp": 15,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "new_cat": [
+                    ["kittypet", "backstory:kittypet4"]
+                ],
+                "outsider_rep": 1,
+                "injury": [
+                    {
+                        "cats": ["n_c:0"],
+                        "injuries": ["regressed"],
+                        "no_results": true
+                    }
+                ]
+            },
+            {
+                "text": "p_l finds a kittypet collapsed by the Thunderpath, wailing for their housefolk. On approch {PRONOUN/p_l/subject} only barely {VERB/p_l/dodge/dodges} the snap of their teeth as the kittypet whirls on {PRONOUN/p_l/object}. The reason for the defensiveness is soon clear when r_c gasps spying the litter that the kittypet shields in a carboard box. After calming and talking with the kittepet, p_l sends r_c back to c_n to let them know to prepare the Nursery for some new arrivals.",
+                "exp": 15,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "new_cat": [
+                    ["kittypet", "age:has_kits"],
+                    ["litter", "parent:0", "status:kitten"]
+                ],
+                "outsider_rep": 1,
+                "injury": [
+                    {
+                        "cats": ["n_c:0"],
+                        "injuries": ["sickness"],
+                        "no_results": true
+                    }
+                ]
+            }			
+        ],
+        "fail_outcomes": [
+            {
+                "text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/discover/discovers} the cooling body of a kittypet; it seems they attempted to run after their Twolegs, but was run over by another monster. p_l silently sends a prayer for the kittypet, and can't help but to curse the Twolegs who abandoned such a loyal cat.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": -1,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ],
+        "antag_fail_outcomes": [
+            {
+                "text": "The kittypet tries to make a run for it, when suddenly they collapse! When p_l comes closer, {PRONOUN/p_l/subject} can smell the sickness coming off the kittypet's pelt. {PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} to resume the border patrol - it's not {PRONOUN/p_l/poss} problem anymore.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": -1
+            }
+        ],
+        "antag_success_outcomes": [
+            {
+                "text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/tell/tells} the kittypet that they aren't welcome here, but after {PRONOUN/p_l/subject} {VERB/p_l/hear/hears} that the kittypet is ill, {PRONOUN/p_l/subject} {VERB/p_l/agree/agrees} to carry them to a nearby Twoleg den to find help.",
+                "exp": 15,
+                "weight": 20,
+                "outsider_rep": -2
+            }
+        ]
     }
 ]
