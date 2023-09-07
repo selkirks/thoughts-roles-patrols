@@ -1092,7 +1092,15 @@
 			{
 				"name": "sleep paralysis",
 				"chance": 45
-			}
+			},
+            {
+                "name": "tics",
+                "chance": 20
+            },
+            {
+                "name": "tic attack",
+                "chance": 10
+            }
         ],
         "herbs": [
             "chamomile",
@@ -1357,7 +1365,7 @@
             }
         ],
         "herbs":[]
-    },		
+    },	
     "snow vision": {
         "severity": "minor",
         "congenital": "always",

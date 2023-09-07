@@ -452,7 +452,7 @@
             "r_c talks to m_c, discussing together why {PRONOUN/m_c/subject} {VERB/m_c/have/has} been feeling so listless and uncomfortable around camp recently.",
             "No matter what m_c seems to do it just feels like something is off this moon.",
             "Frustrated m_c snaps at a clanmate to leave {PRONOUN/m_c/object} alone, only to regret it and apologise heartbeats later. Something is off with {PRONOUN/m_c/object}."
-	]
+	    ]
     },
     "starwalker": {
 	"special interest": [
@@ -669,7 +669,19 @@
             "In the early hours of the morning m_c goes to r_c to ask {PRONOUN/r_c/object} if there's anything {PRONOUN/m_c/subject} can do to get rid of the monsters stalking {PRONOUN/m_c/poss} waking up.",
             "It seems like cats of the Dark Forest have found their way into the camp, m_c's been telling {PRONOUN/m_c/poss} clanmates of them haunting {PRONOUN/m_c/poss} sleep.",
             "Strange monsters have been stalking around m_c."
-	]
+	],
+    "tics": [
+        "m_c's worries swirl around {PRONOUN/m_c/poss} head and sink deeply into {PRONOUN/m_c/poss} heart. Because of this, {PRONOUN/m_c/object} sometimes {VERB/m_c/move/moves} without thinking about it. {PRONOUN/m_c/subject/CAP} go to r_c about it and are assured that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} having tics, not a seizure.",
+        "m_c worries that {PRONOUN/m_c/poss} friends hate {PRONOUN/m_c/object}, and that worry is worsened by {PRONOUN/m_c/object} occasionally flicking {PRONOUN/m_c/poss} tail or squeaking like a mouse.",
+        "Too many of m_c's worries bundle in {PRONOUN/m_c/poss} heart so {PRONOUN/m_c/poss} body starts ticing.",
+        "m_c has been more anxious lately and it resulted in {PRONOUN/m_c/object} having tics."
+    ],
+    "tic attack": [
+        "After narrowly avoiding a panic attack, m_c has started rapidly moving and speaking without meaning to.",
+        "After narrowly avoiding an anxiety attack, m_c has started rapidly moving and speaking without meaning to.",
+        "It seems that m_c's anxiety has been too much for {PRONOUN/m_c/object} lately and {PRONOUN/m_c/subject} {VERB/m_c/have/has} gotten a tic attack.",
+        "Much to m_c's horror, {PRONOUN/m_c/poss} friends all see {PRONOUN/m_c/object} start to have a tic attack."
+    ]
     },
     "constant roaming pain": {
         "joint pain": [
