@@ -418,9 +418,9 @@ class Condition_Events():
                         if len(possible_conditions) > 0 and not int(random.random() * 40):
                             perm_condition = random.choice(possible_conditions)
                             if perm_condition == "lazy eye":
-                                cat.pelt.lazy_eye = self.eye_colour
+                                cat.pelt.lazy_eye = cat.pelt.eye_colour
                                 if cat.eye_colour2 != None:
-                                    cat.pelt.lazy_eye = self.eye_colour2
+                                    cat.pelt.lazy_eye = cat.pelt.eye_colour2
                         else:
                             return perm_condition
                 except KeyError:
