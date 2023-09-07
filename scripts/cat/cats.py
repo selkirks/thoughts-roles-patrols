@@ -1737,6 +1737,10 @@ class Cat():
             cat.pelt.scars.append('NOPAW')
         elif new_condition == "born without a tail":
             cat.pelt.scars.append('NOTAIL')
+        elif new_condition == "lazy eye":
+            cat.pelt.lazy_eye = self.eye_colour
+            if cat.eye_colour2 != None:
+                cat.pelt.lazy_eye = self.eye_colour2
 
         self.get_permanent_condition(new_condition, born_with=True)
 

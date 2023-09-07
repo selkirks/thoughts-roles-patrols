@@ -185,6 +185,10 @@
 			"r_c's noticed that after recovering from {PRONOUN/m_c/poss} head damage m_c's been getting overwhelmed by things around the camp. After some talk it's determined that {PRONOUN/m_c/poss} senses have become disrupted.",
 			"While m_c's recovery has gone smoothly r_c's worried about how m_c will adjust to the altered way that {PRONOUN/m_c/poss} senses now work.",
 			"m_c's noticed that after recovering from {PRONOUN/m_c/poss} damaged head {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} seem to react to sensation in the same way {PRONOUN/m_c/subject} did before."
+		],
+		"lazy eye": [
+			"While it's relieving that m_c's head damage has left minimal damage, r_c is still worried about {PRONOUN/m_c/poss} new lazy eye.",
+			"m_c's a bit annoyed by the fuss that {PRONOUN/m_c/poss} clanmates are making about {PRONOUN/m_c/poss} eye, it's not hurting or anything so {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} see why it should be a problem."
 		]
     },
     "damaged eyes": {
@@ -202,7 +206,11 @@
             "r_c tells m_c that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} lucky to have regained any eyesight at all and hopefully, {PRONOUN/m_c/poss} sight won't degrade further.",
             "m_c stalks out the medicine den, nearly running into another cat, which only increases {PRONOUN/m_c/poss} frustration at the news that {PRONOUN/m_c/poss} eyesight won't be getting better.",
             "m_c closes {PRONOUN/m_c/poss} eyes and after a few moments, opens them again, trying to get a sense of just how bad {PRONOUN/m_c/poss} eyesight is now."
-        ]
+        ],
+		"lazy eye": [
+			"r_c fusses gently over m_c, checking that {PRONOUN/m_c/poss} eye isn't hurting or anything. For now it looks like it's purely a surface thing.",
+			"After m_c's eye recovers {PRONOUN/m_c/subject} {VERB/m_c/find/finds} {PRONOUN/m_c/self} worrying about the new lazy eye."
+		]
     },
     "rat bite": {
         "weak leg": [

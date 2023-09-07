@@ -161,10 +161,10 @@
 		"Nobody knew silence could be so loud until m_c arrived."
 	],
 	"jellyfish joints": [
-	"m_c curses {PRONOUN/m_c/poss} days of showing off {PRONOUN/m_c/poss} bendy paws in kithood, as now {PRONOUN/m_c/poss} joints ache, and r_c has told {PRONOUN/m_c/object} that {PRONOUN/m_c/subject}{VERB/m_c/'s/'re} hypermobile. Meaning that there is no changing it.",
-	"After moons of seeing m_c bounce around painlessly, r_c calls {PRONOUN/m_c/object} into the medicine cat den to explain that the reason {PRONOUN/m_c/poss} joints have been hurting {PRONOUN/m_c/subject} is that maybe {PRONOUN/m_c/poss} flexible joints <i>weren't</i> the painless kind.",
-	"m_c's clanmates look on when {PRONOUN/m_c/poss} joints bend in a way that most cats could only dream of.",
-	"m_c has recently been informed that most cats paws <i>don't</i> bend that way!"
+		"m_c curses {PRONOUN/m_c/poss} days of showing off {PRONOUN/m_c/poss} bendy paws in kithood, as now {PRONOUN/m_c/poss} joints ache, and r_c has told {PRONOUN/m_c/object} that {PRONOUN/m_c/subject}{VERB/m_c/'s/'re} hypermobile. Meaning that there is no changing it.",
+		"After moons of seeing m_c bounce around painlessly, r_c calls {PRONOUN/m_c/object} into the medicine cat den to explain that the reason {PRONOUN/m_c/poss} joints have been hurting {PRONOUN/m_c/subject} is that maybe {PRONOUN/m_c/poss} flexible joints <i>weren't</i> the painless kind.",
+		"m_c's clanmates look on when {PRONOUN/m_c/poss} joints bend in a way that most cats could only dream of.",
+		"m_c has recently been informed that most cats paws <i>don't</i> bend that way!"
 	],
     "loose body": [
 		"r_c is getting a little tired of treating m_c's painful, loose and clicky joints, but {PRONOUN/r_c/subject} {VERB/m_c/realise/realises} that theres a reason m_c is in {PRONOUN/r_c/poss} den so often.",
@@ -192,5 +192,11 @@
 		"r_c has noticed that little m_c is often scratching at {PRONOUN/m_c/self} throughout the season, it would seem that {PRONOUN/m_c/subject} {VERB/m_c/have/has} a near constant recurring rash.",
 		"No matter how much care m_c takes to follow the instructions given to {PRONOUN/m_c/object} by the medicine cat, nothing seems to keep the rash away.",
 		"m_c's a particularly grumpy kitten, mostly because {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} constantly itching and in pain from a rash that refuses to leave."
+	],
+	"lazy eye": [
+		"While looking the same as any other kit in the nursery there's a bit of a shock when m_c's eyes finally open. r_c's quick to reassure the parents that a lazy eye isn't anything to worry too much about.",
+		"Even if m_c's eye seems a little bit different, it doesn't really bother {PRONOUN/m_c/object}.",
+		"m_c doesn't understand the fuss that everyone keeps making about {PRONOUN/m_c/poss} eye. {PRONOUN/m_c/poss/CAP} {VERB/m_c/think/thinks} it makes {PRONOUN/m_c/object} look cool.",
+		"Despite been as healthy as any other kitten in the Nursery, m_c's been struggling to navigate and is dismayed to hear that {PRONOUN/m_c/poss} eyesight might never be as clear as {PRONOUN/m_c/poss} clanmates."
 	]
 }
