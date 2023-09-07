@@ -111,9 +111,14 @@
             "m_c has noticed {PRONOUN/m_c/poss} vision growing blurrier and blurrier."
         ],
 		"headache": [
-				"While it's only a minor irritation at best, m_c still goes to talk to r_c about the dull ache in {PRONOUN/m_c/poss} head.",
-				"With m_c's bad eye and all the squinting {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} done it's no wonder {PRONOUN/m_c/poss} head is starting to complain.",
-				"m_c knows the day isn't starting well when there's a dull thumping in {PRONOUN/m_c/poss} head."
+			"While it's only a minor irritation at best, m_c still goes to talk to r_c about the dull ache in {PRONOUN/m_c/poss} head.",
+			"With m_c's bad eye and all the squinting {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} done it's no wonder {PRONOUN/m_c/poss} head is starting to complain.",
+			"m_c knows the day isn't starting well when there's a dull thumping in {PRONOUN/m_c/poss} head."
+		],
+		"lazy eye": [
+			"r_c's noticed that m_c's bad eye has been falling out of focus more and more. It would seem it's gone lazy.",
+			"m_c's fur bristles as yet another cat thoughtlessly asks about the state of {PRONOUN/m_c/poss} bad eye and why it looks a bit 'funny'.",
+			"Sometimes m_c feels a little bit insecure about {PRONOUN/m_c/poss} bad eye and how it doesn't quite focus as well."
 		]
     },
     "failing eyesight": {

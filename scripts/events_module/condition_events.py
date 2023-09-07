@@ -395,7 +395,7 @@ class Condition_Events():
             "recurring shock", "lasting grief", "adhd", "heavy soul", "starwalker", "ocd", "antisocial", "anxiety", 
             "constant roaming pain", "strong soul", "otherworldly mind", "kitten regressor", "puppy regressor", "snow vision",
             "echoing shock", "irritable bowels", "loose body", "longcough", "burning light", "disrupted senses", 
-            "constant nightmares", "constant rash", "jellyfish joints", "partial vision loss", "lazy eye"
+            "constant nightmares", "constant rash", "jellyfish joints", "lazy eye"
             
         ]
 
@@ -660,9 +660,9 @@ class Condition_Events():
         event_list = []
 
         base_condition = ["one bad eye", "failing eyesight", "partial hearing loss", "lasting grief", 
-                            "recurring shock", "echoing shock", "burning light", "partial vision loss"]
+                            "recurring shock", "echoing shock", "burning light"]
         progression = [["failing eyesight", "lazy eye"], "blind", "deaf", "heavy soul", "echoing shock", 
-                            "recurring shock", "blind", "failing eyesight"]
+                            "recurring shock", "blind"]
         condition_progression = dict(zip(base_condition, progression))
 
         conditions = deepcopy(cat.permanent_condition)
