@@ -1502,6 +1502,7 @@
 		"congenital": "always",
 		"moons_until": 5,
 		"mortality": {
+			"newborn": 0,
 			"kitten": 0,
 			"adolescent": 0,
 			"young adult": 0,
@@ -1796,7 +1797,7 @@
     "lazy eye": {
         "severity": "minor",
         "congenital": "sometimes",
-        "moons_until": 2,
+        "moons_until": 1,
         "mortality": {
             "newborn": 0,
             "kitten": 0,
