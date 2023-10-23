@@ -14,6 +14,14 @@ resource_directory = "resources/dicts/events/"
 
 class GenerateEvents:
     loaded_events = {}
+    
+    INJURY_DISTRIBUTION = None
+    with open(f"resources/dicts/conditions/event_injuries_distribution.json", 'r') as read_file:
+        INJURY_DISTRIBUTION = ujson.loads(read_file.read())
+
+    INJURIES = None
+    with open(f"resources/dicts/conditions/injuries.json", 'r') as read_file:
+        INJURIES = ujson.loads(read_file.read())
 
     @staticmethod
     def get_short_event_dicts(file_path):
@@ -61,7 +69,8 @@ class GenerateEvents:
     def clear_loaded_events():
         GenerateEvents.loaded_events = {}
 
-    def generate_short_events(self, event_triggered, cat_type, biome):
+    @staticmethod
+    def generate_short_events(event_triggered, cat_type, biome):
 
         if cat_type and not biome:
             file_path = f"{resource_directory}{event_triggered}/{cat_type}.json"
@@ -124,7 +133,8 @@ class GenerateEvents:
             GenerateEvents.loaded_events[file_path] = event_list
             return event_list
 
-    def generate_ongoing_events(self, event_type, biome, specific_event=None):
+    @staticmethod
+    def generate_ongoing_events(event_type, biome, specific_event=None):
 
         file_path = f"resources/dicts/events/{event_type}/{biome}.json"
 
@@ -173,10 +183,10 @@ class GenerateEvents:
                         collateral_damage=event["collateral_damage"]
                     )
                     break
-                #print(event)
                 return event
 
-    def possible_short_events(self, cat_type=None, age=None, event_type=None):
+    @staticmethod
+    def possible_short_events(cat_type=None, age=None, event_type=None):
         event_list = []
         biome = None
 
@@ -209,15 +219,15 @@ class GenerateEvents:
         # NUTRITION this needs biome to be None so is handled separately
         elif event_type == 'nutrition':
             event_list.extend(
-                self.generate_short_events(event_type, cat_type, biome))
+                GenerateEvents.generate_short_events(event_type, cat_type, biome))
 
             if cat_type in warrior_adjacent_ranks:
                 event_list.extend(
-                    self.generate_short_events(event_type, "warrior", biome))
+                    GenerateEvents.generate_short_events(event_type, "warrior", biome))
 
             if cat_type not in excluded_from_general:
                 event_list.extend(
-                    self.generate_short_events(event_type, "general", biome))
+                    GenerateEvents.generate_short_events(event_type, "general", biome))
 
         else:
             biome = game.clan.biome.lower()
@@ -225,35 +235,36 @@ class GenerateEvents:
             # RANK SPECIFIC
             # biome specific rank specific events
             event_list.extend(
-                self.generate_short_events(event_type, cat_type, biome))
+                GenerateEvents.generate_short_events(event_type, cat_type, biome))
 
             # any biome rank specific events
             event_list.extend(
-                self.generate_short_events(event_type, cat_type, "general"))
+                GenerateEvents.generate_short_events(event_type, cat_type, "general"))
 
             # WARRIOR-LIKE
             if cat_type in warrior_adjacent_ranks:
                 # biome specific warrior events for "warrior-like" ranks
                 event_list.extend(
-                    self.generate_short_events(event_type, "warrior", biome))
+                    GenerateEvents.generate_short_events(event_type, "warrior", biome))
 
                 # any biome warrior events for "warrior-like" ranks
                 event_list.extend(
-                    self.generate_short_events(event_type, "warrior", "general"))
+                    GenerateEvents.generate_short_events(event_type, "warrior", "general"))
 
             # GENERAL
             if cat_type not in excluded_from_general:
                 # biome specific general rank events
                 event_list.extend(
-                    self.generate_short_events(event_type, "general", biome))
+                    GenerateEvents.generate_short_events(event_type, "general", biome))
 
                 # any biome general rank events
                 event_list.extend(
-                    self.generate_short_events(event_type, "general", "general"))
+                    GenerateEvents.generate_short_events(event_type, "general", "general"))
 
         return event_list
 
-    def filter_possible_short_events(self, possible_events, cat, other_cat, war, enemy_clan, other_clan, alive_kits, murder=False):
+    @staticmethod
+    def filter_possible_short_events(possible_events, cat, other_cat, war, enemy_clan, other_clan, alive_kits, murder=False, murder_reveal=False):
         final_events = []
 
         minor = []
@@ -269,7 +280,11 @@ class GenerateEvents:
             war_event = False
 
         for event in possible_events:
-
+            
+            # Normally, there is a chance to bypass skill and trait requirments. 
+            # the "skill_trait_required" tags turns this off. Lets grab this tag once, for simplicity. 
+            prevent_bypass = "skill_trait_required" in event.tags
+            
             if war_event and ("war" not in event.tags and "hostile" not in event.tags):
                 continue
             if not war and "war" in event.tags:
@@ -288,6 +303,11 @@ class GenerateEvents:
             if murder and "murder" not in event.tags:
                 continue
             if not murder and "murder" in event.tags:
+                continue
+
+            if murder_reveal and "murder_reveal" not in event.tags:
+                continue
+            if not murder_reveal and "murder_reveal" in event.tags:
                 continue
 
             # make complete leader death less likely until the leader is over 150 moons
@@ -320,7 +340,7 @@ class GenerateEvents:
                     continue
 
             # check that injury is possible
-            if event.injury in INJURIES:
+            if event.injury in GenerateEvents.INJURIES:
 
                 if event.injury == 'mangled tail' and ('NOTAIL' in cat.pelt.scars or 'HALFTAIL' in cat.pelt.scars):
                     continue
@@ -357,12 +377,12 @@ class GenerateEvents:
                     continue
             
             # check for old age
-            if "old_age" in event.tags and cat.moons < 150:
+            if "old_age" in event.tags and cat.moons < game.config["death_related"]["old_age_death_start"]:
                 continue
             # remove some non-old age events to encourage elders to die of old age more often
-            if "old_age" not in event.tags and cat.moons > 150:
-                if not int(random.random() * 2):
-                    continue
+            if "old_age" not in event.tags and cat.moons > game.config["death_related"]["old_age_death_start"] \
+                    and int(random.random() * 3):
+                continue
 
             # check other_cat status and other identifiers
             if other_cat:
@@ -380,7 +400,7 @@ class GenerateEvents:
                     continue
                 if "other_cat_elder" in event.tags and other_cat.status != "elder":
                     continue
-                if "other_cat_adult" in event.tags and other_cat.age in ["elder", "kitten", "newborn"]:
+                if "other_cat_adult" in event.tags and other_cat.age in ["senior", "kitten", "newborn"]:
                     continue
                 if "other_cat_kit" in event.tags and other_cat.status not in ['newborn', 'kitten']:
                     continue
@@ -418,13 +438,13 @@ class GenerateEvents:
                     
                 # There is a small chance to bypass the skill or trait requirments.  
                 if event.other_cat_trait and event.other_cat_skill:
-                    if not (has_trait or has_skill) and int(random.random() * trait_skill_bypass):
+                    if not (has_trait or has_skill) and (prevent_bypass or int(random.random() * trait_skill_bypass)):
                         continue
                 elif event.other_cat_trait:
-                    if not has_trait and int(random.random() * trait_skill_bypass):
+                    if not has_trait and (prevent_bypass or int(random.random() * trait_skill_bypass)):
                         continue
                 elif event.other_cat_skill:
-                    if not has_skill and int(random.random() * trait_skill_bypass):
+                    if not has_skill and (prevent_bypass or int(random.random() * trait_skill_bypass)):
                         continue
                 
                 
@@ -483,13 +503,13 @@ class GenerateEvents:
             
             # There is a small chance to bypass the skill or trait requirments.  
             if event.cat_trait and event.cat_skill:
-                if not (has_trait or has_skill) and int(random.random() * trait_skill_bypass):
+                if not (has_trait or has_skill) and (prevent_bypass or int(random.random() * trait_skill_bypass)):
                     continue
             elif event.cat_trait:
-                if not has_trait and int(random.random() * trait_skill_bypass):
+                if not has_trait and (prevent_bypass or int(random.random() * trait_skill_bypass)):
                     continue
             elif event.cat_skill:
-                if not has_skill and int(random.random() * trait_skill_bypass):
+                if not has_skill and (prevent_bypass or int(random.random() * trait_skill_bypass)):
                     continue
             
             
@@ -518,7 +538,7 @@ class GenerateEvents:
 
             # determine injury severity chance
             if event.injury:
-                injury = INJURIES[event.injury]
+                injury = GenerateEvents.INJURIES[event.injury]
                 severity = injury['severity']
 
                 if severity == 'minor':
@@ -533,10 +553,10 @@ class GenerateEvents:
 
         # determine which injury severity list will be used
         if minor or major or severe:
-            if cat.status in INJURY_DISTRIBUTION:
-                minor_chance = INJURY_DISTRIBUTION[cat.status]['minor']
-                major_chance = INJURY_DISTRIBUTION[cat.status]['major']
-                severe_chance = INJURY_DISTRIBUTION[cat.status]['severe']
+            if cat.status in GenerateEvents.INJURY_DISTRIBUTION:
+                minor_chance = GenerateEvents.INJURY_DISTRIBUTION[cat.status]['minor']
+                major_chance = GenerateEvents.INJURY_DISTRIBUTION[cat.status]['major']
+                severe_chance = GenerateEvents.INJURY_DISTRIBUTION[cat.status]['severe']
                 severity_chosen = random.choices(["minor", "major", "severe"], [minor_chance, major_chance, severe_chance], k=1)
                 if severity_chosen[0] == 'minor':
                     final_events = minor
@@ -544,11 +564,11 @@ class GenerateEvents:
                     final_events = major
                 else:
                     final_events = severe
-                #print(cat.status, severity_chosen[0])
 
         return final_events
 
-    def possible_ongoing_events(self, event_type=None, specific_event=None):
+    @staticmethod
+    def possible_ongoing_events(event_type=None, specific_event=None):
         event_list = []
 
         if game.clan.biome not in game.clan.BIOME_TYPES:
@@ -559,30 +579,31 @@ class GenerateEvents:
             biome = game.clan.biome.lower()
             if not specific_event:
                 event_list.extend(
-                    self.generate_ongoing_events(event_type, biome)
+                    GenerateEvents.generate_ongoing_events(event_type, biome)
                 )
                 """event_list.extend(
-                    self.generate_ongoing_events(event_type, "general", specific_event)
+                    GenerateEvents.generate_ongoing_events(event_type, "general", specific_event)
                 )"""
                 return event_list
             else:
                 #print(specific_event)
                 event = (
-                    self.generate_ongoing_events(event_type, biome, specific_event)
+                    GenerateEvents.generate_ongoing_events(event_type, biome, specific_event)
                 )
                 return event
 
-    def possible_death_reactions(self, family_relation, rel_value, trait, body_status):
+    @staticmethod
+    def possible_death_reactions(family_relation, rel_value, trait, body_status):
         possible_events = []
         # grab general events first, since they'll always exist
-        events = self.get_death_reaction_dicts("general", rel_value)
+        events = GenerateEvents.get_death_reaction_dicts("general", rel_value)
         possible_events.extend(events["general"][body_status])
         if trait in events:
             possible_events.extend(events[trait][body_status])
 
-        # grab family events if they're needed
-        if family_relation != 'general':
-            events = self.get_death_reaction_dicts(family_relation, rel_value)
+        # grab family events if they're needed. Family events should not be romantic. 
+        if family_relation != 'general' and rel_value != "romantic":
+            events = GenerateEvents.get_death_reaction_dicts(family_relation, rel_value)
             possible_events.extend(events["general"][body_status])
             if trait in events:
                 possible_events.extend(events[trait][body_status])
@@ -756,12 +777,3 @@ class OngoingEvent:
         self.conclusion_events = conclusion_events
         self.secondary_disasters = secondary_disasters
         self.collateral_damage = collateral_damage
-
-
-INJURY_DISTRIBUTION = None
-with open(f"resources/dicts/conditions/event_injuries_distribution.json", 'r') as read_file:
-    INJURY_DISTRIBUTION = ujson.loads(read_file.read())
-
-INJURIES = None
-with open(f"resources/dicts/conditions/injuries.json", 'r') as read_file:
-    INJURIES = ujson.loads(read_file.read())

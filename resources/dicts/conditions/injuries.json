@@ -1185,7 +1185,11 @@
             "partial hearing loss",
             "persistent headaches",
 			"disrupted senses",
+          
             "jumbled noise"
+          
+			"lazy eye"
+
         ],
         "herbs": [
             "juniper",
@@ -1220,7 +1224,8 @@
         "cause_permanent": [
             "blind",
             "one bad eye",
-            "failing eyesight"
+            "failing eyesight",
+			"lazy eye"
         ],
         "herbs": [
             "cobwebs",
