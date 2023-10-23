@@ -219,12 +219,12 @@
         "recurring shock":[
             "Despite m_c healing from the head damadge, {PRONOUN/m_c/subject} still feel the fear {PRONOUN/m_c/object} felt when {PRONOUN/m_c/poss} head first got damadged and the long healing process after.",
             "m_c feels that {PRONOUN/m_c/subject} will never be the same after {PRONOUN/m_c/poss} injury."
-        ]
+        ],
         "jumbled noise": [
             "As m_c is recovering, r_c realizes that {PRONOUN/m_c/subject} can't understand words as well as {PRONOUN/m_c/subject} used to. Soon the medicine cat diagnoses {PRONOUN/m_c/object} with Jumbled Noise.",
             "While m_c's recovery has gone smoothly r_c's worried about how m_c will adjust to the altered way that {PRONOUN/m_c/poss} senses now work.",
             "m_c's noticed that after recovering from {PRONOUN/m_c/poss} damaged head {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} seem to react to sound in the same way {PRONOUN/m_c/subject} did before."
-        ]
+        ],
 		"lazy eye": [
 			"While it's relieving that m_c's head damage has left minimal damage, r_c is still worried about {PRONOUN/m_c/poss} new lazy eye.",
 			"m_c's a bit annoyed by the fuss that {PRONOUN/m_c/poss} clanmates are making about {PRONOUN/m_c/poss} eye, it's not hurting or anything so {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} see why it should be a problem."
@@ -249,7 +249,7 @@
         "recurring shock":[
             "r_c has to reassure m_c that {PRONOUN/m_c/object} eyes have healed, but m_c knows that {PRONOUN/m_c/subject} will never be the same.",
             "Even after {PRONOUN/m_c/poss} eyes have healed, {PRONOUN/m_c/subject} can still feel the sting."
-        ]
+        ],
 		"lazy eye": [
 			"r_c fusses gently over m_c, checking that {PRONOUN/m_c/poss} eye isn't hurting or anything. For now it looks like it's purely a surface thing.",
 			"After m_c's eye recovers {PRONOUN/m_c/subject} {VERB/m_c/find/finds} {PRONOUN/m_c/self} worrying about the new lazy eye."
