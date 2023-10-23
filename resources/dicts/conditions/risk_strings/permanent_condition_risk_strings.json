@@ -1016,6 +1016,31 @@
 				"Will all the discordant sensations that m_c experiences daily it's not a surprise that {PRONOUN/m_c/subject} {VERB/m_c/find/finds} {PRONOUN/m_c/self} experiencing some fatigue.",
 				"m_c is feeling incredibly worn down and fatiged this season."
 		]
+	},
+	"jumbled noise": {
+		"headache": [
+			"m_c groans, {PRONOUN/m_c/poss} ears were starting to hurt from the sound around the camp.",
+			"After tending to the kits, m_c's head was starting to hurt.",
+			"m_c is staring to get a small headache from noise."
+		],
+		"sound headache": [
+			"r_c heads to m_c after hearing that {PRONOUN/m_c/subject} {VERB/m_c/were/was} curled up in {PRONOUN/m_c/poss} nest and hissing at cats who came close to {PRONOUN/m_c/object}.",
+			"m_c lashes out at anybody who tries to talk to {PRONOUN/m_c/object} before stalking off into the clan's territory for some quiet."
+		],
+		"information loss": [
+			"m_c has to ask for the other cat to repeat their instructions.",
+			"m_c got confused when {PRONOUN/m_c/poss} friend told {PRONOUN/m_c/object} that {PRONOUN/m_c/subject} wanted to share tongues, but {PRONOUN/m_c/poss} friend brought prey. Apperently {PRONOUN/m_c/poss} friend said prey, not tongues.",
+			"m_c's deputy asks remarkably calmly where {PRONOUN/m_c/subject} {VERB/m_c/were/was} during the border patrol. m_c feels so embarrassed when {PRONOUN/m_c/subject} {VERB/m_c/said/say} that {PRONOUN/m_c/subject} thought that {PRONOUN/m_c/subject} {VERB/m_c/were/was} supposed to go on a hunting patrol.",
+			"m_c's jaw drops when a cat reminds {PRONOUN/m_c/object} that {PRONOUN/m_c/subject} were supposed to gather moss <i>after</i> {PRONOUN/m_c/subject} hunted.",
+			"m_c has to ask for cat's names again."
+		],
+		"word loss": [
+			"m_c bursts out into frustrated tears when {PRONOUN/m_c/subject} can't form a whole sentance without help.",
+			"m_c has to use other similar words to the ones {PRONOUN/m_c/subject} want to use to talk.",
+			"m_c falters, unable to use the words {PRONOUN/m_c/subject} {VERB/m_c/want/wants} to."
+		]
+	},
+	"constant nightmares": {
     },
     "constant nightmares": {
 		"sleeplessness": [
