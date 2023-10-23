@@ -429,6 +429,7 @@
     "Wren"
 	],
 	"inappropriate_names": [
-		"wetback", "yellowface", "redface", "blackface", "brownface", "pancakeface", "yellowbone"
+		"wetback", "yellowface", "redface", "blackface", "brownface", "pancakeface", "yellowbone", "bleaksight", "lostface", "deadfoot", "tornface", "brokentail", "crookedjaw", "crookedeye", "crookedfoot",
+    "brokeneye", "brokentooth", "brokenfoot", "brokenjaw", "brokenspirit", "crookedarch"
 	]
 }

@@ -1481,7 +1481,7 @@
             "poppy"
         ]
     },
-	
+
     "wrenched claws":{
         "duration": 2,
         "severity": "major",
@@ -1516,7 +1516,8 @@
             "ragwort",
             "daisy"
         ]
-    },	
+    },
+
     "sunblindness":{
         "duration": 2,
         "severity": "major",
@@ -1549,7 +1550,8 @@
             "ragwort",
             "moss"
         ]
-    },	
+    },
+
     "earache": {
         "duration": 1,
         "severity": "minor",
@@ -1586,6 +1588,7 @@
             "juniper"
         ]
     },
+
     "overstimulation":{
         "duration": 3,
         "severity": "major",
@@ -1615,6 +1618,7 @@
             "moss"
         ]
     },
+
     "understimulation":{
         "duration": 3,
         "severity": "major",
@@ -1647,7 +1651,8 @@
 			"catmint",
             "moss"
         ]
-    },					
+    },
+
     "fatigue": {
         "duration": 4,
         "severity": "minor",
@@ -1688,6 +1693,7 @@
             "poppy"
         ]
     },
+    
     "pregnant": {
         "duration": 2,
         "severity": "major",
