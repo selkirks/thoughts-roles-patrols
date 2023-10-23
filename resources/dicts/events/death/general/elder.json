@@ -24,7 +24,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "death_text": "m_c was having a peaceful stroll outside of camp, when they were attacked and killed by a fox.",
+        "death_text": "m_c was having a peaceful stroll outside of camp, when {PRONOUN/m_c/subject} {VERB/m_c/were/was} attacked and killed by a fox.",
         "history_text": {
             "reg_death": "m_c was killed by a fox."
         },
@@ -41,7 +41,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "death_text": "m_c was having a peaceful stroll outside of camp, when they were attacked and killed by a badger.",
+        "death_text": "m_c was having a peaceful stroll outside of camp, when {PRONOUN/m_c/subject} {VERB/m_c/were/was} attacked and killed by a badger.",
         "history_text": {
             "reg_death": "m_c was killed by a badger."
         },
@@ -58,7 +58,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "death_text": "m_c was having a peaceful stroll outside of camp, when they were attacked and killed by a dog.",
+        "death_text": "m_c was having a peaceful stroll outside of camp, when {PRONOUN/m_c/subject} {VERB/m_c/were/was} attacked and killed by a dog.",
         "history_text": {
             "reg_death": "m_c was killed by a dog."
         },
@@ -126,79 +126,6 @@
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
-    },
-    {
-        "camp": "any",
-        "tags": [
-            "old_age",
-            "Newleaf",
-            "Greenleaf",
-            "Leaf-fall",
-            "Leaf-bare"
-        ],
-        "death_text": "m_c wandered out into the territory, and was later found dead, a peaceful expression on their face.",
-        "history_text": {
-            "reg_death": "m_c died of old age."
-        },
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null
-    },
-    {
-        "camp": "any",
-        "tags": [
-            "old_age",
-            "Newleaf",
-            "Greenleaf",
-            "Leaf-fall",
-            "Leaf-bare"
-        ],
-        "death_text": "m_c was found stiff and curled up in their nest.  It seems they died in their sleep.",
-        "history_text": {
-            "reg_death": "m_c died of old age."
-        },
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null
-    },
-    {
-        "camp": "any",
-        "tags": [
-            "old_age",
-            "Newleaf",
-            "Greenleaf",
-            "Leaf-fall",
-            "Leaf-bare"
-        ],
-        "death_text": "m_c faded more and more as the days went by, until one day, they were found dead in their nest.",
-        "history_text": {
-            "reg_death": "m_c died of old age."
-        },
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null
-    },
-    {
-        "tags": [
-            "Newleaf",
-            "Greenleaf",
-            "Leaf-fall",
-            "Leaf-bare",
-            "other_cat",
-            "other_cat_mate",
-            "multi_death",
-            "old_age",
-            "all_lives"
-        ],
-        "camp": "Any",
-        "death_text": "m_c and r_c loved each other so much they could not be parted, even by death. c_n finds their bodies still wrapped around each other in the morning.",
-        "history_text": {
-            "reg_death": "This cat died from old age life.",
-            "lead_death": "lost all remaining lives from old age."
-        }
     },
     {
         "camp": "any",

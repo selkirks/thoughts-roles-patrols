@@ -86,6 +86,7 @@ def json_load():
                 colour=cat["pelt_color"],
                 eye_color=cat["eye_colour"],
                 eye_colour2=cat["eye_colour2"] if "eye_colour2" in cat else None,
+                lazy_eye=cat["lazy_eye"] if "lazy_eye" in cat else None,
                 paralyzed=cat["paralyzed"],
                 kitten_sprite=cat["sprite_kitten"] if "sprite_kitten" in cat else cat["spirit_kitten"],
                 adol_sprite=cat["sprite_adolescent"] if "sprite_adolescent" in cat else cat["spirit_adolescent"],
@@ -141,12 +142,13 @@ def json_load():
             new_cat.former_mentor = cat["former_mentor"] if "former_mentor" in cat else []
             new_cat.patrol_with_mentor = cat["patrol_with_mentor"] if "patrol_with_mentor" in cat else 0
             new_cat.no_kits = cat["no_kits"]
+            new_cat.no_mates = cat["no_mates"] if "no_mates" in cat else False
+            new_cat.no_retire = cat["no_retire"] if "no_retire" in cat else False
             new_cat.exiled = cat["exiled"]
 
             if "skill_dict" in cat:
                 new_cat.skills = CatSkills(cat["skill_dict"])
             elif "skill" in cat:
-                print('skill in cat')
                 if new_cat.backstory is None:
                     if "skill" == 'formerly a loner':
                         backstory = choice(['loner1', 'loner2', 'rogue1', 'rogue2'])
@@ -430,7 +432,8 @@ def csv_load(all_cats):
 
 
 def save_check():
-    """Checks through loaded cats, checks and attempts to fix issues """
+    """Checks through loaded cats, checks and attempts to fix issues 
+    NOT currently working. """
     return
     
     for cat in Cat.all_cats:
@@ -451,7 +454,7 @@ def save_check():
 def version_convert(version_info):
     """Does all save-conversion that require referencing the saved version number.
     This is a separate function, since the version info is stored in clan.json, but most conversion needs to be
-    done on the cats. Clan data is loaded in after cats, however. """
+    done on the cats. Clan data is loaded in after cats, however."""
 
     if version_info is None:
         return
@@ -461,8 +464,39 @@ def version_convert(version_info):
         return
 
     if version_info["version_name"] is None:
+        version = 0
+    else:
+        version = version_info["version_name"]
+
+    if version < 1:
         # Save was made before version number storage was implemented.
         # (ie, save file version 0)
         # This means the EXP must be adjusted. 
         for c in Cat.all_cats.values():
             c.experience = c.experience * 3.2
+            
+    if version < 2:
+        for c in Cat.all_cats.values():
+            for con in c.injuries:
+                moons_with = 0
+                if "moons_with" in c.injuries[con]:
+                    moons_with = c.injuries[con]["moons_with"]
+                    c.injuries[con].pop("moons_with")
+                c.injuries[con]["moon_start"] = game.clan.age - moons_with
+        
+            for con in c.illnesses:
+                moons_with = 0
+                if "moons_with" in c.illnesses[con]:
+                    moons_with = c.illnesses[con]["moons_with"]
+                    c.illnesses[con].pop("moons_with")
+                c.illnesses[con]["moon_start"] = game.clan.age - moons_with
+                
+            for con in c.permanent_condition:
+                moons_with = 0
+                if "moons_with" in c.permanent_condition[con]:
+                    moons_with = c.permanent_condition[con]["moons_with"]
+                    c.permanent_condition[con].pop("moons_with")
+                c.permanent_condition[con]["moon_start"] = game.clan.age - moons_with
+            
+        
+            
