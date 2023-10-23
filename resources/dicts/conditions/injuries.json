@@ -1200,12 +1200,9 @@
             "constantly dizzy",
             "partial hearing loss",
             "persistent headaches",
-			"disrupted senses",
-          
-            "jumbled noise"
-          
-			"lazy eye"
-
+	    "disrupted senses",
+            "jumbled noise",          
+	    "lazy eye"
         ],
         "herbs": [
             "juniper",
@@ -1241,8 +1238,8 @@
             "blind",
             "one bad eye",
             "failing eyesight",
-            "recurring shock"
-			"lazy eye"
+            "recurring shock",	
+	    "lazy eye"
         ],
         "herbs": [
             "cobwebs",
@@ -1435,7 +1432,8 @@
         "risks":[
         ],
         "also_got":[
-        ],"cause_permanent": [
+        ],
+	"cause_permanent": [
         ],
         "herbs": [
             "poppy",
@@ -1490,12 +1488,12 @@
         ],
         "also_got": [],
         "cause_permanent": [
-			"constant rash"
+		"constant rash"
 		],
         "herbs": [
             "poppy",
-			"comfrey",
-			"elder_leaves"
+	    "comfrey",
+	    "elder_leaves"
         ]
     },
 
@@ -1541,9 +1539,9 @@
         },
         "illness_infectiousness": [],
         "risks": [
-			{
-				"name": "an infected wound",
-				"chance": 20
+		{
+			"name": "an infected wound",
+			"chance": 20
 			}
 		],
         "also_got": [
@@ -1552,8 +1550,8 @@
             "joint pain"
         ],
         "cause_permanent": [
-			"declawed",
-			"recurring shock"
+		"declawed",
+		"recurring shock"
         ],
         "herbs": [
             "juniper",
@@ -1582,7 +1580,7 @@
         ],
         "cause_permanent": [
             "failing eyesight",
-			"burning light"
+	    "burning light"
         ],
         "herbs": [
             "cobwebs",
@@ -1653,12 +1651,12 @@
         ],
         "cause_permanent": [
             "burning light",
-			"disrupted senses"
+	    "disrupted senses"
         ],
         "herbs": [
-			"thyme",
-			"poppy",
-			"catmint",
+	    "thyme",
+	    "poppy",
+	    "catmint",
             "moss"
         ]
     },
@@ -1690,9 +1688,9 @@
 			"disrupted senses"
         ],
         "herbs": [
-			"thyme",
-			"poppy",
-			"catmint",
+	    "thyme",
+  	    "poppy",
+	    "catmint",
             "moss"
         ]
     },
