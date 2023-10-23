@@ -1646,6 +1646,10 @@
 			"poppy"
 		]
     },
+    "tics": {
+        "duration": 1,
+        "severity": "minor",
+        "medicine_duration": 2,
     "word loss": {
         "severity": "minor",
         "mortality": {
@@ -1655,6 +1659,35 @@
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
+            "senior": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+            {
+                "name": "tic attack",
+                "chance": 20
+            },
+            {
+                "name": "bruises",
+                "chance": 10
+            },
+            {
+                "name": "sore",
+                "chance": 15
+            }
+        ],
+        "also_got": [
+        ],
+        "cause_permanent": [
+        ],
+        "herbs": [
+        ]
+    },
+    "tic attack": {
+        "duration": 2,
+        "severity": "major",
+        "medicine_duration": 1,
             "elder": 0
         },
         "medicine_mortality": {
@@ -1681,6 +1714,27 @@
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
+            "senior": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+            {
+                "name": "bruises",
+                "chance": 20
+            },
+            {
+                "name": "sore",
+                "chance": 25
+            }
+        ],
+        "also_got": [
+        ],
+        "cause_permanent": [
+        ],
+        "herbs": [
+        ]
+    },  
             "elder": 0
         },
         "medicine_mortality": {

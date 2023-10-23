@@ -272,6 +272,36 @@
 			"Awkwardly m_c spends the nights wandering around camp, it's better than waking up in wet nesting again."
 		]
 	},
+	"tics": {
+		"tic attack": [
+			"m_c's tics have gotten worse and worse with less space between them. r_c calls it a tic attack.",
+			"What started as one tic then turned into two, and then three, and then far too many tics to count.",
+			"m_c wishes that {PRONOUN/m_c/poss} tics would just stop!",
+			"It's hard to patrol when m_c's paws won't stop moving."
+		],
+		"bruises": [
+			"m_c's tics have left {PRONOUN/m_c/object} with bruises.",
+			"After stepping on {PRONOUN/m_c/object} own paw, m_c's skin hurts to touch, and after a quick inspection, m_c has gotten a small bruise."
+		],
+		"sore": [
+			"Once m_c stops ticing, {PRONOUN/m_c/poss} muscles start to ache.",
+			"Cats aren't meant to move  like that and {PRONOUN/m_c/poss} body protests after they stop ticing.",
+			"The day after m_c stops ticing, {PRONOUN/m_c/subject} {VERB/m_c/realize/realizes} that {PRONOUN/m_c/poss} body aches."
+		]
+	},
+	"tic attack": {
+		"bruises": [
+			"{PRONOUN/m_c/poss/CAP} rump starts to hurt after slamming {PRONOUN/m_c/poss} tail into {PRONOUN/m_c/poss} back.",
+			"During {PRONOUN/m_c/poss} tic attack, m_c realizes that {PRONOUN/m_c/object} {VERB/m_c/have/has} given {PRONOUN/m_c/self} a bruise.",
+			"While uncontrolably stomping on the ground, m_c has bruised {PRONOUN/m_c/poss} paw."
+		],
+		"sore": [
+			"After digging {PRONOUN/m_c/poss} claws in and out of the ground, {PRONOUN/m_c/poss} paws start to ache.",
+			"m_c sighs in relief when {PRONOUN/m_c/poss} tic attack ends and groans when {PRONOUN/m_c/subject} {VERB/m_c/realize/realizes} that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} sore.",
+			"While m_c is glad that {PRONOUN/m_c/poss} tic attack has ended, {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} not glad that {PRONOUN/m_c/poss} body hurts.",
+			"Cats weren't meant to move that way for long, and m_c's body complains when {PRONOUN/m_c/object}{VERB/m_c/'re/'s} sore the next day."
+		]
+	},
 	"night dirtmaking": {
 		"sleeplessness": [
 			"Reluctantly m_c goes to talk to r_c. The frequent trips to the dirtplace all night have left {PRONOUN/m_c/object} unable to sleep.",
