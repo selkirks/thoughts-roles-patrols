@@ -1737,6 +1737,10 @@ class Cat():
             cat.pelt.scars.append('NOPAW')
         elif new_condition == "born without a tail":
             cat.pelt.scars.append('NOTAIL')
+        elif new_condition == "lazy eye":
+            cat.pelt.lazy_eye = self.pelt.eye_colour
+            if cat.pelt.eye_colour2 != None:
+                cat.pelt.lazy_eye = self.pelt.eye_colour2
 
         self.get_permanent_condition(new_condition, born_with=True)
 
@@ -2909,7 +2913,7 @@ class Cat():
                 "sprite_para_adult": self.pelt.cat_sprites['para_adult'],
                 "eye_colour": self.pelt.eye_colour,
                 "eye_colour2": self.pelt.eye_colour2 if self.pelt.eye_colour2 else None,
-                "lazy_eye": self.lazy_eye if self.pelt.lazy_eye else None,
+                "lazy_eye": self.pelt.lazy_eye if self.pelt.lazy_eye else None,
                 "reverse": self.pelt.reverse,
                 "white_patches": self.pelt.white_patches,
                 "vitiligo": self.pelt.vitiligo,

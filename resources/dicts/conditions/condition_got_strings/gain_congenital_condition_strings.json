@@ -99,7 +99,7 @@
 		"m_c took {PRONOUN/m_c/poss} prey from the pile and then cried because {PRONOUN/m_c/subject} thought it might mean the rest of the clan wouldn't have enough."		
 	],	
 	"ocd": [
-	    "m_c sleeps seperately from {PRONOUN/m_c/poss} parent and denmates, liking {PRONOUN/r_c/poss} own nest that {PRONOUN/m_c/subject} can decorate and keep to how they like it. r_c explains to {PRONOUN/r_c/poss{} concerned parent that {PRONOUN/m_c/subject} could have ocd, and it's nothing serious.",
+	    "m_c sleeps seperately from {PRONOUN/m_c/poss} parent and denmates, liking {PRONOUN/r_c/poss} own nest that {PRONOUN/m_c/subject} can decorate and keep to how they like it. r_c explains to {PRONOUN/r_c/poss} concerned parent that {PRONOUN/m_c/subject} could have ocd, and it's nothing serious.",
         "m_c hisses when some of {PRONOUN/m_c/poss} denmates playfight near {PRONOUN/m_c/poss} nest, quick to realign what they knocked out of place. {PRONOUN/m_c/poss/CAP} parent scolds {PRONOUN/m_c/object} for this but m_c complains that it makes {PRONOUN/m_c/object} anxious when {PRONOUN/r_c/poss} things are out of place.",
         "m_c was seen sneaking out of camp and trotting towards a puddle, and rolling in it, seeming happy once {PRONOUN/m_c/subject} {VERB/m_c/shake/shakes} off the remaining water. When confronted, m_c just says water makes {PRONOUN/m_c/object} feel cleaner.",
 		"Counting and recounting, m_c keeps doing things a certain number of times and when asked {PRONOUN/m_c/subject} just says it's a reasonable number of times.",
@@ -161,10 +161,10 @@
 		"Nobody knew silence could be so loud until m_c arrived."
 	],
 	"jellyfish joints": [
-	"m_c curses {PRONOUN/m_c/poss} days of showing off {PRONOUN/m_c/poss} bendy paws in kithood, as now {PRONOUN/m_c/poss} joints ache, and r_c has told {PRONOUN/m_c/object} that {PRONOUN/m_c/subject}{VERB/m_c/'s/'re} hypermobile. Meaning that there is no changing it.",
-	"After moons of seeing m_c bounce around painlessly, r_c calls {PRONOUN/m_c/object} into the medicine cat den to explain that the reason {PRONOUN/m_c/poss} joints have been hurting {PRONOUN/m_c/subject} is that maybe {PRONOUN/m_c/poss} flexible joints <i>weren't</i> the painless kind.",
-	"m_c's clanmates look on when {PRONOUN/m_c/poss} joints bend in a way that most cats could only dream of.",
-	"m_c has recently been informed that most cats paws <i>don't</i> bend that way!"
+		"m_c curses {PRONOUN/m_c/poss} days of showing off {PRONOUN/m_c/poss} bendy paws in kithood, as now {PRONOUN/m_c/poss} joints ache, and r_c has told {PRONOUN/m_c/object} that {PRONOUN/m_c/subject}{VERB/m_c/'s/'re} hypermobile. Meaning that there is no changing it.",
+		"After moons of seeing m_c bounce around painlessly, r_c calls {PRONOUN/m_c/object} into the medicine cat den to explain that the reason {PRONOUN/m_c/poss} joints have been hurting {PRONOUN/m_c/subject} is that maybe {PRONOUN/m_c/poss} flexible joints <i>weren't</i> the painless kind.",
+		"m_c's clanmates look on when {PRONOUN/m_c/poss} joints bend in a way that most cats could only dream of.",
+		"m_c has recently been informed that most cats paws <i>don't</i> bend that way!"
 	],
     "loose body": [
 		"r_c is getting a little tired of treating m_c's painful, loose and clicky joints, but {PRONOUN/r_c/subject} {VERB/m_c/realise/realises} that theres a reason m_c is in {PRONOUN/r_c/poss} den so often.",
@@ -188,9 +188,20 @@
 		"It often seems to take m_c multiple attempts before {PRONOUN/m_c/subject} can understand what {PRONOUN/m_c/poss} clanmates are trying to tell {PRONOUN/m_c/object}.",
 		"m_c complains often about how the nest around {PRONOUN/m_c/object} feels like against {PRONOUN/m_c/poss} pelt."
 	],
+    "jumbled noise": [
+        "r_c reassures m_c's parents that {PRONOUN/m_c/subject} {VERB/m_c/aren't/isn't} disobediant, {PRONOUN/m_c/subject} just {VERB/m_c/have/has} a case of Jumbled Noise.",
+        "m_c has gotten overwhelmed by noise {PRONOUN/m_c/poss} entire life and has finally figured out why!",
+        "m_c is happy to know that the reason {PRONOUN/m_c/subject} sometimes lose words is because {PRONOUN/m_c/subject} have Jumbled Noise."
+    ],
 	"constant rash": [
 		"r_c has noticed that little m_c is often scratching at {PRONOUN/m_c/self} throughout the season, it would seem that {PRONOUN/m_c/subject} {VERB/m_c/have/has} a near constant recurring rash.",
 		"No matter how much care m_c takes to follow the instructions given to {PRONOUN/m_c/object} by the medicine cat, nothing seems to keep the rash away.",
 		"m_c's a particularly grumpy kitten, mostly because {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} constantly itching and in pain from a rash that refuses to leave."
+	],
+	"lazy eye": [
+		"While looking the same as any other kit in the nursery there's a bit of a shock when m_c's eyes finally open. r_c's quick to reassure the parents that a lazy eye isn't anything to worry too much about.",
+		"Even if m_c's eye seems a little bit different, it doesn't really bother {PRONOUN/m_c/object}.",
+		"m_c doesn't understand the fuss that everyone keeps making about {PRONOUN/m_c/poss} eye. {PRONOUN/m_c/poss/CAP} {VERB/m_c/think/thinks} it makes {PRONOUN/m_c/object} look cool.",
+		"Despite been as healthy as any other kitten in the Nursery, m_c's been struggling to navigate and is dismayed to hear that {PRONOUN/m_c/poss} eyesight might never be as clear as {PRONOUN/m_c/poss} clanmates."
 	]
 }

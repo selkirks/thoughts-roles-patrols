@@ -1650,6 +1650,8 @@
         "duration": 1,
         "severity": "minor",
         "medicine_duration": 2,
+    "word loss": {
+        "severity": "minor",
         "mortality": {
             "newborn": 0,
             "kitten": 0,
@@ -1686,6 +1688,25 @@
         "duration": 2,
         "severity": "major",
         "medicine_duration": 1,
+            "elder": 0
+        },
+        "medicine_mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "duration": 1,
+        "medicine_duration": 0,
+        "infectiousness": 0,
+        "risks": [],
+        "herbs": []
+    },
+    "information loss": {
+        "severity": "minor",
         "mortality": {
             "newborn": 0,
             "kitten": 0,
@@ -1714,6 +1735,23 @@
         "herbs": [
         ]
     },  
+            "elder": 0
+        },
+        "medicine_mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "duration": 1,
+        "medicine_duration": 0,
+        "infectiousness": 0,
+        "risks": [],
+        "herbs": []
+    },
     "dizziness": {
         "severity": "major",
         "mortality": {

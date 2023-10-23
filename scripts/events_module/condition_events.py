@@ -395,7 +395,7 @@ class Condition_Events():
             "recurring shock", "lasting grief", "adhd", "heavy soul", "starwalker", "ocd", "antisocial", "anxiety", 
             "constant roaming pain", "strong soul", "otherworldly mind", "kitten regressor", "puppy regressor", "snow vision",
             "echoing shock", "irritable bowels", "loose body", "longcough", "burning light", "disrupted senses", 
-            "constant nightmares", "constant rash", "jellyfish joints"
+            "constant nightmares", "constant rash", "jellyfish joints", "lazy eye"
             
         ]
 
@@ -417,6 +417,10 @@ class Condition_Events():
 
                         if len(possible_conditions) > 0 and not int(random.random() * 40):
                             perm_condition = random.choice(possible_conditions)
+                            if perm_condition == 'lazy eye':
+                                cat.pelt.lazy_eye = cat.pelt.eye_colour
+                                if cat.eye_colour2 != None:
+                                    cat.pelt.lazy_eye = cat.pelt.eye_colour2
                         else:
                             return perm_condition
                 except KeyError:
@@ -655,15 +659,11 @@ class Condition_Events():
 
         event_list = []
 
-        condition_progression = {
-            "one bad eye": "failing eyesight",
-            "failing eyesight": "blind",
-            "partial hearing loss": "deaf",
-            "lasting grief": "heavy soul",
-            "recurring shock": "echoing shock",
-            "echoing shock": "recurring shock",
-            "burning light": "blind"
-        }
+        base_condition = ["one bad eye", "failing eyesight", "partial hearing loss", "lasting grief", 
+                            "recurring shock", "echoing shock", "burning light"]
+        progression = [["failing eyesight", "lazy eye"], "blind", "deaf", "heavy soul", "echoing shock", 
+                            "recurring shock", "blind"]
+        condition_progression = dict(zip(base_condition, progression))
 
         conditions = deepcopy(cat.permanent_condition)
         for condition in conditions:

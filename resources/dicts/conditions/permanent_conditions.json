@@ -361,6 +361,10 @@
 			{
 				"name": "headache",
 				"chance": 25
+			},
+			{
+				"name": "lazy eye",
+				"chance": 50
 			}
         ],
         "herbs": []
@@ -1506,6 +1510,7 @@
 		"congenital": "always",
 		"moons_until": 5,
 		"mortality": {
+			"newborn": 0,
 			"kitten": 0,
 			"adolescent": 0,
 			"young adult": 0,
@@ -1613,6 +1618,40 @@
 			}
         ],
         "herbs":[]
+    },
+    "jumbled noise": {
+		"severity": "minor",
+		"congenital": "sometimes",
+		"moons until": 3,
+		"mortality": {
+			"newborn": 0,
+			"kitten": 0,
+			"adolescent": 0,
+			"young adult": 0,
+			"adult": 0,
+			"senior adult": 0,
+			"senior": 0
+		},
+		"illness_infectiousness": [],
+		"risks": [
+		{
+			"name": "headache",
+			"chance": 50
+		},
+        {
+		    "name": "sound headache",
+            "chance": 20
+        },
+        {
+            "name": "information loss",
+            "chance": 40
+        },
+        {
+            "name": "word loss",
+            "chance": 40
+        }
+        ],
+        "herbs": []
     },
     "disrupted senses": {
         "severity": "minor",
@@ -1796,5 +1835,36 @@
             "chamomile",
             "poppy"
 		]
+    },
+    "lazy eye": {
+        "severity": "minor",
+        "congenital": "sometimes",
+        "moons_until": 1,
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+			{
+                "name": "failing eyesight",
+                "chance": 80
+            },
+			{
+				"name": "headache",
+				"chance": 25
+			},
+			{
+				"name": "dizziness",
+				"chance": 25
+			}
+        ],
+        "herbs": []
     }
 }
