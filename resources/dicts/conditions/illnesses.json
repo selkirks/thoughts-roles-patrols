@@ -1719,24 +1719,13 @@
         "illness_infectiousness": [
         ],
         "risks": [
-            {
-                "name": "bruises",
-                "chance": 20
-            },
-            {
-                "name": "sore",
-                "chance": 25
-            }
         ],
         "also_got": [
         ],
         "cause_permanent": [
         ],
         "herbs": [
-        ]
-    },  
-            "elder": 0
-        },
+        ],
         "medicine_mortality": {
             "newborn": 0,
             "kitten": 0,
