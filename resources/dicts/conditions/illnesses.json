@@ -131,10 +131,10 @@
                 "name": "yellowcough",
                 "chance": 60
             },
-			{
-				"name": "longcough",
-				"chance": 120
-			}
+		{
+		"name": "longcough",
+		"chance": 120
+		}
         ],
         "herbs": [
             "catmint",
@@ -315,10 +315,10 @@
                 "name": "whitecough",
                 "chance": 15
             },
-			{
-				"name": "silvercough",
-				"chance": 15
-			}
+		{
+		"name": "silvercough",
+		"chance": 15
+		}
         ],
         "herbs": [
             "ragwort",
