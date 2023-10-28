@@ -6,8 +6,8 @@
             "Losing the leg was bad enough, but now it feels like there's fire in m_c's veins.  Something is definitely wrong with {PRONOUN/m_c/poss} stump."
         ],
         "phantom pain": [
-            "m_c reports to r_c in the medicine den - {PRONOUN/m_c/subject} could swear {PRONOUN/m_c/poss} toes feel cramped and in spasm, but it's on the limb {PRONOUN/m_c/subject} {VERB/m_c/do/does}n't have anymore.",
-            "Groaning, m_c lies in the sunshine as one of {PRONOUN/m_c/poss} friends massages the stump of {PRONOUN/m_c/poss} missing leg. {PRONOUN/m_c/subject/CAP} just don't understand how something that's not even there any more can hurt so much.",
+            "m_c reports to r_c in the medicine den - {PRONOUN/m_c/subject} could swear {PRONOUN/m_c/poss} toes feel cramped and in spasm, but it's on the limb {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} have anymore.",
+            "Groaning, m_c lies in the sunshine as one of {PRONOUN/m_c/poss} friends massages the stump of {PRONOUN/m_c/poss} missing leg. {PRONOUN/m_c/subject/CAP} just {VERB/m_c/don't/doesn't} understand how something that's not even there anymore can hurt so much.",
             "m_c sinks {PRONOUN/m_c/poss} claws into a branch, hoping that ripping something up will at least distract {PRONOUN/m_c/object} from the sparking pain coming from the leg {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} even have any more."
         ],
         "sore": [
@@ -28,7 +28,7 @@
     },
     "weak leg": {
         "sore": [
-            "r_c notices m_c limping from across the other side of the camp, and gives {PRONOUN/m_c/subject} some exercises to help strengthen {PRONOUN/m_c/poss} weak leg and reduce the pain.",
+            "r_c notices m_c limping from across the other side of the camp, and gives {PRONOUN/m_c/object} some exercises to help strengthen {PRONOUN/m_c/poss} weak leg and reduce the pain.",
             "m_c's bad leg is feeling particularly sore this moon."
         ],
         "joint pain": [
@@ -84,11 +84,11 @@
     "raspy lungs": {
         "whitecough": [
             "r_c worst fears are realized, as whitecough has infected m_c with {PRONOUN/m_c/poss} weakened lungs.",
-            "m_c's weak lungs have left {PRONOUN/m_c/subject} coughing and wheezing this moon, unable to resist potential sickness."
+            "m_c's weak lungs have left {PRONOUN/m_c/object} coughing and wheezing this moon, unable to resist potential sickness."
         ],
 		"silvercough": [
-				"It's the season for whitecough and silver cough, despite r_c helping m_c to take extra precautions {PRONOUN/m_c/subject} {VERB/m_c/sit/sits} miserably curled up in the den with silvercough.",
-				"m_c's weakened lungs leave them unable to propely fight off the sickness this moon. Coughing and spluttering {PRONOUN/m_c/subject} {VERB/m_c/find/finds} a nice nest to wait it out."
+			"It's the season for whitecough and silver cough, despite r_c helping m_c to take extra precautions {PRONOUN/m_c/subject} {VERB/m_c/sit/sits} miserably curled up in the den with silvercough.",
+			"m_c's weakened lungs leave them unable to propely fight off the sickness this moon. Coughing and spluttering {PRONOUN/m_c/subject} {VERB/m_c/find/finds} a nice nest to wait it out."
 		]
     },
     "wasting disease": {
@@ -98,7 +98,7 @@
         ],
         "yellowcough": [
             "If only {PRONOUN/r_c/subject} had lungwort... r_c searches the herb stores, desperate for a way to help m_c through yellowcough.",
-            "m_c has been weak and fevered, only barely coherent, it seems {PRONOUN/m_c/subject} {VERB/m_c/have/has} yellowcough."
+            "m_c has been weak and fevered, only barely coherent... It seems {PRONOUN/m_c/subject} {VERB/m_c/have/has} yellowcough."
         ],
         "redcough": [
             "r_c has quietly begun making m_c comfortable, or as comfortable as {PRONOUN/m_c/subject} can be while hacking blood.",
@@ -127,14 +127,14 @@
             "m_c's eyesight had only been getting worse and now it seems to have finally left altogether."
         ],
 		"headache": [
-				"r_c talks to m_C, checking in on {PRONOUN/m_c/object} when {PRONOUN/r_c/subject} {VERB/r_c/notice/notices} that {PRONOUN/m_c/subject} {VERB/m_c/were/was} wincing more.",
-				"Despite the dull throbbing in {PRONOUN/m_c/poss} head, m_c still raises and elects to do {PRONOUN/m_c/poss} chores for the day.",
-				"While m_c's head hurts, it's not enough for {PRONOUN/m_c/object} to worry about beyond drinking a bit more water and taking lighter patrols."
+			"r_c talks to m_C, checking in on {PRONOUN/m_c/object} when {PRONOUN/r_c/subject} {VERB/r_c/notice/notices} that {PRONOUN/m_c/subject} {VERB/m_c/have/has} been wincing more.",
+			"Despite the dull throbbing in {PRONOUN/m_c/poss} head, m_c still rises and elects to do {PRONOUN/m_c/poss} chores for the day.",
+			"While m_c's head hurts, it's not enough for {PRONOUN/m_c/object} to worry about beyond drinking a bit more water and taking lighter patrols."
 		],
 		"severe headache": [
-				"In misery m_c slinks into r_c's medicine den, head down and wincing from the rattling pain in {PRONOUN/m_c/poss} head.",
-				"When m_c woke up this morning, {PRONOUN/m_c/subject} decided to just roll back over and squeeze {PRONOUN/m_c/poss} eyes shut in the hopes of avoiding the splitting pain.",
-				"m_c miserably moves to the very back of the den, maybe the darkness will soothing the pain making {PRONOUN/m_c/poss} vision swim all the worse."
+			"In misery m_c slinks into r_c's medicine den, head down and wincing from the rattling pain in {PRONOUN/m_c/poss} head.",
+			"When m_c woke up this morning, {PRONOUN/m_c/subject} decided to just roll back over and squeeze {PRONOUN/m_c/poss} eyes shut in the hopes of avoiding the splitting pain.",
+			"m_c miserably moves to the very back of the den; maybe the darkness will soothe the pain that makes {PRONOUN/m_c/poss} vision swim all the worse."
 		]
     },
     "partial hearing loss": {
@@ -143,166 +143,166 @@
             "m_c realizes one day that the noises around them are no longer just quiet, but completely silent. It seems {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} lost {PRONOUN/m_c/poss} hearing entirely."
         ],
 		"nonverbal": [
-				"r_c has noticed that m_c is a lot quieter around the camp recently. After a quick checkup, it's nothing dangerous {PRONOUN/m_c/subject} {VERB/m_c/have/had} just gone nonverbal.",
-				"m_c doesn't speak to anyone, preferring to use signs to communicate."
+			"r_c has noticed that m_c is a lot quieter around the camp recently. After a quick checkup, it's nothing dangerous - {PRONOUN/m_c/subject} {VERB/m_c/have/has} just gone nonverbal.",
+			"m_c doesn't speak to anyone, preferring to use signs to communicate."
 		],
 		"ear buzzing": [
-				"r_c doesn't know how to help m_c when {PRONOUN/m_c/subject} {VERB/m_c/come/comes} in complaining of a flie getting caught in {PRONOUN/m_c/poss} ears. There's just no fly to be found.",
-				"m_c keeps stopping and shaking {PRONOUN/m_c/poss} head rapidly, trying to get rid of the buzzing that fills {PRONOUN/m_c/poss} ears."
+			"r_c doesn't know how to help m_c when {PRONOUN/m_c/subject} {VERB/m_c/come/comes} complaining about a fly getting caught in {PRONOUN/m_c/poss} ears. There's just no fly to be found.",
+			"m_c keeps stopping and shaking {PRONOUN/m_c/poss} head rapidly, trying to get rid of the buzzing that fills {PRONOUN/m_c/poss} ears."
 		]
     },
     "deaf": {
 		"mute": [
-				"r_c has noticed m_c getting quieter and quieter as time goes on. Coming over to check on {PRONOUN/m_c/object} {PRONOUN/r_c/subject} {VERB/r_c/discover/discovers} that m_c's voice has left {PRONOUN/m_c/object}.",
-				"m_c's awkward volume control has faded away until all {PRONOUN/m_c/poss} words are just too hard for {PRONOUN/m_c/poss} clanmates to hear.",
-				"After struggling for so long to be heard, m_c has settled into a calm silence."
+			"r_c has noticed m_c getting quieter and quieter as time goes on. Coming over to check on {PRONOUN/m_c/object}, {PRONOUN/r_c/subject} {VERB/r_c/discover/discovers} that m_c's voice has left {PRONOUN/m_c/object}.",
+			"m_c's awkward volume control has faded away until all {PRONOUN/m_c/poss} words are just too hard for {PRONOUN/m_c/poss} Clanmates to hear.",
+			"After struggling for so long to be heard, m_c has settled into a calm silence."
 		],
 		"nonverbal": [
-				"r_c sits with m_c trading signs back and forth when {PRONOUN/m_c/subject} {VERB/m_c/stop/stops} speaking.",
-				"Nobody minds when m_c has a few bad days and chooses to just use sign to communicate rather than trying to strain to speak.",
-				"Frustrated at not been able to tell if {PRONOUN/m_c/subject} {VERB/m_c/are/is} speaking clearly m_c just decides to use {PRONOUN/m_c/poss} best communication method instead."
+			"r_c sits with m_c trading signs back and forth when {PRONOUN/m_c/subject} {VERB/m_c/stop/stops} speaking.",
+			"Nobody minds when m_c has a few bad days and chooses to just use sign to communicate rather than trying to strain to speak.",
+			"Frustrated at not been able to tell if {PRONOUN/m_c/subject} {VERB/m_c/are/is} speaking clearly, m_c just decides to use {PRONOUN/m_c/poss} best communication method instead."
 		]
     },
     "constant joint pain": {
         "joint pain": [
             "Sleepily, m_c thanks r_c for the pain relief. It feels like moons since {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} been able to have a good rest without the awful pain that's been so intense lately.",
-            "m_c's joint pain is worse than usual this moon, {PRONOUN/m_c/subject} {VERB/m_c/find/finds} {PRONOUN/m_c/self} barely able to get up out of {PRONOUN/m_c/poss} nest."
+            "m_c's joint pain is worse than usual this moon. {PRONOUN/m_c/subject/CAP} {VERB/m_c/find/finds} {PRONOUN/m_c/self} barely able to get up out of {PRONOUN/m_c/poss} nest."
         ]
     },
     "seizure prone": {
         "seizure": [
             "r_c spots the seizure coming, and brings m_c to {PRONOUN/m_c/poss} nest where it's always a little less upsetting to wake up.",
-            "m_c is exhausted and stressed, both the cause of and consequence of {PRONOUN/m_c/poss} seizures.",
-            "m_c doesn't remember falling down, but when {PRONOUN/m_c/subject} {VERB/m_c/blink/blinks} {PRONOUN/m_c/poss} eyes dizzily {PRONOUN/m_c/subject} {VERB/m_c/find/finds} {PRONOUN/m_c/self} looking up at the sky above.",
-            "Tired and a little dizzy m_c still trembles as bit in {PRONOUN/m_c/poss} nest in the medicine den. Unsure if that's the end of the seizure or not."
+            "m_c is exhausted and stressed, both the cause and consequence of {PRONOUN/m_c/poss} seizures.",
+            "m_c doesn't remember falling down, but when {PRONOUN/m_c/subject} {VERB/m_c/blink/blinks} {PRONOUN/m_c/poss} eyes dizzily, {PRONOUN/m_c/subject} {VERB/m_c/find/finds} {PRONOUN/m_c/self} looking up at the sky above.",
+            "Tired and a little dizzy, m_c still trembles as bit in {PRONOUN/m_c/poss} nest in the medicine den, unsure whether that's the end of the seizure."
         ],
 		"absence": [
-				"r_c comes over to check on m_c {PRONOUN/m_c/subject} {VERB/m_c/have/has} been silently standing in place and staring for a few heartbeats, it seems like {PRONOUN/m_c/subject} might have gone absent.",
-				"m_c stops mid action, just staring for a period as the sunlight shifts over {PRONOUN/m_c/poss} nose.",
-				"Carefully m_c's denmates check on {PRONOUN/m_c/object}, {PRONOUN/m_c/subject} {VERB/m_c/are/is} just staring at a spot on the wall.",
-				"m_c blinks and the camp seems to have moved around {PRONOUN/m_c/object}, awkwardly {PRONOUN/m_c/subject} {VERB/m_c/shuffle/shuffles}, trying to figure out what tasks have been assigned.",
-				"When m_c blinks {PRONOUN/m_c/subject} {VERB/m_c/find/finds} {PRONOUN/m_c/self} no longer in the clearing but resting in the shade, a clanmate close by keeping watch."
+			"r_c comes over to check on m_c, since {PRONOUN/m_c/subject} {VERB/m_c/have/has} been silently standing in place and staring for a few heartbeats... It seems like {PRONOUN/m_c/subject} might have gone absent.",
+			"m_c stops mid action, just staring blankly for a period as the sunlight shifts over {PRONOUN/m_c/poss} nose.",
+			"Carefully m_c's denmates check on {PRONOUN/m_c/object}, since {PRONOUN/m_c/subject} {VERB/m_c/are/is} just staring at a spot on the wall.",
+			"m_c blinks and the camp seems to have moved around {PRONOUN/m_c/object}. Awkwardly {PRONOUN/m_c/subject} {VERB/m_c/shuffle/shuffles}, trying to figure out what tasks have been assigned.",
+			"When m_c blinks, {PRONOUN/m_c/subject} {VERB/m_c/find/finds} {PRONOUN/m_c/self} no longer in the clearing but resting in the shade, a clanmate close by to keep watch."
 		],
 		"spasms": [
-				"r_c gently guides m_c down into the nest, assuring {PRONOUN/m_c/object} {PRONOUN/r_c/subject} {VERB/r_c/understand/understands} while {PRONOUN/m_c/poss} forelimb refuses to remain in place beneath {PRONOUN/m_c/object}.",
-				"One minute m_c is doing {PRONOUN/m_c/poss} duties as usual, the next one of {PRONOUN/m_c/poss} paws decides to shift sending {PRONOUN/m_c/object} down with a surprised yowl.",
-				"m_c glares at {PRONOUN/m_c/poss} paw, frustrated that {PRONOUN/m_c/subject} can't keep it still when it messes up {PRONOUN/m_c/poss} carefully arranged nest.",
-				"m_c longingly watches {PRONOUN/m_c/poss} clanmates practice hunting techniques. {PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} unable to join as {PRONOUN/m_c/poss} forepaw keeps jumping around and {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} need more bruises.",
-				"m_c's tail aches after it stops spasming. Gingerly {PRONOUN/m_c/subject} {VERB/m_c/raise/raises} {PRONOUN/m_c/poss} paws to rub it, hoping that it'll stay still for the rest of the time."
+			"r_c gently guides m_c down into the nest, assuring {PRONOUN/m_c/object} {PRONOUN/r_c/subject} {VERB/r_c/understand/understands} while {PRONOUN/m_c/poss} forelimb refuses to remain in place beneath {PRONOUN/m_c/object}.",
+			"One minute m_c is doing {PRONOUN/m_c/poss} duties as usual, the next one of {PRONOUN/m_c/poss} paws decides to shift, sending {PRONOUN/m_c/object} down with a surprised yowl.",
+			"m_c glares at {PRONOUN/m_c/poss} paw, frustrated that {PRONOUN/m_c/subject} can't keep it still when it messes up {PRONOUN/m_c/poss} carefully arranged nest.",
+			"m_c longingly watches {PRONOUN/m_c/poss} Clanmates practice hunting techniques. {PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} unable to join as {PRONOUN/m_c/poss} forepaw keeps jumping around and {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} need more bruises.",
+			"m_c's tail aches after it stops spasming. Gingerly {PRONOUN/m_c/subject} {VERB/m_c/raise/raises} {PRONOUN/m_c/poss} paws to rub it, hoping that it'll stay still."
 		]
     },
     "allergies": {
         "running nose": [
-            "r_c sighs to see m_c headed towards {PRONOUN/r_c/object}, and goes to fix up {PRONOUN/r_c/poss} normal herbal mix, hoping that the allergic reaction m_c keeps having fades soon.",
+            "r_c sighs to see m_c headed towards {PRONOUN/r_c/object} and goes to fix up {PRONOUN/r_c/poss} normal herbal mix, hoping that the allergic reaction m_c keeps having fades soon.",
             "Seems it's allergy season! m_c has been sneezing and sniffling all moon."
         ],
 		"rash": [
-				"r_c fusses as m_c comes in wincing. It's hard to see between {PRONOUN/m_c/poss} fur but clear by the state of m_c's pawpads that {PRONOUN/m_c/subject} {VERB/m_c/have/has} a bad rash.",
-				"m_c winces as they try to groom {PRONOUN/m_c/self} between sneezes. The skin under {PRONOUN/m_c/poss} pelt blisters beneath {PRONOUN/m_c/poss} tongue.",
-				"Irritably m_c scratches at {PRONOUN/m_c/poss} fur rather uselessly. This rash is horrible and {PRONOUN/m_c/subject} {VERB/m_c/are/is} really starting to hate this season due to it."
+			"r_c fusses as m_c comes in wincing. It's hard to see between {PRONOUN/m_c/poss} fur, but it's clear by the state of m_c's pawpads that {PRONOUN/m_c/subject} {VERB/m_c/have/has} a bad rash.",
+			"m_c winces as they try to groom {PRONOUN/m_c/self} between sneezes. The skin under {PRONOUN/m_c/poss} pelt blisters beneath {PRONOUN/m_c/poss} tongue.",
+			"Irritably m_c scratches at {PRONOUN/m_c/poss} fur rather uselessly. This rash is horrible and {PRONOUN/m_c/subject} {VERB/m_c/are/is} really starting to hate this season due to it."
 		],
 		"ear buzzing": [
-				"r_c sits beside m_c watching as {PRONOUN/m_c/subject} {VERB/m_c/shake/shakes} {PRONOUN/m_c/poss} head for the third time that afternood complaining about the buzzing.",
-				"It would seem that sniffles and a watery nose aren't enough for m_c, now {PRONOUN/m_c/poss} ears keep buzzing and it's quite disorientating.",
-				"m_c complains that {PRONOUN/m_c/poss} ears feel full of dandelion fluff and feathers."
+			"r_c sits beside m_c watching as {PRONOUN/m_c/subject} {VERB/m_c/shake/shakes} {PRONOUN/m_c/poss} head for the third time that afternoon, complaining about the buzzing.",
+			"It would seem that sniffles and a watery nose aren't enough for m_c... now {PRONOUN/m_c/poss} ears keep buzzing and it's quite disorientating.",
+			"m_c complains that {PRONOUN/m_c/poss} ears feel full of dandelion fluff and feathers."
 		]
     },
     "constantly dizzy": {
 		"headache": [
-				"r_c startles when m_c trips {PRONOUN/m_c/poss} way into the medicine den. Rather awkwardly, m_c explains it's to ask for a couple of herbs to get rid of the spinning in {PRONOUN/m_c/poss} head.",
-				"Miserably m_c goes about {PRONOUN/m_c/poss} day, {PRONOUN/m_c/poss} swimming vision and swaying world has left {PRONOUN/m_c/object} with a bit of a headache.",
-				"After walking accidentally into a tree that m_c swears snuck up on {PRONOUN/m_c/object}... {PRONOUN/m_c/subject} {VERB/m_c/have/has} been left with a throbbing headache."
+			"r_c startles when m_c trips {PRONOUN/m_c/poss} way into the medicine den. Rather awkwardly, m_c explains it's to ask for a couple of herbs to get rid of the spinning in {PRONOUN/m_c/poss} head.",
+			"Miserably m_c goes about {PRONOUN/m_c/poss} day; {PRONOUN/m_c/poss} swimming vision and swaying world has left {PRONOUN/m_c/object} with a bit of a headache.",
+			"After walking accidentally into a tree that m_c swears snuck up on {PRONOUN/m_c/object}... {PRONOUN/m_c/subject} {VERB/m_c/have/has} been left with a throbbing headache."
 		],
 		"ear buzzing": [
-				"r_c checks and rechecks m_c's ears for {PRONOUN/m_c/object}. No matter how much {PRONOUN/r_c/subject} {VERB/r_c/peer/peers} in, nothing reveals itself to be causing the horrible ringing m_c complains of.",
-				"m_c buries {PRONOUN/m_c/poss} head into the nesting around {PRONOUN/m_c/object}, it doesn't stop the sharp pain and ringing in {PRONOUN/m_c/poss} ears at all.",
-				"m_c dizzily sways around camp, the swaying made worse due to the sharp painful ringing in one ear."
+			"r_c checks and rechecks m_c's ears for {PRONOUN/m_c/object}. No matter how much {PRONOUN/r_c/subject} {VERB/r_c/peer/peers} in, nothing reveals itself to be causing the horrible ringing m_c complains of.",
+			"m_c buries {PRONOUN/m_c/poss} head into the nesting around {PRONOUN/m_c/object}, but it doesn't stop the sharp pain and ringing in {PRONOUN/m_c/poss} ears at all.",
+			"m_c dizzily sways around camp, the swaying made worse due to the sharp painful ringing in one ear."
 		],
 		"dizziness": [
-				"r_c helps m_c to keep on {PRONOUN/m_c/poss} paws as {PRONOUN/r_c/subject} {VERB/m_c/guide/guides} {PRONOUN/m_c/object} towards the medicine den and a comfortable nest to rest until the period of dizziness passes.",
-				"m_c feels like the whole world is swaying, it appears that {PRONOUN/m_c/poss} dizziness is worse than usual today.",
-				"Walking around the camp, m_c keeps stumbling and tripping. {PRONOUN/m_c/poss/CAP} vision can't focus and keeps swimming as the whole world keeps swaying.",
-				"The world is refusing to stay still for m_c and {PRONOUN/m_c/subject} {VERB/m_c/keep/keeps} complaining about needing the help."
+			"r_c helps m_c to keep on {PRONOUN/m_c/poss} paws as {PRONOUN/r_c/subject} {VERB/m_c/guide/guides} {PRONOUN/m_c/object} towards the medicine den and a comfortable nest to rest in until the period of dizziness passes.",
+			"m_c feels like the whole world is swaying; it appears that {PRONOUN/m_c/poss} dizziness is worse than usual today.",
+			"Walking around the camp, m_c keeps stumbling and tripping. {PRONOUN/m_c/poss/CAP} vision can't focus and keeps swimming as the whole world keeps swaying.",
+			"The world is refusing to stay still for m_c, and {PRONOUN/m_c/subject} {VERB/m_c/keep/keeps} complaining about needing the help."
 		]
     },
     "recurring shock": {
         "shock": [
-            "r_c watches as m_c wakes yet again with flattened ears and a racing heart. It seems {PRONOUN/m_c/poss} shock has returned this moon, fresh as the day it first occurred.",
-            "m_c's shock feels fresh, the event from the past flashing before {PRONOUN/m_c/poss} eyes and making {PRONOUN/m_c/object} shake and shiver wishing to just curl back up in the den and not leave.",
-            "Breathing harshly m_c creeps around the camp towards the medicine den, every step shaky and weak."
-	],
+			"r_c watches as m_c wakes yet again with flattened ears and a racing heart. It seems {PRONOUN/m_c/poss} shock has returned this moon, fresh as the day it first occurred.",
+			"m_c's shock feels fresh, the event from the past flashing before {PRONOUN/m_c/poss} eyes and making {PRONOUN/m_c/object} shake and shiver, wishing to just curl back up in the den and not leave.",
+			"Breathing harshly, m_c creeps around the camp towards the medicine den, every step shaky and weak."
+		],
         "nightmares": [
             "r_c sits with m_c, listening to {PRONOUN/m_c/poss} troubles and providing a comforting, sympathetic ear. m_c has had a rough moon, haunted by nightmares.",
             "Haunted by the memories of {PRONOUN/m_c/poss} past, m_c gets so little sleep this month that {PRONOUN/m_c/subject} {VERB/m_c/find/finds} {PRONOUN/m_c/self} unable to function."
         ],
 		"kittenspace": [
-				"Sometimes m_c feels younger than the age {PRONOUN/m_c/poss} body is. {PRONOUN/m_c/subject/CAP} talked to r_c about it, worried something is wrong with {PRONOUN/m_c/object}, but {PRONOUN/r_c/subject} assured {PRONOUN/m_c/object} what {PRONOUN/m_c/subject} are feeling is perfectly normal, {PRONOUN/m_c/poss} brain is just in kittenspace",
-				"m_c, despite being old for a kit, acts younger then {PRONOUN/m_c/subject} are sometimes. It is possible {PRONOUN/m_c/subject} are in kittenspace." 
+			"Sometimes m_c feels younger than the age {PRONOUN/m_c/poss} body is. {PRONOUN/m_c/subject/CAP} talked to r_c about it, worried something is wrong with {PRONOUN/m_c/object}, but {PRONOUN/r_c/subject} assured {PRONOUN/m_c/object} that what {PRONOUN/m_c/subject} {VERB/m_c/are/is} feeling is perfectly normal, {PRONOUN/m_c/poss} brain is just in kittenspace",
+			"m_c, despite being old for a kit, acts younger then {PRONOUN/m_c/subject} {VERB/m_c/are/is} sometimes. It is possible {PRONOUN/m_c/subject} {VERB/m_c/are/is} in kittenspace." 
 		],
 		"puppyspace": [
-				"m_c has slipped into a more puppy like headspace, {PRONOUN/m_c/subject} are worried about this but r_c assures that {PRONOUN/m_c/subject} are just in puppyspace, and that's okay." ,
-				"m_c, despite being too old to play pretend, acts more dog like sometimes. It is possible {PRONOUN/m_c/subject} are in puppyspace." 
+			"m_c has slipped into a more puppy-like headspace. {PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} worried about this, but r_c assures {PRONOUN/m_c/object} that {PRONOUN/m_c/subject} {VERB/m_c/are/is} just in puppyspace, and that's okay." ,
+			"m_c, despite being too old to play pretend, acts more dog like sometimes. It is possible {PRONOUN/m_c/subject} are in puppyspace." 
 		],
 		"kitten regressor": [
-				"m_c feels younger than the age {PRONOUN/m_c/poss} body is. {PRONOUN/m_c/subject/CAP} talked to r_c about it, worried something is wrong with {PRONOUN/m_c/object}, but {PRONOUN/r_c/subject} assured {PRONOUN/m_c/object} what {PRONOUN/m_c/subject} are feeling is perfectly normal,  {PRONOUN/m_c/subject} are just a kitten regressor. ",
-				"m_c, despite being old for a kit, acts younger then {PRONOUN/m_c/subject} are. It is possible {PRONOUN/m_c/subject} {VERB/m_c/are/is} a kitten regressor." 
+			"m_c feels younger than the age {PRONOUN/m_c/poss} body is. {PRONOUN/m_c/subject/CAP} talked to r_c about it, worried something is wrong with {PRONOUN/m_c/object}, but {PRONOUN/r_c/subject} assured {PRONOUN/m_c/object} that what {PRONOUN/m_c/subject} {VERB/m_c/are/is} feeling is perfectly normal - {PRONOUN/m_c/subject} {VERB/m_c/are/is} just a kitten regressor. ",
+			"m_c, despite being old for a kit, acts younger then {PRONOUN/m_c/subject} {VERB/m_c/are/is}. It is possible {PRONOUN/m_c/subject} {VERB/m_c/are/is} a kitten regressor." 
 		],
 		"puppy regressor": [
-				"m_c has slipped into a more puppy-like headspace, {PRONOUN/m_c/subject} are worried about this but r_c assures that {PRONOUN/m_c/subject} are just a puppy regressor, and thats okay." ,
-				"m_c, despite being too old to play pretend, acts more dog like sometimes. It is possible m_c is a puppy regressor." 
+			"m_c has slipped into a more puppy-like headspace. {PRONOUN/m_c/subject} {VERB/m_c/are/is} worried about this, but r_c assures {PRONOUN/m_c/object} that {PRONOUN/m_c/subject} {VERB/m_c/are/is} just a puppy regressor, and that's okay." ,
+			"m_c, despite being too old to play pretend, acts more dog like sometimes. It is possible m_c is a puppy regressor." 
 		],
 		"anxiety attack": [
-				"In the middle of the night m_c wakes up r_c, tail tucked into {PRONOUN/m_c/poss} side. {PRONOUN/m_c/subject/CAP} just {VERB/m_c/need/needs} to talk about the anxieties chasing {PRONOUN/m_c/self} around in {PRONOUN/m_c/poss} head.",
-				"m_c breathes harshly walking around camp, struggling to fight back against the irrational thoughts and memories in {PRONOUN/m_c/poss} head.",
-				"m_c can't get the thoughts and feelings releated to {PRONOUN/m_c/poss} memories out of {PRONOUN/m_c/poss} head this moon."
+			"In the middle of the night m_c wakes r_c up, tail tucked into {PRONOUN/m_c/poss} side. {PRONOUN/m_c/subject/CAP} just {VERB/m_c/need/needs} to talk about the anxieties chasing {PRONOUN/m_c/self} around in {PRONOUN/m_c/poss} head.",
+			"m_c breathes harshly walking around camp, struggling to fight back against the irrational thoughts and memories in {PRONOUN/m_c/poss} head.",
+			"m_c can't get the thoughts and feelings releated to {PRONOUN/m_c/poss} memories out of {PRONOUN/m_c/poss} head this moon."
 		],
 		"paranoia": [
-				"m_c struggles to trust the words of reassurance that r_c is telling {PRONOUN/m_c/object}. After all {PRONOUN/r_c/subject} {VERB/r_c/are/is} probably lying, right?",
-				"Shaking {PRONOUN/m_c/poss} head m_c refuses to leave the self-imposed vigil that {PRONOUN/m_c/subject} {VERB/m_c/sit/sits}.",
-				"Awkwardly m_c keeps interrupting {PRONOUN/m_c/poss} clanmates and insisting on taking over tasks to do them 'properly'."
+			"m_c struggles to trust r_c's words of reassurance. After all {PRONOUN/r_c/subject} {VERB/r_c/are/is} probably lying, right?",
+			"Shaking {PRONOUN/m_c/poss} head, m_c refuses to leave the self-imposed vigil that {PRONOUN/m_c/subject} {VERB/m_c/sit/sits}.",
+			"Awkwardly m_c keeps interrupting {PRONOUN/m_c/poss} Clanmates and insisting on taking over tasks to do them 'properly'."
 		],
 		"sleep paralysis": [
-			"Poor m_c walks into the medicine den in a daze. When r_c asks {PRONOUN/m_c/object} what's wrong, m_c can only splutter an explanation about been unable to move when initially waking.",
-			"m_c's been struggling recently, when {PRONOUN/m_c/subject} {VERB/m_c/wake/wakes} up, {PRONOUN/m_c/subject} {VERB/m_c/find/finds} {PRONOUN/m_c/self} unable to move and seeing things lurking just beyond the den.",
-			"Even sleeping in the middle of the den surrounded by {PRONOUN/m_c/poss} clanmates, m_c doesn't seem to be able to escape the figures that find {PRONOUN/m_c/object} in the early morning."
+			"Poor m_c walks into the medicine den in a daze. When r_c asks {PRONOUN/m_c/object} what's wrong, m_c can only splutter an explanation about being unable to move when initially waking.",
+			"m_c's been struggling recently. When {PRONOUN/m_c/subject} {VERB/m_c/wake/wakes} up, {PRONOUN/m_c/subject} {VERB/m_c/find/finds} {PRONOUN/m_c/self} unable to move and seeing things lurking just beyond the den.",
+			"Even sleeping in the middle of the den surrounded by {PRONOUN/m_c/poss} Clanmates, m_c doesn't seem to be able to escape the figures that find {PRONOUN/m_c/object} in the early morning."
 		],
 		"fatigue": [
-				"r_c's noticed that m_c has been more tired than usual lately. After talking with {PRONOUN/m_c/object} about it seems as if m_c's just experiencing some fatigue.",
-				"m_c's felt so tired and dazed lately, no matter how much {PRONOUN/m_c/subject} {VERB/m_c/sleep/sleeps} {PRONOUN/m_c/subject} can't seem to shake off the fugue.",
-				"After all the shock that's been going on in m_c's life {PRONOUN/m_c/subject}{VERB/m_c/'ve's} gotten a bit of fatigued."	
+			"r_c's noticed that m_c has been more tired than usual lately. After talking with {PRONOUN/m_c/object} about it, it seems as if m_c's just experiencing some fatigue.",
+			"m_c has felt so tired and dazed lately; no matter how much {PRONOUN/m_c/subject} {VERB/m_c/sleep/sleeps}, {PRONOUN/m_c/subject} can't seem to shake off the fugue.",
+			"After all the shock that's been going on in m_c's life, {PRONOUN/m_c/subject}{VERB/m_c/'ve's} gotten a bit of fatigued."	
 		]
     },
     "echoing shock": {
 		"shock": [
-				"m_c talks to r_c with a tremble in {PRONOUN/m_c/poss} voice. {PRONOUN/m_c/subject/CAP} {VERB/m_c/don't/doesn't} even know the proper words to explain the mess of {PRONOUN/m_c/poss} feelings, but r_c sits to offer {PRONOUN/m_c/object} comfort anyway.",
-				"m_c feels hot and cold, {PRONOUN/m_c/poss} body unable to decide and leaving {PRONOUN/m_c/object} shaking unable to process the mess within.",
-				"While nothing bad has happened recently m_c still wakes with a racing heart and tremble that refuses to leave {PRONOUN/m_c/object}."
+			"m_c talks to r_c with a tremble in {PRONOUN/m_c/poss} voice. {PRONOUN/m_c/subject/CAP} {VERB/m_c/don't/doesn't} even know the proper words to explain the mess of {PRONOUN/m_c/poss} feelings, but r_c sits to offer {PRONOUN/m_c/object} comfort anyway.",
+			"m_c feels hot and cold, {PRONOUN/m_c/poss} body unable to decide, leaving {PRONOUN/m_c/object} shaking unable to process the mess within.",
+			"While nothing bad has happened recently, m_c still wakes with a racing heart and a tremble that refuses to leave {PRONOUN/m_c/object}."
 		],
 		"sleeplessness": [
-				"m_c's been avoiding sleeping more and more, r_c can understand it, but still {PRONOUN/r_c/subject} {VERB/m_c/try/tries} to talk with {PRONOUN/m_c/object} about the what fears are keep {PRONOUN/m_c/object} awake.",
-				"It isn't something that m_c can explain, {PRONOUN/m_c/poss} avoidance of sleep from something deeper within.",
-				"As m_c takes yet another night patrol {PRONOUN/m_c/poss} clanmates can only take notice of how worn down {PRONOUN/m_c/subject} {VERB/m_c/seem/seems}."
+			"m_c's been avoiding sleeping more and more. r_c can understand it, but still {PRONOUN/r_c/subject} {VERB/m_c/try/tries} to talk with {PRONOUN/m_c/object} about the fears that keep {PRONOUN/m_c/object} awake.",
+			"It isn't something that m_c can explain. {PRONOUN/m_c/poss/CAP} avoidance of sleep comes from something deeper within.",
+			"As m_c takes yet another night patrol, {PRONOUN/m_c/poss} Clanmates can only take notice of how worn down {PRONOUN/m_c/subject} {VERB/m_c/seem/seems}."
 		],
 		"kittenspace": [
-				"Sometimes m_c feels younger than the age {PRONOUN/m_c/poss} body is.  {PRONOUN/m_c/subject} talked to r_c about it, worried something is wrong with {PRONOUN/m_c/object}, but {PRONOUN/m_c/subject} assured {PRONOUN/m_c/object} what {PRONOUN/m_c/subject} are feeling is perfectly normal, {PRONOUN/m_c/poss} brain is just in kittenspace",
-				"m_c, despite being old for a kit, act's younger then {PRONOUN/m_c/subject} are sometimes. It is possible {PRONOUN/m_c/subject} are in kittenspace." 
+			"Sometimes m_c feels younger than the age {PRONOUN/m_c/poss} body is.  {PRONOUN/m_c/subject} talked to r_c about it, worried something is wrong with {PRONOUN/m_c/object}, but {PRONOUN/m_c/subject} assured {PRONOUN/m_c/object} that what {PRONOUN/m_c/subject} {VERB/m_c/are/is} feeling is perfectly normal, {PRONOUN/m_c/poss} brain is just in kittenspace.",
+			"m_c, despite being old for a kit, acts younger then {PRONOUN/m_c/subject} {VERB/m_c/are/is} sometimes. It is possible {PRONOUN/m_c/subject} {VERB/m_c/are/is} in kittenspace." 
 		],
 		"puppyspace": [
-				"m_c has slipped into a more puppy like headspace, {PRONOUN/m_c/subject} are worried about this but r_c assures that {PRONOUN/m_c/subject} are just in puppyspace, and thats okay." ,
-				"m_c, despite being too old to play pretend, act's more dog like sometimes. It is possible {PRONOUN/m_c/subject} are in puppyspace." 
+			"m_c has slipped into a more puppy-like headspace. {PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} worried about this, but r_c assures {PRONOUN/m_c/object} that {PRONOUN/m_c/subject} {VERB/m_c/are/is} just in puppyspace, and that's okay." ,
+			"m_c, despite being too old to play pretend, acts more dog-like sometimes. It is possible {PRONOUN/m_c/subject} {VERB/m_c/are/is} in puppyspace." 
 		],
 		"kitten regressor": [
-				"m_c feels younger than the age {PRONOUN/m_c/poss} body is.  {PRONOUN/m_c/subject} talked to r_c about it, worried something is wrong with {PRONOUN/m_c/object}, but {PRONOUN/m_c/subject} assured {PRONOUN/m_c/object} what {PRONOUN/m_c/subject} are feeling is perfectly normal,  {PRONOUN/m_c/subject} they are just a kitten regressor. ",
-				"m_c, despite being old for a kit, act's younger then {PRONOUN/m_c/subject} are. It is possible {PRONOUN/m_c/subject} is a kitten regressor." 
+			"m_c feels younger than the age {PRONOUN/m_c/poss} body is.  {PRONOUN/m_c/subject} talked to r_c about it, worried something is wrong with {PRONOUN/m_c/object}, but {PRONOUN/m_c/subject} assured {PRONOUN/m_c/object} that what {PRONOUN/m_c/subject} {VERB/m_c/are/is} feeling is perfectly normal,  {PRONOUN/m_c/subject} {VERB/m_c/are/is} just a kitten regressor.",
+			"m_c, despite being old for a kit, acts younger then {PRONOUN/m_c/subject} {VERB/m_c/are/is}. It is possible {PRONOUN/m_c/subject} {VERB/m_c/are/is} a kitten regressor." 
 		],
 		"puppy regressor": [
-				"m_c has slipped into a more puppy like headspace, {PRONOUN/m_c/subject} are worried about this but r_c assures that {PRONOUN/m_c/subject} are just a puppy regressor, and thats okay." ,
-				"m_c, despite being too old to play pretend, act's more dog like sometimes. It is possible m_c is a puppy regressor." 
+			"m_c has slipped into a more puppy-like headspace. {PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} worried about this but r_c assures {PRONOUN/m_c/object} that {PRONOUN/m_c/subject} {VERB/m_c/are/is} just a puppy regressor, and that's okay." ,
+			"m_c, despite being too old to play pretend, acts more dog-like sometimes. It is possible m_c is a puppy regressor." 
 		],
 		"paranoia": [
-				"r_c struggles to sooth m_c as {PRONOUN/m_c/subject} {VERB/m_c/refuse/refuses} to hear anything from a 'traitorous' cat like r_c.",
-				"m_c feels like the whole of the world and the clan is against {PRONOUN/m_c/object}.",
-				"Staring up at the sky, m_c lashes {PRONOUN/m_c/poss} tail and presses ears firmly down, has everyone abandoned {PRONOUN/m_c/object}."
+			"r_c struggles to soothe m_c as {PRONOUN/m_c/subject} {VERB/m_c/refuse/refuses} to hear anything from a 'traitorous' cat like r_c.",
+			"m_c feels like the whole world and the Clan is against {PRONOUN/m_c/object}.",
+			"Staring up at the sky, m_c lashes {PRONOUN/m_c/poss} tail and presses ears firmly down... Has everyone abandoned {PRONOUN/m_c/object}?"
 		],
 		"lethargy": [
 				"Recently m_c's been feeling so worn down. It's all that {PRONOUN/m_c/subject} can do to explain to r_c the awful overwhelming feeling that prickles just beneath {PRONOUN/m_c/poss} fur.",
