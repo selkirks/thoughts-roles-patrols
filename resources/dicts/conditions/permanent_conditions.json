@@ -1622,7 +1622,7 @@
     "jumbled noise": {
 		"severity": "minor",
 		"congenital": "sometimes",
-		"moons until": 3,
+		"moons_until": 3,
 		"mortality": {
 			"newborn": 0,
 			"kitten": 0,
