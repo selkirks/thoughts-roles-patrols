@@ -1647,10 +1647,6 @@
 		]
     },
     "tics": {
-        "duration": 1,
-        "severity": "minor",
-        "medicine_duration": 2,
-    "word loss": {
         "severity": "minor",
         "mortality": {
             "newborn": 0,
@@ -1661,8 +1657,18 @@
             "senior adult": 0,
             "senior": 0
         },
-        "illness_infectiousness": [
-        ],
+        "medicine_mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "duration": 1,
+        "medicine_duration": 2,
+        "infectiousness": 0,
         "risks": [
             {
                 "name": "tic attack",
@@ -1677,17 +1683,17 @@
                 "chance": 15
             }
         ],
-        "also_got": [
-        ],
-        "cause_permanent": [
-        ],
-        "herbs": [
-        ]
+        "herbs": []
     },
     "tic attack": {
-        "duration": 2,
         "severity": "major",
-        "medicine_duration": 1,
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
             "elder": 0
         },
         "medicine_mortality": {
@@ -1697,7 +1703,7 @@
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "duration": 1,
         "medicine_duration": 0,
@@ -1716,16 +1722,6 @@
             "senior adult": 0,
             "senior": 0
         },
-        "illness_infectiousness": [
-        ],
-        "risks": [
-        ],
-        "also_got": [
-        ],
-        "cause_permanent": [
-        ],
-        "herbs": [
-        ],
         "medicine_mortality": {
             "newborn": 0,
             "kitten": 0,
@@ -1740,6 +1736,28 @@
         "infectiousness": 0,
         "risks": [],
         "herbs": []
+    },
+    "word loss": {
+        "severity": "minor",
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+        ],
+        "also_got": [
+        ],
+        "cause_permanent": [
+        ],
+        "herbs": [
+        ]
     },
     "dizziness": {
         "severity": "major",
