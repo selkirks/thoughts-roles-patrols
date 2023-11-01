@@ -269,7 +269,7 @@
 		"fatigue": [
 			"r_c's noticed that m_c has been more tired than usual lately. After talking with {PRONOUN/m_c/object} about it, it seems as if m_c's just experiencing some fatigue.",
 			"m_c has felt so tired and dazed lately; no matter how much {PRONOUN/m_c/subject} {VERB/m_c/sleep/sleeps}, {PRONOUN/m_c/subject} can't seem to shake off the fugue.",
-			"After all the shock that's been going on in m_c's life, {PRONOUN/m_c/subject}{VERB/m_c/'ve's} gotten a bit of fatigued."	
+			"After all the shock that's been going on in m_c's life, {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} gotten a bit of fatigued."	
 		]
     },
     "echoing shock": {
