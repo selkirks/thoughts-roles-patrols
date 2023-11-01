@@ -1200,9 +1200,9 @@
             "constantly dizzy",
             "partial hearing loss",
             "persistent headaches",
-	    "disrupted senses",
+	        "disrupted senses",
             "jumbled noise",          
-	    "lazy eye"
+	        "lazy eye"
         ],
         "herbs": [
             "juniper",
@@ -1239,7 +1239,7 @@
             "one bad eye",
             "failing eyesight",
             "recurring shock",	
-	    "lazy eye"
+	        "lazy eye"
         ],
         "herbs": [
             "cobwebs",
@@ -1492,8 +1492,8 @@
 		],
         "herbs": [
             "poppy",
-	    "comfrey",
-	    "elder_leaves"
+	        "comfrey",
+	        "elder_leaves"
         ]
     },
 
@@ -1550,8 +1550,8 @@
             "joint pain"
         ],
         "cause_permanent": [
-		"declawed",
-		"recurring shock"
+		    "declawed",
+		    "recurring shock"
         ],
         "herbs": [
             "juniper",
