@@ -160,6 +160,14 @@
 			"After working {PRONOUN/m_c/self} into such anxiety m_c finds {PRONOUN/m_c/self} struggling to get back out of it and on edge for the rest of the day.",
 			"m_c refuses to let {PRONOUN/m_c/self} calm down, sure that there is something wrong and dangerous out there.",
 			"While there is no reason to worry m_c refuses to see it that way and stands stiffly at the camp entry fur all on end and ears raised to hear absolutely everything."
+		],
+		"tic": [
+			"r_c calmly explains that this sometimes happens to cats who are panicing. This doesn't help soothe m_c's mind or twitching tail.",
+			"When m_c squeaks and can't stop squeaking during {PRONOUN/m_c/poss} anxiety attack."
+		],
+		"tic attack":[
+			"r_c calmly explains that what m_c is experincing is a tic attack.",
+			"m_c can't control {PRONOUN/m_c/poss} movement during {PRONOUN/m_c/poss} anxiety attack."
 		]
 	},
 	"panic attack": {
@@ -187,6 +195,16 @@
 			"Shaking on {PRONOUN/m_c/poss} paws m_c goes to r_c struggling to retain balance after all the panic.",
 			"Because of m_c's panic {PRONOUN/m_c/poss} head has become really fuzzy and left {PRONOUN/m_c/object} a bit disorientated.",
 			"From all of the panic m_c's head is spinning and {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} not sure {PRONOUN/m_c/subject} can trust {PRONOUN/m_c/poss} own paws."
+		],
+		"tic": [
+			"Heart pounding, and claws sheathing and unsheathing, m_c goes to r_c to ask what's going on! Unortunatly for m_c, r_c can't help with {PRONOUN/m_c/poss} ticing.",
+			"{PRONOUN/m_c/poss/CAP} anxiety attack has caused m_c to start ticing.",
+			"Adding to m_c's panic, {PRONOUN/m_c/poss} body has started moving without {PRONOUN/m_c/poss} say so."
+		],
+		"tic attack":[
+			"r_c tries to soothe m_c when {PRONOUN/m_c/subject} {VERB/m_c/start/starts} having a tic attack.",
+			"m_c's panic has to come out of {PRONOUN/m_c/poss} body somehow and it seems that {PRONOUN/m_c/poss} rapid ticing was it.",
+			"The tic attack that m_c got isn't settling {PRONOUN/m_c/poss} anxiety."
 		]
 	},	
 	"seasonal lethargy": {
