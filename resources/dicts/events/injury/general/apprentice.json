@@ -157,6 +157,46 @@
             "permanent_condition",
             "echoing shock"
         ],
+        "event_text": "r_c's words when m_c failed {PRONOUN/m_c/poss} catch rattled around in m_c and have left {PRONOUN/m_c/object} distant.",
+        "history_text": {
+            "permanent_condition": "r_c's words have given m_c some echoing shock.",
+            "reg_death": "m_c died because of r_c's rougher and rougher training."
+        },
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": [
+            "adventurous",
+            "ambitious",
+            "bloodthirsty",
+            "bold",
+            "cold",
+            "daring",
+            "fierce",
+            "shameless",
+            "strict",
+            "troublesome",
+            "vengeful"
+        ],
+        "other_cat_skill": null
+    },
+    {
+        "injury": "shock",
+        "tags": [
+            "other_cat",
+            "other_cat_mentor",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "mc_to_rc",
+            "neg_respect",
+            "neg_trust",
+            "neg_comfort",
+            "dislike",
+            "neg_platonic",
+            "permanent_condition",
+            "echoing shock"
+        ],
         "event_text": "r_c's cruel training style has left m_c in shock.",
         "history_text": {
             "permanent_condition": "m_c realizes that {PRONOUN/m_c/subject} can't stand being in the pressance of {PRONOUN/m_c/poss} mentor, r_c anymore.",
