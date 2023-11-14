@@ -1199,13 +1199,13 @@
         "congenital": "never",
         "moons_until": 0,
         "mortality": {
-            "newborn": 200,
-            "kitten": 200,
-            "adolescent": 200,
-            "young adult": 200,
-            "adult": 200,
-            "senior adult": 200,
-            "senior": 200
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
         },
         "illness_infectiousness": [
         ],
@@ -1252,6 +1252,50 @@
             "chamomile",
             "poppy"
 		]
+    },
+    "body biter": {
+        "severity": "minor",
+        "congenital": "sometimes",
+        "moons_until": 2,
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0 
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+            {
+                "name": "an infected wound",
+                "chance": 15 
+            },
+            {
+                "name": "torn pelt",
+                "chance": 50
+            },
+            {
+                "name": "wrentched claws",
+                "chance": 30
+            },
+            {
+                "name": "cracked pads",
+                "chance": 30
+            },
+            {
+                "name": "rash",
+                "chance": 20
+            }
+        ],
+        "herbs": [
+            "juniper",
+            "ragwort",
+            "poppy",
+            "raspberry"
+        ]
     },
     "declawed": {
         "severity": "major",
