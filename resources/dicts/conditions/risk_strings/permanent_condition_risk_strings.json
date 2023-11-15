@@ -802,6 +802,32 @@
 				"After all m_c's difficulties with sleep, {PRONOUN/m_c/subject} can't help but feel disappointed when the sleep {PRONOUN/m_c/subject} finally {VERB/m_c/do/does} get doesn't seem to help."
 		]
     },
+	"body biter": {
+		"an infected wound": [
+			"r_c sighs when m_c walks into the medicine den. m_c has picked at {PRONOUN/m_c/self} enough that {PRONOUN/m_c/subject} have gotten an infection.",
+			"m_c's skin is red and swollen where {PRONOUN/m_c/subject} {VERB/m_c/have/has} picked at {PRONOUN/m_c/self}.",
+			"m_c whinces uncomfortably as {PRONOUN/m_c/subject} pad into the medicine den with an infection."
+		],
+		"torn pelt": [
+			"m_c has picked at {PRONOUN/m_c/poss} pelt enough for it to be patchy and missing fur in spots.",
+			"m_c has been grooming {PRONOUN/m_c/self} too much and too often. {PRONOUN/m_c/poss/CAP} pelt has become torn.",
+			"m_c sighs, {PRONOUN/m_c/poss} pelt has become torn from the amount of fur that {PRONOUN/m_c/subject} {VERB/m_c/have/has} torn out.",
+			"{PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} pelt has become torn from m_c pulling out {PRONOUN/m_c/poss} fur.",
+			"m_c has been anxiously pulling out {PRONOUN/m_c/poss} fur."
+		],
+		"wrentched claws": [
+			"r_c glares at m_c when {PRONOUN/m_c/subject} {VERB/m_c/come/comes} in after biting {PRONOUN/m_c/poss} claws to potential shreds.",
+			"m_c whinces after realizing just how far {PRONOUN/m_c/subject} {VERB/m_c/have/has} biten {PRONOUN/m_c/object} claws."
+		],
+		"cracked pads": [
+			"r_c sighs when m_c comes in with bleeding paw pads.",
+			"m_c has picked and nibbled at {PRONOUN/m_c/poss} paw pads until they have become cracked."
+		],
+		"rash": [
+			"m_c gets help from r_c because of the rash that has formed from {PRONOUN/m_c/poss} obsesive grooming.",
+			"m_c's pelt has gotten a rash from iritation."
+		]
+	},
     "declawed": {
 		"an infected wound": [
 				"r_c hisses as m_c limps into the medicine den. {PRONOUN/r_c/subject/CAP} {VERB/r_c/don't/doesn't} even have to check to know there's something wrong with m_c's paws.",
