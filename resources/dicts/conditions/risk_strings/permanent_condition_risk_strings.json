@@ -425,7 +425,8 @@
 		"vivid daydreams": [
             "m_c talks to r_c at length about all {PRONOUN/m_c/poss} ideas and dreams to help the clan.",
             "It's not odd to see m_c running around camp with {PRONOUN/m_c/poss} heads somewhere in the clouds.",
-            "m_c purrs in a sunbeam while {PRONOUN/m_c/poss} mind is elsewhere."
+            "m_c purrs in a sunbeam while {PRONOUN/m_c/poss} mind is elsewhere.",
+			"m_c closes {PRONOUN/m_c/poss} eyes and daydreams for a long time today."
 	],
 		"hyperfixation": [
             "m_c spins circles around r_c running around and screaming about {PRONOUN/m_c/poss} latest interest and hyperfixation.",
@@ -435,7 +436,8 @@
 		"indecision": [
             "m_c comes in to see r_c, tail twitching as {PRONOUN/m_c/subject} consult with {PRONOUN/r_c/object} on how to make decision making easier.",
             "m_c stands beside the camp entry way somewhat frozen talking with the deputy about what patrol to potentially go on.",
-            "m_c sits, tail tip twitching as {PRONOUN/m_c/subject} try to decided what prey to eat."
+            "m_c sits, tail tip twitching as {PRONOUN/m_c/subject} try to decided what prey to eat.",
+			"m_c paces back and forth as {PRONOUN/m_c/subject} can't decide to ask if {PRONOUN/m_c/subject} should ask the deputy if {PRONOUN/m_c/subject} can go to the gathering."
 	],
 		"impulsivity": [
             "r_c sighs as {PRONOUN/m_c/subject} watch m_c racing around camp and leaping into decisions without fully thinking.",
@@ -456,7 +458,8 @@
 		"understimulation": [
             "r_c talks to m_c, discussing together why {PRONOUN/m_c/subject} {VERB/m_c/have/has} been feeling so listless and uncomfortable around camp recently.",
             "No matter what m_c seems to do it just feels like something is off this moon.",
-            "Frustrated m_c snaps at a clanmate to leave {PRONOUN/m_c/object} alone, only to regret it and apologise heartbeats later. Something is off with {PRONOUN/m_c/object}."
+            "Frustrated m_c snaps at a clanmate to leave {PRONOUN/m_c/object} alone, only to regret it and apologise heartbeats later. Something is off with {PRONOUN/m_c/object}.",
+	    "m_c rocks back and forth trying to get rid of this painfully boredness."
 	    ]
     },
     "starwalker": {
