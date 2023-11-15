@@ -160,6 +160,12 @@
 		"m_c has never needed words to speak, fluent enough with {PRONOUN/m_c/poss} body language and the clan adapts to help {PRONOUN/m_c/object} be heard even in {PRONOUN/m_c/poss} silence.",
 		"Nobody knew silence could be so loud until m_c arrived."
 	],
+    "body biter":[
+        "After {PRONOUN/m_c/poss} parent is informed that m_c doesn't realize when {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} pulling at {PRONOUN/m_c/poss} fur, m_c's parent drops {PRONOUN/m_c/object} off at the medicine cat den. r_c says that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} a body biter.",
+        "m_c bites at {PRONOUN/m_c/poss} claws. It is possible that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} a body biter.",
+        "m_c keeps getting told to not to pick at {PRONOUN/m_c/poss} scabs but m_c doesn't even realize when {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} doing it.",
+        "m_c picks at {PRONOUN/m_c/poss} body when {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} stressed."
+    ],
 	"jellyfish joints": [
 		"m_c curses {PRONOUN/m_c/poss} days of showing off {PRONOUN/m_c/poss} bendy paws in kithood, as now {PRONOUN/m_c/poss} joints ache, and r_c has told {PRONOUN/m_c/object} that {PRONOUN/m_c/subject}{VERB/m_c/'s/'re} hypermobile. Meaning that there is no changing it.",
 		"After moons of seeing m_c bounce around painlessly, r_c calls {PRONOUN/m_c/object} into the medicine cat den to explain that the reason {PRONOUN/m_c/poss} joints have been hurting {PRONOUN/m_c/subject} is that maybe {PRONOUN/m_c/poss} flexible joints <i>weren't</i> the painless kind.",

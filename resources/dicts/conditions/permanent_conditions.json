@@ -1253,6 +1253,50 @@
             "poppy"
 		]
     },
+    "body biter": {
+        "severity": "minor",
+        "congenital": "sometimes",
+        "moons_until": 2,
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0 
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+            {
+                "name": "an infected wound",
+                "chance": 15 
+            },
+            {
+                "name": "torn pelt",
+                "chance": 50
+            },
+            {
+                "name": "wrentched claws",
+                "chance": 30
+            },
+            {
+                "name": "cracked pads",
+                "chance": 30
+            },
+            {
+                "name": "rash",
+                "chance": 20
+            }
+        ],
+        "herbs": [
+            "juniper",
+            "ragwort",
+            "poppy",
+            "raspberry"
+        ]
+    },
     "declawed": {
         "severity": "major",
         "congenital": "never",

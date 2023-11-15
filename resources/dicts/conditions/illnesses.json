@@ -759,7 +759,15 @@
 			{
 				"name": "paranoia",
 				"chance": 50
-			}
+			},
+            {
+                "name": "tics",
+                "chance": 30
+            },
+            {
+                "name": "tic attack",
+                "chance": 20
+            }
 			],
         "herbs": [
             "catmint",
@@ -810,7 +818,15 @@
 			{
 				"name": "dizziness",
 				"chance": 15
-			}
+			},
+            {
+                "name": "tics",
+                "chance": 20
+            },
+            {
+                "name": "tic attack",
+                "chance": 40
+            }
 		],
         "herbs": [
             "catmint",
