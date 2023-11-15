@@ -2991,7 +2991,7 @@
                 ]
             },
             {
-                "text": "p_l finds a kittypet collapsed by the Thunderpath, wailing for their housefolk. On approch {PRONOUN/p_l/subject} only barely {VERB/p_l/dodge/dodges} the snap of their teeth as the kittypet whirls on {PRONOUN/p_l/object}. The reason for the defensiveness is soon clear when r_c gasps spying the litter that the kittypet shields in a carboard box. After calming and talking with the kittepet, p_l sends r_c back to c_n to let them know to prepare the Nursery for some new arrivals.",
+                "text": "p_l finds a kittypet collapsed by the Thunderpath, wailing for their housefolk. On approach {PRONOUN/p_l/subject} only barely {VERB/p_l/dodge/dodges} the snap of their teeth as the kittypet whirls on {PRONOUN/p_l/object}. The reason for the defensiveness is soon clear when r_c gasps spying the litter that the kittypet shields in a cardboard box. After calming and talking with the kittepet, p_l sends r_c back to c_n to let them know to prepare the Nursery for some new arrivals.",
                 "exp": 15,
                 "weight": 20,
                 "relationships": [
