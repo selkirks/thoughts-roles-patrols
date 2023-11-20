@@ -806,6 +806,14 @@
 				"name": "anxiety attack",
 				"chance": 30
 			},
+            {
+                "name": "tics",
+                "chance": 80
+            },
+            {
+                "name": "tic attack",
+                "chance": 90
+            },
 			{
 				"name": "seasonal lethargy",
 				"chance": 30
@@ -900,6 +908,10 @@
             {
                 "name": "puppy regressor",
                 "chance": 10
+            },
+            {
+                "name": "body biter",
+                "chance": 70
             }
         ],
         "herbs":[
@@ -955,7 +967,11 @@
 			{
 				"name": "fatigue",
 				"chance": 25
-			}
+			},
+            {
+                "name": "body biter",
+                "chance": 70
+            }
         ],
         "herbs": [ 
             "thyme",
@@ -1099,11 +1115,15 @@
 			},
             {
                 "name": "tics",
-                "chance": 20
+                "chance": 80
             },
             {
                 "name": "tic attack",
-                "chance": 10
+                "chance": 90
+            },
+            {
+                "name": "body biter",
+                "chance": 70
             }
         ],
         "herbs": [
@@ -1270,24 +1290,24 @@
         ],
         "risks": [
             {
-                "name": "an infected wound",
-                "chance": 15 
-            },
-            {
                 "name": "torn pelt",
-                "chance": 50
+                "chance": 40
             },
             {
                 "name": "wrentched claws",
-                "chance": 30
+                "chance": 80
             },
             {
                 "name": "cracked pads",
-                "chance": 30
+                "chance": 50
             },
             {
                 "name": "rash",
-                "chance": 20
+                "chance": 30
+            },
+            {
+                "name": "small cut",
+                "chance": 80
             }
         ],
         "herbs": [
@@ -1910,5 +1930,47 @@
 			}
         ],
         "herbs": []
+    },
+    "bug brained": {
+        "severity": "minor",
+        "congenital": "always",
+        "moons_until": 6,
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+            {
+                "name": "tics",
+                "chance": 30
+            },
+            {
+                "name": "tic attack",
+                "chance": 65
+            },
+            {
+                "name": "impulsivity",
+                "chance": 50
+            },
+            {
+                "name": "sprain",
+                "chance": 70
+            },
+            {
+                "name": "absence",
+                "chance": 75
+            },
+            {
+                "name": "broken bone",
+                "chance": 100
+            }
+        ]
     }
 }

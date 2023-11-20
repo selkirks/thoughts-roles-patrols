@@ -449,11 +449,11 @@ class Condition_Events():
         base_illness = ["running nose", "kittencough", "whitecough", "silvercough", "greencough",
                         "yellowcough", "an infected wound", "heat exhaustion", "stomachache",
                         "nightmares", "anxiety attack", "panic attack", "sleeplessness",
-                        "ticks", "nest wetting", "nonverbal"]
+                        "ticks", "nest wetting", "nonverbal", "tics"]
         progression = [["whitecough", "silvercough"], "silvercough", ["silvercough", "greencough"], "greencough",
                         "yellowcough", "redcough", "a festering wound", "heat stroke", ["diarrhea", "constipation"],
                         "constant nightmares", "panic attack", ["shock", "paranoia"], "ongoing sleeplessness", 
-                        ["tick bites", "severe tick bites"], "night dirtmaking", "mute"]
+                        ["tick bites", "severe tick bites"], "night dirtmaking", "mute", ["tics, tic attack"]]
         illness_progression = dict(zip(base_illness, progression))
         # ---------------------------------------------------------------------------- #
         #                         handle currently sick cats                           #

@@ -762,11 +762,11 @@
 			},
             {
                 "name": "tics",
-                "chance": 30
+                "chance": 60
             },
             {
                 "name": "tic attack",
-                "chance": 20
+                "chance": 80
             }
 			],
         "herbs": [
@@ -821,11 +821,11 @@
 			},
             {
                 "name": "tics",
-                "chance": 20
+                "chance": 80
             },
             {
                 "name": "tic attack",
-                "chance": 40
+                "chance": 60
             }
 		],
         "herbs": [
@@ -1688,15 +1688,15 @@
         "risks": [
             {
                 "name": "tic attack",
-                "chance": 20
+                "chance": 80
             },
             {
                 "name": "bruises",
-                "chance": 10
+                "chance": 30
             },
             {
                 "name": "sore",
-                "chance": 15
+                "chance": 25
             }
         ],
         "herbs": []
@@ -1724,7 +1724,20 @@
         "duration": 1,
         "medicine_duration": 0,
         "infectiousness": 0,
-        "risks": [],
+        "risks": [
+            {
+                "name": "bruises",
+                "chance": 20
+            },
+            {
+                "name": "sore",
+                "chance": 15
+            },
+            {
+                "name": "spams",
+                "chance": 40
+            }
+        ],
         "herbs": []
     },
     "information loss": {

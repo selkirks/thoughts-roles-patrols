@@ -408,6 +408,11 @@
 				"m_c tells r_c about {PRONOUN/m_c/poss} constant tiredness.",
 				"Even with the best night's sleep, m_c's just felt more and more tired.",
 				"Looking up at the den's ceiling m_c wonders if {PRONOUN/m_c/subject} will ever feel less tired."
+		],
+		"body biter": [
+				"r_c sighs and tells m_c that {PRONOUN/m_c/subject} can't keep coming in after biting fur away. Soon after, r_c realizes that m_c is a body biter.",
+				"m_c bites and nibbles at {PRONOUN/m_c/self}. It's possible that m_c is a body biter now.",
+				"m_c assures {PRONOUN/m_c/poss} loved one that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} not hurting {PRONOUN/m_c/self} intentionally when {PRONOUN/m_c/subject} groom {PRONOUN/m_c/self} repetitively."
 		]
     },
     "comet spirit": {
@@ -498,6 +503,16 @@
 				"Unable to properly deal with been overwhelmed m_c has started to pace in place nervously.",
 				"m_c's mind has been going in circles around the same kinds of messy thoughts.",
 				"Unable to properly stim after some recent changes m_c has found {PRONOUN/m_c/self} with {PRONOUN/m_c/poss} fur all puffed up and the same anxieties keep circling in {PRONOUN/m_c/poss} head."
+		],
+		"tic": [
+			"r_c assures m_c that {PRONOUN/m_c/poss} body is just having tics.",
+			"m_c has started ticing.",
+			"m_c twitches and tics. {PRONOUN/m_c/poss/CAP} tail tip moves without {PRONOUN/m_c/poss} say-so."
+		],
+		"tic attack": [
+			"r_c assures m_c that {PRONOUN/m_c/poss} body is just having tics.",
+			"m_c is having a tic attack and can't patrol today.",
+			"m_c squeaks and shakes {PRONOUN/m_c/poss} head during {PRONOUN/m_c/poss} tic attack."
 		],
 		"seasonal lethargy": [
 				"m_c comes into r_c's den feeling incredibly tired and stressed from the changing of the season. r_c reassures {PRONOUN/m_c/object} it's alright and {PRONOUN/m_c/subject} {VERB/m_c/can/could} take a break if really needed to.",
@@ -604,6 +619,10 @@
 		"puppy regressor": [
 				"m_c has slipped into a more puppy like headspace, {PRONOUN/m_c/subject} are worried about this but r_c assures that {PRONOUN/m_c/subject} are just a puppy regressor, and thats okay." ,
 				"m_c, despite being too old to play pretend, act's more dog like sometimes. It is possible m_c is a puppy regressor." 
+		],
+		"body biter": [
+			"m_c has started biting {PRONOUN/m_c/self} whenever {PRONOUN/m_c/subject} feel anxious. r_c thinks that {PRONOUN/m_c/subject} {VERB/m_c/are/is} a body biter.",
+			"m_c has started grooming {PRONOUN/m_c/self} repetitively whenever {PRONOUN/m_c/subject} {VERB/m_c/get/gets} anxious."
 		]
     },
     "anxiety": {
@@ -689,7 +708,12 @@
         	"After narrowly avoiding an anxiety attack, m_c has started rapidly moving and speaking without meaning to.",
         	"It seems that m_c's anxiety has been too much for {PRONOUN/m_c/object} lately and {PRONOUN/m_c/subject} {VERB/m_c/have/has} gotten a tic attack.",
         	"Much to m_c's horror, {PRONOUN/m_c/poss} friends all see {PRONOUN/m_c/object} start to have a tic attack."
-    ]
+		],
+		"body biter": [
+			"Recently, when m_c starts getting anxious {PRONOUN/m_c/subject} {VERB/m_c/start/starts} biting {PRONOUN/m_c/poss} body.",
+			"m_c works off {PRONOUN/m_c/poss} anxiety by grooming {PRONOUN/m_c/self} perhaps a bit too much.",
+			"m_c starts pulling out {PRONOUN/m_c/poss} fur when {PRONOUN/m_c/subject} {VERB/m_c/get/gets} anxious."
+		]
     },
     "constant roaming pain": {
         "joint pain": [
@@ -803,11 +827,6 @@
 		]
     },
 	"body biter": {
-		"an infected wound": [
-			"r_c sighs when m_c walks into the medicine den. m_c has picked at {PRONOUN/m_c/self} enough that {PRONOUN/m_c/subject} have gotten an infection.",
-			"m_c's skin is red and swollen where {PRONOUN/m_c/subject} {VERB/m_c/have/has} picked at {PRONOUN/m_c/self}.",
-			"m_c whinces uncomfortably as {PRONOUN/m_c/subject} pad into the medicine den with an infection."
-		],
 		"torn pelt": [
 			"m_c has picked at {PRONOUN/m_c/poss} pelt enough for it to be patchy and missing fur in spots.",
 			"m_c has been grooming {PRONOUN/m_c/self} too much and too often. {PRONOUN/m_c/poss/CAP} pelt has become torn.",
@@ -817,17 +836,27 @@
 		],
 		"wrentched claws": [
 			"r_c glares at m_c when {PRONOUN/m_c/subject} {VERB/m_c/come/comes} in after biting {PRONOUN/m_c/poss} claws to potential shreds.",
-			"m_c whinces after realizing just how far {PRONOUN/m_c/subject} {VERB/m_c/have/has} biten {PRONOUN/m_c/object} claws."
+			"m_c whinces after realizing just how far {PRONOUN/m_c/subject} {VERB/m_c/have/has} biten {PRONOUN/m_c/object} claws.",
+			"m_c has bitten {PRONOUN/m_c/poss} claws down to a useless state."
 		],
 		"cracked pads": [
 			"r_c sighs when m_c comes in with bleeding paw pads.",
-			"m_c has picked and nibbled at {PRONOUN/m_c/poss} paw pads until they have become cracked."
+			"m_c has picked and nibbled at {PRONOUN/m_c/poss} paw pads until they have become cracked.",
+			"m_c's paws have cracked from {PRONOUN/m_c/poss} grooming."
 		],
 		"rash": [
 			"m_c gets help from r_c because of the rash that has formed from {PRONOUN/m_c/poss} obsesive grooming.",
-			"m_c's pelt has gotten a rash from iritation."
+			"m_c's pelt has gotten a rash from iritation.",
+			"m_c shys away from touch because {PRONOUN/m_c/poss} fur has gotten senst"
+		],
+		"small cut": [
+			"r_c gets the cobwebs ready when m_c comes in with a small cut.",
+			"m_c has cut {PRONOUN/m_c/self} after chewing on {PRONOUN/m_c/poss} lips.",
+			"m_c has chewed too deeply into {PRONOUN/m_c/poss} calluses and has started to bleed.",
+			"Once again, m_c has started to bleed from {PRONOUN/m_c/poss} nonestop biting."
 		]
 	},
+	
     "declawed": {
 		"an infected wound": [
 				"r_c hisses as m_c limps into the medicine den. {PRONOUN/r_c/subject/CAP} {VERB/r_c/don't/doesn't} even have to check to know there's something wrong with m_c's paws.",
@@ -1181,6 +1210,44 @@
 			"Poor m_c's found that the world has been rocking beneath {PRONOUN/m_c/poss} feet, unsettlingly making {PRONOUN/m_c/object} sway.",
 			"m_c feels a bit turned around, maybe {PRONOUN/m_c/subject} stood up too fast, or didn't sleep properly. In any case, m_c's had to take a break until the dizziness leaves."
 		]
+	},
+	"bug brained": {
+		"tics": [
+			"m_c has started ticing again.",
+			"m_c barely noticed when {PRONOUN/m_c/subject} {VERB/m_c/start/starts} to tic.",
+			"m_c's ears have started to peel backwards without {PRONOUN/m_c/poss} say-so.",
+			"A kit asks why {PRONOUN/m_c/poss} doing that when m_c's fur fluffs out because of {PRONOUN/m_c/poss} tics.",
+			"Another cat gets mad at m_c when {PRONOUN/m_c/subject} {VERB/m_c/start/starts} hissing as a tic."
+		],
+		"tic attack": [
+			"m_c has to get permission from r_c to skip today's patrols because of {PRONOUN/m_c/poss} tic attack.",
+			"m_c has gotten a tic attack!",
+			"m_c has multiple tics going on at once.",
+			"m_c squeaked at another cat and got them very confused before the other cat realized that m_c is having a tic attack.",
+			"m_c can't patrol today because of {PRONOUN/m_c/poss} tics."
+		],
+		"impulsivity": [
+			"m_c has said somethings that {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} mean to r_c.",
+			"m_c ran for seemingly no reason.",
+			"m_c scared off prey despite knowing better.",
+			"m_c starts play fighting with another cat without thinking about it."
+		],
+		"sprain": [
+			"m_c limps to r_c after {PRONOUN/m_c/subject} {VERB/m_c/have/has} sprained {PRONOUN/m_c/poss} paw from jumping awkwardly into the dirt.",
+			"m_c gets a sprain from throwing {PRONOUN/m_c/self} onto the ground.",
+			"m_c got a sprain.",
+			"m_c locks up and takes a harsh fall as a result."
+		],
+		"absence": [
+			"r_c assures m_c's friend that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} just absent for the time being.",
+			"m_c is having a hard time thinking as {PRONOUN/m_c/subject} {VERB/m_c/look/looks} to no where.",
+			"m_c is mentally gone for the time being.",
+			"m_c hears the cats around {PRONOUN/m_c/object} but is having a hard time replying."
+		],
+		"broken bone": [
+			"r_c sighs when m_c comes in with a broken bone from all locked up.",
+			"m_c locks up and takes a harsh fall as a result.",
+			"m_c got very unfortunate when {PRONOUN/m_c/subject} got locked up."
+		]
 	}
-	
 }
