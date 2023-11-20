@@ -696,3 +696,6 @@ jobs:
             'https://clangen.io/api/v1/Update/Channels/${{ env.RELEASE_CHANNEL }}/Releases/${{ env.VERSION_NUMBER }}/Confirm' \
             -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
             -H 'accept: */*'
+      
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v3.1.3
