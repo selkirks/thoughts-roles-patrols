@@ -219,7 +219,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c misstepped and slipped from a rock, but landed on {PRONOUN/m_c/poss} feet nimbly, {PRONOUN/m_c/poss} clanmates commenting on the show of dexterity."
+        "event_text": "m_c misstepped and slipped from a rock, but landed on {PRONOUN/m_c/poss} feet nimbly, {PRONOUN/m_c/poss} Clanmates commenting on the show of dexterity."
     },
     {
         "camp": "any",
@@ -516,9 +516,9 @@
     {
         "camp": "any",
         "tags": [
-			"Newleaf", 
-			"Greenleaf", 
-			"Leaf-fall", 
+			"Newleaf",
+			"Greenleaf",
+			"Leaf-fall",
 			"Leaf-bare"
 		],
         "event_text": "While out on an adventure m_c found an interesting object in the territory and decided to keep it.",
@@ -529,9 +529,9 @@
     {
         "camp": "any",
         "tags": [
-			"Newleaf", 
-			"Greenleaf", 
-			"Leaf-fall", 
+			"Newleaf",
+			"Greenleaf",
+			"Leaf-fall",
 			"Leaf-bare"
 		],
         "event_text": "After sneaking out of the territory m_c has come back with an acc_singular that {PRONOUN/m_c/subject} {VERB/m_c/find/finds} comforting.",
@@ -542,9 +542,9 @@
     {
         "camp": "any",
         "tags": [
-			"Newleaf", 
-			"Greenleaf", 
-			"Leaf-fall", 
+			"Newleaf",
+			"Greenleaf",
+			"Leaf-fall",
 			"Leaf-bare"
 		],
         "event_text": "m_c found a nice acc_singular that {PRONOUN/m_c/subject} decided to keep and wear on {PRONOUN/m_c/poss} pelt.",
@@ -577,7 +577,7 @@
         "accessories": [
             "FLAG"
         ]
-    },	
+    },
     {
         "camp": "any",
         "tags": [
@@ -594,10 +594,10 @@
     {
         "camp": "any",
         "tags": [
-			"Greenleaf", 
-			"other_cat", 
-			"other_cat_mate", 
-			"to_both", 
+			"Greenleaf",
+			"other_cat",
+			"other_cat_mate",
+			"to_both",
 			"platonic"
 		],
         "event_text": "It's tough working in such extreme heat. m_c and r_c spend their evening relaxing together and cooling down in the shade."

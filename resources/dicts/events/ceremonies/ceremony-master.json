@@ -1381,7 +1381,7 @@
     "general_backstory",
     "all_traits"
   ],
-  "(old_name)'s has shown exceptional aptitude and skill during {PRONOUN/m_c/poss} short apprenticeship. Although it's rare for an medicine cat apprentice to be given {PRONOUN/m_c/poss} name so young, m_c more than deserves the honor. "
+  "(old_name) has shown exceptional aptitude and skill during {PRONOUN/m_c/poss} short apprenticeship. Although it's rare for an medicine cat apprentice to be given {PRONOUN/m_c/poss} name so young, m_c more than deserves the honor. "
 ],
   "med_1": [
     [
@@ -2593,7 +2593,7 @@
       "wise",
       "cunning"
     ],
-    "l_n almost feels intimidated by the knowledge (old_name) has gathered in {PRONOUN/m_c/poss} months of training and feels confident when {PRONOUN/l_n/subject} {VERB/l_n/name/names} {PRONOUN/m_c/object} m_c in honor of {PRONOUN/m_c/poss} r_h."
+    "l_n almost feels intimidated by the knowledge (old_name) has gathered in {PRONOUN/m_c/poss} moons of training and feels confident when {PRONOUN/l_n/subject} {VERB/l_n/name/names} {PRONOUN/m_c/object} m_c in honor of {PRONOUN/m_c/poss} r_h."
   ],
   "warrior_45": [
     [
@@ -2703,7 +2703,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "{PRONOUN/(previous_mentor)/subject/CAP} {VERB/(previous_mentor)/don't/doesn't} care if there's no leader, (previous_mentor) knows that (old_name) is deserving of {PRONOUN/m_c/poss} full name. {PRONOUN/(previous_mentor)/subject/CAP} {VERB/(previous_mentor)/gather/gathers} the Clan to hold a ceremony for (old_name), and names {PRONOUN/m_c/object} m_c, honoring {PRONOUN/m_c/poss} r_h."
+    "{PRONOUN/(previous_mentor)/subject/CAP} {VERB/(previous_mentor)/don't/doesn't} care if there's no leader; (previous_mentor) knows that (old_name) is deserving of {PRONOUN/m_c/poss} full name. {PRONOUN/(previous_mentor)/subject/CAP} {VERB/(previous_mentor)/gather/gathers} the Clan to hold a ceremony for (old_name), and names {PRONOUN/m_c/object} m_c, honoring {PRONOUN/m_c/poss} r_h."
   ],
   "warrior_54": [
     [

@@ -86,7 +86,7 @@
             "Leaf-fall",
             "no_body"
         ],
-        "death_text": "m_c wasn't found after wandering away.",
+        "death_text": "m_c wandered away from camp in the night, never to be seen again.",
         "history_text": {
             "reg_death": "m_c was eaten by a predator."
         },
