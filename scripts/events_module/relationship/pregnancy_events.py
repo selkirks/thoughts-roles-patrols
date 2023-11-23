@@ -1,5 +1,6 @@
 from random import choice, randint
 import random
+from operator import xor
 
 from scripts.cat.history import History
 from scripts.utility import (
@@ -112,7 +113,7 @@ class Pregnancy_Events():
 
         if not int(random.random() * chance):
             # If you've reached here - congrats, kits!
-            if kits_are_adopted:
+            if kits_are_adopted or 'infertility' in cat.permanent_condition.keys() or (second_parent and 'infertility' in second_parent.permanent_condition.keys()):
                 Pregnancy_Events.handle_adoption(cat, second_parent, clan)
             else:
                 Pregnancy_Events.handle_zero_moon_pregnant(cat, second_parent, clan)
@@ -507,7 +508,7 @@ class Pregnancy_Events():
             return False, False
 
         # Check to see if the pair can have kits.
-        if cat.gender == second_parent.gender:
+        if not xor('Y' in cat.genotype.sexgene, 'Y' in second_parent.genotype.sexgene):
             if same_sex_birth:
                 return True, False
             elif not same_sex_adoption:
@@ -657,7 +658,7 @@ class Pregnancy_Events():
         ##### SELECT BACKSTORY #####
         if backkit:
             backstory = backkit
-        elif cat and cat.gender == 'molly':
+        elif cat and (cat.gender == 'molly' or (cat.gender == 'intersex' and 'Y' not in cat.genotype.sexgene)):
             backstory = choice(['halfclan1', 'outsider_roots1'])
         elif cat:
             backstory = choice(['halfclan2', 'outsider_roots2'])
@@ -698,19 +699,21 @@ class Pregnancy_Events():
                     if kits_amount == 1:
                         insert = "their kit is"
                     thought = f"Is glad that {insert} safe"
+                    parage = randint(15,120)
                     blood_parent = create_new_cat(Cat, Relationship,
                                                 status=random.choice(["loner", "kittypet"]),
                                                 gender='masc',
                                                 alive=False,
                                                 thought=thought,
-                                                age=randint(15,120),
+                                                age=parage,
                                                 outside=True)[0]
+                    parage = parage + randint(0, 24) - 12
                     blood_parent2 = create_new_cat(Cat, Relationship,
                                                 status=random.choice(["loner", "kittypet"]),
                                                 gender='fem',
                                                 alive=False,
                                                 thought=thought,
-                                                age=randint(15,120),
+                                                age=parage if parage > 14 else 15,
                                                 outside=True)[0]
                     blood_parent.thought = thought
                     blood_parent2.thought = thought
