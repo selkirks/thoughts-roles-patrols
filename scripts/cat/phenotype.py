@@ -200,7 +200,7 @@ class Phenotype():
                 if(self.genotype.agouti[0] == 'a'):
                     self.colour = "non" + self.colour
                 if(self.genotype.dilute[0] == 'd' or self.genotype.pinkdilute[0] == 'dp'):
-                    self.colour = "light" + self.colour
+                    self.colour = "light " + self.colour
             
             elif(self.genotype.ext[0] == 'er'):
                 self.colour += ' russet'
