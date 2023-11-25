@@ -565,6 +565,8 @@ class Cat():
             self.get_permanent_condition('born without a tail', born_with=True)
         if len(self.genotype.sexgene) > 2 and 'Y' in self.genotype.sexgene:
             self.get_permanent_condition('infertility', born_with=True)
+        if 'Fd' in self.genotype.fold:
+            self.get_permanent_condition('constant joint pain', born_with=True)
 
         # backstory
         if self.backstory is None:

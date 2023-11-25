@@ -120,6 +120,7 @@ class ProfileScreen(Screens):
         self.sub_tab_1 = None
         self.backstory_background = None
         self.history_text_box = None
+        self.genetic_text_box = None
         self.conditions_tab_button = None
         self.condition_container = None
         self.left_conditions_arrow = None
@@ -337,12 +338,29 @@ class ProfileScreen(Screens):
                     if self.save_text:
                         self.save_text.kill()
                     self.help_button.kill()
+                elif self.open_sub_tab == 'genetics':
+                    self.genetic_text_box.kill()
                 self.open_sub_tab = 'life events'
                 self.toggle_history_sub_tab()
             elif event.ui_element == self.sub_tab_2:
                 if self.open_sub_tab == 'life events':
                     self.history_text_box.kill()
+                elif self.open_sub_tab == 'genetics':
+                    self.genetic_text_box.kill()
                 self.open_sub_tab = 'user notes'
+                self.toggle_history_sub_tab()
+            elif event.ui_element == self.sub_tab_3:
+                if self.open_sub_tab == 'user notes':
+                    self.notes_entry.kill()
+                    self.display_notes.kill()
+                    if self.edit_text:
+                        self.edit_text.kill()
+                    if self.save_text:
+                        self.save_text.kill()
+                    self.help_button.kill()
+                elif self.open_sub_tab == 'life events':
+                    self.history_text_box.kill()
+                self.open_sub_tab = 'genetics'
                 self.toggle_history_sub_tab()
             elif event.ui_element == self.fav_tab:
                 game.switches['favorite_sub_tab'] = None
@@ -456,10 +474,6 @@ class ProfileScreen(Screens):
         """Rebuild builds the cat profile. Run when you switch cats
             or for changes in the profile."""
         self.the_cat = Cat.all_cats.get(game.switches["cat"])
-
-        self.user_notes = str(self.the_cat.genotype.ShowGenes())
-        if(self.the_cat.genotype.chimera):
-            self.user_notes += "\n\n" + str(self.the_cat.genotype.chimerageno.ShowGenes())
 
         # use these attributes to create differing profiles for StarClan cats etc.
         is_sc_instructor = False
@@ -1001,6 +1015,19 @@ class ProfileScreen(Screens):
 
         self.update_disabled_buttons_and_text()
 
+    def toggle_genetics_tab(self):
+        """Opens the User Notes portion of the History Tab"""
+        self.genelist = str(self.the_cat.genotype.ShowGenes())
+        if(self.the_cat.genotype.chimera):
+            self.genelist += "\n\n" + str(self.the_cat.genotype.chimerageno.ShowGenes())
+        
+        self.genetic_text_box = UITextBoxTweaked(self.genelist,
+                                              scale(pygame.Rect((200, 946), (1200, 298))),
+                                              object_id="#text_box_26_horizleft_pad_10_14",
+                                              line_spacing=1, manager=MANAGER)
+
+        self.update_disabled_buttons_and_text()
+
     def save_user_notes(self):
         """Saves user-entered notes. """
         clanname = game.clan.name
@@ -1047,6 +1074,9 @@ class ProfileScreen(Screens):
 
         elif self.open_sub_tab == 'user notes':
             self.toggle_user_notes_tab()
+        
+        elif self.open_sub_tab == 'genetics':
+            self.toggle_genetics_tab()
 
     def get_all_history_text(self):
         """Generates a string with all important history information."""
@@ -1885,6 +1915,7 @@ class ProfileScreen(Screens):
             if self.open_sub_tab == 'life events':
                 self.sub_tab_1.disable()
                 self.sub_tab_2.enable()
+                self.sub_tab_3.enable()
                 self.history_text_box.kill()
                 self.history_text_box = UITextBoxTweaked(self.get_all_history_text(),
                                                          scale(pygame.Rect((200, 946), (1200, 298))),
@@ -1912,6 +1943,7 @@ class ProfileScreen(Screens):
             elif self.open_sub_tab == 'user notes':
                 self.sub_tab_1.enable()
                 self.sub_tab_2.disable()
+                self.sub_tab_3.enable()
                 if self.history_text_box:
                     self.history_text_box.kill()
                     self.no_moons.kill()
@@ -1969,6 +2001,25 @@ class ProfileScreen(Screens):
                                                           scale(pygame.Rect((200, 946), (1200, 298))),
                                                           object_id="#text_box_26_horizleft_pad_10_14",
                                                           line_spacing=1, manager=MANAGER)
+            elif self.open_sub_tab == 'genetics':
+                self.sub_tab_1.enable()
+                self.sub_tab_2.enable()
+                self.sub_tab_3.disable()
+                if self.history_text_box:
+                    self.history_text_box.kill()
+                    self.no_moons.kill()
+                    self.show_moons.kill()
+                if self.genetic_text_box:
+                    self.genetic_text_box.kill()
+
+                self.genelist = str(self.the_cat.genotype.ShowGenes())
+                if(self.the_cat.genotype.chimera):
+                    self.genelist += "\n\n" + str(self.the_cat.genotype.chimerageno.ShowGenes())
+
+                self.genetic_text_box = UITextBoxTweaked(self.genelist,
+                                              scale(pygame.Rect((200, 946), (1200, 298))),
+                                              object_id="#text_box_26_horizleft_pad_10_14",
+                                              line_spacing=1, manager=MANAGER)
 
         # Conditions Tab
         elif self.open_tab == 'conditions':
@@ -2019,6 +2070,9 @@ class ProfileScreen(Screens):
                     self.history_text_box.kill()
                 self.show_moons.kill()
                 self.no_moons.kill()
+            elif self.open_sub_tab == 'genetics':
+                if self.genetic_text_box:
+                    self.genetic_text_box.kill()
 
         elif self.open_tab == 'conditions':
             self.left_conditions_arrow.kill()
