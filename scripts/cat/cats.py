@@ -3175,7 +3175,6 @@ class Cat():
                 "white_pattern" : self.white_pattern,
                 "pelt_name": self.pelt.name,
                 "pelt_color": self.pelt.colour,
-                "pelt_length": self.pelt.length,
                 "sprite_kitten": self.pelt.cat_sprites['kitten'],
                 "sprite_adolescent": self.pelt.cat_sprites['adolescent'],
                 "sprite_adult": self.pelt.cat_sprites['adult'],

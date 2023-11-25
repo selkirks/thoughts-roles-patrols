@@ -1409,7 +1409,7 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
 
                         #add base stripes
                         stripebase = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
-                        colour = None
+                        colour = solidcolours.get(whichcolour)
                         coloursurface = None
                         
                         if("cm" in genotype.pointgene):
@@ -1956,8 +1956,8 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
                 gensprite.blit(sprites.sprites['satin0'], (0, 0))
                 if(genotype.ghosting[0] == 'Gh'):
                     fading = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
-                    fading.blit(sprites.sprites['lightbasecolours0'], (0, 0))
-                    fading.set_alpha(25)
+                    fading.blit(sprites.sprites['tabbyghost'+cat_sprite], (0, 0))
+                    fading.set_alpha(75)
                     gensprite.blit(fading, (0, 0))
                     gensprite.blit(sprites.sprites['satin0'], (0, 0))
 
@@ -1986,8 +1986,8 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
                     tortpatches.blit(sprites.sprites['satin0'], (0, 0))
                     if(genotype.ghosting[0] == 'Gh'):
                         fading = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
-                        fading.blit(sprites.sprites['lightbasecolours0'], (0, 0))
-                        fading.set_alpha(25)
+                        fading.blit(sprites.sprites['tabbyghost'+cat_sprite], (0, 0))
+                        fading.set_alpha(75)
                         tortpatches.blit(fading, (0, 0))
                         tortpatches.blit(sprites.sprites['satin0'], (0, 0))
 

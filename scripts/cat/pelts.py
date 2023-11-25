@@ -139,7 +139,6 @@ class Pelt():
                  genotype:Genotype,
                  phenotype:Phenotype,
                  name:str="SingleColour",
-                 length:str="short",
                  colour:str="WHITE",
                  white_patches:str=None,
                  eye_color:str="BLUE",
