@@ -1393,11 +1393,11 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
                                     whichmain.blit(sprites.sprites["unders_" + whichbase + cat_sprite], (0, 0))
 
                             if((genotype.pointgene == ["cb", "cb"] and cat_sprite != "20") or (((("cb" in genotype.pointgene or genotype.pointgene[0] == "cm") and cat_sprite != "20") or genotype.pointgene == ["cb", "cb"]) and get_current_season() == 'Leaf-bare')):
-                                colourbase.set_alpha(180)
-                            elif((("cb" in genotype.pointgene or genotype.pointgene[0] == "cm") and cat_sprite != "20") or genotype.pointgene == ["cb", "cb"] or ((cat_sprite != "20" or ("cb" in genotype.pointgene or genotype.pointgene[0] == "cm")) and get_current_season() == 'Leaf-bare')):
                                 colourbase.set_alpha(100)
+                            elif((("cb" in genotype.pointgene or genotype.pointgene[0] == "cm") and cat_sprite != "20") or genotype.pointgene == ["cb", "cb"] or ((cat_sprite != "20" or ("cb" in genotype.pointgene or genotype.pointgene[0] == "cm")) and get_current_season() == 'Leaf-bare')):
+                                colourbase.set_alpha(50)
                             elif(cat_sprite != "20" or ("cb" in genotype.pointgene or genotype.pointgene[0] == "cm")):
-                                colourbase.set_alpha(25)
+                                colourbase.set_alpha(15)
                             else:
                                 colourbase.set_alpha(0)
                         
@@ -1546,13 +1546,13 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
                                 
                         else:
                             if((genotype.pointgene == ["cb", "cb"] and cat_sprite != "20") or ("cb" in genotype.pointgene and cat_sprite != "20" and get_current_season() == 'Leaf-bare')):
-                                colourbase.set_alpha(255)
+                                colourbase.set_alpha(180)
                             elif(("cb" in genotype.pointgene and cat_sprite != "20") or genotype.pointgene == ["cb", "cb"] or ((cat_sprite != "20" or "cb" in genotype.pointgene) and get_current_season() == 'Leaf-bare')):
-                                colourbase.set_alpha(204)
+                                colourbase.set_alpha(120)
                             elif(cat_sprite != "20" or "cb" in genotype.pointgene):
-                                colourbase.set_alpha(125)
+                                colourbase.set_alpha(50)
                             else:
-                                colourbase.set_alpha(25)
+                                colourbase.set_alpha(15)
                             
                             pointbase2.blit(colourbase, (0, 0))
 
@@ -1848,7 +1848,7 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
                             whichmain.blit(sprites.sprites['lightbasecolours0'], (0, 0))
                             whichmain.blit(pointbase, (0, 0))
 
-                            coloursurface = pointbase
+                            coloursurface = whichmain
 
                             if(genotype.ext[0] == 'Eg' and genotype.agouti[0] != 'a'):
                                 whichmain.blit(sprites.sprites['grizzle' + cat_sprite], (0, 0))
@@ -2113,12 +2113,12 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
             gensprite.blit(sprites.sprites['lighting' + cat_sprite], (0, 0))
 
         # make sure colours are in the lines
-        #if('rexed' in cat.phenotype.furtype or 'frizzy' in cat.phenotype.furtype):
-        #    gensprite.blit(sprites.sprites['rexbord'+ cat_sprite], (0, 0))
-        #    gensprite.blit(sprites.sprites['rexbord'+ cat_sprite], (0, 0))
-        #else:
-        gensprite.blit(sprites.sprites['normbord'+ cat_sprite], (0, 0))
-        gensprite.blit(sprites.sprites['normbord'+ cat_sprite], (0, 0))
+        if('rexed' in cat.phenotype.furtype or 'wiry' in cat.phenotype.furtype):
+            gensprite.blit(sprites.sprites['rexbord'+ cat_sprite], (0, 0))
+            gensprite.blit(sprites.sprites['rexbord'+ cat_sprite], (0, 0))
+        else:
+            gensprite.blit(sprites.sprites['normbord'+ cat_sprite], (0, 0))
+            gensprite.blit(sprites.sprites['normbord'+ cat_sprite], (0, 0))
         if(cat.genotype.fold[0] == 'Fd'):
             gensprite.blit(sprites.sprites['foldbord'+ cat_sprite], (0, 0))
             gensprite.blit(sprites.sprites['foldbord'+ cat_sprite], (0, 0))
@@ -2130,37 +2130,65 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
 
         new_sprite.blit(gensprite, (0, 0))
 
+        lineart = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
+        earlines = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
+        bodylines = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
 
         if not dead:
             if(cat.genotype.fold[0] != 'Fd'):
                 if(cat.genotype.curl[0] == 'Cu'):
-                    new_sprite.blit(sprites.sprites['curllines' + cat_sprite], (0, 0))
+                    earlines.blit(sprites.sprites['curllines' + cat_sprite], (0, 0))
                 else:
-                    new_sprite.blit(sprites.sprites['lines' + cat_sprite], (0, 0))
+                    earlines.blit(sprites.sprites['lines' + cat_sprite], (0, 0))
             elif(cat.genotype.curl[0] == 'Cu'):
-                new_sprite.blit(sprites.sprites['fold_curllines' + cat_sprite], (0, 0))
+                earlines.blit(sprites.sprites['fold_curllines' + cat_sprite], (0, 0))
             else:
-                new_sprite.blit(sprites.sprites['foldlines' + cat_sprite], (0, 0))
+                earlines.blit(sprites.sprites['foldlines' + cat_sprite], (0, 0))
         elif cat.df:
             if(cat.genotype.fold[0] != 'Fd'):
                 if(cat.genotype.curl[0] == 'Cu'):
-                    new_sprite.blit(sprites.sprites['curllineartdf' + cat_sprite], (0, 0))
+                    earlines.blit(sprites.sprites['curllineartdf' + cat_sprite], (0, 0))
                 else:
-                    new_sprite.blit(sprites.sprites['lineartdf' + cat_sprite], (0, 0))
+                    earlines.blit(sprites.sprites['lineartdf' + cat_sprite], (0, 0))
             elif(cat.genotype.curl[0] == 'Cu'):
-                new_sprite.blit(sprites.sprites['fold_curllineartdf' + cat_sprite], (0, 0))
+                earlines.blit(sprites.sprites['fold_curllineartdf' + cat_sprite], (0, 0))
             else:
-                new_sprite.blit(sprites.sprites['foldlineartdf' + cat_sprite], (0, 0))
+                earlines.blit(sprites.sprites['foldlineartdf' + cat_sprite], (0, 0))
         elif dead:
             if(cat.genotype.fold[0] != 'Fd'):
                 if(cat.genotype.curl[0] == 'Cu'):
-                    new_sprite.blit(sprites.sprites['curllineartdead' + cat_sprite], (0, 0))
+                    earlines.blit(sprites.sprites['curllineartdead' + cat_sprite], (0, 0))
                 else:
-                    new_sprite.blit(sprites.sprites['lineartdead' + cat_sprite], (0, 0))
+                    earlines.blit(sprites.sprites['lineartdead' + cat_sprite], (0, 0))
             elif(cat.genotype.curl[0] == 'Cu'):
-                new_sprite.blit(sprites.sprites['fold_curllineartdead' + cat_sprite], (0, 0))
+                earlines.blit(sprites.sprites['fold_curllineartdead' + cat_sprite], (0, 0))
             else:
-                new_sprite.blit(sprites.sprites['foldlineartdead' + cat_sprite], (0, 0))
+                earlines.blit(sprites.sprites['foldlineartdead' + cat_sprite], (0, 0))
+
+        earlines.blit(sprites.sprites['isolateears' + cat_sprite], (0, 0))
+        earlines.set_colorkey((0, 0, 255))
+
+        lineart.blit(earlines, (0, 0))
+        if('rexed' in cat.phenotype.furtype or 'wiry' in cat.phenotype.furtype):
+            if not dead:
+                bodylines.blit(sprites.sprites['rexlineart' + cat_sprite], (0, 0))
+            elif cat.df:
+                bodylines.blit(sprites.sprites['rexlineartdf' + cat_sprite], (0, 0))
+            else:
+                bodylines.blit(sprites.sprites['rexlineartdead' + cat_sprite], (0, 0))
+        else:
+            if not dead:
+                bodylines.blit(sprites.sprites['lines' + cat_sprite], (0, 0))
+            elif cat.df:
+                bodylines.blit(sprites.sprites['lineartdf' + cat_sprite], (0, 0))
+            else:
+                bodylines.blit(sprites.sprites['lineartdead' + cat_sprite], (0, 0))
+            
+        bodylines.blit(sprites.sprites['noears' + cat_sprite], (0, 0))
+        bodylines.set_colorkey((0, 0, 255))
+        lineart.blit(bodylines, (0, 0))
+        new_sprite.blit(lineart, (0, 0))
+
         # draw skin and scars2
         blendmode = pygame.BLEND_RGBA_MIN
 

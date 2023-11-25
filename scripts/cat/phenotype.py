@@ -380,9 +380,9 @@ class Phenotype():
                 if(self.genotype.manx[0] == 'Ab' or self.genotype.toybob[0] == 'Tb' or self.genotype.jbob[1] == 'jb' or (self.genotype.manx[0] == 'M' and self.genotype.manxtype == 'stubby')):
                     self.tailtype += "short "
                     self.bobtailnr = 3
-                    if self.genotype.manx[0] == 'Ab' and (self.genotype.manxtype == 'rumpy' or self.genotype.manxtype == 'riser'):
+                    if self.genotype.manxtype == 'rumpy' or self.genotype.manxtype == 'riser':
                         self.bobtailnr = 2
-                    elif not(self.genotype.toybob[0] == 'Tb' or self.genotype.jbob[1] == 'jb') and ((self.genotype.manx[0] == 'Ab' and (self.genotype.manxtype == 'long' or self.genotype.manxtype == 'most')) or (self.genotype.manx[0] == 'M' and self.genotype.manxtype == 'stubby')):
+                    elif (self.genotype.manx[0] == 'Ab' and (self.genotype.manxtype == 'long' or self.genotype.manxtype == 'most')) or (self.genotype.manx[0] == 'M' and self.genotype.manxtype == 'stubby'):
                         self.bobtailnr = 4
                 elif(self.genotype.manx[0] == 'M' and self.genotype.manxtype == 'most'):
                     self.tailtype += 'somewhat shortened '
@@ -459,12 +459,12 @@ class Phenotype():
 
         withword = " with " + withword + eyes.lower()
 
-        if gender == "nonbinary":
-            gendera = "cat"
-        elif gender == "tom" or gender == "trans tom":
+        if 'tom' in gender:
             gendera = "tom"
-        else:
+        elif 'molly' in gender:
             gendera = "molly"
+        else:
+            gendera = "sam"
 
         if self.genotype.chimera:
             gendera = "chimera " + gendera

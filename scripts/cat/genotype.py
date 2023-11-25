@@ -348,12 +348,12 @@ class Genotype:
                 self.sexgene = ["", "", "Y"]
             
                 for i in range(2):
-                    if randint(1, 2) == 1:
+                    if randint(1, 4) == 1:
                         self.sexgene[i] = "O"
                     else:
                         self.sexgene[i] = "o"
             else:
-                if randint(1, 2) == 1:
+                if randint(1, 4) == 1:
                     self.sexgene[0] = "O"
                 else:
                     self.sexgene[0] = "o"
@@ -362,13 +362,13 @@ class Genotype:
             if randint(1, 1000) == 1:
                 self.sexgene = ["", "", ""]
                 for i in range(3):
-                    if randint(1, 2) == 1:
+                    if randint(1, 4) == 1:
                         self.sexgene[i] = "O"
                     else:
                         self.sexgene[i] = "o"
             else:
                 for i in range(2):
-                    if randint(1, 2) == 1:
+                    if randint(1, 4) == 1:
                         self.sexgene[i] = "O"
                     else:
                         self.sexgene[i] = "o"
