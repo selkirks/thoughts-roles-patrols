@@ -2011,6 +2011,17 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
             if (genotype.bleach[0] == "lb" and cat.moons > 3) or phenotype.silvergold == 'masked silver':
                 gensprite.blit(sprites.sprites['bleach' + cat_sprite], (0, 0))
             
+            seasondict = {
+                'Greenleaf': 'summer',
+                'Leaf-bare': 'winter'
+            }
+
+            if(genotype.karp[0] == 'K'):
+                if(genotype.karp[1] == 'K'):
+                    gensprite.blit(sprites.sprites['homokarpati'+ seasondict.get(get_current_season(), "spring") + cat_sprite], (0, 0))
+                else:
+                    gensprite.blit(sprites.sprites['hetkarpati'+ seasondict.get(get_current_season(), "spring") + cat_sprite], (0, 0))
+            
 
             nose = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
             nose.blit(sprites.sprites['nose' + cat_sprite], (0, 0))
@@ -2048,7 +2059,7 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
 
             if(cat.white_pattern != 'No' and cat.white_pattern):
                 for x in cat.white_pattern:
-                    if(x != 'full white'):
+                    if(x != 'full white' and 'dorsal' not in x):
                         whitesprite.blit(sprites.sprites[x + cat_sprite], (0, 0))
             whitesprite.set_colorkey((0, 0, 255))
             nose.blit(sprites.sprites['pads' + cat_sprite], (0, 0))
@@ -2060,6 +2071,10 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
 
             whitesprite.blit(nose2, (0, 0))
             gensprite.blit(whitesprite, (0, 0))
+            if(cat.white_pattern and 'dorsal1' in cat.white_pattern):
+                gensprite.blit(sprites.sprites['dorsal1' + cat_sprite], (0, 0))
+            if(cat.white_pattern and 'dorsal2' in cat.white_pattern):
+                gensprite.blit(sprites.sprites['dorsal2' + cat_sprite], (0, 0))
 
             if(genotype.fold[0] != 'Fd' or genotype.curl[0] == 'Cu'):
                 gensprite.blit(sprites.sprites['ears' + cat_sprite], (0, 0))
