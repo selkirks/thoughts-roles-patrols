@@ -1310,10 +1310,21 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
                 else:
                     stripebase.blit(sprites.sprites['basecolours'+ str(solidcolours.get(stripecolourdict.get(stripecolour, stripecolour)))], (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
                 
-                if(genotype.sokoke == "full sokoke"):
-                    stripebase.set_alpha(204)
-                elif(genotype.sokoke == "mild fading"):
-                    stripebase.set_alpha(230)
+                middle = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
+                if(genotype.soktype == "full sokoke" and not pattern):
+                    middle.blit(stripebase, (0, 0))
+                    stripebase = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
+                    middle.set_alpha(150)
+                    stripebase.blit(middle, (0, 0))
+                    middle = CreateStripes(stripecolour, coloursurface, pattern=phenotype.GetTabbySprite(special='redbar'))
+                    stripebase.blit(middle, (0, 0))
+                elif(genotype.soktype == "mild fading" and not pattern):
+                    middle.blit(stripebase, (0, 0))
+                    stripebase = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
+                    middle.set_alpha(204)
+                    stripebase.blit(middle, (0, 0))
+                    middle = CreateStripes(stripecolour, coloursurface, pattern=phenotype.GetTabbySprite(special='redbar'))
+                    stripebase.blit(middle, (0, 0))
                 return stripebase
 
             def MakeCat(whichmain, whichcolour, whichbase, special=None):
