@@ -8,6 +8,7 @@ class Genotype:
         self.furLength = ""
         self.eumelanin = ["", ""]
         self.sexgene = ["", ""]
+        self.specialred = None
         self.tortiepattern = None
         self.brindledbi = False
         if spec:
@@ -1902,6 +1903,8 @@ class Genotype:
             self.rufsum += int(i)
         for i in self.bengal:
             self.bengsum += int(i)
+        for i in self.sokoke:
+            self.soksum += int(i)
         for i in self.spotted:
             self.spotsum += int(i)
         for i in self.tickgenes:

@@ -471,10 +471,15 @@ class Phenotype():
         
         return self.length + " " + self.highwhite + self.fade + self.colour + " " + self.silvergold + self.tabtype + self.tabby + self.tortie + self.point + self.lowwhite + self.karpati + gendera + withword
     
-    def GetTabbySprite(self):
+    def GetTabbySprite(self, special = None):
         pattern = ""
 
-        if(self.genotype.ticked[1] == "Ta" or ((not self.genotype.breakthrough or self.genotype.mack[0] == "mc") and self.genotype.ticked[0] == "Ta")):
+        if(special == 'redbar'):
+            if(self.genotype.mack[0] == "mc"):
+                pattern = 'redbarc'
+            else:
+                pattern = 'redbar'
+        elif(self.genotype.ticked[1] == "Ta" or ((not self.genotype.breakthrough or self.genotype.mack[0] == "mc") and self.genotype.ticked[0] == "Ta")):
             if(self.genotype.ticktype == "agouti"):
                 pattern = 'agouti'
             elif(self.genotype.ticktype == 'reduced barring'):
