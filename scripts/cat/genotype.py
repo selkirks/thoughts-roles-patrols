@@ -612,7 +612,6 @@ class Genotype:
             self.karp = ["K", "K"]
         elif A[0] <= 101:
             self.karp[0] = "K"
-        self.karp = ["K", "K"]
 
         if A[1] == 1:
             self.bleach = ["lb", "lb"]
