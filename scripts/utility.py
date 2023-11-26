@@ -1912,6 +1912,20 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
                     
                         whichmain.blit(pointbase, (0, 0))
 
+
+                seasondict = {
+                    'Greenleaf': 'summer',
+                    'Leaf-bare': 'winter'
+                }
+
+                if(genotype.karp[0] == 'K'):
+                    if(genotype.karp[1] == 'K'):
+                        gensprite.blit(sprites.sprites['homokarpati'+ seasondict.get(get_current_season(), "spring") + cat_sprite], (0, 0))
+                    else:
+                        gensprite.blit(sprites.sprites['hetkarpati'+ seasondict.get(get_current_season(), "spring") + cat_sprite], (0, 0))
+                
+
+
                 pads = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
                 pads.blit(sprites.sprites['pads' + cat_sprite], (0, 0))
 
@@ -2014,18 +2028,7 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
             if (genotype.bleach[0] == "lb" and cat.moons > 3) or phenotype.silvergold == 'masked silver':
                 gensprite.blit(sprites.sprites['bleach' + cat_sprite], (0, 0))
             
-            seasondict = {
-                'Greenleaf': 'summer',
-                'Leaf-bare': 'winter'
-            }
-
-            if(genotype.karp[0] == 'K'):
-                if(genotype.karp[1] == 'K'):
-                    gensprite.blit(sprites.sprites['homokarpati'+ seasondict.get(get_current_season(), "spring") + cat_sprite], (0, 0))
-                else:
-                    gensprite.blit(sprites.sprites['hetkarpati'+ seasondict.get(get_current_season(), "spring") + cat_sprite], (0, 0))
             
-
             nose = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
             nose.blit(sprites.sprites['nose' + cat_sprite], (0, 0))
 
