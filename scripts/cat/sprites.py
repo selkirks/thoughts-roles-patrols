@@ -190,6 +190,8 @@ class Sprites():
                 self.make_group('Tabby/'+x, (a, 2), f'{x}{i}')
             for a, i in enumerate(['silverlow', 'silvermedium', 'silverhigh', 'silvershaded', 'silverchinchilla']):
                 self.make_group('Tabby/'+x, (a, 3), f'{x}{i}')
+        for a, x in enumerate(['low', 'medium', 'high', 'shaded', 'chinchilla']):
+            self.make_group('Tabby/shading', (a, 0), f'{x}shading')
 
         # genemod tabby patterns
 
