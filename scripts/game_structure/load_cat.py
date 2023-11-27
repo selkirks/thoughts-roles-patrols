@@ -53,7 +53,9 @@ def json_load():
     for i, cat in enumerate(cat_data):
         try:
             
-            new_cat = Cat(ID=cat["ID"],
+            try:
+
+                new_cat = Cat(ID=cat["ID"],
                         prefix=cat["name_prefix"],
                         suffix=cat["name_suffix"],
                         specsuffix_hidden=(cat["specsuffix_hidden"] if 'specsuffix_hidden' in cat else False),
@@ -66,6 +68,18 @@ def json_load():
                         genotype=cat["genotype"],
                         white_patterns=cat["white_pattern"],
                         loading_cat=True)
+            except:
+                new_cat = Cat(ID=cat["ID"],
+                        prefix=cat["name_prefix"],
+                        suffix=cat["name_suffix"],
+                        specsuffix_hidden=(cat["specsuffix_hidden"] if 'specsuffix_hidden' in cat else False),
+                        status=cat["status"],
+                        parent1=cat["parent1"],
+                        parent2=cat["parent2"],
+                        moons=cat["moons"],
+                        eye_colour=cat["eye_colour"],
+                        loading_cat=True)
+
             
             if cat["eye_colour"] == "BLUE2":
                 cat["eye_colour"] = "COBALT"
