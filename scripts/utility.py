@@ -1241,6 +1241,8 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
 
     new_sprite = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
 
+    vitiligo = ['PHANTOM', 'POWDER', 'BLEACHED', 'VITILIGO', 'VITILIGOTWO', 'SMOKEY']
+
     try:
         solidcolours = {
             'black' : 0,
@@ -1501,11 +1503,11 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
                         if((genotype.sunshine[0] != 'N' and genotype.wbtype == 'shaded') or genotype.wbtype == 'chinchilla'):
                             stripebase.set_alpha(120)
                             whichmain.blit(stripebase, (0, 0))
-                            stripebase = CreateStripes(colour, whichbase, whichbasecoloursurface=coloursurface, pattern='agouti')
+                            stripebase = CreateStripes(colour, whichbase, coloursurface=coloursurface, pattern='agouti')
                         elif(genotype.wbtype == 'shaded' or genotype.sunshine[0] != 'N'):
                             stripebase.set_alpha(200)
                             whichmain.blit(stripebase, (0, 0))
-                            stripebase = CreateStripes(colour, whichbase, whichbasecoloursurface=coloursurface, pattern='agouti')
+                            stripebase = CreateStripes(colour, whichbase, coloursurface=coloursurface, pattern='agouti')
 
                         whichmain.blit(stripebase, (0, 0))
 
@@ -2083,7 +2085,7 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
 
             if(cat.white_pattern != 'No' and cat.white_pattern):
                 for x in cat.white_pattern:
-                    if(x != 'full white' and 'dorsal' not in x):
+                    if(x != 'full white' and 'dorsal' not in x and x not in vitiligo):
                         whitesprite.blit(sprites.sprites[x + cat_sprite], (0, 0))
             whitesprite.set_colorkey((0, 0, 255))
             nose.blit(sprites.sprites['pads' + cat_sprite], (0, 0))
@@ -2099,6 +2101,9 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
                 gensprite.blit(sprites.sprites['dorsal1' + cat_sprite], (0, 0))
             if(cat.white_pattern and 'dorsal2' in cat.white_pattern):
                 gensprite.blit(sprites.sprites['dorsal2' + cat_sprite], (0, 0))
+            if(cat.white_pattern and cat.white_pattern[0] in vitiligo):
+                gensprite.blit(sprites.sprites[cat.white_pattern[0] + cat_sprite], (0, 0))
+
 
             if(genotype.fold[0] != 'Fd' or genotype.curl[0] == 'Cu'):
                 gensprite.blit(sprites.sprites['ears' + cat_sprite], (0, 0))

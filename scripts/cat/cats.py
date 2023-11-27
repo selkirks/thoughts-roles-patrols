@@ -284,6 +284,8 @@ class Cat():
         #white patterns
         if self.white_pattern is None and self.genotype.white[0] != "W" and self.genotype.white[0] != "w":
             self.white_pattern = []
+            if(self.genotype.vitiligo):
+                self.white_pattern.append(choice(vitiligo))
             if "wt" in self.genotype.white:
                 if self.genotype.white[1] not in ['ws', 'wt'] and self.genotype.whitegrade < 3:
                     self.white_pattern.append("dorsal1")
@@ -292,8 +294,6 @@ class Cat():
                 else:
                     self.white_pattern.append("dorsal2")
             
-            if(self.genotype.vitiligo):
-                self.white_pattern.append(choice(vitiligo))
             if self.genotype.white[0] == "wg":
                 for mark in ["left front mitten", "left back mitten", "right front mitten", "right back mitten"]:
                     self.white_pattern.append(mark)
