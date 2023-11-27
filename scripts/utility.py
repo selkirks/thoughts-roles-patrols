@@ -1374,7 +1374,7 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
                             stripebase = CreateStripes(whichcolour, whichbase)
                             stripebase.set_alpha(120)
                             whichmain.blit(stripebase, (0, 0))
-                            stripebase = CreateStripes(whichcolour, whichbase, whichbasepattern='agouti')
+                            stripebase = CreateStripes(whichcolour, whichbase, pattern='agouti')
                         elif(genotype.wbtype == 'shaded' or genotype.sunshine[0] != 'N'):
                             if not ("rufoused" in whichcolour or 'medium' in whichcolour or 'low' in whichcolour):
                                 stripebase.blit(CreateStripes(phenotype.FindRed(genotype, cat.moons, special='red')[0], phenotype.FindRed(genotype, cat.moons, special='red')[1]), (0, 0))
@@ -1382,7 +1382,7 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
                             stripebase = CreateStripes(whichcolour, whichbase)
                             stripebase.set_alpha(200)
                             whichmain.blit(stripebase, (0, 0))
-                            stripebase = CreateStripes(whichcolour, whichbase, whichbasepattern='agouti')
+                            stripebase = CreateStripes(whichcolour, whichbase, pattern='agouti')
                         
                         whichmain.blit(stripebase, (0, 0))
                     else:
@@ -1887,7 +1887,7 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
                             whichmain.blit(sprites.sprites['lightbasecolours0'], (0, 0))
                             colour = 'lightbasecolours0'
 
-                        stripebase = CreateStripes(colour, 'solid', whichbasecoloursurface=coloursurface)
+                        stripebase = CreateStripes(colour, 'solid', whichbase, coloursurface=coloursurface)
 
                         whichmain.blit(stripebase, (0, 0))
 
