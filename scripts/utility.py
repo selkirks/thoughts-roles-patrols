@@ -1744,7 +1744,7 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
                                     whichmain.blit(sprites.sprites['lightbasecolours0'], (0, 0))
                                     colour = 'lightbasecolours0'
                             
-                            stripebase = CreateStripes(colour, 'solid', whichbasecoloursurface=coloursurface)
+                            stripebase = CreateStripes(colour, 'solid', coloursurface=coloursurface)
                             whichmain.blit(stripebase, (0, 0))
 
                             pointbase = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
@@ -1887,7 +1887,7 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
                             whichmain.blit(sprites.sprites['lightbasecolours0'], (0, 0))
                             colour = 'lightbasecolours0'
 
-                        stripebase = CreateStripes(colour, 'solid', whichbase, coloursurface=coloursurface)
+                        stripebase = CreateStripes(colour, 'solid', coloursurface=coloursurface)
 
                         whichmain.blit(stripebase, (0, 0))
 
