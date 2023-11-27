@@ -15,7 +15,7 @@ class Genotype:
             self.chimera = False
             self.chimerapattern = None
         else:
-            a = randint(1, 250)
+            a = randint(1, 1000)
             if a == 1:
                 self.chimera = True
             else:
