@@ -1290,7 +1290,7 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
             def CreateStripes(stripecolour, whichbase, coloursurface=None, pattern=None, special = None):
                 stripebase = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
                 
-                if not pattern and not special:
+                if not pattern and not special and 'solid' not in whichbase:
                     if('chinchilla' in whichbase):
                         stripebase.blit(sprites.sprites['chinchillashading' + cat_sprite], (0, 0))   
                     elif('shaded' in whichbase):
@@ -1365,24 +1365,24 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
                                 whichmain.blit(sprites.sprites["unders_" + whichbase + cat_sprite], (0, 0))
 
                         stripebase = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
-                        stripebase.blit(CreateStripes(whichcolour, whichbase, ), (0, 0))
+                        stripebase.blit(CreateStripes(whichcolour, whichbase), (0, 0))
 
                         if((genotype.sunshine[0] != 'N' and genotype.wbtype == 'shaded') or genotype.wbtype == 'chinchilla'):
                             if not ("rufoused" in whichcolour or 'medium' in whichcolour or 'low' in whichcolour or genotype.wbtype == 'chinchilla'):
-                                stripebase.blit(CreateStripes(phenotype.FindRed(genotype, cat.moons, special='red')[0]), (0, 0))
+                                stripebase.blit(CreateStripes(phenotype.FindRed(genotype, cat.moons, special='red')[0], phenotype.FindRed(genotype, cat.moons, special='red')[1]), (0, 0))
                                 whichmain.blit(stripebase, (0, 0))
-                            stripebase = CreateStripes(whichcolour)
+                            stripebase = CreateStripes(whichcolour, whichbase)
                             stripebase.set_alpha(120)
                             whichmain.blit(stripebase, (0, 0))
-                            stripebase = CreateStripes(whichcolour, whichbasepattern='agouti')
+                            stripebase = CreateStripes(whichcolour, whichbase, whichbasepattern='agouti')
                         elif(genotype.wbtype == 'shaded' or genotype.sunshine[0] != 'N'):
                             if not ("rufoused" in whichcolour or 'medium' in whichcolour or 'low' in whichcolour):
-                                stripebase.blit(CreateStripes(phenotype.FindRed(genotype, cat.moons, special='red')[0]), (0, 0))
+                                stripebase.blit(CreateStripes(phenotype.FindRed(genotype, cat.moons, special='red')[0], phenotype.FindRed(genotype, cat.moons, special='red')[1]), (0, 0))
                                 whichmain.blit(stripebase, (0, 0))
-                            stripebase = CreateStripes(whichcolour)
+                            stripebase = CreateStripes(whichcolour, whichbase)
                             stripebase.set_alpha(200)
                             whichmain.blit(stripebase, (0, 0))
-                            stripebase = CreateStripes(whichcolour, whichbasepattern='agouti')
+                            stripebase = CreateStripes(whichcolour, whichbase, whichbasepattern='agouti')
                         
                         whichmain.blit(stripebase, (0, 0))
                     else:
@@ -1641,7 +1641,7 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
 
                         stripebase = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
                     
-                        stripebase.blit(CreateStripes(whichcolour, whichbase, ), (0, 0))
+                        stripebase.blit(CreateStripes(whichcolour, "solid"), (0, 0))
                         
                         whichmain.blit(stripebase, (0, 0))
                     elif("cm" in genotype.pointgene):
@@ -1664,7 +1664,7 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
 
                             stripebase = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
                         
-                            stripebase.blit(CreateStripes('cinnamon'), (0, 0))
+                            stripebase.blit(CreateStripes('cinnamon', 'solid'), (0, 0))
                             
                             whichmain.blit(stripebase, (0, 0))
                         else:
@@ -1744,7 +1744,7 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
                                     whichmain.blit(sprites.sprites['lightbasecolours0'], (0, 0))
                                     colour = 'lightbasecolours0'
                             
-                            stripebase = CreateStripes(colour, whichbase, whichbasecoloursurface=coloursurface)
+                            stripebase = CreateStripes(colour, 'solid', whichbasecoloursurface=coloursurface)
                             whichmain.blit(stripebase, (0, 0))
 
                             pointbase = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
@@ -1766,7 +1766,7 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
 
 
                             stripebase = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
-                            stripebase.blit(CreateStripes(whichcolour), (0, 0))
+                            stripebase.blit(CreateStripes(whichcolour, 'solid'), (0, 0))
 
                             pointbase2.blit(stripebase, (0, 0))
 
@@ -1887,7 +1887,7 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
                             whichmain.blit(sprites.sprites['lightbasecolours0'], (0, 0))
                             colour = 'lightbasecolours0'
 
-                        stripebase = CreateStripes(colour, whichbase, whichbasecoloursurface=coloursurface)
+                        stripebase = CreateStripes(colour, 'solid', whichbasecoloursurface=coloursurface)
 
                         whichmain.blit(stripebase, (0, 0))
 
@@ -1912,7 +1912,7 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
 
 
 
-                        stripebase = CreateStripes(whichcolour)
+                        stripebase = CreateStripes(whichcolour, "solid")
                         
                         pointbase2.blit(stripebase, (0, 0))
                         if(get_current_season() == "Greenleaf"):
