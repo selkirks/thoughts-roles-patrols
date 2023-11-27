@@ -278,7 +278,7 @@ class Phenotype():
             self.tabtype = ''
 
         def FindPattern():
-            if(self.genotype.ticked[0] != 'ta'):
+            if(self.genotype.ticked[0] != 'ta' or self.genotype.wbsum > 13):
                 if(self.genotype.wbsum > 13):
                     self.tabby = 'chinchilla'
                 elif(self.genotype.ticked[1] == 'Ta' or not self.genotype.breakthrough):
@@ -601,8 +601,8 @@ class Phenotype():
             self.spritecolour = "white"
             self.caramel = ""
             self.maincolour = self.spritecolour
-        elif ('o' not in self.genotype.sexgene) or (self.genotype.ext[0] == 'ea' and ((moons > 8 and self.genotype.agouti[0] != 'a') or (moons > 47))) or (self.genotype.ext[0] == 'er' and moons > 23) or (self.genotype.ext[0] == 'ec' and (self.genotype.agouti[0] != 'a' or moons > 5)):
-            main = self.FindRed(self.genotype, moons)
+        elif ('o' not in self.genotype.sexgene) or (self.genotype.ext[0] == 'ea' and ((moons > 8 and self.genotype.agouti[0] != 'a') or (moons > 47))) or (self.genotype.ext[0] == 'er' and moons > 23 and 'O' not in self.genotype.sexgene) or (self.genotype.ext[0] == 'ec' and (self.genotype.agouti[0] != 'a' or moons > 5)):
+            main = self.FindRed(self.genotype, moons, special=self.genotype.ext[0])
             self.maincolour = main[0]
             self.spritecolour = main[1]
         elif('O' not in self.genotype.sexgene):
@@ -620,7 +620,7 @@ class Phenotype():
                         main = self.FindRed(self.genotype, moons)
                         self.maincolour = main[0]
                         self.spritecolour = main[1]
-                    main = self.FindBlack(self.genotype, moons)
+                    main = self.FindBlack(self.genotype, moons, self.genotype.ext[0])
                     self.patchmain = main[0]
                     self.patchcolour = main[1]
                 else:
@@ -654,82 +654,92 @@ class Phenotype():
 
                 self.genotype.tortiepattern = self.tortpattern
 
-    def FindBlack(self, genes, moons):
-        if genes.eumelanin[0] == "bl" or (genes.eumelanin[0] == 'b' and genes.ext[0] == 'er'):
-            if(genes.dilutemd[0] == 'Dm' or (genes.ext[0] == 'er' and moons < 12 and moons > 5)):
-                self.caramel = 'caramel'
-            
-            if(genes.dilute[0] == "d" or (genes.ext[0] == 'er' and moons < 12)):
-                if(genes.pinkdilute[0] == "dp"):
-                    colour = "beige"
-                else:
-                    colour = "fawn"
-            else:
-                if(genes.pinkdilute[0] == "dp"):
-                    colour = "buff"
-                else:
-                    colour = "cinnamon"
-                    self.caramel = ""
-        elif genes.eumelanin[0] == "b" or genes.ext[0] == 'er':
-            if(genes.dilutemd[0] == 'Dm' or (genes.ext[0] == 'er' and moons < 12 and moons > 5)):
-                self.caramel = 'caramel'
-            
-            if(genes.dilute[0] == "d" or (genes.ext[0] == 'er' and moons < 12)):
-                if(genes.pinkdilute[0] == "dp"):
-                    colour = "lavender"
-                else:
-                    colour = "lilac"
-            else:
-                if(genes.pinkdilute[0] == "dp"):
-                    colour = "champagne"
-                else:
-                    colour = "chocolate"
-                    self.caramel = ""
+    def FindBlack(self, genes, moons, special=None):
+        if special=='er':
+            return self.FindRed(genes, moons, special)
         else:
-            if(genes.dilutemd[0] == 'Dm'):
-                self.caramel = 'caramel'
+            if genes.eumelanin[0] == "bl" or (genes.eumelanin[0] == 'b' and genes.ext[0] == 'er'):
+                if(genes.dilutemd[0] == 'Dm' or (genes.ext[0] == 'er' and moons < 12 and moons > 5)):
+                    self.caramel = 'caramel'
+                
+                if(genes.dilute[0] == "d" or (genes.ext[0] == 'er' and moons < 12)):
+                    if(genes.pinkdilute[0] == "dp"):
+                        colour = "beige"
+                    else:
+                        colour = "fawn"
+                else:
+                    if(genes.pinkdilute[0] == "dp"):
+                        colour = "buff"
+                    else:
+                        colour = "cinnamon"
+                        self.caramel = ""
+            elif genes.eumelanin[0] == "b" or genes.ext[0] == 'er':
+                if(genes.dilutemd[0] == 'Dm' or (genes.ext[0] == 'er' and moons < 12 and moons > 5)):
+                    self.caramel = 'caramel'
+                
+                if(genes.dilute[0] == "d" or (genes.ext[0] == 'er' and moons < 12)):
+                    if(genes.pinkdilute[0] == "dp"):
+                        colour = "lavender"
+                    else:
+                        colour = "lilac"
+                else:
+                    if(genes.pinkdilute[0] == "dp"):
+                        colour = "champagne"
+                    else:
+                        colour = "chocolate"
+                        self.caramel = ""
+            else:
+                if(genes.dilutemd[0] == 'Dm'):
+                    self.caramel = 'caramel'
+                
+                if(genes.dilute[0] == "d"):
+                    if(genes.pinkdilute[0] == "dp"):
+                        colour = "platinum"
+                    else:
+                        colour = "blue"
+                else:
+                    if(genes.pinkdilute[0] == "dp"):
+                        colour = "dove"
+                    else:
+                        colour = "black"
+                        self.caramel = ""
             
-            if(genes.dilute[0] == "d"):
-                if(genes.pinkdilute[0] == "dp"):
-                    colour = "platinum"
+            maincolour = colour
+            
+            if (genes.agouti[0] != "a" and genes.ext[0] != "Eg") or (genes.ext[0] not in ['Eg', 'E'] and moons > 0):
+                if genes.silver[0] == "I" or (moons < 3 and genes.karp[0] == "K"):
+                    if genes.sunshine[0] == "sg":
+                        colour =  colour + "silver" + "chinchilla"
+                    elif genes.sunshine[0] == "sh" or genes.sunshine[0] == "fg" or (genes.ext[0] == 'ea' and moons > 3):
+                        colour =  colour + "silver" + "shaded"
+                    else:
+                        colour =  colour + "silver" + genes.wbtype
+                elif genes.pointgene[0] != "C" or genes.agouti[0] == "Apb":
+                    if genes.sunshine[0] == "sg":
+                        colour =  colour + "low" + "chinchilla"
+                    elif genes.sunshine[0] == "sh" or genes.sunshine[0] == "fg" or (genes.ext[0] == 'ea' and moons > 3):
+                        colour =  colour + "low" + "shaded"
+                    else:
+                        colour = colour + "low" + genes.wbtype
                 else:
-                    colour = "blue"
-            else:
-                if(genes.pinkdilute[0] == "dp"):
-                    colour = "dove"
-                else:
-                    colour = "black"
-                    self.caramel = ""
-        
-        maincolour = colour
-        
-        if (genes.agouti[0] != "a" and genes.ext[0] != "Eg") or (genes.ext[0] not in ['Eg', 'E'] and moons > 0):
-            if genes.silver[0] == "I" or (moons < 3 and genes.karp[0] == "K"):
-                if genes.sunshine[0] == "sg":
-                    colour =  colour + "silver" + "chinchilla"
-                elif genes.sunshine[0] == "sh" or genes.sunshine[0] == "fg" or (genes.ext[0] == 'ea' and moons > 3):
-                    colour =  colour + "silver" + "shaded"
-                else:
-                    colour =  colour + "silver" + genes.wbtype
-            elif genes.pointgene[0] != "C" or genes.agouti[0] == "Apb":
-                if genes.sunshine[0] == "sg":
-                    colour =  colour + "low" + "chinchilla"
-                elif genes.sunshine[0] == "sh" or genes.sunshine[0] == "fg" or (genes.ext[0] == 'ea' and moons > 3):
-                    colour =  colour + "low" + "shaded"
-                else:
-                    colour = colour + "low" + genes.wbtype
-            else:
-                if genes.sunshine[0] == "sg":
-                    colour =  colour + genes.ruftype + "chinchilla"
-                elif genes.sunshine[0] == "sh" or genes.sunshine[0] == "fg" or (genes.ext[0] == 'ea' and moons > 3):
-                    colour =  colour + genes.ruftype + "shaded"
-                else:
-                    colour = colour + genes.ruftype + genes.wbtype
-        
-        return [maincolour, colour]
+                    if genes.sunshine[0] == "sg":
+                        colour =  colour + genes.ruftype + "chinchilla"
+                    elif genes.sunshine[0] == "sh" or genes.sunshine[0] == "fg" or (genes.ext[0] == 'ea' and moons > 3):
+                        colour =  colour + genes.ruftype + "shaded"
+                    else:
+                        colour = colour + genes.ruftype + genes.wbtype
+            
+            return [maincolour, colour]
 
     def FindRed(self, genes, moons, special = None):
         maincolour = genes.ruftype
+        if special == 'er':
+            if(genes.eumelanin[0] == 'B'):
+                maincolour = 'rufoused'
+            elif(genes.eumelanin[0] == 'b'):
+                maincolour = 'medium'
+            else:
+                maincolour = 'low'
         if(genes.dilute[0] == "d"):
             if(genes.pinkdilute[0] == "dp"):
                 if genes.dilutemd[0] == "Dm":
