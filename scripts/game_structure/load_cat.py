@@ -73,6 +73,7 @@ def json_load():
                         prefix=cat["name_prefix"],
                         suffix=cat["name_suffix"],
                         specsuffix_hidden=(cat["specsuffix_hidden"] if 'specsuffix_hidden' in cat else False),
+                        gender=cat["gender"],
                         status=cat["status"],
                         parent1=cat["parent1"],
                         parent2=cat["parent2"],
