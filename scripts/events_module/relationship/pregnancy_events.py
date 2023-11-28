@@ -10,7 +10,8 @@ from scripts.utility import (
     get_highest_romantic_relation,
     get_med_cats,
     event_text_adjust,
-    get_personality_compatibility
+    get_personality_compatibility,
+    BACKSTORIES
 )
 from scripts.game_structure.game_essentials import game
 from scripts.cat.cats import Cat, cat_class
@@ -204,6 +205,11 @@ class Pregnancy_Events():
             amount = Pregnancy_Events.get_amount_of_kits(cat)
             if(randint(1, 2) == 1):
                 cat_type = choice(['loner', 'rogue', 'kittypet'])
+                backstories = {
+                    'loner' : 'loner_backstories',
+                    'rogue' : 'rogue_backstories',
+                    'kittypet' : 'kittypet_backstories'
+                }
                 backkit = 'outsider_roots2'
             else:
                 cat_type = 'Clancat'
@@ -211,13 +217,13 @@ class Pregnancy_Events():
             mate_age = cat.moons + randint(0, 24)-12
             outside_parent = None
             if cat_type != 'Clancat':
-                outside_parent = create_outside_cat(Cat,
-                                    status=cat_type if cat_type in ['loner', 'rogue', 'kittypet'] else 'rogue',
-                                    backstory=None,
-                                    age=mate_age if mate_age > 14 else 15,
-                                    alive=True,
-                                    gender='fem' if 'Y' in cat.genotype.sexgene else 'masc'   
-                                    )
+                outside_parent = create_new_cat(Cat, Relationship,
+                                          status=cat_type,
+                                          backstory=BACKSTORIES["backstory_categories"][backstories[cat_type]],
+                                          alive=True,
+                                          age=mate_age if mate_age > 14 else 15,
+                                          gender='fem' if 'Y' in cat.genotype.sexgene else 'masc',
+                                          outside=True)[0]
                 outside_parent.thought = "Is wondering what their kits are doing"
                 if cat_type != 'Clancat' and randint(1, 5) == 1:
                     outside_parent.mate.append(cat.ID)
@@ -331,22 +337,28 @@ class Pregnancy_Events():
         if not other_cat:
             if(randint(1, 2) == 1):
                 cat_type = choice(['loner', 'rogue', 'kittypet'])
+                
+                backstories = {
+                    'loner' : 'loner_backstories',
+                    'rogue' : 'rogue_backstories',
+                    'kittypet' : 'kittypet_backstories'
+                }
                 backkit = 'outsider_roots2'
             else:
                 cat_type = 'Clancat'
                 backkit = 'halfclan2'
             mate_age = cat.moons + randint(0, 24)-12
             if cat_type != 'Clancat':
-                other_cat = create_outside_cat(Cat,
-                                    status=cat_type if cat_type in ['loner', 'rogue', 'kittypet'] else 'rogue',
-                                    backstory=None,
-                                    age=mate_age if mate_age > 14 else 15,
-                                    alive=True,
-                                    gender='masc'   
-                                    )
+                other_cat = create_new_cat(Cat, Relationship,
+                                          status=cat_type,
+                                          backstory=BACKSTORIES["backstory_categories"][backstories[cat_type]],
+                                          alive=True,
+                                          age=mate_age if mate_age > 14 else 15,
+                                          gender='masc',
+                                          outside=True)[0]
                 other_cat.thought = f"Is wondering how {cat.name} is doing"
                 
-                if random.random() > 0.2:
+                if random.random() < 0.2:
                     other_cat.mate.append(cat.ID)
                     cat.mate.append(other_cat.ID)
                     print("HEY!")
