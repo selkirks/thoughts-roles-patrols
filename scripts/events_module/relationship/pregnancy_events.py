@@ -209,18 +209,20 @@ class Pregnancy_Events():
                 cat_type = 'Clancat'
                 backkit = 'halfclan2'
             mate_age = cat.moons + randint(0, 24)-12
-            outside_parent = create_outside_cat(Cat,
-                                status=cat_type if cat_type in ['loner', 'rogue', 'kittypet'] else 'rogue',
-                                backstory=None,
-                                age=mate_age if mate_age > 14 else 15,
-                                alive=True,
-                                gender='fem' if 'Y' in cat.genotype.sexgene else 'masc'   
-                                 )
-            outside_parent.thought = "Is wondering what their kits are doing"
-            if cat_type != 'Clancat' and randint(1, 5) == 1:
-                outside_parent.mate.append(cat.ID)
-                cat.mate.append(outside_parent.ID)
-                print("HEY!")
+            outside_parent = None
+            if cat_type != 'Clancat':
+                outside_parent = create_outside_cat(Cat,
+                                    status=cat_type if cat_type in ['loner', 'rogue', 'kittypet'] else 'rogue',
+                                    backstory=None,
+                                    age=mate_age if mate_age > 14 else 15,
+                                    alive=True,
+                                    gender='fem' if 'Y' in cat.genotype.sexgene else 'masc'   
+                                    )
+                outside_parent.thought = "Is wondering what their kits are doing"
+                if cat_type != 'Clancat' and randint(1, 5) == 1:
+                    outside_parent.mate.append(cat.ID)
+                    cat.mate.append(outside_parent.ID)
+                    print("HEY!")
 
                 
             kits = Pregnancy_Events.get_kits(amount, cat, outside_parent, clan, backkit=backkit)
@@ -331,22 +333,23 @@ class Pregnancy_Events():
                 cat_type = choice(['loner', 'rogue', 'kittypet'])
                 backkit = 'outsider_roots2'
             else:
-                cat_type = 'former Clancat'
+                cat_type = 'Clancat'
                 backkit = 'halfclan2'
             mate_age = cat.moons + randint(0, 24)-12
-            other_cat = create_outside_cat(Cat,
-                                status=cat_type if cat_type in ['loner', 'rogue', 'kittypet'] else 'rogue',
-                                backstory=None,
-                                age=mate_age if mate_age > 14 else 15,
-                                alive=True,
-                                gender='masc'   
-                                 )
-            other_cat.thought = f"Is wondering how {cat.name} is doing"
-            
-            if cat_type != 'Clancat' and randint(1, 5) == 1:
-                other_cat.mate.append(cat.ID)
-                cat.mate.append(other_cat.ID)
-                print("HEY!")
+            if cat_type != 'Clancat':
+                other_cat = create_outside_cat(Cat,
+                                    status=cat_type if cat_type in ['loner', 'rogue', 'kittypet'] else 'rogue',
+                                    backstory=None,
+                                    age=mate_age if mate_age > 14 else 15,
+                                    alive=True,
+                                    gender='masc'   
+                                    )
+                other_cat.thought = f"Is wondering how {cat.name} is doing"
+                
+                if random.random() > 0.2:
+                    other_cat.mate.append(cat.ID)
+                    cat.mate.append(other_cat.ID)
+                    print("HEY!")
 
         kits = Pregnancy_Events.get_kits(kits_amount, cat, other_cat, clan, backkit=backkit)
         kits_amount = len(kits)

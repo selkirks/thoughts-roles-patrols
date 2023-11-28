@@ -113,7 +113,10 @@ class Relation_Events():
              
             # the more mates the cat has, the less likely it will be that they interact with another cat romantically
             for mate_id in cat.mate:
-                chance_number -= int(cat.relationships[mate_id].romantic_love / 20)
+                try:
+                    chance_number -= int(cat.relationships[mate_id].romantic_love / 20)
+                except:
+                    chance_number -= 0
             use_mate = int(random.random() * chance_number)  
             
         # If use_mate is falsey, or if the cat has been marked as "no_mates", only allow romantic 

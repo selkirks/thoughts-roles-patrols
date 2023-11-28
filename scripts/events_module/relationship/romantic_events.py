@@ -318,7 +318,7 @@ class Romantic_Events():
                 return
             
             # Move on from dead mates
-            if cat_mate and "grief stricken" not in cat.illnesses and ((cat_mate.dead and cat_mate.dead_for >= 4) or cat_mate.outside):
+            if cat_mate and "grief stricken" not in cat.illnesses and (cat_mate.dead and cat_mate.dead_for >= 4):
                 # randint is a slow function, don't call it unless we have to.
                 if not cat_mate.no_mates and random.random() > 0.5:
                     text = f'{cat.name} will always love {cat_mate.name} but has decided to move on.'
@@ -484,7 +484,7 @@ class Romantic_Events():
             return False
         
         # Moving on, not breakups, occur when one mate is dead or outside. 
-        if cat_from.dead or cat_from.outside or cat_to.dead or cat_to.outside:
+        if cat_from.dead or (cat_from.outside and cat_from.status not in ['loner', 'kittypet', 'rogue']) or cat_to.dead or (cat_to.outside and cat_to.status not in ['loner', 'kittypet', 'rogue']):
             return False
 
         chance_number = Romantic_Events.get_breakup_chance(cat_from, cat_to)
