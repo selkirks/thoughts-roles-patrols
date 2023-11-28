@@ -200,8 +200,11 @@ class Cat():
             if not parent1:
                 self.genotype.KitGenerator(Cat.all_cats.get(parent2).genotype, extrapar)
             else:
-                self.genotype.KitGenerator(Cat.all_cats.get(parent1).genotype, Cat.all_cats.get(parent2, extrapar))
-            
+                try:    
+                    self.genotype.KitGenerator(Cat.all_cats.get(parent1).genotype, Cat.all_cats.get(parent2, extrapar))
+                except:
+                    self.genotype.Generator()
+
             if(randint(1, 100) == 1):
                 self.genotype.gender = "intersex"
                 if(randint(1, 3) == 1 and 'Y' in self.genotype.sexgene):
@@ -559,12 +562,15 @@ class Cat():
         if self.genotype.deaf:
             if 'blue' not in self.genotype.lefteyetype or 'blue' not in self.genotype.righteyetype:
                 self.get_permanent_condition('partial hearing loss', born_with=True)
-            else:
+            elif 'partial hearing loss' not in self.permanent_condition.keys:
                 self.get_permanent_condition(choice(['deaf', 'partial hearing loss']), born_with=True)
+        
         if self.genotype.manx[0] == 'M' and self.genotype.manxtype == 'rumpy':
             self.get_permanent_condition('born without a tail', born_with=True)
+        
         if len(self.genotype.sexgene) > 2 and 'Y' in self.genotype.sexgene:
             self.get_permanent_condition('infertility', born_with=True)
+        
         if 'Fd' in self.genotype.fold:
             self.get_permanent_condition('constant joint pain', born_with=True)
 

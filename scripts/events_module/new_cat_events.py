@@ -144,7 +144,7 @@ class NewCatEvents:
                                           outside=True)[0]
             else:
                 par2geno = Genotype()
-                par2geno.Generator()
+                par2geno.Generator('fem')
 
         created_cats = create_new_cat(Cat,
                                       Relationship,

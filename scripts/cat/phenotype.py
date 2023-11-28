@@ -380,9 +380,9 @@ class Phenotype():
                 if(self.genotype.manx[0] == 'Ab' or self.genotype.toybob[0] == 'Tb' or self.genotype.jbob[1] == 'jb' or (self.genotype.manx[0] == 'M' and self.genotype.manxtype == 'stubby')):
                     self.tailtype += "short "
                     self.bobtailnr = 3
-                    if self.genotype.manxtype == 'rumpy' or self.genotype.manxtype == 'riser':
+                    if self.genotype.manx[0] == 'Ab' and (self.genotype.manxtype == 'rumpy' or self.genotype.manxtype == 'riser'):
                         self.bobtailnr = 2
-                    elif (self.genotype.manx[0] == 'Ab' and (self.genotype.manxtype == 'long' or self.genotype.manxtype == 'most')) or (self.genotype.manx[0] == 'M' and self.genotype.manxtype == 'stubby'):
+                    elif (self.genotype.manxtype == 'long' or self.genotype.manxtype == 'most') or (self.genotype.manx[0] == 'M' and self.genotype.manxtype == 'stubby'):
                         self.bobtailnr = 4
                 elif(self.genotype.manx[0] == 'M' and self.genotype.manxtype == 'most'):
                     self.tailtype += 'somewhat shortened '
