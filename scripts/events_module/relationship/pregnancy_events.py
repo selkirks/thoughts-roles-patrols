@@ -690,7 +690,7 @@ class Pregnancy_Events():
             backstory = backkit
             if 'halfclan' in backkit:
                 other_cat = None
-        elif cat and (cat.gender == 'molly' or (cat.gender == 'intersex' and 'Y' not in cat.genotype.sexgene)):
+        elif cat and 'Y' not in cat.genotype.sexgene:
             backstory = choice(['halfclan1', 'outsider_roots1'])
         elif cat:
             backstory = choice(['halfclan2', 'outsider_roots2'])

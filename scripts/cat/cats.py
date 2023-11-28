@@ -207,19 +207,19 @@ class Cat():
 
             if(randint(1, 100) == 1):
                 self.genotype.gender = "intersex"
-                if(randint(1, 3) == 1 and 'Y' in self.genotype.sexgene):
+                if(randint(1, 25) == 1 and 'Y' in self.genotype.sexgene):
                     self.genotype.gender = 'molly'
         elif kittypet or status == 'kittypet':
             self.genotype.AltGenerator(special=gender)
             if(randint(1, 100) == 1):
                 self.genotype.gender = "intersex"
-                if(randint(1, 3) == 1 and 'Y' in self.genotype.sexgene):
+                if(randint(1, 25) == 1 and 'Y' in self.genotype.sexgene):
                     self.genotype.gender = 'molly'
         else:
             self.genotype.Generator(special=gender)
             if(randint(1, 100) == 1):
                 self.genotype.gender = "intersex"
-                if(randint(1, 3) == 1 and 'Y' in self.genotype.sexgene):
+                if(randint(1, 25) == 1 and 'Y' in self.genotype.sexgene):
                     self.genotype.gender = 'molly'
 
         self.phenotype = Phenotype(self.genotype)
@@ -568,7 +568,7 @@ class Cat():
         if self.genotype.manx[0] == 'M' and self.genotype.manxtype == 'rumpy':
             self.get_permanent_condition('born without a tail', born_with=True)
         
-        if len(self.genotype.sexgene) > 2 and 'Y' in self.genotype.sexgene or (not loading_cat and self.gender == 'intersex' and randint(1, 5) == 1):
+        if len(self.genotype.sexgene) > 2 and 'Y' in self.genotype.sexgene or (not loading_cat and self.gender == 'intersex' and random.random() < 0.2 and not gender) or (self.gender == 'molly' and 'Y' in self.genotype.sexgene):
             self.get_permanent_condition('infertility', born_with=True)
         
         if 'Fd' in self.genotype.fold:
