@@ -684,7 +684,10 @@ class Pregnancy_Events():
         blood_parent2 = None
          
         par2geno = Genotype()
-        par2geno.Generator()
+        if cat and 'Y' in cat.genotype.sexgene:
+            par2geno.Generator('fem')
+        elif cat:
+            par2geno.Generator('masc')
         ##### SELECT BACKSTORY #####
         if backkit:
             backstory = backkit

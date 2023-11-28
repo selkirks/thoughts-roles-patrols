@@ -198,10 +198,10 @@ class Cat():
             self.genotype.fromJSON(genotype)
         elif parent1 or parent2:
             if not parent1:
-                self.genotype.KitGenerator(Cat.all_cats.get(parent2).genotype, extrapar)
+                self.genotype.KitGenerator(Cat.all_cats[parent2].genotype, extrapar)
             else:
                 try:    
-                    self.genotype.KitGenerator(Cat.all_cats.get(parent1).genotype, Cat.all_cats.get(parent2, extrapar))
+                    self.genotype.KitGenerator(Cat.all_cats[parent1].genotype, Cat.all_cats.get(parent2, extrapar))
                 except:
                     self.genotype.Generator()
 
@@ -210,13 +210,13 @@ class Cat():
                 if(randint(1, 25) == 1 and 'Y' in self.genotype.sexgene):
                     self.genotype.gender = 'molly'
         elif kittypet or status == 'kittypet':
-            self.genotype.AltGenerator(special=gender)
+            self.genotype.AltGenerator(special=self.gender)
             if(randint(1, 100) == 1):
                 self.genotype.gender = "intersex"
                 if(randint(1, 25) == 1 and 'Y' in self.genotype.sexgene):
                     self.genotype.gender = 'molly'
         else:
-            self.genotype.Generator(special=gender)
+            self.genotype.Generator(special=self.gender)
             if(randint(1, 100) == 1):
                 self.genotype.gender = "intersex"
                 if(randint(1, 25) == 1 and 'Y' in self.genotype.sexgene):

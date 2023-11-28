@@ -300,7 +300,7 @@ def create_new_cat(Cat,
     for index in range(number_of_cats):
         # setting gender
         if not gender:
-            _gender = choice(['molly', 'tom'])
+            _gender = choice(['fem', 'masc'])
         else:
             _gender = gender
 

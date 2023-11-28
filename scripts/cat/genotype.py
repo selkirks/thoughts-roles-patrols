@@ -1,4 +1,4 @@
-from random import choice, randint
+from random import choice, randint, random
 import json
 from operator import xor
 
@@ -343,7 +343,7 @@ class Genotype:
 
         # RED GENE
 
-        if (randint(1, 2) == 1 and special != "fem") or special == "masc":
+        if (random() < 0.5 and special != "fem") or special == "masc":
             self.sexgene = ["", "Y"]
             if randint(1, 1000) == 1:
                 self.sexgene = ["", "", "Y"]
@@ -1426,14 +1426,7 @@ class Genotype:
 
     def KitGenerator(self, par1, par2=None):
         try:
-            if par2 == None:
-                par2 = Genotype()
-                if('Y' in par1.sexgene):
-                    par2.Generator("fem")
-                else:
-                    par2.Generator("masc")
-            else:
-                par2 = par2.genotype
+            par2 = par2.genotype
         except:
             par2 = par2
             
@@ -1465,44 +1458,47 @@ class Genotype:
             self.furLength[0] = x
         
         self.eumelanin = [choice(par1.eumelanin), choice(par2.eumelanin)]
-
+        mum = ["", ""]
+        pap = ["", "Y"]
         if not xor('Y' in par1.sexgene, 'Y' in par2.sexgene):
             if('Y' in par1.sexgene):
                 if(randint(1, 2) == 1):
-                    mum = par1.sexgene
+                    mum[0] = par1.sexgene[0]
                     mum[1] = mum[0]
-                    pap = par2.sexgene
+                    pap[0] = par2.sexgene[0]
                 else:
-                    mum = par2.sexgene
+                    mum[0] = par2.sexgene[0]
                     mum[1] = mum[0]
-                    pap = par1.sexgene
+                    pap[0] = par1.sexgene[0]
             else:
                 if len(par1.sexgene) > 2:
-                    mum = par1.sexgene
-                    pap = par2.sexgene
-                    pap[1] = 'Y'
+                    mum[0] = par1.sexgene[0]
+                    mum[1] = par1.sexgene[1]
+                    mum.append(par1.sexgene[2])
+                    pap[0] = par2.sexgene[0]
                 elif len(par2.sexgene) > 2:
-                    mum = par2.sexgene
-                    pap = par1.sexgene
-                    pap[1] = 'Y'
+                    mum[0] = par2.sexgene[0]
+                    mum[1] = par2.sexgene[1]
+                    mum.append(par2.sexgene[2])
+                    pap[0] = par2.sexgene[0]
                 else:
                     if('O' in par1.sexgene and 'o' in par1.sexgene):
-                        mum = par1.sexgene
-                        pap = par2.sexgene
-                        pap[1] = 'Y'
+                        mum[0] = par1.sexgene[0]
+                        mum[1] = par1.sexgene[1]
+                        pap[0] = par2.sexgene[0]
                     elif ('O' in par2.sexgene and 'o' in par2.sexgene):
-                        mum = par2.sexgene
-                        pap = par1.sexgene
-                        pap[1] = 'Y'
+                        mum[0] = par2.sexgene[0]
+                        mum[1] = par2.sexgene[1]
+                        pap[0] = par1.sexgene[0]
                     else:
-                        if(randint(1, 2) == 1):
-                            mum = par2.sexgene
-                            pap = par1.sexgene
-                            pap[1] = 'Y'
+                        if(random() < 0.5):
+                            mum[0] = par2.sexgene[0]
+                            mum[1] = par2.sexgene[1]
+                            pap[0] = par1.sexgene[0]
                         else:
-                            mum = par1.sexgene
-                            pap = par2.sexgene
-                            pap[1] = 'Y'
+                            mum[0] = par1.sexgene[0]
+                            mum[1] = par1.sexgene[1]
+                            pap[0] = par2.sexgene[0]
 
         elif('Y' in par1.sexgene):
             mum = par2.sexgene
@@ -1510,6 +1506,7 @@ class Genotype:
         else:
             mum = par1.sexgene
             pap = par2.sexgene
+        
 
         if randint(1, 250) == 1:
             self.sexgene = ["", "", ""]
