@@ -422,7 +422,7 @@ class Phenotype():
         self.LegFinder()
 
         if (self.genotype.vitiligo):
-            self.vitiligo = 'with vitiligo'
+            self.vitiligo = 'vitiligo'
 
         if(self.genotype.chimera and not self.genotype.chimerapattern):
             self.genotype.chimerapattern = self.ChooseTortiePattern('chim')

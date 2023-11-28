@@ -225,10 +225,9 @@ class Pregnancy_Events():
                                           gender='fem' if 'Y' in cat.genotype.sexgene else 'masc',
                                           outside=True)[0]
                 outside_parent.thought = "Is wondering what their kits are doing"
-                if cat_type != 'Clancat' and randint(1, 5) == 1:
+                if random.random() < 0.2:
                     outside_parent.mate.append(cat.ID)
                     cat.mate.append(outside_parent.ID)
-                    print("HEY!")
 
                 
             kits = Pregnancy_Events.get_kits(amount, cat, outside_parent, clan, backkit=backkit)
@@ -361,7 +360,6 @@ class Pregnancy_Events():
                 if random.random() < 0.2:
                     other_cat.mate.append(cat.ID)
                     cat.mate.append(other_cat.ID)
-                    print("HEY!")
 
         kits = Pregnancy_Events.get_kits(kits_amount, cat, other_cat, clan, backkit=backkit)
         kits_amount = len(kits)
