@@ -562,13 +562,13 @@ class Cat():
         if self.genotype.deaf:
             if 'blue' not in self.genotype.lefteyetype or 'blue' not in self.genotype.righteyetype:
                 self.get_permanent_condition('partial hearing loss', born_with=True)
-            elif 'partial hearing loss' not in self.permanent_condition.keys:
+            elif 'partial hearing loss' not in self.permanent_condition:
                 self.get_permanent_condition(choice(['deaf', 'partial hearing loss']), born_with=True)
         
         if self.genotype.manx[0] == 'M' and self.genotype.manxtype == 'rumpy':
             self.get_permanent_condition('born without a tail', born_with=True)
         
-        if len(self.genotype.sexgene) > 2 and 'Y' in self.genotype.sexgene:
+        if len(self.genotype.sexgene) > 2 and 'Y' in self.genotype.sexgene or (not loading_cat and self.gender == 'intersex' and randint(1, 5) == 1):
             self.get_permanent_condition('infertility', born_with=True)
         
         if 'Fd' in self.genotype.fold:

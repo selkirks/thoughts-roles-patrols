@@ -200,13 +200,13 @@ class Pregnancy_Events():
 
         # even with no_gendered_breeding on a tom cat with no second parent should not be count as pregnant
         # instead, the cat should get the kit instantly
-        if not other_cat and cat.gender == 'tom':
+        if not other_cat and 'Y' in cat.genotype.sexgene:
             amount = Pregnancy_Events.get_amount_of_kits(cat)
             if(randint(1, 2) == 1):
                 cat_type = choice(['loner', 'rogue', 'kittypet'])
                 backkit = 'outsider_roots2'
             else:
-                cat_type = 'former Clancat'
+                cat_type = 'Clancat'
                 backkit = 'halfclan2'
             mate_age = cat.moons + randint(0, 24)-12
             outside_parent = create_outside_cat(Cat,
@@ -216,6 +216,12 @@ class Pregnancy_Events():
                                 alive=True,
                                 gender='fem' if 'Y' in cat.genotype.sexgene else 'masc'   
                                  )
+            outside_parent.thought = "Is wondering what their kits are doing"
+            if cat_type != 'Clancat' and randint(1, 5) == 1:
+                outside_parent.mate.append(cat.ID)
+                cat.mate.append(outside_parent.ID)
+                print("HEY!")
+
                 
             kits = Pregnancy_Events.get_kits(amount, cat, outside_parent, clan, backkit=backkit)
             insert = 'this should not display'
@@ -233,7 +239,7 @@ class Pregnancy_Events():
         # if the other cat is a molly and the current cat is a tom, make the molly cat pregnant
         pregnant_cat = cat
         second_parent = other_cat
-        if cat.gender == 'tom' and other_cat is not None and other_cat.gender == 'molly':
+        if 'Y' in cat.genotype.sexgene and other_cat is not None and 'Y' not in cat.genotype.sexgene:
             pregnant_cat = other_cat
             second_parent = cat
 
@@ -335,6 +341,12 @@ class Pregnancy_Events():
                                 alive=True,
                                 gender='masc'   
                                  )
+            other_cat.thought = f"Is wondering how {cat.name} is doing"
+            
+            if cat_type != 'Clancat' and randint(1, 5) == 1:
+                other_cat.mate.append(cat.ID)
+                cat.mate.append(other_cat.ID)
+                print("HEY!")
 
         kits = Pregnancy_Events.get_kits(kits_amount, cat, other_cat, clan, backkit=backkit)
         kits_amount = len(kits)
@@ -796,9 +808,14 @@ class Pregnancy_Events():
                 y = random.randrange(0, 10)
                 if second_kitten.ID == kitten.ID:
                     continue
-                kitten.relationships[second_kitten.ID].platonic_like += 20 + y
-                kitten.relationships[second_kitten.ID].comfortable += 10 + y
-                kitten.relationships[second_kitten.ID].trust += 10 + y
+                try:
+                    kitten.relationships[second_kitten.ID].platonic_like += 20 + y
+                    kitten.relationships[second_kitten.ID].comfortable += 10 + y
+                    kitten.relationships[second_kitten.ID].trust += 10 + y
+                except:
+                    kitten.relationships[second_kitten.ID].platonic_like = 20 + y
+                    kitten.relationships[second_kitten.ID].comfortable = 10 + y
+                    kitten.relationships[second_kitten.ID].trust = 10 + y
             
             kitten.create_inheritance_new_cat() # Calculate inheritance. 
 
