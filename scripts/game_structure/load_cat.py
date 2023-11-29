@@ -67,6 +67,7 @@ def json_load():
                         eye_colour=cat["eye_colour"],
                         genotype=cat["genotype"],
                         white_patterns=cat["white_pattern"],
+                        chim_white=cat["chim_white"] if 'chim_white' in cat else None,
                         loading_cat=True)
             except:
                 new_cat = Cat(ID=cat["ID"],

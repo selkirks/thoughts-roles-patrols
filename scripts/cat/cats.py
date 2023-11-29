@@ -132,6 +132,7 @@ class Cat():
                  pelt:Pelt=None,
                  genotype:Genotype=None,
                  white_patterns=None,
+                 chim_white=None,
                  loading_cat=False,  # Set to true if you are loading a cat at start-up.
                  **kwargs
                  ):
@@ -253,11 +254,7 @@ class Cat():
         self.df = False
         self.experience_level = None
 
-        self.white_pattern = white_patterns
-
-        def clean_white():
-            while None in self.white_pattern:
-                self.white_pattern.remove(None)
+        white_pattern = white_patterns
 
         maingame_white = {
             'low':{
@@ -285,115 +282,179 @@ class Cat():
         vitiligo = ['PHANTOM', 'POWDER', 'BLEACHED', 'VITILIGO', 'VITILIGOTWO', 'SMOKEY']
 
         #white patterns
-        if self.white_pattern is None and self.genotype.white[0] != "W" and self.genotype.white[0] != "w":
-            self.white_pattern = []
-            if(self.genotype.vitiligo):
-                self.white_pattern.append(choice(vitiligo))
-            if "wt" in self.genotype.white:
-                if self.genotype.white[1] not in ['ws', 'wt'] and self.genotype.whitegrade < 3:
-                    self.white_pattern.append("dorsal1")
-                elif self.genotype.white[1] not in ['ws', 'wt'] and self.genotype.whitegrade < 5:
-                    self.white_pattern.append(choice(["dorsal1", "dorsal2"]))
-                else:
-                    self.white_pattern.append("dorsal2")
-            
-            if self.genotype.white[0] == "wg":
-                for mark in ["left front mitten", "left back mitten", "right front mitten", "right back mitten"]:
-                    self.white_pattern.append(mark)
-            elif self.genotype.white[0] in ["ws", "wt"] and self.genotype.white[1] not in ["ws", "wt"]:
+        
+        def GenerateWhite(KIT, KITgrade, vit, white_pattern):
+            def clean_white():
+                while None in white_pattern:
+                    white_pattern.remove(None)
+
+            if white_pattern is None and KIT[0] != "W" and KIT[0] != "w":
+                white_pattern = []
+                if(vit):
+                    white_pattern.append(choice(vitiligo))
+                if "wt" in KIT:
+                    if KIT[1] not in ['ws', 'wt'] and KITgrade < 3:
+                        white_pattern.append("dorsal1")
+                    elif KIT[1] not in ['ws', 'wt'] and KITgrade < 5:
+                        white_pattern.append(choice(["dorsal1", "dorsal2"]))
+                    else:
+                        white_pattern.append("dorsal2")
                 
-                if(randint(1, 4) == 1):
-                    self.white_pattern.append(choice(maingame_white["low"].get(str(self.genotype.whitegrade))))
-                    clean_white()
-
-                elif self.genotype.whitegrade == 1:
-                    grade1list = ['chest tuft', 'belly tuft', 'chest tuft', 'belly tuft', None]
-                    self.white_pattern.append(choice(grade1list))
-                    clean_white()
-                elif self.genotype.whitegrade == 2:
-                    while len(self.white_pattern) == 0:
-                        self.white_pattern = []
-                        #chest
-                        self.white_pattern.append(choice(['chest tuft', 'locket', None, 'chest tuft', 'locket', None, 'bib']))
-                        #belly
-                        self.white_pattern.append(choice(['belly tuft', 'belly spot', None, 'belly tuft', 'belly spot', None, 'belly']))
-
-                        #toes
-                        nropaws = choice([4, 3, 2, 1, 0, 0])
-                        order = ['right front', 'left front', 'right back', 'left back']
-                        shuffle(order)
-
-                        for i in range(nropaws):
-                            self.white_pattern.append(order[i] + choice([' toes', ' toes', ' toes', ' mitten']))
-                    clean_white()
-                elif self.genotype.whitegrade == 3:
-                    while len(self.white_pattern) < 4:
-                        self.white_pattern = []
-                        #chest
-                        self.white_pattern.append(choice(['chest', 'beard', 'chest', 'bib', None]))
-
-                        #belly
-                        self.white_pattern.append(choice(['belly spot', 'belly', 'belly spot', 'belly', 'belly spot', 'belly', None]))
-
-                        #paws
-                        nropaws = choice([4, 4, 3, 2, 1, 0])
-                        order = ['right front', 'left front', 'right back', 'left back']
-                        shuffle(order)
-                        pawtype = choice(['same', 'mixed'])
-
-                        for i in range(nropaws):
-                            if pawtype == 'same':
-                                pawtype = choice([' toes', ' mitten', ' mitten', ' mitten', ' low sock'])
-                                self.white_pattern.append(order[i] + pawtype)
-                            else:
-                                self.white_pattern.append(order[i] + choice([' toes', ' mitten', ' mitten', ' low sock']))
-
-                        #face
-                        if 'beard' in self.white_pattern:
-                            self.white_pattern.append(choice(['chin', 'mustache', 'chin', 'chin', None, None, None, None]))
-
-                        #tail
-                        self.white_pattern.append(choice(['tail tip', None, None, None, None]))
-                        self.white_pattern.append(choice([None, None, None, 'break/nose1']))
-
+                if KIT[0] == "wg":
+                    for mark in ["left front mitten", "left back mitten", "right front mitten", "right back mitten"]:
+                        white_pattern.append(mark)
+                elif KIT[0] in ["ws", "wt"] and KIT[1] not in ["ws", "wt"]:
+                    
+                    if(randint(1, 4) == 1):
+                        white_pattern.append(choice(maingame_white["low"].get(str(KITgrade))))
                         clean_white()
-                elif self.genotype.whitegrade == 4:
-                    while len(self.white_pattern) < 4:
-                        self.white_pattern = []
-                        #chest
-                        self.white_pattern.append(choice(['underbelly1', 'beard', 'chest', 'underbelly1']))
 
-                        #belly
-                        if 'underbelly1' not in self.white_pattern:
-                            self.white_pattern.append('belly')
-
-                        #paws
-                        nropaws = choice([4, 4, 4, 4, 3, 3, 2, 2, 1, 0])
-                        order = ['right front', 'left front', 'right back', 'left back']
-                        shuffle(order)
-                        pawtype = choice(['same', 'mixed'])
-
-                        for i in range(nropaws):
-                            if pawtype == 'same':
-                                pawtype = choice([' mitten', ' low sock', ' low sock', ' high sock'])
-                                self.white_pattern.append(order[i] + pawtype)
-                            else:
-                                self.white_pattern.append(order[i] + choice([' mitten', ' low sock', ' high sock']))
-
-                        #face
-                        if 'beard' or 'underbelly1' in self.white_pattern:
-                            self.white_pattern.append(choice(['chin', 'chin', 'muzzle', 'muzzle', 'blaze', None, None]))
-
-                        #tail
-                        self.white_pattern.append(choice(['tail tip', None, None, None, None]))
-                        self.white_pattern.append(choice([None, None, None, 'break/nose1']))
-
+                    elif KITgrade == 1:
+                        grade1list = ['chest tuft', 'belly tuft', 'chest tuft', 'belly tuft', None]
+                        white_pattern.append(choice(grade1list))
                         clean_white()
+                    elif KITgrade == 2:
+                        while len(white_pattern) == 0:
+                            white_pattern = []
+                            #chest
+                            white_pattern.append(choice(['chest tuft', 'locket', None, 'chest tuft', 'locket', None, 'bib']))
+                            #belly
+                            white_pattern.append(choice(['belly tuft', 'belly spot', None, 'belly tuft', 'belly spot', None, 'belly']))
+
+                            #toes
+                            nropaws = choice([4, 3, 2, 1, 0, 0])
+                            order = ['right front', 'left front', 'right back', 'left back']
+                            shuffle(order)
+
+                            for i in range(nropaws):
+                                white_pattern.append(order[i] + choice([' toes', ' toes', ' toes', ' mitten']))
+                        clean_white()
+                    elif KITgrade == 3:
+                        while len(white_pattern) < 4:
+                            white_pattern = []
+                            #chest
+                            white_pattern.append(choice(['chest', 'beard', 'chest', 'bib', None]))
+
+                            #belly
+                            white_pattern.append(choice(['belly spot', 'belly', 'belly spot', 'belly', 'belly spot', 'belly', None]))
+
+                            #paws
+                            nropaws = choice([4, 4, 3, 2, 1, 0])
+                            order = ['right front', 'left front', 'right back', 'left back']
+                            shuffle(order)
+                            pawtype = choice(['same', 'mixed'])
+
+                            for i in range(nropaws):
+                                if pawtype == 'same':
+                                    pawtype = choice([' toes', ' mitten', ' mitten', ' mitten', ' low sock'])
+                                    white_pattern.append(order[i] + pawtype)
+                                else:
+                                    white_pattern.append(order[i] + choice([' toes', ' mitten', ' mitten', ' low sock']))
+
+                            #face
+                            if 'beard' in white_pattern:
+                                white_pattern.append(choice(['chin', 'mustache', 'chin', 'chin', None, None, None, None]))
+
+                            #tail
+                            white_pattern.append(choice(['tail tip', None, None, None, None]))
+                            white_pattern.append(choice([None, None, None, 'break/nose1']))
+
+                            clean_white()
+                    elif KITgrade == 4:
+                        while len(white_pattern) < 4:
+                            white_pattern = []
+                            #chest
+                            white_pattern.append(choice(['underbelly1', 'beard', 'chest', 'underbelly1']))
+
+                            #belly
+                            if 'underbelly1' not in white_pattern:
+                                white_pattern.append('belly')
+
+                            #paws
+                            nropaws = choice([4, 4, 4, 4, 3, 3, 2, 2, 1, 0])
+                            order = ['right front', 'left front', 'right back', 'left back']
+                            shuffle(order)
+                            pawtype = choice(['same', 'mixed'])
+
+                            for i in range(nropaws):
+                                if pawtype == 'same':
+                                    pawtype = choice([' mitten', ' low sock', ' low sock', ' high sock'])
+                                    white_pattern.append(order[i] + pawtype)
+                                else:
+                                    white_pattern.append(order[i] + choice([' mitten', ' low sock', ' high sock']))
+
+                            #face
+                            if 'beard' or 'underbelly1' in white_pattern:
+                                white_pattern.append(choice(['chin', 'chin', 'muzzle', 'muzzle', 'blaze', None, None]))
+
+                            #tail
+                            white_pattern.append(choice(['tail tip', None, None, None, None]))
+                            white_pattern.append(choice([None, None, None, 'break/nose1']))
+
+                            clean_white()
+                    else:
+                        while len(white_pattern) < 4:
+                            white_pattern = []
+                            #chest
+                            white_pattern.append('underbelly1')
+
+                            #paws
+                            nropaws = 4
+                            order = ['right front', 'left front', 'right back', 'left back']
+                            shuffle(order)
+                            pawtype = choice(['same', 'mixed'])
+
+                            for i in range(nropaws):
+                                if pawtype == 'same':
+                                    pawtype = choice([' high sock', ' bicolour1', ' bicolour1', ' bicolour2'])
+                                    white_pattern.append(order[i] + pawtype)
+                                else:
+                                    white_pattern.append(order[i] + choice([' high sock', ' bicolour1', ' bicolour1', ' bicolour2']))
+
+                            #face
+                            white_pattern.append(choice(['chin', 'muzzle', 'muzzle', 'muzzle', 'blaze']))
+
+                            #tail
+                            white_pattern.append(choice(['tail tip', None, None, None, None]))
+                            white_pattern.append(choice([None, None, None, 'break/nose1']))
+
+                            clean_white()
                 else:
-                    while len(self.white_pattern) < 4:
-                        self.white_pattern = []
+                    
+                    if(randint(1, 4) == 1):
+                        white_pattern.append(choice(maingame_white["high"].get(str(KITgrade))))
+
+                    elif KITgrade == 1:
+                        while len(white_pattern) < 4:
+                            white_pattern = []
+                            #chest
+                            white_pattern.append('underbelly1')
+
+                            #paws
+                            nropaws = 4
+                            order = ['right front', 'left front', 'right back', 'left back']
+                            shuffle(order)
+                            pawtype = choice(['same', 'mixed'])
+
+                            for i in range(nropaws):
+                                if pawtype == 'same':
+                                    pawtype = choice([' bicolour1', ' bicolour2', ' bicolour2'])
+                                    white_pattern.append(order[i] + pawtype)
+                                else:
+                                    white_pattern.append(order[i] + choice([' bicolour1', ' bicolour2', ' bicolour2']))
+
+                            #face
+                            white_pattern.append(choice(['chin', 'muzzle', 'muzzle', 'muzzle', 'blaze', 'blaze']))
+
+                            #tail
+                            white_pattern.append(choice(['tail tip', None, None, None, None]))
+                            white_pattern.append(choice([None, None, None, 'break/nose1']))
+
+                            clean_white()
+                    elif KITgrade == 2:
+                        white_pattern = []
                         #chest
-                        self.white_pattern.append('underbelly1')
+                        white_pattern.append(choice(['underbelly1', 'mask n mantle']))
 
                         #paws
                         nropaws = 4
@@ -402,96 +463,45 @@ class Cat():
                         pawtype = choice(['same', 'mixed'])
 
                         for i in range(nropaws):
-                            if pawtype == 'same':
-                                pawtype = choice([' high sock', ' bicolour1', ' bicolour1', ' bicolour2'])
-                                self.white_pattern.append(order[i] + pawtype)
-                            else:
-                                self.white_pattern.append(order[i] + choice([' high sock', ' bicolour1', ' bicolour1', ' bicolour2']))
+                            white_pattern.append(order[i] + ' bicolour2')
 
                         #face
-                        self.white_pattern.append(choice(['chin', 'muzzle', 'muzzle', 'muzzle', 'blaze']))
+                        white_pattern.append(choice(['muzzle', 'muzzle', 'blaze', 'blaze']))
 
                         #tail
-                        self.white_pattern.append(choice(['tail tip', None, None, None, None]))
-                        self.white_pattern.append(choice([None, None, None, 'break/nose1']))
+                        white_pattern.append(choice(['tail tip', None, None, None, None]))
+                        white_pattern.append(choice([None, None, None, 'break/nose1']))
+                        clean_white()
+                    elif KITgrade == 3:
+                        white_pattern.append(choice(['van1', 'van2', 'van3', 'van1', 'van2', 'van3', 'full white']))
+                        white_pattern.append(choice(['break/piebald1', 'break/piebald2']))
+                        white_pattern.append(choice([None, 'break/left ear', 'break/right ear', 'break/tail tip', 'break/tail band', 'break/tail rings', 'break/left face', 'break/right face']))
+                        clean_white()
+                    elif KITgrade == 4:
+                        white_pattern.append(choice(['van1', 'van2', 'van3']))
+                        white_pattern.append(choice([None, None, choice(['break/left ear', 'break/right ear', 'break/tail tip', 'break/tail band', 'break/left face', 'break/right face'])]))
 
                         clean_white()
-            else:
+                    else:
+                        white_pattern.append(choice(["full white", 'van3']))
+
+                        white_pattern.append(choice([None, 'break/left ear', 'break/right ear', 'break/tail tip', 'break/tail band', 'break/left face', 'break/right face']))
+                        white_pattern.append(choice([None, choice(['break/left ear', 'break/right ear', 'break/tail tip', 'break/tail band', 'break/left face', 'break/right face'])]))
+
+                        clean_white()
                 
-                if(randint(1, 4) == 1):
-                    self.white_pattern.append(choice(maingame_white["high"].get(str(self.genotype.whitegrade))))
+                if white_pattern == []:
+                    white_pattern = "No"
+            return white_pattern
 
-                elif self.genotype.whitegrade == 1:
-                    while len(self.white_pattern) < 4:
-                        self.white_pattern = []
-                        #chest
-                        self.white_pattern.append('underbelly1')
+        self.genotype.white_pattern = GenerateWhite(self.genotype.white, self.genotype.whitegrade, self.genotype.vitiligo, white_pattern)
 
-                        #paws
-                        nropaws = 4
-                        order = ['right front', 'left front', 'right back', 'left back']
-                        shuffle(order)
-                        pawtype = choice(['same', 'mixed'])
+        white_pattern = chim_white
+        if self.genotype.chimera:    
+            self.genotype.chimerageno.white_pattern = GenerateWhite(self.genotype.chimerageno.white, self.genotype.chimerageno.whitegrade, self.genotype.chimerageno.vitiligo, white_pattern)
 
-                        for i in range(nropaws):
-                            if pawtype == 'same':
-                                pawtype = choice([' bicolour1', ' bicolour2', ' bicolour2'])
-                                self.white_pattern.append(order[i] + pawtype)
-                            else:
-                                self.white_pattern.append(order[i] + choice([' bicolour1', ' bicolour2', ' bicolour2']))
-
-                        #face
-                        self.white_pattern.append(choice(['chin', 'muzzle', 'muzzle', 'muzzle', 'blaze', 'blaze']))
-
-                        #tail
-                        self.white_pattern.append(choice(['tail tip', None, None, None, None]))
-                        self.white_pattern.append(choice([None, None, None, 'break/nose1']))
-
-                        clean_white()
-                elif self.genotype.whitegrade == 2:
-                    self.white_pattern = []
-                    #chest
-                    self.white_pattern.append(choice(['underbelly1', 'mask n mantle']))
-
-                    #paws
-                    nropaws = 4
-                    order = ['right front', 'left front', 'right back', 'left back']
-                    shuffle(order)
-                    pawtype = choice(['same', 'mixed'])
-
-                    for i in range(nropaws):
-                        self.white_pattern.append(order[i] + ' bicolour2')
-
-                    #face
-                    self.white_pattern.append(choice(['muzzle', 'muzzle', 'blaze', 'blaze']))
-
-                    #tail
-                    self.white_pattern.append(choice(['tail tip', None, None, None, None]))
-                    self.white_pattern.append(choice([None, None, None, 'break/nose1']))
-                    clean_white()
-                elif self.genotype.whitegrade == 3:
-                    self.white_pattern.append(choice(['van1', 'van2', 'van3', 'van1', 'van2', 'van3', 'full white']))
-                    self.white_pattern.append(choice(['break/piebald1', 'break/piebald2']))
-                    self.white_pattern.append(choice([None, 'break/left ear', 'break/right ear', 'break/tail tip', 'break/tail band', 'break/tail rings', 'break/left face', 'break/right face']))
-                    clean_white()
-                elif self.genotype.whitegrade == 4:
-                    self.white_pattern.append(choice(['van1', 'van2', 'van3']))
-                    self.white_pattern.append(choice([None, None, choice(['break/left ear', 'break/right ear', 'break/tail tip', 'break/tail band', 'break/left face', 'break/right face'])]))
-
-                    clean_white()
-                else:
-                    self.white_pattern.append(choice(["full white", 'van3']))
-
-                    self.white_pattern.append(choice([None, 'break/left ear', 'break/right ear', 'break/tail tip', 'break/tail band', 'break/left face', 'break/right face']))
-                    self.white_pattern.append(choice([None, choice(['break/left ear', 'break/right ear', 'break/tail tip', 'break/tail band', 'break/left face', 'break/right face'])]))
-
-                    clean_white()
-            
-            if self.white_pattern == []:
-                self.white_pattern = "No"
-
-        #elif self.white_pattern == "No":
-        #    self.white_pattern = None
+        #elif white_pattern == "No":
+        #    white_pattern = None
         
         # Various behavior toggles
         self.no_kits = False
@@ -3178,7 +3188,8 @@ class Cat():
                 "no_mates": self.no_mates,
                 "exiled": self.exiled,
                 "genotype": self.genotype.toJSON(),
-                "white_pattern" : self.white_pattern,
+                "white_pattern" : self.genotype.white_pattern,
+                "chim_white" : self.genotype.chimerageno.white_pattern,
                 "pelt_name": self.pelt.name,
                 "pelt_color": self.pelt.colour,
                 "sprite_kitten": self.pelt.cat_sprites['kitten'],

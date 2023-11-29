@@ -29,6 +29,7 @@ class Genotype:
         self.dilute = ""
         self.white = ["", ""]
         self.whitegrade = randint(1, 5)
+        self.white_pattern = []
         self.vitiligo = False
         self.deaf = False
         self.pointgene = ["", ""]
