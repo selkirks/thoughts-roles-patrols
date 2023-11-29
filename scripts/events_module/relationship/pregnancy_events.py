@@ -246,7 +246,7 @@ class Pregnancy_Events():
         # if the other cat is a molly and the current cat is a tom, make the molly cat pregnant
         pregnant_cat = cat
         second_parent = other_cat
-        if 'Y' in cat.genotype.sexgene and other_cat is not None and 'Y' not in cat.genotype.sexgene:
+        if 'Y' in cat.genotype.sexgene and other_cat is not None and 'Y' not in other_cat.genotype.sexgene:
             pregnant_cat = other_cat
             second_parent = cat
 
