@@ -499,7 +499,7 @@ class Cat():
         white_pattern = chim_white
         if self.genotype.chimera:    
             self.genotype.chimerageno.white_pattern = GenerateWhite(self.genotype.chimerageno.white, self.genotype.chimerageno.whitegrade, self.genotype.chimerageno.vitiligo, white_pattern)
-
+        
         #elif white_pattern == "No":
         #    white_pattern = None
         
@@ -3189,7 +3189,7 @@ class Cat():
                 "exiled": self.exiled,
                 "genotype": self.genotype.toJSON(),
                 "white_pattern" : self.genotype.white_pattern,
-                "chim_white" : self.genotype.chimerageno.white_pattern,
+                "chim_white" : self.genotype.chimerageno.white_pattern if self.genotype.chimerageno else "No",
                 "pelt_name": self.pelt.name,
                 "pelt_color": self.pelt.colour,
                 "sprite_kitten": self.pelt.cat_sprites['kitten'],
