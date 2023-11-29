@@ -780,7 +780,7 @@ class Pregnancy_Events():
                 for condition in kit.permanent_condition:
                     if kit.permanent_condition[condition] == 'born without a leg':
                         kit.pelt.scars.append('NOPAW')
-                    elif kit.permanent_condition[condition] == 'born without a tail':
+                    elif kit.permanent_condition[condition] == 'born without a tail' and kit.phenotype.bobtailnr != 1:
                         kit.pelt.scars.append('NOTAIL')
                 Condition_Events.handle_already_disabled(kit)
 
