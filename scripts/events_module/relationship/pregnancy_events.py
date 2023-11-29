@@ -564,8 +564,8 @@ class Pregnancy_Events():
             mate = cat.fetch_cat(mate)
 
         # if the sex does matter, choose the best solution to allow kits
-        if not samesex and mate and mate.gender == cat.gender:
-            opposite_mate = [cat.fetch_cat(mate_id) for mate_id in cat.mate if cat.fetch_cat(mate_id).gender != cat.gender]
+        if not samesex and mate and not xor('Y' in cat.genotype.sexgene, 'Y' in mate.genotype.sexgene):
+            opposite_mate = [cat.fetch_cat(mate_id) for mate_id in cat.mate if 'Y' in cat.fetch_cat(mate_id).genotype.sexgene != 'Y' in cat.genotype.sexgene]
             if len(opposite_mate) > 0:
                 mate = choice(opposite_mate)
 
@@ -607,7 +607,7 @@ class Pregnancy_Events():
         if not int(random.random() * chance):
             possible_affair_partners = [i for i in Cat.all_cats_list if 
                                         i.is_potential_mate(cat, for_love_interest=True) 
-                                        and (samesex or i.gender != cat.gender) 
+                                        and (samesex or 'Y' in i.genotype.sexgene != 'Y' in cat.genotype.sexgene) 
                                         and i.ID not in cat.mate]
             if special_affair:
                 possible_affair_partners = [c for c in possible_affair_partners if len(c.mate) <1]
@@ -648,13 +648,13 @@ class Pregnancy_Events():
             # Love affair calculation when the cat has a mate
             chance_love_affair = Pregnancy_Events.get_love_affair_chance(mate_relation, highest_romantic_relation)
             if not chance_love_affair or not int(random.random() * chance_love_affair):
-                if samesex or cat.gender != highest_romantic_relation.cat_to.gender:
+                if samesex or 'Y' in cat.genotype.sexgene != 'Y' in highest_romantic_relation.cat_to.genotype.sexgene:
                     return highest_romantic_relation.cat_to
         elif highest_romantic_relation:
             # Love affair change if the cat doesn't have a mate:
             chance_love_affair = Pregnancy_Events.get_unmated_love_affair_chance(highest_romantic_relation)
             if not chance_love_affair or not int(random.random() * chance_love_affair):
-                if samesex or cat.gender != highest_romantic_relation.cat_to.gender:
+                if samesex or 'Y' in cat.genotype.sexgene != highest_romantic_relation.cat_to.genotype.sexgene:
                     return highest_romantic_relation.cat_to
 
         return None
