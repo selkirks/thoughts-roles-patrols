@@ -125,6 +125,7 @@ class Genotype:
         self.brindledbi = jsonstring["brindledbi"]
 
         try:
+            self.specialred = jsonstring['specialred']
             self.chimera = jsonstring['chimera']
             self.chimerapattern = jsonstring['chimerapattern']
             if(jsonstring["chimerageno"]):
@@ -134,6 +135,7 @@ class Genotype:
                 self.chimerageno = None    
             self.deaf = jsonstring['deaf']
         except:
+            self.specialred = None
             self.chimera = False
             self.chimerapattern = None
             self.chimerageno = None
@@ -239,6 +241,7 @@ class Genotype:
             "furLength": self.furLength,
             "eumelanin": self.eumelanin,
             "sexgene" : self.sexgene,
+            "specialred" : self.specialred,
             "tortiepattern" : self.tortiepattern,
             "brindledbi" : self.brindledbi,
 
@@ -377,6 +380,9 @@ class Genotype:
             self.gender = "molly"
         if 'o' in self.sexgene and 'O' in self.sexgene and randint(1, 250)==1:
             self.brindledbi = True 
+        
+        if(random() < 0.1):
+            self.specialred = choice(['cameo', 'cameo', 'cameo', 'cameo', 'merle', 'merle', 'merle', 'blue-red', 'blue-tipped', 'blue-tipped', 'cinnamon'])
 
         # DILUTE
 
@@ -931,6 +937,8 @@ class Genotype:
         if 'o' in self.sexgene and 'O' in self.sexgene and randint(1, 250)==1:
             self.brindledbi = True 
 
+        if(random() < 0.1):
+            self.specialred = choice(['cameo', 'cameo', 'cameo', 'cameo', 'merle', 'merle', 'merle', 'blue-red', 'blue-tipped', 'blue-tipped', 'cinnamon'])
         # DILUTE
 
         a = randint(1, 4)
@@ -1558,6 +1566,13 @@ class Genotype:
         if 'o' in self.sexgene and 'O' in self.sexgene and randint(1, 250)==1:
             self.brindledbi = True 
         
+        if(par1.specialred and random() < 0.2):
+            self.specialred = par1.specialred
+        if(par2.specialred and random() < 0.2):
+            self.specialred = par2.specialred
+        elif(random() < 0.1):
+            self.specialred = choice(['cameo', 'cameo', 'cameo', 'cameo', 'merle', 'merle', 'merle', 'blue-red', 'blue-tipped', 'blue-tipped', 'cinnamon'])
+
         self.dilute = [choice(par1.dilute), choice(par2.dilute)]
 
         if(self.dilute[0] == "d"):

@@ -601,6 +601,25 @@ class Phenotype():
             self.spritecolour = "white"
             self.caramel = ""
             self.maincolour = self.spritecolour
+        elif('o' not in self.genotype.sexgene and self.genotype.silver[0] == 'I' and self.genotype.specialred == 'merle'):
+            if self.genotype.tortiepattern is not None:
+                self.tortpattern = self.genotype.tortiepattern
+                main = self.FindRed(self.genotype, moons, 'merle')
+                self.maincolour = main[0]
+                self.spritecolour = main[1]
+                main = self.FindRed(self.genotype, moons)
+                self.patchmain = main[0]
+                self.patchcolour = main[1]
+            else:
+                self.tortpattern = self.ChooseTortiePattern()
+                main = self.FindRed(self.genotype, moons, 'merle')
+                self.maincolour = main[0]
+                self.spritecolour = main[1]
+                main = self.FindRed(self.genotype, moons)
+                self.patchmain = main[0]
+                self.patchcolour = main[1]
+
+                self.genotype.tortiepattern = self.tortpattern
         elif ('o' not in self.genotype.sexgene) or (self.genotype.ext[0] == 'ea' and ((moons > 11 and self.genotype.agouti[0] != 'a') or (moons > 23))) or (self.genotype.ext[0] == 'er' and moons > 23 and 'O' not in self.genotype.sexgene) or (self.genotype.ext[0] == 'ec' and (self.genotype.agouti[0] != 'a' or moons > 5)):
             main = self.FindRed(self.genotype, moons, special=self.genotype.ext[0])
             self.maincolour = main[0]
@@ -638,9 +657,13 @@ class Phenotype():
                 self.tortpattern = self.ChooseTortiePattern()
                 if randint(1, 10) == 1:
                     self.tortpattern = 'rev'+self.tortpattern
-                    main = self.FindRed(self.genotype, moons)
-                    self.maincolour = main[0]
-                    self.spritecolour = main[1]
+                    if(self.genotype.brindledbi):
+                        self.maincolour = "white"
+                        self.spritecolour = "white"
+                    else:
+                        main = self.FindRed(self.genotype, moons)
+                        self.maincolour = main[0]
+                        self.spritecolour = main[1]
                     main = self.FindBlack(self.genotype, moons)
                     self.patchmain = main[0]
                     self.patchcolour = main[1]
@@ -648,9 +671,13 @@ class Phenotype():
                     main = self.FindBlack(self.genotype, moons)
                     self.maincolour = main[0]
                     self.spritecolour = main[1]
-                    main = self.FindRed(self.genotype, moons)
-                    self.patchmain = main[0]
-                    self.patchcolour = main[1]
+                    if(self.genotype.brindledbi):
+                        self.patchmain = "white"
+                        self.patchcolour = "white"
+                    else:
+                        main = self.FindRed(self.genotype, moons)
+                        self.patchmain = main[0]
+                        self.patchcolour = main[1]
 
                 self.genotype.tortiepattern = self.tortpattern
 
@@ -740,14 +767,14 @@ class Phenotype():
                 maincolour = 'medium'
             else:
                 maincolour = 'low'
-        if(genes.dilute[0] == "d"):
+        if(genes.dilute[0] == "d" or (genes.specialred == 'cameo' and genes.silver[0] == 'I') or special == 'merle'):
             if(genes.pinkdilute[0] == "dp"):
                 if genes.dilutemd[0] == "Dm":
                     colour = "ivory-apricot"
                 else:
                     colour = "ivory"
             else:
-                if genes.dilutemd[0] == "Dm":
+                if genes.dilutemd[0] == "Dm" and not(genes.specialred == 'cameo' or special == 'merle'):
                     colour = "apricot"
                 else:
                     colour = "cream"
@@ -922,5 +949,22 @@ class Phenotype():
             else:
                 colour = colour + genes.ruftype + genes.wbtype
         
+        if(genes.specialred in ['blue-red', 'cinnamon']):
+            colour = colour.replace('cream', 'lilac')
+            colour = colour.replace('red', 'blue')
+            colour = colour.replace('honey', 'dove')
+            colour = colour.replace('ivory', 'lavender')
+            if(genes.specialred == 'cinnamon'):
+                if('red' in maincolour):
+                    maincolour = 'cinnamon'
+                elif('cream' in maincolour or maincolour == 'apricot'):
+                    maincolour = 'fawn'
+                elif('honey' in maincolour):
+                    maincolour = 'buff'
+                elif('ivory' in maincolour):
+                    maincolour = 'beige'
+                
+                if('apricot' in maincolour):
+                    self.caramel = 'caramel'
         
         return [maincolour, colour]
