@@ -480,6 +480,7 @@ class Cat():
                     elif KITgrade == 4:
                         white_pattern.append(choice(['van1', 'van2', 'van3']))
                         white_pattern.append(choice([None, None, choice(['break/left ear', 'break/right ear', 'break/tail tip', 'break/tail band', 'break/left face', 'break/right face'])]))
+                        white_pattern.append(choice([None, None, None, None, None, choice(['break/left ear', 'break/right ear', 'break/tail tip', 'break/tail band', 'break/left face', 'break/right face'])]))
 
                         clean_white()
                     else:

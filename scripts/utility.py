@@ -1715,6 +1715,7 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
                                     pointbase.set_alpha(204)
                                     whichmain.blit(sprites.sprites['lightbasecolours0'], (0, 0))
                                     whichmain.blit(pointbase, (0, 0))
+                                    pointbase.blit(whichmain, (0, 0))
                                     coloursurface = pointbase
                                     
 
