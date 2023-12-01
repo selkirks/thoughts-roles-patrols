@@ -39,7 +39,7 @@
             "moss"
         ]
     },
-	
+
     "bite-wound":{
         "duration": 3,
         "severity": "major",
@@ -501,8 +501,8 @@
             "daisy",
             "poppy"
         ]
-    },	
-	
+    },
+
     "joint pain":{
         "duration": 2,
         "severity": "minor",
@@ -859,16 +859,15 @@
         "cause_permanent": [
             "lost a leg",
             "lost their tail",
-            "recurring shock",
-            "moss",
-            "dandelion",
-            "poppy"
+            "recurring shock"
         ],
         "herbs": [
             "juniper",
             "ragwort",
             "poppy",
-            "moss"
+            "moss",
+            "dandelion",
+            "poppy"
         ]
     },
 
@@ -896,12 +895,13 @@
             "blood loss"
         ],
         "cause_permanent": [
+        ],
+        "herbs": [
             "oak_leaves",
             "juniper",
             "ragwort",
             "moss"
-        ],
-        "herbs": []
+        ]
     },
 
     "water in their lungs":{
@@ -1201,7 +1201,7 @@
             "partial hearing loss",
             "persistent headaches",
 	        "disrupted senses",
-            "jumbled noise",          
+            "jumbled noise",
 	        "lazy eye"
         ],
         "herbs": [
@@ -1238,7 +1238,7 @@
             "blind",
             "one bad eye",
             "failing eyesight",
-            "recurring shock",	
+            "recurring shock",
 	        "lazy eye"
         ],
         "herbs": [
@@ -1324,7 +1324,7 @@
             "poppy"
         ]
     },
-    
+
     "poisoned": {
         "duration": 2,
         "severity": "major",
@@ -1467,7 +1467,7 @@
             "juniper"
         ]
     },
-    
+
     "rash":{
         "duration": 3,
         "severity": "minor",
@@ -1737,7 +1737,7 @@
             "poppy"
         ]
     },
-    
+
     "pregnant": {
         "duration": 2,
         "severity": "major",

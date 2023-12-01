@@ -318,6 +318,10 @@
 			"m_c sighs in relief when {PRONOUN/m_c/poss} tic attack ends and groans when {PRONOUN/m_c/subject} {VERB/m_c/realize/realizes} that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} sore.",
 			"While m_c is glad that {PRONOUN/m_c/poss} tic attack has ended, {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} not glad that {PRONOUN/m_c/poss} body hurts.",
 			"Cats weren't meant to move that way for long, and m_c's body complains when {PRONOUN/m_c/object}{VERB/m_c/'re/'s} sore the next day."
+		],
+		"spasm": [
+			"Because of m_c's tic attack, m_c's leg has gotten spasms.",
+			"As {PRONOUN/m_c/poss} tics die down, m_c has gotten some spasming in {PRONOUN/m_c/poss} limbs."
 		]
 	},
 	"night dirtmaking": {
