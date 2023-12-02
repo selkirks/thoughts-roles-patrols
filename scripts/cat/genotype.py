@@ -382,7 +382,7 @@ class Genotype:
             self.brindledbi = True 
         
         if(random() < 0.1):
-            self.specialred = choice(['cameo', 'cameo', 'cameo', 'cameo', 'merle', 'merle', 'merle', 'blue-red', 'blue-tipped', 'blue-tipped', 'cinnamon'])
+            self.specialred = choice(['cameo', 'cameo', 'cameo', 'cameo', 'cameo', 'cameo', 'merle', 'merle', 'merle', 'merle', 'merle', 'blue-red', 'blue-tipped', 'blue-tipped', 'cinnamon'])
 
         # DILUTE
 
