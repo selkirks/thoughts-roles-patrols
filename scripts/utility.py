@@ -1432,7 +1432,7 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
 
                         #add base stripes
                         stripebase = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
-                        colour = solidcolours.get(whichcolour)
+                        colour = whichcolour
                         coloursurface = None
                         
                         if("cm" in genotype.pointgene):
@@ -2105,8 +2105,10 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
                 gensprite.blit(sprites.sprites['dorsal1' + cat_sprite], (0, 0))
             if(genotype.white_pattern and 'dorsal2' in genotype.white_pattern):
                 gensprite.blit(sprites.sprites['dorsal2' + cat_sprite], (0, 0))
-            if(genotype.white_pattern and genotype.white_pattern[0] in vitiligo):
-                gensprite.blit(sprites.sprites[genotype.white_pattern[0] + cat_sprite], (0, 0))
+            if(genotype.vitiligo):
+                for x in vitiligo:
+                    if x in genotype.white_pattern:
+                        gensprite.blit(sprites.sprites[x + cat_sprite], (0, 0))
 
 
             if(genotype.fold[0] != 'Fd' or genotype.curl[0] == 'Cu'):

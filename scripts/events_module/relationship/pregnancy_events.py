@@ -115,7 +115,7 @@ class Pregnancy_Events():
 
         if not int(random.random() * chance):
             # If you've reached here - congrats, kits!
-            if kits_are_adopted or 'infertility' in cat.permanent_condition.keys() or (second_parent and 'infertility' in second_parent.permanent_condition.keys()):
+            if kits_are_adopted or 'infertility' in cat.permanent_condition or (second_parent and 'infertility' in second_parent.permanent_condition):
                 Pregnancy_Events.handle_adoption(cat, second_parent, clan)
             else:
                 Pregnancy_Events.handle_zero_moon_pregnant(cat, second_parent, clan)
