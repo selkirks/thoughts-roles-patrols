@@ -47,8 +47,8 @@ class SameSexAdoptions(unittest.TestCase):
     def test_kits_are_adopted(self):
         # given
 
-        cat1 = Cat(gender = 'molly', age = "adult", moons=40)
-        cat2 = Cat(gender = 'molly', age = "adult", moons=40)
+        cat1 = Cat(gender = 'fem', age = "adult", moons=40)
+        cat2 = Cat(gender = 'fem', age = "adult", moons=40)
         cat1.mate.append(cat2.ID)
         cat2.mate.append(cat1.ID)
 

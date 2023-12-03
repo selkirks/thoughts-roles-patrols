@@ -1057,7 +1057,7 @@ class PatrolOutcome():
             alive = False
             thought = "Explores a new starry world"
         
-        if not parent2:
+        if not parent2 and parent1:
             cat_type = choice(['loner', 'rogue', 'kittypet'])
             backstories = {
                 'loner' : 'loner_backstories',
@@ -1077,7 +1077,7 @@ class PatrolOutcome():
         # Now, it's time to generate the new cat
         # This is a bit of a pain, but I can't re-write this function
         adoptive = None
-        if 'infertility' in parent1.permanent_condition:
+        if parent1 and 'infertility' in parent1.permanent_condition:
             adoptive = parent1.IDs
             parent1 = parent2
             parent2 = None
