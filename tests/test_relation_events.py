@@ -74,7 +74,7 @@ class Pregnancy(unittest.TestCase):
     def test_single_cat_female(self, check_if_can_have_kits):
         # given
         clan = Clan(name="clan")
-        cat = Cat(gender = 'molly')
+        cat = Cat(gender = 'fem')
         clan.pregnancy_data = {}
 
         # when
@@ -88,8 +88,8 @@ class Pregnancy(unittest.TestCase):
     def test_pair(self, check_if_can_have_kits):
         # given
         clan = Clan(name="clan")
-        cat1 = Cat(gender = 'molly')
-        cat2 = Cat(gender = 'tom')
+        cat1 = Cat(gender = 'fem')
+        cat2 = Cat(gender = 'masc')
 
         clan.pregnancy_data = {}
 
