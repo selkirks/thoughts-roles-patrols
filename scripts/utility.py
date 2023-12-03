@@ -229,7 +229,8 @@ def create_new_cat(Cat,
                    outside:bool=False,
                    parent1:str=None,
                    parent2:str=None,
-                   extrapar:Genotype=None
+                   extrapar:Genotype=None,
+                   adoptive_parent:list=None
     ) -> list:
     """
     This function creates new cats and then returns a list of those cats
@@ -313,6 +314,8 @@ def create_new_cat(Cat,
                           parent1=parent1,
                           parent2=parent2,
                           extrapar=extrapar)
+            if adoptive_parent:
+                new_cat.adoptive_parents = adoptive_parent
         else:
             # grab starting names and accs for loners/kittypets
             if kittypet:
@@ -2106,9 +2109,12 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
             if(genotype.white_pattern and 'dorsal2' in genotype.white_pattern):
                 gensprite.blit(sprites.sprites['dorsal2' + cat_sprite], (0, 0))
             if(genotype.vitiligo):
-                for x in vitiligo:
-                    if x in genotype.white_pattern:
-                        gensprite.blit(sprites.sprites[x + cat_sprite], (0, 0))
+                if not genotype.white_pattern:
+                    genotype.white_pattern = [choice([vitiligo])]
+                else:
+                    for x in vitiligo:
+                        if x in genotype.white_pattern:
+                            gensprite.blit(sprites.sprites[x + cat_sprite], (0, 0))
 
 
             if(genotype.fold[0] != 'Fd' or genotype.curl[0] == 'Cu'):

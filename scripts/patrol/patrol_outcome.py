@@ -1057,9 +1057,30 @@ class PatrolOutcome():
             alive = False
             thought = "Explores a new starry world"
         
+        if not parent2:
+            cat_type = choice(['loner', 'rogue', 'kittypet'])
+            backstories = {
+                'loner' : 'loner_backstories',
+                'rogue' : 'rogue_backstories',
+                'kittypet' : 'kittypet_backstories'
+            }
+            mate_age = parent1.moons + randint(0, 24)-12
+            parent2 = create_new_cat(Cat, Relationship,
+                                          status=cat_type,
+                                          backstory=BACKSTORIES["backstory_categories"][backstories[cat_type]],
+                                          alive=True,
+                                          age=mate_age if mate_age > 14 else 15,
+                                          gender='fem' if 'Y' in parent1.genotype.sexgene else 'masc',
+                                          outside=True)[0]
+            parent2.thought = "Is wondering what their kits are doing"
            
         # Now, it's time to generate the new cat
         # This is a bit of a pain, but I can't re-write this function
+        adoptive = None
+        if 'infertility' in parent1.permanent_condition:
+            adoptive = parent1.IDs
+            parent1 = parent2
+            parent2 = None
         new_cats = create_new_cat(Cat,
                                 Relationship,
                                 new_name=new_name,
@@ -1076,7 +1097,8 @@ class PatrolOutcome():
                                 alive=alive,
                                 outside=outside,
                                 parent1=parent1.ID if parent1 else None,
-                                parent2=parent2.ID if parent2 else None  
+                                parent2=parent2.ID if parent2 else None,
+                                adoptive_parent=adoptive  
                                  )
         
         # Add relations to biological parents, if needed
