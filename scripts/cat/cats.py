@@ -282,8 +282,8 @@ class Cat():
 
         #white patterns
 
-        if white_pattern and type(white_pattern[0]) == list:
-            white_pattern = choice(white_pattern[0])
+        if white_pattern and white_pattern[0] == vitiligo:
+            white_pattern = [choice(white_pattern[0])]
         
         def GenerateWhite(KIT, KITgrade, vit, white_pattern):
             def clean_white():

@@ -315,7 +315,7 @@ def create_new_cat(Cat,
                           parent2=parent2,
                           extrapar=extrapar)
             if adoptive_parent:
-                new_cat.adoptive_parents = adoptive_parent
+                new_cat.adoptive_parents = [adoptive_parent]
         else:
             # grab starting names and accs for loners/kittypets
             if kittypet:
