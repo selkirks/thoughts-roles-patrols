@@ -2110,7 +2110,7 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
                 gensprite.blit(sprites.sprites['dorsal2' + cat_sprite], (0, 0))
             if(genotype.vitiligo):
                 if not genotype.white_pattern:
-                    genotype.white_pattern = [choice([vitiligo])]
+                    genotype.white_pattern = [choice(vitiligo)]
                 else:
                     for x in vitiligo:
                         if x in genotype.white_pattern:

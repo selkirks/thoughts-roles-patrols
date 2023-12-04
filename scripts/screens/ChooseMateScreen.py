@@ -9,6 +9,7 @@ from scripts.game_structure import image_cache
 from scripts.game_structure.image_button import UIImageButton, UISpriteButton
 from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
 
+from operator import xor
 
 class ChooseMateScreen(Screens):
     list_frame = pygame.transform.scale(image_cache.load_image("resources/images/choosing_frame.png").convert_alpha(),
@@ -815,7 +816,7 @@ class ChooseMateScreen(Screens):
                                                                    )
         
         
-        if not game.clan.clan_settings["same sex birth"] and 'Y' in self.the_cat.genotype.sexgene == 'Y' in self.selected_cat.genotype.sexgene:
+        if not game.clan.clan_settings["same sex birth"] and not xor('Y' in self.the_cat.genotype.sexgene, 'Y' in self.selected_cat.genotype.sexgene) and 'infertility' not in self.the_cat.permanent_condition and 'infertility' not in self.selected_cat.permanent_condition:
             self.selected_cat_elements["no kit warning"] = pygame_gui.elements.UITextBox(
                 f"<font pixel_size={int(22 / 1400 * screen_y)}> This pair can't have biological kittens </font>", 
                 scale(pygame.Rect((550, 250), (498, 50))),
@@ -969,9 +970,10 @@ class ChooseMateScreen(Screens):
                            age_restriction=False, ignore_no_mates=True)
                        and i.ID not in self.the_cat.mate
                        and (not self.single_only or not i.mate)
+                       and ('infertility' not in i.permanent_condition and 'infertility' not in self.the_cat.permanent_condition)
                        and (not self.have_kits_only 
                             or game.clan.clan_settings["same sex birth"]
-                            or 'Y' in i.genotype.sexgene != 'Y' in self.the_cat.genotype.sexgene)]
+                            or xor('Y' in i.genotype.sexgene, 'Y' in self.the_cat.genotype.sexgene))]
         
         return valid_mates
 
