@@ -1078,7 +1078,7 @@ class PatrolOutcome():
         # This is a bit of a pain, but I can't re-write this function
         adoptive = None
         if parent1 and 'infertility' in parent1.permanent_condition:
-            adoptive = parent1.IDs
+            adoptive = parent1.ID
             parent1 = parent2
             parent2 = None
         new_cats = create_new_cat(Cat,
