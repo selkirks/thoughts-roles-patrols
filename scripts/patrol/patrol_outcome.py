@@ -943,9 +943,9 @@ class PatrolOutcome():
         
         
         # DETERMINE GENDER
-        if "tom" in attribute_list:
+        if "male" in attribute_list:
             gender = "tom"
-        elif "molly" in attribute_list:
+        elif "female" in attribute_list:
             gender = "molly"
         elif "can_birth" in attribute_list and not game.clan.clan_settings["same sex birth"]:
             gender = "molly"
