@@ -283,7 +283,7 @@ class Cat():
 
         #white patterns
 
-        if type(white_pattern[0]) == list:
+        if white_pattern and type(white_pattern[0]) == list:
             white_pattern = white_pattern[0]
         
         def GenerateWhite(KIT, KITgrade, vit, white_pattern):
