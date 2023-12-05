@@ -2104,10 +2104,11 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
 
             whitesprite.blit(nose2, (0, 0))
             gensprite.blit(whitesprite, (0, 0))
-            if(genotype.white_pattern and 'dorsal1' in genotype.white_pattern):
-                gensprite.blit(sprites.sprites['dorsal1' + cat_sprite], (0, 0))
-            if(genotype.white_pattern and 'dorsal2' in genotype.white_pattern):
-                gensprite.blit(sprites.sprites['dorsal2' + cat_sprite], (0, 0))
+            if genotype.white_pattern:
+                if 'dorsal1' in genotype.white_pattern:
+                    gensprite.blit(sprites.sprites['dorsal1' + cat_sprite], (0, 0))
+                elif 'dorsal2' in genotype.white_pattern:
+                    gensprite.blit(sprites.sprites['dorsal2' + cat_sprite], (0, 0))
             if(genotype.vitiligo):
                 if not genotype.white_pattern:
                     genotype.white_pattern = [choice(vitiligo)]

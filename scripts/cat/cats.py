@@ -290,7 +290,7 @@ class Cat():
                 while None in white_pattern:
                     white_pattern.remove(None)
 
-            if white_pattern is None and KIT[0] != "W" and KIT[0] != "w":
+            if white_pattern is None and (KIT[0] != "W" and KIT[0] != "w"):
                 white_pattern = []
                 if(vit):
                     white_pattern.append(choice(vitiligo))
@@ -493,8 +493,10 @@ class Cat():
 
                         clean_white()
                 
-                if white_pattern == []:
-                    white_pattern = "No"
+            elif white_pattern is None and vit:
+                white_pattern = [choice([vitiligo])]
+            if white_pattern == []:
+                white_pattern = "No"
             return white_pattern
 
         self.genotype.white_pattern = GenerateWhite(self.genotype.white, self.genotype.whitegrade, self.genotype.vitiligo, white_pattern)
