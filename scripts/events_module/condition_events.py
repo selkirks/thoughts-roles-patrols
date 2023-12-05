@@ -170,7 +170,6 @@ class Condition_Events():
             text = event_string
         else:
             # EVENTS
-
             if not triggered and \
                     cat.personality.trait in ["adventurous",
                                             "bold",
