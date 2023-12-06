@@ -494,7 +494,7 @@ class Cat():
                         clean_white()
                 
             elif white_pattern is None and vit:
-                white_pattern = [choice([vitiligo])]
+                white_pattern = [choice(vitiligo)]
             if white_pattern == []:
                 white_pattern = "No"
             return white_pattern
