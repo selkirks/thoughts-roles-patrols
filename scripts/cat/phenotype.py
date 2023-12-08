@@ -620,6 +620,16 @@ class Phenotype():
                 self.patchcolour = main[1]
 
                 self.genotype.tortiepattern = self.tortpattern
+        elif('o' not in self.genotype.sexgene and self.genotype.specialred == 'blue-tipped'):
+            self.tortpattern = 'BLUE-TIPPED'
+            main = self.FindRed(self.genotype, moons)
+            self.maincolour = main[0]
+            self.spritecolour = main[1]
+            main = self.FindRed(self.genotype, moons, 'blue-tipped')
+            self.patchmain = main[0]
+            self.patchcolour = main[1]
+
+            self.genotype.tortiepattern = self.tortpattern
         elif ('o' not in self.genotype.sexgene) or (self.genotype.ext[0] == 'ea' and ((moons > 11 and self.genotype.agouti[0] != 'a') or (moons > 23))) or (self.genotype.ext[0] == 'er' and moons > 23 and 'O' not in self.genotype.sexgene) or (self.genotype.ext[0] == 'ec' and (self.genotype.agouti[0] != 'a' or moons > 5)):
             main = self.FindRed(self.genotype, moons, special=self.genotype.ext[0])
             self.maincolour = main[0]
@@ -949,7 +959,7 @@ class Phenotype():
             else:
                 colour = colour + genes.ruftype + genes.wbtype
         
-        if(genes.specialred in ['blue-red', 'cinnamon']):
+        if(genes.specialred in ['blue-red', 'cinnamon']) or special == 'blue-tipped':
             colour = colour.replace('cream', 'lilac')
             colour = colour.replace('red', 'blue')
             colour = colour.replace('honey', 'dove')
