@@ -381,7 +381,7 @@ class Genotype:
         if 'o' in self.sexgene and 'O' in self.sexgene and randint(1, 250)==1:
             self.brindledbi = True 
         
-        if(random() < 0.1):
+        if(random() < 0.05):
             self.specialred = choice(['cameo', 'cameo', 'cameo', 'cameo', 'cameo', 'cameo', 'merle', 'merle', 'merle', 'merle', 'merle', 'blue-red', 'blue-tipped', 'blue-tipped', 'cinnamon'])
 
         # DILUTE
@@ -937,8 +937,8 @@ class Genotype:
         if 'o' in self.sexgene and 'O' in self.sexgene and randint(1, 250)==1:
             self.brindledbi = True 
 
-        if(random() < 0.1):
-            self.specialred = choice(['cameo', 'cameo', 'cameo', 'cameo', 'merle', 'merle', 'merle', 'blue-red', 'blue-tipped', 'blue-tipped', 'cinnamon'])
+        if(random() < 0.05):
+            self.specialred = choice(['cameo', 'cameo', 'cameo', 'cameo', 'cameo', 'cameo', 'merle', 'merle', 'merle', 'merle', 'merle', 'blue-red', 'blue-tipped', 'blue-tipped', 'cinnamon'])
         # DILUTE
 
         a = randint(1, 4)
@@ -1570,8 +1570,8 @@ class Genotype:
             self.specialred = par1.specialred
         if(par2.specialred and random() < 0.2):
             self.specialred = par2.specialred
-        elif(random() < 0.1):
-            self.specialred = choice(['cameo', 'cameo', 'cameo', 'cameo', 'merle', 'merle', 'merle', 'blue-red', 'blue-tipped', 'blue-tipped', 'cinnamon'])
+        elif(random() < 0.05):
+            self.specialred = choice(['cameo', 'cameo', 'cameo', 'cameo', 'cameo', 'cameo', 'merle', 'merle', 'merle', 'merle', 'merle', 'blue-red', 'blue-tipped', 'blue-tipped', 'cinnamon'])
 
         self.dilute = [choice(par1.dilute), choice(par2.dilute)]
 
