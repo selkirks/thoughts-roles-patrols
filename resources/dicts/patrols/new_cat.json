@@ -37,7 +37,7 @@
                 "weight": 5,
                 "new_cat": [
                     ["loner", "age:has_kits"],
-                    ["litter", "parent:0", "status:kitten"]
+                    ["litter", "parent:0", "status:kitten", "backstory:outsider_roots2"]
                 ],
                 "relationships": [
                     {
@@ -116,7 +116,7 @@
                 "weight": 5,
                 "new_cat": [
                     ["loner", "age:has_kits"],
-                    ["litter", "parent:0", "status:kitten"]
+                    ["litter", "parent:0", "status:kitten", "backstory:outsider_roots2"]
                 ],
                 "relationships": [
                     {
@@ -195,7 +195,7 @@
                 "weight": 5,
                 "new_cat": [
                     ["age:has_kits", "kittypet"],
-                    ["litter", "parent:0", "status:kitten"]
+                    ["litter", "parent:0", "status:kitten", "backstory:outsider_roots2"]
                 ],
                 "relationships": [
                     {
@@ -274,7 +274,7 @@
                 "weight": 5,
                 "new_cat": [
                     ["age:has_kits", "kittypet"],
-                    ["litter", "parent:0", "status:kitten"]
+                    ["litter", "parent:0", "status:kitten", "backstory:outsider_roots2"]
                 ],
                 "relationships": [
                     {
@@ -477,7 +477,7 @@
                 "exp": 10,
                 "weight": 20,
                 "new_cat": [
-                    ["status:kitten"]
+                    ["status:kitten", "backstory:abandoned1"]
                 ],
                 "relationships": [
                     {
@@ -541,7 +541,7 @@
                 "exp": 10,
                 "weight": 20,
                 "new_cat": [
-                    ["status:kitten"]
+                    ["status:kitten", "backstory:abandoned1"]
                 ],
                 "relationships": [
                     {
@@ -868,7 +868,7 @@
                 "weight": 20,
                 "new_cat": [
                     ["can_birth", "age:has_kits"],
-                    ["litter", "parent:0", "status:newborn"]
+                    ["litter", "parent:0", "status:newborn", "backstory:outsider_roots2"]
                 ],
                 "relationships": [
                     {
@@ -886,7 +886,7 @@
                 "weight": 5,
                 "new_cat": [
                     ["can_birth", "age:has_kits"],
-                    ["litter", "parent:0", "status:newborn"]
+                    ["litter", "parent:0", "status:newborn", "backstory:outsider_roots2"]
                 ],
                 "relationships": [
                     {
@@ -1032,7 +1032,7 @@
                 "weight": 20,
                 "new_cat": [
                     ["age:has_kits", "can_birth"],
-                    ["litter", "parent:0", "status:newborn"]
+                    ["litter", "parent:0", "status:newborn", "backstory:outsider_roots2"]
                 ],
                 "relationships": [
                     {
@@ -1050,7 +1050,7 @@
                 "weight": 5,
                 "new_cat": [
                     ["age:has_kits", "can_birth"],
-                    ["litter", "parent:0", "status:newborn"]
+                    ["litter", "parent:0", "status:newborn", "backstory:outsider_roots2"]
                 ],
                 "relationships": [
                     {
@@ -1197,7 +1197,7 @@
                 "weight": 20,
                 "new_cat": [
                     ["age:has_kits", "can_birth"],
-                    ["litter", "parent:0", "status:newborn"]
+                    ["litter", "parent:0", "status:newborn", "backstory:outsider_roots2"]
                 ],
                 "relationships": [
                     {
@@ -1215,7 +1215,7 @@
                 "weight": 5,
                 "new_cat": [
                     ["age:has_kits", "can_birth"],
-                    ["litter", "parent:0", "status:newborn"]
+                    ["litter", "parent:0", "status:newborn", "backstory:outsider_roots2"]
                 ],
                 "relationships": [
                     {
@@ -1440,7 +1440,7 @@
                 "text": "p_l decides that a quick peek can't hurt. As {PRONOUN/p_l/subject} {VERB/p_l/venture/ventures} into the nest, ears pricked with curiosity, {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} notice the lithe forms of rogues moving to block the entrance until it's too late. p_l never makes it back to camp.",
                 "exp": 0,
                 "weight": 10,
-                "dead_cats": ["r_c"],
+                "dead_cats": ["r_c", "some_lives"],
                 "history_text": {
                     "reg_death": "This cat died in an ambush set by rogues.",
                     "lead_death": "{VERB/m_c/were/was} killed in a rogue ambush"
@@ -1902,7 +1902,7 @@
                 "text": "r_c decides that a quick peek can't hurt. As {PRONOUN/r_c/subject} {VERB/r_c/venture/ventures} into the nest, ears pricked with curiosity, {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} notice the lithe forms of rogues moving to block the entrance until it's too late. r_c never makes it back to camp.",
                 "exp": 0,
                 "weight": 10,
-                "dead_cats": ["r_c"],
+                "dead_cats": ["r_c", "some_lives"],
                 "history_text": {
                     "reg_death": "This cat died from being ambushed by rogues while on a solo patrol.",
                     "lead_death": "{VERB/m_c/were/was} killed in a rogue ambush while on a solo patrol"
@@ -2393,7 +2393,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "It's probably dangerous, but... there's no way app1 can live with leaving some poor soul alone on the mountainside in the cold. Following the piteous cries, app1 rounds a bend and spots a puffed out bundle of terrified screams sitting by the side of one of the few thunderpaths that cross c_n territory. {PRONOUN/app1/subject/CAP} {VERB/app1/sigh/sighs}, climbing down the slope and calling out in reassurance to the kittypet.",
+                "text": "It's probably dangerous, but... there's no way app1 can live with leaving some poor soul alone on the mountainside in the cold. Following the piteous cries, app1 rounds a bend and spots a puffed out bundle of terrified screams sitting by the side of one of the few Thunderpaths that cross c_n territory. {PRONOUN/app1/subject/CAP} {VERB/app1/sigh/sighs}, climbing down the slope and calling out in reassurance to the kittypet.",
                 "exp": 20,
                 "weight": 20,
                 "new_cat": [
@@ -2792,7 +2792,7 @@
                         "no_results": true
                     }
                 ]
-            }			
+            }
         ],
         "fail_outcomes": [
             {
@@ -2906,7 +2906,7 @@
                         "no_results": true
                     }
                 ]
-            }			
+            }
         ],
         "fail_outcomes": [
             {
@@ -3021,7 +3021,7 @@
                         "no_results": true
                     }
                 ]
-            }			
+            }
         ],
         "fail_outcomes": [
             {
