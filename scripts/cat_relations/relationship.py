@@ -7,8 +7,8 @@ from scripts.event_class import Single_Event
 from scripts.utility import get_personality_compatibility, process_text
 from scripts.game_structure.game_essentials import game
 from scripts.cat_relations.interaction import (
-    Single_Interaction, 
-    NEUTRAL_INTERACTIONS, 
+    Single_Interaction,
+    NEUTRAL_INTERACTIONS,
     INTERACTION_MASTER_DICT,
     rel_fulfill_rel_constraints,
     cats_fulfill_single_interaction_constraints,
@@ -101,7 +101,8 @@ class Relationship():
             all_interactions = INTERACTION_MASTER_DICT[rel_type][in_de_crease].copy()
             possible_interactions = self.get_relevant_interactions(all_interactions, intensity, biome, season, game_mode)
         else:
-            possible_interactions = all_interactions
+            intensity = None
+            possible_interactions = self.get_relevant_interactions(all_interactions, intensity, biome, season, game_mode)
 
         if len(possible_interactions) <= 0:
             print("ERROR: No interaction with this conditions. ", rel_type, in_de_crease, intensity)
@@ -138,7 +139,7 @@ class Relationship():
                 injured_cat = self.cat_from
                 if abbreviations != "m_c":
                     injured_cat = self.cat_to
-                
+
                 for inj in injury_dict["injury_names"]:
                     injured_cat.get_injured(inj, True)
                     injuries.append(inj)
@@ -147,11 +148,11 @@ class Relationship():
                 possible_death = self.adjust_interaction_string(injury_dict["death_text"]) if "death_text" in injury_dict else None
                 if injured_cat.status == "leader":
                     possible_death = self.adjust_interaction_string(injury_dict["death_leader_text"]) if "death_leader_text" in injury_dict else None
-                
+
                 if possible_scar or possible_death:
                     for condition in injuries:
                         self.history.add_possible_history(injured_cat, condition, scar_text=possible_scar, death_text=possible_death)
-                
+
         # get any possible interaction string out of this interaction
         interaction_str = choice(self.chosen_interaction.interactions)
 
@@ -326,11 +327,11 @@ class Relationship():
 
     def get_interaction_type(self, positive: bool) ->  str:
         """Returns the type of the interaction which should be made.
-        
+
             Parameters
             ----------
             positive : bool
-                if the event has a positive or negative impact of the relationship, 
+                if the event has a positive or negative impact of the relationship,
                 this define which weight will be used to get the type of the interaction
 
             Returns
@@ -378,7 +379,7 @@ class Relationship():
     def get_relevant_interactions(self, interactions : list, intensity : str, biome : str, season : str, game_mode : str) -> list:
         """
         Filter interactions based on the status and other constraints.
-            
+
             Parameters
             ----------
             interactions : list
@@ -413,7 +414,7 @@ class Relationship():
             if len(in_tags) > 0:
                 continue
 
-            if interact.intensity != intensity:
+            if intensity is not None and interact.intensity != intensity:
                 continue
 
             cats_fulfill_conditions = cats_fulfill_single_interaction_constraints(self.cat_from, self.cat_to, interact, game_mode)
@@ -448,7 +449,7 @@ class Relationship():
     # decrease jealousy -> increases: comfortable | decreases: -
     # increase trust -> decreases: dislike | increases: comfortable
     # decrease trust -> increases: dislike | decreases: comfortable
-    
+
 
     def complex_romantic(self, value, buff):
         """Add the value to the romantic type and influence other value types as well."""

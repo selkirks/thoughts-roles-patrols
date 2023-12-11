@@ -343,7 +343,7 @@
         "biome": ["forest"],
         "season": ["leaf-fall"],
         "types": ["hunting"],
-        "tags": ["disrespect", "large_prey3", "distrust"],
+        "tags": ["disrespect", "distrust"],
         "patrol_art": "hunt_general_intro",
         "min_cats": 2,
         "max_cats": 6,
@@ -356,7 +356,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "The patrol backtracks. r_c is found, huddled under a bush - they lost the path, and sight of their clanmates, but sensibly remained put. It's one more obstacle in a miserable day of hunting. They return with prey, but it's exhausting and barely worth the effort.",
+                "text": "The patrol backtracks. r_c is found, huddled under a bush - they lost the path, and sight of their Clanmates, but sensibly remained put. It's one more obstacle in a miserable day of hunting. They return with prey, but it's exhausting and barely worth the effort.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["small"],
@@ -407,7 +407,8 @@
                         "values": ["dislike"],
                         "amount": -5
                     }
-                ]
+                ],
+                "prey": ["medium"]
             }
         ],
         "fail_outcomes": [
@@ -558,7 +559,7 @@
         "biome": ["forest"],
         "season": ["leaf-fall"],
         "types": ["hunting"],
-        "tags": ["large_prey2"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 3,
         "max_cats": 6,
@@ -939,7 +940,7 @@
         "biome": ["forest"],
         "season": ["leaf-fall"],
         "types": ["hunting"],
-        "tags": ["large_prey3"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 2,
         "max_cats": 3,
@@ -1076,7 +1077,7 @@
         "biome": ["forest"],
         "season": ["leaf-fall"],
         "types": ["hunting"],
-        "tags": ["large_prey3"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 4,
         "max_cats": 6,
@@ -1213,7 +1214,7 @@
         "biome": ["forest"],
         "season": ["leaf-fall"],
         "types": ["hunting"],
-        "tags": ["large_prey3"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 1,
         "max_cats": 1,
@@ -1293,7 +1294,8 @@
                         "values": ["respect"],
                         "amount": -5
                     }
-                ]
+                ],
+                "prey": ["very_small"]
             },
             {
                 "text": "Fiercely, r_c throws {PRONOUN/r_c/self} at the fox, determined to win the fawn prize. But the fox values it just as dearly, and manages to get a good grip on r_c, shaking {PRONOUN/r_c/object} to pieces and killing {PRONOUN/r_c/object}.",
@@ -1313,7 +1315,8 @@
                         "values": ["respect"],
                         "amount": -5
                     }
-                ]
+                ],
+                "prey": ["very_small"]
             },
             {
                 "text": "r_c launches into battle, but is caught with a nasty bite, and retreats to limp back home. The fox doesn't follow, happy enough to eat the fawn instead of the foolish cat.",
@@ -1375,7 +1378,7 @@
         "biome": ["forest"],
         "season": ["leaf-fall"],
         "types": ["hunting"],
-        "tags": ["large_prey3"],
+        "tags": [],
         "patrol_art": "fst_hunt_foxgray_leaf-fallscavenge",
         "patrol_art_clean": "hunt_general_intro",
         "min_cats": 2,
@@ -1506,7 +1509,7 @@
         "biome": ["forest"],
         "season": ["leaf-fall"],
         "types": ["hunting"],
-        "tags": ["large_prey3"],
+        "tags": [],
         "patrol_art": "fst_hunt_foxgray_leaf-fallscavenge",
         "patrol_art_clean": "hunt_general_intro",
         "min_cats": 4,
@@ -1613,7 +1616,7 @@
         "biome": ["forest"],
         "season": ["leaf-fall"],
         "types": ["hunting"],
-        "tags": ["large_prey3"],
+        "tags": [],
         "patrol_art": "fst_hunt_foxgray_leaf-fallscavenge",
         "patrol_art_clean": "hunt_general_intro",
         "min_cats": 1,
@@ -1877,6 +1880,18 @@
                 "exp": 0,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,1"],
+                "history_text": {
+                    "scar": "m_c carries a scar from a fox fight.",
+                    "reg_death": "m_c fell in battle with a fox.",
+                    "lead_death": "died while fighting a vixen"
+                },
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["big_bite_injury"],
+                        "scars": ["NECKBITE"]
+                    }
+                ],
                 "relationships": [
                     {
                         "cats_to": ["s_c"],
@@ -1909,32 +1924,6 @@
             },
             {
                 "text": "The mother red fox's snapping jaws leave r_c dripping blood onto the leaf litter, forcing the patrol to back off.",
-                "exp": 0,
-                "weight": 10,
-                "injury": [
-                    {
-                        "cats": ["r_c"],
-                        "injuries": ["big_bite_injury"],
-                        "scars": ["NECKBITE"]
-                    }
-                ],
-                "history_text": {
-                    "scar": "m_c carries a scar from a fox fight.",
-                    "reg_death": "m_c fell in battle with a fox.",
-                    "lead_death": "died while fighting a vixen"
-                },
-                "relationships": [
-                    {
-                        "cats_to": ["r_c", "patrol", "r_c"],
-                        "cats_from": ["clan", "clan", "patrol"],
-                        "mutual": false,
-                        "values": ["respect", "trust"],
-                        "amount": -5
-                    }
-                ]
-            },
-            {
-                "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} a good fighter, but not a great one, and the red vixen manages to sink her teeth into {PRONOUN/s_c/object}. The patrol rallies around s_c, but they have to give up on the fight.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -2067,6 +2056,19 @@
                 "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} a good fighter, but not a great one, and the red vixen manages to sink her teeth into {PRONOUN/s_c/object}. The patrol rallies around s_c, but they have to give up the fight.",
                 "exp": 0,
                 "weight": 20,
+                "stat_skill": ["FIGHTER,1"],
+                "history_text": {
+                    "scar": "m_c carries a scar from a fox fight.",
+                    "reg_death": "m_c fell in battle with a fox.",
+                    "lead_death": "died while fighting a vixen"
+                },
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["big_bite_injury"],
+                        "scars": ["NECKBITE"]
+                    }
+                ],
                 "relationships": [
                     {
                         "cats_to": ["r_c", "patrol", "r_c"],
@@ -2225,6 +2227,7 @@
                 "text": "s_c is determined to win, but the red vixen is determined to live, and that makes all the difference. s_c ends up pinned in a defensible hiding spot, bleeding and terrified, until the vixen judges them no longer a threat and continues on her way.",
                 "exp": 0,
                 "weight": 10,
+                "stat_skill": ["FIGHTER,1"],
                 "injury": [
                     {
                         "cats": ["r_c"],
@@ -2389,7 +2392,7 @@
                 ]
             },
             {
-                "text": "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and the stocky gray vixen is all muscle, barging past s_c and knocking them ass over paws as she flees from the patrol.",
+                "text": "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and the stocky gray vixen is all muscle, barging past s_c and knocking them rump over paws as she flees from the patrol.",
                 "exp": 0,
                 "weight": 10,
                 "stat_skill": ["FIGHTER,1"],
@@ -2553,7 +2556,7 @@
                 ]
             },
             {
-                "text": "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and the stocky gray vixen is all muscle, barging past s_c and knocking them ass over paws as she flees from the patrol.",
+                "text": "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and the stocky gray vixen is all muscle, barging past s_c and knocking them rump over paws as she flees from the patrol.",
                 "exp": 0,
                 "weight": 10,
                 "stat_skill": ["FIGHTER,1"],
@@ -3244,5 +3247,50 @@
                 "weight": 20
             }
         ]
-    }
+    },
+    {
+    	"patrol_id": "fst_hunt_pipistrellebats1",
+    	"biome": ["forest"],
+    	"season": ["leaf-fall"],
+    	"types": ["hunting"],
+    	"tags": ["halloween", "romance"],
+    	"patrol_art": "pipbats_INTRO",
+    	"min_cats": 3,
+    	"max_cats": 6,
+    	"min_max_status": {},
+    	"weight": 20,
+    	"intro_text": "As the wind scatters the orange leaf-pelts of the trees, pipistrelle bats arrive en masse to court, males belting out their high pitched songs of love.",
+    	"decline_text": "How very... squeaky.",
+    	"chance_of_success": 50,
+    	"success_outcomes": [
+        	{
+            	"text": "Distracted by love and the competition of performances to win it, the males make easy hunting for their delighted audience of c_n cats.",
+            	"exp": 25,
+            	"weight": 20,
+            	"prey": ["medium"]
+        	},
+        	{
+            	"text": "p_l watches r_c leap with the thrill of the hunt, quite literally snatching victory from thin air. {PRONOUN/p_l/subject/CAP}'d feel sorry for the lover bats - but r_c is just showing who the best potential mates are. Showing the pipistrelles, of course. No one else.",
+            	"exp": 20,
+            	"weight": 20,
+            	"relationships": [
+                	{
+                    	"cats_to": ["r_c"],
+                    	"cats_from": ["p_l"],
+                    	"mutual": false,
+                    	"values": ["romantic", "respect"],
+                    	"amount": 10
+                	}
+            	],
+            	"prey": ["medium"]
+        	}
+    	],
+    	"fail_outcomes": [
+        	{
+            	"text": "How is anyone supposed to hunt with all this ringing in their ears?!",
+            	"exp": 0,
+            	"weight": 20
+        	}
+    	]
+	}
 ]

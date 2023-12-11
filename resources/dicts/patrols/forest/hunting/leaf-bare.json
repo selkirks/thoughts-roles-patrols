@@ -4,7 +4,7 @@
         "biome": ["forest"],
         "season": ["leaf-bare"],
         "types": ["hunting"],
-        "tags": ["large_prey3"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 2,
         "max_cats": 6,
@@ -106,7 +106,7 @@
         "biome": ["forest"],
         "season": ["leaf-bare"],
         "types": ["hunting"],
-        "tags": ["large_prey2"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 1,
         "max_cats": 1,
@@ -1763,7 +1763,7 @@
         "biome": ["forest"],
         "season": ["leaf-bare"],
         "types": ["hunting"],
-        "tags": ["disrespect", "medium_prey3", "distrust"],
+        "tags": ["disrespect", "distrust"],
         "patrol_art": "hunt_general_intro",
         "min_cats": 2,
         "max_cats": 6,
@@ -1801,7 +1801,8 @@
                     "playful",
                     "righteous"
                 ],
-                "can_have_stat": ["r_c"]
+                "can_have_stat": ["r_c"],
+                "prey": ["medium"]
             }
         ],
         "fail_outcomes": [
@@ -1812,7 +1813,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "This is bad. When they find r_c, there's barely any warmth left in their pelt, and p_l can't wake them. They're left with an impossible decision - leave r_c there in the snow, or risk everyone else. p_l chooses r_c, and the warmth of their clanmates curling around them saves r_c's life, though none of the patrol can escape the consequences of the cold.",
+                "text": "This is bad. When they find r_c, there's barely any warmth left in their pelt, and p_l can't wake them. They're left with an impossible decision - leave r_c there in the snow, or risk everyone else. p_l chooses r_c, and the warmth of their Clanmates curling around them saves r_c's life, though none of the patrol can escape the consequences of the cold.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1934,7 +1935,7 @@
         "biome": ["forest"],
         "season": ["leaf-bare"],
         "types": ["hunting"],
-        "tags": ["large_prey2"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 3,
         "max_cats": 6,
@@ -2076,6 +2077,7 @@
                 "text": "s_c knows they are one of the Clan's greatest hunters. They spot the rat king and charge into its lair. But the King proves too great a foe for a single cat, and it sends s_c back with wounds to tell their tale.",
                 "exp": 0,
                 "weight": 10,
+                "stat_skill": ["HUNTER,2"],
                 "injury": [
                     {
                         "cats": ["patrol"],
@@ -2588,7 +2590,7 @@
         "biome": ["forest"],
         "season": ["leaf-bare"],
         "types": ["hunting"],
-        "tags": ["large_prey3"],
+        "tags": [],
         "patrol_art": "gen_hunt_leafbaresnowstorm",
         "min_cats": 2,
         "max_cats": 6,
@@ -2898,7 +2900,7 @@
         "biome": ["forest"],
         "season": ["leaf-bare"],
         "types": ["hunting"],
-        "tags": ["large_prey3"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 2,
         "max_cats": 3,
@@ -3035,7 +3037,7 @@
         "biome": ["forest"],
         "season": ["leaf-bare"],
         "types": ["hunting"],
-        "tags": ["large_prey3"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 4,
         "max_cats": 6,
@@ -3172,7 +3174,7 @@
         "biome": ["forest"],
         "season": ["leaf-bare"],
         "types": ["hunting"],
-        "tags": ["large_prey3"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 1,
         "max_cats": 1,
@@ -3252,7 +3254,8 @@
                         "values": ["respect"],
                         "amount": -5
                     }
-                ]
+                ],
+                "prey": ["very_small"]
             },
             {
                 "text": "Fiercely, r_c throws {PRONOUN/r_c/self} at the fox, determined to win the fawn prize. But the fox values it just as dearly, and manages to get a good grip on r_c, shaking {PRONOUN/r_c/object} to pieces and killing {PRONOUN/r_c/object}.",
@@ -3272,7 +3275,8 @@
                         "values": ["respect"],
                         "amount": -5
                     }
-                ]
+                ],
+                "prey": ["very_small"]
             },
             {
                 "text": "r_c launches into battle, but is caught with a nasty bite, and retreats to limp back home. The fox doesn't follow, happy enough to eat the fawn instead of the foolish cat.",
@@ -3334,7 +3338,7 @@
         "biome": ["forest"],
         "season": ["leaf-bare"],
         "types": ["hunting"],
-        "tags": ["large_prey3"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 2,
         "max_cats": 3,
@@ -3464,7 +3468,7 @@
         "biome": ["forest"],
         "season": ["leaf-bare"],
         "types": ["hunting"],
-        "tags": ["large_prey3"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 4,
         "max_cats": 6,
@@ -3570,7 +3574,7 @@
         "biome": ["forest"],
         "season": ["leaf-bare"],
         "types": ["hunting"],
-        "tags": ["large_prey3"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 1,
         "max_cats": 1,

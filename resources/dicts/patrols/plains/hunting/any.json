@@ -362,7 +362,7 @@
         "biome": ["plains"],
         "season": ["Any"],
         "types": ["hunting"],
-        "tags": ["large_prey3"],
+        "tags": [],
         "patrol_art": "gen_hunt_strange",
         "min_cats": 1,
         "max_cats": 1,
@@ -376,7 +376,7 @@
                 "text": "They can't think of anything that would work, but their hunt goes well regardless.",
                 "exp": 20,
                 "weight": 20,
-                "prey": ["medium"]
+                "prey": ["small"]
             },
             {
                 "text": "s_c finds some rabbit droppings in the grass - it's not clean, but it's extremely effective, and the hunt goes well.",
@@ -708,7 +708,7 @@
         "biome": ["plains"],
         "season": ["Any"],
         "types": ["hunting"],
-        "tags": ["large_prey2"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 5,
         "max_cats": 6,
@@ -729,7 +729,7 @@
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["HUNTER,1"],
-                "prey": ["medium"]
+                "prey": ["large"]
             }
         ],
         "fail_outcomes": [
@@ -767,7 +767,7 @@
         "biome": ["plains"],
         "season": ["Any"],
         "types": ["hunting"],
-        "tags": ["large_prey2"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 2,
         "max_cats": 4,
@@ -801,7 +801,8 @@
                 "text": "s_c doesn't even hesitate before splitting from the patrol to check on the source of the noise. {PRONOUN/s_c/subject/CAP} quickly regret {PRONOUN/s_c/poss} impulsivity, however, when an angry weasel bursts out of the grass, chattering loudly! s_c gets quite the scare, but thankfully the weasel only wanted to get away from {PRONOUN/s_c/object} and quickly runs off back into the grass.",
                 "exp": 0,
                 "weight": 20,
-                "stat_trait": ["daring", "bold", "ambitious"]
+                "stat_trait": ["daring", "bold", "ambitious"],
+                "prey": ["very_small"]
             },
             {
                 "text": "r_c takes the lead in checking the source of the noise and comes face to face with a snarling wolverine! r_c yowls for {PRONOUN/r_c/poss} patrol but the other cats aren't quick enough to stop the wolverine from killing r_c in one quick and deadly swipe.",
@@ -838,7 +839,7 @@
         "biome": ["plains"],
         "season": ["Any"],
         "types": ["hunting"],
-        "tags": ["large_prey2"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 1,
         "max_cats": 1,
@@ -872,7 +873,8 @@
                 "text": "s_c doesn't even hesitate before going to check on the source of the noise. {PRONOUN/s_c/subject/CAP} quickly regret {PRONOUN/s_c/poss} impulsivity, however, when an angry weasel bursts out of the grass, chattering loudly! s_c gets quite the scare, but thankfully the weasel only wanted to get away from {PRONOUN/s_c/object} and quickly runs off back into the grass.",
                 "exp": 0,
                 "weight": 20,
-                "stat_trait": ["daring", "bold", "ambitious"]
+                "stat_trait": ["daring", "bold", "ambitious"],
+                "prey": ["very_small"]
             },
             {
                 "text": "r_c takes the lead in checking the source of the noise and comes face to face with a snarling wolverine! r_c yowls for help, but {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} alone on this patrol and {PRONOUN/r_c/subject} {VERB/r_c/have/haves} the sudden realization that no one can help {PRONOUN/r_c/object} now. The wolverine kills the lone cat with little trouble.",
@@ -1085,7 +1087,8 @@
                 "text": "s_c spots the Twolegs unloading metal boxes from their monsters, and abruptly tells the patrol to leave. Now.",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["CLEVER,3"]
+                "stat_skill": ["CLEVER,3"],
+                "prey": ["medium"]
             },
             {
                 "text": "A Twoleg spots s_c and crouches down, clicking softly. s_c hisses and flees.",
@@ -1100,7 +1103,8 @@
                     "strict",
                     "troublesome",
                     "vengeful"
-                ]
+                ],
+                "prey": ["small"]
             }
         ],
         "fail_outcomes": [
@@ -1154,7 +1158,7 @@
                 "text": "A friendly Twolegs makes a psspsspss noise, and pours kittypet food on the ground for r_c. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'ve/'s} always wondered what it might taste like... dry is the answer. Very odd.",
                 "exp": 20,
                 "weight": 5,
-                "prey": ["small"]
+                "prey": ["very_small"]
             },
             {
                 "text": "s_c gets distracted from hunting by strange Twoleg activity around one of their dens. They appear to be to be hauling all their many, many varieties of nest lining out and into a big monster. s_c takes the opportunity to grab a little soft thing, something that's almost shaped like prey. It'll be good for the nursery.",
@@ -1195,7 +1199,8 @@
                     "responsible",
                     "thoughtful",
                     "wise"
-                ]
+                ],
+                "prey": ["small"]
             },
             {
                 "text": "Carelessly, r_c is seen by Twolegs, and taken from c_n.",
@@ -1222,7 +1227,7 @@
         "biome": ["plains"],
         "season": ["Any"],
         "types": ["hunting"],
-        "tags": ["large_prey3"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 1,
         "max_cats": 1,
@@ -1243,7 +1248,8 @@
             {
                 "text": "A friendly Twolegs makes a psspsspss noise, and pours kittypet food on the ground for app1. {PRONOUN/app1/subject/CAP}{VERB/app1/'ve/'s} always wondered what it might taste like... dry is the answer. It's strangely appealing.",
                 "exp": 20,
-                "weight": 5
+                "weight": 5,
+                "prey": ["very_small"]
             },
             {
                 "text": "Tail lashing excitedly, s_c hunts in the strange, forbidden land, ducking around corners and crawling over gardens with {PRONOUN/app1/poss} belly low to the ground. A successful, sneaky hunt.",
@@ -1259,7 +1265,8 @@
                     "sneaky",
                     "strange"
                 ],
-                "can_have_stat": ["app"]
+                "can_have_stat": ["app"],
+                "prey": ["medium"]
             }
         ],
         "fail_outcomes": [
@@ -1324,6 +1331,7 @@
                 "text": "A friendly Twolegs makes a psspsspss noise, and pours kittypet food on the ground for r_c. {PRONOUN/r_c/subject/CAP} {VERB/r_c/fetch/fetches} p_l, and both cats investigate the food, loudly proclaiming how much better fresh-kill is, but both a little thrilled by the experience.",
                 "exp": 20,
                 "weight": 5,
+                "prey": ["very_small"],
                 "relationships": [
                     {
                         "cats_to": ["p_l"],
@@ -1412,7 +1420,8 @@
                         "values": ["romantic", "platonic"],
                         "amount": -5
                     }
-                ]
+                ],
+                "prey": ["small"]
             },
             {
                 "text": "Carelessly, r_c is seen by Twolegs, and taken from c_n.",
@@ -1468,6 +1477,7 @@
                 "text": "A friendly Twolegs makes a psspsspss noise, and pours kittypet food on the ground for r_c. {PRONOUN/r_c/subject/CAP} {VERB/r_c/fetch/fetches} p_l, and both apprentices loudly proclaim how much better fresh-kill is, but both are also wide eyed and thrilled by the experience.",
                 "exp": 20,
                 "weight": 5,
+                "prey": ["very_small"],
                 "relationships": [
                     {
                         "cats_to": ["p_l"],
@@ -1649,7 +1659,7 @@
                 "weight": 5
             },
             {
-                "text": "Something about this situation sets all of s_c's instincts off. {PRONOUN/s_c/subject/CAP} {VERB/s_c/investigate/investigates}, carefully, and the patrol helps {PRONOUN/s_c/subject} strip the cover of the earth away from a Twoleg trap underneath.",
+                "text": "Something about this situation sets all of s_c's instincts off. {PRONOUN/s_c/subject/CAP} {VERB/s_c/investigate/investigates}, carefully, and the patrol helps {PRONOUN/s_c/object} strip the cover of the earth away from a Twoleg trap underneath.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,1"]
@@ -1742,7 +1752,8 @@
             {
                 "text": "r_c hears a monster thundering towards {PRONOUN/r_c/object}, but it screeches to a halt just in time. That was close! Maybe it's best to go back to camp.",
                 "exp": 0,
-                "weight": 20
+                "weight": 20,
+				"prey": ["very_small"]
             },
             {
                 "text": "r_c is hit by a monster while crossing and dies instantly.",
@@ -2664,6 +2675,118 @@
                     }
                 ],
                 "prey": ["very_small"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "pln_hunt_frnight1",
+        "biome": ["plains"],
+        "season": ["Any"],
+        "types": ["hunting"],
+        "tags": ["halloween"],
+        "patrol_art": "pln_fresno",
+        "min_cats": 1,
+        "max_cats": 6,
+        "min_max_status": {
+            "apprentice": [1, 6],
+            "healer cats": [-1, -1],
+            "normal adult": [-1, -1]
+        },
+        "weight": 20,
+        "chance_of_success": 50,
+        "relationship_constraint": [],
+        "pl_skill_constraint": [],
+        "intro_text": "This is just weird - what's made the grass here grow to such a uniform low height? Why is it so green? Why has it grown in such a neat circle?",
+        "decline_text": "Look, app1 knows grass, and this is too weird to want to spend time in. {PRONOUN/app1/subject/CAP} {VERB/app1/head/heads} home without ever seeing the Fresno Nightcrawler.",
+        "success_outcomes": [
+            {
+                "text": "Okay, app1 knows that Twolegs have, well, two legs, but that is just <i>excessive</i>, the Twoleg that owns this weird green circle is almost nothing but leg! Friendly though, and they don't try to invade app1's space.",
+                "exp": 0,
+                "weight": 20
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "AH! app1 gets run over by an <i>enormously</i> tall Twoleg running in random circles around the green grass.",
+                "exp": 0,
+                "weight": 20,
+                "injury": [
+                    {
+                        "cats": ["app1"],
+                        "injuries": ["shock", "minor_injury", "non_lethal"]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "patrol_id": "pln_hunt_ufo1",
+        "biome": ["plains"],
+        "season": ["Any"],
+        "types": ["hunting"],
+        "tags": ["halloween"],
+        "patrol_art":"pln_UFO",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
+        "chance_of_success": 50,
+        "relationship_constraint": [],
+        "pl_skill_constraint": [],
+        "intro_text": "As the patrol moves through the grass just after sunset, two moons rise in the sky...",
+        "decline_text": "One of those moons has the same metal as a monster, the same glowing eyes that glare from the creatures that kill on the thunderpaths. The cats hide from its sight, trembling.",
+        "success_outcomes": [
+            {
+                "text": "Two whole moons! That's got to be lucky, the cats decide, sitting on a little rock still warm from the sun to stargaze.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cat_to": ["patrol"],
+                        "cat_from": ["patrol"],
+                        "mutual": true,
+                        "values": ["platonic, comfort"],
+                        "amount": 5
+                    }
+                    
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "One of those moons is getting awfully... close... r_c gets caught in a strange wind that picks {PRONOUN/r_c/object} up, claws scrabbling wildly, sucked towards the frightening foreign moon as it takes {PRONOUN/r_c/object} away from c_n.",
+                "exp": 0,
+                "weight": 20,
+                "lost_cats": ["r_c"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "pln_hunt_gef1",
+        "biome": ["plains"],
+        "season": ["Any"],
+        "types": ["hunting"],
+        "tags": ["halloween"],
+        "patrol_art": "pln_hunt_gef",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 15,
+        "intro_text": "As the patrol spreads out to hunt, they've got the perfect ambush set up - or they <i>did</i> until someone started talking loudly!",
+        "decline_text": "Well, this hunt is ruined. Greeeeaaaaat.",
+        "chance_of_success": 30,
+        "success_outcomes": [
+            {
+                "text": "The patrol switches to tracking down that annoying voice instead. It takes the rest of the afternoon, and the damn voice tricks p_l into pouncing on r_c, but finally they pin down the talking mongoose and make it <i>quite</i> clear how irritating he's been.",
+                "exp": 0,
+                "weight": 20
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The voice is coming from behind that bush! No, that one! No, that one over there, p_l's got them, except what p_l actually has is an irritated r_c's tail, and absolutely no one manages any hunting today. Fox dung!",
+                "exp": 0,
+                "weight": 20
             }
         ]
     }

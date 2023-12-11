@@ -75,7 +75,7 @@
         "retirement": [
             "Cats will never retire due to a permanent condition",
             "When this setting is off, cats with permanent conditions will choose whether or not they want to retire.",
-            true
+            false
         ],
         "become_mediator": [
             "Allow warriors and elders to choose to become mediators",
@@ -111,11 +111,48 @@
         "romantic with former mentor": [
             "Allow romantic interactions with former mentors",
             "Allows mentors and the cats they trained to be romantic after they become warriors",
-            false
+            true
         ],
         "first cousin mates": [
             "Allow first cousins to be mates and have romantic interactions",
             "Allows cats with the same grandparents but different parents to become mates",
+            false
+        ]
+    },
+    "freshkill_tactics":{
+        "by-status":[
+            "by-status",
+            "The Clan will be fed according their status and within the status by age.",
+            true
+        ],
+        "younger first":[
+            "younger first",
+            "The Clan will be fed according to their age only.",
+            false
+        ],
+        "less nutrition first":[
+            "less nutrition first",
+            "First the cats with the lowest nutrition will be fed, afterwards the Clan will be fed according to their status.",
+            false
+        ],
+        "hunter first":[
+            "hunter first",
+            "Firstly the cats with a hunter skill will be fed, afterwards the Clan will be fed according to their status.",
+            false
+        ],
+        "sick/injured first":[
+            "sick/injured first",
+            "Firstly the sick and injured cats will be fed, afterwards the Clan will be fed according to their status.",
+            false
+        ],
+        "more experience first":[
+            "high EXP first",
+            "The Clan will be fed according their experience, highest one first.",
+            false
+        ],
+        "ration prey":[
+            "ration prey",
+            "Healthy warriors will only eat half of the food they need, even if there is enough for the Clan.",
             false
         ]
     },
