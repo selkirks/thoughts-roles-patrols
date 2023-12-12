@@ -597,7 +597,7 @@ class Phenotype():
             self.spritecolour = "albino"
             self.caramel = ""
             self.maincolour = self.spritecolour
-        elif self.genotype.white[0] == "W":
+        elif self.genotype.white[0] == "W" or (self.genotype.brindledbi and (('o' not in self.genotype.sexgene) or (self.genotype.ext[0] == 'ea' and ((moons > 11 and self.genotype.agouti[0] != 'a') or (moons > 23))) or (self.genotype.ext[0] == 'er' and moons > 23 and 'O' not in self.genotype.sexgene) or (self.genotype.ext[0] == 'ec' and (self.genotype.agouti[0] != 'a' or moons > 5)))):
             self.spritecolour = "white"
             self.caramel = ""
             self.maincolour = self.spritecolour
@@ -744,7 +744,7 @@ class Phenotype():
             maincolour = colour
             
             if (genes.agouti[0] != "a" and genes.ext[0] != "Eg") or (genes.ext[0] not in ['Eg', 'E'] and moons > 0):
-                if genes.silver[0] == "I" or (moons < 3 and genes.karp[0] == "K"):
+                if genes.silver[0] == "I" or genes.brindledbi or (moons < 3 and genes.karp[0] == "K"):
                     if genes.sunshine[0] == "sg":
                         colour =  colour + "silver" + "chinchilla"
                     elif genes.sunshine[0] == "sh" or genes.sunshine[0] == "fg" or (genes.ext[0] == 'ea' and moons > 3):
