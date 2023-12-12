@@ -7,7 +7,6 @@ import ujson
 import os
 from shutil import move as shutil_move
 from ast import literal_eval
-import traceback
 from scripts.event_class import Single_Event
 
 pygame.init()
@@ -205,7 +204,7 @@ class Game():
     def safe_save(path: str, write_data, check_integrity=False, max_attempts: int = 15):
         """ If write_data is not a string, assumes you want this
             in json format. If check_integrity is true, it will read back the file
-            to check that the correct data has been written to the file. 
+            to check that the correct data has been written to the file.
             If not, it will simply write the data to the file with no other
             checks. """
 
@@ -338,13 +337,13 @@ class Game():
         """ Save user settings for later use """
         if os.path.exists(get_save_dir() + "/settings.txt"):
             os.remove(get_save_dir() + "/settings.txt")
-        
+
         self.settings_changed = False
         game.safe_save(get_save_dir() + '/settings.json', self.settings)
 
     def load_settings(self):
         """ Load settings that user has saved from previous use """
-        
+
         try:
             with open(get_save_dir() + '/settings.json', 'r') as read_file:
                 settings_data = ujson.loads(read_file.read())
@@ -536,8 +535,8 @@ class Game():
             pass
 
     def get_config_value(self, *args):
-        """Fetches a value from the self.config dictionary. Pass each key as a 
-        seperate arugment, in the same order you would access the dictionary. 
+        """Fetches a value from the self.config dictionary. Pass each key as a
+        seperate arugment, in the same order you would access the dictionary.
         This function will apply war modifers if the clan is currently at war. """
 
         war_effected = {
@@ -597,7 +596,7 @@ def load_manager(res: tuple):
         italic_path='resources/fonts/NotoSans-MediumItalic.ttf',
         bold_italic_path='resources/fonts/NotoSans-ExtraBoldItalic.ttf'
     )
-    
+
 
     if res[0] > 800:
         manager.get_theme().load_theme('resources/theme/defaults.json')
@@ -632,7 +631,7 @@ def load_manager(res: tuple):
             {'name': 'notosans', 'point_size': 13, 'style': 'italic'},
             {'name': 'notosans', 'point_size': 15, 'style': 'italic'}
         ])
-        
+
     manager.get_theme().load_theme('resources/theme/windows.json')
     manager.get_theme().load_theme('resources/theme/image_buttons.json')
 

@@ -257,7 +257,7 @@ class FamilyTreeScreen(Screens):
 
         self.parents = self.the_cat.inheritance.get_parents()
         self.mates = self.the_cat.inheritance.get_mates()
-        self.kits = self.the_cat.inheritance.get_kits()
+        self.kits = self.the_cat.inheritance.get_children()
         self.kits_mates = self.the_cat.inheritance.get_kits_mates()
         self.siblings = self.the_cat.inheritance.get_siblings()
         self.siblings_mates = self.the_cat.inheritance.get_siblings_mates()
@@ -287,7 +287,7 @@ class FamilyTreeScreen(Screens):
         if self.parents_siblings:
             if not self.siblings_mates and not self.siblings_kits:
                 x_dim += 433
-        
+
         # collect mates
         if self.mates or self.kits:
             x_pos += 276
@@ -449,7 +449,7 @@ class FamilyTreeScreen(Screens):
             if len(additional_info["type"]) > 0: # types is always real
                 rel_types = [str(rel_type.value) for rel_type in additional_info["type"]]
                 rel_types = set(rel_types) # remove duplicates
-                if "" in rel_types: 
+                if "" in rel_types:
                     rel_types.remove("")       # removes empty
                 if len(rel_types) > 0:
                     info_text += "\n"

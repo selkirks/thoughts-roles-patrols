@@ -55,7 +55,7 @@ def json_load():
     # create new cat objects
     for i, cat in enumerate(cat_data):
         try:
-            
+
             new_cat = Cat(ID=cat["ID"],
                         prefix=cat["name_prefix"],
                         suffix=cat["name_suffix"],
@@ -67,7 +67,7 @@ def json_load():
                         moons=cat["moons"],
                         eye_colour=cat["eye_colour"],
                         loading_cat=True)
-            
+
             if cat["eye_colour"] == "BLUE2":
                 cat["eye_colour"] = "COBALT"
             if cat["eye_colour"] in ["BLUEYELLOW", "BLUEGREEN"]:
@@ -79,7 +79,7 @@ def json_load():
             if "eye_colour2" in cat:
                 if cat["eye_colour2"] == "BLUE2":
                     cat["eye_colour2"] = "COBALT"
-                        
+
             new_cat.pelt = Pelt(
                 name=cat["pelt_name"],
                 length=cat["pelt_length"],
@@ -108,36 +108,36 @@ def json_load():
                 accessory=cat["accessory"],
                 opacity=cat["opacity"] if "opacity" in cat else 100
             )
-            
-            # Runs a bunch of apperence-related convertion of old stuff. 
+
+            # Runs a bunch of apperence-related convertion of old stuff.
             new_cat.pelt.check_and_convert(convert)
-            
+
              # converting old specialty saves into new scar parameter
             if "specialty" in cat or "specialty2" in cat:
                 if cat["specialty"] is not None:
                     new_cat.pelt.scars.append(cat["specialty"])
                 if cat["specialty2"] is not None:
                     new_cat.pelt.scars.append(cat["specialty2"])
-            
+
             new_cat.adoptive_parents = cat["adoptive_parents"] if "adoptive_parents" in cat else []
-            
+
             new_cat.genderalign = cat["gender_align"]
             new_cat.backstory = cat["backstory"] if "backstory" in cat else None
             if new_cat.backstory in BACKSTORIES["conversion"]:
                 new_cat.backstory = BACKSTORIES["conversion"][new_cat.backstory]
             new_cat.birth_cooldown = cat["birth_cooldown"] if "birth_cooldown" in cat else 0
             new_cat.moons = cat["moons"]
-            
-            
+
+
             if "facets" in cat:
                 facets = [int(i) for i in cat["facets"].split(",")]
                 new_cat.personality = Personality(trait=cat["trait"], kit_trait=new_cat.age in ["newborn", "kitten"],
-                                              lawful=facets[0], social=facets[1], 
+                                              lawful=facets[0], social=facets[1],
                                               aggress=facets[2], stable=facets[3])
             else:
                 new_cat.personality = Personality(trait=cat["trait"], kit_trait=new_cat.age in ["newborn", "kitten"])
-                
-                
+
+
             new_cat.mentor = cat["mentor"]
             new_cat.former_mentor = cat["former_mentor"] if "former_mentor" in cat else []
             new_cat.patrol_with_mentor = cat["patrol_with_mentor"] if "patrol_with_mentor" in cat else 0
@@ -175,7 +175,7 @@ def json_load():
             new_cat.faded_offspring = cat["faded_offspring"] if "faded_offspring" in cat else []
             new_cat.prevent_fading = cat["prevent_fading"] if "prevent_fading" in cat else False
             new_cat.favourite = cat["favourite"] if "favourite" in cat else False
-            
+
             if "died_by" in cat or "scar_event" in cat or "mentor_influence" in cat:
                 new_cat.convert_history(
                     cat["died_by"] if "died_by" in cat else [],
@@ -218,10 +218,10 @@ def json_load():
             game.switches['error_message'] = f'There was an error loading relationships for cat #{cat}.'
             game.switches['traceback'] = e
             raise
-        
-        
+
+
         cat.inheritance = Inheritance(cat)
-        
+
         try:
             # initialization of thoughts
             cat.thoughts()
@@ -291,8 +291,8 @@ def csv_load(all_cats):
                               parent1=attr[6],
                               parent2=attr[7],
                             )
-                
-                
+
+
                 game.switches[
                     'error_message'] = '3There was an error loading cat # ' + str(
                     attr[0])
@@ -432,10 +432,10 @@ def csv_load(all_cats):
 
 
 def save_check():
-    """Checks through loaded cats, checks and attempts to fix issues 
+    """Checks through loaded cats, checks and attempts to fix issues
     NOT currently working. """
     return
-    
+
     for cat in Cat.all_cats:
         cat_ob = Cat.all_cats[cat]
 
@@ -445,7 +445,7 @@ def save_check():
         #    if _temp_ob:
         #        # Check if the mate's mate feild is set to none
         #        if not _temp_ob.mate:
-        #            _temp_ob.mate = cat_ob.ID 
+        #            _temp_ob.mate = cat_ob.ID
         #    else:
         #        # Invalid mate
         #        cat_ob.mate = None
@@ -471,10 +471,10 @@ def version_convert(version_info):
     if version < 1:
         # Save was made before version number storage was implemented.
         # (ie, save file version 0)
-        # This means the EXP must be adjusted. 
+        # This means the EXP must be adjusted.
         for c in Cat.all_cats.values():
             c.experience = c.experience * 3.2
-            
+
     if version < 2:
         for c in Cat.all_cats.values():
             for con in c.injuries:
@@ -483,20 +483,24 @@ def version_convert(version_info):
                     moons_with = c.injuries[con]["moons_with"]
                     c.injuries[con].pop("moons_with")
                 c.injuries[con]["moon_start"] = game.clan.age - moons_with
-        
+
             for con in c.illnesses:
                 moons_with = 0
                 if "moons_with" in c.illnesses[con]:
                     moons_with = c.illnesses[con]["moons_with"]
                     c.illnesses[con].pop("moons_with")
                 c.illnesses[con]["moon_start"] = game.clan.age - moons_with
-                
+
             for con in c.permanent_condition:
                 moons_with = 0
                 if "moons_with" in c.permanent_condition[con]:
                     moons_with = c.permanent_condition[con]["moons_with"]
                     c.permanent_condition[con].pop("moons_with")
                 c.permanent_condition[con]["moon_start"] = game.clan.age - moons_with
-            
-        
-            
+
+    if version < 3 and game.clan.freshkill_pile:
+        # freshkill start for older clans
+        add_prey = game.clan.freshkill_pile.amount_food_needed() * 2
+        game.clan.freshkill_pile.add_freshkill(add_prey)
+
+

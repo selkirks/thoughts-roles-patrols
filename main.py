@@ -44,16 +44,17 @@ if not getattr(sys, 'frozen', False):
     if isMissing:
         if find_spec("thonny") is not None:
             print("""You are missing some requirements to run clangen!
-Please press "Tools" -> "Manage Packages"
-Once the menu opens, click the link below "Install from requirements file".
-Then, select the file "requirements.txt" in the clangen folder.""")
+                  Please press "Tools" -> "Manage Packages"
+                  Once the menu opens, click the link below "Install from requirements file".
+                  Then, select the file "requirements.txt" in the clangen folder.
+                  """)
         else:
             print("""You are missing some requirements to run clangen!
-Please run the following command in your terminal to install them:
+                  Please run the following command in your terminal to install them:
 
-python3 -m pip install -r requirements.txt
-""")
-        
+                  python3 -m pip install -r requirements.txt
+                  """)
+
         print("If you are still having issues, please ask for help in the clangen discord server: https://discord.gg/clangen")
         sys.exit(1)
 
@@ -181,7 +182,7 @@ finished_loading = False
 
 def load_data():
     global finished_loading
-    
+
     #load in the spritesheets
     sprites.load_all()
 
@@ -199,32 +200,32 @@ def load_data():
                 game.switches[
                     'error_message'] = 'There was an error loading the cats file!'
                 game.switches['traceback'] = e
-    
+
     finished_loading = True
 
 def loading_animation():
     global finished_loading
-    
+
     # Load images, adjust color
     color = pygame.Surface((200, 210))
     if game.settings["dark mode"]:
         color.fill(game.config["theme"]["light_mode_background"])
     else:
         color.fill(game.config["theme"]["dark_mode_background"])
-    
+
     images = []
     for i in range(1, 11):
         im = pygame.image.load(f"resources/images/loading_animate/startup/{i}.png")
         im.blit(color, (0,0), special_flags=pygame.BLEND_RGBA_MULT)
         images.append(im)
-        
+
     #Cleanup
     del im
     del color
-    
+
     x = screen.get_width() / 2
     y = screen.get_height() / 2
-    
+
     i = 0
     total_frames = len(images)
     while not finished_loading:
@@ -234,19 +235,19 @@ def loading_animation():
             screen.fill(game.config["theme"]["dark_mode_background"])
         else:
             screen.fill(game.config["theme"]["light_mode_background"])
-        
+
         screen.blit(images[i], (x - images[i].get_width() / 2 , y - images[i].get_height() / 2))
-        
+
         i += 1
         if i >= total_frames:
             i = 0
-        
+
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 quit(savesettings=False)
-            
+
         pygame.display.update()
-    
+
 
 loading_thread = threading.Thread(target=load_data)
 loading_thread.start()
@@ -254,7 +255,7 @@ loading_thread.start()
 loading_animation()
 
 # The loading thread should be done by now. This line
-# is just for safety. Plus some cleanup. 
+# is just for safety. Plus some cleanup.
 loading_thread.join()
 del loading_thread
 del finished_loading
@@ -350,7 +351,7 @@ while True:
                 MANAGER.print_layer_debug()
 
         MANAGER.process_events(event)
-    
+
 
     MANAGER.update(time_delta)
 

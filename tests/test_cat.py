@@ -9,9 +9,7 @@ os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
 
 from scripts.cat.cats import Cat
-from scripts.cat.skills import CatSkills, SkillPath
 from scripts.cat_relations.relationship import Relationship
-from scripts.cat.history import History
 
 
 class TestCreationAge(unittest.TestCase):
@@ -27,7 +25,7 @@ class TestCreationAge(unittest.TestCase):
     def test_young_adult(self):
         test_cat = Cat(moons=12)
         self.assertEqual(test_cat.age,"young adult")
-    
+
     def test_adult(self):
         test_cat = Cat(moons=48)
         self.assertEqual(test_cat.age,"adult")
@@ -167,7 +165,7 @@ class TestPossibleMateFunction(unittest.TestCase):
         self.assertFalse(senior_adult_cat1.is_potential_mate(kitten_cat1))
         self.assertFalse(senior_adult_cat1.is_potential_mate(adolescent_cat1))
         self.assertFalse(senior_adult_cat1.is_potential_mate(young_adult_cat1))
-		
+
         # check valid constellations
         self.assertTrue(young_adult_cat1.is_potential_mate(young_adult_cat2))
         self.assertTrue(young_adult_cat1.is_potential_mate(adult_cat_in_range1))
@@ -314,7 +312,7 @@ class TestMateFunctions(unittest.TestCase):
         old_relation1 = deepcopy(relation1)
         relation2 = Relationship(cat2,cat1)
         old_relation2 = deepcopy(relation1)
-        
+
         cat1.relationships[cat2.ID] = relation1
         cat2.relationships[cat1.ID] = relation2
 
@@ -373,7 +371,7 @@ class TestMateFunctions(unittest.TestCase):
         self.assertGreater(old_relation2.comfortable, relation2.comfortable)
         self.assertGreater(old_relation2.trust, relation2.trust)
         self.assertGreaterEqual(old_relation2.admiration, relation2.admiration)
-        self.assertGreaterEqual(old_relation2.jealousy, relation2.jealousy)  
+        self.assertGreaterEqual(old_relation2.jealousy, relation2.jealousy)
 
 class TestUpdateMentor(unittest.TestCase):
     def test_exile_apprentice(self):

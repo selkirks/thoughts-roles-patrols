@@ -5,7 +5,7 @@ from .Screens import Screens
 
 from scripts.cat.cats import Cat
 from scripts.game_structure.image_button import UISpriteButton, UIImageButton, UITextBoxTweaked
-from scripts.utility import get_text_box_theme, scale, get_med_cats, shorten_text_to_fit
+from scripts.utility import get_text_box_theme, scale, get_med_cats, shorten_text_to_fit, get_alive_clan_queens
 from scripts.game_structure.game_essentials import game, screen_x, screen_y, MANAGER
 from ..conditions import get_amount_cat_for_one_medic, medical_cats_condition_fulfilled
 
@@ -36,7 +36,7 @@ class AllegiancesScreen(Screens):
 
         self.scroll_container = pygame_gui.elements.UIScrollingContainer(scale(pygame.Rect((100, 330), (1430, 1000)))
                                                                          , manager=MANAGER)
-        
+
         self.ranks_boxes = []
         self.names_boxes = []
         y_pos = 0
@@ -52,10 +52,10 @@ class AllegiancesScreen(Screens):
                                     object_id=get_text_box_theme("#text_box_30_horizleft"),
                                     container=self.scroll_container, manager=MANAGER))
             self.names_boxes[-1].disable()
-            
-            y_pos += 1400 * self.names_boxes[-1].get_relative_rect()[3] / screen_y 
 
-        
+            y_pos += 1400 * self.names_boxes[-1].get_relative_rect()[3] / screen_y
+
+
         self.scroll_container.set_scrollable_area_dimensions((1360 / 1600 * screen_x, y_pos / 1400 * screen_y))
 
     def exit_screen(self):
@@ -69,7 +69,7 @@ class AllegiancesScreen(Screens):
         del self.scroll_container
         self.heading.kill()
         del self.heading
-    
+
     def generate_one_entry(self, cat, extra_details = ""):
             """ Extra Details will be placed after the cat description, but before the apprentice (if they have one. )"""
             output = f"{str(cat.name).upper()} - {cat.describe_cat()} {extra_details}"
@@ -78,7 +78,7 @@ class AllegiancesScreen(Screens):
                 if len(cat.apprentice) == 1:
                     output += "\n      APPRENTICE: "
                 else:
-                    output += "\n      APPRENTICES: "     
+                    output += "\n      APPRENTICES: "
                 output += ", ".join([str(Cat.fetch_cat(i).name).upper() for i in cat.apprentice if Cat.fetch_cat(i)])
 
             return output
@@ -108,30 +108,9 @@ class AllegiancesScreen(Screens):
                 living_elders.append(cat)
 
         # Find Queens:
-        queen_dict = {}
-        for cat in living_kits.copy():
-            parents = cat.get_parents()
-            #Fetch parent object, only alive and not outside. 
-            parents = [Cat.fetch_cat(i) for i in parents if Cat.fetch_cat(i) and not(Cat.fetch_cat(i).dead or Cat.fetch_cat(i).outside)]
-            if not parents:
-                continue
-            
-            if len(parents) == 1 or all(i.gender == "male" for i in parents) or parents[0].gender == "female":
-                if parents[0].ID in queen_dict:
-                    queen_dict[parents[0].ID].append(cat)
-                    living_kits.remove(cat)
-                else:
-                    queen_dict[parents[0].ID] = [cat]
-                    living_kits.remove(cat) 
-            elif len(parents) == 2:
-                if parents[1].ID in queen_dict:
-                    queen_dict[parents[1].ID].append(cat)
-                    living_kits.remove(cat)
-                else:
-                    queen_dict[parents[1].ID] = [cat]
-                    living_kits.remove(cat) 
+        queen_dict, living_kits = get_alive_clan_queens(living_cats)
 
-        # Remove queens from warrior or elder lists, if they are there.  Let them stay on any other lists. 
+        # Remove queens from warrior or elder lists, if they are there.  Let them stay on any other lists.
         for q in queen_dict:
             queen = Cat.fetch_cat(q)
             if not queen:
@@ -140,7 +119,7 @@ class AllegiancesScreen(Screens):
                 living_warriors.remove(queen)
             elif queen in living_elders:
                 living_elders.remove(queen)
-            
+
         #Clan Leader Box:
         # Pull the Clan leaders
         outputs = []
@@ -156,7 +135,7 @@ class AllegiancesScreen(Screens):
                 '<b><u>DEPUTY</u></b>',
                 self.generate_one_entry(game.clan.deputy)
             ])
-        
+
         # Medicine Cat Box:
         if living_meds:
             _box = ["", ""]
@@ -164,10 +143,10 @@ class AllegiancesScreen(Screens):
                 _box[0] = '<b><u>MEDICINE CAT</u></b>'
             else:
                 _box[0] = '<b><u>MEDICINE CATS</u></b>'
-            
+
             _box[1] = "\n".join([self.generate_one_entry(i) for i in living_meds])
             outputs.append(_box)
-        
+
         # Mediator Box:
         if living_mediators:
             _box = ["", ""]
@@ -175,7 +154,7 @@ class AllegiancesScreen(Screens):
                 _box[0] = '<b><u>MEDIATOR</u></b>'
             else:
                 _box[0] = '<b><u>MEDIATORS</u></b>'
-            
+
             _box[1] = "\n".join([self.generate_one_entry(i) for i in living_mediators])
             outputs.append(_box)
 
@@ -186,10 +165,10 @@ class AllegiancesScreen(Screens):
                 _box[0] = '<b><u>WARRIOR</u></b>'
             else:
                 _box[0] = '<b><u>WARRIORS</u></b>'
-            
+
             _box[1] = "\n".join([self.generate_one_entry(i) for i in living_warriors])
             outputs.append(_box)
-        
+
          # Apprentice Box:
         if living_apprentices:
             _box = ["", ""]
@@ -197,16 +176,16 @@ class AllegiancesScreen(Screens):
                 _box[0] = '<b><u>APPRENTICE</u></b>'
             else:
                 _box[0] = '<b><u>APPRENTICES</u></b>'
-            
+
             _box[1] = "\n".join([self.generate_one_entry(i) for i in living_apprentices])
             outputs.append(_box)
-        
+
          # Queens and Kits Box:
         if queen_dict or living_kits:
             _box = ["", ""]
             _box[0] = '<b><u>QUEENS AND KITS</u></b>'
-            
-            # This one is a bit different.  First all the queens, and the kits they are caring for. 
+
+            # This one is a bit different.  First all the queens, and the kits they are caring for.
             all_entries = []
             for q in queen_dict:
                 queen = Cat.fetch_cat(q)
@@ -236,13 +215,13 @@ class AllegiancesScreen(Screens):
                 _box[0] = '<b><u>ELDER</u></b>'
             else:
                 _box[0] = '<b><u>ELDERS</u></b>'
-            
+
             _box[1] = "\n".join([self.generate_one_entry(i) for i in living_elders])
             outputs.append(_box)
 
         return outputs
 
-            
+
 class MedDenScreen(Screens):
     cat_buttons = {}
     conditions_hover = {}

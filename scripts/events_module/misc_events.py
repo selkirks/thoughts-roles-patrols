@@ -17,7 +17,7 @@ class MiscEvents():
 
     @staticmethod
     def handle_misc_events(cat, other_cat=None, war=False, enemy_clan=None, alive_kits=False, accessory=False, ceremony=False):
-        """ 
+        """
         This function handles the misc events
         """
         involved_cats = [cat.ID]
@@ -25,7 +25,7 @@ class MiscEvents():
             other_clan = enemy_clan
         else:
             other_clan = random.choice(game.clan.all_clans)
-        
+
         other_clan_name = None
         if other_clan:
             other_clan_name = f'{other_clan.name}Clan'
@@ -45,7 +45,7 @@ class MiscEvents():
                     other_cat = None
 
             acc_checked_events.append(event)
-            
+
         reveal = False
         victim = None
         cat_history = History.get_murders(cat)
@@ -92,6 +92,24 @@ class MiscEvents():
             change_clan_relations(other_clan, difference=difference)
 
         event_text = event_text_adjust(Cat, misc_event.event_text, cat, other_cat, other_clan_name, murder_reveal=reveal, victim=victim)
+
+        if event_text:
+            # Add event text to the relationship log if two cats are involved
+            if other_cat:
+                pos_rel_event = ["romantic", "platonic", "neg_dislike", "respect", "comfort", "neg_jealousy", "trust"]
+                neg_rel_event = ["neg_romantic", "neg_platonic", "dislike", "neg_respect", "neg_comfort", "jealousy", "neg_trust"]
+                effect = ""
+                if any(tag in misc_event.tags for tag in pos_rel_event):
+                    effect = " (positive effect)"
+                elif any(tag in misc_event.tags for tag in neg_rel_event):
+                    effect = " (negative effect)"
+
+                log_text = event_text + effect
+
+                if cat.moons == 1:
+                    cat.relationships[other_cat.ID].log.append(log_text + f" - {cat.name} was {cat.moons} moon old")
+                else:
+                    cat.relationships[other_cat.ID].log.append(log_text + f" - {cat.name} was {cat.moons} moons old")
 
         types = ["misc"]
         if "other_clan" in misc_event.tags:

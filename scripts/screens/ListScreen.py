@@ -126,7 +126,7 @@ class ListScreen(Screens):
                 self.change_screen('profile screen')
             else:
                 self.menu_button_pressed(event)
-        
+
         elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
             if self.search_bar.is_focused:
                 return
@@ -164,7 +164,7 @@ class ListScreen(Screens):
         self.filter_not_fav = UIImageButton(scale(pygame.Rect((366, 275), (56, 56))), "",
                                             object_id="#not_fav_cat", manager=MANAGER,
                                         tool_tip_text='show favourite cat indicators')
-        
+
         if game.clan.clan_settings["show fav"]:
             self.filter_not_fav.hide()
         else:
@@ -201,7 +201,7 @@ class ListScreen(Screens):
         y_pos += 68
 
         self.filter_rank = UIImageButton(
-            scale(pygame.Rect((x_pos - 2, y_pos), (204, 58))),
+            scale(pygame.Rect((x_pos - 4, y_pos), (204, 58))),
             "",
             object_id="#filter_rank_button",
             starting_height=2, manager=MANAGER
@@ -209,7 +209,7 @@ class ListScreen(Screens):
         self.filter_rank.hide()
         y_pos += 58
         self.filter_age = UIImageButton(
-            scale(pygame.Rect((x_pos - 2, y_pos), (204, 58))),
+            scale(pygame.Rect((x_pos - 4, y_pos), (204, 58))),
             "",
             object_id="#filter_age_button",
             starting_height=2, manager=MANAGER
@@ -217,7 +217,7 @@ class ListScreen(Screens):
         self.filter_age.hide()
         y_pos += 58
         self.filter_id = UIImageButton(
-            scale(pygame.Rect((x_pos - 2, y_pos), (204, 58))),
+            scale(pygame.Rect((x_pos - 4, y_pos), (204, 58))),
             "",
             object_id="#filter_ID_button",
             starting_height=2, manager=MANAGER
@@ -225,7 +225,7 @@ class ListScreen(Screens):
         self.filter_id.hide()
         y_pos += 58
         self.filter_exp = UIImageButton(
-            scale(pygame.Rect((x_pos - 2, y_pos), (204, 58))),
+            scale(pygame.Rect((x_pos - 4, y_pos), (204, 58))),
             "",
             object_id="#filter_exp_button",
             starting_height=2, manager=MANAGER
@@ -315,21 +315,21 @@ class ListScreen(Screens):
 
                 #update_sprite(cat)
                 if game.clan.clan_settings["show fav"] and cat.favourite:
-                    
+
                     _temp = pygame.transform.scale(
                             pygame.image.load(
                                 f"resources/images/fav_marker.png").convert_alpha(),
                             (100, 100))
-                    
+
                     if game.settings["dark mode"]:
                         _temp.set_alpha(150)
-                    
+
                     self.display_cats.append(
                         pygame_gui.elements.UIImage(
                             scale(pygame.Rect((260 + pos_x, 360 + pos_y), (100, 100))),
                             _temp))
                     self.display_cats[-1].disable()
-                
+
                 self.display_cats.append(
                     UISpriteButton(scale(pygame.Rect
                                          ((260 + pos_x, 360 + pos_y), (100, 100))),

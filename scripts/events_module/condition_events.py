@@ -87,7 +87,7 @@ class Condition_Events():
 
     @staticmethod
     def handle_illnesses(cat, season=None):
-        """ 
+        """
         This function handles overall the illnesses in 'expanded' (or 'cruel season') game mode
         """
         # return immediately if they're already dead or in the wrong game-mode
@@ -168,7 +168,7 @@ class Condition_Events():
 
     @staticmethod
     def handle_injuries(cat, other_cat=None, alive_kits=None, war=None, enemy_clan=None, season=None):
-        """ 
+        """
         This function handles overall the injuries in 'expanded' (or 'cruel season') game mode.
         Returns: boolean - if an event was triggered
         """
@@ -192,7 +192,6 @@ class Condition_Events():
             text = event_string
         else:
             # EVENTS
-
             if not triggered and \
                     cat.personality.trait in ["adventurous",
                                             "bold",
@@ -274,24 +273,41 @@ class Condition_Events():
                                                                     other_clan_name, game.clan, other_cat_rc = other_cat)
 
                             if possible_scar or possible_death:
-                                History.add_possible_history(cat, injury_event.injury, scar_text=possible_scar, 
-                                                             death_text=possible_death)
-                            
+                                History.add_possible_history(cat, injury_event.injury, scar_text=possible_scar,
+                                                             death_text=possible_death, other_cat=other_cat)
+
                         cat.get_injured(injury_event.injury)
 
         # just double-checking that trigger is only returned True if the cat is dead
-        if cat.dead:
-            triggered = True
-        else:
-            triggered = False
+        if cat.status != "leader":
+            # only checks for non-leaders, as leaders will not be dead if they are just losing a life
+            if cat.dead:
+                triggered = True
+            else:
+                triggered = False
 
         if text is not None:
             types = ["health"]
-            # game.health_events_list.append(text)
             if cat.dead:
                 types.append("birth_death")
             if has_other_clan:
                 types.append("other_clans")
+            # Add event text to the relationship log if two cats are involved
+            if other_cat:
+                pos_rel_event = ["romantic", "platonic", "neg_dislike", "respect", "comfort", "neg_jealousy", "trust"]
+                neg_rel_event = ["neg_romantic", "neg_platonic", "dislike", "neg_respect", "neg_comfort", "jealousy", "neg_trust"]
+                effect = ""
+                if any(tag in injury_event.tags for tag in pos_rel_event):
+                    effect = " (positive effect)"
+                elif any(tag in injury_event.tags for tag in neg_rel_event):
+                    effect = " (negative effect)"
+
+                log_text = text + effect
+
+                if cat.moons == 1:
+                    cat.relationships[other_cat.ID].log.append(log_text + f" - {cat.name} was {cat.moons} moon old")
+                else:
+                    cat.relationships[other_cat.ID].log.append(log_text + f" - {cat.name} was {cat.moons} moons old")
             game.cur_events_list.append(Single_Event(text, types, involved_cats))
 
         return triggered
@@ -390,13 +406,13 @@ class Condition_Events():
         }
 
         scarless_conditions = [
-            "weak leg", "paralyzed", "raspy lungs", "wasting disease", "blind", "failing eyesight", 
-            "one bad eye", "partial hearing loss", "deaf", "constant joint pain", "constantly dizzy", 
-            "recurring shock", "lasting grief", "adhd", "heavy soul", "starwalker", "ocd", "antisocial", "anxiety", 
+            "weak leg", "paralyzed", "raspy lungs", "wasting disease", "blind", "failing eyesight",
+            "one bad eye", "partial hearing loss", "deaf", "constant joint pain", "constantly dizzy",
+            "recurring shock", "lasting grief", "adhd", "heavy soul", "starwalker", "ocd", "antisocial", "anxiety",
             "constant roaming pain", "strong soul", "otherworldly mind", "kitten regressor", "puppy regressor", "snow vision",
-            "echoing shock", "irritable bowels", "loose body", "longcough", "burning light", "disrupted senses", 
+            "echoing shock", "irritable bowels", "loose body", "longcough", "burning light", "disrupted senses",
             "constant nightmares", "constant rash", "jellyfish joints", "lazy eye"
-            
+
         ]
 
         got_condition = False
@@ -452,7 +468,7 @@ class Condition_Events():
                         "ticks", "nest wetting", "nonverbal", "tics"]
         progression = [["whitecough", "silvercough"], "silvercough", ["silvercough", "greencough"], "greencough",
                         "yellowcough", "redcough", "a festering wound", "heat stroke", ["diarrhea", "constipation"],
-                        "constant nightmares", "panic attack", ["shock", "paranoia"], "ongoing sleeplessness", 
+                        "constant nightmares", "panic attack", ["shock", "paranoia"], "ongoing sleeplessness",
                         ["tick bites", "severe tick bites"], "night dirtmaking", "mute", ["tics, tic attack"]]
         illness_progression = dict(zip(base_illness, progression))
         # ---------------------------------------------------------------------------- #
@@ -600,9 +616,9 @@ class Condition_Events():
                         print(f"WARNING: {injury} couldn't be found in the healed strings dict! placeholder string was used.")
                         event = f"m_c's injury {injury} has healed"
                 event = event_text_adjust(Cat, event, cat, other_cat=None)
-                
+
                 game.herb_events_list.append(event)
-                    
+
                 History.remove_possible_history(cat, injury)
                 cat.injuries.pop(injury)
                 cat.healed_condition = False
@@ -616,21 +632,21 @@ class Condition_Events():
 
                     # choose event string and ensure Clan's med cat number aligns with event text
                     random_index = random.randrange(0, len(possible_string_list))
-                    
+
                     med_list = get_med_cats(Cat)
-                    #If the cat is a med cat, don't conister them as one for the event. 
+                    #If the cat is a med cat, don't conister them as one for the event.
                     if cat in med_list:
                         med_list.remove(cat)
-                    
+
                     #Choose med cat, if you can
                     if med_list:
                         med_cat = random.choice(med_list)
                     else:
                         med_cat = None
-                    
+
                     if not med_cat and random_index < 2 and len(possible_string_list) >= 3:
                         random_index = 2
-        
+
                     event = possible_string_list[random_index]
                     event = event_text_adjust(Cat, event, cat, other_cat=med_cat)  # adjust the text
                 if event is not None:
@@ -659,9 +675,9 @@ class Condition_Events():
 
         event_list = []
 
-        base_condition = ["one bad eye", "failing eyesight", "partial hearing loss", "lasting grief", 
+        base_condition = ["one bad eye", "failing eyesight", "partial hearing loss", "lasting grief",
                             "recurring shock", "echoing shock", "burning light"]
-        progression = [["failing eyesight", "lazy eye"], "blind", "deaf", "heavy soul", "echoing shock", 
+        progression = [["failing eyesight", "lazy eye"], "blind", "deaf", "heavy soul", "echoing shock",
                             "recurring shock", "blind"]
         condition_progression = dict(zip(base_condition, progression))
 
@@ -758,7 +774,7 @@ class Condition_Events():
 
     @staticmethod
     def determine_retirement(cat, triggered):
-        
+
         if game.clan.clan_settings['retirement'] or cat.no_retire:
             return
 
@@ -768,7 +784,7 @@ class Condition_Events():
             for condition in cat.permanent_condition:
                 if cat.permanent_condition[condition]['severity'] not in ['major', 'severe']:
                     continue
-                    
+
                 if cat.permanent_condition[condition]['severity'] == "severe":
                     # Higher changes for "severe". These are meant to be nearly 100% without
                     # being 100%
@@ -791,7 +807,7 @@ class Condition_Events():
                         'senior adult': 50,
                         'senior': 10
                     }
-                
+
                 chance = int(retire_chances.get(cat.age))
                 if not int(random.random() * chance):
                     retire_involved = [cat.ID]
@@ -817,7 +833,7 @@ class Condition_Events():
                                     f"of their contributions to {game.clan.name}Clan."
 
                     cat.retire_cat()
-                    # Don't add this to the condition event list: instead make it it's own event, a ceremony. 
+                    # Don't add this to the condition event list: instead make it it's own event, a ceremony.
                     game.cur_events_list.append(
                             Single_Event(event, "ceremony", retire_involved))
 

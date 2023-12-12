@@ -920,15 +920,15 @@ class ChangelogPopup(UIWindow):
             manager=MANAGER)
 
         dynamic_changelog = False
-        if get_version_info().is_dev and get_version_info().is_source_build and get_version_info().git_installed:
+        if get_version_info().is_dev() and get_version_info().is_source_build and get_version_info().git_installed:
             file_cont = subprocess.check_output(
                 ["git", "log", r"--pretty=format:%H|||%cd|||%b|||%s", "-15", "--no-decorate", "--merges", "--grep=Merge pull request", "--date=short"]).decode("utf-8")
             dynamic_changelog = True
         else:
             with open("changelog.txt", "r") as read_file:
                 file_cont = read_file.read()
-        
-        if get_version_info().is_dev and not get_version_info().is_source_build:
+
+        if get_version_info().is_dev() and not get_version_info().is_source_build:
             dynamic_changelog = True
 
         if dynamic_changelog:
@@ -936,15 +936,15 @@ class ChangelogPopup(UIWindow):
             file_cont = ""
             for line in commits:
                 info = line.split("|||")
-                                
+
                 # Get PR number so we can link the PR
                 pr_number = re_search(r"Merge pull request #([0-9]*?) ", info[3])
                 if pr_number:
-                    
-                    # For some reason, multi-line links on pygame_gui's text boxes don't work very well. 
+
+                    # For some reason, multi-line links on pygame_gui's text boxes don't work very well.
                     # So, to work around that, just add a little "link" at the end
-                    info[2] += f" <a href='https://github.com/Thlumyn/clangen/pull/{pr_number.group(1)}'>(link)</a>"
-                
+                    info[2] += f" <a href='https://github.com/ClanGenOfficial/clangen/pull/{pr_number.group(1)}'>(link)</a>"
+
                 # Format: DATE- \n PR Title (link)
                 file_cont += f"<b>{info[1]}</b>\n- {info[2]}\n"
 
@@ -1239,10 +1239,10 @@ class SaveAsImage(UIWindow):
 
 class EventLoading(UIWindow):
     def __init__(self, pos):
-        
-        if pos is None: 
+
+        if pos is None:
             pos = (800, 700)
-        
+
         super().__init__(scale(pygame.Rect(pos, (200, 200))),
                          window_display_title='Game Over',
                          object_id='#loading_window',
@@ -1262,7 +1262,7 @@ class EventLoading(UIWindow):
     @staticmethod
     def load_images():
         frames = []
-        for i in range(1, 9):
+        for i in range(0, 16):
             frames.append(pygame.image.load(
                 f"resources/images/loading_animate/timeskip/{i}.png"))
 
@@ -1281,7 +1281,7 @@ class EventLoading(UIWindow):
 
             self.animated_image.set_image(self.frames[i])
 
-            time.sleep(0.3)
+            time.sleep(0.125)
 
     def kill(self):
         self.end_animation = True
@@ -1307,33 +1307,33 @@ class ChangeCatToggles(UIWindow):
 
         self.checkboxes = {}
         self.refresh_checkboxes()
-        
+
         # Text
-        self.text_1 = pygame_gui.elements.UITextBox("Prevent fading", scale(pygame.Rect(110, 60, -1, 50)), 
+        self.text_1 = pygame_gui.elements.UITextBox("Prevent fading", scale(pygame.Rect(110, 60, -1, 50)),
                                                     object_id="#text_box_30_horizleft_pad_0_8",
                                                     container=self)
-        
-        self.text_2 = pygame_gui.elements.UITextBox("Prevent kits", scale(pygame.Rect(110, 110, -1, 50)), 
+
+        self.text_2 = pygame_gui.elements.UITextBox("Prevent kits", scale(pygame.Rect(110, 110, -1, 50)),
                                                     object_id="#text_box_30_horizleft_pad_0_8",
                                                     container=self)
-        
-        self.text_3 = pygame_gui.elements.UITextBox("Prevent retirement", scale(pygame.Rect(110, 160, -1, 50)), 
+
+        self.text_3 = pygame_gui.elements.UITextBox("Prevent retirement", scale(pygame.Rect(110, 160, -1, 50)),
                                                     object_id="#text_box_30_horizleft_pad_0_8",
                                                     container=self)
-        
-        self.text_4 = pygame_gui.elements.UITextBox("Limit romantic interations and mate changes",
-                                                    scale(pygame.Rect(110, 210, -1, 50)), 
+
+        self.text_4 = pygame_gui.elements.UITextBox("Limit romantic interactions and mate changes",
+                                                    scale(pygame.Rect(110, 210, -1, 50)),
                                                     object_id="#text_box_30_horizleft_pad_0_8",
                                                     container=self)
-        
+
         # Text
-        
+
     def refresh_checkboxes(self):
-        
+
         for x in self.checkboxes.values():
             x.kill()
         self.checkboxes = {}
-        
+
         # Prevent Fading
         if self.the_cat == game.clan.instructor:
             box_type = "#checked_checkbox"
@@ -1344,17 +1344,17 @@ class ChangeCatToggles(UIWindow):
         else:
             box_type = "#unchecked_checkbox"
             tool_tip = "Prevents cat from fading away after being dead for 202 moons."
-        
+
         # Fading
         self.checkboxes["prevent_fading"] = UIImageButton(scale(pygame.Rect(45, 50, 68, 68)), "",
                                                           container=self,
                                                           object_id=box_type,
                                                           tool_tip_text=tool_tip)
-        
+
         if self.the_cat == game.clan.instructor:
             self.checkboxes["prevent_fading"].disable()
-        
-        
+
+
         #No Kits
         if self.the_cat.no_kits:
             box_type = "#checked_checkbox"
@@ -1362,12 +1362,12 @@ class ChangeCatToggles(UIWindow):
         else:
             box_type = "#unchecked_checkbox"
             tool_tip = "Prevent the cat from adopting or having kittens."
-        
+
         self.checkboxes["prevent_kits"] = UIImageButton(scale(pygame.Rect(45, 100, 68, 68)), "",
                                                         container=self,
                                                         object_id=box_type,
                                                         tool_tip_text=tool_tip)
-        
+
         #No Retire
         if self.the_cat.no_retire:
             box_type = "#checked_checkbox"
@@ -1375,12 +1375,12 @@ class ChangeCatToggles(UIWindow):
         else:
             box_type = "#unchecked_checkbox"
             tool_tip = "Prevent cat from retiring automatically."
-        
+
         self.checkboxes["prevent_retire"] = UIImageButton(scale(pygame.Rect(45, 150, 68, 68)), "",
                                                           container=self,
                                                           object_id=box_type,
                                                           tool_tip_text=tool_tip)
-        
+
         #No mates
         if self.the_cat.no_mates:
             box_type = "#checked_checkbox"
@@ -1388,7 +1388,7 @@ class ChangeCatToggles(UIWindow):
         else:
             box_type = "#unchecked_checkbox"
             tool_tip = "Prevent cat from automatically taking a mate, breaking up, or having romantic interactions with non-mates."
-        
+
         self.checkboxes["prevent_mates"] = UIImageButton(scale(pygame.Rect(45, 200, 68, 68)), "",
                                                          container=self,
                                                          object_id=box_type,
@@ -1413,5 +1413,5 @@ class ChangeCatToggles(UIWindow):
             elif event.ui_element == self.checkboxes["prevent_mates"]:
                 self.the_cat.no_mates = not self.the_cat.no_mates
                 self.refresh_checkboxes()
-        
+
         return super().process_event(event)

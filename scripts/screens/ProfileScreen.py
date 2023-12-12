@@ -66,10 +66,10 @@ def accessory_display_name(cat):
 def bs_blurb_text(cat):
     backstory = cat.backstory
     backstory_text = BACKSTORIES["backstories"][backstory]
-    
+
     if cat.status in ['kittypet', 'loner', 'rogue', 'former Clancat']:
             return f"This cat is a {cat.status} and currently resides outside of the Clans."
-    
+
     return backstory_text
 
 # ---------------------------------------------------------------------------- #
@@ -80,7 +80,7 @@ def backstory_text(cat):
     if backstory is None:
         return ''
     bs_category = None
-    
+
     for category in BACKSTORIES["backstory_categories"]:
         if backstory in category:
             bs_category = category
@@ -229,7 +229,7 @@ class ProfileScreen(Screens):
                 game.switches['cat'] = self.next_cat
                 self.build_profile()
                 self.update_disabled_buttons_and_text()
-            
+
             elif event.key == pygame.K_ESCAPE:
                 self.close_current_tab()
                 self.change_screen(game.last_screen_forProfile)
@@ -321,6 +321,11 @@ class ProfileScreen(Screens):
                 self.clear_profile()
                 self.build_profile()
                 self.update_disabled_buttons_and_text()
+            elif event.ui_element == self.destroy_accessory_button:
+                self.the_cat.pelt.accessory = None
+                self.clear_profile()
+                self.build_profile()
+                self.update_disabled_buttons_and_text()
         # History Tab
         elif self.open_tab == 'history':
             if event.ui_element == self.sub_tab_1:
@@ -382,7 +387,7 @@ class ProfileScreen(Screens):
                                                  , manager=MANAGER)
         self.back_button = UIImageButton(scale(pygame.Rect((50, 120), (210, 60))), "", object_id="#back_button"
                                          , manager=MANAGER)
-        self.inspect_button = UIImageButton(scale(pygame.Rect((1482, 120),(68,68))), "", 
+        self.inspect_button = UIImageButton(scale(pygame.Rect((1482, 120),(68,68))), "",
                                             object_id="#magnify_button",
                                             manager=MANAGER)
         self.relations_tab_button = UIImageButton(scale(pygame.Rect((96, 840), (352, 60))), "",
@@ -513,7 +518,7 @@ class ProfileScreen(Screens):
         if game.clan.clan_settings['backgrounds']:
             self.profile_elements["background"] = pygame_gui.elements.UIImage(
                 scale(pygame.Rect((110, 400), (480, 420))),
-                pygame.transform.scale(self.get_platform(), scale_dimentions((480, 420))), 
+                pygame.transform.scale(self.get_platform(), scale_dimentions((480, 420))),
                 manager=MANAGER)
             self.profile_elements["background"].disable()
 
@@ -687,7 +692,7 @@ class ProfileScreen(Screens):
 
         # PARENTS
         all_parents = [Cat.fetch_cat(i) for i in the_cat.get_parents()]
-        if all_parents: 
+        if all_parents:
             output += "\n"
             if len(all_parents) == 1:
                 output += "parent: " + str(all_parents[0].name)
@@ -700,7 +705,7 @@ class ProfileScreen(Screens):
             else:
                 output += "parents: " + ", ".join([str(i.name) for i in all_parents])
 
-        
+
         # MOONS
         output += "\n"
         if the_cat.dead:
@@ -725,8 +730,8 @@ class ProfileScreen(Screens):
         # MATE
         if len(the_cat.mate) > 0:
             output += "\n"
-            
-            
+
+
             mate_names = []
             # Grab the names of only the first two, since that's all we will display
             for _m in the_cat.mate[:2]:
@@ -738,20 +743,20 @@ class ProfileScreen(Screens):
                         former_indicate = "(living)"
                     else:
                         former_indicate = "(dead)"
-                    
+
                     mate_names.append(f"{str(mate_ob.name)} {former_indicate}")
                 elif mate_ob.outside != self.the_cat.outside:
                     mate_names.append(f"{str(mate_ob.name)} (away)")
                 else:
                     mate_names.append(f"{str(mate_ob.name)}")
-                    
+
             if len(the_cat.mate) == 1:
-                output += "mate: " 
+                output += "mate: "
             else:
                 output += "mates: "
-            
+
             output += ", ".join(mate_names)
-            
+
             if len(the_cat.mate) > 2:
                 output += f", and {len(the_cat.mate) - 2}"
                 if len(the_cat.mate) - 2 > 1:
@@ -810,12 +815,12 @@ class ProfileScreen(Screens):
         # FORMER APPRENTICES
         # Optional - Only shows up if the cat has previous apprentice(s)
         if the_cat.former_apprentices:
-            
+
             apprentices = [Cat.fetch_cat(i) for i in the_cat.former_apprentices if isinstance(Cat.fetch_cat(i), Cat)]
-            
+
             if len(apprentices) > 2:
                 output += 'former apprentices: ' + ", ".join([str(i.name) for i in apprentices[:2]]) + \
-                    ", and " + str(len(apprentices) - 2) 
+                    ", and " + str(len(apprentices) - 2)
                 if len(apprentices) - 2 > 1:
                     output += " others"
                 else:
@@ -1063,7 +1068,7 @@ class ProfileScreen(Screens):
             app_history = self.get_apprenticeship_text()
             if app_history:
                 life_history.append(app_history)
-                
+
             #Get mentorship text if it exists
             mentor_history = self.get_mentorship_text()
             if mentor_history:
@@ -1182,14 +1187,14 @@ class ProfileScreen(Screens):
 
         mentor_influence = History.get_mentor_influence(self.the_cat)
         influence_history = ""
-        
+
         #First, just list the mentors:
         if self.the_cat.status in ['kitten', 'newborn']:
                 influence_history = 'This cat has not begun training.'
         elif self.the_cat.status in ['apprentice', 'medicine cat apprentice', 'mediator apprentice']:
             influence_history = 'This cat has not finished training.'
         else:
-            valid_formor_mentors = [Cat.fetch_cat(i) for i in self.the_cat.former_mentor if 
+            valid_formor_mentors = [Cat.fetch_cat(i) for i in self.the_cat.former_mentor if
                                     isinstance(Cat.fetch_cat(i), Cat)]
             if valid_formor_mentors:
                 influence_history += "{PRONOUN/m_c/subject/CAP} {VERB/m_c/were/was} mentored by "
@@ -1200,58 +1205,58 @@ class ProfileScreen(Screens):
                     influence_history += str(valid_formor_mentors[0].name) + ". "
             else:
                 influence_history += "This cat either did not have a mentor, or {PRONOUN/m_c/poss} mentor is unknown. "
-            
+
             # Second, do the facet/personality effect
             trait_influence = []
             if "trait" in mentor_influence and isinstance(mentor_influence["trait"], dict):
                 for _mentor in mentor_influence["trait"]:
-                    #If the strings are not set (empty list), continue. 
+                    #If the strings are not set (empty list), continue.
                     if not mentor_influence["trait"][_mentor].get("strings"):
                         continue
-                    
+
                     ment_obj = Cat.fetch_cat(_mentor)
                     #Continue of the mentor is invalid too.
                     if not isinstance(ment_obj, Cat):
                         continue
-                    
+
                     if len(mentor_influence["trait"][_mentor].get("strings")) > 1:
                         string_snippet = ", ".join(mentor_influence["trait"][_mentor].get("strings")[:-1]) + \
                             " and " + mentor_influence["trait"][_mentor].get("strings")[-1]
                     else:
                         string_snippet = mentor_influence["trait"][_mentor].get("strings")[0]
-                        
-                    
+
+
                     trait_influence.append(str(ment_obj.name) +  \
                                         " influenced {PRONOUN/m_c/object} to be more likely to " + string_snippet + ". ")
-                    
-                    
+
+
 
             influence_history += " ".join(trait_influence)
-            
-            
+
+
             skill_influence = []
             if "skill" in mentor_influence and isinstance(mentor_influence["skill"], dict):
                 for _mentor in mentor_influence["skill"]:
-                    #If the strings are not set (empty list), continue. 
+                    #If the strings are not set (empty list), continue.
                     if not mentor_influence["skill"][_mentor].get("strings"):
                         continue
-                    
+
                     ment_obj = Cat.fetch_cat(_mentor)
                     #Continue of the mentor is invalid too.
                     if not isinstance(ment_obj, Cat):
                         continue
-                    
+
                     if len(mentor_influence["skill"][_mentor].get("strings")) > 1:
                         string_snippet = ", ".join(mentor_influence["skill"][_mentor].get("strings")[:-1]) + \
                             " and " + mentor_influence["skill"][_mentor].get("strings")[-1]
                     else:
                         string_snippet = mentor_influence["skill"][_mentor].get("strings")[0]
-                        
-                    
+
+
                     skill_influence.append(str(ment_obj.name) +  \
                                         " helped {PRONOUN/m_c/object} become better at " + string_snippet + ". ")
-                    
-                    
+
+
 
             influence_history += " ".join(skill_influence)
 
@@ -1282,13 +1287,13 @@ class ProfileScreen(Screens):
 
     def get_mentorship_text(self):
         """
-        
-        returns full list of previously mentored apprentices. 
-        
+
+        returns full list of previously mentored apprentices.
+
         """
-        
+
         text = ""
-        # Doing this is two steps 
+        # Doing this is two steps
         all_real_apprentices = [Cat.fetch_cat(i) for i in self.the_cat.former_apprentices if isinstance(Cat.fetch_cat(i), Cat)]
         if all_real_apprentices:
             text = "{PRONOUN/m_c/subject/CAP} mentored "
@@ -1298,20 +1303,20 @@ class ProfileScreen(Screens):
                 text += str(all_real_apprentices[0].name) + " and " + str(all_real_apprentices[1].name) + "."
             elif len(all_real_apprentices) == 1:
                 text += str(all_real_apprentices[0].name) + "."
-            
+
             cat_dict = {
             "m_c": (str(self.the_cat.name), choice(self.the_cat.pronouns))
-            }   
-            
+            }
+
             text = process_text(text, cat_dict)
-        
+
         return text
-        
+
 
     def get_text_for_murder_event(self, event, death):
         ''' returns the adjusted murder history text for the victim '''
         if event["text"] == death["text"] and event["moon"] == death["moon"]:
-            if event["revealed"] is True: 
+            if event["revealed"] is True:
                 final_text = event_text_adjust(Cat, event["text"], self.the_cat, Cat.fetch_cat(death["involved"]))
                 if event.get("revelation_text"):
                     final_text = final_text + event["revelation_text"]
@@ -1424,7 +1429,7 @@ class ProfileScreen(Screens):
         victims = []
         if murder_history:
             if 'is_murderer' in murder_history:
-                victims = murder_history["is_murderer"]                
+                victims = murder_history["is_murderer"]
 
         if len(victims) > 0:
             victim_names = {}
@@ -1433,7 +1438,7 @@ class ProfileScreen(Screens):
 
             for victim in victims:
                 if not Cat.fetch_cat(victim["victim"]):
-                    continue 
+                    continue
                 name = str(Cat.fetch_cat(victim["victim"]).name)
 
                 if victim["revealed"]:
@@ -1497,13 +1502,13 @@ class ProfileScreen(Screens):
 
     def display_conditions_page(self):
         # tracks the position of the detail boxes
-        if self.condition_container: 
+        if self.condition_container:
             self.condition_container.kill()
-            
+
         self.condition_container = pygame_gui.core.UIContainer(
             scale(pygame.Rect((178, 942), (1248, 302))),
             MANAGER)
-        
+
         # gather a list of all the conditions and info needed.
         all_illness_injuries = [(i, self.get_condition_details(i)) for i in self.the_cat.permanent_condition if
                                 not (self.the_cat.permanent_condition[i]['born_with'] and self.the_cat.permanent_condition[i]["moons_until"] != -2)]
@@ -1511,25 +1516,25 @@ class ProfileScreen(Screens):
         all_illness_injuries.extend([(i, self.get_condition_details(i)) for i in self.the_cat.illnesses if
                                     i not in ("an infected wound", "a festering wound")])
         all_illness_injuries = chunks(all_illness_injuries, 4)
-        
+
         if not all_illness_injuries:
             self.conditions_page = 0
             self.right_conditions_arrow.disable()
             self.left_conditions_arrow.disable()
             return
-        
-        # Adjust the page number if it somehow goes out of range. 
+
+        # Adjust the page number if it somehow goes out of range.
         if self.conditions_page < 0:
             self.conditions_page = 0
         elif self.conditions_page > len(all_illness_injuries) - 1:
             self.conditions_page = len(all_illness_injuries) - 1
-            
+
         # Disable the arrow buttons
         if self.conditions_page == 0:
             self.left_conditions_arrow.disable()
         else:
             self.left_conditions_arrow.enable()
-        
+
         if self.conditions_page >= len(all_illness_injuries) - 1:
             self.right_conditions_arrow.disable()
         else:
@@ -1537,38 +1542,38 @@ class ProfileScreen(Screens):
 
         x_pos = 30
         for con in all_illness_injuries[self.conditions_page]:
-            
+
             # Background Box
             pygame_gui.elements.UIImage(
                     scale(pygame.Rect((x_pos, 25), (280, 276))),
                     self.condition_details_box, manager=MANAGER,
                     container=self.condition_container)
-            
+
             y_adjust = 60
-            
+
             name = UITextBoxTweaked(
                     con[0],
                     scale(pygame.Rect((x_pos, 26), (272, -1))),
                     line_spacing=.90,
                     object_id="#text_box_30_horizcenter",
                     container=self.condition_container, manager=MANAGER)
-            
+
             y_adjust = name.get_relative_rect().height
             details_rect = scale(pygame.Rect((x_pos, 0), (276, -1)))
             details_rect.y = y_adjust
-            
+
             UITextBoxTweaked(
                     con[1],
                     details_rect,
                     line_spacing=.90,
                     object_id="#text_box_22_horizcenter_pad_20_20",
                     container=self.condition_container, manager=MANAGER)
-            
-            
+
+
             x_pos += 304
-        
+
         return
-        
+
     def get_condition_details(self, name):
         """returns the relevant condition details as one string with line breaks"""
         text_list = []
@@ -1603,17 +1608,17 @@ class ProfileScreen(Screens):
             keys = self.the_cat.injuries[name].keys()
             moons_with = game.clan.age - self.the_cat.injuries[name]["moon_start"]
             insert = 'has been hurt for'
-            
+
             if name == 'recovering from birth':
                 insert = 'has been recovering for'
             elif name == 'pregnant':
                 insert = 'has been pregnant for'
-            
+
             if moons_with != 1:
                 text_list.append(f"{insert} {moons_with} moons")
             else:
                 text_list.append(f"{insert} 1 moon")
-            
+
             # infected or festering
             if 'complication' in keys:
                 complication = self.the_cat.injuries[name]["complication"]
@@ -1621,7 +1626,7 @@ class ProfileScreen(Screens):
                     if 'a festering wound' in self.the_cat.illnesses:
                         complication = 'festering'
                     text_list.append(f'is {complication}!')
-            
+
             # can or can't patrol
             if self.the_cat.injuries[name]["severity"] != 'minor':
                 text_list.append("Can't work with this condition")
@@ -1645,7 +1650,7 @@ class ProfileScreen(Screens):
 
             if self.the_cat.illnesses[name]['infectiousness'] != 0:
                 text_list.append("infectious!")
-            
+
             # can or can't patrol
             if self.the_cat.illnesses[name]["severity"] != 'minor':
                 text_list.append("Can't work with this condition")
@@ -1721,7 +1726,7 @@ class ProfileScreen(Screens):
 
             # These are a placeholders, to be killed and recreated in self.update_disabled_buttons().
             #   This it due to the image switch depending on the cat's status, and the location switch the close button
-            #    If you can think of a better way to do this, please fix! 
+            #    If you can think of a better way to do this, please fix!
             self.cis_trans_button = None
             self.update_disabled_buttons_and_text()
 
@@ -1744,10 +1749,17 @@ class ProfileScreen(Screens):
                 tool_tip_text='This will open a confirmation window and allow you to input a death reason',
                 starting_height=2, manager=MANAGER
             )
+            self.destroy_accessory_button = UIImageButton(
+                scale(pygame.Rect((1156, 1044), (344, 72))),
+                "",
+                object_id="#destroy_accessory_button",
+                tool_tip_text="This will permanently remove this cat's current accessory",
+                starting_height=2, manager=MANAGER
+            )
 
             # These are a placeholders, to be killed and recreated in self.update_disabled_buttons_and_text().
             #   This it due to the image switch depending on the cat's status, and the location switch the close button
-            #    If you can think of a better way to do this, please fix! 
+            #    If you can think of a better way to do this, please fix!
             self.exile_cat_button = None
             self.update_disabled_buttons_and_text()
 
@@ -1864,6 +1876,11 @@ class ProfileScreen(Screens):
                 self.kill_cat_button.enable()
             else:
                 self.kill_cat_button.disable()
+
+            if self.the_cat.pelt.accessory:
+                self.destroy_accessory_button.enable()
+            else:
+                self.destroy_accessory_button.disable()
         # History Tab:
         elif self.open_tab == 'history':
             # show/hide fav tab star
@@ -1987,6 +2004,7 @@ class ProfileScreen(Screens):
         elif self.open_tab == 'dangerous':
             self.kill_cat_button.kill()
             self.exile_cat_button.kill()
+            self.destroy_accessory_button.kill()
         elif self.open_tab == 'history':
             self.backstory_background.kill()
             self.sub_tab_1.kill()
@@ -2046,14 +2064,14 @@ class ProfileScreen(Screens):
 
 
         biome_platforms = platformsheet.subsurface(pygame.Rect(0, order.index(biome) * 70, 640, 70)).convert_alpha()
-        
-        
+
+
         biome_platforms = platformsheet.subsurface(pygame.Rect(0, order.index(biome) * 70, 640, 70)).convert_alpha()
 
         offset = 0
         if light_dark == "light":
             offset = 80
-                
+
         if the_cat.df:
             biome_platforms = platformsheet.subsurface(pygame.Rect(0, order.index('SC/DF') * 70, 640, 70))
             return pygame.transform.scale(biome_platforms.subsurface(pygame.Rect(0 + offset, 0, 80, 70)), (240, 210))
@@ -2068,7 +2086,7 @@ class ProfileScreen(Screens):
                 "leaf-fall": 320 + offset,
                 "newleaf": 480 + offset
             }
-            
+
             return pygame.transform.scale(biome_platforms.subsurface(pygame.Rect(
                 season_x.get(game.clan.current_season.lower(), season_x["greenleaf"]), 0, 80, 70)), (240, 210))
 
