@@ -293,8 +293,14 @@ class NewCatEvents:
 
     @staticmethod
     def update_cat_properties(cat):
-        if cat.backstory in BACKSTORIES["backstory_categories"]['healer_backstories']:
-                cat.status = 'medicine cat'
+        if cat.moons < 6:
+            cat.status = 'kitten'
+        elif cat.backstory in BACKSTORIES["backstory_categories"]['healer_backstories']:
+            cat.status = 'medicine cat'
+            if cat.moons < 12:
+                cat.status += ' apprentice'
+        elif cat.moons < 12:
+            cat.status = 'apprentice'
         else:
             cat.status = "warrior"
         cat.outside = False
