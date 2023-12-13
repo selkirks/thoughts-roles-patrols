@@ -414,8 +414,6 @@
                     "thoughtful",
                     "wise",
                     "gloomy"
-                    "wise",
-                    "gloomy"
                 ],
                 "prey": ["large"]
             }
@@ -460,7 +458,6 @@
         "success_outcomes": [
             {
                 "text": "r_c heads off to one of {PRONOUN/r_c/poss} favorite spots on the beach, a rocky shore with high highs and low lows, providing excellent ambush chances. And what do you know, {PRONOUN/r_c/subject} {VERB/r_c/are/is} bush! Or {PRONOUN/r_c/subject} {VERB/r_c/were/was}, as far as that big crab thought. {PRONOUN/r_c/subject/CAP} {VERB/r_c/snicker/snickers} to {PRONOUN/r_c/self} as {PRONOUN/r_c/subject} {VERB/r_c/pad/pads} back to camp.",
-                "text": "r_c heads off to one of {PRONOUN/r_c/poss} favorite spots on the beach, a rocky shore with high highs and low lows, providing excellent ambush chances. And what do you know, {PRONOUN/r_c/subject} {VERB/r_c/are/is} bush! Or {PRONOUN/r_c/subject} {VERB/r_c/were/was}, as far as that big crab thought. {PRONOUN/r_c/subject/CAP} {VERB/r_c/snicker/snickers} to {PRONOUN/r_c/self} as {PRONOUN/r_c/subject} {VERB/r_c/pad/pads} back to camp.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["large"]
@@ -492,8 +489,6 @@
                     "cunning",
                     "cunning",
                     "thoughtful",
-                    "wise",
-                    "gloomy"
                     "wise",
                     "gloomy"
                 ],
@@ -571,8 +566,6 @@
                     "cunning",
                     "cunning",
                     "thoughtful",
-                    "wise",
-                    "gloomy"
                     "wise",
                     "gloomy"
                 ],
@@ -728,8 +721,6 @@
                 "history_text": {
                     "reg_death": "m_c was killed by a dog.",
                     "lead_death": "{VERB/m_c/were/was} killed by a dog"
-                    "reg_death": "m_c was killed by a dog.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a dog"
                 }
             },
             {
@@ -747,8 +738,6 @@
                     "scar": "m_c gained a scar from a fox.",
                     "reg_death": "m_c died from a fox bite.",
                     "lead_death": "died from a fox bite"
-                    "reg_death": "m_c died from a fox bite.",
-                    "lead_death": "died from a fox bite"
                 }
             }
         ]
@@ -764,8 +753,6 @@
         "max_cats": 1,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "As p_l is checking the border lines, {PRONOUN/p_l/subject} {VERB/p_l/hear/hears} an odd sound coming from a patch of beach grass.",
-        "decline_text": "It's probably nothing. {PRONOUN/p_l/subject/CAP} {VERB/p_l/leave/leaves} the noise alone and {VERB/p_l/continue/continues} searching for prey.",
         "intro_text": "As p_l is checking the border lines, {PRONOUN/p_l/subject} {VERB/p_l/hear/hears} an odd sound coming from a patch of beach grass.",
         "decline_text": "It's probably nothing. {PRONOUN/p_l/subject/CAP} {VERB/p_l/leave/leaves} the noise alone and {VERB/p_l/continue/continues} searching for prey.",
         "chance_of_success": 40,
@@ -786,7 +773,6 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l pads towards the grass to check on the noise when a rabbit suddenly bursts out! {PRONOUN/p_l/subject/CAP}{VERB/p_l/aren't/isn't} quick enough to catch it, but at least the noise was nothing dangerous.",
                 "text": "p_l pads towards the grass to check on the noise when a rabbit suddenly bursts out! {PRONOUN/p_l/subject/CAP}{VERB/p_l/aren't/isn't} quick enough to catch it, but at least the noise was nothing dangerous.",
                 "exp": 0,
                 "weight": 20
@@ -828,8 +814,6 @@
                 ],
                 "history_text": {
                     "scar": "m_c gained a scar from a fox.",
-                    "reg_death": "m_c died from a fox bite.",
-                    "lead_death": "died from a fox bite"
                     "reg_death": "m_c died from a fox bite.",
                     "lead_death": "died from a fox bite"
                 }
@@ -883,8 +867,6 @@
                     "troublesome",
                     "vengeful",
                     "grumpy"
-                    "vengeful",
-                    "grumpy"
                 ]
             }
         ],
@@ -905,9 +887,6 @@
                     "loving",
                     "responsible",
                     "thoughtful",
-                    "wise",
-                    "lonesome",
-                    "sincere"
                     "wise",
                     "lonesome",
                     "sincere"
@@ -963,8 +942,6 @@
                     "troublesome",
                     "vengeful",
                     "grumpy"
-                    "vengeful",
-                    "grumpy"
                 ]
             }
         ],
@@ -985,9 +962,6 @@
                     "loving",
                     "responsible",
                     "thoughtful",
-                    "wise",
-                    "lonesome",
-                    "sincere"
                     "wise",
                     "lonesome",
                     "sincere"
@@ -1043,8 +1017,6 @@
                     "troublesome",
                     "vengeful",
                     "grumpy"
-                    "vengeful",
-                    "grumpy"
                 ]
             }
         ],
@@ -1065,9 +1037,6 @@
                     "loving",
                     "responsible",
                     "thoughtful",
-                    "wise",
-                    "lonesome",
-                    "sincere"
                     "wise",
                     "lonesome",
                     "sincere"
@@ -1125,8 +1094,6 @@
                     "sneaky",
                     "strange",
                     "wise"
-                    "strange",
-                    "wise"
                 ],
                 "prey": ["large"]
             }
@@ -1158,14 +1125,8 @@
                     {
                         "cats": ["r_c"],
                         "injuries": ["blood loss", "scrapes", "small cut"],
-                        "injuries": ["blood loss", "scrapes", "small cut"],
                         "scars": []
                     }
-                ],
-                "history_text": {
-                    "reg_death": "m_c bled out after escaping from a Twoleg den.",
-                    "lead_death": "bled out after escaping from a Twoleg den"
-                }
                 ],
                 "history_text": {
                     "reg_death": "m_c bled out after escaping from a Twoleg den.",
@@ -1231,11 +1192,6 @@
                     "daring",
                     "shameless",
                     "rebellious"
-                    "adventurous",
-                    "competitive",
-                    "daring",
-                    "shameless",
-                    "rebellious"
                 ],
                 "can_have_stat": ["app"]
             },
@@ -1253,13 +1209,8 @@
                     {
                         "cats": ["app1"],
                         "injuries": ["blood loss", "scrapes", "small cut"],
-                        "injuries": ["blood loss", "scrapes", "small cut"],
                         "scars": []
                     }
-                ],
-                "history_text": {
-                    "reg_death": "m_c bled out after escaping from a Twoleg den."
-                }
                 ],
                 "history_text": {
                     "reg_death": "m_c bled out after escaping from a Twoleg den."
@@ -1400,7 +1351,6 @@
                 "exp": 0,
                 "weight": 10,
                 "lost_cats": ["r_c"]
-                "lost_cats": ["r_c"]
             }
         ]
     },
@@ -1504,11 +1454,6 @@
                     "daring",
                     "shameless",
                     "rebellious"
-                    "adventurous",
-                    "competitive",
-                    "daring",
-                    "shameless",
-                    "rebellious"
                 ],
                 "can_have_stat": ["app"],
                 "relationships": [
@@ -1572,8 +1517,6 @@
                     "lonesome",
                     "nervous",
                     "sneaky",
-                    "strange",
-                    "wise"
                     "strange",
                     "wise"
                 ]
@@ -1645,8 +1588,6 @@
                     "lonesome",
                     "nervous",
                     "sneaky",
-                    "strange",
-                    "wise"
                     "strange",
                     "wise"
                 ]
@@ -1757,7 +1698,6 @@
                 "history_text": {
                     "scar": "m_c was heavily injured by a monster, and carries the scars from it.",
                     "reg_death": "m_c was hit by a monster and later died from {PRONOUN/m_c/poss} injuries.",
-                    "reg_death": "m_c was hit by a monster and later died from {PRONOUN/m_c/poss} injuries.",
                     "lead_death": "{VERB/m_c/were/was} hit by a monster"
                 }
             }
@@ -1845,7 +1785,6 @@
                 "history_text": {
                     "scar": "m_c was heavily injured by a monster, and carries the scars from it.",
                     "reg_death": "m_c was hit by a monster and later died from {PRONOUN/m_c/poss} injuries.",
-                    "reg_death": "m_c was hit by a monster and later died from {PRONOUN/m_c/poss} injuries.",
                     "lead_death": "{VERB/m_c/were/was} hit by a monster"
                 }
             }
@@ -1929,7 +1868,6 @@
                 "history_text": {
                     "scar": "m_c was heavily injured by a monster, and carries the scars from it.",
                     "reg_death": "m_c was hit by a monster and later died from {PRONOUN/m_c/poss} injuries.",
-                    "reg_death": "m_c was hit by a monster and later died from {PRONOUN/m_c/poss} injuries.",
                     "lead_death": "{VERB/m_c/were/was} hit by a monster"
                 }
             }
@@ -2000,7 +1938,6 @@
                 "dead_cats": ["multi"],
                 "history_text": {
                     "reg_death": "m_c was hit by a monster and killed.",
-                    "reg_death": "m_c was hit by a monster and killed.",
                     "lead_death": "{VERB/m_c/were/was} hit by a monster"
                 }
             },
@@ -2017,7 +1954,6 @@
                 ],
                 "history_text": {
                     "scar": "m_c was heavily injured by a monster, and carries the scars from it.",
-                    "reg_death": "m_c was hit by a monster and later died from {PRONOUN/m_c/poss} injuries.",
                     "reg_death": "m_c was hit by a monster and later died from {PRONOUN/m_c/poss} injuries.",
                     "lead_death": "{VERB/m_c/were/was} hit by a monster"
                 }
@@ -2102,7 +2038,6 @@
                 "relationships": [
                     {
                         "cats_to": ["s_c"],
-                        "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["platonic", "respect"],
@@ -2131,15 +2066,6 @@
                 "text": "s_c pounces on the octopus enthusiastically. It thwacks its tentacles around {PRONOUN/s_c/poss} head, trying to avoid {PRONOUN/s_c/poss} snapping muzzle, and s_c skitters backwards, uncoordinated flailing about until the rest of the patrol is able to help {PRONOUN/s_c/object}. The octopus escapes.",
                 "exp": 0,
                 "weight": 20,
-                "stat_trait": [
-                    "arrogant",
-                    "ambitious",
-                    "childish",
-                    "competitive",
-                    "daring",
-                    "insecure",
-                    "lonesome"
-                ],
                 "stat_trait": [
                     "arrogant",
                     "ambitious",
@@ -2382,9 +2308,6 @@
                     "charismatic",
                     "cunning",
                     "daring"
-                    "charismatic",
-                    "cunning",
-                    "daring"
                 ],
                 "relationships": [
                     {
@@ -2415,14 +2338,6 @@
                 "exp": 30,
                 "weight": 20,
                 "prey": ["large"],
-                "stat_trait": [
-                    "calm",
-                    "confident",
-                    "responsible",
-                    "cold",
-                    "strict",
-                    "wise"
-                ],
                 "stat_trait": [
                     "calm",
                     "confident",
@@ -2511,11 +2426,6 @@
                     "reg_death": "m_c died from an octopus bite.",
                     "lead_death": "died from an octopus bite"
                 },
-                "history_text": {
-                    "scar": "m_c was scarred by an octopus.",
-                    "reg_death": "m_c died from an octopus bite.",
-                    "lead_death": "died from an octopus bite"
-                },
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -2539,19 +2449,10 @@
                     "lonesome",
                     "loving"
                 ],
-                "stat_trait": [
-                    "careful",
-                    "childish",
-                    "nervous",
-                    "insecure",
-                    "lonesome",
-                    "loving"
-                ],
                 "injury": [
                     {
                         "cats": ["r_c"],
                         "injuries": ["beak_bite"],
-                        "scars": ["beak_scars"]
                         "scars": ["beak_scars"]
                     }
                 ],
@@ -2560,14 +2461,8 @@
                     "reg_death": "m_c died from an octopus bite.",
                     "lead_death": "died from an octopus bite"
                 },
-                "history_text": {
-                    "scar": "m_c was scarred by an octopus.",
-                    "reg_death": "m_c died from an octopus bite.",
-                    "lead_death": "died from an octopus bite"
-                },
                 "relationships": [
                     {
-                        "cats_to": ["s_c"],
                         "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
@@ -2626,12 +2521,8 @@
                     },
                     {
                         "cats_to": ["p_l"],
-                    },
-                    {
-                        "cats_to": ["p_l"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["respect"],
                         "values": ["respect"],
                         "amount": 5
                     }
@@ -2642,11 +2533,9 @@
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,3"],
-                "stat_skill": ["FIGHTER,3"],
                 "prey": ["huge"],
                 "relationships": [
                     {
-                        "cats_to": ["s_c"],
                         "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
@@ -2674,14 +2563,6 @@
                     "daring",
                     "competitive"
                 ],
-                "stat_trait": [
-                    "ambitious",
-                    "arrogant",
-                    "fierce",
-                    "bloodthirsty",
-                    "daring",
-                    "competitive"
-                ],
                 "prey": ["huge"],
                 "relationships": [
                     {
@@ -2695,7 +2576,6 @@
                         "cats_to": ["s_c"],
                         "cats_from": ["clan"],
                         "mutual": false,
-                        "values": ["respect"],
                         "values": ["respect"],
                         "amount": 5
                     }
@@ -2727,7 +2607,6 @@
                         "cats": ["r_c"],
                         "injuries": ["beak_bite"],
                         "scars": ["beak_scars"]
-                        "scars": ["beak_scars"]
                     }
                 ],
                 "history_text": {
@@ -2749,7 +2628,6 @@
         ]
     },
     {
-        "patrol_id": "bch_hunt_eagleswim2",
         "patrol_id": "bch_hunt_eagleswim2",
         "biome": ["beach"],
         "season": ["Any"],
@@ -2796,9 +2674,6 @@
                     },
                     {
                         "cats_to": ["p_l"],
-                    },
-                    {
-                        "cats_to": ["p_l"],
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["respect"],
@@ -2810,7 +2685,6 @@
                 "text": "As the rest of the patrol discusses whether they can steal the catch, s_c fixates on the bird that caught it. The eagle works its way awkwardly towards shore, and just as it's going to climb out s_c pounces, fighting in the shallows where s_c has the edge over the bird in swimming. {PRONOUN/s_c/subject/CAP} {VERB/s_c/win/wins} both the fish and the predator as prey for c_n.",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["FIGHTER,3"],
                 "stat_skill": ["FIGHTER,3"],
                 "prey": ["huge"],
                 "relationships": [
@@ -2842,14 +2716,6 @@
                     "daring",
                     "competitive"
                 ],
-                "stat_trait": [
-                    "ambitious",
-                    "arrogant",
-                    "fierce",
-                    "bloodthirsty",
-                    "daring",
-                    "competitive"
-                ],
                 "prey": ["huge"],
                 "relationships": [
                     {
@@ -2863,7 +2729,6 @@
                         "cats_to": ["s_c"],
                         "cats_from": ["clan"],
                         "mutual": false,
-                        "values": ["respect"],
                         "values": ["respect"],
                         "amount": 5
                     }
@@ -2914,7 +2779,6 @@
                         "cats": ["r_c"],
                         "injuries": ["beak_bite"],
                         "scars": ["beak_scars"]
-                        "scars": ["beak_scars"]
                     }
                 ],
                 "history_text": {
@@ -2960,18 +2824,9 @@
                     {
                         "cats_to": ["patrol"],
                         "cats_from": ["clan"],
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
                         "mutual": false,
                         "values": ["respect"],
                         "amount": 5
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["respect", "trust"],
-                        "amount": 10
                     },
                     {
                         "cats_to": ["patrol"],
@@ -2992,18 +2847,9 @@
                     {
                         "cats_to": ["patrol"],
                         "cats_from": ["clan"],
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
                         "mutual": false,
                         "values": ["respect"],
                         "amount": 5
-                    },
-                    {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["trust", "respect"],
-                        "amount": 10
                     },
                     {
                         "cats_to": ["s_c"],
@@ -3033,19 +2879,9 @@
                     {
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["trust"],
                         "values": ["trust"],
                         "amount": 5
-                    },
-                    {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["patrol", "clan"],
-                        "mutual": false,
-                        "values": ["respect"],
-                        "amount": 10
                     },
                     {
                         "cats_to": ["s_c"],
@@ -3064,8 +2900,6 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
@@ -3095,10 +2929,7 @@
                     {
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["trust"],
                         "values": ["trust"],
                         "amount": -5
                     }
@@ -3109,15 +2940,6 @@
                 "text": "s_c means well, but {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} overconfident in {PRONOUN/s_c/poss} attack, and the fox manages to sink its teeth into {PRONOUN/s_c/object}. The patrol is forced to retreat, hissing and spitting to ward the fox away from their injured Clanmate.",
                 "exp": 0,
                 "weight": 10,
-                "stat_trait": [
-                    "ambitious",
-                    "arrogant",
-                    "competitive",
-                    "insecure",
-                    "rebellious",
-                    "troublesome",
-                    "vengeful"
-                ],
                 "stat_trait": [
                     "ambitious",
                     "arrogant",
@@ -3143,10 +2965,7 @@
                     {
                         "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
-                        "cats_to": ["s_c"],
-                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["respect", "trust"],
                         "values": ["respect", "trust"],
                         "amount": -5
                     }
@@ -3180,8 +2999,6 @@
                     {
                         "cats_to": ["patrol"],
                         "cats_from": ["clan"],
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
                         "mutual": false,
                         "values": ["respect"],
                         "amount": 5
@@ -3212,19 +3029,9 @@
                     {
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["trust"],
                         "values": ["trust"],
                         "amount": 5
-                    },
-                    {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["patrol", "clan"],
-                        "mutual": false,
-                        "values": ["respect"],
-                        "amount": 10
                     },
                     {
                         "cats_to": ["s_c"],
@@ -3254,8 +3061,6 @@
                     {
                         "cats_to": ["patrol"],
                         "cats_from": ["clan"],
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
                         "mutual": false,
                         "values": ["respect"],
                         "amount": 10
@@ -3265,7 +3070,6 @@
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["trust", "respect"],
-                        "amount": 10
                         "amount": 10
                     },
                     {
@@ -3323,18 +3127,8 @@
             },
             {
                 "text": "s_c means well, but {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} overconfident in {PRONOUN/s_c/poss} attack, and the fox manages to sink its teeth into {PRONOUN/s_c/object}. The patrol is forced to retreat, forming a defensive ring around their injured Clanmate.",
-                "text": "s_c means well, but {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} overconfident in {PRONOUN/s_c/poss} attack, and the fox manages to sink its teeth into {PRONOUN/s_c/object}. The patrol is forced to retreat, forming a defensive ring around their injured Clanmate.",
                 "exp": 0,
                 "weight": 10,
-                "stat_trait": [
-                    "ambitious",
-                    "arrogant",
-                    "competitive",
-                    "insecure",
-                    "rebellious",
-                    "troublesome",
-                    "vengeful"
-                ],
                 "stat_trait": [
                     "ambitious",
                     "arrogant",
@@ -3360,17 +3154,8 @@
                     {
                         "cats_to": ["patrol"],
                         "cats_from": ["clan"],
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
                         "mutual": false,
                         "values": ["respect"],
-                        "amount": -5
-                    },
-                    {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["respect", "trust"],
                         "amount": -5
                     },
                     {
@@ -3453,13 +3238,6 @@
                         "scars": []
                     }
                 ],
-                "injury": [
-                    {
-                        "cats": ["s_c"],
-                        "injuries": ["bruises", "scrapes"],
-                        "scars": []
-                    }
-                ],
                 "prey": ["large"],
                 "relationships": [
                     {
@@ -3474,7 +3252,6 @@
         ],
         "fail_outcomes": [
             {
-                "text": "r_c fails to drive away the fox, which keeps possession of the food. However, {PRONOUN/r_c/subject} managed to escape injury.",
                 "text": "r_c fails to drive away the fox, which keeps possession of the food. However, {PRONOUN/r_c/subject} managed to escape injury.",
                 "exp": 0,
                 "weight": 20,
@@ -3496,9 +3273,6 @@
                 "history_text": {
                     "reg_death": "m_c fell in a solo battle with a fox.",
                     "lead_death": "died fighting a fox"
-                }
-                    "reg_death": "m_c fell in a solo battle with a red fox.",
-                    "lead_death": "died fighting a red fox"
                 }
             },
             {
@@ -3596,17 +3370,8 @@
                     {
                         "cats_to": ["patrol"],
                         "cats_from": ["clan"],
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["platonic", "comfort"],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
-                        "mutual": false,
-                        "values": ["respect"],
                         "amount": 5
                     }
                 ]
@@ -3627,17 +3392,8 @@
                     {
                         "cats_to": ["patrol"],
                         "cats_from": ["clan"],
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["trust"],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
-                        "mutual": false,
-                        "values": ["respect"],
                         "amount": 5
                     }
 
@@ -3653,19 +3409,9 @@
                     {
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["trust"],
                         "values": ["trust"],
                         "amount": 5
-                    },
-                    {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["patrol", "clan"],
-                        "mutual": false,
-                        "values": ["respect"],
-                        "amount": 10
                     },
                     {
                         "cats_to": ["s_c"],
@@ -3695,19 +3441,9 @@
                     {
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["trust"],
                         "values": ["trust"],
                         "amount": 5
-                    },
-                    {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["patrol", "clan"],
-                        "mutual": false,
-                        "values": ["respect"],
-                        "amount": 10
                     },
                     {
                         "cats_to": ["s_c"],
@@ -3728,10 +3464,7 @@
                     {
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["trust"],
                         "values": ["trust"],
                         "amount": -5
                     }
@@ -3751,23 +3484,11 @@
                     "troublesome",
                     "vengeful"
                 ],
-                "stat_trait": [
-                    "ambitious",
-                    "arrogant",
-                    "competitive",
-                    "insecure",
-                    "rebellious",
-                    "troublesome",
-                    "vengeful"
-                ],
                 "relationships": [
                     {
                         "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
-                        "cats_to": ["s_c"],
-                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["respect", "trust"],
                         "values": ["respect", "trust"],
                         "amount": -5
                     }
@@ -3778,15 +3499,6 @@
                 "text": "s_c means well, but {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} overconfident in {PRONOUN/s_c/poss} attack and the fox manages to sink its teeth into {PRONOUN/s_c/object}. The patrol is forced to retreat, forming a defensive ring around the hurt s_c.",
                 "exp": 0,
                 "weight": 10,
-                "stat_trait": [
-                    "ambitious",
-                    "arrogant",
-                    "competitive",
-                    "insecure",
-                    "rebellious",
-                    "troublesome",
-                    "vengeful"
-                ],
                 "stat_trait": [
                     "ambitious",
                     "arrogant",
@@ -3812,10 +3524,7 @@
                     {
                         "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
-                        "cats_to": ["s_c"],
-                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["respect", "trust"],
                         "values": ["respect", "trust"],
                         "amount": -5
                     }
@@ -3848,16 +3557,7 @@
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["platonic", "comfort"],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": ["patrol"],
                         "cats_from": ["clan"],
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["platonic", "comfort"],
                         "amount": 5
@@ -3883,22 +3583,6 @@
                         "mutual": false,
                         "values": ["trust"],
                         "amount": 5
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["trust"],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
-                        "mutual": false,
-                        "values": ["respect"],
-                        "amount": 5
                     }
                 ]
             },
@@ -3912,10 +3596,7 @@
                     {
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["trust"],
                         "values": ["trust"],
                         "amount": 5
                     },
@@ -3954,19 +3635,9 @@
                     {
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["trust"],
                         "values": ["trust"],
                         "amount": 5
-                    },
-                    {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["patrol", "clan"],
-                        "mutual": false,
-                        "values": ["respect"],
-                        "amount": 10
                     },
                     {
                         "cats_to": ["s_c"],
@@ -4007,30 +3678,12 @@
                     "troublesome",
                     "vengeful"
                 ],
-                "stat_trait": [
-                    "ambitious",
-                    "arrogant",
-                    "competitive",
-                    "insecure",
-                    "rebellious",
-                    "troublesome",
-                    "vengeful"
-                ],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
                         "cats_from": ["clan"],
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
                         "mutual": false,
                         "values": ["respect"],
-                        "amount": -5
-                    },
-                    {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["respect", "trust"],
                         "amount": -5
                     },
                     {
@@ -4128,13 +3781,6 @@
                         "scars": []
                     }
                 ],
-                "injury": [
-                    {
-                        "cats": ["s_c"],
-                        "injuries": ["bruises", "scrapes"],
-                        "scars": []
-                    }
-                ],
                 "prey": ["large"],
                 "relationships": [
                     {
@@ -4143,14 +3789,12 @@
                         "mutual": false,
                         "values": ["respect"],
                         "amount": 10
-                        "amount": 10
                     }
                 ]
             }
         ],
         "fail_outcomes": [
             {
-                "text": "r_c fails to drive away the fox, which keeps possession of the food. However, {PRONOUN/r_c/subject} managed to escape injury.",
                 "text": "r_c fails to drive away the fox, which keeps possession of the food. However, {PRONOUN/r_c/subject} managed to escape injury.",
                 "exp": 0,
                 "weight": 20,
@@ -4169,15 +3813,6 @@
                 "text": "s_c makes a stupid mistake, too intent on winning the fight to respect {PRONOUN/s_c/poss} enemy's teeth, and it's tripping over {PRONOUN/s_c/poss} own feet that saves {PRONOUN/s_c/object}. {PRONOUN/s_c/subject/CAP} {VERB/s_c/give/gives} up, and {VERB/s_c/settle/settles} down to wait a safe distance away until the fox leaves of its own accord.",
                 "exp": 0,
                 "weight": 20,
-                "stat_trait": [
-                    "ambitious",
-                    "arrogant",
-                    "competitive",
-                    "insecure",
-                    "rebellious",
-                    "troublesome",
-                    "vengeful"
-                ],
                 "stat_trait": [
                     "ambitious",
                     "arrogant",
@@ -4229,15 +3864,6 @@
                 "text": "s_c is overconfident in {PRONOUN/s_c/poss} attack, and the fox manages to sink its teeth into {PRONOUN/s_c/object}. {PRONOUN/s_c/subject/CAP} {VERB/s_c/retreat/retreats}, bleeding and in pain, and the gray fox settles back down to its meal.",
                 "exp": 0,
                 "weight": 10,
-                "stat_trait": [
-                    "ambitious",
-                    "arrogant",
-                    "competitive",
-                    "insecure",
-                    "rebellious",
-                    "troublesome",
-                    "vengeful"
-                ],
                 "stat_trait": [
                     "ambitious",
                     "arrogant",
@@ -4352,14 +3978,12 @@
                 "relationships": [
                     {
                         "cats_to": ["s_c"],
-                        "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["platonic", "respect"],
                         "amount": 5
                     },
                     {
-                        "cats_to": ["s_c"],
                         "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
@@ -4414,14 +4038,12 @@
                 "relationships": [
                     {
                         "cats_to": ["s_c"],
-                        "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["platonic", "respect"],
                         "amount": -5
                     },
                     {
-                        "cats_to": ["s_c"],
                         "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
@@ -4506,7 +4128,6 @@
                     },
                     {
                         "cats_to": ["s_c"],
-                        "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["dislike"],
@@ -4551,13 +4172,6 @@
                         "mutual": false,
                         "values": ["dislike"],
                         "amount": -5
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": -5
                     }
                 ]
             },
@@ -4574,13 +4188,6 @@
                         "mutual": false,
                         "values": ["platonic", "respect"],
                         "amount": 5
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": -5
                     },
                     {
                         "cats_to": ["patrol"],
@@ -4611,18 +4218,10 @@
                 "relationships": [
                     {
                         "cats_to": ["s_c"],
-                        "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["platonic", "respect"],
                         "amount": 5
-                    },
-                    {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": -5
                     },
                     {
                         "cats_to": ["s_c"],
@@ -4646,13 +4245,6 @@
                         "mutual": false,
                         "values": ["platonic", "respect"],
                         "amount": -5
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": 5
                     },
                     {
                         "cats_to": ["patrol"],
@@ -4686,18 +4278,10 @@
                 "relationships": [
                     {
                         "cats_to": ["s_c"],
-                        "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["platonic", "respect"],
                         "amount": -5
-                    },
-                    {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": 5
                     },
                     {
                         "cats_to": ["s_c"],
@@ -4732,13 +4316,6 @@
                         "mutual": false,
                         "values": ["platonic", "respect"],
                         "amount": -5
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": 5
                     },
                     {
                         "cats_to": ["patrol"],
@@ -4784,18 +4361,10 @@
                 "relationships": [
                     {
                         "cats_to": ["s_c"],
-                        "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["platonic", "respect"],
                         "amount": -5
-                    },
-                    {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": 5
                     },
                     {
                         "cats_to": ["s_c"],
@@ -5126,18 +4695,10 @@
                 "relationships": [
                     {
                         "cats_to": ["s_c"],
-                        "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["platonic", "respect"],
                         "amount": 5
-                    },
-                    {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": -5
                     },
                     {
                         "cats_to": ["s_c"],
@@ -5161,13 +4722,6 @@
                         "mutual": false,
                         "values": ["platonic", "respect"],
                         "amount": -5
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": 5
                     },
                     {
                         "cats_to": ["patrol"],
@@ -5201,18 +4755,10 @@
                 "relationships": [
                     {
                         "cats_to": ["s_c"],
-                        "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["platonic", "respect"],
                         "amount": -5
-                    },
-                    {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": 5
                     },
                     {
                         "cats_to": ["s_c"],
@@ -5247,13 +4793,6 @@
                         "mutual": false,
                         "values": ["platonic", "respect"],
                         "amount": -5
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": 5
                     },
                     {
                         "cats_to": ["patrol"],
@@ -5299,18 +4838,10 @@
                 "relationships": [
                     {
                         "cats_to": ["s_c"],
-                        "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["platonic", "respect"],
                         "amount": -5
-                    },
-                    {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": 5
                     },
                     {
                         "cats_to": ["s_c"],
@@ -5417,13 +4948,6 @@
                         "mutual": false,
                         "values": ["dislike"],
                         "amount": -5
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": -5
                     }
                 ]
             },
@@ -5450,18 +4974,10 @@
                 "relationships": [
                     {
                         "cats_to": ["s_c"],
-                        "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["platonic", "respect"],
                         "amount": 5
-                    },
-                    {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": -5
                     },
                     {
                         "cats_to": ["s_c"],
@@ -5485,13 +5001,6 @@
                         "mutual": false,
                         "values": ["platonic", "respect"],
                         "amount": -5
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": 5
                     },
                     {
                         "cats_to": ["patrol"],
@@ -5524,18 +5033,10 @@
                 "relationships": [
                     {
                         "cats_to": ["s_c"],
-                        "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["platonic", "respect"],
                         "amount": -5
-                    },
-                    {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["dislike"],
-                        "amount": 5
                     },
                     {
                         "cats_to": ["s_c"],
@@ -5558,11 +5059,6 @@
                         "scars": ["LEGBITE"]
                     }
                 ],
-                "history_text": {
-                    "scar": "m_c carries a scar from a fight with a gray fox.",
-                    "reg_death": "m_c died from a gray fox bite.",
-                    "lead_death": "died from a gray fox bite"
-                },
                 "history_text": {
                     "scar": "m_c carries a scar from a fight with a gray fox.",
                     "reg_death": "m_c died from a gray fox bite.",

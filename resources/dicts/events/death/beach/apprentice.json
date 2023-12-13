@@ -89,10 +89,7 @@
         "camp": "any",
         "tags": [
             "Newleaf",
-            "Greenleaf",
-            "Leaf-fall",
-            "other_cat",
-            "other_cat_mentor"
+            "Greenleaf"
         ],
         "death_text": "m_c knew {PRONOUN/m_c/subject} made a mistake, as {PRONOUN/m_c/subject} felt {PRONOUN/m_c/poss} last bits of strength slip away from {PRONOUN/m_c/object} and {PRONOUN/m_c/poss} heart stopped beating. {PRONOUN/m_c/poss/CAP} body only discovered days later, r_c wailing at the shriveled body of {PRONOUN/r_c/poss} apprentice, who succumbed to heat and dehydration.",
         "history_text": {
