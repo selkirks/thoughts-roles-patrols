@@ -56,6 +56,7 @@ def get_alive_clan_queens(living_cats):
                 queen_dict[parents[1].ID] = [cat]
                 living_kits.remove(cat)
     return queen_dict, living_kits
+
 def get_alive_kits(Cat):
     """
     returns a list of IDs for all living kittens in the clan
@@ -749,7 +750,6 @@ def process_text(text, cat_dict, raise_exception=False):
                                                               text)
 
     name_patterns = [r'(?<!\{)' + re.escape(l) + r'(?!\})' for l in cat_dict]
-
     adjust_text = re.sub("|".join(name_patterns), lambda x: name_repl(x, cat_dict), adjust_text)
     return adjust_text
 

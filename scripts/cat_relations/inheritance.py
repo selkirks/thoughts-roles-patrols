@@ -233,9 +233,10 @@ class Inheritance():
 
     def init_faded_grandkits(self):
         """This must occur after all kits, faded and otherwise, have been gathered. """
-
         for inter_id in self.get_children():
             inter_cat = self.cat.fetch_cat(inter_id)
+            if not inter_cat:
+                continue
             for inter_grandkit_id in inter_cat.faded_offspring:
                 inter_grandkit = self.cat.fetch_cat(inter_grandkit_id)
                 self.init_grand_kits(inter_grandkit_id, inter_grandkit)

@@ -502,5 +502,3 @@ def version_convert(version_info):
         # freshkill start for older clans
         add_prey = game.clan.freshkill_pile.amount_food_needed() * 2
         game.clan.freshkill_pile.add_freshkill(add_prey)
-
-

@@ -437,6 +437,7 @@
             {
                 "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and in a moment that embarrasses {PRONOUN/s_c/object} deeply, the rest of the patrol have to rescue {PRONOUN/s_c/object} from the red vixen.",
                 "exp": 0,
+                "weight": 10,
                 "stat_skill": ["FIGHTER, 1"],
                 "injury": [
                     {
@@ -498,34 +499,8 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "patrol", "r_c"],
-                        "cats_from": ["clan", "clan", "patrol"],
-                        "mutual": false,
-                        "values": ["respect", "trust"],
-                        "amount": -5
-                    }
-                ]
-            },
-            {
-                "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and the red vixen manages to sink her teeth into {PRONOUN/s_c/object}. The patrol rallies around s_c, but they have to give up on the fight.",
-                "exp": 0,
-                "weight": 10,
-                "injury": [
-                    {
-                        "cats": ["r_c"],
-                        "injuries": ["big_bite_injury"],
-                        "scars": ["THREE"]
-                    }
-                ],
-                "history_text": {
-                    "scar": "m_c carries a scar from a fight with a red vixen.",
-                    "reg_death": "m_c fell in battle with a red fox.",
-                    "lead_death": "died while fighting a red vixen"
-                },
-                "relationships": [
-                    {
-                        "cats_to": ["r_c", "patrol", "r_c"],
-                        "cats_from": ["clan", "clan", "patrol"],
+                        "cats_to": ["r_c", "patrol"],
+                        "cats_from": ["clan", "patrol"],
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": -5

@@ -623,7 +623,7 @@
                 "weight": 5,
                 "new_cat": [
                     ["status:medicine cat", "loner", "age:has_kits"],
-                    ["litter", "parent:0", "status:kitten"]
+                    ["litter", "parent:0", "status:kitten", "backstory:outsider_roots2"]
                 ],
                 "relationships": [
                     {
@@ -702,7 +702,7 @@
                 "weight": 5,
                 "new_cat": [
                     ["status:medicine cat", "loner", "age:has_kits"],
-                    ["litter", "parent:0", "status:kitten"]
+                    ["litter", "parent:0", "status:kitten", "backstory:outsider_roots2"]
                 ],
                 "relationships": [
                     {

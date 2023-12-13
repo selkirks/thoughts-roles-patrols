@@ -1,4 +1,4 @@
-# Disorders and Disabilities Clangen Mod 
+# Disorders and Disabilities Clangen Mod
 
 ### [Discord Server](https://discord.gg/ugXYkMZJCd)
 
@@ -11,7 +11,7 @@ We do not give support to developer builds!
 - [macOS](https://nightly.link/Sparrow-Moon/clangen-disabilities-and-disorders-mod/workflows/build/development/Clangen_macOS64.dmg.zip)
 - [Linux](https://nightly.link/Sparrow-Moon/clangen-disabilities-and-disorders-mod/workflows/build/development/Clangen_Linux64_glibc2.35%2B.tar.xz.zip)
 
-Alternatively, you can see [All Supported Systems](https://nightly.link/Sparrow-Moon/clangen-disabilities-and-disorders-mod/workflows/build/development)
+Alternatively, you can see [All Supported Systems](https://nightly.link/Thlumyn/clangen/workflows/build/development)
 
 ## Running from source
 ### Requirements

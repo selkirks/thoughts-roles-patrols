@@ -529,7 +529,6 @@ class PatrolScreen(Screens):
                             self.patrol_obj.get_patrol_art(), (600, 600))
                     )
 
-
         # Prepare Intro Text
         # adjusting text for solo patrols
         #intro_text = adjust_patrol_text(intro_text, self.patrol_obj)

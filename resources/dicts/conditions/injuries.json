@@ -867,7 +867,8 @@
             "poppy",
             "moss",
             "dandelion",
-            "poppy"
+            "poppy",
+            "dandelion"
         ]
     },
 
@@ -895,6 +896,8 @@
             "blood loss"
         ],
         "cause_permanent": [
+        ],
+        "herbs": [
         ],
         "herbs": [
             "oak_leaves",

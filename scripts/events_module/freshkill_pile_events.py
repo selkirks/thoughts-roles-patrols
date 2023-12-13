@@ -82,6 +82,7 @@ class Freshkill_Events():
             if cat.status == "leader":
                 game.clan.leader_lives -= 1
 
+
             cat.die()
             History.add_death(cat, history_text)
 
@@ -171,7 +172,7 @@ class Freshkill_Events():
         if trigger_factor < 1.1:
             trigger_factor = 1.1
 
-       # check if amount of the freshkill pile is too big and a event will be triggered
+        # check if amount of the freshkill pile is too big and a event will be triggered
         needed_amount = freshkill_pile.amount_food_needed()
         trigger_value = round(trigger_factor * needed_amount, 2)
         print(f" -- FRESHKILL: trigger amount {trigger_value}. current amount (after feed, before moon gathering) {freshkill_pile.total_amount}")

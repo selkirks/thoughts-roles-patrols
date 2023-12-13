@@ -45,7 +45,6 @@ class TestPersonalityCompatibility(unittest.TestCase):
         #self.assertIsNone(get_personality_compatibility(cat1,cat2))
         #self.assertIsNone(get_personality_compatibility(cat2,cat1))
 
-
     def test_some_positive_combinations(self):
         # TODO: the one who updated the personality should update the tests!!
         pass
@@ -332,4 +331,3 @@ class TestGetQueens(unittest.TestCase):
         # then
         living_cats = [self.test_cat1, self.test_cat2, self.test_cat3, self.test_cat4, self.test_cat5, self.test_cat6]
         self.assertEqual([self.test_cat2.ID], list(get_alive_clan_queens(living_cats)[0].keys()))
-

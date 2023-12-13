@@ -48,6 +48,10 @@ if not getattr(sys, 'frozen', False):
                   Once the menu opens, click the link below "Install from requirements file".
                   Then, select the file "requirements.txt" in the clangen folder.
                   """)
+                  Please press "Tools" -> "Manage Packages"
+                  Once the menu opens, click the link below "Install from requirements file".
+                  Then, select the file "requirements.txt" in the clangen folder.
+                  """)
         else:
             print("""You are missing some requirements to run clangen!
                   Please run the following command in your terminal to install them:

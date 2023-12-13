@@ -15,7 +15,7 @@ from scripts.clan import HERBS
 from scripts.utility import (
     change_clan_relations,
     change_clan_reputation,
-    change_relationship_values, create_new_cat
+    change_relationship_values, create_new_cat,
 )
 from scripts.game_structure.game_essentials import game
 from scripts.cat.skills import SkillPath
@@ -821,12 +821,10 @@ class PatrolOutcome():
         if game.clan.game_mode == "expanded" and highest_hunter_tier:
             total_amount = int(total_amount * (HUNTER_BONUS[str(highest_hunter_tier)] / 20 + 1))
 
-
-
         results = ""
         if total_amount > 0:
             amount_text = "medium"
-            if total_amount < game.clan.freshkill_pile.amount_food_needed() / 7:
+            if total_amount < game.clan.freshkill_pile.amount_food_needed() / 5:
                 amount_text = "very small"
             elif total_amount < game.clan.freshkill_pile.amount_food_needed() / 2.5:
                 amount_text = "small"
@@ -1052,7 +1050,7 @@ class PatrolOutcome():
             outside = True
             status = cat_type
             new_name = False
-            thought = "Is wondering about the new cats they just met."
+            thought = "Is wondering about the new cats they just met"
 
         # IS THE CAT DEAD?
         alive = True

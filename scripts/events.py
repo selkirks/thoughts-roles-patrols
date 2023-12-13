@@ -92,7 +92,7 @@ class Events:
             # handle freshkill pile events, after feeding
             # first 5 moons there will not be any freshkill pile event
             if game.clan.age >= 5:
-               Freshkill_Events.handle_amount_freshkill_pile(game.clan.freshkill_pile, relevant_cats)
+                Freshkill_Events.handle_amount_freshkill_pile(game.clan.freshkill_pile, relevant_cats)
             self.get_moon_freshkill()
 			# make a notification if the Clan has not enough prey
             if FRESHKILL_EVENT_ACTIVE and not game.clan.freshkill_pile.clan_has_enough_food():

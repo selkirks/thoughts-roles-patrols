@@ -2104,7 +2104,7 @@ class Cat():
         if is_former_mentor and not game.clan.clan_settings['romantic with former mentor']:
             return False
 
-        #current mentor
+		#current mentor
         if other_cat.ID in self.apprentice or self.ID in other_cat.apprentice:
             return False
 
@@ -2470,11 +2470,6 @@ class Cat():
 
         if mediator.status == "mediator apprentice":
             mediator.experience += max(randint(1, 6), 1)
-
-        no_romantic_mentor = False
-        if not game.clan.clan_settings['romantic with former mentor']:
-            if cat2.ID in cat1.former_apprentices or cat1.ID in cat2.former_apprentices:
-                no_romantic_mentor = True
 
         # determine the traits to effect
         # Are they mates?

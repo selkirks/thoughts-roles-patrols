@@ -113,7 +113,7 @@ class Sprites():
             'whitepatches', 'eyes', 'eyes2', 'lazyeyes', 'skin', 'scars', 'missingscars',
             'collars', 'bellcollars', 'bowcollars', 'nyloncollars',
             'bengalcolours', 'marbledcolours', 'rosettecolours', 'smokecolours', 'tickedcolours',
-            'mackerelcolours', 'classiccolours', 'sokokecolours', 'agouticolours', 'singlestripecolours', 'maskedcolours',
+            'mackerelcolours', 'classiccolours', 'sokokecolours', 'agouticolours', 'singlestripecolours','maskedcolours',
             'shadersnewwhite', 'lineartdead', 'tortiepatchesmasks',
             'medcatherbs', 'lineartdf', 'lightingnew', 'fademask',
             'fadestarclan', 'fadedarkforest', 'disabilityscars', 'disabilityaccs'
