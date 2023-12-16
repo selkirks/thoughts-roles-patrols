@@ -193,7 +193,7 @@ class Cat():
         self.parent2 = parent2
 
         self.adoptive_parents = []
-        self.genotype = Genotype()
+        self.genotype = Genotype(game.config['genetic_chances'])
         if genotype:
             self.genotype.fromJSON(genotype)
         elif parent1 or parent2:
@@ -205,19 +205,19 @@ class Cat():
                 except:
                     self.genotype.Generator()
 
-            if(randint(1, 100) == 1):
+            if(randint(1, game.config['genetic_chances']['intersex']) == 1):
                 self.genotype.gender = "intersex"
                 if(randint(1, 25) == 1 and 'Y' in self.genotype.sexgene):
                     self.genotype.gender = 'molly'
         elif kittypet or status == 'kittypet':
             self.genotype.AltGenerator(special=self.gender)
-            if(randint(1, 100) == 1):
+            if(randint(1, game.config['genetic_chances']['intersex']) == 1):
                 self.genotype.gender = "intersex"
                 if(randint(1, 25) == 1 and 'Y' in self.genotype.sexgene):
                     self.genotype.gender = 'molly'
         else:
             self.genotype.Generator(special=self.gender)
-            if(randint(1, 100) == 1):
+            if(randint(1, game.config['genetic_chances']['intersex']) == 1):
                 self.genotype.gender = "intersex"
                 if(randint(1, 25) == 1 and 'Y' in self.genotype.sexgene):
                     self.genotype.gender = 'molly'
@@ -278,7 +278,7 @@ class Cat():
             }
         }
 
-        vitiligo = ['PHANTOM', 'POWDER', 'BLEACHED', 'VITILIGO', 'VITILIGOTWO', 'SMOKEY']
+        vitiligo = ['MOON', 'PHANTOM', 'POWDER', 'BLEACHED', 'VITILIGO', 'VITILIGOTWO', 'SMOKEY']
 
         #white patterns
         

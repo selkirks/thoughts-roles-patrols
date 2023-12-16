@@ -4,7 +4,9 @@ from operator import xor
 
 
 class Genotype:
-    def __init__(self, spec=None):
+    def __init__(self, odds, spec=None):
+        self.odds = odds
+
         self.furLength = ""
         self.eumelanin = ["", ""]
         self.sexgene = ["", ""]
@@ -15,7 +17,7 @@ class Genotype:
             self.chimera = False
             self.chimerapattern = None
         else:
-            a = randint(1, 1000)
+            a = randint(1, odds['chimera'])
             if a == 1:
                 self.chimera = True
             else:
@@ -320,7 +322,7 @@ class Genotype:
         if self.chimera:
             self.chimerageno.Generator()
         
-        a = randint(1, 100)
+        a = randint(1, self.odds['vitiligo'])
         if a == 1:
             self.vitiligo = True
 
@@ -349,7 +351,7 @@ class Genotype:
 
         if (random() < 0.5 and special != "fem") or special == "masc":
             self.sexgene = ["", "Y"]
-            if randint(1, 1000) == 1:
+            if randint(1, self.odds['XXX/XXY']) == 1:
                 self.sexgene = ["", "", "Y"]
             
                 for i in range(2):
@@ -364,7 +366,7 @@ class Genotype:
                     self.sexgene[0] = "o"
             self.gender = "tom"
         else:
-            if randint(1, 1000) == 1:
+            if randint(1, self.odds['XXX/XXY']) == 1:
                 self.sexgene = ["", "", ""]
                 for i in range(3):
                     if randint(1, 4) == 1:
@@ -378,7 +380,7 @@ class Genotype:
                     else:
                         self.sexgene[i] = "o"
             self.gender = "molly"
-        if 'o' in self.sexgene and 'O' in self.sexgene and randint(1, 250)==1:
+        if 'o' in self.sexgene and 'O' in self.sexgene and randint(1, self.odds['brindled_bicolour'])==1:
             self.brindledbi = True 
         
         if(random() < 0.05):
@@ -878,7 +880,7 @@ class Genotype:
     def AltGenerator(self, special=None):
         if self.chimera:
             self.chimerageno.AltGenerator()
-        a = randint(1, 100)
+        a = randint(1, self.odds['vitiligo'])
         if a == 1:
             self.vitiligo = True
         # FUR LENGTH
@@ -906,7 +908,7 @@ class Genotype:
 
         if (randint(1, 2) == 1 and special != "fem") or special == "masc":
             self.sexgene = ["", "Y"]
-            if randint(1, 1000) == 1:
+            if randint(1, self.odds['XXX/XXY']) == 1:
                 self.sexgene = ["", "", "Y"]
             
                 for i in range(2):
@@ -920,7 +922,7 @@ class Genotype:
                 self.sexgene[0] = "o"
             self.gender = "tom"
         else:
-            if randint(1, 1000) == 1:
+            if randint(1, self.odds['XXX/XXY']) == 1:
                 self.sexgene = ["", "", ""]
                 for i in range(3):
                     if randint(1, 2) == 1:
@@ -934,7 +936,7 @@ class Genotype:
                     else:
                         self.sexgene[i] = "o"
             self.gender = "molly"
-        if 'o' in self.sexgene and 'O' in self.sexgene and randint(1, 250)==1:
+        if 'o' in self.sexgene and 'O' in self.sexgene and randint(1, self.odds['brindled_bicolour'])==1:
             self.brindledbi = True 
 
         if(random() < 0.05):
@@ -1449,11 +1451,11 @@ class Genotype:
             self.whitegrade = par2.whitegrade
 
         if (par1.vitiligo and par2.vitiligo):
-            a = randint(1, 25)
+            a = randint(1, round((self.odds['vitiligo']/4)))
         elif(par1.vitiligo or par2.vitiligo):
-            a = randint(1, 50)
+            a = randint(1, round((self.odds['vitiligo']/2)))
         else:
-            a = randint(1, 100)
+            a = randint(1, self.odds['vitiligo'])
 
         if(a == 1):
             self.vitiligo = True    
@@ -1517,7 +1519,7 @@ class Genotype:
             pap = par2.sexgene
         
 
-        if randint(1, 250) == 1:
+        if randint(1, self.odds['XXX/XXY']) == 1:
             self.sexgene = ["", "", ""]
             if randint(1, 2) == 1:
                 self.gender = 'tom'
@@ -1563,7 +1565,7 @@ class Genotype:
                 self.gender = "molly"
         
         
-        if 'o' in self.sexgene and 'O' in self.sexgene and randint(1, 250)==1:
+        if 'o' in self.sexgene and 'O' in self.sexgene and randint(1, self.odds['brindled_bicolour'])==1:
             self.brindledbi = True 
         
         if(par1.specialred and random() < 0.2):
