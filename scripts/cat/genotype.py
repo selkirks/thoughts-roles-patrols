@@ -24,7 +24,7 @@ class Genotype:
                 self.chimera = False
             self.chimerapattern = None
         if self.chimera:
-            self.chimerageno = Genotype('chimera')
+            self.chimerageno = Genotype('chimera', odds)
         else:
             self.chimerageno = None
         self.gender = ""
@@ -736,7 +736,7 @@ class Genotype:
             self.wideband += choice(genes)
             self.wbsum += int(self.wideband[i])
 
-        if self.wbsum < 7:
+        if self.wbsum < 6:
             self.wbtype = wbtypes[0]
         elif self.wbsum < 10:
             self.wbtype = wbtypes[1]
@@ -1294,7 +1294,7 @@ class Genotype:
             self.wideband += choice(genes)
             self.wbsum += int(self.wideband[i])
 
-        if self.wbsum < 7:
+        if self.wbsum < 6:
             self.wbtype = wbtypes[0]
         elif self.wbsum < 10:
             self.wbtype = wbtypes[1]
@@ -1929,7 +1929,7 @@ class Genotype:
         for i in self.pigmentation:
             self.pigsum += int(i)
         
-        if self.wbsum < 7:
+        if self.wbsum < 6:
             self.wbtype = wbtypes[0]
         elif self.wbsum < 10:
             self.wbtype = wbtypes[1]
