@@ -681,7 +681,7 @@ class Pregnancy_Events():
         blood_parent = None
         blood_parent2 = None
          
-        par2geno = Genotype()
+        par2geno = Genotype(game.config['genetics_chances'])
         if cat and 'Y' in cat.genotype.sexgene:
             par2geno.Generator('fem')
         elif cat:

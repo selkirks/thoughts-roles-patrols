@@ -1132,14 +1132,7 @@ class Cat():
     def describe_cat(self, short=False):
         """ Generates a string describing the cat's appearance and gender. Mainly used for generating
         the allegiances. If short is true, it will generate a very short one, with the minimal amount of information. """
-        output = Pelt.describe_appearance(self, short)
-        # Add "a" or "an"
-        if output[0].lower() in "aiou":
-            output = f"an {output}"
-        else:
-            output = f"a {output}"
-
-        return output
+        return Pelt.describe_appearance(self, short)
 
     def describe_eyes(self):
         if(self.genotype.lefteye == self.genotype.righteye):
