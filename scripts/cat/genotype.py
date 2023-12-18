@@ -24,7 +24,7 @@ class Genotype:
                 self.chimera = False
             self.chimerapattern = None
         if self.chimera:
-            self.chimerageno = Genotype('chimera', odds)
+            self.chimerageno = Genotype(self.odds, 'chimera')
         else:
             self.chimerageno = None
         self.gender = ""
@@ -131,7 +131,7 @@ class Genotype:
             self.chimera = jsonstring['chimera']
             self.chimerapattern = jsonstring['chimerapattern']
             if(jsonstring["chimerageno"]):
-                self.chimerageno = Genotype('chimera')
+                self.chimerageno = Genotype(self.odds, 'chimera')
                 self.chimerageno.fromJSON(jsonstring["chimerageno"])
             else:
                 self.chimerageno = None    

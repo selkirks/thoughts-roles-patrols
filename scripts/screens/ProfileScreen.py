@@ -6,6 +6,7 @@ from random import choice
 import pygame
 
 from ..cat.history import History
+from ..cat.phenotype import Phenotype
 from ..housekeeping.datadir import get_save_dir
 from ..game_structure.windows import ChangeCatName, SpecifyCatGender, KillCat, ChangeCatToggles
 
@@ -2014,7 +2015,8 @@ class ProfileScreen(Screens):
 
                 self.genelist = str(self.the_cat.genotype.ShowGenes())
                 if(self.the_cat.genotype.chimera):
-                    self.genelist += "\n\n" + str(self.the_cat.genotype.chimerageno.ShowGenes())
+                    chimpheno = Phenotype(self.the_cat.genotype.chimerageno)
+                    self.genelist += "\n\n" + str(chimpheno.PhenotypeOutput(self.the_cat.genotype.chimerageno.gender)) + "\n" + str(self.the_cat.genotype.chimerageno.ShowGenes())
 
                 self.genetic_text_box = UITextBoxTweaked(self.genelist,
                                               scale(pygame.Rect((200, 946), (1200, 298))),
