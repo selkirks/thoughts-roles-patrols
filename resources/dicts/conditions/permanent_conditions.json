@@ -1931,10 +1931,10 @@
         ],
         "herbs": []
     },
-    "bug brained": {
+    "chattering tongue": {
         "severity": "minor",
         "congenital": "always",
-        "moons_until": 6,
+        "moons_until": 5,
         "mortality": {
             "newborn": 0,
             "kitten": 0,

@@ -209,5 +209,10 @@
 		"Even if m_c's eye seems a little bit different, it doesn't really bother {PRONOUN/m_c/object}.",
 		"m_c doesn't understand the fuss that everyone keeps making about {PRONOUN/m_c/poss} eye. {PRONOUN/m_c/poss/CAP} {VERB/m_c/think/thinks} it makes {PRONOUN/m_c/object} look cool.",
 		"Despite been as healthy as any other kitten in the Nursery, m_c's been struggling to navigate and is dismayed to hear that {PRONOUN/m_c/poss} eyesight might never be as clear as {PRONOUN/m_c/poss} clanmates."
-	]
+	],
+    "chattering tongue": [
+        "m_c's parent brings m_c to r_c for {PRONOUN/m_c/poss} uncontrolable movement. r_c says that {PRONOUN/m_c/subject} have a chattering tongue.",
+        "As m_c grows up, {PRONOUN/m_c/subject} start having uncontrolable movements.",
+        "m_c tics and is impulsive. {PRONOUN/m_c/subject/CAP} might have a chattering tongue."
+    ]
 }
