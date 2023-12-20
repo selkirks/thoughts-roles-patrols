@@ -745,21 +745,21 @@ class Phenotype():
             
             if (genes.agouti[0] != "a" and genes.ext[0] != "Eg") or (genes.ext[0] not in ['Eg', 'E'] and moons > 0):
                 if genes.silver[0] == "I" or genes.brindledbi or (moons < 3 and genes.karp[0] == "K"):
-                    if genes.sunshine[0] == "sg":
+                    if genes.sunshine[0] == "sg" or genes.ext[0] == 'ec':
                         colour =  colour + "silver" + "chinchilla"
                     elif genes.sunshine[0] == "sh" or genes.sunshine[0] == "fg" or (genes.ext[0] == 'ea' and moons > 3):
                         colour =  colour + "silver" + "shaded"
                     else:
                         colour =  colour + "silver" + genes.wbtype
                 elif genes.pointgene[0] != "C" or genes.agouti[0] == "Apb":
-                    if genes.sunshine[0] == "sg":
+                    if genes.sunshine[0] == "sg" or genes.ext[0] == 'ec':
                         colour =  colour + "low" + "chinchilla"
                     elif genes.sunshine[0] == "sh" or genes.sunshine[0] == "fg" or (genes.ext[0] == 'ea' and moons > 3):
                         colour =  colour + "low" + "shaded"
                     else:
                         colour = colour + "low" + genes.wbtype
                 else:
-                    if genes.sunshine[0] == "sg":
+                    if genes.sunshine[0] == "sg" or genes.ext[0] == 'ec':
                         colour =  colour + genes.ruftype + "chinchilla"
                     elif genes.sunshine[0] == "sh" or genes.sunshine[0] == "fg" or (genes.ext[0] == 'ea' and moons > 3):
                         colour =  colour + genes.ruftype + "shaded"

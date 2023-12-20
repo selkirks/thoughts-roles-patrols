@@ -1824,7 +1824,7 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
                             whichmain.blit(pointbase, (0, 0))        
                             
                     else:
-                        colour = None
+                        colour = whichcolour
                         coloursurface = None
                         stripebase = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
                         if(whichcolour == "black" and genotype.pointgene == ["cb", "cb"] and cat_sprite != "20"):
