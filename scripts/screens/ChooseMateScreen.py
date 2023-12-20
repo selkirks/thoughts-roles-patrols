@@ -970,7 +970,8 @@ class ChooseMateScreen(Screens):
                            age_restriction=False, ignore_no_mates=True)
                        and i.ID not in self.the_cat.mate
                        and (not self.single_only or not i.mate)
-                       and ('infertility' not in i.permanent_condition and 'infertility' not in self.the_cat.permanent_condition)
+                       and (not self.have_kits_only 
+                            or ('infertility' not in i.permanent_condition and 'infertility' not in self.the_cat.permanent_condition))
                        and (not self.have_kits_only 
                             or game.clan.clan_settings["same sex birth"]
                             or xor('Y' in i.genotype.sexgene, 'Y' in self.the_cat.genotype.sexgene))]
