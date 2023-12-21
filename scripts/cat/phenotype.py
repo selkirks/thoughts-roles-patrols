@@ -404,7 +404,7 @@ class Phenotype():
         if(self.tailtype != ''):
             self.tailtype += "tail"
 
-    def PhenotypeOutput(self, gender, pattern=None):
+    def PhenotypeOutput(self, gender=None, pattern=None):
         self.FurtypeFinder()
         self.MainColourFinder()
         self.WhiteFinder()
@@ -459,7 +459,9 @@ class Phenotype():
 
         withword = " with " + withword + eyes.lower()
 
-        if 'tom' in gender:
+        if not gender:
+            gendera = ''
+        elif 'tom' in gender:
             gendera = "tom"
         elif 'molly' in gender:
             gendera = "molly"
@@ -469,8 +471,13 @@ class Phenotype():
         if self.genotype.chimera:
             gendera = "chimera " + gendera
         
-        return self.length + " " + self.highwhite + self.fade + self.colour + " " + self.silvergold + self.tabtype + self.tabby + self.tortie + self.point + self.lowwhite + self.karpati + gendera + withword
-    
+        outputs = self.length + " " + self.highwhite + self.fade + self.colour + " " + self.silvergold + self.tabtype + self.tabby + self.tortie + self.point + self.lowwhite + self.karpati + gendera + withword
+        
+        while "  " in outputs:
+            outputs = outputs.replace("  ", " ")
+
+        return outputs
+
     def GetTabbySprite(self, special = None):
         pattern = ""
 

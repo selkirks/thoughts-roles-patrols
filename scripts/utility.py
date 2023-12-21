@@ -2138,18 +2138,22 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
             nose2 = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
             nose2.blit(whitesprite, (0, 0))
 
+            whitesprite = nose2
+
             if genotype.white_pattern:
                 if 'dorsal1' in genotype.white_pattern:
-                    nose2.blit(sprites.sprites['dorsal1' + cat_sprite], (0, 0))
+                    whitesprite.blit(sprites.sprites['dorsal1' + cat_sprite], (0, 0))
                 elif 'dorsal2' in genotype.white_pattern:
-                    nose2.blit(sprites.sprites['dorsal2' + cat_sprite], (0, 0))
+                    whitesprite.blit(sprites.sprites['dorsal2' + cat_sprite], (0, 0))
             if(genotype.vitiligo):
                 if not genotype.white_pattern:
-                    nose2.white_pattern = [choice(vitiligo)]
+                    whitesprite.white_pattern = [choice(vitiligo)]
                 else:
                     for x in vitiligo:
                         if x in genotype.white_pattern:
-                            nose2.blit(sprites.sprites[x + cat_sprite], (0, 0))
+                            whitesprite.blit(sprites.sprites[x + cat_sprite], (0, 0))
+            nose2 = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
+            nose2.blit(whitesprite, (0, 0))
             nose2.blit(nose, (0, 0), special_flags=pygame.BLEND_RGBA_MIN)
 
             whitesprite.blit(nose2, (0, 0))
