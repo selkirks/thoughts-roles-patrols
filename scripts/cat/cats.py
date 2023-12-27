@@ -291,7 +291,7 @@ class Cat():
                 white_pattern = []
                 if(vit):
                     white_pattern.append(choice(vitiligo))
-                if "wt" in KIT:
+                if KIT[0] == 'wt' or KIT[1] == 'wt':
                     if KIT[1] not in ['ws', 'wt'] and KITgrade < 3:
                         white_pattern.append("dorsal1")
                     elif KIT[1] not in ['ws', 'wt'] and KITgrade < 5:
@@ -425,7 +425,6 @@ class Cat():
 
                     elif KITgrade == 1:
                         while len(white_pattern) < 4:
-                            white_pattern = []
                             #chest
                             white_pattern.append('underbelly1')
 
@@ -451,7 +450,6 @@ class Cat():
 
                             clean_white()
                     elif KITgrade == 2:
-                        white_pattern = []
                         #chest
                         white_pattern.append(choice(['underbelly1', 'mask n mantle']))
 

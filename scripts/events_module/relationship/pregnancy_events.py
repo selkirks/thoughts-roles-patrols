@@ -477,6 +477,10 @@ class Pregnancy_Events():
         print_event = print_event.replace("{insert}", insert)
         
         print_event = event_text_adjust(Cat, print_event, cat, other_cat, clan=clan)
+
+        for kit in kits:
+            involved_cats.append(kit.ID)
+
         # display event
         game.cur_events_list.append(Single_Event(print_event, ["health", "birth_death"], involved_cats))
 

@@ -157,7 +157,7 @@ class Phenotype():
         
         if(self.genotype.white[0] == "wg"):
             self.specwhite = "white gloves"
-        elif("wt" in self.genotype.white):
+        elif(self.genotype.white[0] == 'wt' or self.genotype.white[1] == 'wt'):
             self.specwhite = "a white dorsal stripe"
             
     def PointFinder(self):
@@ -441,7 +441,7 @@ class Phenotype():
         if(self.genotype.extraeye):
             eyes += " and sectoral heterochromia"
 
-        withword = ""
+        withword = self.specwhite
         if (self.eartype !="" or self.tailtype!="" or self.pawtype!="" or furtype!="" or self.vitiligo != ""):
             withword += ", " + self.specwhite + ", " + self.vitiligo + ", " + furtype + ", " + self.eartype + ", " + self.tailtype + ", " + self.pawtype
             while(withword[0] == ","):
