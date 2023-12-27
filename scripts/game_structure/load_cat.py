@@ -64,7 +64,6 @@ def json_load():
                         parent1=cat["parent1"],
                         parent2=cat["parent2"],
                         moons=cat["moons"],
-                        eye_colour=cat["eye_colour"],
                         genotype=cat["genotype"],
                         white_patterns=cat["white_pattern"],
                         chim_white=cat["chim_white"] if 'chim_white' in cat else None,
@@ -79,29 +78,11 @@ def json_load():
                         parent1=cat["parent1"],
                         parent2=cat["parent2"],
                         moons=cat["moons"],
-                        eye_colour=cat["eye_colour"],
                         loading_cat=True)
-
-            
-            if cat["eye_colour"] == "BLUE2":
-                cat["eye_colour"] = "COBALT"
-            if cat["eye_colour"] in ["BLUEYELLOW", "BLUEGREEN"]:
-                if cat["eye_colour"] == "BLUEYELLOW":
-                    cat["eye_colour2"] = "YELLOW"
-                elif cat["eye_colour"] == "BLUEGREEN":
-                    cat["eye_colour2"] = "GREEN"
-                cat["eye_colour"] = "BLUE"
-            if "eye_colour2" in cat:
-                if cat["eye_colour2"] == "BLUE2":
-                    cat["eye_colour2"] = "COBALT"
                         
             new_cat.pelt = Pelt(
                 new_cat.genotype,
                 new_cat.phenotype,
-                name=cat["pelt_name"],
-                colour=cat["pelt_color"],
-                eye_color=cat["eye_colour"],
-                eye_colour2=cat["eye_colour2"] if "eye_colour2" in cat else None,
                 paralyzed=cat["paralyzed"],
                 kitten_sprite=cat["sprite_kitten"] if "sprite_kitten" in cat else cat["spirit_kitten"],
                 adol_sprite=cat["sprite_adolescent"] if "sprite_adolescent" in cat else cat["spirit_adolescent"],
@@ -109,16 +90,6 @@ def json_load():
                 senior_sprite=cat["sprite_senior"] if "sprite_senior" in cat else cat["spirit_elder"],
                 para_adult_sprite=cat["sprite_para_adult"] if "sprite_para_adult" in cat else None,
                 reverse=cat["reverse"],
-                vitiligo=cat["vitiligo"] if "vitiligo" in cat else None,
-                points=cat["points"] if "points" in cat else None,
-                white_patches_tint=cat["white_patches_tint"] if "white_patches_tint" in cat else "offwhite",
-                white_patches=cat["white_patches"],
-                tortiebase=cat["tortie_base"],
-                tortiecolour=cat["tortie_color"],
-                tortiepattern=cat["tortie_pattern"],
-                pattern=cat["pattern"],
-                skin=cat["skin"],
-                tint=cat["tint"] if "tint" in cat else "none",
                 scars=cat["scars"] if "scars" in cat else [],
                 accessory=cat["accessory"],
                 opacity=cat["opacity"] if "opacity" in cat else 100

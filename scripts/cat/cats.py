@@ -314,7 +314,6 @@ class Cat():
                         clean_white()
                     elif KITgrade == 2:
                         while len(white_pattern) == 0:
-                            white_pattern = []
                             #chest
                             white_pattern.append(choice(['chest tuft', 'locket', None, 'chest tuft', 'locket', None, 'bib']))
                             #belly
@@ -330,7 +329,6 @@ class Cat():
                         clean_white()
                     elif KITgrade == 3:
                         while len(white_pattern) < 4:
-                            white_pattern = []
                             #chest
                             white_pattern.append(choice(['chest', 'beard', 'chest', 'bib', None]))
 
@@ -361,7 +359,6 @@ class Cat():
                             clean_white()
                     elif KITgrade == 4:
                         while len(white_pattern) < 4:
-                            white_pattern = []
                             #chest
                             white_pattern.append(choice(['underbelly1', 'beard', 'chest', 'underbelly1']))
 
@@ -393,7 +390,6 @@ class Cat():
                             clean_white()
                     else:
                         while len(white_pattern) < 4:
-                            white_pattern = []
                             #chest
                             white_pattern.append('underbelly1')
 
@@ -3188,26 +3184,12 @@ class Cat():
                 "genotype": self.genotype.toJSON(),
                 "white_pattern" : self.genotype.white_pattern,
                 "chim_white" : self.genotype.chimerageno.white_pattern if self.genotype.chimerageno else "No",
-                "pelt_name": self.pelt.name,
-                "pelt_color": self.pelt.colour,
                 "sprite_kitten": self.pelt.cat_sprites['kitten'],
                 "sprite_adolescent": self.pelt.cat_sprites['adolescent'],
                 "sprite_adult": self.pelt.cat_sprites['adult'],
                 "sprite_senior": self.pelt.cat_sprites['senior'],
                 "sprite_para_adult": self.pelt.cat_sprites['para_adult'],
-                "eye_colour": self.pelt.eye_colour,
-                "eye_colour2": self.pelt.eye_colour2 if self.pelt.eye_colour2 else None,
                 "reverse": self.pelt.reverse,
-                "white_patches": self.pelt.white_patches,
-                "vitiligo": self.pelt.vitiligo,
-                "points": self.pelt.points,
-                "white_patches_tint": self.pelt.white_patches_tint,
-                "pattern": self.pelt.pattern,
-                "tortie_base": self.pelt.tortiebase,
-                "tortie_color": self.pelt.tortiecolour,
-                "tortie_pattern": self.pelt.tortiepattern,
-                "skin": self.pelt.skin,
-                "tint": self.pelt.tint,
                 "skill_dict": self.skills.get_skill_dict(),
                 "scars": self.pelt.scars if self.pelt.scars else [],
                 "accessory": self.pelt.accessory,

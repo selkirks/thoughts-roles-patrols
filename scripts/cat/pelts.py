@@ -175,19 +175,6 @@ class Pelt():
         self.tortiepattern = tortiepattern
         self.tortiecolour = tortiecolour
         self.vitiligo = vitiligo
-        if phenotype.length == "longhaired" and genotype.cornish[0] == "R" and genotype.sedesp[0] != "re" and 'brush' not in phenotype.furtype:    
-            self.length="long"
-        elif phenotype.length != 'hairless':
-            self.length="short"
-        else:
-            self.length="hairless"
-        self.points = points
-        self.accessory = accessory
-        self.paralyzed = paralyzed
-        self.opacity = opacity
-        self.scars = scars if isinstance(scars, list) else []
-        self.tint = tint
-        self.white_patches_tint = white_patches_tint
         self.cat_sprites =  {
             "kitten": kitten_sprite if kitten_sprite is not None else 0,
             "adolescent": adol_sprite if adol_sprite is not None else 0,
@@ -201,6 +188,31 @@ class Pelt():
         self.cat_sprites['para_young'] = 17
         self.cat_sprites["sick_adult"] = 18
         self.cat_sprites["sick_young"] = 19
+        if phenotype.length == "longhaired" and genotype.cornish[0] == "R" and genotype.sedesp[0] != "re" and 'brush' not in phenotype.furtype:    
+            self.length="long"
+            if self.cat_sprites['adult'] < 9:
+                self.cat_sprites['adult'] += 3
+                self.cat_sprites['young adult'] += 3
+                self.cat_sprites['senior adult'] += 3
+        elif phenotype.length != 'hairless':
+            self.length="short"
+            if self.cat_sprites['adult'] > 9:
+                self.cat_sprites['adult'] -= 3
+                self.cat_sprites['young adult'] -= 3
+                self.cat_sprites['senior adult'] -= 3
+        else:
+            self.length="hairless"
+            if self.cat_sprites['adult'] > 9:
+                self.cat_sprites['adult'] -= 3
+                self.cat_sprites['young adult'] -= 3
+                self.cat_sprites['senior adult'] -= 3
+        self.points = points
+        self.accessory = accessory
+        self.paralyzed = paralyzed
+        self.opacity = opacity
+        self.scars = scars if isinstance(scars, list) else []
+        self.tint = tint
+        self.white_patches_tint = white_patches_tint
         
         self.reverse = reverse
         self.skin = skin
