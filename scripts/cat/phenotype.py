@@ -443,7 +443,7 @@ class Phenotype():
 
         withword = self.specwhite
         if (self.eartype !="" or self.tailtype!="" or self.pawtype!="" or furtype!="" or self.vitiligo != ""):
-            withword += ", " + self.specwhite + ", " + self.vitiligo + ", " + furtype + ", " + self.eartype + ", " + self.tailtype + ", " + self.pawtype
+            withword += ", " + self.vitiligo + ", " + furtype + ", " + self.eartype + ", " + self.tailtype + ", " + self.pawtype
             while(withword[0] == ","):
                 withword = withword[2:]
             while(withword[(len(withword)-2)] == ","):
