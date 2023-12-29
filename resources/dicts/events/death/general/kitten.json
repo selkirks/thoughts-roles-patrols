@@ -44,6 +44,32 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
+        "death_text": "m_c snuck out of camp, and was never found.",
+        "history_text": {
+            "reg_death": "m_c disappeared."
+        },
+        "cat_trait": [
+            "troublesome",
+            "lonesome",
+            "impulsive",
+            "attention-seeker",
+            "daring",
+            "quiet",
+            "daydreamer",
+            "know-it-all"
+        ],
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
         "death_text": "m_c fell into the river and drowned.",
         "history_text": {
             "reg_death": "m_c fell into the river and drowned."

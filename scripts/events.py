@@ -104,6 +104,10 @@ class Events:
         if random.randint(1, rejoin_upperbound) == 1:
             self.handle_lost_cats_return()
 
+        #Kill kits as needed
+        if game.clan.clan_settings['modded_kits']:
+            self.kit_deaths(Cat.all_cats_list)
+
         # Calling of "one_moon" functions.
         for cat in Cat.all_cats.copy().values():
             if not cat.outside or cat.dead:
@@ -714,6 +718,52 @@ class Events:
         if not cat.dead:
             OutsiderEvents.killing_outsiders(cat)
     
+    def kit_deaths(self, cats):
+        fading_kits = []
+        fading_kit_names = []
+
+        death_chances = {
+            0: 0.33,
+            1: 0.25,
+            2: 0.25,
+            3: 0.16,
+            4: 0.12,
+            5: 0.10
+        }
+
+        # If at war, grab enemy clans
+        enemy_clan = None
+        if game.clan.war.get("at_war", False):
+            
+            for other_clan in game.clan.all_clans:
+                if other_clan.name == game.clan.war["enemy"]:
+                    enemy_clan = other_clan
+                    break
+
+        for kit in cats:
+            if kit.moons < 2 and not kit.dead:
+                if random.random() < death_chances[kit.moons]:
+                    fading_kits.append(kit.ID)
+                    fading_kit_names.append(str(kit.name))
+                    kit.die(True)
+                    History.add_death(kit, str(kit.name) + " failed to thrive.")
+                    kit.moons -= 1
+            elif kit.moons < 6 and not kit.dead:
+                if random.random() < death_chances[kit.moons]:
+                    print(kit.name)
+                    Death_Events.handle_deaths(kit, None, game.clan.war.get("at_war", False), enemy_clan, True)
+                    kit.moons -= 1
+
+        if len(fading_kits) > 0:
+            event_text = "In the past moon, "
+            event_text += ", ".join(fading_kit_names)
+            if len(fading_kits) > 1:
+                event_text += " have"
+            else:
+                event_text += " has"
+            event_text += " faded over the course of a few days."
+            game.cur_events_list.append(Single_Event(event_text, ['birth_death'], fading_kits))
+
     def one_moon_cat(self, cat):
         """
         Triggers various moon events for a cat.

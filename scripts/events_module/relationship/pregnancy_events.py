@@ -151,7 +151,7 @@ class Pregnancy_Events():
                 if _m not in adoptive_parents:
                     adoptive_parents.append(_m)
         
-        amount = Pregnancy_Events.get_amount_of_kits(cat)
+        amount = Pregnancy_Events.get_amount_of_kits(cat, clan)
         kits = Pregnancy_Events.get_kits(amount, None, None, clan, adoptive_parents=adoptive_parents)
         
         insert = 'this should not display'
@@ -202,7 +202,20 @@ class Pregnancy_Events():
         # even with no_gendered_breeding on a tom cat with no second parent should not be count as pregnant
         # instead, the cat should get the kit instantly
         if not other_cat and 'Y' in cat.genotype.sexgene:
-            amount = Pregnancy_Events.get_amount_of_kits(cat)
+            amount = Pregnancy_Events.get_amount_of_kits(cat, clan)
+            stillborn_chance = 0
+
+            if amount < 3:
+                stillborn_chance = game.config['pregnancy']['stillborn_chances']['small']
+            elif amount == 3:
+                stillborn_chance = game.config['pregnancy']['stillborn_chances']['three']
+            elif amount < 6:
+                stillborn_chance = game.config['pregnancy']['stillborn_chances']['mid']
+            elif amount < 9:
+                stillborn_chance = game.config['pregnancy']['stillborn_chances']['big']
+            else:
+                stillborn_chance = game.config['pregnancy']['stillborn_chances']['large']
+
             if(randint(1, 2) == 1):
                 cat_type = choice(['loner', 'rogue', 'kittypet'])
                 backstories = {
@@ -231,11 +244,16 @@ class Pregnancy_Events():
 
                 
             kits = Pregnancy_Events.get_kits(amount, cat, outside_parent, clan, backkit=backkit)
+
+            for kit in kits:
+                if random.random() < stillborn_chance:
+                    kits.remove(kit)
+
             insert = 'this should not display'
             if amount == 1:
                 insert = 'a single kitten'
             if amount > 1:
-                insert = f'a litter of {amount} kits'
+                insert = f'a litter of {len(kits)} kits'
             print_event = f"{cat.name} brought {insert} back to camp, but refused to talk about their origin."
             cats_involved = [cat.ID]
             for kit in kits:
@@ -275,7 +293,8 @@ class Pregnancy_Events():
             del clan.pregnancy_data[cat.ID]
             return
 
-        amount = Pregnancy_Events.get_amount_of_kits(cat)
+        amount = Pregnancy_Events.get_amount_of_kits(cat, clan)
+        
         text = 'This should not appear (pregnancy_events.py)'
 
         # add the amount to the pregnancy dict
@@ -329,6 +348,19 @@ class Pregnancy_Events():
         involved_cats = [cat.ID]
 
         kits_amount = clan.pregnancy_data[cat.ID]["amount"]
+        stillborn_chance = 0
+
+        if kits_amount < 3:
+            stillborn_chance = game.config['pregnancy']['stillborn_chances']['small']
+        elif kits_amount == 3:
+            stillborn_chance = game.config['pregnancy']['stillborn_chances']['three']
+        elif kits_amount < 6:
+            stillborn_chance = game.config['pregnancy']['stillborn_chances']['mid']
+        elif kits_amount < 9:
+            stillborn_chance = game.config['pregnancy']['stillborn_chances']['big']
+        else:
+            stillborn_chance = game.config['pregnancy']['stillborn_chances']['large']
+
         other_cat_id = clan.pregnancy_data[cat.ID]["second_parent"]
         other_cat = Cat.all_cats.get(other_cat_id)
 
@@ -363,6 +395,11 @@ class Pregnancy_Events():
 
         kits = Pregnancy_Events.get_kits(kits_amount, cat, other_cat, clan, backkit=backkit)
         kits_amount = len(kits)
+
+        for kit in kits:
+            if random.random() < stillborn_chance:
+                kit.dead = True
+                History.add_death(kit, str(kit.name) + " was stillborn.")
         Pregnancy_Events.set_biggest_family()
 
         # delete the cat out of the pregnancy dictionary
@@ -849,16 +886,33 @@ class Pregnancy_Events():
         return all_kitten
 
     @staticmethod
-    def get_amount_of_kits(cat):
+    def get_amount_of_kits(cat, clan):
         """Get the amount of kits which will be born."""
-        min_kits = game.config["pregnancy"]["min_kits"]
-        min_kit = [min_kits] * game.config["pregnancy"]["one_kit_possibility"][cat.age]
-        two_kits = [min_kits + 1] * game.config["pregnancy"]["two_kit_possibility"][cat.age]
-        three_kits = [min_kits + 2] * game.config["pregnancy"]["three_kit_possibility"][cat.age]
-        four_kits = [min_kits + 3] * game.config["pregnancy"]["four_kit_possibility"][cat.age]
-        five_kits = [min_kits + 4] * game.config["pregnancy"]["five_kit_possibility"][cat.age]
-        max_kits = [game.config["pregnancy"]["max_kits"]] * game.config["pregnancy"]["max_kit_possibility"][cat.age]
-        amount = choice(min_kit + two_kits + three_kits + four_kits + five_kits + max_kits)
+        
+        if(clan.clan_settings['modded_kits']):
+
+            one_kit = [1] * game.config["pregnancy"]["one_kit_modded"][cat.age]
+            two_kits = [2] * game.config["pregnancy"]["two_kit_modded"][cat.age]
+            three_kits = [3] * game.config["pregnancy"]["three_kit_modded"][cat.age]
+            four_kits = [4] * game.config["pregnancy"]["four_kit_modded"][cat.age]
+            five_kits = [5] * game.config["pregnancy"]["five_kit_modded"][cat.age]
+            six_kits = [choice([6, 7, 8])] * game.config["pregnancy"]["six_kit_modded"][cat.age]
+            nine_kits = [choice([9, 10, 11, 12])] * game.config["pregnancy"]["nine_kit_modded"][cat.age]
+            max_kits = [choice([13, 14, 15, 16, 17, 18, 19])] * game.config["pregnancy"]["max_kit_modded"][cat.age]
+
+            amount = choice(one_kit + two_kits + three_kits + four_kits + five_kits + six_kits + nine_kits + max_kits)
+
+        else:
+            min_kits = game.config["pregnancy"]["min_kits"]
+            min_kit = [min_kits] * game.config["pregnancy"]["one_kit_possibility"][cat.age]
+            two_kits = [min_kits + 1] * game.config["pregnancy"]["two_kit_possibility"][cat.age]
+            three_kits = [min_kits + 2] * game.config["pregnancy"]["three_kit_possibility"][cat.age]
+            four_kits = [min_kits + 3] * game.config["pregnancy"]["four_kit_possibility"][cat.age]
+            five_kits = [min_kits + 4] * game.config["pregnancy"]["five_kit_possibility"][cat.age]
+            max_kits = [game.config["pregnancy"]["max_kits"]] * game.config["pregnancy"]["max_kit_possibility"][cat.age]
+
+            amount = choice(min_kit + two_kits + three_kits + four_kits + five_kits + max_kits)
+        
 
         return amount
 
