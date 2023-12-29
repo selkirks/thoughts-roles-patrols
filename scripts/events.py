@@ -750,7 +750,6 @@ class Events:
                     kit.moons -= 1
             elif kit.moons < 6 and not kit.dead:
                 if random.random() < death_chances[kit.moons]:
-                    print(kit.name)
                     Death_Events.handle_deaths(kit, None, game.clan.war.get("at_war", False), enemy_clan, True)
                     kit.moons -= 1
 
