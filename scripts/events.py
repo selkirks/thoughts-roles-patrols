@@ -723,7 +723,7 @@ class Events:
         fading_kit_names = []
 
         death_chances = {
-            0: 0.33,
+            0: 0.25,
             1: 0.25,
             2: 0.20,
             3: 0.16,
