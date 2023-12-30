@@ -248,11 +248,12 @@ class Pregnancy_Events():
             for kit in kits:
                 if random.random() < stillborn_chance:
                     kits.remove(kit)
+                    Cat.all_cats_list.remove(kit)
 
             insert = 'this should not display'
-            if amount == 1:
+            if len(kits) == 1:
                 insert = 'a single kitten'
-            if amount > 1:
+            if len(kits) > 1:
                 insert = f'a litter of {len(kits)} kits'
             print_event = f"{cat.name} brought {insert} back to camp, but refused to talk about their origin."
             cats_involved = [cat.ID]

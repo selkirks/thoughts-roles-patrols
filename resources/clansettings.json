@@ -62,7 +62,7 @@
         ],
         "modded_kits": [
             "Use modded litters",
-            "Gives larger litters, and higher kit chances",
+            "Gives larger litters, and higher kit death chances",
             true
         ]
     },
