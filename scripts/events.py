@@ -722,14 +722,7 @@ class Events:
         fading_kits = []
         fading_kit_names = []
 
-        death_chances = {
-            0: 0.25,
-            1: 0.25,
-            2: 0.20,
-            3: 0.16,
-            4: 0.12,
-            5: 0.10
-        }
+        death_chances = game.config['death_related']['kit_death_chances']
 
         # If at war, grab enemy clans
         enemy_clan = None
@@ -742,14 +735,14 @@ class Events:
 
         for kit in cats:
             if kit.moons < 2 and not kit.dead:
-                if random.random() < death_chances[kit.moons]:
+                if random.random() < death_chances[str(kit.moons)]:
                     fading_kits.append(kit.ID)
                     fading_kit_names.append(str(kit.name))
                     kit.die(True)
                     History.add_death(kit, str(kit.name) + " failed to thrive.")
                     kit.moons -= 1
             elif kit.moons < 6 and not kit.dead:
-                if random.random() < death_chances[kit.moons]:
+                if random.random() < death_chances[str(kit.moons)]:
                     Death_Events.handle_deaths(kit, None, game.clan.war.get("at_war", False), enemy_clan, True)
                     kit.moons -= 1
 

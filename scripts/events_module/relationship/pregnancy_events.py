@@ -247,8 +247,9 @@ class Pregnancy_Events():
 
             for kit in kits:
                 if random.random() < stillborn_chance:
+                    kit.dead = True
+                    History.add_death(kit, str(kit.name) + " was stillborn.")
                     kits.remove(kit)
-                    Cat.all_cats_list.remove(kit)
 
             insert = 'this should not display'
             if len(kits) == 1:

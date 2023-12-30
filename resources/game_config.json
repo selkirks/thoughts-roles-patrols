@@ -178,7 +178,7 @@
 		"six_kit_modded": {"young adult": 32, "adult": 64, "senior adult": 64, "senior": 16},
 		"nine_kit_modded": {"young adult": 8, "adult": 16, "senior adult": 12, "senior": 4},
 		"max_kit_modded": {"young adult": 1, "adult": 8, "senior adult": 4, "senior": 1},
-		"stillborn_chances": {"small": 0.05, "three": 0.1, "mid": 0.15, "big": 0.2, "large": 0.25},
+		"stillborn_chances": {"small": 0.01, "three": 0.05, "mid": 0.10, "big": 0.15, "large": 0.20},
 		"comment": [
 			"primary mated - 1/chance for kits, relationship and other factors will influence this chance",
 			"primary unmated - 1/chance for kits, relationship and other factors will influence this chance",
@@ -275,6 +275,7 @@
 		"base_murder_kill_chance": 170,
 		"old_age_death_start": 150,
 		"old_age_death_curve": 4.5,
+		"kit_death_chances":{"0" : 0.25, "1" : 0.2, "2" : 0.2, "3" : 0.15, "4" : 0.1, "5" : 0.05},
 		"comment": [
 			"old_age_death_curve is a multiplier that affects the chances of cats dying once they are over old_age_death_start moons.",
 			"Average life expectancy with default old_age_death_start of 150 moons:",
