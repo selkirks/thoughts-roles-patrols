@@ -10,7 +10,6 @@ Fan-edit creator: SableSteel, and many others
 
 ## Downloads
 Note: These are developer builds and are not guaranteed to work!
-We do not give support to developer builds!
 - [Nightly Link](https://nightly.link/Chinch-Bug/clangen-genemod/workflows/build/modded)
 
 ## Running from source
