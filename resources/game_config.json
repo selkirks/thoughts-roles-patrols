@@ -170,14 +170,14 @@
 		"min_kits": 1,
 		"max_kits": 6,
 
-		"one_kit_modded": {"young adult": 64, "adult": 32, "senior adult": 32, "senior": 64},
-		"two_kit_modded": {"young adult": 128, "adult": 64, "senior adult": 64, "senior": 128},
-		"three_kit_modded": {"young adult": 128, "adult": 128, "senior adult": 128, "senior": 128},
-		"four_kit_modded": {"young adult": 128, "adult": 128, "senior adult": 128, "senior": 64},
-		"five_kit_modded": {"young adult": 64, "adult": 128, "senior adult": 128, "senior": 32},
-		"six_kit_modded": {"young adult": 32, "adult": 64, "senior adult": 64, "senior": 16},
-		"nine_kit_modded": {"young adult": 8, "adult": 16, "senior adult": 12, "senior": 4},
-		"max_kit_modded": {"young adult": 1, "adult": 8, "senior adult": 4, "senior": 1},
+		"one_kit_modded": {"young adult": 64, "adult": 4, "senior adult": 8, "senior": 64},
+		"two_kit_modded": {"young adult": 128, "adult": 8, "senior adult": 16, "senior": 128},
+		"three_kit_modded": {"young adult": 128, "adult": 16, "senior adult": 32, "senior": 128},
+		"four_kit_modded": {"young adult": 128, "adult": 16, "senior adult": 32, "senior": 64},
+		"five_kit_modded": {"young adult": 64, "adult": 16, "senior adult": 32, "senior": 32},
+		"six_kit_modded": {"young adult": 32, "adult": 8, "senior adult": 16, "senior": 16},
+		"nine_kit_modded": {"young adult": 8, "adult": 2, "senior adult": 3, "senior": 4},
+		"max_kit_modded": {"young adult": 1, "adult": 1, "senior adult": 1, "senior": 1},
 		"stillborn_chances": {"small": 0.01, "three": 0.05, "mid": 0.10, "big": 0.15, "large": 0.20},
 		"comment": [
 			"primary mated - 1/chance for kits, relationship and other factors will influence this chance",
@@ -218,6 +218,7 @@
 	},
 	"fading": {
 		"age_to_fade": 202,
+		"kit_fade": 24,
 		"opacity_at_fade": 20,
 		"visual_fading_speed": 5
 	},

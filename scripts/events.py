@@ -659,6 +659,7 @@ class Events:
                 and cat.ID != game.clan.instructor.ID and not cat.faded:
 
             age_to_fade = game.config["fading"]["age_to_fade"]
+            kitten_fade = game.config["fading"]["kit_fade"]
             opacity_at_fade = game.config["fading"]["opacity_at_fade"]
             fading_speed = game.config["fading"]["visual_fading_speed"]
             # Handle opacity
@@ -668,7 +669,7 @@ class Events:
                               opacity_at_fade)
 
             # Deal with fading the cat if they are old enough.
-            if cat.dead_for > age_to_fade:
+            if cat.dead_for > age_to_fade or (game.clan.clan_settings["modded_kits"] and cat.moons < 6 and cat.dead_for > kitten_fade):
                 # If order not to add a cat to the faded list
                 # twice, we can't remove them or add them to
                 # faded cat list here. Rather, they are added to
