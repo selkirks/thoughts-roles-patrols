@@ -2129,7 +2129,7 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
 
             if(genotype.white_pattern != 'No' and genotype.white_pattern):
                 for x in genotype.white_pattern:
-                    if(x != 'full white' and 'dorsal' not in x and x not in vitiligo):
+                    if('dorsal' not in x and x not in vitiligo):
                         whitesprite.blit(sprites.sprites[x + cat_sprite], (0, 0))
             whitesprite.set_colorkey((0, 0, 255))
             nose.blit(sprites.sprites['pads' + cat_sprite], (0, 0))
