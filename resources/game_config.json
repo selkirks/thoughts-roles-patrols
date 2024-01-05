@@ -273,7 +273,7 @@
 		"war_death_modifier_leader": 95,
 		"war_death_modifier": 250,
 		"base_random_murder_chance": 25,
-		"base_murder_kill_chance": 170,
+		"base_murder_kill_chance": 80,
 		"old_age_death_start": 150,
 		"old_age_death_curve": 4.5,
 		"kit_death_chances":{"0" : 0.25, "1" : 0.2, "2" : 0.2, "3" : 0.15, "4" : 0.1, "5" : 0.05},
