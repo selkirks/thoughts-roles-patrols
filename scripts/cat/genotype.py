@@ -806,6 +806,10 @@ class Genotype:
         soktypes = ["normal markings", "mild fading", "full sokoke"]
 
         eyegenes = ["2", "2", "1", "1", "1", "1", "0", "0", "0"]
+        higheyegenes = ["2", "2", "2", "2", "2", "2", "2", "2", "2", "1", "1", "1", "1", "0"]
+        superhigheyegenes = ["2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "1", "1", "0"]
+        loweyegenes = ["2", "1", "1", "1", "1", "0", "0", "0", "0", "0", "0", "0", "0", "0"]
+        superloweyegenes = ["2", "1", "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0"]
 
         for i in range(0, 4):
             self.sokoke += choice(eyegenes)
@@ -818,10 +822,12 @@ class Genotype:
         else:
             self.soktype = soktypes[2]
 
+        pickedref = choice([eyegenes, eyegenes, eyegenes, loweyegenes, superloweyegenes, higheyegenes, superhigheyegenes])
+        pickedpig = choice([eyegenes, eyegenes, eyegenes, loweyegenes, superloweyegenes, higheyegenes, superhigheyegenes])
         for i in range(0, 9):
-            self.refraction += choice(eyegenes)
+            self.refraction += choice(pickedref)
             self.refsum += int(self.refraction[i])
-            self.pigmentation += choice(eyegenes)
+            self.pigmentation += choice(pickedpig)
             self.pigsum += int(self.pigmentation[i])
 
         if self.refsum == 0:
@@ -1363,7 +1369,11 @@ class Genotype:
 
         soktypes = ["normal markings", "mild fading", "full sokoke"]
 
-        eyegenes = ["2", "2", "2", "2", "1", "1", "1", "1", "0", "0", "0"]
+        eyegenes = ["2", "2", "1", "1", "1", "1", "0", "0", "0"]
+        higheyegenes = ["2", "2", "2", "2", "2", "2", "2", "2", "2", "1", "1", "1", "1", "0"]
+        superhigheyegenes = ["2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "1", "1", "0"]
+        loweyegenes = ["2", "1", "1", "1", "1", "0", "0", "0", "0", "0", "0", "0", "0", "0"]
+        superloweyegenes = ["2", "1", "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0"]
 
         for i in range(0, 4):
             self.sokoke += choice(eyegenes)
@@ -1376,12 +1386,15 @@ class Genotype:
         else:
             self.soktype = soktypes[2]
 
+        pickedref = choice([eyegenes, eyegenes, loweyegenes, superloweyegenes, higheyegenes, superhigheyegenes, higheyegenes, superhigheyegenes])
+        pickedpig = choice([eyegenes, eyegenes, loweyegenes, superloweyegenes, higheyegenes, superhigheyegenes, higheyegenes, superhigheyegenes])
         for i in range(0, 9):
-            self.refraction += choice(eyegenes)
+            self.refraction += choice(pickedref)
             self.refsum += int(self.refraction[i])
-            self.pigmentation += choice(eyegenes)
+            self.pigmentation += choice(pickedpig)
             self.pigsum += int(self.pigmentation[i])
 
+        
         if self.refsum == 0:
             self.refgrade = 1
         elif self.refsum <= 1:

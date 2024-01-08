@@ -817,6 +817,7 @@ class Patrol():
                 if needed_weight[0] <= patrol.weight < needed_weight[1]:
                     # get the amount of class sizes which can be increased
                     increment = int(adaption.split("_")[0])
+                    prey_size = ["very_small", "small", "medium", "large", "huge"]
                     new_idx = prey_size.index(chosen_prey_size) + increment
                     # check that the increment does not lead to a overflow
                     new_idx = new_idx if new_idx <= len(chosen_prey_size) else len(chosen_prey_size)
