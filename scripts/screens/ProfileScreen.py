@@ -901,6 +901,19 @@ class ProfileScreen(Screens):
         # NEWLINE ----------
         output += "\n"
 
+        # NUTRITION INFO (if the game is in the correct mode)
+        if game.clan.game_mode in ["expanded", "cruel season"] and the_cat.is_alive() and FRESHKILL_ACTIVE:
+            nutr = None
+            if the_cat.ID in game.clan.freshkill_pile.nutrition_info:
+                nutr = game.clan.freshkill_pile.nutrition_info[the_cat.ID]
+            if not nutr:
+                game.clan.freshkill_pile.add_cat_to_nutrition(the_cat)
+                nutr = game.clan.freshkill_pile.nutrition_info[the_cat.ID]
+            output += "nutrition: " + nutr.nutrition_text 
+            if game.clan.clan_settings['showxp']:
+                output += ' (' + str(int(nutr.percentage)) + ')'
+            output += "\n"
+
         if the_cat.is_disabled():
             for condition in the_cat.permanent_condition:
                 if the_cat.permanent_condition[condition]['born_with'] is True and \
