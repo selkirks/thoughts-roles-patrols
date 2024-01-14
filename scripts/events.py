@@ -2059,7 +2059,7 @@ class Events:
 
     def coming_out(self, cat):
         """turnin' the kitties trans..."""
-        if cat.genderalign == cat.gender and not (cat.genderalign.replace("intersex ", "") == 'tom' and 'Y' in cat.genotype.sexgene) and not (cat.genderalign.replace("intersex ", "") == 'molly' and 'Y' not in cat.genotype.sexgene):
+        if cat.genderalign == cat.gender and not (cat.genderalign.replace("intersex ", "") == 'tom' and 'Y' not in cat.genotype.sexgene) and not (cat.genderalign.replace("intersex ", "") == 'molly' and 'Y' in cat.genotype.sexgene):
             if cat.moons < 6:
                 return
 
