@@ -216,6 +216,9 @@ class Pregnancy_Events():
             else:
                 stillborn_chance = game.config['pregnancy']['stillborn_chances']['large']
 
+            if not (clan.clan_settings['modded_kits']):
+                stillborn_chance = 0
+
             if(randint(1, 2) == 1):
                 cat_type = choice(['loner', 'rogue', 'kittypet'])
                 backstories = {
@@ -362,6 +365,9 @@ class Pregnancy_Events():
             stillborn_chance = game.config['pregnancy']['stillborn_chances']['big']
         else:
             stillborn_chance = game.config['pregnancy']['stillborn_chances']['large']
+        
+        if not (clan.clan_settings['modded_kits']):
+            stillborn_chance = 0
 
         other_cat_id = clan.pregnancy_data[cat.ID]["second_parent"]
         other_cat = Cat.all_cats.get(other_cat_id)
