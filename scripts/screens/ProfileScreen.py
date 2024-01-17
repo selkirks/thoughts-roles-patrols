@@ -268,22 +268,34 @@ class ProfileScreen(Screens):
             #when button is pressed...
             elif event.ui_element == self.cis_trans_button:
                 #if the cat is anything besides m/f/transm/transf then turn them back to cis
-                if self.the_cat.genderalign not in ["molly", "trans molly", "tom", "trans tom"]:
-                    self.the_cat.genderalign = self.the_cat.gender
+                if self.the_cat.genderalign.replace("intersex ", "") not in ["molly", "trans molly", "tom", "trans tom"]:
+                    if self.the_cat.gender == 'intersex':
+                        if('Y' in self.the_cat.genotype.sexgene):
+                            self.the_cat.genderalign = 'intersex tom'
+                        else:
+                            self.the_cat.genderalign = 'intersex molly'
+                    else:
+                        self.the_cat.genderalign = self.the_cat.gender
                 elif self.the_cat.gender == "tom" and self.the_cat.genderalign == 'molly':
                     self.the_cat.genderalign = self.the_cat.gender
                 elif self.the_cat.gender == "molly" and self.the_cat.genderalign == 'tom':
                     self.the_cat.genderalign = self.the_cat.gender
                 #if the cat is cis (gender & gender align are the same) then set them to trans
                 #cis toms -> trans molly first
-                elif self.the_cat.gender == "tom" and self.the_cat.genderalign == 'tom':
+                elif (self.the_cat.gender == "tom" or (self.the_cat.gender == 'intersex' and 'Y' in self.the_cat.genotype.sexgene)) and self.the_cat.genderalign.replace('intersex ', "") == 'tom':
                     self.the_cat.genderalign = 'trans molly'
+                    if self.the_cat.gender == 'intersex':
+                        self.the_cat.genderalign = 'intersex trans molly'
                 #cis mollys -> trans tom
-                elif self.the_cat.gender == "molly" and self.the_cat.genderalign == 'molly':
+                elif (self.the_cat.gender == "molly" or (self.the_cat.gender == 'intersex' and 'Y' not in self.the_cat.genotype.sexgene)) and self.the_cat.genderalign.replace('intersex ', "") == 'molly':
                     self.the_cat.genderalign = 'trans tom'
+                    if self.the_cat.gender == 'intersex':
+                        self.the_cat.genderalign = 'intersex trans tom'
                 #if the cat is trans then set them to nonbinary
-                elif self.the_cat.genderalign in ["trans molly", "trans tom"]:
-                    self.the_cat.genderalign = 'nonbinary'
+                elif self.the_cat.genderalign.replace('intersex ', "") in ["trans molly", "trans tom"]:
+                    self.the_cat.genderalign = 'sam'
+                    if self.the_cat.gender == 'intersex':
+                        self.the_cat.genderalign = 'intersex sam'
                 '''#pronoun handler
                 if self.the_cat.genderalign in ["molly", "trans molly"]:
                     self.the_cat.pronouns = [self.the_cat.default_pronouns[1].copy()]
@@ -573,7 +585,7 @@ class ProfileScreen(Screens):
         self.profile_elements["favourite_button"] = UIImageButton(scale(pygame.Rect
                                                                         ((x_pos, 287), (56, 56))),
                                                                   "",
-                                                                  object_id="#fav_star",
+                                                                  object_id="#fav_cat",
                                                                   manager=MANAGER,
                                                                   tool_tip_text='Remove favorite status',
                                                                   starting_height=2)
@@ -582,7 +594,7 @@ class ProfileScreen(Screens):
                                                                             ((x_pos, 287),
                                                                              (56, 56))),
                                                                       "",
-                                                                      object_id="#not_fav_star",
+                                                                      object_id="#not_fav_cat",
                                                                       manager=MANAGER,
                                                                       tool_tip_text='Mark as favorite',
                                                                       starting_height=2)
@@ -1835,27 +1847,27 @@ class ProfileScreen(Screens):
             # Button to trans or cis the cats.
             if self.cis_trans_button:
                 self.cis_trans_button.kill()
-            if self.the_cat.gender == "tom" and self.the_cat.genderalign == "tom":
+            if (self.the_cat.gender == "tom" or (self.the_cat.gender == 'intersex' and 'Y' in self.the_cat.genotype.sexgene)) and self.the_cat.genderalign.replace("intersex ", "") == "tom":
                 self.cis_trans_button = UIImageButton(scale(pygame.Rect((804, 972), (344, 104))), "",
                                                       starting_height=2, object_id="#change_trans_female_button",
                                                       manager=MANAGER)
-            elif self.the_cat.gender == "molly" and self.the_cat.genderalign == "molly":
+            elif (self.the_cat.gender == "molly" or (self.the_cat.gender == 'intersex' and 'Y' not in self.the_cat.genotype.sexgene)) and self.the_cat.genderalign.replace("intersex ", "") == "molly":
                 self.cis_trans_button = UIImageButton(scale(pygame.Rect((804, 972), (344, 104))), "",
                                                       starting_height=2, object_id="#change_trans_male_button",
                                                       manager=MANAGER)
-            elif self.the_cat.genderalign in ['trans molly', 'trans tom']:
+            elif self.the_cat.genderalign.replace("intersex ", "") in ['trans molly', 'trans tom']:
                 self.cis_trans_button = UIImageButton(scale(pygame.Rect((804, 972), (344, 104))), "",
                                                       starting_height=2, object_id="#change_nonbi_button",
                                                       manager=MANAGER)
-            elif self.the_cat.genderalign not in ['molly', 'trans molly', 'tom', 'trans tom']:
+            elif self.the_cat.genderalign.replace("intersex ", "") not in ['molly', 'trans molly', 'tom', 'trans tom']:
                 self.cis_trans_button = UIImageButton(scale(pygame.Rect((804, 972), (344, 104))), "",
                                                       starting_height=2, object_id="#change_cis_button",
                                                       manager=MANAGER)
-            elif self.the_cat.gender == "tom" and self.the_cat.genderalign == "molly":
+            elif (self.the_cat.gender == "tom" or (self.the_cat.gender == 'intersex' and 'Y' in self.the_cat.genotype.sexgene)) and self.the_cat.genderalign.replace("intersex ", "") == "molly":
                 self.cis_trans_button = UIImageButton(scale(pygame.Rect((804, 972), (344, 104))), "",
                                                       starting_height=2, object_id="#change_cis_button",
                                                       manager=MANAGER)
-            elif self.the_cat.gender == "molly" and self.the_cat.genderalign == "tom":
+            elif (self.the_cat.gender == "molly" or (self.the_cat.gender == 'intersex' and 'Y' not in self.the_cat.genotype.sexgene)) and self.the_cat.genderalign.replace("intersex ", "") == "tom":
                 self.cis_trans_button = UIImageButton(scale(pygame.Rect((804, 972), (344, 104))), "",
                                                       starting_height=2, object_id="#change_cis_button",
                                                       manager=MANAGER)
