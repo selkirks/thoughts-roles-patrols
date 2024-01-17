@@ -298,7 +298,7 @@
 	},
 	"genetic_chances": {
 		"chimera" : 1000,
-		"intersex" : 1,
+		"intersex" : 100,
 		"XXX/XXY" : 1000,
 		"brindled_bicolour" : 250,
 		"vitiligo" : 100
