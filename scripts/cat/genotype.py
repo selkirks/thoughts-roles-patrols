@@ -8,6 +8,7 @@ class Genotype:
         self.odds = odds
 
         self.furLength = ""
+        self.longtype = choice(['long', 'long', 'medium'])
         self.eumelanin = ["", ""]
         self.sexgene = ["", ""]
         self.specialred = None
@@ -136,6 +137,7 @@ class Genotype:
             else:
                 self.chimerageno = None    
             self.deaf = jsonstring['deaf']
+            self.longtype = jsonstring["longtype"]
         except:
             self.specialred = None
             self.chimera = False
@@ -241,6 +243,7 @@ class Genotype:
 
         return {
             "furLength": self.furLength,
+            "longtype": self.longtype,
             "eumelanin": self.eumelanin,
             "sexgene" : self.sexgene,
             "specialred" : self.specialred,

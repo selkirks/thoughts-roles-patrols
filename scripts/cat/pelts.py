@@ -189,14 +189,17 @@ class Pelt():
         self.cat_sprites['para_young'] = 17
         self.cat_sprites["sick_adult"] = 18
         self.cat_sprites["sick_young"] = 19
-        if phenotype.length == "longhaired" and genotype.cornish[0] == "R" and genotype.sedesp[0] != "re" and 'brush' not in phenotype.furtype:    
+        if phenotype.length == "longhaired" and genotype.longtype == 'long' and genotype.cornish[0] == "R" and genotype.lykoi[0] == 'Ly' and genotype.sedesp[0] != "re" and 'brush' not in phenotype.furtype:    
             self.length="long"
             if self.cat_sprites['adult'] < 9:
                 self.cat_sprites['adult'] += 3
                 self.cat_sprites['young adult'] += 3
                 self.cat_sprites['senior adult'] += 3
         elif phenotype.length != 'hairless':
-            self.length="short"
+            if phenotype.length == "longhaired":
+                self.length = 'medium'
+            else:
+                self.length="short"
             if self.cat_sprites['adult'] > 9:
                 self.cat_sprites['adult'] -= 3
                 self.cat_sprites['young adult'] -= 3

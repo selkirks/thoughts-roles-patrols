@@ -134,6 +134,14 @@ class NewCatEvents:
                                           age=ages[0],
                                           gender='masc',
                                           outside=True)[0]
+            while 'infertility' in blood_parent.permanent_condition:
+                blood_parent = create_new_cat(Cat, Relationship,
+                                          status=random.choice(["loner", "rogue", "kittypet"]),
+                                          alive=True,
+                                          thought=thought,
+                                          age=ages[0],
+                                          gender='masc',
+                                          outside=True)[0]
             if cat_type != 'del':
                 blood_parent2 = create_new_cat(Cat, Relationship,
                                           status=cat_type if cat_type != 'del' else 'rogue',
@@ -142,6 +150,14 @@ class NewCatEvents:
                                           age=ages[1] if ages[1] > 14 else 15,
                                           gender='fem',
                                           outside=True)[0]
+                while 'infertility' in blood_parent2.permanent_condition:
+                    blood_parent = create_new_cat(Cat, Relationship,
+                                            status=random.choice(["loner", "rogue", "kittypet"]),
+                                            alive=True,
+                                            thought=thought,
+                                            age=ages[0],
+                                            gender='masc',
+                                            outside=True)[0]
             else:
                 par2geno = Genotype(game.config['genetic_chances'])
                 par2geno.Generator('fem')

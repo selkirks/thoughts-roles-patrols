@@ -1232,7 +1232,7 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
         if age in ['kitten', 'adolescent']:
             cat_sprite = str(17)
         else:
-            if cat.pelt.length == 'long':
+            if cat.pelt.length == 'long' or (cat.pelt.length == 'medium' and get_current_season() == 'Leaf-bare'):
                 cat_sprite = str(16)
             else:
                 cat_sprite = str(15)
@@ -1243,7 +1243,10 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
         if game.config['fun']['all_cats_are_newborn']:
             cat_sprite = str(cat.pelt.cat_sprites['newborn'])
         else:
-            cat_sprite = str(cat.pelt.cat_sprites[age])
+            if (cat.pelt.length == 'medium' and get_current_season() == 'Leaf-bare'):
+                cat_sprite = str(cat.pelt.cat_sprites[age]+3)
+            else:
+                cat_sprite = str(cat.pelt.cat_sprites[age])
 
     new_sprite = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
 
@@ -2160,6 +2163,11 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
                 elif 'dorsal2' in genotype.white_pattern:
                     gensprite.blit(sprites.sprites['dorsal2' + cat_sprite], (0, 0))
 
+        
+            if('sparse' in cat.phenotype.furtype):
+                gensprite.blit(sprites.sprites['satin0'], (0, 0))
+                gensprite.blit(sprites.sprites['satin0'], (0, 0))
+                gensprite.blit(sprites.sprites['lykoi' + cat_sprite], (0, 0))
 
             if(genotype.fold[0] != 'Fd' or genotype.curl[0] == 'Cu'):
                 gensprite.blit(sprites.sprites['ears' + cat_sprite], (0, 0))
@@ -2206,7 +2214,7 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
                     gensprite.blit(sprites.sprites['scars' + scar + cat_sprite], (0, 0))
                 if scar in cat.pelt.scars3:
                     gensprite.blit(sprites.sprites['scars' + scar + cat_sprite], (0, 0))
-        
+
         # draw line art
         if game.settings['shaders'] and not dead:
             gensprite.blit(sprites.sprites['shaders' + cat_sprite], (0, 0), special_flags=pygame.BLEND_RGB_MULT)
