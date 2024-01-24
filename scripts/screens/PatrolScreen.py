@@ -263,41 +263,34 @@ class PatrolScreen(Screens):
                 if self.patrol_type == 'med':
                     self.patrol_type = 'general'
 
-            if game.clan.game_mode != 'classic':
-                self.elements['paw'].enable()
-                self.elements['mouse'].enable()
-                self.elements['claws'].enable()
-                self.elements['herb'].enable()
+            self.elements['paw'].enable()
+            self.elements['mouse'].enable()
+            self.elements['claws'].enable()
+            self.elements['herb'].enable()
+            self.elements['info'].kill()  # clearing the text before displaying new text
 
-                self.elements['info'].kill()  # clearing the text before displaying new text
+            if not( any((cat.status in ['medicine cat', 'medicine cat apprentice'] for cat in self.current_patrol))) and self.current_patrol:
+                self.elements['herb'].disable()
+                if self.patrol_type == 'med':
+                    self.patrol_type = 'general'
 
-                if not( any((cat.status in ['medicine cat', 'medicine cat apprentice'] for cat in self.current_patrol))) and self.current_patrol:
-                    self.elements['herb'].disable()
-                    if self.patrol_type == 'med':
-                        self.patrol_type = 'general'
-
-                if self.patrol_type == 'general':
-                    text = 'random patrol type'
-                elif self.patrol_type == 'training':
-                    text = 'training'
-                elif self.patrol_type == 'border':
-                    text = 'border'
-                elif self.patrol_type == 'hunting':
-                    text = 'hunting'
-                elif self.patrol_type == 'med':
-                    text = 'herb gathering'
-                else:
-                    text = ""
-
-                self.elements['info'] = pygame_gui.elements.UITextBox(
-                    text, scale(pygame.Rect((500, 1050), (600, 800))),
-                    object_id=get_text_box_theme("#text_box_30_horizcenter"), manager=MANAGER
-                )
+            if self.patrol_type == 'general':
+                text = 'random patrol type'
+            elif self.patrol_type == 'training':
+                text = 'training'
+            elif self.patrol_type == 'border':
+                text = 'border'
+            elif self.patrol_type == 'hunting':
+                text = 'hunting'
+            elif self.patrol_type == 'med':
+                text = 'herb gathering'
             else:
-                self.elements['paw'].hide()
-                self.elements['mouse'].hide()
-                self.elements['claws'].hide()
-                self.elements['herb'].hide()
+                text = ""
+
+            self.elements['info'] = pygame_gui.elements.UITextBox(
+                text, scale(pygame.Rect((500, 1050), (600, 800))),
+                object_id=get_text_box_theme("#text_box_30_horizcenter"), manager=MANAGER
+            )
 
             able_no_med = [cat for cat in self.able_cats if
                            cat.status not in ['medicine cat', 'medicine cat apprentice']]
