@@ -1243,7 +1243,7 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
         if game.config['fun']['all_cats_are_newborn']:
             cat_sprite = str(cat.pelt.cat_sprites['newborn'])
         else:
-            if (cat.pelt.length == 'medium' and get_current_season() == 'Leaf-bare') and cat.moons > 11:
+            if cat.pelt.cat_sprites[age] < 9 and (cat.pelt.length == 'medium' and get_current_season() == 'Leaf-bare') and cat.moons > 11:
                 cat_sprite = str(cat.pelt.cat_sprites[age]+3)
             else:
                 cat_sprite = str(cat.pelt.cat_sprites[age])
