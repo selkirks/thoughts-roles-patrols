@@ -8,7 +8,7 @@ class Genotype:
         self.odds = odds
 
         self.furLength = ""
-        self.longtype = choice(['long', 'long', 'medium'])
+        self.longtype = choice(['long', 'long', 'long', 'medium'])
         self.eumelanin = ["", ""]
         self.sexgene = ["", ""]
         self.specialred = None
@@ -127,23 +127,21 @@ class Genotype:
         self.tortiepattern = jsonstring["tortiepattern"]
         self.brindledbi = jsonstring["brindledbi"]
 
+        self.specialred = jsonstring['specialred']
+        self.chimera = jsonstring['chimera']
+        self.chimerapattern = jsonstring['chimerapattern']
+        if(jsonstring["chimerageno"]):
+            self.chimerageno = Genotype(self.odds, 'chimera')
+            self.chimerageno.fromJSON(jsonstring["chimerageno"])
+        else:
+            self.chimerageno = None    
+        self.deaf = jsonstring['deaf']
+        
+        
         try:
-            self.specialred = jsonstring['specialred']
-            self.chimera = jsonstring['chimera']
-            self.chimerapattern = jsonstring['chimerapattern']
-            if(jsonstring["chimerageno"]):
-                self.chimerageno = Genotype(self.odds, 'chimera')
-                self.chimerageno.fromJSON(jsonstring["chimerageno"])
-            else:
-                self.chimerageno = None    
-            self.deaf = jsonstring['deaf']
             self.longtype = jsonstring["longtype"]
         except:
-            self.specialred = None
-            self.chimera = False
-            self.chimerapattern = None
-            self.chimerageno = None
-            self.deaf = False
+            self.longtype = "long"
 
         self.gender = jsonstring["gender"]
         self.dilute = jsonstring["dilute"]
