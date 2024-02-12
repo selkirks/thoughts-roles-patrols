@@ -409,7 +409,7 @@ class Condition_Events():
             "weak leg", "paralyzed", "raspy lungs", "wasting disease", "blind", "failing eyesight",
             "one bad eye", "partial hearing loss", "deaf", "constant joint pain", "constantly dizzy",
             "recurring shock", "lasting grief", "adhd", "heavy soul", "starwalker", "ocd", "antisocial", "anxiety",
-            "constant roaming pain", "strong soul", "otherworldly mind", "kitten regressor", "puppy regressor", "snow vision",
+            "constant roaming pain", "thunderous spirit", "otherworldly mind", "kitten regressor", "puppy regressor", "snow vision",
             "echoing shock", "irritable bowels", "loose body", "longcough", "burning light", "disrupted senses",
             "constant nightmares", "constant rash", "jellyfish joints", "lazy eye"
 
