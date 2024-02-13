@@ -1829,7 +1829,7 @@ class Cat():
             born_with = True
         moons_until = condition["moons_until"]
         if born_with and moons_until != 0:
-if name == "starwalker":
+            if name == "starwalker":
                 moons_until = randint(moons_until - 1, moons_until + 10)
             if name == "loose body":
                 moons_until = randint(moons_until - 1, moons_until + 6)
