@@ -2044,6 +2044,7 @@ class ProfileScreen(Screens):
         elif self.open_tab == 'dangerous':
             self.kill_cat_button.kill()
             self.exile_cat_button.kill()
+            self.destroy_accessory_button.kill()
         elif self.open_tab == 'history':
             self.backstory_background.kill()
             self.sub_tab_1.kill()
