@@ -274,6 +274,18 @@
 			"r_c's noticed that m_c has been more tired than usual lately. After talking with {PRONOUN/m_c/object} about it, it seems as if m_c's just experiencing some fatigue.",
 			"m_c has felt so tired and dazed lately; no matter how much {PRONOUN/m_c/subject} {VERB/m_c/sleep/sleeps}, {PRONOUN/m_c/subject} can't seem to shake off the fugue.",
 			"After all the shock that's been going on in m_c's life, {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} gotten a bit of fatigued."
+		],
+		"shattered soul": [
+			"m_c has a nervous conversation with the medicine cat after not feeling like {PRONOUN/m_c/self} for awhile. The medicine cat tells m_c that {PRONOUN/m_c/subject} might be a shattered soul.",
+			"m_c realizes that they are a shattered soul when one of {PRONOUN/m_c/poss} alters says it out loud!",
+			"m_c is starting to suspect that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} a shattered soul because of the voices {PRONOUN/m_c/subject} hear.",
+			"m_c vents to the medicine cat that sometimes it feels like {PRONOUN/m_c/poss} body isn't {PRONOUN/m_c/poss} own.{PRONOUN/m_c/subject} may be a shattered soul"
+		],   
+		"budding spirit": [
+			"m_c has a nervous conversation with the medicine cat after not feeling like {PRONOUN/m_c/self} for awhile. The medicine cat tells m_c that {PRONOUN/m_c/subject} might be a budding spirit.",
+			"m_c realizes that they are a budding spirit when one of {PRONOUN/m_c/poss} alters says it out loud!",
+			"m_c is starting to suspect that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} a budding spirit because of the voices {PRONOUN/m_c/subject} hear.",
+			"m_c vents to the medicine cat that sometimes it feels like {PRONOUN/m_c/poss} body isn't {PRONOUN/m_c/poss} own.{PRONOUN/m_c/subject} may be a budding spirit. "
 		]
     },
     "echoing shock": {
@@ -321,6 +333,18 @@
 		"sleep paralysis": [
 				"r_c's been noticing m_c struggling to sleep and wake up recently. After some talk it just seems to be a case of sleep paralysis that's troubling {PRONOUN/m_c/object}.",
 				"m_c believes that {PRONOUN/m_c/subject} {VERB/m_c/are/is} been stalked by cats from the Dark Forest, isisting that {PRONOUN/m_c/subject} {VERB/m_c/see/sees} them when waking up."
+		],
+		"shattered soul": [
+			"m_c has a nervous conversation with the medicine cat after not feeling like {PRONOUN/m_c/self} for awhile. The medicine cat tells m_c that {PRONOUN/m_c/subject} might be a shattered soul.",
+			"m_c realizes that they are a shattered soul when one of {PRONOUN/m_c/poss} alters says it out loud!",
+			"m_c is starting to suspect that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} a shattered soul because of the voices {PRONOUN/m_c/subject} hear.",
+			"m_c vents to the medicine cat that sometimes it feels like {PRONOUN/m_c/poss} body isn't {PRONOUN/m_c/poss} own.{PRONOUN/m_c/subject} may be a shattered soul"
+		],   
+		"budding spirit": [
+			"m_c has a nervous conversation with the medicine cat after not feeling like {PRONOUN/m_c/self} for awhile. The medicine cat tells m_c that {PRONOUN/m_c/subject} might be a budding spirit.",
+			"m_c realizes that they are a budding spirit when one of {PRONOUN/m_c/poss} alters says it out loud!",
+			"m_c is starting to suspect that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} a budding spirit because of the voices {PRONOUN/m_c/subject} hear.",
+			"m_c vents to the medicine cat that sometimes it feels like {PRONOUN/m_c/poss} body isn't {PRONOUN/m_c/poss} own.{PRONOUN/m_c/subject} may be a budding spirit. "
 		]
     },
     "lasting grief": {
@@ -417,6 +441,18 @@
 				"r_c sighs and tells m_c that {PRONOUN/m_c/subject} can't keep coming in after biting fur away. Soon after, r_c realizes that m_c is a body biter.",
 				"m_c bites and nibbles at {PRONOUN/m_c/self}. It's possible that m_c is a body biter now.",
 				"m_c assures {PRONOUN/m_c/poss} loved one that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} not hurting {PRONOUN/m_c/self} intentionally when {PRONOUN/m_c/subject} groom {PRONOUN/m_c/self} repetitively."
+		],
+		"shattered soul": [
+			"m_c has a nervous conversation with the medicine cat after not feeling like {PRONOUN/m_c/self} for awhile. The medicine cat tells m_c that {PRONOUN/m_c/subject} might be a shattered soul.",
+			"m_c realizes that they are a shattered soul when one of {PRONOUN/m_c/poss} alters says it out loud!",
+			"m_c is starting to suspect that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} a shattered soul because of the voices {PRONOUN/m_c/subject} hear.",
+			"m_c vents to the medicine cat that sometimes it feels like {PRONOUN/m_c/poss} body isn't {PRONOUN/m_c/poss} own.{PRONOUN/m_c/subject} may be a shattered soul"
+		],   
+		"budding spirit": [
+			"m_c has a nervous conversation with the medicine cat after not feeling like {PRONOUN/m_c/self} for awhile. The medicine cat tells m_c that {PRONOUN/m_c/subject} might be a budding spirit.",
+			"m_c realizes that they are a budding spirit when one of {PRONOUN/m_c/poss} alters says it out loud!",
+			"m_c is starting to suspect that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} a budding spirit because of the voices {PRONOUN/m_c/subject} hear.",
+			"m_c vents to the medicine cat that sometimes it feels like {PRONOUN/m_c/poss} body isn't {PRONOUN/m_c/poss} own.{PRONOUN/m_c/subject} may be a budding spirit. "
 		]
     },
     "comet spirit": {
@@ -430,24 +466,24 @@
             "m_c sits in the medicine den beside r_c just staring off into the distance.",
             "While walking around m_c kind of zones out and stares into the distance for periods of time.",
             "m_c sits in place staring, paws vaguely tensing and untensing as {PRONOUN/m_c/subject} {VERB/m_c/do/does} so."
-	],
+		],
 		"vivid daydreams": [
             "m_c talks to r_c at length about all {PRONOUN/m_c/poss} ideas and dreams to help the clan.",
             "It's not odd to see m_c running around camp with {PRONOUN/m_c/poss} heads somewhere in the clouds.",
             "m_c purrs in a sunbeam while {PRONOUN/m_c/poss} mind is elsewhere.",
 			"m_c closes {PRONOUN/m_c/poss} eyes and daydreams for a long time today."
-	],
+		],
 		"hyperfixation": [
             "m_c spins circles around r_c running around and screaming about {PRONOUN/m_c/poss} latest interest and hyperfixation.",
             "m_c frustratedly digs {PRONOUN/m_c/poss} paws into the dirt of the camp struggling to focus on {PRONOUN/m_c/poss} tasks when {PRONOUN/m_c/subject} would rather be doing something to do with {PRONOUN/m_c/poss} hyperfixation.",
             "m_c's clanmates purr in amusement listening to {PRONOUN/m_c/poss} rapid babbling."
-	],
+		],
 		"indecision": [
             "m_c comes in to see r_c, tail twitching as {PRONOUN/m_c/subject} consult with {PRONOUN/r_c/object} on how to make decision making easier.",
             "m_c stands beside the camp entry way somewhat frozen talking with the deputy about what patrol to potentially go on.",
             "m_c sits, tail tip twitching as {PRONOUN/m_c/subject} try to decided what prey to eat.",
 			"m_c paces back and forth as {PRONOUN/m_c/subject} can't decide to ask if {PRONOUN/m_c/subject} should ask the deputy if {PRONOUN/m_c/subject} can go to the gathering."
-	],
+		],
 		"impulsivity": [
             "r_c sighs as {PRONOUN/m_c/subject} watch m_c racing around camp and leaping into decisions without fully thinking.",
             "m_c steps up as a volunteer for a patrol before fully listening to what it involves.",
@@ -455,21 +491,33 @@
             "m_c keeps picking up shiny things.",
             "While out on patrol m_c keeps racing off at the slightest sight of anything in {PRONOUN/m_c/poss} peripheral.",
             "m_c comes into the medicine den sheepishly asking if r_c needs any herbs because {PRONOUN/m_c/subject} found a bush and plucked it before asking."
-	],
+		],
 		"kitten regressor": [
             "m_c feels younger than the age {PRONOUN/m_c/poss} body is.  {PRONOUN/m_c/subject} talked to r_c about it, worried something is wrong with {PRONOUN/m_c/object}, but {PRONOUN/m_c/subject} assured {PRONOUN/m_c/object} what {PRONOUN/m_c/subject} are feeling is perfectly normal,  {PRONOUN/m_c/subject} they are just a kitten regressor. ",
             "m_c, despite being old for a kit, act's younger then {PRONOUN/m_c/subject} are. It is possible {PRONOUN/m_c/subject} is a kitten regressor."
-	],
+		],
 		"puppy regressor": [
             "m_c has slipped into a more puppy like headspace, {PRONOUN/m_c/subject} are worried about this but r_c assures that {PRONOUN/m_c/subject} are just a puppy regressor, and thats okay." ,
             "m_c, despite being too old to play pretend, act's more dog like sometimes. It is possible m_c is a puppy regressor."
-	],
+		],
 		"understimulation": [
             "r_c talks to m_c, discussing together why {PRONOUN/m_c/subject} {VERB/m_c/have/has} been feeling so listless and uncomfortable around camp recently.",
             "No matter what m_c seems to do it just feels like something is off this moon.",
             "Frustrated m_c snaps at a clanmate to leave {PRONOUN/m_c/object} alone, only to regret it and apologise heartbeats later. Something is off with {PRONOUN/m_c/object}.",
 	    "m_c rocks back and forth trying to get rid of this painfully boredness."
-	    ]
+	    ],
+		"shattered soul": [
+			"m_c has a nervous conversation with the medicine cat after not feeling like {PRONOUN/m_c/self} for awhile. The medicine cat tells m_c that {PRONOUN/m_c/subject} might be a shattered soul.",
+			"m_c realizes that they are a shattered soul when one of {PRONOUN/m_c/poss} alters says it out loud!",
+			"m_c is starting to suspect that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} a shattered soul because of the voices {PRONOUN/m_c/subject} hear.",
+			"m_c vents to the medicine cat that sometimes it feels like {PRONOUN/m_c/poss} body isn't {PRONOUN/m_c/poss} own.{PRONOUN/m_c/subject} may be a shattered soul"
+		],   
+		"budding spirit": [
+			"m_c has a nervous conversation with the medicine cat after not feeling like {PRONOUN/m_c/self} for awhile. The medicine cat tells m_c that {PRONOUN/m_c/subject} might be a budding spirit.",
+			"m_c realizes that they are a budding spirit when one of {PRONOUN/m_c/poss} alters says it out loud!",
+			"m_c is starting to suspect that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} a budding spirit because of the voices {PRONOUN/m_c/subject} hear.",
+			"m_c vents to the medicine cat that sometimes it feels like {PRONOUN/m_c/poss} body isn't {PRONOUN/m_c/poss} own.{PRONOUN/m_c/subject} may be a budding spirit. "
+		]
     },
     "starwalker": {
 		"special interest": [
@@ -568,6 +616,18 @@
 				"m_c's whole body shakes, coiled and wound up with an energy that rises into something close to anxiety from the lack of realness to the world around {PRONOUN/m_c/object}.",
 				"When the world feels distant to m_c it worries {PRONOUN/m_c/object} greatly.",
 				"m_c feels a little bit understimulated recently and off balance as a result."
+		],
+		"shattered soul": [
+			"m_c has a nervous conversation with the medicine cat after not feeling like {PRONOUN/m_c/self} for awhile. The medicine cat tells m_c that {PRONOUN/m_c/subject} might be a shattered soul.",
+			"m_c realizes that they are a shattered soul when one of {PRONOUN/m_c/poss} alters says it out loud!",
+			"m_c is starting to suspect that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} a shattered soul because of the voices {PRONOUN/m_c/subject} hear.",
+			"m_c vents to the medicine cat that sometimes it feels like {PRONOUN/m_c/poss} body isn't {PRONOUN/m_c/poss} own.{PRONOUN/m_c/subject} may be a shattered soul"
+		],   
+		"budding spirit": [
+			"m_c has a nervous conversation with the medicine cat after not feeling like {PRONOUN/m_c/self} for awhile. The medicine cat tells m_c that {PRONOUN/m_c/subject} might be a budding spirit.",
+			"m_c realizes that they are a budding spirit when one of {PRONOUN/m_c/poss} alters says it out loud!",
+			"m_c is starting to suspect that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} a budding spirit because of the voices {PRONOUN/m_c/subject} hear.",
+			"m_c vents to the medicine cat that sometimes it feels like {PRONOUN/m_c/poss} body isn't {PRONOUN/m_c/poss} own.{PRONOUN/m_c/subject} may be a budding spirit. "
 		]
     },
     "ocd": {
@@ -911,6 +971,18 @@
 		"puppy regressor": [
 				"m_c has slipped into a more puppy like headspace, {PRONOUN/m_c/subject} are worried about this but r_c assures that {PRONOUN/m_c/subject} are just a puppy regressor, and thats okay." ,
 				"m_c, despite being too old to play pretend, act's more dog like sometimes. It is possible m_c is a puppy regressor."
+		],
+		"shattered soul": [
+			"m_c has a nervous conversation with the medicine cat after not feeling like {PRONOUN/m_c/self} for awhile. The medicine cat tells m_c that {PRONOUN/m_c/subject} might be a shattered soul.",
+			"m_c realizes that they are a shattered soul when one of {PRONOUN/m_c/poss} alters says it out loud!",
+			"m_c is starting to suspect that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} a shattered soul because of the voices {PRONOUN/m_c/subject} hear.",
+			"m_c vents to the medicine cat that sometimes it feels like {PRONOUN/m_c/poss} body isn't {PRONOUN/m_c/poss} own.{PRONOUN/m_c/subject} may be a shattered soul"
+		],   
+		"budding spirit": [
+			"m_c has a nervous conversation with the medicine cat after not feeling like {PRONOUN/m_c/self} for awhile. The medicine cat tells m_c that {PRONOUN/m_c/subject} might be a budding spirit.",
+			"m_c realizes that they are a budding spirit when one of {PRONOUN/m_c/poss} alters says it out loud!",
+			"m_c is starting to suspect that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} a budding spirit because of the voices {PRONOUN/m_c/subject} hear.",
+			"m_c vents to the medicine cat that sometimes it feels like {PRONOUN/m_c/poss} body isn't {PRONOUN/m_c/poss} own.{PRONOUN/m_c/subject} may be a budding spirit. "
 		]
     },
     "otherwordly mind": {
@@ -929,6 +1001,18 @@
 		"puppy regressor": [
 				"m_c has slipped into a more puppy like headspace, {PRONOUN/m_c/subject} are worried about this but r_c assures that {PRONOUN/m_c/subject} are just a puppy regressor, and thats okay." ,
 				"m_c, despite being too old to play pretend, act's more dog like sometimes. It is possible m_c is a puppy regressor."
+		],
+		"shattered soul": [
+			"m_c has a nervous conversation with the medicine cat after not feeling like {PRONOUN/m_c/self} for awhile. The medicine cat tells m_c that {PRONOUN/m_c/subject} might be a shattered soul.",
+			"m_c realizes that they are a shattered soul when one of {PRONOUN/m_c/poss} alters says it out loud!",
+			"m_c is starting to suspect that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} a shattered soul because of the voices {PRONOUN/m_c/subject} hear.",
+			"m_c vents to the medicine cat that sometimes it feels like {PRONOUN/m_c/poss} body isn't {PRONOUN/m_c/poss} own.{PRONOUN/m_c/subject} may be a shattered soul"
+		],   
+		"budding spirit": [
+			"m_c has a nervous conversation with the medicine cat after not feeling like {PRONOUN/m_c/self} for awhile. The medicine cat tells m_c that {PRONOUN/m_c/subject} might be a budding spirit.",
+			"m_c realizes that they are a budding spirit when one of {PRONOUN/m_c/poss} alters says it out loud!",
+			"m_c is starting to suspect that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} a budding spirit because of the voices {PRONOUN/m_c/subject} hear.",
+			"m_c vents to the medicine cat that sometimes it feels like {PRONOUN/m_c/poss} body isn't {PRONOUN/m_c/poss} own.{PRONOUN/m_c/subject} may be a budding spirit. "
 		]
     },
     "irritable bowels": {
@@ -1253,5 +1337,54 @@
 			"m_c locks up and takes a harsh fall as a result.",
 			"m_c got very unfortunate when {PRONOUN/m_c/subject} got locked up."
 		]
-	}
+	},
+	
+    "shattered soul": {
+		"anxiety attack": [
+				"r_c can understand that m_c has more trouble than most keeping calm and talks with {PRONOUN/m_c/object} about why {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} extra anxious when {PRONOUN/m_c/subject} {VERB/m_c/fail/fails} to fully check the camp before doing {PRONOUN/m_c/poss} patrols.",
+				"m_c starts to think about a possibility that scares {PRONOUN/m_c/object} and {PRONOUN/m_c/poss} mind fills with fog and heart beating erratically.{PRONOUN/m_c/subject/CAP} {VERB/m_c/panic/panics} waking up a friend.",
+				"A clanmate sits beside m_c and lets {PRONOUN/m_c/object} ramble on as {PRONOUN/m_c/subject} {VERB/m_c/catastrophize/catastrophizes}.",
+				"m_c starts crying because {PRONOUN/m_c/subject} didn't check the camp fully before leaving that morning."
+		],
+		"kittenspace": [
+				"Sometimes m_c feels younger than the age {PRONOUN/m_c/poss} body is.  {PRONOUN/m_c/subject} talked to r_c about it, worried something is wrong with {PRONOUN/m_c/object}, but {PRONOUN/m_c/subject} assured {PRONOUN/m_c/object} what {PRONOUN/m_c/subject} are feeling is perfectly normal, {PRONOUN/m_c/poss} brain is just in kittenspace",
+				"m_c, despite being old for a kit, acts younger then {PRONOUN/m_c/subject} are sometimes. It is possible {PRONOUN/m_c/subject} are in kittenspace."
+		],
+		"puppyspace": [
+				"m_c has slipped into a more puppy like headspace, {PRONOUN/m_c/subject} are worried about this but r_c assures that {PRONOUN/m_c/subject} are just in puppyspace, and thats okay." ,
+				"m_c, despite being too old to play pretend, acts more dog like sometimes. It is possible {PRONOUN/m_c/subject} are in puppyspace."
+		],
+		"kitten regressor": [
+				"m_c feels younger than the age {PRONOUN/m_c/poss} body is.  {PRONOUN/m_c/subject} talked to r_c about it, worried something is wrong with {PRONOUN/m_c/object}, but {PRONOUN/m_c/subject} assured {PRONOUN/m_c/object} what {PRONOUN/m_c/subject} are feeling is perfectly normal,  {PRONOUN/m_c/subject} they are just a kitten regressor. ",
+				"m_c, despite being old for a kit, acts younger then {PRONOUN/m_c/subject} are. It is possible {PRONOUN/m_c/subject} is a kitten regressor."
+		],
+		"puppy regressor": [
+				"m_c has slipped into a more puppy like headspace, {PRONOUN/m_c/subject} are worried about this but r_c assures that {PRONOUN/m_c/subject} are just a puppy regressor, and thats okay." ,
+				"m_c, despite being too old to play pretend, acts more dog like sometimes. It is possible m_c is a puppy regressor."
+		]
+    },
+	"budding spirit": {
+		"anxiety attack": [
+				"r_c can understand that m_c has more trouble than most keeping calm and talks with {PRONOUN/m_c/object} about why {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} extra anxious when {PRONOUN/m_c/subject} {VERB/m_c/fail/fails} to fully check the camp before doing {PRONOUN/m_c/poss} patrols.",
+				"m_c starts to think about a possibility that scares {PRONOUN/m_c/object} and {PRONOUN/m_c/poss} mind fills with fog and heart beating erratically.{PRONOUN/m_c/subject/CAP} {VERB/m_c/panic/panics} waking up a friend.",
+				"A clanmate sits beside m_c and lets {PRONOUN/m_c/object} ramble on as {PRONOUN/m_c/subject} {VERB/m_c/catastrophize/catastrophizes}.",
+				"m_c starts crying because {PRONOUN/m_c/subject} didn't check the camp fully before leaving that morning."
+		],
+		"kittenspace": [
+				"Sometimes m_c feels younger than the age {PRONOUN/m_c/poss} body is.  {PRONOUN/m_c/subject} talked to r_c about it, worried something is wrong with {PRONOUN/m_c/object}, but {PRONOUN/m_c/subject} assured {PRONOUN/m_c/object} what {PRONOUN/m_c/subject} are feeling is perfectly normal, {PRONOUN/m_c/poss} brain is just in kittenspace",
+				"m_c, despite being old for a kit, acts younger then {PRONOUN/m_c/subject} are sometimes. It is possible {PRONOUN/m_c/subject} are in kittenspace."
+		],
+		"puppyspace": [
+				"m_c has slipped into a more puppy like headspace, {PRONOUN/m_c/subject} are worried about this but r_c assures that {PRONOUN/m_c/subject} are just in puppyspace, and thats okay." ,
+				"m_c, despite being too old to play pretend, acts more dog like sometimes. It is possible {PRONOUN/m_c/subject} are in puppyspace."
+		],
+		"kitten regressor": [
+				"m_c feels younger than the age {PRONOUN/m_c/poss} body is.  {PRONOUN/m_c/subject} talked to r_c about it, worried something is wrong with {PRONOUN/m_c/object}, but {PRONOUN/m_c/subject} assured {PRONOUN/m_c/object} what {PRONOUN/m_c/subject} are feeling is perfectly normal,  {PRONOUN/m_c/subject} they are just a kitten regressor. ",
+				"m_c, despite being old for a kit, acts younger then {PRONOUN/m_c/subject} are. It is possible {PRONOUN/m_c/subject} is a kitten regressor."
+		],
+		"puppy regressor": [
+				"m_c has slipped into a more puppy like headspace, {PRONOUN/m_c/subject} are worried about this but r_c assures that {PRONOUN/m_c/subject} are just a puppy regressor, and thats okay." ,
+				"m_c, despite being too old to play pretend, acts more dog like sometimes. It is possible m_c is a puppy regressor."
+		]
+    }
 }

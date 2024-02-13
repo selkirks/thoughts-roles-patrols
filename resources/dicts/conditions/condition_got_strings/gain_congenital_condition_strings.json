@@ -214,5 +214,17 @@
         "m_c's parent brings m_c to r_c for {PRONOUN/m_c/poss} uncontrolable movement. r_c says that {PRONOUN/m_c/subject} have a chattering tongue.",
         "As m_c grows up, {PRONOUN/m_c/subject} start having uncontrolable movements.",
         "m_c tics and is impulsive. {PRONOUN/m_c/subject/CAP} might have a chattering tongue."
+    ],
+    "shattered soul": [
+        "m_c has a nervous conversation with the medicine cat after not feeling like {PRONOUN/m_c/self} for awhile. The medicine cat tells m_c that {PRONOUN/m_c/subject} might be a shattered soul.",
+        "m_c realizes that they are a shattered soul when one of {PRONOUN/m_c/poss} alters says it out loud!",
+        "m_c is starting to suspect that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} a shattered soul because of the voices {PRONOUN/m_c/subject} hear.",
+        "m_c vents to the medicine cat that sometimes it feels like {PRONOUN/m_c/poss} body isn't {PRONOUN/m_c/poss} own.{PRONOUN/m_c/subject} may be a shattered soul"
+    ],   
+    "budding spirit": [
+        "m_c has a nervous conversation with the medicine cat after not feeling like {PRONOUN/m_c/self} for awhile. The medicine cat tells m_c that {PRONOUN/m_c/subject} might be a budding spirit.",
+        "m_c realizes that they are a budding spirit when one of {PRONOUN/m_c/poss} alters says it out loud!",
+        "m_c is starting to suspect that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} a budding spirit because of the voices {PRONOUN/m_c/subject} hear.",
+        "m_c vents to the medicine cat that sometimes it feels like {PRONOUN/m_c/poss} body isn't {PRONOUN/m_c/poss} own.{PRONOUN/m_c/subject} may be a budding spirit. "
     ]
 }

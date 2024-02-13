@@ -642,7 +642,15 @@
 			{
 				"name": "fatigue",
 				"chance": 15
-			}
+			},
+            {
+                "name": "budding spirit",
+                "chance": 35
+            },
+            {
+                "name": "shattered soul",
+                "chance": 35
+            }
         ],
         "herbs": [
             "thyme",
@@ -697,7 +705,15 @@
 			{
 				"name": "sleep paralysis",
 				"chance": 45
-			}
+			},
+            {
+                "name": "budding spirit",
+                "chance": 35
+            },
+            {
+                "name": "shattered soul",
+                "chance": 35
+            }
         ],
         "herbs": [
             "thyme",
@@ -853,7 +869,15 @@
 			{
 				"name": "understimulation",
 				"chance": 35
-			}
+			},
+            {
+                "name": "budding spirit",
+                "chance": 50
+            },
+            {
+                "name": "shattered soul",
+                "chance": 50
+            }
         ],
         "herbs": [ ]
     },
@@ -971,6 +995,14 @@
             {
                 "name": "body biter",
                 "chance": 70
+            },
+            {
+                "name": "budding spirit",
+                "chance": 50
+            },
+            {
+                "name": "shattered soul",
+                "chance": 50
             }
         ],
         "herbs": [ 
@@ -1022,7 +1054,15 @@
 			{
 				"name": "understimulation",
 				"chance": 45
-			}
+			},
+            {
+                "name": "budding spirit",
+                "chance": 50
+            },
+            {
+                "name": "shattered soul",
+                "chance": 50
+            }
         ],
         "herbs":[
             "poppy",
@@ -1355,7 +1395,7 @@
             "ragwort"
         ]
 	},
-    "strong soul": {
+    "thunderous spirit": {
         "severity": "minor",
         "congenital": "always",
         "moons_until": 2,
@@ -1394,6 +1434,14 @@
             {
                 "name": "puppy regressor",
                 "chance": 10
+            },
+            {
+                "name": "budding spirit",
+                "chance": 50
+            },
+            {
+                "name": "shattered soul",
+                "chance": 50
             }
 
         ],
@@ -1430,6 +1478,14 @@
             {
                 "name": "puppy regressor",
                 "chance": 10
+            },
+            {
+                "name": "budding spirit",
+                "chance": 50
+            },
+            {
+                "name": "shattered soul",
+                "chance": 50
             }
         ],
         "herbs":[]
@@ -1972,5 +2028,83 @@
                 "chance": 100
             }
         ]
+    },   
+    "shattered soul": {
+        "severity": "minor",
+        "congenital": "sometimes",
+        "moons_until": 3,
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+            {
+				"name": "anxiety attack",
+				"chance": 15
+			},
+            {
+                "name": "kittenspace",
+                "chance": 10
+            },
+            {
+                "name": "puppyspace",
+                "chance": 10
+            },
+            {
+                "name": "kitten regressor",
+                "chance": 30
+            },
+            {
+                "name": "puppy regressor",
+                "chance": 30
+            }
+        ],
+        "herbs": []
+    },
+    "budding spirit": {
+        "severity": "minor",
+        "congenital": "sometimes",
+        "moons_until": 3,
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+            {
+				"name": "anxiety attack",
+				"chance": 15
+			},
+            {
+                "name": "kittenspace",
+                "chance": 10
+            },
+            {
+                "name": "puppyspace",
+                "chance": 10
+            },
+            {
+                "name": "kitten regressor",
+                "chance": 30
+            },
+            {
+                "name": "puppy regressor",
+                "chance": 30
+            }
+        ],
+        "herbs": []
     }
 }
