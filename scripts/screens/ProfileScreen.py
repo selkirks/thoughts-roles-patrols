@@ -322,11 +322,11 @@ class ProfileScreen(Screens):
                 self.clear_profile()
                 self.build_profile()
                 self.update_disabled_buttons_and_text()
-                elif event.ui_element == self.destroy_accessory_button:
-                    self.the_cat.pelt.accessory = None
-                    self.clear_profile()
-                    self.build_profile()
-                    self.update_disabled_buttons_and_text()
+            elif event.ui_element == self.destroy_accessory_button:
+                self.the_cat.pelt.accessory = None
+                self.clear_profile()
+                self.build_profile()
+                self.update_disabled_buttons_and_text()
         # History Tab
         elif self.open_tab == 'history':
             if event.ui_element == self.sub_tab_1:
