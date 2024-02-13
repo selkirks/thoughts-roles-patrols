@@ -1853,7 +1853,8 @@ class Cat():
                 moons_until = randint(moons_until - 1, moons_until + 2)
             if name == "snow vision":
                 moons_until = randint(moons_until - 1, moons_until + 2)
-        moons_until = randint(moons_until - 1, moons_until + 1)  # creating a range in which a condition can present
+            else:
+                moons_until = randint(moons_until - 1, moons_until + 1)  # creating a range in which a condition can present
             if moons_until < 0:
                 moons_until = 0
 
