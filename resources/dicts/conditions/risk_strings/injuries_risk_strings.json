@@ -242,5 +242,12 @@
 			"m_c feels a little bit dizzy from the tiredness weighing {PRONOUN/m_c/object} down.",
 			"Due to how overtired m_c's been, {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} stood up and needed to sit back down with a spinning head."
 		]
-	}
+	},
+    "fainting": {
+        "head damage": [
+            "r_c realizes that m_c hit {PRONOUN/m_c/poss} head rather hard when {PRONOUN/m_c/subject} fainted.",
+            "m_c got badly hurt when {PRONOUN/m_c/subject} fainted.",
+            "m_c got head damaged after {PRONOUN/m_c/subject} fainted."
+        ]
+    }
 }

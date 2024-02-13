@@ -13,6 +13,12 @@
 			"m_c keeps telling {PRONOUN/m_c/self} everything is fine, yet still some sort of wrongness lingers under {PRONOUN/m_c/poss} fur."
 		]
 	},
+    "beak bite": {
+        "recurring shock": [
+            "r_c calms m_c down after a bird flies overhead.",
+            "Even though m_c has healed physically, there are still some mental scars."
+        ]
+    },
     "broken jaw": {
         "crooked jaw": [
             "Despite r_c's best efforts, m_c's jaw is healing crooked. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} just glad it's healing at all.",
@@ -41,7 +47,8 @@
         ],
         "recurring shock":[
             "The fear from what broke m_c's leg still pounds in {PRONOUN/m_c/poss} heart.",
-            "m_c can't handle thinking about what broke {PRONOUN/m_c/poss} leg."
+            "m_c can't handle thinking about what broke {PRONOUN/m_c/poss} leg.",
+            "Occasionally, m_c's leg hurts and {PRONOUN/m_c/poss} "
         ]
     },
     "mangled leg": {
@@ -255,11 +262,22 @@
 			"After m_c's eye recovers {PRONOUN/m_c/subject} {VERB/m_c/find/finds} {PRONOUN/m_c/self} worrying about the new lazy eye."
 		]
     },
+    "snake bite": {
+        "recurring shock": [
+            "r_c reassures m_c that there aren't any snakes in the camp.",
+            "m_c jumps when {PRONOUN/m_c/object} {VERB/m_c/see/sees} a stick. m_c really thought that it was a snake!",
+            "m_c has become jumpier than usual."
+        ]
+    },
     "rat bite": {
         "weak leg": [
             "The rat bite that m_c suffered has healed, but r_c informs {PRONOUN/m_c/object} that permanent damage was still done and the injured leg will never be quite the same.",
             "m_c complains to r_c that {PRONOUN/m_c/poss} leg, the one savaged by a rat, seems weaker than it used to be. r_c tells {PRONOUN/m_c/object} that it's probably a permanent consequence of the injury.",
             "Ever since {PRONOUN/m_c/subject} {VERB/m_c/were/was} bitten by that rat, m_c's injured leg has felt weaker than the rest. The wound may have healed, but it seems something deeper beneath the skin never will."
+        ],
+        "recurring shock": [
+            "r_c looks over at m_c in consern. {PRONOUN/m_c/subject/CAP} {VERB/m_c/have/has} recovered physically, but have {PRONOUN/m_c/subject} mentally?",
+            "m_c still remembers when the rats swarmed {PRONOUN/m_c/object}. That image lingers in {PRONOUN/m_c/poss} mind."
         ]
     },
     "bite-wound": {
@@ -288,6 +306,12 @@
         "recurring shock": [
             "r_c puts {PRONOUN/r_c/poss} paws on m_c's paws, helping to calm {PRONOUN/m_c/object} down as the memories of what broke {PRONOUN/m_c/poss} back keep rolling through {PRONOUN/m_c/poss} mind.",
             "m_c shudders, {PRONOUN/m_c/poss} mind putting what happened to {PRONOUN/m_c/object} on replay."
+        ]
+    },
+    "poisoned": {
+        "recurring shock": [
+            "r_c has to reassure m_c that nobody poisoned {PRONOUN/m_c/poss} prey.",
+            "After recovering from {PRONOUN/m_c/poss} brush with poisoning, m_c still has a lingering sense of dread about where {PRONOUN/m_c/object} got poisoned."
         ]
     },
 	"rash": {

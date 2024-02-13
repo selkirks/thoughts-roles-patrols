@@ -330,5 +330,22 @@
 			"With some shock m_c realises that the sun is rising already, and {PRONOUN/m_c/subject} {VERB/m_c/haven't/hasn't} gotten any sleep at all.",
 			"Before m_c knows what is happening it's already morning and {PRONOUN/m_c/object} {VERB/m_c/haven't/hasn't} slept yet."
 		]
+	},
+	"ear infection": {
+		"dizziness": [
+			"While in the medicine cat den for {PRONOUN/m_c/poss} ear infection, r_c has discovered that m_c has become dizzy!",
+			"m_c has become dizzy because of {PRONOUN/m_c/poss} ear infection!",
+			"m_c finds that the world tips and crashes around {PRONOUN/m_c/subject} when {PRONOUN/m_c/subject} {VERB/m_c/try/tries} to stand.",
+			"m_c has gotten dizzy because of {PRONOUN/m_c/poss} ear infection."
+		],
+		"ear buzzing": [
+			"When m_c asks about why {PRONOUN/m_c/subject} {VERB/m_c/hear/hears} a ringing, r_c says that it might be ear buzzing.",
+			"m_c has had a buzzing like  fly in {PRONOUN/m_c/poss} ears ever since {PRONOUN/m_c/subject} have gotten an ear infection.",
+			"m_c's ears have been buzzing lately."
+		],
+		"earache": [
+			"m_c's ears have had pressure on them making {PRONOUN/m_c/poss} ears ache.",
+			"m_c has gotten an ear ache!"
+		]
 	}
 }

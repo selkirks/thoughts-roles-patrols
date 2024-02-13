@@ -427,7 +427,11 @@
 			{
 				"name": "ear buzzing",
 				"chance": 15
-			}
+			},
+            {
+                "name": "ear infection",
+                "chance": 50
+            }
         ],
         "herbs": []
     },
@@ -454,7 +458,11 @@
 			{
 				"name": "nonverbal",
 				"chance": 20
-			}			
+			},
+            {
+                "name": "ear infection",
+                "chance": 50
+            }		
         ],
         "herbs": []
 
@@ -1164,6 +1172,10 @@
             {
                 "name": "body biter",
                 "chance": 70
+            },
+            {
+                "name": "sore",
+                "chance": 25
             }
         ],
         "herbs": [
@@ -2028,7 +2040,45 @@
                 "chance": 100
             }
         ]
-    },   
+    },
+    "falling paws": {
+        "severity": "minor",
+        "congenital": "always",
+        "moons_until": 5,
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+            {
+                "name": "dizziness",
+                "chance": 30
+            },
+            {
+                "name": "headache",
+                "chance": 30
+            },
+            {
+                "name": "fainting",
+                "chance": 60
+            },
+            {
+                "name": "bruises",
+                "chance": 40
+            },
+            {
+                "name": "scrapes",
+                "chance": 40
+            }
+        ]
+    },  
     "shattered soul": {
         "severity": "minor",
         "congenital": "sometimes",

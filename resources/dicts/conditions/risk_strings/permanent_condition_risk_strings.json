@@ -149,6 +149,11 @@
 		"ear buzzing": [
 			"r_c doesn't know how to help m_c when {PRONOUN/m_c/subject} {VERB/m_c/come/comes} complaining about a fly getting caught in {PRONOUN/m_c/poss} ears. There's just no fly to be found.",
 			"m_c keeps stopping and shaking {PRONOUN/m_c/poss} head rapidly, trying to get rid of the buzzing that fills {PRONOUN/m_c/poss} ears."
+		],
+		"ear infection": [
+			"r_c sighs and tells m_c that {PRONOUN/m_c/object} {PRONOUN/m_c/have/has} gotten an ear infection.",
+			"m_c has gotten an ear infection because of {PRONOUN/m_c/poss} damaged ears.",
+			"m_c has an ear infection!"
 		]
     },
     "deaf": {
@@ -161,6 +166,11 @@
 			"r_c sits with m_c trading signs back and forth when {PRONOUN/m_c/subject} {VERB/m_c/stop/stops} speaking.",
 			"Nobody minds when m_c has a few bad days and chooses to just use sign to communicate rather than trying to strain to speak.",
 			"Frustrated at not been able to tell if {PRONOUN/m_c/subject} {VERB/m_c/are/is} speaking clearly, m_c just decides to use {PRONOUN/m_c/poss} best communication method instead."
+		],
+		"ear infection": [
+			"r_c sighs and tells m_c that {PRONOUN/m_c/object} {PRONOUN/m_c/have/has} gotten an ear infection.",
+			"m_c has gotten an ear infection because of {PRONOUN/m_c/poss} damaged ears.",
+			"m_c has an ear infection!"
 		]
     },
     "constant joint pain": {
@@ -777,6 +787,11 @@
 			"Recently, when m_c starts getting anxious {PRONOUN/m_c/subject} {VERB/m_c/start/starts} biting {PRONOUN/m_c/poss} body.",
 			"m_c works off {PRONOUN/m_c/poss} anxiety by grooming {PRONOUN/m_c/self} perhaps a bit too much.",
 			"m_c starts pulling out {PRONOUN/m_c/poss} fur when {PRONOUN/m_c/subject} {VERB/m_c/get/gets} anxious."
+		],
+		"sore": [
+			"m_c has gotten very anxiously lately and waking up one day, {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} extremly sore.",
+			"m_c has been tensing {PRONOUN/m_c/poss} muscles when {PRONOUN/m_c/subject} {VERB/m_c/get/gets} anxious.",
+			"m_c's belly is sore from how hard {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} tensing it."
 		]
     },
     "constant roaming pain": {
@@ -1336,6 +1351,40 @@
 			"r_c sighs when m_c comes in with a broken bone from all locked up.",
 			"m_c locks up and takes a harsh fall as a result.",
 			"m_c got very unfortunate when {PRONOUN/m_c/subject} got locked up."
+		]
+	},
+
+	"falling paws": {
+		"dizziness": [
+			"r_c notices when m_c is leaning against a tree trunk. m_c says that {PRONOUN/m_c/subject} {VERB/m_c/are/is} feeling dizzy.",
+			"m_c stood up too fast and got dizzy.",
+			"m_c staggers when {PRONOUN/m_c/subject} {VERB/m_c/try/tries} to stand up.",
+			"The world tilts around m_c when {PRONOUN/m_c/subject} {VERB/m_c/stand/stands} up.",
+			"m_c gets dizzy again.",
+			"m_c feels cold and dizy when {PRONOUN/m_c/subject} {VERB/m_c/stand/stands} up."
+		],
+		"headache": [
+			"r_c notices m_c whince after standing up.",
+			"m_c sighs and ignores the headache {PRONOUN/m_c/subject} {VERB/m_c/get/gets} from {PRONOUN/m_c/poss} blood rushing to {PRONOUN/m_c/poss} head.",
+			"m_c feels cold and dizy for a second before getting a headache.",
+			"m_c shakes the cobwebs out of {PRONOUN/m_c/poss} head when {PRONOUN/m_c/subject} {VERB/m_c/stand/stands} up and {PRONOUN/m_c/subject} {VERB/m_c/get/gets} a headache."
+		],
+		"fainting": [
+			"r_c pads over to check on m_c when {PRONOUN/r_c/subject} {VERB/m_s/realize/realizes} that m_c has fainted standing up.",
+			"m_c stood up too fast and has passed out.",
+			"m_c could feel it coming and sits down right before passing out.",
+			"m_c has fainted and before {PRONOUN/m_c/subject} could have fainted, m_c sat down.",
+			"m_c feels {PRONOUN/m_c/poss} paws go cold before {PRONOUN/m_c/subject} faint."
+		],
+		"bruises": [
+			"m_c slowly stands up and slinks to r_c. m_c tells r_c that {PRONOUN/m_c/subject} got these bruises when {PRONOUN/m_c/subject} almost fainted and sat back down too sudenly.",
+			"m_c narrowly avoided fainting but got some bruises in the process.",
+			"m_c fell down to avoid fainting and got hurt in the process."
+		],
+		"scrapes": [
+			"r_c asks what happened when m_c got all scraped up and m_c answered that {PRONOUN/m_c/subject} got scraped up in order to avoid fainting.",
+			"m_c fell down to avoid fainting and got hurt in the process.",
+			"m_c got scraped up by sitting down too suddenly."
 		]
 	},
 	

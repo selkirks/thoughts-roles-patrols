@@ -1,6 +1,6 @@
 [
     {
-        "injury": "snake bite",
+        "injury": "",
         "tags": [
             "Newleaf",
             "Greenleaf",
@@ -11,7 +11,7 @@
         ],
         "event_text": "m_c was bitten by a snake, and miraculously survived!",
         "history_text": {
-            "scar": "m_c was scarred by a snake bite.",
+            "scar": "m_c was scarred by a .",
             "reg_death": "m_c died after {PRONOUN/m_c/subject} {VERB/m_c/were/was} bitten by a snake."
         },
         "cat_trait": null,

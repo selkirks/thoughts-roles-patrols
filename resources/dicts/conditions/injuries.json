@@ -22,7 +22,8 @@
         "also_got": [
             "torn pelt",
             "torn ear",
-            "blood loss"
+            "blood loss",
+            "shock"
         ],
         "cause_permanent": [
 			"recurring shock"
@@ -63,7 +64,8 @@
         ],
         "also_got": [
             "torn pelt",
-            "blood loss"
+            "blood loss",
+            "shock"
         ],
         "cause_permanent": [
             "recurring shock"
@@ -104,7 +106,8 @@
         ],
         "also_got": [
             "torn pelt",
-            "blood loss"
+            "blood loss",
+            "shock"
         ],
         "cause_permanent": [
 			"recurring shock"
@@ -145,7 +148,8 @@
         ],
         "also_got": [
             "torn pelt",
-            "blood loss"
+            "blood loss",
+            "shock"
         ],
         "cause_permanent": [
             "recurring shock"
@@ -186,9 +190,11 @@
         ],
         "also_got": [
             "poisoned",
+            "shock"
+        ],
+        "cause_permanent": [
             "recurring shock"
         ],
-        "cause_permanent": [],
         "herbs": [
             "tansy",
             "marigold",
@@ -234,7 +240,10 @@
             "torn pelt",
             "shock"
         ],
-        "cause_permanent": [],
+        "cause_permanent": [
+            "weak leg",
+            "recurring shock"
+        ],
         "herbs": [
             "wild_garlic",
             "burdock",
@@ -331,7 +340,8 @@
         "also_got": [
             "blood loss",
             "scrapes",
-            "bruises"
+            "bruises",
+            "shock"
         ],
         "cause_permanent": [
             "crooked jaw",
@@ -374,7 +384,8 @@
             "mangled leg",
             "blood loss",
             "scrapes",
-            "bruises"
+            "bruises",
+            "shock"
         ],
         "cause_permanent": [
             "weak leg",
@@ -419,7 +430,8 @@
             "dislocated joint",
             "blood loss",
             "scrapes",
-            "bruises"
+            "bruises",
+            "shock"
         ],
         "cause_permanent": [
             "lost a leg",
@@ -577,7 +589,8 @@
         ],
         "also_got": [
             "torn pelt",
-            "blood loss"
+            "blood loss",
+            "shock"
         ],
         "cause_permanent": [
             "lost their tail",
@@ -816,7 +829,9 @@
                 "chance": 25
             }
         ],
-        "also_got": [],
+        "also_got": [
+            "shock"
+        ],
         "cause_permanent": [
             "partial hearing loss",
             "recurring shock"
@@ -855,7 +870,9 @@
                 "chance": 4
             }
         ],
-        "also_got": [],
+        "also_got": [
+            "shock"
+        ],
         "cause_permanent": [
             "lost a leg",
             "lost their tail",
@@ -938,7 +955,9 @@
                 "chance": 20
             }
         ],
-        "also_got": [],
+        "also_got": [
+            "shock"
+        ],
         "cause_permanent": [
             "raspy lungs",
             "recurring shock"
@@ -1011,7 +1030,9 @@
                 "chance": 15
             }
         ],
-        "also_got": [],
+        "also_got": [
+            "shock"
+        ],
         "cause_permanent": [
             "lost their tail",
             "lost a leg",
@@ -1191,7 +1212,8 @@
             }
         ],
         "also_got": [
-			"dizziness"
+			"dizziness",
+            "lingering shock"
         ],
         "cause_permanent": [
             "failing eyesight",
@@ -1234,6 +1256,7 @@
             }
         ],
         "also_got": [
+            "shock"
         ],
         "cause_permanent": [
             "blind",
@@ -1316,10 +1339,14 @@
             }
         ],
         "also_got": [
+            "shock",
+            "lingering shock"
         ],
         "cause_permanent": [
             "paralyzed",
-            "recurring shock",
+            "recurring shock"
+        ],
+        "herbs": [
             "juniper",
             "ragwort",
             "poppy"
@@ -1351,6 +1378,7 @@
             "shock"
         ],
         "cause_permanent": [
+            "recurring shock"
         ],
         "herbs": [
             "dandelion",
@@ -1623,7 +1651,8 @@
 			}
         ],
         "also_got": [
-			"dizziness"
+			"dizziness",
+            "shock"
         ],
         "cause_permanent": [
 			"partial hearing loss"
@@ -1736,6 +1765,38 @@
             "honey",
             "chamomile",
             "poppy"
+        ]
+    },
+
+    "fainting": {
+        "duration": 1,
+        "severity": "major",
+        "medicine_duration": 1,
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+            {
+                "name": "head damage",
+                "chance": 120
+            }
+        ],
+        "also_got": [
+            "scrapes",
+            "bruises",
+            "dizziness",
+            "headache"
+        ],
+        "herbs": [
+            
         ]
     },
 

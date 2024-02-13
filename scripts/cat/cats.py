@@ -1829,10 +1829,31 @@ class Cat():
             born_with = True
         moons_until = condition["moons_until"]
         if born_with and moons_until != 0:
-            if name == "starwalker":
+if name == "starwalker":
                 moons_until = randint(moons_until - 1, moons_until + 10)
-            else:
-                moons_until = randint(moons_until - 1, moons_until + 1)  # creating a range in which a condition can present
+            if name == "loose body":
+                moons_until = randint(moons_until - 1, moons_until + 6)
+            if name == "jellyfish joints":
+                moons_until = randint(moons_until - 1, moons_until + 6)
+            if name == "constant joint pain":
+                moons_until = randint(moons_until - 1, moons_until + 5)
+            if name == "body biter":
+                moons_until = randint(moons_until - 1, moons_until + 4)
+            if name == "strong soul":
+                moons_until = randint(moons_until - 1, moons_until + 4)
+            if name == "otherwordly mind":
+                moons_until = randint(moons_until - 1, moons_until + 4)
+            if name == "ocd":
+                moons_until = randint(moons_until - 1, moons_until + 3)
+            if name == "falling paws":
+                moons_until = randint(moons_until - 1, moons_until + 3)
+            if name == "heavy soul":
+                moons_until = randint(moons_until - 1, moons_until + 2)
+            if name == "anxiety":
+                moons_until = randint(moons_until - 1, moons_until + 2)
+            if name == "snow vision":
+                moons_until = randint(moons_until - 1, moons_until + 2)
+            moons_until = randint(moons_until - 1, moons_until + 1)  # creating a range in which a condition can present
             if moons_until < 0:
                 moons_until = 0
 

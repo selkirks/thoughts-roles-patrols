@@ -1540,6 +1540,49 @@
 			"daisy"
 		]
     },
+    "ear infection": {
+        "severity": "major",
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "medicine_mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 2000,
+            "senior adult": 1500,
+            "senior": 1000
+        },
+        "duration": 2,
+        "medicine_duration": 1,
+        "infectiousness": 0,
+        "risks": [
+            {
+                "name": "dizziness",
+                "chance": 10
+            },
+            {
+                "name": "ear buzzing",
+                "chance": 20
+            },
+            {
+                "name": "earache",
+                "chance": 25
+            }
+        ],
+        "herbs": [
+			"chamomile",
+			"thyme",
+			"daisy"
+		]
+    },
     "kittenspace": {
         "severity": "major",
         "mortality": {
@@ -1817,5 +1860,5 @@
 			"thyme",
 			"daisy"
 		]
-    }	
+    }
 }

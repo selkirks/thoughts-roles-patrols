@@ -257,5 +257,11 @@
 	"fatigue": [
 		"m_c is relieved to wake up and feel like {PRONOUN/m_c/subject} {VERB/m_c/have/has} the energy for the day once more.",
 		"After the constant tiredness that's weighed m_c down, it's nice to see {PRONOUN/m_c/object} with a spring in {PRONOUN/m_c/poss} step once more."
-	]
+	],
+    "fainting": [
+        "m_c has woken up with {PRONOUN/m_c/poss} friend beside {PRONOUN/m_c/object}.",
+        "m_c woke up after fainting.",
+        "m_c blinks awake on the ground.",
+        "m_c blinks awake where {PRONOUN/m_c/subject} {VERB/m_c/were/was}."
+    ]
 }
