@@ -292,6 +292,7 @@ class Cat():
                 new_condition=choice(["shattered soul", "budding spirit"])
                 self.get_permanent_condition(new_condition, born_with=True)
             '''
+            
             # trans cat chances
             trans_chance = randint(0, 50)
             nb_chance = randint(0, 75)
@@ -1999,10 +2000,15 @@ class Cat():
         condition_directory = get_save_dir() + '/' + clanname + '/conditions'
         condition_file_path = condition_directory + '/' + self.ID + '_conditions.json'
 
-        if (not self.is_ill() and not self.is_injured() and not self.is_disabled()) or self.dead or self.outside:
+        if (not self.is_ill() and not self.is_injured() and not self.is_disabled()):
             if os.path.exists(condition_file_path):
                 os.remove(condition_file_path)
             return
+        if self.outside or self.dead:
+            if not self.is_disabled():
+                if os.path.exists(condition_file_path):
+                    os.remove(condition_file_path)
+                return
 
         conditions = {}
 
