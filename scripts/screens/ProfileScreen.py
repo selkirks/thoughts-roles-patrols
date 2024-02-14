@@ -895,6 +895,20 @@ class ProfileScreen(Screens):
                 output += "\n"
                 break
             
+        if the_cat.is_plural():
+            con = ""
+            if "shattered soul" in self.the_cat.permanent_condition:
+                con = "shattered soul"
+            elif "budding spirit" in self.the_cat.permanent_condition:
+                con = "budding spirit"
+            if self.the_cat.permanent_condition[con]['moons_until'] <= 0:
+                output += "fronting: "
+                can_front = [str(the_cat.name)]
+                for alter in the_cat.alters:
+                    can_front.append(alter["name"])
+                output += choice(can_front)
+                
+            
 
         if the_cat.is_injured():
             if "recovering from birth" in the_cat.injuries:

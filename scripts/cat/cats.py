@@ -286,12 +286,14 @@ class Cat():
 
         # These things should only run when generating a new cat, rather than loading one in.
         if not loading_cat:
-            '''
+            
             # everyone is plural :3
+            '''
             if game.clan:
                 new_condition=choice(["shattered soul", "budding spirit"])
                 self.get_permanent_condition(new_condition, born_with=True)
             '''
+            
             
             # trans cat chances
             trans_chance = randint(0, 50)
@@ -1812,6 +1814,13 @@ class Cat():
         if name not in PERMANENT:
             print(str(self.name), f"WARNING: {name} is not in the permanent conditions collection.")
             return
+        
+        if name in ["shattered soul", "budding spirit"]:
+            if self.is_plural():
+                print ("cat is already plural!")
+                return
+            
+            
 
         # remove accessories if need be
         if 'NOTAIL' in self.pelt.scars and self.pelt.accessory in ['RED FEATHERS', 'BLUE FEATHERS', 'JAY FEATHERS']:
@@ -1890,6 +1899,9 @@ class Cat():
                 "complication": None,
                 "event_triggered": new_perm_condition.new
             }
+            if self.is_plural():
+                if len(self.alters) <1:
+                    self.new_alter()
             new_condition = True
         return new_condition
 
