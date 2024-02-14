@@ -315,8 +315,10 @@ class NewCatEvents:
             cat.status = 'medicine cat'
             if cat.moons < 12:
                 cat.status += ' apprentice'
+                cat.update_mentor()
         elif cat.moons < 12:
             cat.status = 'apprentice'
+            cat.update_mentor()
         else:
             cat.status = "warrior"
         cat.outside = False

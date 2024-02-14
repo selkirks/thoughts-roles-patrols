@@ -517,7 +517,7 @@ class Pregnancy_Events():
                 if cat.status == 'leader':
                     death_event = ("died after a harsh kitting")
                 else:
-                    death_event = (f"{cat.name} after a harsh kitting.")
+                    death_event = (f"{cat.name} died after a harsh kitting.")
                 History.add_possible_history(cat, 'blood loss', death_text=death_event)
                 possible_events = events["birth"]["difficult_birth"]
                 # just makin sure meds aren't mentioned if they aren't around or if they are a parent
@@ -820,6 +820,7 @@ class Pregnancy_Events():
                 kit = Cat(parent1=blood_parent2.ID, parent2=blood_parent.ID,moons=0, backstory=backstory, status='newborn')
             else:
                 # Two parents provided
+<<<<<<< HEAD
                 if backkit:    
                     kit = Cat(parent1=cat.ID, parent2=other_cat.ID if other_cat else None, moons=0, backstory=backstory, status='newborn', extrapar = par2geno)
                 else:
@@ -831,6 +832,15 @@ class Pregnancy_Events():
                     kit.thought = f"Snuggles up to the belly of {cat.name}"
                 else:
                     kit.thought = f"Snuggles up to the belly of {other_cat.name}"
+=======
+                # The cat that gave birth is always parent1 so there is no need to check gender
+                kit = Cat(parent1=cat.ID, parent2=other_cat.ID, moons=0, status='newborn')
+                kit.thought = f"Snuggles up to the belly of {cat.name}"
+            else:
+                # A one blood parent litter is the only option left. 
+                kit = Cat(parent1=cat.ID, moons=0, backstory=backstory, status='newborn')
+                kit.thought = f"Snuggles up to the belly of {cat.name}"
+>>>>>>> b663040697830a01d2ac8539e8510a4bb3a40492
                 
             kit.adoptive_parents = all_adoptive_parents  # Add the adoptive parents. 
             all_kitten.append(kit)
