@@ -1531,11 +1531,11 @@ class ProfileScreen(Screens):
         if self.the_cat.is_plural:
             if "shattered soul" in self.the_cat.permanent_condition:
                 con = "shattered soul"
-                if self.the_cat.permanent_condition[con]['moons_until'] < 0:
+                if self.the_cat.permanent_condition[con]['moons_until'] <= 0:
                     all_illness_injuries.extend([(i['name'], self.get_alter_details(i)) for i in self.the_cat.alters])
             elif "budding spirit" in self.the_cat.permanent_condition:
                 con = "budding spirit"
-                if self.the_cat.permanent_condition[con]['moons_until'] < 0:
+                if self.the_cat.permanent_condition[con]['moons_until'] <= 0:
                     all_illness_injuries.extend([(i['name'], self.get_alter_details(i)) for i in self.the_cat.alters])
         all_illness_injuries.extend([(i, self.get_condition_details(i)) for i in self.the_cat.injuries])
         all_illness_injuries.extend([(i, self.get_condition_details(i)) for i in self.the_cat.illnesses if
