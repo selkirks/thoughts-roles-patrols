@@ -907,6 +907,7 @@ class ProfileScreen(Screens):
                 for alter in the_cat.alters:
                     can_front.append(alter["name"])
                 output += choice(can_front)
+                output += "\n"
                 
             
 
