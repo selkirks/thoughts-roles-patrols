@@ -206,6 +206,7 @@ class Cat():
         self.also_got = False
         self.permanent_condition = {}
         self.alters = []
+        self.front = None
         self.df = False
         self.experience_level = None
         
@@ -286,9 +287,9 @@ class Cat():
 
         # These things should only run when generating a new cat, rather than loading one in.
         if not loading_cat:
-            
-            # everyone is plural :3
             '''
+            # everyone is plural :3
+            
             if game.clan:
                 new_condition=choice(["shattered soul", "budding spirit"])
                 self.get_permanent_condition(new_condition, born_with=True)
@@ -1510,6 +1511,10 @@ class Cat():
                     num_splits = randint(1,3)
                     for i in range(num_splits):
                         self.new_alter()
+            can_front = [str(self.name)]
+            for alter in self.alters:
+                can_front.append(alter["name"])
+            self.front = choice(can_front)
 
         mortality = self.permanent_condition[condition]["mortality"]
         moons_until = self.permanent_condition[condition]["moons_until"]

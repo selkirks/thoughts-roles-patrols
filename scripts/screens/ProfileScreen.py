@@ -897,16 +897,26 @@ class ProfileScreen(Screens):
             
         if the_cat.is_plural():
             con = ""
-            if "shattered soul" in self.the_cat.permanent_condition:
+            if "shattered soul" in the_cat.permanent_condition:
                 con = "shattered soul"
-            elif "budding spirit" in self.the_cat.permanent_condition:
+            elif "budding spirit" in the_cat.permanent_condition:
                 con = "budding spirit"
-            if self.the_cat.permanent_condition[con]['moons_until'] <= 0:
+            if self.the_cat.permanent_condition[con]["born_with"] is True:
+                minmoons = -1
+            else:
+                minmoons = 0
+            if self.the_cat.permanent_condition[con]['moons_until'] <= minmoons:
                 output += "fronting: "
+                if self.the_cat.front is not None:
+                    output += the_cat.front
+                else:
+                    output += str(the_cat.name)
+                '''
                 can_front = [str(the_cat.name)]
                 for alter in the_cat.alters:
                     can_front.append(alter["name"])
                 output += choice(can_front)
+                '''
                 output += "\n"
                 
             
@@ -1546,11 +1556,19 @@ class ProfileScreen(Screens):
         if self.the_cat.is_plural:
             if "shattered soul" in self.the_cat.permanent_condition:
                 con = "shattered soul"
-                if self.the_cat.permanent_condition[con]['moons_until'] <= 0:
+                if self.the_cat.permanent_condition[con]["born_with"] is True:
+                    minmoons = -1
+                else:
+                    minmoons = 0
+                if self.the_cat.permanent_condition[con]['moons_until'] <= minmoons:
                     all_illness_injuries.extend([(i['name'], self.get_alter_details(i)) for i in self.the_cat.alters])
             elif "budding spirit" in self.the_cat.permanent_condition:
                 con = "budding spirit"
-                if self.the_cat.permanent_condition[con]['moons_until'] <= 0:
+                if self.the_cat.permanent_condition[con]["born_with"] is True:
+                    minmoons = -1
+                else:
+                    minmoons = 0
+                if self.the_cat.permanent_condition[con]['moons_until'] <= minmoons:
                     all_illness_injuries.extend([(i['name'], self.get_alter_details(i)) for i in self.the_cat.alters])
         all_illness_injuries.extend([(i, self.get_condition_details(i)) for i in self.the_cat.injuries])
         all_illness_injuries.extend([(i, self.get_condition_details(i)) for i in self.the_cat.illnesses if
