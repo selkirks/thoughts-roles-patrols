@@ -429,10 +429,10 @@ class Pelt():
                 break
 
         # Determine tortie:
-        if gender == "female":
-            torbie = random.getrandbits(tortie_chance_f) == 1
-        else:
+        if gender == "male":
             torbie = random.getrandbits(tortie_chance_m) == 1
+        else:
+            torbie = random.getrandbits(tortie_chance_f) == 1
 
         chosen_tortie_base = None
         if torbie:
@@ -545,10 +545,10 @@ class Pelt():
         # There is a default chance for female tortie, slightly increased for completely random generation.
         tortie_chance_f = game.config["cat_generation"]["base_female_tortie"] - 1
         tortie_chance_m = game.config["cat_generation"]["base_male_tortie"]
-        if gender == "female":
-            torbie = random.getrandbits(tortie_chance_f) == 1
-        else:
+        if gender == "male":
             torbie = random.getrandbits(tortie_chance_m) == 1
+        else:
+            torbie = random.getrandbits(tortie_chance_f) == 1
 
         chosen_tortie_base = None
         if torbie:

@@ -1435,5 +1435,38 @@
 				"m_c has slipped into a more puppy like headspace, {PRONOUN/m_c/subject} are worried about this but r_c assures that {PRONOUN/m_c/subject} are just a puppy regressor, and thats okay." ,
 				"m_c, despite being too old to play pretend, acts more dog like sometimes. It is possible m_c is a puppy regressor."
 		]
-    }
+    },
+	"pcos": {
+		"infertile": [
+			"r_c explains to m_c that {PRONOUN/m_c/subject} may be infertile due to {PRONOUN/m_c/poss} pcos."
+		]
+	},
+	"excess testosterone": {
+		"pcos": [
+			"After m_c comes to the medicine den asking for more herbs for their cramps, r_c insists on checking up on {PRONOUN/m_c/object}. It appears {PRONOUN/m_c/poss} excess testosterone has resulted in pcos."
+		],
+		"infertile": [
+			"r_c explains to m_c that {PRONOUN/m_c/subject} may be infertile due to {PRONOUN/m_c/poss} excess testosterone."
+		]
+	},
+	"testosterone deficiency": {
+		"infertile": [
+			"r_c explains to m_c that {PRONOUN/m_c/subject} may be infertile due to {PRONOUN/m_c/poss} testosterone deficiency."
+		]
+	},
+	"chimerism": {
+		"infertile": [
+			"r_c explains to m_c that {PRONOUN/m_c/subject} may be infertile due to {PRONOUN/m_c/poss} chimerism."
+		]
+	},	
+	"mosaicism": {
+		"infertile": [
+			"r_c explains to m_c that {PRONOUN/m_c/subject} may be infertile due to {PRONOUN/m_c/poss} mosaicism."
+		]
+	},
+	" aneuploidy": {
+		"infertile": [
+			"r_c explains to m_c that {PRONOUN/m_c/subject} may be infertile due to {PRONOUN/m_c/poss} anueploidy."
+		]
+	}
 }

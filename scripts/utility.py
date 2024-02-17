@@ -983,7 +983,10 @@ def event_text_adjust(Cat,
     cat_dict = {}
 
     if cat:
-        cat_dict["m_c"] = (str(cat.name), choice(cat.pronouns))
+        if cat.is_plural() and cat.front is not None:
+            cat_dict["m_c"] = (cat.front, choice(cat.pronouns))
+        else:
+            cat_dict["m_c"] = (str(cat.name), choice(cat.pronouns))
         cat_dict["p_l"] = cat_dict["m_c"]
     if "acc_plural" in text:
         text = text.replace("acc_plural", str(ACC_DISPLAY[cat.pelt.accessory]["plural"]))
@@ -992,7 +995,10 @@ def event_text_adjust(Cat,
 
     if other_cat:
         if other_cat.pronouns:
-            cat_dict["r_c"] = (str(other_cat.name), choice(other_cat.pronouns))
+            if other_cat.is_plural() and other_cat.front is not None:
+                cat_dict["r_c"] = (cat.front, choice(cat.pronouns))
+            else:
+                cat_dict["r_c"] = (str(other_cat.name), choice(other_cat.pronouns))
         else:
             cat_dict["r_c"] = (str(other_cat.name))
 

@@ -219,12 +219,38 @@
         "m_c has a nervous conversation with the medicine cat after not feeling like {PRONOUN/m_c/self} for awhile. The medicine cat tells m_c that {PRONOUN/m_c/subject} might be a shattered soul.",
         "m_c realizes that they are a shattered soul when one of {PRONOUN/m_c/poss} alters says it out loud!",
         "m_c is starting to suspect that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} a shattered soul because of the voices {PRONOUN/m_c/subject} hear.",
-        "m_c vents to the medicine cat that sometimes it feels like {PRONOUN/m_c/poss} body isn't {PRONOUN/m_c/poss} own.{PRONOUN/m_c/subject} may be a shattered soul"
+        "m_c vents to the medicine cat that sometimes it feels like {PRONOUN/m_c/poss} body isn't {PRONOUN/m_c/poss} own: {PRONOUN/m_c/subject} may be a shattered soul"
     ],   
     "budding spirit": [
         "m_c has a nervous conversation with the medicine cat after not feeling like {PRONOUN/m_c/self} for awhile. The medicine cat tells m_c that {PRONOUN/m_c/subject} might be a budding spirit.",
         "m_c realizes that they are a budding spirit when one of {PRONOUN/m_c/poss} alters says it out loud!",
         "m_c is starting to suspect that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} a budding spirit because of the voices {PRONOUN/m_c/subject} hear.",
-        "m_c vents to the medicine cat that sometimes it feels like {PRONOUN/m_c/poss} body isn't {PRONOUN/m_c/poss} own.{PRONOUN/m_c/subject} may be a budding spirit. "
+        "m_c vents to the medicine cat that sometimes it feels like {PRONOUN/m_c/poss} body isn't {PRONOUN/m_c/poss} own: {PRONOUN/m_c/subject} may be a budding spirit. "
+    ],
+    "testosterone deficiency": [
+        "The medicine cat carefully soothes over all of m_c's parent's worries. Being intersex is perfectly normal and m_c will do great!",
+        "While checking in on the nursery, the medicine cat notices something slightly different about m_c. It seems that m_c is intersex."
+    ],
+    "excess testosterone": [
+        "The medicine cat carefully soothes over all of m_c's parent's worries. Being intersex is perfectly normal and m_c will do great!",
+        "While checking in on the nursery, the medicine cat notices something slightly different about m_c. It seems that m_c is intersex. "
+    ],
+    "aneuploidy": [
+        "The medicine cat carefully soothes over all of m_c's parent's worries. Being intersex is perfectly normal and m_c will do great!",
+        "While checking in on the nursery, the medicine cat notices something slightly different about m_c. It seems that m_c is intersex."
+    ],
+    "mosaicism": [
+        "The medicine cat carefully soothes over all of m_c's parent's worries. Being intersex is perfectly normal and m_c will do great!",
+        "While checking in on the nursery, the medicine cat notices something slightly different about m_c. It seems that m_c is intersex."
+    ],
+    "chimerism": [
+        "The medicine cat carefully soothes over all of m_c's parent's worries. Being intersex is perfectly normal and m_c will do great!",
+        "While checking in on the nursery, the medicine cat notices something slightly different about m_c. It seems that m_c is intersex."
+    ],
+    "infertile": [
+        "r_c explains to m_c that {PRONOUN/m_c/subject} may be infertile."
+    ],
+    "pcos": [
+        "After m_c comes to the medicine den asking for more herbs for their cramps, r_c insists on checking up on {PRONOUN/m_c/object}. It appears to be pcos."
     ]
 }

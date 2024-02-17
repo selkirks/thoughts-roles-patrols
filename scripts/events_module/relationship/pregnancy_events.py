@@ -197,7 +197,7 @@ class Pregnancy_Events():
 
         # even with no_gendered_breeding on a male cat with no second parent should not be count as pregnant
         # instead, the cat should get the kit instantly
-        if not other_cat and cat.gender == 'male':
+        if not other_cat and cat.gender in ['male' , 'intersex']:
             amount = Pregnancy_Events.get_amount_of_kits(cat)
             kits = Pregnancy_Events.get_kits(amount, cat, None, clan)
             insert = 'this should not display'
@@ -428,6 +428,104 @@ class Pregnancy_Events():
     # ---------------------------------------------------------------------------- #
     #                          check if event is triggered                         #
     # ---------------------------------------------------------------------------- #
+    @staticmethod
+    def check_intersex_parents(cat: Cat,
+                            second_parent: Cat,
+                            same_sex_adoption:bool):
+        #only if same sex is OFF
+        if cat.gender == 'intersex':
+            if second_parent.gender == 'male':
+                if "excess testosterone" in cat.permanent_condition:
+                    return True, False
+                elif "aneuploidy" in cat.permanent_condition:
+                    return True, False
+                elif "chimerism" in cat.permanent_condition:
+                    return True, False
+                else:
+                    if not same_sex_adoption:
+                        return False, False
+                    else:
+                        return True, True
+            elif second_parent.gender == 'female':
+                if "testosterone deficient" in cat.permanent_condition:
+                    return True, False
+                elif "chimerism" in cat.permanent_condition:
+                    return True, False
+                elif "mosaicism" in cat.permanent_condition:
+                    return True, False
+                else:
+                    if not same_sex_adoption:
+                        return False, False
+                    else:
+                        return True, True
+            else:
+                if "chimerism" in cat.permanent_condition or "chimerism" in second_parent.permanent_condition:
+                    return True, False
+                elif "mosaicism" in cat.permanent_condition:
+                    if "excess testosterone" in second_parent.permanent_condition:
+                        return True, False
+                    elif "mosaicism"in second_parent.permanent_condition:
+                        return True, False
+                    else:
+                        if not same_sex_adoption:
+                            return False, False
+                        else:
+                            return True, True
+                elif "aneuploidy" in cat.permanent_condition:
+                    if "testosterone deficient" in second_parent.permanent_condition:
+                        return True, False
+                    else:
+                        if not same_sex_adoption:
+                            return False, False
+                        else:
+                            return True, True
+                elif "testosterone deficient" in cat.permanent_condition:
+                    if "excess testosterone" in second_parent.permanent_condition:
+                        return True, False
+                    elif "mosaicism" in second_parent.permanent_condition:
+                        return True, False
+                    else:
+                        if not same_sex_adoption:
+                            return False, False
+                        else:
+                            return True, True
+                elif "excess testosterone" in cat.permanent_condition:
+                    if "testosterone deficient" in second_parent.permanent_condition:
+                        return True, False
+                    else:
+                        if not same_sex_adoption:
+                            return False, False
+                        else:
+                            return True, True
+                    
+        elif second_parent.gender == 'intersex':
+            if cat.gender == 'male':
+                if "excess testosterone" in second_parent.permanent_condition:
+                    return True, False
+                elif "aneuploidy" in second_parent.permanent_condition:
+                    return True, False
+                elif "chimerism" in second_parent.permanent_condition:
+                    return True, False
+                else:
+                    if not same_sex_adoption:
+                        return False, False
+                    else:
+                        return True, True
+            elif cat.gender == 'female':
+                if "testosterone deficient" in second_parent.permanent_condition:
+                    return True, False
+                elif "chimerism" in second_parent.permanent_condition:
+                    return True, False
+                elif "mosaicism" in second_parent.permanent_condition:
+                    return True, False
+                else:
+                    if not same_sex_adoption:
+                        return False, False
+                    else:
+                        return True, True
+
+        return False, False
+
 
     @staticmethod
     def check_if_can_have_kits(cat, single_parentage, allow_affair):
@@ -439,6 +537,9 @@ class Pregnancy_Events():
             return False
 
         if 'recovering from birth' in cat.injuries:
+            return False
+        
+        if 'infertile' in cat.permanent_condition:
             return False
 
         # decide chances of having kits, and if it's possible at all.
@@ -479,6 +580,16 @@ class Pregnancy_Events():
             return False, False
 
         # Check to see if the pair can have kits.
+            
+        if "infertile" in cat.permanent_condition or "infertile" in second_parent.permanent_condition:
+            True, True
+        
+        if cat.gender == 'intersex' or second_parent.gender == 'intersex':
+            if same_sex_birth:
+                return True, False
+            else:
+                return Pregnancy_Events.check_intersex_parents(cat, second_parent, same_sex_adoption)
+        
         if cat.gender == second_parent.gender:
             if same_sex_birth:
                 return True, False

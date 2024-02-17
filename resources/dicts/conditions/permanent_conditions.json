@@ -2156,5 +2156,166 @@
             }
         ],
         "herbs": []
+    },
+    "testosterone deficiency": {
+        "severity": "minor",
+        "congenital": "always",
+        "moons_until": 0,
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+            {
+                "name": "infertile",
+                "chance": 50
+            }
+        ],
+        "herbs": []
+    },
+    "excess testosterone": {
+        "severity": "minor",
+        "congenital": "always",
+        "moons_until": 0,
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+            {
+				"name": "pcos",
+				"chance": 25
+			},
+            {
+                "name": "infertile",
+                "chance": 50
+            }
+        ],
+        "herbs": []
+    },
+    "aneuploidy": {
+        "severity": "minor",
+        "congenital": "always",
+        "moons_until": 0,
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+            {
+                "name": "infertile",
+                "chance": 20
+            }
+        ],
+        "herbs": []
+    },
+    "mosaicism": {
+        "severity": "minor",
+        "congenital": "always",
+        "moons_until": 0,
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+            {
+                "name": "infertile",
+                "chance": 75
+            }
+        ],
+        "herbs": []
+    },
+    "chimerism": {
+        "severity": "minor",
+        "congenital": "always",
+        "moons_until": 0,
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+            {
+                "name": "infertile",
+                "chance": 75
+            }
+        ],
+        "herbs": []
+    },
+    "pcos": {
+        "severity": "minor",
+        "congenital": "sometimes",
+        "moons_until": 8,
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+            {
+                "name": "infertile",
+                "chance": 75
+            }
+        ],
+        "herbs": []
+    },
+    "infertile": {
+        "severity": "minor",
+        "congenital": "sometimes",
+        "moons_until": 12,
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+        ],
+        "herbs": []
     }
 }

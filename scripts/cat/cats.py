@@ -61,7 +61,7 @@ class Cat():
         "leader"
     ]
 
-    gender_tags = {'female': 'F', 'male': 'M'}
+    gender_tags = {'female': 'F', 'male': 'M', 'intersex' : 'I'}
 
     # EX levels and ranges.
     # Ranges are inclusive to both bounds
@@ -282,14 +282,21 @@ class Cat():
 
         # sex!?!??!?!?!??!?!?!?!??
         if self.gender is None:
-            self.gender = choice(["female", "male"])
+            intersexchance = randint(1,100)
+            #probability that the cat will be intersex.. base chance around 5%
+            if intersexchance < 6 and example is False:
+                self.gender = "intersex"
+                intersex_condition = choice (["excess testosterone", "testosterone deficiency", "aneuploidy", "mosaicism", "chimerism"])
+                self.get_permanent_condition(intersex_condition, born_with=True)
+            else:
+                self.gender = choice(["female", "male"])
         self.g_tag = self.gender_tags[self.gender]
 
         # These things should only run when generating a new cat, rather than loading one in.
         if not loading_cat:
-            '''
-            # everyone is plural :3
             
+            # everyone is plural :3
+            '''
             if game.clan:
                 new_condition=choice(["shattered soul", "budding spirit"])
                 self.get_permanent_condition(new_condition, born_with=True)
@@ -311,6 +318,17 @@ class Cat():
                     self.genderalign = "trans female"
                 elif nb_chance == 1:
                     self.genderalign = choice(nonbiney_list)
+                else:
+                    self.genderalign = self.gender
+            elif self.gender == "intersex" and not self.status in ['newborn', 'kitten']:
+                if trans_chance == 1:
+                    self.genderalign = choice(["trans male", "trans female"])
+                elif nb_chance == 1:
+                    intergenderchance = randint(1,2)
+                    if intergenderchance == 1:
+                        self.genderalign = "intergender"
+                    else:
+                        self.genderalign = choice(nonbiney_list)
                 else:
                     self.genderalign = self.gender
             else:
@@ -1453,7 +1471,20 @@ class Cat():
         if not self.injuries[injury]["complication"] and self.injuries[injury]["duration"] - moons_with <= 0:
             self.healed_condition = True
             return False
-    
+    '''
+    def system_core(self):
+        template = {
+            "ID": "0",
+            "name": "",
+            "gender": "",
+            "role": "host",
+            "other": "cat"
+            }
+        if self.pelt is not None:
+        template[name] = str(self.name)
+        template[gender] = self.genderalign
+        self.alters.append(template)
+    '''
     def new_alter(self):
         template = {
             "ID": "",
@@ -1513,7 +1544,8 @@ class Cat():
                         self.new_alter()
             can_front = [str(self.name)]
             for alter in self.alters:
-                can_front.append(alter["name"])
+                if 'pregnant' not in self.injuries or alter["role"] != "little":
+                    can_front.append(alter["name"])
             self.front = choice(can_front)
 
         mortality = self.permanent_condition[condition]["mortality"]
@@ -1800,7 +1832,8 @@ class Cat():
         for condition in PERMANENT:
             possible = PERMANENT[condition]
             if possible["congenital"] in ['always', 'sometimes']:
-                possible_conditions.append(condition)
+                if not(condition == "excess testosterone" or condition == "testosterone deficiency" or condition == "aneuploidy" or condition == "mosaicism" or condition == "chimerism"):
+                    possible_conditions.append(condition)
 
         new_condition = choice(possible_conditions)
 
@@ -1824,7 +1857,11 @@ class Cat():
             if self.is_plural():
                 print ("cat is already plural!")
                 return
-            
+        
+        intersex_exclusive = ["excess testosterone", "aneuploidy", "testosterone deficiency", "chimerism", "mosaicism"]
+        if self.gender != "intersex":
+            if name in intersex_exclusive:
+                return
             
 
         # remove accessories if need be
@@ -1905,7 +1942,8 @@ class Cat():
                 "event_triggered": new_perm_condition.new
             }
             if self.is_plural():
-                if len(self.alters) <1:
+                #self.system_core()
+                if len(self.alters) < 1:
                     self.new_alter()
             new_condition = True
         return new_condition

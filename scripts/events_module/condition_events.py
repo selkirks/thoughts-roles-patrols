@@ -411,7 +411,8 @@ class Condition_Events():
             "recurring shock", "lasting grief", "adhd", "heavy soul", "starwalker", "ocd", "antisocial", "anxiety",
             "constant roaming pain", "thunderous spirit", "otherworldly mind", "kitten regressor", "puppy regressor", "snow vision",
             "echoing shock", "irritable bowels", "loose body", "longcough", "burning light", "disrupted senses",
-            "constant nightmares", "constant rash", "jellyfish joints", "lazy eye", "shattered soul", "budding spirit"
+            "constant nightmares", "constant rash", "jellyfish joints", "lazy eye", "shattered soul", "budding spirit",
+            "pcos", "infertile", "excess testosterone", "aneuploidy", "testosterone deficiency", "chimerism", "mosaicism"
 
         ]
 
