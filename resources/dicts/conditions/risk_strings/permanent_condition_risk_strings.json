@@ -1438,7 +1438,9 @@
     },
 	"pcos": {
 		"infertile": [
-			"r_c explains to m_c that {PRONOUN/m_c/subject} may be infertile due to {PRONOUN/m_c/poss} pcos."
+			"r_c explains to m_c that {PRONOUN/m_c/subject} may be infertile due to {PRONOUN/m_c/poss} pcos.",
+			"m_c's tail tip tapped on the ground. {PRONOUN/m_c/subject/CAP} {VERB/m_c/don't/doesn't} know what to think about being infertile.",
+			"m_c will never have kits by blood but that doesn't seem to bother {PRONOUN/m_c/object} too much."
 		]
 	},
 	"excess testosterone": {
@@ -1446,27 +1448,51 @@
 			"After m_c comes to the medicine den asking for more herbs for their cramps, r_c insists on checking up on {PRONOUN/m_c/object}. It appears {PRONOUN/m_c/poss} excess testosterone has resulted in pcos."
 		],
 		"infertile": [
-			"r_c explains to m_c that {PRONOUN/m_c/subject} may be infertile due to {PRONOUN/m_c/poss} excess testosterone."
+			"r_c explains to m_c that {PRONOUN/m_c/subject} may be infertile due to {PRONOUN/m_c/poss} excess testosterone.",
+			"m_c's tail tip tapped on the ground. {PRONOUN/m_c/subject/CAP} {VERB/m_c/don't/doesn't} know what to think about being infertile.",
+			"m_c will never have kits by blood but that doesn't seem to bother {PRONOUN/m_c/object} too much."
 		]
 	},
 	"testosterone deficiency": {
 		"infertile": [
-			"r_c explains to m_c that {PRONOUN/m_c/subject} may be infertile due to {PRONOUN/m_c/poss} testosterone deficiency."
+			"r_c explains to m_c that {PRONOUN/m_c/subject} may be infertile due to {PRONOUN/m_c/poss} testosterone deficiency.",
+			"m_c's tail tip tapped on the ground. {PRONOUN/m_c/subject/CAP} {VERB/m_c/don't/doesn't} know what to think about being infertile.",
+			"m_c will never have kits by blood but that doesn't seem to bother {PRONOUN/m_c/object} too much."
 		]
 	},
 	"chimerism": {
 		"infertile": [
-			"r_c explains to m_c that {PRONOUN/m_c/subject} may be infertile due to {PRONOUN/m_c/poss} chimerism."
+			"r_c explains to m_c that {PRONOUN/m_c/subject} may be infertile due to {PRONOUN/m_c/poss} chimerism.",
+			"m_c's tail tip tapped on the ground. {PRONOUN/m_c/subject/CAP} {VERB/m_c/don't/doesn't} know what to think about being infertile.",
+			"m_c will never have kits by blood but that doesn't seem to bother {PRONOUN/m_c/object} too much."
 		]
 	},	
 	"mosaicism": {
 		"infertile": [
-			"r_c explains to m_c that {PRONOUN/m_c/subject} may be infertile due to {PRONOUN/m_c/poss} mosaicism."
+			"r_c explains to m_c that {PRONOUN/m_c/subject} may be infertile due to {PRONOUN/m_c/poss} mosaicism.",
+			"m_c's tail tip tapped on the ground. {PRONOUN/m_c/subject/CAP} {VERB/m_c/don't/doesn't} know what to think about being infertile.",
+			"m_c will never have kits by blood but that doesn't seem to bother {PRONOUN/m_c/object} too much."
 		]
 	},
 	" aneuploidy": {
 		"infertile": [
-			"r_c explains to m_c that {PRONOUN/m_c/subject} may be infertile due to {PRONOUN/m_c/poss} anueploidy."
+			"r_c explains to m_c that {PRONOUN/m_c/subject} may be infertile due to {PRONOUN/m_c/poss} anueploidy.",
+			"m_c's tail tip tapped on the ground. {PRONOUN/m_c/subject/CAP} {VERB/m_c/don't/doesn't} know what to think about being infertile.",
+			"m_c will never have kits by blood but that doesn't seem to bother {PRONOUN/m_c/object} too much."
+		]
+	},
+	"kitten regressor": {
+		"kittenspace": [
+			"m_c has slipped into kittenspace again.",
+			"m_c is in kittenspace.",
+			"m_c has started acting like a kitten."
+		]
+	},
+	"puppy regressor": {
+		"puppyspace": [
+			"m_c has slipped into puppyspace again.",
+			"m_c is in puppyspace.",
+			"m_c has started acting like a puppy."
 		]
 	}
 }
