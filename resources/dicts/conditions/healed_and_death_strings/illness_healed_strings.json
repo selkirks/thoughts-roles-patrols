@@ -238,7 +238,7 @@
 	],
 	"information loss": [
 		"After m_c got clarification, m_c understands what {PRONOUN/m_c/poss} clanmates were trying to tell {PRONOUN/m_c/object}.",
-		"When a clanmate gives m_c instructions piece by piece instead of all at once, {PRONOUN/m_c/poss} were able to do the task to completion."
+		"When a clanmate gives m_c instructions piece by piece instead of all at once, {PRONOUN/m_c/subject} were able to do the task to completion."
 	],
 	"tics": [
 		"m_c has stopped ticing.",

@@ -816,7 +816,7 @@
 			"m_c lazes about in a sunbeam, watching content as {PRONOUN/m_c/poss} clanmates gather together for training that {PRONOUN/m_c/subject} {VERB/m_c/are/is} going to spot for."
 		],
 		"acute pain": [
-			"r_c winces at the whimpers and shudders that m_c is doing. {PRONOUN/r_c/subject/CAP} {VERB/r_c/know/knows} that {PRONOUN/m_c/poss} is in a lot of pain and are only able to do so much with the herbs that {PRONOUN/r_c/subject} {VERB/m_c/have/has}.",
+			"r_c winces at the whimpers and shudders that m_c is doing. {PRONOUN/r_c/subject/CAP} {VERB/r_c/know/knows} that m_c is in a lot of pain and are only able to do so much with the herbs that {PRONOUN/r_c/subject} {VERB/m_c/have/has}.",
 			"m_c whimpers, whole body shaking as {PRONOUN/m_c/subject} {VERB/m_c/try/tries} to take the herbs given to {PRONOUN/m_c/object}. It's hard when the world spins and swims from all the pain.",
 			"A lot of m_c's clanmates are worried about {PRONOUN/m_c/object} due to how m_c refuses to move from the sheer pain of it.",
 			"Simply brushing up against someone makes m_c let out winces and little yowls of pain.",
