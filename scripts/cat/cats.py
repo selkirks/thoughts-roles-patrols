@@ -1531,11 +1531,11 @@ class Cat():
         else:
             alter_name = choice(names_dict["normal_prefixes"])
             
-        if template["role"] == "little"
-            if template["other"] == "fictive" or template["other"] == "fuzztive"
+        if template["role"] == "little":
+            if template["other"] == "fictive" or template["other"] == "fuzztive":
                 canon_chance = randint(1,50)
-                    if canon_chance == 2:
-                        alter_name = choice(["Snowkit", "Mosskit"])
+                if canon_chance == 2:
+                    alter_name = choice(["Snowkit", "Mosskit"])
             else:
                 alter_name = choice(names_dict["normal_prefixes"])
                 alter_name += choice(["kit","paw"])

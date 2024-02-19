@@ -178,10 +178,10 @@
 		]
 	},
 	"cat_generation": {
-		"base_permanent_condition": 90,
+		"base_permanent_condition": 15,
 		"base_male_tortie": 13,
 		"base_female_tortie": 4,
-		"base_heterochromia": 120,
+		"base_heterochromia": 20,
 		"direct_inheritance": 15,
 		"wildcard_tortie": 9,
 		"vit_chance": 8,
@@ -198,13 +198,13 @@
 		]
 	},
 	"accessory_generation": {
-		"base_acc_chance": 150,
-		"med_modifier": -80,
-		"baby_modifier": -20,
-		"elder_modifier": 20,
-		"happy_trait_modifier": -30,
-		"grumpy_trait_modifier": 30,
-		"ceremony_modifier": -20
+		"base_acc_chance": 15,
+		"med_modifier": -8,
+		"baby_modifier": -2,
+		"elder_modifier": 2,
+		"happy_trait_modifier": -3,
+		"grumpy_trait_modifier": 3,
+		"ceremony_modifier": -2
 	},
 	"fading": {
 		"age_to_fade": 202,
@@ -281,7 +281,7 @@
 		"war_injury_modifier": 100
 	},
 	"clan_creation": {
-		"rerolls": 3,
+		"rerolls": -1,
 		"comment": "Set this to -1 for it to be infinite"
 	},
 	"graduation": {
