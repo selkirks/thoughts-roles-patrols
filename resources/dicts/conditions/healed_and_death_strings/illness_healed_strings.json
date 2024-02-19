@@ -247,5 +247,9 @@
 	"tic attack": [
 		"m_c's tic attack has calmed down.",
 		"m_c has stopped having a tic attack."
+	],
+	"ear infection": [
+		"m_c is no longer struggling to hear.",
+		"r_c is happy to say that m_c no longer has an ear infection."
 	]
 }
