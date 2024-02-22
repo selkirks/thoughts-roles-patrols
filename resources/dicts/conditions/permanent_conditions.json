@@ -621,19 +621,19 @@
             },
             {
                 "name": "kittenspace",
-                "chance": 10
+                "chance": 70
             },
             {
                 "name": "puppyspace",
-                "chance": 10
+                "chance": 70
             },
             {
                 "name": "kitten regressor",
-                "chance": 10
+                "chance": 80
             },
             {
                 "name": "puppy regressor",
-                "chance": 10
+                "chance": 80
             },
 			{
 				"name": "anxiety attack",
@@ -692,11 +692,11 @@
             },
 			{
 				"name": "kittenspace",
-				"chance": 15
+				"chance": 75
 			},
 			{
 				"name": "puppyspace",
-				"chance": 15
+				"chance": 75
 			},
 			{
 				"name": "paranoia",
@@ -852,19 +852,19 @@
 			},
             {
                 "name": "kittenspace",
-                "chance": 10
+                "chance": 70
             },
             {
                 "name": "puppyspace",
-                "chance": 10
+                "chance": 70
             },
             {
                 "name": "kitten regressor",
-                "chance": 10
+                "chance": 80
             },
             {
                 "name": "puppy regressor",
-                "chance": 10
+                "chance": 80
             },
 			{
 				"name": "sunblindness",
@@ -2109,19 +2109,19 @@
 			},
             {
                 "name": "kittenspace",
-                "chance": 10
+                "chance": 50
             },
             {
                 "name": "puppyspace",
-                "chance": 10
+                "chance": 50
             },
             {
                 "name": "kitten regressor",
-                "chance": 30
+                "chance": 70
             },
             {
                 "name": "puppy regressor",
-                "chance": 30
+                "chance": 70
             }
         ],
         "herbs": []
@@ -2148,19 +2148,19 @@
 			},
             {
                 "name": "kittenspace",
-                "chance": 10
+                "chance": 50
             },
             {
                 "name": "puppyspace",
-                "chance": 10
+                "chance": 50
             },
             {
                 "name": "kitten regressor",
-                "chance": 30
+                "chance": 70
             },
             {
                 "name": "puppy regressor",
-                "chance": 30
+                "chance": 70
             }
         ],
         "herbs": []

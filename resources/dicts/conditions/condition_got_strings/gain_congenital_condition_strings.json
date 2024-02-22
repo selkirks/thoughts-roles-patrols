@@ -252,5 +252,11 @@
     ],
     "pcos": [
         "After m_c comes to the medicine den asking for more herbs for their cramps, r_c insists on checking up on {PRONOUN/m_c/object}. It appears to be pcos."
+    ],
+    "falling paws": [
+        "m_c complains about feeling lightheaded whenever {PRONOUN/m_c/subject} {VERB/m_c/stand/stands} up too quickly. After running a few tests, r_c has come to the conclussion that m_c has falling paws.",
+        "After m_c faints in the middle of the medicine cat den, r_c diagnoses m_c with falling paws.",
+        "m_c has to sit down often when {PRONOUN/m_c/subject} {VERB/m_c/stand/stands} up. A clanmate jokes about {PRONOUN/m_c/object} having a set of always falling paws.",
+        "m_c can feel {PRONOUN/m_c/poss} heartbeat when {PRONOUN/m_c/subject} {VERB/m_c/stand/stands} up."
     ]
 }
