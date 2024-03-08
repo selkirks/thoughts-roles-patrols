@@ -96,6 +96,10 @@
             "r_c feeds m_c disgusting herbs with {PRONOUN/m_c/poss} supper, concerned over {PRONOUN/m_c/poss} running nose. m_c thinks {PRONOUN/r_c/subject} should be more concerned with ruining {PRONOUN/m_c/poss} appetite!",
             "m_c's nose has been running perpetually all moon."
         ],
+		"silvercough": [
+			"r_c sighs and gets the plantain for m_c's cough. r_c is happy that it was silvercough and not something worse, but sad that {PRONOUN/m_c/object} are getting sick at all.",
+			"m_c has been hacking all moon when {PRONOUN/m_c/subject} finally go to r_c."
+		],
         "yellowcough": [
             "If only {PRONOUN/r_c/subject} had lungwort... r_c searches the herb stores, desperate for a way to help m_c through yellowcough.",
             "m_c has been weak and fevered, only barely coherent... It seems {PRONOUN/m_c/subject} {VERB/m_c/have/has} yellowcough."

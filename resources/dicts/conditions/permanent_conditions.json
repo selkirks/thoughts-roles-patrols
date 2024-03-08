@@ -306,6 +306,10 @@
                 "chance": 10
             },
             {
+                "name": "silvercough",
+                "chance": 30
+            },
+            {
                 "name": "yellowcough",
                 "chance": 50
             },
@@ -653,11 +657,11 @@
 			},
             {
                 "name": "budding spirit",
-                "chance": 35
+                "chance": 50
             },
             {
                 "name": "shattered soul",
-                "chance": 35
+                "chance": 50
             }
         ],
         "herbs": [
@@ -716,11 +720,11 @@
 			},
             {
                 "name": "budding spirit",
-                "chance": 35
+                "chance": 50
             },
             {
                 "name": "shattered soul",
-                "chance": 35
+                "chance": 50
             }
         ],
         "herbs": [
@@ -880,11 +884,11 @@
 			},
             {
                 "name": "budding spirit",
-                "chance": 50
+                "chance": 70
             },
             {
                 "name": "shattered soul",
-                "chance": 50
+                "chance": 70
             }
         ],
         "herbs": [ ]
@@ -1006,11 +1010,11 @@
             },
             {
                 "name": "budding spirit",
-                "chance": 50
+                "chance": 70
             },
             {
                 "name": "shattered soul",
-                "chance": 50
+                "chance": 70
             }
         ],
         "herbs": [ 
@@ -1065,11 +1069,11 @@
 			},
             {
                 "name": "budding spirit",
-                "chance": 50
+                "chance": 70
             },
             {
                 "name": "shattered soul",
-                "chance": 50
+                "chance": 70
             }
         ],
         "herbs":[
@@ -1449,11 +1453,11 @@
             },
             {
                 "name": "budding spirit",
-                "chance": 50
+                "chance": 70
             },
             {
                 "name": "shattered soul",
-                "chance": 50
+                "chance": 70
             }
 
         ],
@@ -1493,11 +1497,11 @@
             },
             {
                 "name": "budding spirit",
-                "chance": 50
+                "chance": 70
             },
             {
                 "name": "shattered soul",
-                "chance": 50
+                "chance": 70
             }
         ],
         "herbs":[]
