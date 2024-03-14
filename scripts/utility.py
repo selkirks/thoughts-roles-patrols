@@ -2160,18 +2160,29 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
                 for x in vitiligo:
                     if x in genotype.white_pattern:
                         gensprite.blit(sprites.sprites[x + cat_sprite], (0, 0))
-            gensprite.blit(nose2, (0, 0))
             if genotype.white_pattern:
                 if 'dorsal1' in genotype.white_pattern:
                     gensprite.blit(sprites.sprites['dorsal1' + cat_sprite], (0, 0))
                 elif 'dorsal2' in genotype.white_pattern:
                     gensprite.blit(sprites.sprites['dorsal2' + cat_sprite], (0, 0))
 
-        
+
+            if(cat.genotype.sedesp == ['hr', 're']):
+                gensprite.blit(sprites.sprites['furpoint' + cat_sprite], (0, 0))
+                gensprite.blit(sprites.sprites['furpoint' + cat_sprite], (0, 0))
+            elif(cat.pelt.length == 'hairless'):
+                gensprite.blit(sprites.sprites['hairless' + cat_sprite], (0, 0))
+                gensprite.blit(sprites.sprites['furpoint' + cat_sprite], (0, 0))
+            elif('patchy ' in cat.phenotype.furtype):
+                gensprite.blit(sprites.sprites['donskoy' + cat_sprite], (0, 0))
+            
             if('sparse' in cat.phenotype.furtype):
                 gensprite.blit(sprites.sprites['satin0'], (0, 0))
                 gensprite.blit(sprites.sprites['satin0'], (0, 0))
                 gensprite.blit(sprites.sprites['lykoi' + cat_sprite], (0, 0))
+
+            gensprite.blit(nose2, (0, 0))
+            
 
             if(genotype.fold[0] != 'Fd' or genotype.curl[0] == 'Cu'):
                 gensprite.blit(sprites.sprites['ears' + cat_sprite], (0, 0))

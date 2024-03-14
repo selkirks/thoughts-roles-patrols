@@ -65,9 +65,11 @@ class Phenotype():
                 furtype.append(" and ")
             furtype.append("no undercoat")
 
-        if self.genotype.ruhr[1] == "Hrbd" or (self.genotype.ruhr == ["Hrbd", "hrbd"] and self.genotype.ruhrmod[0] == "ha") or self.genotype.sedesp[0] == "hr" or (self.genotype.york[0] == "Yuc" and self.genotype.cornish[0] == "r"):
+        if self.genotype.ruhr[1] == "Hrbd" or (self.genotype.ruhr == ["Hrbd", "hrbd"] and self.genotype.ruhrmod[0] == "ha") or self.genotype.sedesp == ["hr", "hr"] or (self.genotype.york[0] == "Yuc" and self.genotype.cornish[0] == "r"):
             self.length = "hairless"
             furtype = []
+        elif self.genotype.sedesp[0] == "hr":
+            self.length = 'fur-pointed'
         elif self.genotype.furLength[0] == "l":
             self.length = "longhaired"
         else:
