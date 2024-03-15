@@ -1039,9 +1039,15 @@ class Pregnancy_Events():
         """Returns a chance based on different values."""
         # Now that the second parent is determined, we can calculate the balanced chance for kits
         # get the chance for pregnancy
-        inverse_chance = game.config["pregnancy"]["primary_chance_unmated"]
+        if not (clan.clan_settings['modded_kits']):
+            inverse_chance = game.config["pregnancy"]["primary_chance_unmated"]
+        else:
+            inverse_chance = game.config["pregnancy"]["modded_primary_chance_unmated"]
         if len(first_parent.mate) > 0 and not affair:
-            inverse_chance = game.config["pregnancy"]["primary_chance_mated"]
+            if not (clan.clan_settings['modded_kits']):
+                inverse_chance = game.config["pregnancy"]["primary_chance_mated"]
+            else:
+                inverse_chance = game.config["pregnancy"]["modded_primary_chance_mated"]
 
         # SETTINGS
         # - decrease inverse chance if only mated pairs can have kits

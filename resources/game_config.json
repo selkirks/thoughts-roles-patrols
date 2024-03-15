@@ -170,6 +170,9 @@
 		"min_kits": 1,
 		"max_kits": 6,
 
+		
+		"modded_primary_chance_mated": 50,
+		"modded_primary_chance_unmated": 100,
 		"one_kit_modded": {"young adult": 64, "adult": 4, "senior adult": 8, "senior": 64},
 		"two_kit_modded": {"young adult": 128, "adult": 8, "senior adult": 16, "senior": 128},
 		"three_kit_modded": {"young adult": 128, "adult": 16, "senior adult": 32, "senior": 128},
