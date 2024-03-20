@@ -304,7 +304,8 @@
 		"intersex" : 100,
 		"XXX/XXY" : 1000,
 		"brindled_bicolour" : 250,
-		"vitiligo" : 100
+		"vitiligo" : 100,
+		"random_mutation" : 100
 	},
 	"graduation": {
 		"base_app_timeskip_ex": [[3, 12],[5, 6]],

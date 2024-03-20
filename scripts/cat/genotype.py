@@ -1906,6 +1906,10 @@ class Genotype:
                 self.pigsum +=1
             self.pigmentation += str(temppig)
 
+
+        if(randint(1, self.odds['random_mutation']) == 1):
+            self.Mutate()
+
         self.GeneSort()
         self.PolyEval()
         self.EyeColourFinder()
@@ -2334,4 +2338,354 @@ class Genotype:
 
         return self.Cat_Genes, "Other Fur Genes: ", self.Fur_Genes, "Other Colour Genes: ", self.Other_Colour, "Body Mutations: ", self.Body_Genes, "Polygenes: ", self.Polygenes, self.Polygenes2
     
+    def Mutate(self):
+        wheremutation = ["body", "furtype", "furtype", "othercoat", "othercoat", "othercoat", "maincoat", "maincoat", "maincoat", "maincoat", "maincoat", "maincoat"]
+        where = choice(wheremutation)
+
+        if where == 'body':
+            self.Bodymutation()
+        elif where == 'furtype':
+            self.FurTypemutation()
+        elif where == 'othercoat':
+            self.OtherCoatmutation()
+        else:
+            self.MainCoatmutation()
+
+    def Bodymutation(self):
+        whichgene = ["curl", "fold", "manx", "karel", "kuril", "toybob", "japanese", "ringtail", "munchkin", "polydactyl", "polydactyl", "polydactyl", "polydactyl"]
+        which = choice[whichgene]
+
+        if(which == "curl"):
+            if(self.curl[0] == 'cu'):
+                self.curl[0] = 'Cu'
+            elif(self.curl[1] == 'cu'):
+                self.curl[1] = 'Cu'
+            else:
+                self.Mutate()
+        elif(which == 'fold'):
+            if(self.fold[0] == 'fd'):
+                self.fold[0] = 'Fd'
+            elif(self.fold[1] == 'fd'):
+                self.fold[1] = 'Fd'
+            else:
+                self.Mutate()
+        elif(which == 'manx'):
+            if(self.manx[0] == 'm' or self.manx[0] == 'ab'):
+                if(random() < 0.34):
+                    self.manx[0] = 'M'
+                else:
+                    self.manx[0] = 'Ab'
+            if(self.manx[1] == 'm' or self.manx[1] == 'ab'):
+                if(random() < 0.34):
+                    self.manx[1] = 'M'
+                else:
+                    self.manx[1] = 'Ab'
+            else:
+                self.Mutate()
+        elif(which == 'japanese'):
+            if(self.jbob[1] == 'Jb'):
+                self.jbob[1] = 'jb'
+            elif(self.jbob[0] == 'Jb'):
+                self.jbob[0] = 'jb' 
+            else:
+                self.Mutate()
+        elif(which == 'toybob'):
+            if(self.toybob[0] == 'tb'):
+                self.toybob[0] = 'Tb'
+            elif(self.toybob[1] == 'tb'):
+                self.toybob[1] = 'Tb'
+            else:
+                self.Mutate()
+        elif(which == 'karel'):
+            if(self.karel[1] == 'Kab'):
+                self.karel[1] = 'kab'
+            elif(self.karel[0] == 'Kab'):
+                self.karel[0] = 'kab'
+            else:
+                self.Mutate()
+        elif(which == 'kuril'):
+            if(self.kuril[0] == 'kub'):
+                self.kuril[0] = 'Kub'
+            elif(self.kuril[1] == 'kub'):
+                self.kuril[1] = 'Kub'
+            else:
+                self.Mutate()
+        elif(which == 'ringtail'):
+            if(self.ring[1] == 'Rt'):
+                self.ring[1] = 'rt'
+            elif(self.ring[0] == 'Rt'):
+                self.ring[0] = 'rt'
+            else:
+                self.Mutate()
+        elif(which == 'munchkin'):
+            if(self.munch[0] == 'mk'):
+                self.munch[0] = 'Mk'
+            elif(self.munch[1] == 'mk'):
+                self.munch[1] = 'Mk'
+            else:
+                self.Mutate()
+        else:
+            if(self.poly[0] == 'pd'):
+                self.poly[0] = 'Pd'
+            elif(self.poly[1] == 'pd'):
+                self.poly[1] = 'Pd'
+            else:
+                self.Mutate()
+        
+        print(which)
+    
+    def FurTypemutation(self):
+        whichgene = ["wirehair", "laperm", "cornish", "urals", "tennessee", "fleecy", "sedesp", "sedesp", "sedesp", "lykoi", "russian"]
+        which = choice(whichgene)
+
+        if(which == 'wirehair'):
+            if(self.wire[0] == 'wh'):
+                self.wire[0] = 'Wh'
+            elif(self.wire[1] == 'wh'):
+                self.wire[1] = 'Wh'
+            else:
+                self.Mutate()
+        elif(which == 'laperm'):
+            if(self.laperm[0] == 'lp'):
+                self.laperm[0] = 'Lp'
+            elif(self.laperm[1] == 'lp'):
+                self.laperm[1] = 'Lp'
+            else:
+                self.Mutate()
+        elif(which == 'cornish'):
+            if(self.cornish[1] == 'R'):
+                self.cornish[1] = 'r'
+            elif(self.cornish[0] == 'R'):
+                self.cornish[0] = 'r'
+            else:
+                self.Mutate()
+        elif(which == 'urals'):
+            if(self.urals[1] == 'Ru'):
+                self.urals[1] = 'ru'
+            elif(self.urals[0] == 'Ru'):
+                self.urals[0] = 'ru'
+            else:
+                self.Mutate()
+        elif(which == 'tennessee'):
+            if(self.tenn[1] == 'Tr'):
+                self.tenn[1] = 'tr'
+            elif(self.tenn[0] == 'Tr'):
+                self.tenn[0] = 'tr'
+            else:
+                self.Mutate()
+        elif(which == 'fleecy'):
+            if(self.fleece[1] == 'Fc'):
+                self.fleece[1] = 'fc'
+            elif(self.fleece[0] == 'Fc'):
+                self.fleece[0] = 'fc'
+            else:
+                self.Mutate()
+        elif(which == 'sedesp'):
+            if('Hr' not in self.sedesp):
+                self.Mutate()
+            if(random() < 0.34):
+                if(self.sedesp[0] == 'Hr'):
+                    self.sedesp[0] = 'Se'
+                else:
+                    self.sedesp[1] = 'Se'
+            else:
+                if(self.sedesp[1] == 'Hr'):
+                    if(random() < 0.25):
+                        self.sedesp[1] = 'hr'
+                    else:
+                        self.sedesp[1] = 're'
+                else:
+                    if(random() < 0.25):
+                        self.sedesp[0] = 'hr'
+                    else:
+                        self.sedesp[0] = 're'
+        elif(which == 'lykoi'):
+            if(self.lykoi[1] == 'Ly'):
+                self.lykoi[1] = 'ly'
+            elif(self.lykoi[0] == 'Ly'):
+                self.lykoi[0] = 'ly'
+            else:
+                self.Mutate()
+        else:
+            if(self.ruhr[0] == 'Hr'):
+                self.ruhr[0] = 'Hrbd'
+            elif(self.ruhr[1] == 'Hr'):
+                self.ruhr[1] = 'Hrbd'
+            else:
+                self.Mutate()
+        print(which)
+
+    def OtherCoatmutation(self):
+        whichgene = ["dilute mod", "pinkdilute", "extention", "corin", "karpati", "bleaching", "ghosting", "satin", "glitter"]
+        which = choice(whichgene)
+
+        if(which == 'pinkdilute'):
+            if(self.pinkdilute[1] == 'Dp'):
+                self.pinkdilute[1] = 'dp'
+            elif(self.pinkdilute[0] == 'Dp'):
+                self.pinkdilute[0] = 'dp'
+            else:
+                self.Mutate()
+        elif(which == 'dilute mod'):
+            if(self.dilutemd[0] == 'dm'):
+                self.dilutemd[0] = 'Dm'
+            elif(self.dilutemd[1] == 'dm'):
+                self.dilutemd[1] = 'Dm'
+            else:
+                self.Mutate()
+        elif(which == 'extention'):
+            if('E' not in self.ext):
+                self.Mutate()
+            elif(self.ext[1] == 'E'):
+                self.ext[1] = choice('ea', 'er', 'ec')
+            else:
+                self.ext[0] = choice('ea', 'er', 'ec')
+        elif(which == 'corin'):
+            if(self.sunshine[1] == 'N'):
+                self.sunshine[1] = choice('sh', 'sg', 'fg')
+            elif(self.sunshine[0] == 'N'):
+                self.sunshine[0] = choice('sh', 'sg', 'fg')
+            else:
+                self.Mutate()
+        elif(which == 'karpati'):
+            if(self.karp[0] == 'k'):
+                self.karp[0] = 'K'
+            elif(self.karp[1] == 'k'):
+                self.karp[1] = 'K'
+            else:
+                self.Mutate()
+        elif(which == 'bleaching'):
+            if(self.bleach[1] == 'Lb'):
+                self.bleach[1] = 'lb'
+            elif(self.bleach[0] == 'Lb'):
+                self.bleach[0] = 'lb'
+            else:
+                self.Mutate()
+        elif(which == 'ghosting'):
+            if(self.ghosting[0] == 'gh'):
+                self.ghosting[0] = 'Gh'
+            elif(self.ghosting[1] == 'gh'):
+                self.ghosting[1] = 'Gh'
+            else:
+                self.Mutate()
+        elif(which == 'satin'):
+            if(self.satin[1] == 'St'):
+                self.satin[1] = 'st'
+            elif(self.satin[0] == 'St'):
+                self.satin[0] = 'st'
+            else:
+                self.Mutate()
+        elif(which == 'glitter'):
+            if(self.glitter[1] == 'Gl'):
+                self.glitter[1] = 'gl'
+            elif(self.glitter[0] == 'Gl'):
+                self.glitter[0] = 'gl'
+            else:
+                self.Mutate()
+        print(which)
+    
+    def MainCoatmutation(self):
+        whichgene = ["furlength", "black", "red", "dilute", "KIT", "albino", "silver", "agouti", "mackerel", "ticked", 'altai']
+        which = choice(whichgene)
+
+        if(which == 'furlength'):
+            if(self.furLength[1] == 'L'):
+                self.furLength[1] = 'l'
+            elif(self.furLength[0] == 'L'):
+                self.furLength[0] = 'l'
+            else:
+                self.Mutate()
+        elif(which == 'black'):
+            if(self.eumelanin[0] == 'bl'):
+                self.Mutate()
+            elif(self.eumelanin[1] == 'B'):
+                self.eumelanin[1] = 'b'
+            elif(self.eumelanin == ['b', 'bl']):
+                self.eumelanin[0] = 'bl'
+            elif(self.eumelanin == ['b', 'b']):
+                self.eumelanin[1] = 'bl'
+            elif(self.eumelanin == ['B', 'bl']):
+                self.eumelanin[0] = 'b'
+            else:
+                if(random() < 0.5):
+                    self.eumelanin[0] = 'b'
+                else:
+                    self.eumelanin[1] = 'bl'
+        elif(which == 'red'):
+            if('o' not in self.sexgene):
+                self.Mutate()
+            if(self.sexgene[0] == 'o'):
+                self.sexgene[0] = 'O'
+            elif(self.sexgene[1] == 'o'):
+                self.sexgene[1] = 'O'
+            else:
+                self.sexgene[2] = 'O'
+        elif(which == 'dilute'):
+            if(self.dilute[1] == 'D'):
+                self.dilute[1] = 'd'
+            elif(self.dilute[0] == 'D'):
+                self.dilute[0] = 'd'
+            else:
+                self.Mutate()
+        elif(which == 'KIT'):
+            if('w' not in self.white):
+                self.Mutate()
+            elif(random() < 0.34):
+                if(self.white[0] == 'w'):
+                    self.white[0] = 'W'
+                else:
+                    self.white[1] = 'W'
+            elif(random() < 0.2):
+                if(self.white[1] == 'w'):
+                    self.white[1] = 'wg'
+                else:
+                    self.white[0] = 'wg'
+            else:
+                if(self.white[0] == 'w'):
+                    self.white[0] = choice('wt', 'ws', 'ws', 'ws', 'ws')
+                else:
+                    self.white[1] = choice('wt', 'ws', 'ws', 'ws', 'ws')
+        elif(which == 'albino'):
+            if('C' not in self.pointgene):
+                self.Mutate()
+            elif(self.pointgene[1] == 'C'):
+                self.pointgene[1] = choice(choice('c', 'cm'), choice('cs', 'cb'), choice('cs', 'cb'), choice('cs', 'cb'), choice('cs', 'cb'))
+            else:
+                self.pointgene[0] = choice(choice('c', 'cm'), choice('cs', 'cb'), choice('cs', 'cb'), choice('cs', 'cb'), choice('cs', 'cb'))
+        elif(which == 'silver'):
+            if(self.silver[0] == 'i'):
+                self.silver[0] = 'I'
+            elif(self.silver[1] == 'i'):
+                self.silver[1] = 'I'
+            else:
+                self.Mutate()
+        elif(which == 'agouti'):
+            if(self.agouti[0] == 'A'):
+                self.agouti[0] = 'a'
+            elif(self.agouti[1] == 'A'):
+                self.agouti[1] = 'a'
+            else:
+                self.Mutate()
+        elif(which == 'mackerel'):
+            if(self.mack[1] == 'Mc'):
+                self.mack[1] = 'mc'
+            elif(self.mack[0] == 'Mc'):
+                self.mack[0] = 'mc'
+            else:
+                self.Mutate()
+        elif(which == 'ticked'):
+            if(self.ticked[0] == 'ta'):
+                self.ticked[0] = 'Ta'
+            elif(self.ticked[1] == 'ta'):
+                self.ticked[1] = 'Ta'
+            else:
+                self.Mutate()
+        else:
+            if(self.altai[0] == 'al'):
+                self.altai[0] = 'Al'
+            elif(self.altai[1] == 'al'):
+                self.altai[1] = 'Al'
+            else:
+                self.Mutate()
+        print(which)
     

@@ -109,9 +109,14 @@
             ]
         ],
         "single parentage": [
-            "Allow cats to have kittens with an unknown second parent",
-            "Allow cats to have kittens with an unknown second biological parent. The cat will be listed as the only biological parent.",
+            "Allow cats to have kittens with an outside second parent",
+            "Allow cats to have kittens with a biological parent outside your Clan.",
             false
+        ],
+        "multi-sires": [
+            "Allow litters with multiple sires",
+            "Allow cats to have litters with multiple sires",
+            true
         ],
         "romantic with former mentor": [
             "Allow romantic interactions with former mentors",
