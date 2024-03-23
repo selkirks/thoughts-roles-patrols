@@ -1013,7 +1013,13 @@ def event_text_adjust(Cat,
     if "acc_singular" in text:
         text = text.replace("acc_singular", str(ACC_DISPLAY[cat.pelt.accessory]["singular"]))
 
-    if other_cat:
+    if type(other_cat) == list:
+        chosen_cat = choice(other_cat)
+        if chosen_cat.pronouns:
+            cat_dict["r_c"] = (str(chosen_cat.name), choice(chosen_cat.pronouns))
+        else:
+            cat_dict["r_c"] = (str(chosen_cat.name))
+    elif other_cat:
         if other_cat.pronouns:
             cat_dict["r_c"] = (str(other_cat.name), choice(other_cat.pronouns))
         else:

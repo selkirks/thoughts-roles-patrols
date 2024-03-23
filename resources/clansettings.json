@@ -113,7 +113,7 @@
             "Allow cats to have kittens with a biological parent outside your Clan.",
             false
         ],
-        "multi-sires": [
+        "multisire": [
             "Allow litters with multiple sires",
             "Allow cats to have litters with multiple sires",
             true
