@@ -101,7 +101,7 @@ class Pregnancy(unittest.TestCase):
 
         # then
         self.assertIn(cat1.ID, clan.pregnancy_data.keys())
-        self.assertEqual(clan.pregnancy_data[cat1.ID]["second_parent"], [cat2.ID])
+        self.assertEqual(clan.pregnancy_data[cat1.ID]["second_parent"], [cat2[0].ID])
 
 class Mates(unittest.TestCase):
     def test_platonic_kitten_mating(self):
