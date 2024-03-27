@@ -2353,7 +2353,7 @@ class Genotype:
 
     def Bodymutation(self):
         whichgene = ["curl", "fold", "manx", "karel", "kuril", "toybob", "japanese", "ringtail", "munchkin", "polydactyl", "polydactyl", "polydactyl", "polydactyl"]
-        which = choice[whichgene]
+        which = choice(whichgene)
 
         if(which == "curl"):
             if(self.curl[0] == 'cu'):
@@ -2397,17 +2397,17 @@ class Genotype:
             else:
                 self.Mutate()
         elif(which == 'karel'):
-            if(self.karel[1] == 'Kab'):
-                self.karel[1] = 'kab'
-            elif(self.karel[0] == 'Kab'):
-                self.karel[0] = 'kab'
+            if(self.kab[1] == 'Kab'):
+                self.kab[1] = 'kab'
+            elif(self.kab[0] == 'Kab'):
+                self.kab[0] = 'kab'
             else:
                 self.Mutate()
         elif(which == 'kuril'):
-            if(self.kuril[0] == 'kub'):
-                self.kuril[0] = 'Kub'
-            elif(self.kuril[1] == 'kub'):
-                self.kuril[1] = 'Kub'
+            if(self.kub[0] == 'kub'):
+                self.kub[0] = 'Kub'
+            elif(self.kub[1] == 'kub'):
+                self.kub[1] = 'Kub'
             else:
                 self.Mutate()
         elif(which == 'ringtail'):
@@ -2439,10 +2439,10 @@ class Genotype:
         which = choice(whichgene)
 
         if(which == 'wirehair'):
-            if(self.wire[0] == 'wh'):
-                self.wire[0] = 'Wh'
-            elif(self.wire[1] == 'wh'):
-                self.wire[1] = 'Wh'
+            if(self.wirehair[0] == 'wh'):
+                self.wirehair[0] = 'Wh'
+            elif(self.wirehair[1] == 'wh'):
+                self.wirehair[1] = 'Wh'
             else:
                 self.Mutate()
         elif(which == 'laperm'):
@@ -2537,14 +2537,14 @@ class Genotype:
             if('E' not in self.ext):
                 self.Mutate()
             elif(self.ext[1] == 'E'):
-                self.ext[1] = choice('ea', 'er', 'ec')
+                self.ext[1] = choice(['ea', 'er', 'ec'])
             else:
-                self.ext[0] = choice('ea', 'er', 'ec')
+                self.ext[0] = choice(['ea', 'er', 'ec'])
         elif(which == 'corin'):
             if(self.sunshine[1] == 'N'):
-                self.sunshine[1] = choice('sh', 'sg', 'fg')
+                self.sunshine[1] = choice(['sh', 'sg', 'fg'])
             elif(self.sunshine[0] == 'N'):
-                self.sunshine[0] = choice('sh', 'sg', 'fg')
+                self.sunshine[0] = choice(['sh', 'sg', 'fg'])
             else:
                 self.Mutate()
         elif(which == 'karpati'):
@@ -2642,16 +2642,16 @@ class Genotype:
                     self.white[0] = 'wg'
             else:
                 if(self.white[0] == 'w'):
-                    self.white[0] = choice('wt', 'ws', 'ws', 'ws', 'ws')
+                    self.white[0] = choice(['wt', 'ws', 'ws', 'ws', 'ws'])
                 else:
-                    self.white[1] = choice('wt', 'ws', 'ws', 'ws', 'ws')
+                    self.white[1] = choice(['wt', 'ws', 'ws', 'ws', 'ws'])
         elif(which == 'albino'):
             if('C' not in self.pointgene):
                 self.Mutate()
             elif(self.pointgene[1] == 'C'):
-                self.pointgene[1] = choice(choice('c', 'cm'), choice('cs', 'cb'), choice('cs', 'cb'), choice('cs', 'cb'), choice('cs', 'cb'))
+                self.pointgene[1] = choice(choice(['c', 'cm']), choice(['cs', 'cb']), choice(['cs', 'cb']), choice(['cs', 'cb']), choice(['cs', 'cb']))
             else:
-                self.pointgene[0] = choice(choice('c', 'cm'), choice('cs', 'cb'), choice('cs', 'cb'), choice('cs', 'cb'), choice('cs', 'cb'))
+                self.pointgene[0] = choice(choice(['c', 'cm']), choice(['cs', 'cb']), choice(['cs', 'cb']), choice(['cs', 'cb']), choice(['cs', 'cb']))
         elif(which == 'silver'):
             if(self.silver[0] == 'i'):
                 self.silver[0] = 'I'
