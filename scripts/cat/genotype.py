@@ -2649,9 +2649,9 @@ class Genotype:
             if('C' not in self.pointgene):
                 self.Mutate()
             elif(self.pointgene[1] == 'C'):
-                self.pointgene[1] = choice(choice(['c', 'cm']), choice(['cs', 'cb']), choice(['cs', 'cb']), choice(['cs', 'cb']), choice(['cs', 'cb']))
+                self.pointgene[1] = choice([choice(['c', 'cm']), choice(['cs', 'cb']), choice(['cs', 'cb']), choice(['cs', 'cb']), choice(['cs', 'cb'])])
             else:
-                self.pointgene[0] = choice(choice(['c', 'cm']), choice(['cs', 'cb']), choice(['cs', 'cb']), choice(['cs', 'cb']), choice(['cs', 'cb']))
+                self.pointgene[0] = choice([choice(['c', 'cm']), choice(['cs', 'cb']), choice(['cs', 'cb']), choice(['cs', 'cb']), choice(['cs', 'cb'])])
         elif(which == 'silver'):
             if(self.silver[0] == 'i'):
                 self.silver[0] = 'I'
