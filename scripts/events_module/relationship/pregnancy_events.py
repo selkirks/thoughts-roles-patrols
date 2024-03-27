@@ -737,7 +737,7 @@ class Pregnancy_Events():
                 mate = [cat.fetch_cat(mate)]
 
         # if the sex does matter, choose the best solution to allow kits
-        if not samesex and mate and 'Y' not in cat.genotype.sexgene:
+        if not samesex and mate and 'Y' not in cat.genotype.sexgene and clan.clan_settings['multisire']:
             opposite_mate = [cat.fetch_cat(mate_id) for mate_id in cat.mate if xor('Y' in cat.fetch_cat(mate_id).genotype.sexgene, 'Y' in cat.genotype.sexgene)]
             if len(opposite_mate) > 0:
                 mate = opposite_mate
