@@ -935,8 +935,6 @@ class Pregnancy_Events():
                     nr_of_parents = 1
                     if clan.clan_settings['multisire']:
                         nr_of_parents = randint(1, choice([1, 1, 1, randint(3, 5)]))
-                        if nr_of_parents > 1:
-                            print('HEY! LISTEN!')
                     
                     insert = "their kits are"
                     if kits_amount == 1:
