@@ -116,7 +116,7 @@
         "multisire": [
             "Allow litters with multiple sires",
             "Allow cats to have litters with multiple sires",
-            true
+            false
         ],
         "romantic with former mentor": [
             "Allow romantic interactions with former mentors",
