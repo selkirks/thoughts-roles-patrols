@@ -1681,15 +1681,6 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
                             whichmain.blit(sprites.sprites['smoke' + cat_sprite], (0, 0))
                             if(phenotype.silvergold == ' light smoke '):
                                 whichmain.blit(sprites.sprites['smoke' + cat_sprite], (0, 0))
-                        if('masked' in phenotype.silvergold):
-                            points = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
-                            points.blit(sprites.sprites['pointsl' + cat_sprite], (0, 0))
-                            points.blit(whichmain, (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
-                            body = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
-                            body.blit(sprites.sprites['lightbasecolours0'], (0, 0))
-                            body.set_alpha(50)
-                            whichmain.blit(body, (0, 0))
-                            whichmain.blit(points, (0, 0))
 
 
 
@@ -1979,15 +1970,6 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
                             whichmain.blit(sprites.sprites['smoke' + cat_sprite], (0, 0))
                             if(phenotype.silvergold == ' light smoke '):
                                 whichmain.blit(sprites.sprites['smoke' + cat_sprite], (0, 0))
-                        if('masked' in phenotype.silvergold):
-                            points = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
-                            points.blit(sprites.sprites['pointsl' + cat_sprite], (0, 0))
-                            points.blit(whichmain, (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
-                            body = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
-                            body.blit(sprites.sprites['lightbasecolours0'], (0, 0))
-                            body.set_alpha(50)
-                            whichmain.blit(body, (0, 0))
-                            whichmain.blit(points, (0, 0))
 
 
 
@@ -2122,7 +2104,7 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
             if genotype.satin[0] == "st" or genotype.tenn[0] == 'tr':
                 gensprite.blit(sprites.sprites['satin0'], (0, 0))
 
-            if (genotype.bleach[0] == "lb" and cat.moons > 3) or phenotype.silvergold == 'masked silver':
+            if (genotype.bleach[0] == "lb" and cat.moons > 3) or 'masked' in phenotype.silvergold:
                 gensprite.blit(sprites.sprites['bleach' + cat_sprite], (0, 0))
             
             

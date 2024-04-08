@@ -1018,10 +1018,14 @@ class Cat():
         children = self.get_children()
         ids = []
         for child_id in children:
-            child = Cat.all_cats[child_id]
-            if child.outside and not child.exiled and child.moons < 12:
-                child.add_to_clan()
-                ids.append(child_id)
+            if Cat.all_cats.get(child_id, None):
+                child = Cat.all_cats[child_id]
+                if child.outside and not child.exiled and child.moons < 12:
+                    child.add_to_clan()
+                    ids.append(child_id)
+            else:
+                self.inheritance.update_inheritance()
+                
         
         return ids
 
@@ -2350,7 +2354,8 @@ class Cat():
                           for_love_interest: bool = False,
                           age_restriction: bool = True,
                           first_cousin_mates:bool = False,
-                          ignore_no_mates:bool=False):
+                          ignore_no_mates:bool=False,
+                          outsider= False):
         """
             Checks if this cat is potential mate for the other cat.
             There are no restrictions if the current cat already has a mate or not (this allows poly-mates).
@@ -2375,8 +2380,9 @@ class Cat():
         if self.is_related(other_cat, first_cousin_mates):
             return False
 
+
         # check exiled, outside, and dead cats
-        if (self.dead != other_cat.dead) or self.outside or other_cat.outside:
+        if (self.dead != other_cat.dead) or (self.outside and not outsider) or other_cat.outside:
             return False
 
         # check for age
@@ -2515,6 +2521,11 @@ class Cat():
 
     def create_one_relationship(self, other_cat: Cat):
         """Create a new relationship between current cat and other cat. Returns: Relationship"""
+        try:
+            if not self.relationships:
+                self.relationships = {}
+        except:
+            self.relationships = {}
         if other_cat.ID in self.relationships:
             return self.relationships[other_cat.ID]
         
