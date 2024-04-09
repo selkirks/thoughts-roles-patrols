@@ -124,6 +124,12 @@ class AllegiancesScreen(Screens):
                 living_kits.append(cat)
             elif cat.status == "elder":
                 living_elders.append(cat)
+        living_meds = sorted(living_meds, key=lambda x: x.moons, reverse=True)
+        living_mediators = sorted(living_mediators, key=lambda x: x.moons, reverse=True)
+        living_warriors = sorted(living_warriors, key=lambda x: x.moons, reverse=True)
+        living_apprentices = sorted(living_apprentices, key=lambda x: x.moons, reverse=True)
+        living_kits = sorted(living_kits, key=lambda x: x.moons, reverse=True)
+        living_elders = sorted(living_elders, key=lambda x: x.moons, reverse=True)
 
         # Find Queens:
         queen_dict, living_kits = get_alive_clan_queens(living_cats)
