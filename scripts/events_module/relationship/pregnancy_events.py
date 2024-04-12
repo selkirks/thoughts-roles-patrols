@@ -451,9 +451,8 @@ class Pregnancy_Events():
 
         other_cat_id = clan.pregnancy_data[cat.ID]["second_parent"]
         
-        other_cat = None
+        other_cat = []
         if other_cat_id and type(other_cat_id) == list: 
-            other_cat = []
             for id in other_cat_id:
                 other_cat.append(Cat.all_cats.get(id))
         elif other_cat_id:
