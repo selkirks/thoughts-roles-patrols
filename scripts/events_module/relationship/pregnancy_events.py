@@ -279,7 +279,7 @@ class Pregnancy_Events():
 
                 possible_affair_partners = [i for i in unknowns if
                                         i.is_potential_mate(cat, for_love_interest=True, outsider=True) 
-                                        and (clan.clan_settings['same sex birth'] or 'Y' in i.genotype.sexgene != 'Y' in cat.genotype.sexgene) 
+                                        and (clan.clan_settings['same sex birth'] or xor('Y' in i.genotype.sexgene, 'Y' in cat.genotype.sexgene)) 
                                         and len(i.mate) == 0]
                 if(random.random() < 0.5 or len(possible_affair_partners) < 1):
                     if(randint(1, 4) > 1):
@@ -311,8 +311,6 @@ class Pregnancy_Events():
                     outside_parent = [outside_parent]
 
                 else:
-                    
-                    print("HEYYYY")
                     outside_parent = [choice(possible_affair_partners)]
                     backkit = 'outsider_roots2'
 
@@ -457,6 +455,8 @@ class Pregnancy_Events():
                 other_cat.append(Cat.all_cats.get(id))
         elif other_cat_id:
             other_cat.append(Cat.all_cats.get(other_cat_id))
+        else:
+            other_cat = None
         backkit = None
         if not other_cat:
             
@@ -468,7 +468,7 @@ class Pregnancy_Events():
 
             possible_affair_partners = [i for i in unknowns if
                                     i.is_potential_mate(cat, for_love_interest=True, outsider=True) 
-                                    and (clan.clan_settings['same sex birth'] or 'Y' in i.genotype.sexgene != 'Y' in cat.genotype.sexgene) 
+                                    and (clan.clan_settings['same sex birth'] or xor('Y' in i.genotype.sexgene, 'Y' in cat.genotype.sexgene)) 
                                     and len(i.mate) == 0]
             if(random.random() < 0.5 or len(possible_affair_partners) < 1):
                 if(randint(1, 4) > 1):
@@ -510,7 +510,6 @@ class Pregnancy_Events():
                         other_cat.append(out_par)
 
             else:
-                print("HEYYYY")
                 backkit = 'outsider_roots2'
                 other_cat = []
                 nr_of_parents = 1
@@ -1114,6 +1113,10 @@ class Pregnancy_Events():
         # Add the adoptive parents.
         for kit in all_kitten:
             kit.adoptive_parents = final_adoptive_parents
+            if blood_parent2:
+                for birth_p in blood_parent2:
+                    if birth_p.ID != kit.parent2:
+                        kit.adoptive_parents.append(birth_p)
             kit.inheritance.update_inheritance()
             kit.inheritance.update_all_related_inheritance()
 
