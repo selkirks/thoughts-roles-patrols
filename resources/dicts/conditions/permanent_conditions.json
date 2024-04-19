@@ -626,5 +626,160 @@
         ],
         "herbs": [
         ]
+    },
+
+
+    "incontinence": {
+        "severity": "major",
+        "congenital": "sometimes",
+        "moons_until": 3,
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+            {
+                "name": "stomachache",
+                "chance": 20
+            },
+			{
+                "name": "diarrhea",
+                "chance": 40
+            }
+        ],
+        "herbs": [
+            "juniper",
+            "mallow",
+            "ragwort",
+            "poppy"
+        ]
+    },
+    "rabbit gait": {
+        "severity": "minor",
+        "congenital": "sometimes",
+        "moons_until": 3,
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+
+        ],
+        "herbs": [
+        ]
+    },
+    "manx syndrome": {
+        "severity": "minor",
+        "congenital": "always",
+        "moons_until": 3,
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+        ],
+        "herbs": [
+        ]
+    },
+    "albinism": {
+        "severity": "major",
+        "congenital": "always",
+        "moons_until": 2,
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+            {
+                "name": "persistent headaches",
+                "chance": 80
+            },
+            {
+                "name": "severe headache",
+                "chance": 60
+            },
+            {
+                "name": "headache",
+                "chance": 40
+            },
+            {
+                "name": "sunburn",
+                "chance": 5
+            },
+            {
+                "name" : "failing eyesight",
+                "chance": 80
+            }
+        ],
+        "herbs": [
+            "poppy",
+            "juniper"
+        ]
+    },
+    "ocular albinism": {
+        "severity": "major",
+        "congenital": "always",
+        "moons_until": 2,
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+            {
+                "name": "persistent headaches",
+                "chance": 80
+            },
+            {
+                "name": "severe headache",
+                "chance": 60
+            },
+            {
+                "name": "headache",
+                "chance": 40
+            },
+            {
+                "name" : "failing eyesight",
+                "chance": 80
+            }
+        ],
+        "herbs": [
+            "poppy",
+            "juniper"
+        ]
     }
 }

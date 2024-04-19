@@ -203,5 +203,17 @@
             "m_c tries to keep the disappointment down. Logically, {PRONOUN/m_c/subject} knew this was inevitable. Emotionally, {PRONOUN/m_c/subject} just can't accept that {PRONOUN/m_c/subject}'ll never walk again.",
             "m_c continues to do {PRONOUN/m_c/poss} exercises dutifully, hoping beyond hope that someday it will pay off. For now though, {PRONOUN/m_c/subject} {VERB/m_c/know/knows} this paralysis is {PRONOUN/m_c/poss} new reality."
         ]
+    },
+    "albinism" : {
+        "persistent headaches" : [
+            "m_c's eyes have always been very sensitive to light, but recently the headaches have just been more and more frequent.",
+            "m_c's eyes have always been very sensitive to light, but recently the headaches have just been more and more frequent."
+        ]
+    },
+    "ocular albinism" : {
+        "persistent headaches" : [
+            "m_c's eyes have always been very sensitive to light, but recently the headaches have just been more and more frequent.",
+            "m_c's eyes have always been very sensitive to light, but recently the headaches have just been more and more frequent."
+        ]
     }
 }

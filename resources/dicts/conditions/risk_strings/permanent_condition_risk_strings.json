@@ -157,5 +157,43 @@
             "r_c sees m_c headed towards the medicine cat den, wincing with every step, and ducks inside to prepare a nest for {PRONOUN/m_c/object} in the darkest, quietest corner possible.",
             "m_c wakes up with pounding head pain and horrible light sensitivity. {PRONOUN/m_c/subject/CAP} {VERB/m_c/curl/curls} up as tightly in {PRONOUN/m_c/poss} nest as {PRONOUN/m_c/subject} can, screwing {PRONOUN/m_c/poss} eyes shut and flattening {PRONOUN/m_c/poss} ears. There's no way {PRONOUN/m_c/subject}'ll get work done today."
         ]
+    },
+    "albinism" : {
+        "sunburn": [
+            "m_c's ears and nose feel sore to the touch after yesterday.",
+            "m_c's nose has been especially red and sore after spending time in the sun."
+        ],
+        "headache": [
+            "m_c may have spent a bit too much time out in the sun - if the headache is anything to go by.",
+            "m_c may have spent a bit too much time out in the sun - if the headache is anything to go by."
+        ],
+        "severe headache": [
+            "m_c wakes up with pounding head pain. {PRONOUN/m_c/subject/CAP} {VERB/m_c/curl/curls} up as tightly in {PRONOUN/m_c/poss} nest as {PRONOUN/m_c/subject} can, screwing {PRONOUN/m_c/poss} eyes shut and flattening {PRONOUN/m_c/poss} ears. There's no way {PRONOUN/m_c/subject}'ll get work done today.",
+            "m_c wakes up with pounding head pain. {PRONOUN/m_c/subject/CAP} {VERB/m_c/curl/curls} up as tightly in {PRONOUN/m_c/poss} nest as {PRONOUN/m_c/subject} can, screwing {PRONOUN/m_c/poss} eyes shut and flattening {PRONOUN/m_c/poss} ears. There's no way {PRONOUN/m_c/subject}'ll get work done today."
+        ],
+        "failing eyesight": [
+            "m_c had never had the clearest vision, forced to squint most of the time. But even still it seems it's noticeably less clear.",
+            "m_c had never had the clearest vision, forced to squint most of the time. But even still it seems it's noticeably less clear."
+        ]
+    },
+    "ocular albinism" : {
+        "headache": [
+            "m_c may have spent a bit too much time out in the sun - if the headache is anything to go by.",
+            "m_c may have spent a bit too much time out in the sun - if the headache is anything to go by."
+        ],
+        "severe headache": [
+            "m_c wakes up with pounding head pain. {PRONOUN/m_c/subject/CAP} {VERB/m_c/curl/curls} up as tightly in {PRONOUN/m_c/poss} nest as {PRONOUN/m_c/subject} can, screwing {PRONOUN/m_c/poss} eyes shut and flattening {PRONOUN/m_c/poss} ears. There's no way {PRONOUN/m_c/subject}'ll get work done today.",
+            "m_c wakes up with pounding head pain. {PRONOUN/m_c/subject/CAP} {VERB/m_c/curl/curls} up as tightly in {PRONOUN/m_c/poss} nest as {PRONOUN/m_c/subject} can, screwing {PRONOUN/m_c/poss} eyes shut and flattening {PRONOUN/m_c/poss} ears. There's no way {PRONOUN/m_c/subject}'ll get work done today."
+        ]
+    },
+    "incontinence" : {
+        "stomachache" : [
+            "m_c is used to an upset stomach, but that doesn't make it easier to deal with all day.",
+            "m_c is used to an upset stomach, but that doesn't make it easier to deal with all day."
+        ],
+        "diarrhea" : [
+            "m_c excuses themselves over and over to visit the Dirtplace.",
+            "m_c excuses themselves over and over to visit the Dirtplace."
+        ]
     }
 }

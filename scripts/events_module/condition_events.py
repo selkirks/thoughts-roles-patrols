@@ -683,7 +683,7 @@ class Condition_Events():
                 continue
 
             # revealing perm condition
-            if status == 'reveal' and condition != 'infertility':
+            if status == 'reveal' and condition not in ['infertility', 'manx syndrome']:
                 # gather potential event strings for gotten risk
                 possible_string_list = Condition_Events.CONGENITAL_CONDITION_GOT_STRINGS[condition]
 

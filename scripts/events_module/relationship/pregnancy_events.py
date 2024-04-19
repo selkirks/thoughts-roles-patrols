@@ -486,7 +486,7 @@ class Pregnancy_Events():
                 
                 nr_of_parents = 1
                 if clan.clan_settings['multisire'] and cat_type != 'Clancat':
-                    nr_of_parents = randint(1, choice([1, 1, 1, randint(3, 5)]))
+                    nr_of_parents = randint(1, choice([1, 1, 1, randint(2, 5)]))
                 other_cat = []
                 for i in range(0, nr_of_parents):
 
@@ -494,6 +494,8 @@ class Pregnancy_Events():
                     if cat_type != 'Clancat':
                         out_par = None
                         while not out_par or 'infertility' in out_par.permanent_condition:
+                            if(out_par):
+                                Cat.all_cats.remove(out_par)
                             out_par = create_new_cat(Cat, Relationship,
                                                     status=cat_type,
                                                     backstory=BACKSTORIES["backstory_categories"][backstories[cat_type]],
@@ -514,7 +516,7 @@ class Pregnancy_Events():
                 other_cat = []
                 nr_of_parents = 1
                 if clan.clan_settings['multisire']:
-                    nr_of_parents = randint(1, choice([1, 1, 1, randint(3, 5)]))
+                    nr_of_parents = randint(1, choice([1, 1, 1, randint(2, 5)]))
                 
                 if nr_of_parents > len(possible_affair_partners):
                     nr_of_parents = len(possible_affair_partners)
@@ -979,7 +981,7 @@ class Pregnancy_Events():
                     # Generate a blood parent if we haven't already. 
                     nr_of_parents = 1
                     if clan.clan_settings['multisire']:
-                        nr_of_parents = randint(1, choice([1, 1, 1, randint(3, 5)]))
+                        nr_of_parents = randint(1, choice([1, 1, 1, randint(2, 5)]))
                     
                     insert = "their kits are"
                     if kits_amount == 1:
@@ -999,6 +1001,8 @@ class Pregnancy_Events():
                         blood_par2 = None
                         parage = parage + randint(0, 24) - 12
                         while not blood_par2 or 'infertility' in blood_par2.permanent_condition:
+                            if(blood_par2):
+                                Cat.all_cats.remove(blood_par2)
                             blood_par2 = create_new_cat(Cat, Relationship,
                                                         status=random.choice(["loner", "kittypet"]),
                                                         gender='masc',
