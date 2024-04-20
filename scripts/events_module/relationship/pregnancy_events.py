@@ -235,8 +235,9 @@ class Pregnancy_Events():
             # same sex birth enables all cats to get pregnant,
             # therefore the main cat will be used, regarding of gender
             ids = []
-            for x in other_cat:
-                ids.append(x.ID)
+            if other_cat:
+                for x in other_cat:
+                    ids.append(x.ID)
             
             clan.pregnancy_data[cat.ID] = {
                 "second_parent": ids if other_cat else None,
