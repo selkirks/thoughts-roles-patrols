@@ -33,7 +33,7 @@
         "modded_kits": [
             "Use modded litters",
             "Gives larger litters, and higher kit death chances",
-            true
+            false
         ],
         "showxp": [
             "Show exact XP and nutrition status",
