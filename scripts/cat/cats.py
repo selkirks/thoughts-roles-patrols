@@ -686,7 +686,7 @@ class Cat():
                              load_existing_name = loading_cat)
 
         
-        if game.clan.game_mode != 'classic':
+        if game.clan and game.clan.game_mode != 'classic':
             if self.genotype.deaf:
                 if 'blue' not in self.genotype.lefteyetype or 'blue' not in self.genotype.righteyetype:
                     self.get_permanent_condition('partial hearing loss', born_with=True)
