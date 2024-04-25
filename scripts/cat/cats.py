@@ -2061,7 +2061,7 @@ class Cat():
 
         for condition in PERMANENT:
             possible = PERMANENT[condition]
-            if possible["congenital"] in ['always', 'sometimes']:
+            if possible["congenital"] in ['always', 'sometimes'] and condition not in ['albinism', 'ocular albinism', 'manx syndrome']:
                 possible_conditions.append(condition)
 
         new_condition = choice(possible_conditions)
