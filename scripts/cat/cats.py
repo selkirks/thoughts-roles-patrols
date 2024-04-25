@@ -564,36 +564,6 @@ class Cat():
                 self.age = choice(['young adult', 'adult', 'adult', 'senior adult'])
             self.moons = randint(self.age_moons[self.age][0], self.age_moons[self.age][1])
 
-        
-
-        if self.genotype.deaf:
-            if 'blue' not in self.genotype.lefteyetype or 'blue' not in self.genotype.righteyetype:
-                self.get_permanent_condition('partial hearing loss', born_with=True)
-            elif 'partial hearing loss' not in self.permanent_condition:
-                self.get_permanent_condition(choice(['deaf', 'partial hearing loss']), born_with=True)
-        if ('M' in self.genotype.manx):
-            if(random() > ((self.phenotype.bobtailnr + 1) * 0.15)):
-                self.get_permanent_condition('manx syndrome', born_with=True)
-
-
-        if self.genotype.manx[0] == 'M' and (self.genotype.manxtype in ['rumpy', 'riser']):
-            self.get_permanent_condition('born without a tail', born_with=True)
-        
-        if len(self.genotype.sexgene) > 2 and 'Y' in self.genotype.sexgene or (not loading_cat and self.gender == 'intersex' and random() < 0.2 and not gender) or (self.gender == 'molly' and 'Y' in self.genotype.sexgene):
-            self.get_permanent_condition('infertility', born_with=True)
-        
-        if self.genotype.fold[0] == 'Fd' or ('manx syndrome' in self.permanent_condition and 'M' in self.genotype.manx and self.phenotype.bobtailnr < 4 and self.phenotype.bobtailnr > 1 and random() < 0.05):
-            self.get_permanent_condition('constant joint pain', born_with=True)
-        if 'manx syndrome' in self.permanent_condition and ((self.phenotype.bobtailnr < 2 and random() > 0.1) or (self.phenotype.bobtailnr > 1 and random() > 0.4)):
-            self.get_permanent_condition('incontinence', born_with=True)
-        if 'manx syndrome' in self.permanent_condition and ((self.phenotype.bobtailnr < 2 and random() > 0.1) or (self.phenotype.bobtailnr > 1 and random() > 0.8)):
-            self.get_permanent_condition('rabbit gait', born_with=True)
-        
-        if(self.genotype.pointgene[0] == 'c'):
-            self.get_permanent_condition('albinism', born_with=True)
-        elif('albino' in self.genotype.lefteyetype):
-            self.get_permanent_condition('ocular albinism', born_with=True)
-
 
         # backstory
         if self.backstory is None:
@@ -657,7 +627,7 @@ class Cat():
 
             # APPEARANCE
             self.pelt = Pelt.generate_new_pelt(self.genotype, self.phenotype, self.gender, [Cat.fetch_cat(i) for i in (self.parent1, self.parent2) if i], self.age)
-            
+        
             #Personality
             self.personality = Personality(kit_trait=self.is_baby())
 
@@ -696,6 +666,7 @@ class Cat():
             biome = game.clan.biome
         else:
             biome = None
+            
         # NAME
         # load_existing_name is needed so existing cats don't get their names changed/fixed for no reason
         if self.pelt is not None:
@@ -713,6 +684,36 @@ class Cat():
         else:
             self.name = Name(status, prefix, suffix, eyes=self.pelt.eye_colour, specsuffix_hidden=self.specsuffix_hidden,
                              load_existing_name = loading_cat)
+
+        
+        if game.clan.game_mode != 'classic':
+            if self.genotype.deaf:
+                if 'blue' not in self.genotype.lefteyetype or 'blue' not in self.genotype.righteyetype:
+                    self.get_permanent_condition('partial hearing loss', born_with=True)
+                elif 'partial hearing loss' not in self.permanent_condition:
+                    self.get_permanent_condition(choice(['deaf', 'partial hearing loss']), born_with=True)
+            if ('M' in self.genotype.manx):
+                if(random() > ((self.phenotype.bobtailnr + 1) * 0.15)):
+                    self.get_permanent_condition('manx syndrome', born_with=True)
+
+
+            if self.genotype.manx[0] == 'M' and (self.genotype.manxtype in ['rumpy', 'riser']):
+                self.get_permanent_condition('born without a tail', born_with=True)
+            
+            if len(self.genotype.sexgene) > 2 and 'Y' in self.genotype.sexgene or (not loading_cat and self.gender == 'intersex' and random() < 0.2 and not gender) or (self.gender == 'molly' and 'Y' in self.genotype.sexgene):
+                self.get_permanent_condition('infertility', born_with=True)
+            
+            if self.genotype.fold[0] == 'Fd' or ('manx syndrome' in self.permanent_condition and 'M' in self.genotype.manx and self.phenotype.bobtailnr < 4 and self.phenotype.bobtailnr > 1 and random() < 0.05):
+                self.get_permanent_condition('constant joint pain', born_with=True)
+            if 'manx syndrome' in self.permanent_condition and ((self.phenotype.bobtailnr < 2 and random() > 0.1) or (self.phenotype.bobtailnr > 1 and random() > 0.4)):
+                self.get_permanent_condition('incontinence', born_with=True)
+            if 'manx syndrome' in self.permanent_condition and ((self.phenotype.bobtailnr < 2 and random() > 0.1) or (self.phenotype.bobtailnr > 1 and random() > 0.8)):
+                self.get_permanent_condition('rabbit gait', born_with=True)
+            
+            if(self.genotype.pointgene[0] == 'c'):
+                self.get_permanent_condition('albinism', born_with=True)
+            elif('albino' in self.genotype.lefteyetype):
+                self.get_permanent_condition('ocular albinism', born_with=True)
         
         # Private Sprite
         self._sprite = None
