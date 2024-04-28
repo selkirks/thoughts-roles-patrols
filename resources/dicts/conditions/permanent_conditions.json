@@ -736,7 +736,7 @@
             },
             {
                 "name" : "failing eyesight",
-                "chance": 80
+                "chance": 100
             }
         ],
         "herbs": [
@@ -774,7 +774,7 @@
             },
             {
                 "name" : "failing eyesight",
-                "chance": 80
+                "chance": 100
             }
         ],
         "herbs": [

@@ -174,6 +174,10 @@
         "failing eyesight": [
             "m_c had never had the clearest vision, forced to squint most of the time. But even still it seems it's noticeably less clear.",
             "m_c had never had the clearest vision, forced to squint most of the time. But even still it seems it's noticeably less clear."
+        ],
+        "persistent headaches":[
+            "With how often m_c has been getting headaches from being out in the light, r_c has felt the need to break the news - they'll need to adapt.",
+            "With how often m_c has been getting headaches from being out in the light, m_c wonders if this'll be how it is forever."
         ]
     },
     "ocular albinism" : {
@@ -184,6 +188,14 @@
         "severe headache": [
             "m_c wakes up with pounding head pain. {PRONOUN/m_c/subject/CAP} {VERB/m_c/curl/curls} up as tightly in {PRONOUN/m_c/poss} nest as {PRONOUN/m_c/subject} can, screwing {PRONOUN/m_c/poss} eyes shut and flattening {PRONOUN/m_c/poss} ears. There's no way {PRONOUN/m_c/subject}'ll get work done today.",
             "m_c wakes up with pounding head pain. {PRONOUN/m_c/subject/CAP} {VERB/m_c/curl/curls} up as tightly in {PRONOUN/m_c/poss} nest as {PRONOUN/m_c/subject} can, screwing {PRONOUN/m_c/poss} eyes shut and flattening {PRONOUN/m_c/poss} ears. There's no way {PRONOUN/m_c/subject}'ll get work done today."
+        ],
+        "failing eyesight": [
+            "m_c had never had the clearest vision, forced to squint most of the time. But even still it seems it's noticeably less clear.",
+            "m_c had never had the clearest vision, forced to squint most of the time. But even still it seems it's noticeably less clear."
+        ],
+        "persistent headaches":[
+            "With how often m_c has been getting headaches from being out in the light, r_c has felt the need to break the news - they'll need to adapt.",
+            "With how often m_c has been getting headaches from being out in the light, m_c wonders if this'll be how it is forever."
         ]
     },
     "incontinence" : {
