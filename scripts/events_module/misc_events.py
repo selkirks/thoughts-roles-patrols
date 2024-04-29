@@ -136,6 +136,37 @@ class MiscEvents():
             History.reveal_murder(cat, other_cat, Cat, victim, murder_index)
 
     @staticmethod
+    def handle_colour_changes(cat):
+        involved_cats = [cat.ID]
+        event_text = ""
+
+        if cat.genotype.white[0] == 'W' or cat.genotype.white[1] in ['ws', 'wt'] or cat.genotype.pointgene[0] == 'c' or 'o' not in cat.genotype.sexgene:
+            return
+        
+        if cat.genotype.dilute[0] == 'D' and cat.genotype.pinkdilute[0] == 'Dp':
+            red_colour = "orange"
+        elif cat.genotype.dilute[0] == 'd' and cat.genotype.pinkdilute[0] == 'Dp':
+            red_colour = "cream"
+        elif cat.genotype.dilute[0] == 'D' and cat.genotype.pinkdilute[0] == 'dp':
+            red_colour = "yellow"
+        else:
+            red_colour = 'creamy white'
+
+        if cat.genotype.ext[0] == 'ec' and cat.genotype.agouti[0] == 'a' and cat.moons == 6:
+            event_text = "Throughout kittenhood m_c has gotten many comments about their unique coat. Well, it looks by now to have turned completely " + red_colour + "."
+        if cat.genotype.ext[0] == 'ea' and ((cat.moons == 12 and cat.genotype.agouti[0] != 'a') or (cat.moons == 24 and cat.genotype.agouti[0] == 'a')):
+            event_text = "m_c has gotten used to the odd comment of 'is your fur more "+ red_colour + " today?', having heard it practically since kithood. But by now, nobody can deny it, there's barely a trace of any other coat colour left."
+        if cat.genotype.ext[0] == 'er' and cat.moons == 12 and cat.genotype.dilute[0] == 'D' and cat.genotype.pinkdilute[0] == 'Dp':
+            event_text = "'What an odd cat' many would say, having marveled at how m_c's coat changed with time to be nigh unrecogniseable since kittenhood. The healers couldn't explain it either..."
+        if cat.genotype.ext[0] == 'er' and cat.moons == 24 and cat.genotype.dilute[0] == 'D' and cat.genotype.pinkdilute[0] == 'Dp':
+            event_text = "Well what do you know? Full of surprises, m_c's coat has turned a whole new colour - this time "+ red_colour + ", even. Everyone's jokingly asking what colour they're trying out next."
+
+        if event_text:
+            event_text = event_text_adjust(Cat, event_text, cat)
+            types = ["misc"]
+            game.cur_events_list.append(Single_Event(event_text, types, involved_cats))
+
+    @staticmethod
     def handle_relationship_changes(cat, misc_event, other_cat):
 
         n = 5

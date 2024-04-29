@@ -1099,6 +1099,7 @@ class Events:
         self.invite_new_cats(cat)
         self.other_interactions(cat)
         self.gain_accessories(cat)
+        MiscEvents.handle_colour_changes(cat)
 
         # switches between the two death handles
         if random.getrandbits(1):
@@ -1761,7 +1762,8 @@ class Events:
         self.ceremony_accessory = False
 
         return
-
+                    
+    
     def handle_apprentice_EX(self, cat):
         """
         TODO: DOCS
