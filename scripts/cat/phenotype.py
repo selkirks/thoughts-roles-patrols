@@ -240,7 +240,7 @@ class Phenotype():
     def SilverGoldFinder(self):
         self.silvergold = ""
 
-        if(self.genotype.agouti[0] == 'a' and 'o' in self.genotype.sexgene):
+        if((self.genotype.agouti[0] == 'a' or self.genotype.ext[0] == 'Eg') and 'o' in self.genotype.sexgene):
             if(self.genotype.silver[0] == 'I'):
                 if(self.genotype.wbsum > 13):
                     self.silvergold = 'masked silver '
