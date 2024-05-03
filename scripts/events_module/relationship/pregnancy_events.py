@@ -1040,6 +1040,10 @@ class Pregnancy_Events():
                     kit.thought = f"Snuggles up to the belly of {second_blood.name}"
                 
             #kit.adoptive_parents = all_adoptive_parents  # Add the adoptive parents. 
+            # Prevent duplicate prefixes in Clan
+            while kit.name.prefix in [kitty.name.prefix for kitty in Cat.all_cats.values() if not kitty.dead and not kitty.outside and kitty.ID != kit.ID]:
+                kit.name = Name("newborn")
+
             all_kitten.append(kit)
             # adoptive parents are set at the end, when everything else is decided
 
@@ -1126,7 +1130,7 @@ class Pregnancy_Events():
             kit.adoptive_parents = final_adoptive_parents
             if blood_parent2:
                 for birth_p in blood_parent2:
-                    if birth_p.ID != kit.parent2:
+                    if birth_p.ID != kit.parent2 and birth_p not in kit.adoptive_parents:
                         kit.adoptive_parents.append(birth_p)
             kit.inheritance.update_inheritance()
             kit.inheritance.update_all_related_inheritance()
