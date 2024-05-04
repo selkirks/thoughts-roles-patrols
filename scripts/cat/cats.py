@@ -195,6 +195,7 @@ class Cat():
 
         self.adoptive_parents = []
         self.genotype = Genotype(game.config['genetic_chances'])
+        #print(genotype)
         if genotype:
             self.genotype.fromJSON(genotype)
         elif parent1 or parent2:
@@ -484,10 +485,10 @@ class Cat():
                         white_pattern.append(choice([None, choice(['break/left ear', 'break/right ear', 'break/tail tip', 'break/tail band', 'break/left face', 'break/right face'])]))
 
                         clean_white()
-                
+            
             elif white_pattern is None and vit:
                 white_pattern = [choice(vitiligo)]
-            if white_pattern == [] or white_pattern is None:
+            if white_pattern == [] or white_pattern is None or (KIT == ["w", "w"] and not vit):
                 white_pattern = "No"
             return white_pattern
 

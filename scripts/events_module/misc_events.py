@@ -144,7 +144,7 @@ class MiscEvents():
         involved_cats = [cat.ID]
         event_text = ""
 
-        if cat.genotype.white[0] == 'W' or cat.genotype.white[1] in ['ws', 'wt'] or cat.genotype.pointgene[0] == 'c' or 'o' not in cat.genotype.sexgene:
+        if cat.genotype.white[0] == 'W' or (cat.genotype.white[1] in ['ws', 'wt'] and cat.genotype.whitegrade > 2) or cat.genotype.pointgene[0] == 'c' or 'o' not in cat.genotype.sexgene:
             return
         
         if cat.genotype.dilute[0] == 'D' and cat.genotype.pinkdilute[0] == 'Dp':

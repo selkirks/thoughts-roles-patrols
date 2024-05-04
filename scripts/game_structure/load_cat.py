@@ -54,7 +54,6 @@ def json_load():
         try:
             
             try:
-
                 new_cat = Cat(ID=cat["ID"],
                         prefix=cat["name_prefix"],
                         suffix=cat["name_suffix"],
