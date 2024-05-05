@@ -9235,7 +9235,7 @@
         "weight": 20,
         "chance_of_success": 60,
         "pl_skill_constraint": ["STORY,1", "LORE,1"],
-        "intro_text": "Legends tell of the first clan cat that created the stars above and below upon death...",
+        "intro_text": "Legends tell of the first Clan cat that created the stars above and below upon death...",
         "decline_text": "No one is interested in fables today.",
             "success_outcomes": [
                 {
@@ -10511,7 +10511,7 @@
         "weight": 20,
         "chance_of_success": 60,
         "pl_skill_constraint": ["STORY,1", "LORE,1"],
-        "intro_text": "Legends tell of the first clan cat that created the stars above and below upon death...",
+        "intro_text": "Legends tell of the first Clan cat that created the stars above and below upon death...",
         "decline_text": "No one is interested in fables today.",
         "success_outcomes": [
             {
