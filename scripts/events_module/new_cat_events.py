@@ -124,8 +124,10 @@ class NewCatEvents:
                 cat_type = 'loner'
             elif('kittypet' in new_cat_event.event_text):
                 cat_type = 'kittypet'
-            else:
+            elif(new_cat_event.other_clan):
                 cat_type = 'del'
+            else:
+                cat_type = 'rogue'
             
             blood_parent = create_new_cat(Cat, Relationship,
                                           status=random.choice(["loner", "rogue", "kittypet"]),
@@ -156,7 +158,7 @@ class NewCatEvents:
                                             alive=True,
                                             thought=thought,
                                             age=ages[0],
-                                            gender='masc',
+                                            gender='fem',
                                             outside=True)[0]
             else:
                 par2geno = Genotype(game.config['genetic_chances'])
@@ -178,7 +180,14 @@ class NewCatEvents:
                                       )
             
         for new_cat in created_cats:
-            
+            if new_cat.genotype.manx[1] == "Ab" or new_cat.genotype.manx[1] == "M" or new_cat.genotype.fold[1] == "Fd" or new_cat.genotype.munch[1] == "Mk":
+                new_cat.moons = 0
+                new_cat.status = "newborn"
+                new_cat.dead = True
+                History.add_death(new_cat, str(new_cat.name) + " was stillborn.")
+                created_cats.remove(new_cat)
+                continue
+                        
             involved_cats.append(new_cat.ID)
             
             # Set the blood parent, if one was created.
@@ -252,73 +261,74 @@ class NewCatEvents:
                     jealousy=clan_cat_to_new["jealousy"],
                     trust=clan_cat_to_new["trust"]
                 )
+        if len(created_cats) > 0:
+            
+            if "adoption" in new_cat_event.tags:
+                if new_cat_event.litter:
+                    for new_cat in created_cats:
+                        # giving relationships for siblings
+                        siblings = new_cat.get_siblings()
+                        for sibling in siblings:
+                            sibling = Cat.fetch_cat(sibling)
+                            
+                            sibling.create_one_relationship(new_cat)
+                            new_cat.create_one_relationship(sibling)
+                            
+                            kit_to_parent = game.config["new_cat"]["sib_buff"]["cat1_to_cat2"]
+                            parent_to_kit = game.config["new_cat"]["sib_buff"]["cat2_to_cat1"]
+                            change_relationship_values(
+                                cats_to=[sibling.ID],
+                                cats_from=[new_cat],
+                                romantic_love=kit_to_parent["romantic"],
+                                platonic_like=kit_to_parent["platonic"],
+                                dislike=kit_to_parent["dislike"],
+                                admiration=kit_to_parent["admiration"],
+                                comfortable=kit_to_parent["comfortable"],
+                                jealousy=kit_to_parent["jealousy"],
+                                trust=kit_to_parent["trust"]
+                            )
+                            change_relationship_values(
+                                cats_to=[new_cat.ID],
+                                cats_from=[sibling],
+                                romantic_love=parent_to_kit["romantic"],
+                                platonic_like=parent_to_kit["platonic"],
+                                dislike=parent_to_kit["dislike"],
+                                admiration=parent_to_kit["admiration"],
+                                comfortable=parent_to_kit["comfortable"],
+                                jealousy=parent_to_kit["jealousy"],
+                                trust=parent_to_kit["trust"]
+                            )
 
-        if "adoption" in new_cat_event.tags:
-            if new_cat_event.litter:
+            # give injuries to other cat if tagged as such
+            if "injured" in new_cat_event.tags and game.clan.game_mode != "classic":
+                major_injuries = []
+                if "major_injury" in new_cat_event.tags:
+                    for injury in INJURIES:
+                        if INJURIES[injury]["severity"] == "major" and injury not in ["pregnant", "recovering from birth"]:
+                            major_injuries.append(injury)
                 for new_cat in created_cats:
-                    # giving relationships for siblings
-                    siblings = new_cat.get_siblings()
-                    for sibling in siblings:
-                        sibling = Cat.fetch_cat(sibling)
-                        
-                        sibling.create_one_relationship(new_cat)
-                        new_cat.create_one_relationship(sibling)
-                        
-                        kit_to_parent = game.config["new_cat"]["sib_buff"]["cat1_to_cat2"]
-                        parent_to_kit = game.config["new_cat"]["sib_buff"]["cat2_to_cat1"]
-                        change_relationship_values(
-                            cats_to=[sibling.ID],
-                            cats_from=[new_cat],
-                            romantic_love=kit_to_parent["romantic"],
-                            platonic_like=kit_to_parent["platonic"],
-                            dislike=kit_to_parent["dislike"],
-                            admiration=kit_to_parent["admiration"],
-                            comfortable=kit_to_parent["comfortable"],
-                            jealousy=kit_to_parent["jealousy"],
-                            trust=kit_to_parent["trust"]
-                        )
-                        change_relationship_values(
-                            cats_to=[new_cat.ID],
-                            cats_from=[sibling],
-                            romantic_love=parent_to_kit["romantic"],
-                            platonic_like=parent_to_kit["platonic"],
-                            dislike=parent_to_kit["dislike"],
-                            admiration=parent_to_kit["admiration"],
-                            comfortable=parent_to_kit["comfortable"],
-                            jealousy=parent_to_kit["jealousy"],
-                            trust=parent_to_kit["trust"]
-                        )
+                    for tag in new_cat_event.tags:
+                        if tag in INJURIES:
+                            new_cat.get_injured(tag)
+                        elif tag == "major_injury":
+                            injury = random.choice(major_injuries)
+                            new_cat.get_injured(injury)
 
-        # give injuries to other cat if tagged as such
-        if "injured" in new_cat_event.tags and game.clan.game_mode != "classic":
-            major_injuries = []
-            if "major_injury" in new_cat_event.tags:
-                for injury in INJURIES:
-                    if INJURIES[injury]["severity"] == "major" and injury not in ["pregnant", "recovering from birth"]:
-                        major_injuries.append(injury)
-            for new_cat in created_cats:
-                for tag in new_cat_event.tags:
-                    if tag in INJURIES:
-                        new_cat.get_injured(tag)
-                    elif tag == "major_injury":
-                        injury = random.choice(major_injuries)
-                        new_cat.get_injured(injury)
+            if "rel_down" in new_cat_event.tags:
+                difference = -1
+                change_clan_relations(other_clan, difference=difference)
 
-        if "rel_down" in new_cat_event.tags:
-            difference = -1
-            change_clan_relations(other_clan, difference=difference)
+            elif "rel_up" in new_cat_event.tags:
+                difference = 1
+                change_clan_relations(other_clan, difference=difference)
 
-        elif "rel_up" in new_cat_event.tags:
-            difference = 1
-            change_clan_relations(other_clan, difference=difference)
-
-        event_text = event_text_adjust(Cat, new_cat_event.event_text, cat, other_cat, other_clan_name,
+            event_text = event_text_adjust(Cat, new_cat_event.event_text, cat, other_cat, other_clan_name,
                                        new_cat=created_cats[0])
 
-        types = ["misc"]
-        if "other_clan" in new_cat_event.tags:
-            types.append("other_clans")
-        game.cur_events_list.append(Single_Event(event_text, types, involved_cats))
+            types = ["misc"]
+            if "other_clan" in new_cat_event.tags:
+                types.append("other_clans")
+            game.cur_events_list.append(Single_Event(event_text, types, involved_cats))
 
         return created_cats
 

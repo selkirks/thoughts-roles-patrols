@@ -680,7 +680,7 @@ class Condition_Events():
             status = cat.moon_skip_permanent_condition(condition)
 
             # if cat is dead, break
-            if cat.dead or cat.status == 'leader':
+            if not status == "continue" and (cat.dead or cat.status == 'leader'):
                 triggered = True
                 event_types.append("birth_death")
                 event = f"{cat.name} died from complications caused by {condition}."
