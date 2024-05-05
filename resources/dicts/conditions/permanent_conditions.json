@@ -632,7 +632,7 @@
     "incontinence": {
         "severity": "major",
         "congenital": "sometimes",
-        "moons_until": 3,
+        "moons_until": 5,
         "mortality": {
             "newborn": 0,
             "kitten": 0,
