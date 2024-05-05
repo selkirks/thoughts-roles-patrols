@@ -658,6 +658,9 @@ class Cat():
                 
             if not skill_dict:
                 self.skills = CatSkills.generate_new_catskills(self.status, self.moons)
+            
+            if game.clan and game.clan.game_mode != "classic":
+                self.genetic_conditions()
 
         # In camp status
         self.in_camp = 1
@@ -1803,7 +1806,7 @@ class Cat():
             if self.status == 'leader':
                 game.clan.leader_lives -= 1
             self.die()
-            return "continue"
+            return "died"
     
         if not mortality:
             return "continue"
