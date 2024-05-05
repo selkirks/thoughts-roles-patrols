@@ -1131,8 +1131,8 @@ class Pregnancy_Events():
             kit.adoptive_parents = final_adoptive_parents
             if blood_parent2:
                 for birth_p in blood_parent2:
-                    if birth_p.ID != kit.parent2 and birth_p not in kit.adoptive_parents:
-                        kit.adoptive_parents.append(birth_p)
+                    if birth_p.ID != kit.parent2 and birth_p.ID not in kit.adoptive_parents:
+                        kit.adoptive_parents.append(birth_p.ID)
             kit.inheritance.update_inheritance()
             kit.inheritance.update_all_related_inheritance()
 
