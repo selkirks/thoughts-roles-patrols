@@ -1804,6 +1804,9 @@ class Cat():
                 game.clan.leader_lives -= 1
             self.die()
             return "continue"
+    
+        if not mortality:
+            return "continue"
 
     # ---------------------------------------------------------------------------- #
     #                                   relative                                   #
