@@ -330,11 +330,12 @@ class Pregnancy_Events():
                     insert = 'a single kitten'
                 if len(kits) > 1:
                     insert = f'a litter of {len(kits)} kits'
-                print_event = f"{cat.name} brought {insert} back to camp, but refused to talk about their origin."
-                cats_involved = [cat.ID]
-                for kit in kits:
-                    cats_involved.append(kit.ID)
-                game.cur_events_list.append(Single_Event(print_event, "birth_death", cats_involved))
+                if len(kits) > 0:
+                    print_event = f"{cat.name} brought {insert} back to camp, but refused to talk about their origin."
+                    cats_involved = [cat.ID]
+                    for kit in kits:
+                        cats_involved.append(kit.ID)
+                    game.cur_events_list.append(Single_Event(print_event, "birth_death", cats_involved))
                 return
 
             
