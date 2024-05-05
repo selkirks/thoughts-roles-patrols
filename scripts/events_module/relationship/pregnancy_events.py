@@ -1007,7 +1007,7 @@ class Pregnancy_Events():
                         parage = parage + randint(0, 24) - 12
                         while not blood_par2 or 'infertility' in blood_par2.permanent_condition:
                             if(blood_par2):
-                                Cat.all_cats.remove(blood_par2)
+                                del Cat.all_cats[blood_par2.ID]
                             blood_par2 = create_new_cat(Cat, Relationship,
                                                         status=random.choice(["loner", "kittypet"]),
                                                         gender='masc',
