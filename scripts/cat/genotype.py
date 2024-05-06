@@ -330,7 +330,7 @@ class Genotype:
         }
 
     def Generator(self, special=None):
-        if randint(1, self.odds["other_breed"]):
+        if randint(1, self.odds["other_breed"]) == 1:
             return self.BreedGenerator(special)
         if self.chimera:
             self.chimerageno.Generator()
@@ -896,7 +896,7 @@ class Genotype:
         self.piggrade = "P" + str(self.piggrade)
 
     def AltGenerator(self, special=None):
-        if randint(1, self.odds["kittypet_breed"]):
+        if randint(1, self.odds["kittypet_breed"]) == 1:
             return self.BreedGenerator(special)
         
         if self.chimera:
