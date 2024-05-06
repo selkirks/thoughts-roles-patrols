@@ -5841,7 +5841,7 @@ class Breed_generator:
         elif a <= 51:
             genoclass.dilutemd[0] = "Dm"
         
-        genoclass.breeds["Oriental"] = 75
+        genoclass.breeds["Oriental/Siamese"] = 75
         genoclass.breeds["Donskoy"] = 25
         return genoclass
     
@@ -6033,7 +6033,7 @@ class Breed_generator:
         else:
             genoclass.soktype = soktypes[2]
         
-        genoclass.breeds["Oriental"] = 50
+        genoclass.breeds["Oriental/Siamese"] = 50
         genoclass.breeds["Bengal"] = 50
         return genoclass
     
@@ -7621,8 +7621,8 @@ def find_my_breed(genotype, phenotype, config):
         "Kinkalow" : genotype.breeds.get("American Curl", 0) + genotype.breeds.get("Munchkin", 0), 
         "Lambkin" : genotype.breeds.get("Selkirk Rex", 0) + genotype.breeds.get("Munchkin", 0), 
         "Napoleon" : genotype.breeds.get("Munchkin", 0) + genotype.breeds.get("Persian/Exotic", 0),
-        "Peterbald" : genotype.breeds.get("Oriental", 0) + genotype.breeds.get("Donskoy", 0), 
-        "Serengeti" : genotype.breeds.get("Oriental", 0) + genotype.breeds.get("Bengal", 0), 
+        "Peterbald" : genotype.breeds.get("Oriental/Siamese", 0) + genotype.breeds.get("Donskoy", 0), 
+        "Serengeti" : genotype.breeds.get("Oriental/Siamese", 0) + genotype.breeds.get("Bengal", 0), 
         "Skookum" : genotype.breeds.get("LaPerm", 0) + genotype.breeds.get("Munchkin", 0)
     }
 
@@ -7648,9 +7648,9 @@ def find_my_breed(genotype, phenotype, config):
             return "Lambkin"
         elif breed == "Napoleon" and phenotype.length != "hairless" and genotype.lykoi[0] == "Ly" and genotype.breeds.get("Persian/Exotic", 0) and genotype.breeds.get("Munchkin", 0):
             return "Napoleon"
-        elif breed == "Peterbald" and genotype.ruhr[0] == "Hrbd" and genotype.breeds.get("Oriental", 0) and genotype.breeds.get("Donskoy", 0):
+        elif breed == "Peterbald" and genotype.ruhr[0] == "Hrbd" and genotype.breeds.get("Oriental/Siamese", 0) and genotype.breeds.get("Donskoy", 0):
             return "Peterbald"
-        elif breed == "Serengeti" and Breed_checker.Serengeti(genotype, phenotype) and genotype.breeds.get("Oriental", 0) and genotype.breeds.get("Bengal", 0):
+        elif breed == "Serengeti" and Breed_checker.Serengeti(genotype, phenotype) and genotype.breeds.get("Oriental/Siamese", 0) and genotype.breeds.get("Bengal", 0):
             return "Serengeti"
         elif breed == "Skookum" and phenotype.length != "hairless" and genotype.lykoi[0] == "Ly" and genotype.laperm[0] == "Lp" and genotype.breeds.get("LaPerm", 0) and genotype.breeds.get("Munchkin", 0):
             return "Skookum"
