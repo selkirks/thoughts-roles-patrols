@@ -1263,11 +1263,11 @@ class Breed_generator:
         ruftypes = ["low", "medium", "rufoused"]
 
         genoclass.rufousing = ''
-        genoclass.rufsum = ''
+        genoclass.rufsum = 0
         genoclass.spotted = ''
-        genoclass.spotsum = ''
+        genoclass.spotsum = 0
         genoclass.bengal = ''
-        genoclass.bengsum = ''
+        genoclass.bengsum = 0
         
         while genoclass.wbsum > 11 or genoclass.wideband == "":
             genoclass.wideband = ""
