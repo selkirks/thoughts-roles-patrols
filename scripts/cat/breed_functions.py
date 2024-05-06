@@ -6303,7 +6303,7 @@ class Breed_checker:
     
         if genotype.agouti[0] != "a" and genotype.wbsum > 11:
             return "Burmilla"
-        if genotype.agouti[0] == "a" or genotype.pointgene[0] == "cb":
+        if genotype.agouti[0] == "a" and genotype.pointgene[0] == "cb":
             return "European Burmese"
         if genotype.furLength[0] == "l":
             return "Asian Longhair"
