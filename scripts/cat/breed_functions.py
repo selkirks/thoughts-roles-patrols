@@ -5790,6 +5790,8 @@ class Breed_generator:
         for i in range(2):
             genoclass.sedesp[i] = "Se"
         
+        genoclass.munch[0] = "Mk"
+        
         genoclass.breeds["Selkirk Rex"] = 50
         genoclass.breeds["Munchkin"] = 50
         return genoclass
