@@ -7407,7 +7407,7 @@ class Breed_checker:
 
         if genotype.eumelanin[0] != "B" or 'O' in genotype.sexgene or genotype.dilute[0] != 'D' or genotype.white[0] != 'w':
             return False
-        if genotype.silver[0] == 'I' or genotype.pointgene[0] != "C" or genotype.ticked[0] == "Ta" or genotype.wbsum > 11:
+        if genotype.silver[0] == 'I' or genotype.pointgene[0] not in ["C", "cs"] or genotype.ticked[0] == "Ta" or genotype.wbsum > 11:
             return False
         if genotype.soksum < 6 or genotype.mack[0] != "mc" or genotype.bengsum > 3:
             return False
