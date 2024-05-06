@@ -1,5 +1,6 @@
 from .genotype import *
 from random import choice, randint
+from scripts.cat.breed_functions import find_my_breed
 
 class Phenotype():
 
@@ -150,7 +151,7 @@ class Phenotype():
             elif (self.tortie == "" or self.genotype.whitegrade > 2):
                 self.highwhite = "white and "
         
-        elif(self.genotype.white[0] in ['ws', 'wt'] and self.genotype.whitegrade > 1):
+        elif(self.genotype.white[0] in ['ws', 'wt'] and self.genotype.whitegrade > 2):
             if(self.tortie != "" and self.tortie != 'brindled bicolour ' and self.genotype.whitegrade > 4):
                 self.tortie = "calico "
             else:
@@ -472,8 +473,12 @@ class Phenotype():
 
         if self.genotype.chimera:
             gendera = "chimera " + gendera
+
+        breed = find_my_breed(self.genotype, self, self.genotype.odds)
+        if breed:
+            breed = " " + breed + " "
         
-        outputs = self.length + " " + self.highwhite + self.fade + self.colour + " " + self.silvergold + self.tabtype + self.tabby + self.tortie + self.point + self.lowwhite + self.karpati + gendera + withword
+        outputs = self.length + " " + self.highwhite + self.fade + self.colour + " " + self.silvergold + self.tabtype + self.tabby + self.tortie + self.point + self.lowwhite + self.karpati + breed + gendera + withword
         
         while "  " in outputs:
             outputs = outputs.replace("  ", " ")

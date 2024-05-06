@@ -1,19 +1,12 @@
 from random import choice, randint, random
 import json
+from scripts.cat.breed_functions import breed_functions
 from operator import xor
 
 
 class Genotype:
     def __init__(self, odds, spec=None):
         self.odds = odds
-
-        self.furLength = ""
-        self.longtype = choice(['long', 'long', 'long', 'medium'])
-        self.eumelanin = ["", ""]
-        self.sexgene = ["", ""]
-        self.specialred = None
-        self.tortiepattern = None
-        self.brindledbi = False
         if spec:
             self.chimera = False
             self.chimerapattern = None
@@ -28,6 +21,14 @@ class Genotype:
             self.chimerageno = Genotype(self.odds, 'chimera')
         else:
             self.chimerageno = None
+        
+        self.furLength = ""
+        self.longtype = choice(['long', 'long', 'long', 'medium'])
+        self.eumelanin = ["", ""]
+        self.sexgene = ["", ""]
+        self.specialred = None
+        self.tortiepattern = None
+        self.brindledbi = False
         self.gender = ""
         self.dilute = ""
         self.white = ["", ""]
@@ -57,7 +58,7 @@ class Genotype:
         self.pinkdilute = ["Dp", "Dp"]
         self.dilutemd = ["dm", "dm"]
         self.ext = ["E", "E"]
-        self.sunshine = ["G", "G"]
+        self.sunshine = ["N", "N"]
         self.karp = ["k", "k"]
         self.bleach = ["Lb", "Lb"]
         self.ghosting = ["gh", "gh"]
@@ -117,6 +118,8 @@ class Genotype:
         self.extraeye = None
         self.extraeyetype = ""
         self.extraeyecolour = ""
+
+        self.breeds = {}
 
     def fromJSON(self, jsonstring):
         #jsonstring = json.loads(jsonstring)
@@ -231,6 +234,11 @@ class Genotype:
         self.extraeyetype = jsonstring["extraeyetype"]
         self.extraeyecolour = jsonstring["extraeyecolour"]
 
+        try:
+            self.breeds = json.loads(jsonstring["breeds"])
+        except:
+            self.breeds = {}
+
         self.PolyEval()
 
     def toJSON(self):
@@ -316,10 +324,14 @@ class Genotype:
             
             "extraeye" : self.extraeye,
             "extraeyetype" :self.extraeyetype,
-            "extraeyecolour" : self.extraeyecolour
+            "extraeyecolour" : self.extraeyecolour,
+
+            "breeds" : json.dumps(self.breeds)
         }
 
     def Generator(self, special=None):
+        if randint(1, self.odds["other_breed"]):
+            return self.BreedGenerator(special)
         if self.chimera:
             self.chimerageno.Generator()
         
@@ -455,7 +467,6 @@ class Genotype:
             else:
                 self.agouti[i] = "a"
 
-        #print(self.agouti)
         # MACKEREL
 
         a = randint(1, 4)
@@ -885,6 +896,9 @@ class Genotype:
         self.piggrade = "P" + str(self.piggrade)
 
     def AltGenerator(self, special=None):
+        if randint(1, self.odds["kittypet_breed"]):
+            return self.BreedGenerator(special)
+        
         if self.chimera:
             self.chimerageno.AltGenerator()
         a = randint(1, self.odds['vitiligo'])
@@ -1449,12 +1463,120 @@ class Genotype:
         self.refgrade = "R" + str(self.refgrade)
         self.piggrade = "P" + str(self.piggrade)
 
+    def BreedGenerator(self, special=None):
+        if self.chimera:
+            self.chimerageno.Generator()
+        
+        breedlist = [
+            "Abyssinian/Somali", "American Bobtail", "American Curl", "American Shorthair", "American Burmese", "Aphrodite", 
+                "Arabian Mau", "Asian/Burmese", "Australian Mist",
+            "Bambino", "Bengal", "Birman", "Brazilian Shorthair", "British", 
+            "Cheetoh", "Ceylon", "Chartreux", "Chausie", "Clippercat", "Cornish Rex",
+            "Devon Rex", "Donskoy", 
+            "Egyptian Mau", "European Shorthair", 
+            "Foldex", 
+            "Gaelic Fold", "German Longhair", "German Rex",
+            "Havana", "Highlander", 
+            "Japanese Bobtail", 
+            "Kanaani", "Karelian Bobtail", "Khao Manee", "Kinkalow", "Korat", "Kurilian Bobtail",
+            "Lambkin", "LaPerm", "Lin-Qing Lion cat", "Lykoi",
+            "Mandalay/Burmese", "Maine Coon", "Manx", "Mekong Bobtail", "Munchkin", 
+            "Napoleon", "New Zealand", "Norwegian Forest cat", 
+            "Ocicat", "Oriental/Siamese", 
+            "Persian/Exotic", "Peterbald", "Pixie-Bob", 
+            "Ragamuffin", "Ragdoll", "Russian",
+            "Savannah", "Selkirk Rex", "Serengeti", "Siberian", "Singapura", "Skookum", "Snowshoe", "Sokoke", "Sphynx",
+            "Tennessee Rex", "Thai", "Tonkinese", "Toybob", "Toyger", "Turkish", 
+            "Ural Rex"
+        ]
+
+        gen = breed_functions["generator"][choice(breedlist)]
+
+        self = gen(self, special)
+        
+        eyegenes = ["2", "2", "1", "1", "1", "1", "0", "0", "0"]
+        higheyegenes = ["2", "2", "2", "2", "2", "2", "2", "2", "2", "1", "1", "1", "1", "0"]
+        superhigheyegenes = ["2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "1", "1", "0"]
+        loweyegenes = ["2", "1", "1", "1", "1", "0", "0", "0", "0", "0", "0", "0", "0", "0"]
+        superloweyegenes = ["2", "1", "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0"]
+
+        pickedref = choice([eyegenes, eyegenes, loweyegenes, superloweyegenes, higheyegenes, superhigheyegenes, higheyegenes, superhigheyegenes])
+        pickedpig = choice([eyegenes, eyegenes, loweyegenes, superloweyegenes, higheyegenes, superhigheyegenes, higheyegenes, superhigheyegenes])
+        for i in range(0, 9):
+            self.refraction += choice(pickedref)
+            self.refsum += int(self.refraction[i])
+            self.pigmentation += choice(pickedpig)
+            self.pigsum += int(self.pigmentation[i])
+
+        
+        if self.refsum == 0:
+            self.refgrade = 1
+        elif self.refsum <= 1:
+            self.refgrade = 2
+        elif self.refsum <= 3:
+            self.refgrade = 3
+        elif self.refsum <= 5:
+            self.refgrade = 4
+        elif self.refsum <= 7:
+            self.refgrade = 5
+        elif self.refsum <= 10:
+            self.refgrade = 6
+        elif self.refsum <= 12:
+            self.refgrade = 7
+        elif self.refsum <= 14:
+            self.refgrade = 8
+        elif self.refsum <= 16:
+            self.refgrade = 9
+        elif self.refsum < 18:
+            self.refgrade = 10
+        else:
+            self.refgrade = 11
+
+        if self.pigsum == 0:
+            self.piggrade = 1
+        elif self.pigsum <= 1:
+            self.piggrade = 2
+        elif self.pigsum <= 3:
+            self.piggrade = 3
+        elif self.pigsum <= 5:
+            self.piggrade = 4
+        elif self.pigsum <= 7:
+            self.piggrade = 5
+        elif self.pigsum <= 10:
+            self.piggrade = 6
+        elif self.pigsum <= 12:
+            self.piggrade = 7
+        elif self.pigsum <= 14:
+            self.piggrade = 8
+        elif self.pigsum <= 16:
+            self.piggrade = 9
+        elif self.pigsum < 18:
+            self.piggrade = 10
+        else:
+            self.piggrade = 11
+
+        self.GeneSort()
+
+        self.EyeColourFinder()
+
+        self.refgrade = "R" + str(self.refgrade)
+        self.piggrade = "P" + str(self.piggrade)
+
     def KitGenerator(self, par1, par2=None):
         try:
             par2 = par2.genotype
         except:
             par2 = par2
-            
+        
+        for breed in par1.breeds:
+            if par1.breeds[breed] >= 0.1:
+                self.breeds[breed] = par1.breeds[breed] / 2 
+        for breed in par2.breeds:
+            if par2.breeds[breed] >= 0.1:
+                if self.breeds.get(breed, False):
+                    self.breeds[breed] += par2.breeds[breed] / 2
+                else:
+                    self.breeds[breed] = par2.breeds[breed] / 2 
 
         if self.chimera:
             self.chimerageno.KitGenerator(par1, par2)
@@ -2339,6 +2461,7 @@ class Genotype:
         return self.Cat_Genes, "Other Fur Genes: ", self.Fur_Genes, "Other Colour Genes: ", self.Other_Colour, "Body Mutations: ", self.Body_Genes, "Polygenes: ", self.Polygenes, self.Polygenes2
     
     def Mutate(self):
+        print("MUTATION!")
         wheremutation = ["body", "furtype", "furtype", "othercoat", "othercoat", "othercoat", "maincoat", "maincoat", "maincoat", "maincoat", "maincoat", "maincoat"]
         where = choice(wheremutation)
 
