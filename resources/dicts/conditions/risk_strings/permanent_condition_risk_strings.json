@@ -219,6 +219,10 @@
 			"r_c sits beside m_c watching as {PRONOUN/m_c/subject} {VERB/m_c/shake/shakes} {PRONOUN/m_c/poss} head for the third time that afternoon, complaining about the buzzing.",
 			"It would seem that sniffles and a watery nose aren't enough for m_c... now {PRONOUN/m_c/poss} ears keep buzzing and it's quite disorientating.",
 			"m_c complains that {PRONOUN/m_c/poss} ears feel full of dandelion fluff and feathers."
+		],
+		"ear infection": [
+			"m_c goes to r_c to ask about the way {PRONOUN/m_c/poss} ears have been feeling clogged. r_c explains that m_c has gotten an ear infection, and it's most likely because of {PRONOUN/m_c/poss} allergies.",
+			"m_c's has gotten an ear infection!"
 		]
     },
     "constantly dizzy": {

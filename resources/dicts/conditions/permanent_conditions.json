@@ -560,7 +560,11 @@
 			{
 				"name": "ear buzzing",
 				"chance": 20
-			}
+			},
+            {
+                "name": "ear infection",
+                "chance": 60
+            }
         ],
         "herbs": []
     },
