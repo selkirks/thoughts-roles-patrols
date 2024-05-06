@@ -269,7 +269,7 @@ jobs:
           IS_RELEASE: 1
       - name: Create archive (.zip)
         run: |
-          cp dist/Genemod/.itch.toml dist/ 
+          cp dist/Genemod/_internal/.itch.toml dist/ 
           tar.exe -a -c -f Genemod_Win32.zip -C dist Genemod .itch.toml
       - uses: actions/upload-artifact@v3
         with:
@@ -393,7 +393,7 @@ jobs:
           IS_RELEASE: 1
       - name: Create archive (.zip)
         run: |
-          cp dist/Genemod/.itch.toml dist/ 
+          cp dist/Genemod/_internal/.itch.toml dist/ 
           tar.exe -a -c -f Genemod_Win64.zip -C dist Genemod .itch.toml
       - uses: actions/upload-artifact@v3
         with:
@@ -517,7 +517,7 @@ jobs:
           IS_RELEASE: 1
       - name: Create archive (.zip)
         run: |
-          cp dist/Genemod/.itch.toml dist/ 
+          cp dist/Genemod/_internal/.itch.toml dist/ 
           tar.exe -a -c -f Genemod_Win64_Windows10+.zip -C dist Genemod .itch.toml
       - uses: actions/upload-artifact@v3
         with:
