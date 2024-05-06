@@ -6967,7 +6967,7 @@ class Breed_checker:
 
     @staticmethod
     def Manx(genotype, phenotype):
-        if phenotype.length == "hairless" or (phenotype.furtype != [""] or (phenotype.furtype != ["rexed", " fur"] and genotype.cornish[0] != "r")):
+        if phenotype.length == "hairless" or (phenotype.furtype != [""] and (phenotype.furtype != ["rexed", " fur"] and genotype.cornish[0] != "r")):
             return False
         if phenotype.eartype != "" or (phenotype.tailtype != "" and genotype.manx[0] != "M") or phenotype.pawtype != "":
             return False
