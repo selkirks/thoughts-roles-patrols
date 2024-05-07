@@ -6187,7 +6187,7 @@ class Breed_checker:
 
     @staticmethod
     def AmSH(genotype, phenotype):
-        if phenotype.length == "hairless" or (phenotype.furtype != [""] and phenotype.furtype != ["wiry"]):
+        if phenotype.length == "hairless" or (phenotype.furtype != [""] and phenotype.furtype != ["wiry", " fur"]):
             return False
         if phenotype.eartype != "" or phenotype.tailtype != "" or phenotype.pawtype != "":
             return False
@@ -6814,8 +6814,6 @@ class Breed_checker:
             return False
         if genotype.dilutemd[0] != "dm" or genotype.pinkdilute[0] == "dp":
             return False
-        if genotype.agouti[0] != "a":
-            return False
 
         if genotype.white[0] != "W":
             return False
@@ -7296,7 +7294,7 @@ class Breed_checker:
     
     @staticmethod
     def Selkirk(genotype, phenotype):
-        if phenotype.length == "hairless" or (phenotype.furtype != ["rexed", " fur"] or genotype.sedesp[0] != "Se"):
+        if phenotype.length == "hairless" or ((phenotype.furtype != [""] and phenotype.furtype != ["rexed", " fur"]) or (phenotype.furtype == ["rexed", " fur"] and genotype.sedesp[0] != "Se")):
             return False
         if phenotype.eartype != "" or phenotype.tailtype != "" or phenotype.pawtype != "":
             return False
@@ -7313,7 +7311,9 @@ class Breed_checker:
             return False
         if (('cm' in genotype.pointgene or 'c' in genotype.pointgene) and genotype.pointgene[0] != "C"):
             return False
-    
+
+        if genotype.sedesp[0] != "Se":
+            return "Selkirk Rex variant"
         return "Selkirk Rex"
 
     @staticmethod
@@ -7586,7 +7586,7 @@ class Breed_checker:
 
     @staticmethod
     def Ural(genotype, phenotype):
-        if phenotype.length == "hairless" or (phenotype.furtype != ["rexed", " fur"] and genotype.urals[0] != "ru"):
+        if phenotype.length == "hairless" or (phenotype.furtype != ["rexed", " fur"] or genotype.urals[0] != "ru"):
             return False
         if phenotype.eartype != "" or phenotype.tailtype != "" or phenotype.pawtype != "":
             return False
@@ -7601,7 +7601,7 @@ class Breed_checker:
             return False
         if genotype.agouti[0] == "Apb":
             return False
-        if (('cm' in genotype.pointgene or 'c' in genotype.pointgene, 'cb' in genotype.pointgene) and genotype.pointgene[0] != "C"):
+        if (('cm' in genotype.pointgene or 'c' in genotype.pointgene or 'cb' in genotype.pointgene) and genotype.pointgene[0] != "C"):
             return False
     
         if genotype.eumelanin[0] != "B":
