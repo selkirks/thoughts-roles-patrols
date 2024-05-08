@@ -7022,7 +7022,7 @@ class Breed_checker:
     def Munchkin(genotype, phenotype):
         if phenotype.length == "hairless" or phenotype.furtype != [""]:
             return False
-        if phenotype.eartype != "" or phenotype.tailtype != "" or genotype.poly[0] == "pd":
+        if phenotype.eartype != "" or phenotype.tailtype != "" or genotype.poly[0] == "Pd":
             return False
         
         if phenotype.fade != "":
