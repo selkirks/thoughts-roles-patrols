@@ -713,31 +713,31 @@ class Cat():
     def genetic_conditions(self):
         if self.genotype.deaf:
             if 'blue' not in self.genotype.lefteyetype or 'blue' not in self.genotype.righteyetype:
-                self.get_permanent_condition('partial hearing loss', born_with=True)
+                self.get_permanent_condition('partial hearing loss', born_with=True, genetic=True)
             elif 'partial hearing loss' not in self.permanent_condition:
-                self.get_permanent_condition(choice(['deaf', 'partial hearing loss']), born_with=True)
+                self.get_permanent_condition(choice(['deaf', 'partial hearing loss']), born_with=True, genetic=True)
         if ('M' in self.genotype.manx):
             if(random() > ((self.phenotype.bobtailnr + 1) * 0.2)):
-                self.get_permanent_condition('manx syndrome', born_with=True)
+                self.get_permanent_condition('manx syndrome', born_with=True, genetic=True)
 
 
         if self.genotype.manx[0] == 'M' and (self.genotype.manxtype in ['rumpy', 'riser']):
-            self.get_permanent_condition('born without a tail', born_with=True)
+            self.get_permanent_condition('born without a tail', born_with=True, genetic=True)
         
         if len(self.genotype.sexgene) > 2 and 'Y' in self.genotype.sexgene or (self.gender == 'intersex' and random() < 0.2) or (self.gender == 'molly' and 'Y' in self.genotype.sexgene):
-            self.get_permanent_condition('infertility', born_with=True)
+            self.get_permanent_condition('infertility', born_with=True, genetic=True)
         
         if self.genotype.fold[0] == 'Fd' or ('manx syndrome' in self.permanent_condition and 'M' in self.genotype.manx and self.phenotype.bobtailnr < 4 and self.phenotype.bobtailnr > 1 and random() < 0.05):
-            self.get_permanent_condition('constant joint pain', born_with=True)
+            self.get_permanent_condition('constant joint pain', born_with=True, genetic=True)
         if 'manx syndrome' in self.permanent_condition and ((self.phenotype.bobtailnr < 2 and random() > 0.25) or (self.phenotype.bobtailnr > 1 and random() > 0.4)):
-            self.get_permanent_condition('incontinence', born_with=True)
+            self.get_permanent_condition('incontinence', born_with=True, genetic=True)
         if 'manx syndrome' in self.permanent_condition and ((self.phenotype.bobtailnr < 2 and random() > 0.2) or (self.phenotype.bobtailnr > 1 and random() > 0.8)):
-            self.get_permanent_condition('rabbit gait', born_with=True)
+            self.get_permanent_condition('rabbit gait', born_with=True, genetic=True)
         
         if(self.genotype.pointgene[0] == 'c'):
-            self.get_permanent_condition('albinism', born_with=True)
+            self.get_permanent_condition('albinism', born_with=True, genetic=True)
         elif('albino' in self.genotype.lefteyetype):
-            self.get_permanent_condition('ocular albinism', born_with=True)
+            self.get_permanent_condition('ocular albinism', born_with=True, genetic=True)
 
     @property
     def mentor(self):
@@ -2080,11 +2080,14 @@ class Cat():
 
         self.get_permanent_condition(new_condition, born_with=True)
 
-    def get_permanent_condition(self, name, born_with=False, event_triggered=False):
+    def get_permanent_condition(self, name, born_with=False, event_triggered=False, genetic=False):
         with open(f"resources/dicts/conditions/permanent_conditions.json", 'r') as read_file:
             PERMANENT = ujson.loads(read_file.read())
         if name not in PERMANENT:
             print(str(self.name), f"WARNING: {name} is not in the permanent conditions collection.")
+            return
+        
+        if not genetic and name in ["manx syndrome", "rabbit gait", "albinism", "ocular albinism"]:
             return
 
         # remove accessories if need be
