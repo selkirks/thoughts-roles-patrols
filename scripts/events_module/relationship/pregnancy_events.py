@@ -606,8 +606,9 @@ class Pregnancy_Events():
             involved_cats.append(RandomChoice.ID)
             event_list.append(choice(events["birth"]["two_parents"]))
         elif not Affair and Dead_Mate or All_Mates_Outside:
-            involved_cats.append(WhoDied.ID)
-            RandomChoice = WhoDied
+            if WhoDied != 0:
+                involved_cats.append(WhoDied.ID)
+                RandomChoice = WhoDied
             event_list.append(choice(events["birth"]["dead_mate"]))
         elif len(cat.mate) < 1 and not Both_Unmated and not Dead_Mate:
             involved_cats.append(RandomChoice.ID)
