@@ -7457,7 +7457,7 @@ class Breed_checker:
 
     @staticmethod
     def Tenn(genotype, phenotype):
-        if phenotype.length == "hairless" or (phenotype.furtype != ["rexed", " fur"] or genotype.tenn[0] != "tr"):
+        if phenotype.length == "hairless" or (phenotype.furtype != ["rexed", " satin", " fur"] or genotype.tenn[0] != "tr"):
             return False
         if phenotype.eartype != "" or phenotype.tailtype != "" or phenotype.pawtype != "":
             return False
