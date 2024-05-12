@@ -1356,7 +1356,7 @@
                 ]
             },
             {
-                "text": "s_c makes a careful judgment, and the patrol keeps going. They stick to solid ground, sometimes routing themselves through the trees as the rain begins to pour around them.",
+                "text": "s_c makes a careful judgement, and the patrol keeps going. They stick to solid ground, sometimes routing themselves through the trees as the rain begins to pour around them.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,2"],
@@ -1449,7 +1449,7 @@
                 ]
             },
             {
-                "text": "s_c makes a careful judgment, and the patrol keeps going. They stick to solid ground, sometimes routing themselves through the trees as the rain begins to pour around them.",
+                "text": "s_c makes a careful judgement, and the patrol keeps going. They stick to solid ground, sometimes routing themselves through the trees as the rain begins to pour around them.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,2"],
@@ -1524,7 +1524,7 @@
                 "weight": 5
             },
             {
-                "text": "s_c makes a careful judgment and keeps going. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stick/sticks} to solid ground, sometimes routing {PRONOUN/s_c/self} through the trees as the rain begins to pour around {PRONOUN/s_c/object}.",
+                "text": "s_c makes a careful judgement and keeps going. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stick/sticks} to solid ground, sometimes routing {PRONOUN/s_c/self} through the trees as the rain begins to pour around {PRONOUN/s_c/object}.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,2"]

@@ -1449,7 +1449,7 @@
     "chance_of_success": 50,
     "success_outcomes": [
         {
-            "text": "{PRONOUN/p_l/poss/CAP} judgment is accurate - these hunting grounds are excellent, p_l will have to bring {PRONOUN/p_l/poss} Clanmates back here another day.",
+            "text": "{PRONOUN/p_l/poss/CAP} judgement is accurate - these hunting grounds are excellent, p_l will have to bring {PRONOUN/p_l/poss} Clanmates back here another day.",
             "exp": 25,
             "weight": 10,
             "prey": ["large"]
