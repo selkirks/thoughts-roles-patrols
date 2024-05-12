@@ -3700,9 +3700,28 @@ class Breed_generator:
         genoclass.ticked = ["ta", "ta"]
 
         genes = ["2", "2", "1", "1", "1", "1", "1", "1", "0", "0"]
+        wbtypes = ["low", "medium", "high", "shaded", "chinchilla"]
 
         genoclass.spotted = ''
         genoclass.spotsum = 0
+        
+        while genoclass.wbsum > 11 or genoclass.wideband == "":
+            genoclass.wideband = ""
+            genoclass.wbsum = 0
+            for i in range(0, 8):
+                genoclass.wideband += choice(genes)
+                genoclass.wbsum += int(genoclass.wideband[i])
+
+        if genoclass.wbsum < 6:
+            genoclass.wbtype = wbtypes[0]
+        elif genoclass.wbsum < 10:
+            genoclass.wbtype = wbtypes[1]
+        elif genoclass.wbsum < 12: 
+            genoclass.wbtype = wbtypes[2]
+        elif genoclass.wbsum < 14: 
+            genoclass.wbtype = wbtypes[3]
+        else: 
+            genoclass.wbtype = wbtypes[4]
 
         spottypes = ["fully striped", "slightly broken stripes", "broken stripes", "mostly broken stripes", "spotted"]
         genesspot = ["2", "1", "0"]
@@ -7628,6 +7647,29 @@ def find_my_breed(genotype, phenotype, config):
         "Skookum" : genotype.breeds.get("LaPerm", 0) + genotype.breeds.get("Munchkin", 0)
     }
 
+    if not genotype.breeds.get("Munchkin", False) or not genotype.breeds.get("Sphynx", False):
+        hybrids["Bambino"] = 0
+    if not genotype.breeds.get("Ocicat", False) or not genotype.breeds.get("Bengal", False):
+        hybrids["Cheetoh"] = 0
+    if not genotype.breeds.get("American Curl", False) or not genotype.breeds.get("Sphynx", False):
+        hybrids["Elf"] = 0
+    if not genotype.breeds.get("Persian/Exotic", False) or not genotype.breeds.get("British", False) or genotype.breeds.get("Munchkin", False):
+        hybrids["Foldex"] = 0
+    if not genotype.breeds.get("Munchkin", False) or not genotype.breeds.get("Persian/Exotic", False) or not genotype.breeds.get("British", False):
+        hybrids["Gaelic Fold"] = 0
+    if not genotype.breeds.get("American Curl", False) or not genotype.breeds.get("Munchkin", False):
+        hybrids["Kinkalow"] = 0
+    if not genotype.breeds.get("Selkirk Rex", False) or not genotype.breeds.get("Munchkin", False):
+        hybrids["Lambkin"] = 0
+    if not genotype.breeds.get("Persian/Exotic", False) or not genotype.breeds.get("Munchkin", False) or genotype.breeds.get("British", False):
+        hybrids["Napoleon"] = 0
+    if not genotype.breeds.get("Oriental/Siamese", False) or not genotype.breeds.get("Donskoy", False):
+        hybrids["Peterbald"] = 0
+    if not genotype.breeds.get("Oriental/Siamese", False) or not genotype.breeds.get("Bengal", False):
+        hybrids["Serengeti"] = 0
+    if not genotype.breeds.get("LaPerm", False) or not genotype.breeds.get("Munchkin", False):
+        hybrids["Skookum"] = 0
+
     sorted_hybrids = dict(sorted(hybrids.items(), key=lambda item: item[1], reverse=True))
     sorted_breeds = dict(sorted(genotype.breeds.items(), key=lambda item: item[1], reverse=True))
     
@@ -7666,10 +7708,19 @@ def find_my_breed(genotype, phenotype, config):
     sorted_breeds.update(sorted_hybrids)
     sorted_breeds = dict(sorted(sorted_breeds.items(), key=lambda item: item[1], reverse=True))
 
+    top = 0
+    breed_mix = ""
     for breed in sorted_breeds:
         if sorted_breeds[breed] < mix_range:
-            break
-        return breed + " mix"
+            if breed_mix == "":
+                break
+            return breed_mix + " mix"
+        elif sorted_breeds[breed] > top:
+            top = sorted_breeds[breed]
+            breed_mix = breed
+        elif sorted_breeds[breed] == top:
+            breed_mix += ", " + breed
+            
 
     return ""
 
