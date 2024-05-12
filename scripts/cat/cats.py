@@ -204,7 +204,8 @@ class Cat():
             else:
                 try:    
                     self.genotype.KitGenerator(Cat.all_cats[parent1].genotype, Cat.all_cats.get(parent2, extrapar))
-                except:
+                except Exception as e:
+                    print(e)
                     self.genotype.Generator()
 
             if(randint(1, game.config['genetic_chances']['intersex']) == 1):

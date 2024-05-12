@@ -283,7 +283,7 @@ class Pregnancy_Events():
                                         i.is_potential_mate(cat, for_love_interest=True, outsider=True) 
                                         and (clan.clan_settings['same sex birth'] or xor('Y' in i.genotype.sexgene, 'Y' in cat.genotype.sexgene)) 
                                         and len(i.mate) == 0]
-                if(random.random() < 0.5 or len(possible_affair_partners) < 1):
+                if(random.random() < 0.75 or len(possible_affair_partners) < 1):
                     if(randint(1, 4) > 1):
                         cat_type = choice(['loner', 'rogue', 'kittypet'])
                         backstories = {
@@ -473,7 +473,7 @@ class Pregnancy_Events():
                                     i.is_potential_mate(cat, for_love_interest=True, outsider=True) 
                                     and (clan.clan_settings['same sex birth'] or xor('Y' in i.genotype.sexgene, 'Y' in cat.genotype.sexgene)) 
                                     and len(i.mate) == 0]
-            if(random.random() < 0.5 or len(possible_affair_partners) < 1):
+            if(random.random() < 0.75 or len(possible_affair_partners) < 1):
                 if(randint(1, 4) > 1):
                     cat_type = choice(['loner', 'rogue', 'kittypet'])
                     
