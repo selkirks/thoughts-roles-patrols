@@ -1043,8 +1043,10 @@ class Pregnancy_Events():
                 
             #kit.adoptive_parents = all_adoptive_parents  # Add the adoptive parents. 
             # Prevent duplicate prefixes in Clan
-            while kit.name.prefix in [kitty.name.prefix for kitty in Cat.all_cats.values() if not kitty.dead and not kitty.outside and kitty.ID != kit.ID]:
+            tries = 0
+            while tries < 25 and kit.name.prefix in [kitty.name.prefix for kitty in Cat.all_cats.values() if not kitty.dead and not kitty.outside and kitty.ID != kit.ID]:
                 kit.name = Name("newborn")
+                tries += 1
 
             all_kitten.append(kit)
             # adoptive parents are set at the end, when everything else is decided

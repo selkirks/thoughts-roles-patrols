@@ -2063,7 +2063,7 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
                 underbelly = MakeCat(underbelly, colours[0], colours[1], special='nounders')
                 sunshine.blit(underbelly, (0, 0), special_flags=pygame.BLEND_RGBA_MIN)
 
-                sunshine.set_alpha(200)
+                sunshine.set_alpha(100)
                 gensprite.blit(sunshine, (0, 0))
 
             if(phenotype.patchmain != ""):
