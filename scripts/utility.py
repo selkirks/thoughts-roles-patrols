@@ -2054,7 +2054,7 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
                     gensprite.blit(sprites.sprites['satin0'], (0, 0))
 
             
-            if not ('red' in phenotype.maincolour or 'cream' in phenotype.maincolour or 'honey' in phenotype.maincolour or 'ivory' in phenotype.maincolour or 'apricot' in phenotype.maincolour) and (genotype.agouti[0] !='a' and (genotype.sunshine[0] == 'sg' or genotype.sunshine[0] == 'sh' or ('ec' in genotype.ext and genotype.ext[0] != "Eg") or (genotype.ext[0] == 'ea' and cat.moons > 6) or (genotype.silver[0] == 'i' and genotype.sunshine[0] == 'fg'))):
+            if not ('red' in phenotype.maincolour or 'cream' in phenotype.maincolour or 'honey' in phenotype.maincolour or 'ivory' in phenotype.maincolour or 'apricot' in phenotype.maincolour) and (genotype.ext[0] != "Eg" and genotype.agouti[0] !='a' and (genotype.sunshine[0] == 'sg' or genotype.sunshine[0] == 'sh' or ('ec' in genotype.ext and genotype.ext[0] != "Eg") or (genotype.ext[0] == 'ea' and cat.moons > 6) or (genotype.silver[0] == 'i' and genotype.sunshine[0] == 'fg'))):
                 sunshine = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
                 sunshine.blit(sprites.sprites['bimetal' + cat_sprite], (0, 0))
 
