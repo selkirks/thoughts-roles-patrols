@@ -2312,11 +2312,7 @@
                 ]
             },
             {
-<<<<<<< HEAD
                 "text": "p_l listens to both sides, then makes a careful judgement. It keeps no one happy, the mark of an excellent compromise.",
-=======
-                "text": "p_l listens to both sides, then makes a careful judgment. It keeps no one happy: the mark of an excellent compromise.",
->>>>>>> b115fdfab8d4bafb838ad2e7b74a1f389c728ae8
                 "exp": 20,
                 "weight": 5,
                 "relationships": [
@@ -2700,11 +2696,7 @@
                 ]
             },
             {
-<<<<<<< HEAD
                 "text": "p_l listens to both sides, then makes a careful judgement. It keeps no one happy, the mark of an excellent compromise.",
-=======
-                "text": "p_l listens to both sides, then makes a careful judgment. It keeps no one happy: the mark of an excellent compromise.",
->>>>>>> b115fdfab8d4bafb838ad2e7b74a1f389c728ae8
                 "exp": 20,
                 "weight": 5,
                 "relationships": [
@@ -2840,11 +2832,7 @@
                 ]
             },
             {
-<<<<<<< HEAD
                 "text": "Making a cold, factual judgement, s_c logically lays out which side {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} on, and why, convincing the rest of the patrol.",
-=======
-                "text": "Making a cold, factual judgment, s_c lays out which side {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} on, and why, convincing the rest of the patrol with {PRONOUN/s_c/poss} sound logic.",
->>>>>>> b115fdfab8d4bafb838ad2e7b74a1f389c728ae8
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [

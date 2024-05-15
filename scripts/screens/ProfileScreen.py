@@ -275,7 +275,6 @@ class ProfileScreen(Screens):
                 else: self.the_cat.pronouns = [self.the_cat.default_pronouns[0].copy()]'''
             # when button is pressed...
             elif event.ui_element == self.cis_trans_button:
-<<<<<<< HEAD
                 #if the cat is anything besides m/f/transm/transf then turn them back to cis
                 if self.the_cat.genderalign.replace("intersex ", "") not in ["molly", "trans molly", "tom", "trans tom"]:
                     if self.the_cat.gender == 'intersex':
@@ -286,14 +285,9 @@ class ProfileScreen(Screens):
                     else:
                         self.the_cat.genderalign = self.the_cat.gender
                 elif self.the_cat.gender == "tom" and self.the_cat.genderalign == 'molly':
-=======
-                # if the cat is anything besides m/f/transm/transf then turn them back to cis
-                if self.the_cat.genderalign not in ["female", "trans female", "male", "trans male"]:
->>>>>>> b115fdfab8d4bafb838ad2e7b74a1f389c728ae8
                     self.the_cat.genderalign = self.the_cat.gender
                 elif self.the_cat.gender == "molly" and self.the_cat.genderalign == 'tom':
                     self.the_cat.genderalign = self.the_cat.gender
-<<<<<<< HEAD
                 #if the cat is cis (gender & gender align are the same) then set them to trans
                 #cis toms -> trans molly first
                 elif (self.the_cat.gender == "tom" or (self.the_cat.gender == 'intersex' and 'Y' in self.the_cat.genotype.sexgene)) and self.the_cat.genderalign.replace('intersex ', "") == 'tom':
@@ -310,18 +304,6 @@ class ProfileScreen(Screens):
                     self.the_cat.genderalign = 'sam'
                     if self.the_cat.gender == 'intersex':
                         self.the_cat.genderalign = 'intersex sam'
-=======
-                # if the cat is cis (gender & gender align are the same) then set them to trans
-                # cis males -> trans female first
-                elif self.the_cat.gender == "male" and self.the_cat.genderalign == 'male':
-                    self.the_cat.genderalign = 'trans female'
-                # cis females -> trans male
-                elif self.the_cat.gender == "female" and self.the_cat.genderalign == 'female':
-                    self.the_cat.genderalign = 'trans male'
-                # if the cat is trans then set them to nonbinary
-                elif self.the_cat.genderalign in ["trans female", "trans male"]:
-                    self.the_cat.genderalign = 'nonbinary'
->>>>>>> b115fdfab8d4bafb838ad2e7b74a1f389c728ae8
                 '''#pronoun handler
                 if self.the_cat.genderalign in ["molly", "trans molly"]:
                     self.the_cat.pronouns = [self.the_cat.default_pronouns[1].copy()]
