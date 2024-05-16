@@ -2336,20 +2336,25 @@ class Events:
             if transing_chance:
                 # transing_chance != 0, no trans kitties today...    L
                 return
+            nonbiney_list = ["nonbinary", "genderfluid", "demigirl", "demiboy", "genderfae", "genderfaun", "bigender", "genderqueer", "agender", "???"]
 
             if random.getrandbits(1):  # 50/50
                 if cat.gender == "male":
                     cat.genderalign = "trans female"
                     # cat.pronouns = [cat.default_pronouns[1].copy()]
-                else:
+                elif cat.gender == "female":
                     cat.genderalign = "trans male"
                     # cat.pronouns = [cat.default_pronouns[2].copy()]
+                else:
+                    cat.genderalign = choice(["trans female", "trans male"])
             else:
-                cat.genderalign = "nonbinary"
+                cat.genderalign = choice(nonbiney_list)
                 # cat.pronouns = [cat.default_pronouns[0].copy()]
 
             if cat.gender == 'male':
                 gender = 'tom'
+            elif cat.gender == 'intersex':
+                gender = 'what clanmates call them'
             else:
                 gender = 'she-cat'
             text = f"{cat.name} has realized that {gender} doesn't describe how they feel anymore."

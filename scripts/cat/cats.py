@@ -61,18 +61,24 @@ class Cat():
         "leader"
     ]
 
-    gender_tags = {'female': 'F', 'male': 'M'}
+    gender_tags = {'female': 'F', 'male': 'M', 'intersex' : 'I'}
 
     # EX levels and ranges.
     # Ranges are inclusive to both bounds
     experience_levels_range = {
         "untrained": (0, 0),
-        "trainee": (1, 50),
-        "prepared": (51, 110),
-        "competent": (110, 170),
-        "proficient": (171, 240),
-        "expert": (241, 320),
-        "master": (321, 321)
+        "trainee": (1, 30),
+        "beginner": (31, 60),
+        "novice": (61, 90), 
+        "prepared": (91, 130),
+        "competent": (131, 170),
+        "skilled": (171, 210),
+        "proficient": (211, 250),
+        "advanced": (251, 290), 
+        "expert": (291, 330),
+        "adept": (331, 370), 
+        "master": (371, 410),
+        "grandmaster": (411, 411)
     }
 
     default_pronouns = [
@@ -275,10 +281,18 @@ class Cat():
             self.backstory = 'clanborn'
         else:
             self.backstory = self.backstory
+        nonbiney_list = ["nonbinary", "genderfluid", "demigirl", "demiboy", "genderfae", "genderfaun", "bigender", "genderqueer", "agender", "???"]
 
         # sex!?!??!?!?!??!?!?!?!??
         if self.gender is None:
-            self.gender = choice(["female", "male"])
+            intersexchance = randint(1,100)
+            #probability that the cat will be intersex.. base chance around 5%
+            if intersexchance < 5 and example is False:
+                self.gender = "intersex"
+                intersex_condition = choice (["excess testosterone", "testosterone deficiency", "aneuploidy", "mosaicism", "chimerism"])
+                self.get_permanent_condition(intersex_condition, born_with=True)
+            else:
+                self.gender = choice(["female", "male"])
         self.g_tag = self.gender_tags[self.gender]
 
         # These things should only run when generating a new cat, rather than loading one in.
@@ -290,14 +304,25 @@ class Cat():
                 if trans_chance == 1:
                     self.genderalign = "trans male"
                 elif nb_chance == 1:
-                    self.genderalign = "nonbinary"
+                    self.genderalign = choice(nonbiney_list)
                 else:
                     self.genderalign = self.gender
             elif self.gender == "male" and not self.status in ['newborn', 'kitten']:
                 if trans_chance == 1:
                     self.genderalign = "trans female"
                 elif nb_chance == 1:
-                    self.genderalign = "nonbinary"
+                    self.genderalign = choice(nonbiney_list)
+                else:
+                    self.genderalign = self.gender
+            elif self.gender == "intersex" and not self.status in ['newborn', 'kitten']:
+                if trans_chance == 1:
+                    self.genderalign = choice(["trans male", "trans female"])
+                elif nb_chance == 1:
+                    intergenderchance = randint(1,2)
+                    if intergenderchance == 1:
+                        self.genderalign = "intergender"
+                    else:
+                        self.genderalign = choice(nonbiney_list)
                 else:
                     self.genderalign = self.gender
             else:
@@ -1768,12 +1793,16 @@ class Cat():
             self.pelt.accessory = None
         if 'HALFTAIL' in self.pelt.scars and self.pelt.accessory in ['RED FEATHERS', 'BLUE FEATHERS', 'JAY FEATHERS']:
             self.pelt.accessory = None
-
+        intersex_exclusive = ["excess testosterone", "aneuploidy", "testosterone deficiency", "chimerism", "mosaicism"]
+        if self.gender != "intersex":
+            if name in intersex_exclusive:
+                return
         condition = PERMANENT[name]
+        
         new_condition = False
         mortality = condition["mortality"][self.age]
         if mortality != 0:
-            if game.clan and game.clan.game_mode == "cruel season":
+            if game.clan.game_mode == "cruel season":
                 mortality = int(mortality * 0.65)
 
         if condition['congenital'] == 'always':
@@ -2429,14 +2458,28 @@ class Cat():
         if mediator.experience_level == "trainee":
             # Negative bonus for very low.
             chance = 20
+        elif mediator.experience_level == "beginner":
+            chance = 25
+        elif mediator.experience_level == "novice":
+            chance = 30
         elif mediator.experience_level == "prepared":
             chance = 35
+        elif mediator.experience_level == "competent":
+            chance = 40
+        elif mediator.experience_level == "skilled":
+            chance = 45
         elif mediator.experience_level == "proficient":
             chance = 55
+        elif mediator.experience_level == "advanced":
+            chance = 60
         elif mediator.experience_level == "expert":
             chance = 70
+        elif mediator.experience_level == "adept":
+            chance = 70
         elif mediator.experience_level == "master":
-            chance = 100
+            chance = 90
+        elif mediator.experience_level == "grandmaster":
+            chance = 99
         else:
             chance = 40
 
@@ -2820,8 +2863,8 @@ class Cat():
 
     @experience.setter
     def experience(self, exp: int):
-        if exp > self.experience_levels_range["master"][1]:
-            exp = self.experience_levels_range["master"][1]
+        if exp > self.experience_levels_range["grandmaster"][1]:
+            exp = self.experience_levels_range["grandmaster"][1]
         self._experience = int(exp)
 
         for x in self.experience_levels_range:
@@ -2933,6 +2976,8 @@ class Cat():
                 "skill_dict": self.skills.get_skill_dict(),
                 "scars": self.pelt.scars if self.pelt.scars else [],
                 "accessory": self.pelt.accessory,
+                "accessories": self.pelt.accessories if self.pelt.accessories else [],
+                "inventory": self.pelt.inventory if self.pelt.inventory else [],
                 "experience": self.experience,
                 "dead_moons": self.dead_for,
                 "current_apprentice": [appr for appr in self.apprentice],
@@ -2943,6 +2988,9 @@ class Cat():
                 "opacity": self.pelt.opacity,
                 "prevent_fading": self.prevent_fading,
                 "favourite": self.favourite,
+                "fur_texture": self.pelt.fur_texture,
+                "height": self.pelt.height,
+                "build": self.pelt.build
             }
 
 

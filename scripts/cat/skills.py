@@ -141,6 +141,120 @@ class SkillPath(Enum):
         "ghost sense",
         "ghost sight",
         "ghost speaker"
+    ) 
+    GARDENER = (
+        "loves to pick flowers",
+        "grows herbs",
+        "herb organizer",
+        "caretaker of the greens"
+    ) 
+    UNKNOWN = (
+        "intrigued about the Unknown Residence",
+        "Unknown Residence accord",
+        "deep Unknown Residence bond",
+        "unshakable Unknown Residence link"
+    ) 
+    WAKEFUL = (
+        "never settles down",
+        "light sleeper",
+        "alert",
+        "vigilant"
+    ) 
+    DELIVERER = (
+        "queen helper",
+        "helpful stork",
+        "kit deliverer",
+        "pregnancy expert"
+    ) 
+    DECORATOR = (
+        "makes things pretty",
+        "crafty paws",
+        "creative",
+        "decor master"
+    ) 
+    LEADERSHIP = (
+        "deputy helper",
+        "leads patrols",
+        "leader's accomplice",
+        "assiduous"
+    ) 
+    AGILE = (
+        "parkours around camp",
+        "light-footed",
+        "lithe",
+        "quick agilist"
+    ) 
+    STEALTHY = (
+        "startles others",
+        "underpawed",
+        "furtive kitty",
+        "clandestine"
+    ) 
+    MEMORY = (
+        "remembers little details",
+        "memorious",
+        "retentive memory",
+        "mnemonist"
+    ) 
+    MESSENGER = (
+        "delivers messages",
+        "message-bearer",
+        "message-carrier",
+        "harbinger to the clans"
+    ) 
+    ASSIST = (
+        "little helper",
+        "assist guard",
+        "alert assistant",
+        "camp's assister"
+    ) 
+    HISTORIAN = (
+        "remembers stories",
+        "bookkeeper",
+        "archivist",
+        "accountant of history"
+    ) 
+    BOOKMAKER = (
+        "loves to tell stories",
+        "journalist",
+        "novelist",
+        "author of many stories"
+    ) 
+    TUNNELER = (
+        "likes to dig holes",
+        "burrow maker",
+        "excavator",
+        "groundhog"
+    ) 
+    PATIENT = (
+        "waits their turn",
+        "serene",
+        "even-tempered",
+        "equanimous"
+    ) 
+    DETECTIVE = (
+        "curious about mysteries",
+        "elementary case-solver",
+        "great sleuth",
+        "masterful detective"
+    ) 
+    HERBALIST = (
+        "curious about remedies",
+        "herbal inventor",
+        "poison maker",
+        "creator of remedies"
+    )
+    CHEF = (
+        "seasons their food",
+        "cooks prey",
+        "gourmet prey maker",
+        "masterful chef"
+    )
+    PRODIGY = (
+        "unusually gifted",
+        "knows alot of facts",
+        "smart role model",
+        "seen as an omen"
     )
     
     @staticmethod
@@ -203,7 +317,26 @@ class Skill():
         SkillPath.CLAIRVOYANT: "predicting",
         SkillPath.PROPHET: "prophesying",
         SkillPath.GHOST: "ghosts",
-        SkillPath.DARK: "dark forest"
+        SkillPath.DARK: "dark forest",
+        SkillPath.GARDENER: "gardener",
+        SkillPath.UNKNOWN: "unknown residence",
+        SkillPath.WAKEFUL: "awake",
+        SkillPath.DELIVERER: "delivery",
+        SkillPath.DECORATOR: "decorator",
+        SkillPath.LEADERSHIP: "great leader",
+        SkillPath.AGILE: "agile",
+        SkillPath.STEALTHY: "stealthy",
+        SkillPath.MEMORY: "memorizing",
+        SkillPath.MESSENGER: "messenger",
+        SkillPath.ASSIST: "assisting",
+        SkillPath.HISTORIAN: "history keeper",
+        SkillPath.BOOKMAKER: "storymaker",
+        SkillPath.TUNNELER: "tunneling",
+        SkillPath.PATIENT: "patience",
+        SkillPath.DETECTIVE: "solves mysteries",
+        SkillPath.HERBALIST: "herbalist",
+        SkillPath.CHEF: "chef",
+        SkillPath.PRODIGY: "prodigy"
     }
     
     
@@ -340,7 +473,26 @@ class CatSkills:
         SkillPath.CLAIRVOYANT: SkillTypeFlag.SUPERNATURAL | SkillTypeFlag.OBSERVANT,
         SkillPath.PROPHET: SkillTypeFlag.SUPERNATURAL,
         SkillPath.GHOST: SkillTypeFlag.SUPERNATURAL,
-        SkillPath.DARK: SkillTypeFlag.SUPERNATURAL
+        SkillPath.DARK: SkillTypeFlag.SUPERNATURAL,
+        SkillPath.GARDENER: SkillTypeFlag.SMART,
+        SkillPath.UNKNOWN: SkillTypeFlag.SUPERNATURAL,
+        SkillPath.WAKEFUL: SkillTypeFlag.STRONG | SkillTypeFlag.OBSERVANT,
+        SkillPath.DELIVERER: SkillTypeFlag.SMART | SkillTypeFlag.SOCIAL,
+        SkillPath.DECORATOR: SkillTypeFlag.SMART | SkillTypeFlag.OBSERVANT,
+        SkillPath.LEADERSHIP: SkillTypeFlag.STRONG | SkillTypeFlag.SMART | SkillTypeFlag.SOCIAL,
+        SkillPath.AGILE: SkillTypeFlag.AGILE | SkillTypeFlag.OBSERVANT,
+        SkillPath.STEALTHY: SkillTypeFlag.SMART | SkillTypeFlag.AGILE | SkillTypeFlag.OBSERVANT,
+        SkillPath.MEMORY: SkillTypeFlag.SMART | SkillTypeFlag.OBSERVANT,
+        SkillPath.MESSENGER: SkillTypeFlag.SOCIAL | SkillTypeFlag.OBSERVANT,
+        SkillPath.ASSIST: SkillTypeFlag.STRONG | SkillTypeFlag.SOCIAL,
+        SkillPath.HISTORIAN: SkillTypeFlag.SMART | SkillTypeFlag.OBSERVANT,
+        SkillPath.BOOKMAKER: SkillTypeFlag.SOCIAL,
+        SkillPath.TUNNELER: SkillTypeFlag.STRONG | SkillTypeFlag.AGILE,
+        SkillPath.PATIENT: SkillTypeFlag.SOCIAL | SkillTypeFlag.OBSERVANT,
+        SkillPath.DETECTIVE: SkillTypeFlag.SMART | SkillTypeFlag.OBSERVANT,
+        SkillPath.HERBALIST: SkillTypeFlag.SMART | SkillTypeFlag.SUPERNATURAL,
+        SkillPath.CHEF: SkillTypeFlag.AGILE | SkillTypeFlag.SOCIAL,
+        SkillPath.PRODIGY: SkillTypeFlag.SMART | SkillTypeFlag.OBSERVANT
     }
     # pylint: enable=unsupported-binary-operation
     
@@ -479,6 +631,7 @@ class CatSkills:
         this function should be run every moon for every cat to progress their skills accordingly
         :param the_cat: the cat object for affected cat
         """
+        
         if the_cat.status == 'newborn' or the_cat.moons <= 0:
             return
         
@@ -496,6 +649,7 @@ class CatSkills:
         
         
         if not (the_cat.outside or the_cat.exiled):
+                        
             if the_cat.status == 'kitten':
                 # Check to see if the cat gains a secondary
                 if not self.secondary and not int(random.random() * 22):
@@ -576,7 +730,7 @@ class CatSkills:
                     self.secondary.interest_only = False
     
     def meets_skill_requirement(self, path: Union[str, SkillPath, HiddenSkillEnum], min_tier:int=0) -> bool:
-        """Checks both primary and secondary, to see if cat matches skill restraint"""
+        """Checks both primary and seconday, to see if cat matches skill restaint"""
         
         if isinstance(path, str):
             # Try to conter to Skillpath or HiddenSkillEnum
@@ -604,34 +758,40 @@ class CatSkills:
         return False
     
     def check_skill_requirement_list(self, skill_list:list) -> int:
-        """Takes a whole list of skill requirements in the form 
+        """Takes a whole list of skill requirments in the form 
             [ "SKILL_PATH,MIN_TIER" ... ] and determines how many skill
-            requirements are meet. The list format is used in all patrol and event skill
-            restrictions. Returns an integer value of how many skills requirements are meet.  
+            requirments are meet. The list format is used in all patrol and event skill
+            restrictions. Returns an integer value of how many skills requirments are meet.  
             """
+        
         skills_meet = 0
+        
         min_tier = 0
         for _skill in skill_list:
             spl = _skill.split(",")
-
+            
             if len(spl) != 2:
                 print("Incorrectly formatted skill restriction", _skill)
                 continue
+            
             try:
                 min_tier = int(spl[1])
             except ValueError:
                 print("Min Skill Tier cannot be converted to int", _skill)
                 continue
-
+            
             if self.meets_skill_requirement(spl[0], min_tier):
                 skills_meet += 1
         
         return skills_meet
-
+                     
+    
     @staticmethod
     def get_skills_from_old(old_skill, status, moons):
-        """Generates a CatSkill object""" 
+        """Generates a CatSkill object"""
+        
         new_skill = CatSkills()
+        
         conversion = {
             "strong connection to StarClan": (SkillPath.STAR, 2), 
             "good healer": (SkillPath.HEALER, 1),

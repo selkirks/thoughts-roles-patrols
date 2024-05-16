@@ -209,13 +209,40 @@ class MiscEvents():
             acc_list.extend(Pelt.plant_accessories)
         if "COLLAR" in possible_accs:
             acc_list.extend(Pelt.collars)
+        # ohdan's accessories
+        if "FLOWER" in possible_accs:
+            acc_list.extend(Pelt.flower_accessories)
+        if "PLANT2" in possible_accs:
+            acc_list.extend(Pelt.plant2_accessories)
+        if "SNAKE" in possible_accs:
+            acc_list.extend(Pelt.snake_accessories)
+        if "SMALLANIMAL" in possible_accs:
+            acc_list.extend(Pelt.smallAnimal_accessories)
+        if "DEADINSECT" in possible_accs:
+            acc_list.extend(Pelt.deadInsect_accessories)
+        if "ALIVEINSECT" in possible_accs:
+            acc_list.extend(Pelt.aliveInsect_accessories)
+        if "FRUIT" in possible_accs:
+            acc_list.extend(Pelt.fruit_accessories)
+        if "CRAFTED" in possible_accs:
+            acc_list.extend(Pelt.crafted_accessories)
+        if "TAIL2" in possible_accs:
+            acc_list.extend(Pelt.tail2_accessories)
 
         for acc in possible_accs:
-            if acc not in ["WILD", "PLANT", "COLLAR"]:
+            if acc not in ["WILD", "PLANT", "COLLAR",
+                           "FLOWER", "PLANT2", "SNAKE", "SMALLANIMAL", "DEADINSECT", "ALIVEINSECT", "FRUIT", "CRAFTED", "TAIL2"]:
                 acc_list.append(acc)
 
         if "NOTAIL" in cat.pelt.scars or "HALFTAIL" in cat.pelt.scars:
             for acc in Pelt.tail_accessories:
+                try:
+                    acc_list.remove(acc)
+                except ValueError:
+                    print(f'attempted to remove {acc} from possible acc list, but it was not in the list!')
+
+        if "NOTAIL" in cat.pelt.scars or "HALFTAIL" in cat.pelt.scars:
+            for acc in Pelt.tail2_accessories:
                 try:
                     acc_list.remove(acc)
                 except ValueError:
