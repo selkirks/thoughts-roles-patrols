@@ -31,6 +31,8 @@
     ],
     "wasting disease": [
         "r_c has been called in by m_c's worried parent, and unfortunately that worry was well-founded, as m_c seems to have wasting disease.",
+        "r_c isn't sure what's wrong with m_c, but it's clear that it's permanent.",
+        "m_c's tail droops when the medicine cat says that {PRONOUN/r_c/object} {VERB/r_c/aren't/isn't} sure what's wrong with m_c, but {PRONOUN/r_c/object} can treat the symptoms.",
         "m_c seems weaker, lately, unable to play as much or explore as far.",
         "m_c is a sickly kit and the Clan fears {PRONOUN/m_c/subject} may not live past kithood. Even if {PRONOUN/m_c/subject} {VERB/m_c/do/does}, this sickness may never leave {PRONOUN/m_c/object}."
     ],
@@ -252,5 +254,11 @@
     ],
     "pcos": [
         "After m_c comes to the medicine den asking for more herbs for their cramps, r_c insists on checking up on {PRONOUN/m_c/object}. It appears to be pcos."
+    ],
+    "falling paws": [
+        "m_c complains about feeling lightheaded whenever {PRONOUN/m_c/subject} {VERB/m_c/stand/stands} up too quickly. After running a few tests, r_c has come to the conclussion that m_c has falling paws.",
+        "After m_c faints in the middle of the medicine cat den, r_c diagnoses m_c with falling paws.",
+        "m_c has to sit down often when {PRONOUN/m_c/subject} {VERB/m_c/stand/stands} up. A clanmate jokes about {PRONOUN/m_c/object} having a set of always falling paws.",
+        "m_c can feel {PRONOUN/m_c/poss} heartbeat when {PRONOUN/m_c/subject} {VERB/m_c/stand/stands} up."
     ]
 }

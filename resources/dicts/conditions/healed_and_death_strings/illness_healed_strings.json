@@ -250,6 +250,7 @@
 	],
 	"ear infection": [
 		"m_c is no longer struggling to hear.",
-		"r_c is happy to say that m_c no longer has an ear infection."
+		"r_c is happy to say that m_c no longer has an ear infection.",
+		"m_c's ears no longer feel stuffed."
 	]
 }
