@@ -1550,7 +1550,11 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
                         #mask base
                         colourbase = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
                         if(whichcolour == "black" and genotype.pointgene[0] == "cm"):
-                            colourbase.blit(sprites.sprites[whichbase.replace("black", "cinnamon") + cat_sprite], (0, 0))
+                            colourbase2 = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
+                            colourbase.blit(sprites.sprites['lightbasecolours0'], (0, 0))
+                            colourbase2.blit(sprites.sprites[whichbase.replace("black", "cinnamon") + cat_sprite], (0, 0))
+                            colourbase2.set_alpha(150)
+                            colourbase.blit(colourbase2, (0, 0))
                         else:
                             colourbase.blit(sprites.sprites[whichbase + cat_sprite], (0, 0))
                             if phenotype.caramel == 'caramel' and not ('red' in whichcolour or 'cream' in whichcolour or 'honey' in whichcolour or 'ivory' in whichcolour or 'apricot' in whichcolour):    
@@ -1638,7 +1642,7 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
                         stripebase2 = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
 
                         if(whichcolour == "black" and genotype.pointgene[0] == "cm"):
-                            colour = 'lightbasecolours2'
+                            colour = 'cinnamon'
                         else:
                             colour = whichcolour
                 
@@ -1709,8 +1713,9 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
 
                             stripebase = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
                         
-                            stripebase.blit(CreateStripes('cinnamon', 'solid'), (0, 0))
-                            
+                            stripebase.blit(CreateStripes('cinnamon', 'solid', pattern="fullbar"), (0, 0))
+                            stripebase.set_alpha(150)
+
                             whichmain.blit(stripebase, (0, 0))
                         else:
                             stripebase = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
