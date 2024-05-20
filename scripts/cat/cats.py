@@ -1850,25 +1850,38 @@ class Cat():
 
     def congenital_condition(self, cat):
         possible_conditions = []
+        multiple_condition_chance = game.config["cat_generation"]["multiple_permanent_conditions"]
+        max_conditions = game.config["cat_generation"]["max_conditions_born_with"]
+        conditions = 1
+        count = 1
+        genetics_exclusive = ["excess testosterone", "aneuploidy", "testosterone deficiency", "chimerism", "mosaicism"]
 
         for condition in PERMANENT:
             possible = PERMANENT[condition]
-            if possible["congenital"] in ['always', 'sometimes']:
-                if not(condition == "excess testosterone" or condition == "testosterone deficiency" or condition == "aneuploidy" or condition == "mosaicism" or condition == "chimerism"):
-                    possible_conditions.append(condition)
+            if possible["congenital"] in ['always', 'sometimes'] and condition not in genetics_exclusive:
+                possible_conditions.append(condition)
 
-        new_condition = choice(possible_conditions)
+        while count <= max_conditions:
+            if randint(1, multiple_condition_chance) == 1:
+                conditions += 1
+            count += 1
 
-        if new_condition == "born without a leg":
-            cat.pelt.scars.append('NOPAW')
-        elif new_condition == "born without a tail":
-            cat.pelt.scars.append('NOTAIL')
-        elif new_condition == "lazy eye":
-            cat.pelt.lazy_eye = cat.pelt.eye_colour
-            if cat.pelt.eye_colour2 != None:
-                cat.pelt.lazy_eye = cat.pelt.eye_colour2
+        while conditions:
+            new_condition = choice(possible_conditions)
+            while new_condition in cat.permanent_condition:
+                new_condition = choice(possible_conditions)
 
-        self.get_permanent_condition(new_condition, born_with=True)
+            if new_condition == "born without a leg":
+                cat.pelt.scars.append('NOPAW')
+            elif new_condition == "born without a tail":
+                cat.pelt.scars.append('NOTAIL')
+            elif new_condition == "lazy eye":
+                cat.pelt.lazy_eye = cat.pelt.eye_colour
+                if cat.pelt.eye_colour2 != None:
+                    cat.pelt.lazy_eye = cat.pelt.eye_colour2
+
+            self.get_permanent_condition(new_condition, born_with=True)
+            conditions -= 1
 
     def get_permanent_condition(self, name, born_with=False, event_triggered=False):
         if name not in PERMANENT:
@@ -1883,6 +1896,7 @@ class Cat():
         intersex_exclusive = ["excess testosterone", "aneuploidy", "testosterone deficiency", "chimerism", "mosaicism"]
         if self.gender != "intersex":
             if name in intersex_exclusive:
+                print("cat isn't intersex!")
                 return
             
 
@@ -1913,9 +1927,9 @@ class Cat():
                 moons_until = randint(moons_until - 1, moons_until + 5)
             if name == "body biter":
                 moons_until = randint(moons_until - 1, moons_until + 4)
-            if name == "strong soul":
+            if name == "thunderous spirit":
                 moons_until = randint(moons_until - 1, moons_until + 4)
-            if name == "otherwordly mind":
+            if name == "otherworldly mind":
                 moons_until = randint(moons_until - 1, moons_until + 4)
             if name == "ocd":
                 moons_until = randint(moons_until - 1, moons_until + 3)
