@@ -1471,7 +1471,7 @@ class Cat():
         if not self.injuries[injury]["complication"] and self.injuries[injury]["duration"] - moons_with <= 0:
             self.healed_condition = True
             return False
-    
+    '''
     def system_core(self):
         template = {
             "ID": "0",
@@ -1484,6 +1484,7 @@ class Cat():
         template[name] = str(self.name)
         template[gender] = self.genderalign
         self.alters.append(template)
+    '''
     
     def new_alter(self):
         template = {
