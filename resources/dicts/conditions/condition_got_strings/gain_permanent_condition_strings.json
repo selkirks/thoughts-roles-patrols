@@ -398,5 +398,26 @@
 		"pcos": [
 			"After m_c comes to the medicine den asking for more herbs for their cramps, r_c insists on checking up on {PRONOUN/m_c/object}. It appears {PRONOUN/m_c/poss} excess testosterone has resulted in pcos."
 		]
-	}
+	},
+    "curved spine": [
+        "m_c can barely get out of {PRONOUN/m_c/poss} bed due to back pain. r_c feels {PRONOUN/m_c/poss} back and realizes that {PRONOUN/m_c/poss} spine is curved."
+    ],
+    "starwalker":{
+        "jumbled mind": [
+            "Being a starwalker affects how m_c process words. Whenever {PRONOUN/m_c/subject} speaks, it comes out as a jumbled mess."
+        ],
+        "counting fog":[
+            "Being a starwalker affects how m_c processes numbers. r_c assures {PRONOUN/m_c/object} that it's okay, m_c just has counting fog."
+        ]
+    },
+    "comet spirit":
+    {
+        "jumbled mind": [
+            "Being a comet spirit affects how m_c process words. Whenever {PRONOUN/m_c/subject} speaks, it comes out as a jumbled mess."
+        ],
+        "counting fog":[
+            "Being a comet spirit affects how m_c processes numbers. r_c assures {PRONOUN/m_c/object} that it's okay, m_c just has counting fog."
+        ]
+    }
+        
 }

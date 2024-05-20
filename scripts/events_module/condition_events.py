@@ -408,11 +408,12 @@ class Condition_Events():
         scarless_conditions = [
             "weak leg", "paralyzed", "raspy lungs", "wasting disease", "blind", "failing eyesight",
             "one bad eye", "partial hearing loss", "deaf", "constant joint pain", "constantly dizzy",
-            "recurring shock", "lasting grief", "comet spirit", "heavy soul", "starwalker", "ocd", "antisocial", "anxiety",
+            "recurring shock", "lasting grief", "comet spirit", "heavy soul", "starwalker", "obsessive mind", "antisocial", "anxiety"
             "constant roaming pain", "thunderous spirit", "otherworldly mind", "kitten regressor", "puppy regressor", "snow vision",
             "echoing shock", "irritable bowels", "loose body", "longcough", "burning light", "disrupted senses",
             "constant nightmares", "constant rash", "jellyfish joints", "lazy eye", "shattered soul", "budding spirit",
-            "pcos", "infertile", "excess testosterone", "aneuploidy", "testosterone deficiency", "chimerism", "mosaicism"
+            "pcos", "infertile", "excess testosterone", "aneuploidy", "testosterone deficiency", "chimerism", "mosaicism",
+            "curved spine", "jumbled mind", "counting fog"
 
         ]
 

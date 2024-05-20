@@ -260,5 +260,15 @@
         "After m_c faints in the middle of the medicine cat den, r_c diagnoses m_c with falling paws.",
         "m_c has to sit down often when {PRONOUN/m_c/subject} {VERB/m_c/stand/stands} up. A clanmate jokes about {PRONOUN/m_c/object} having a set of always falling paws.",
         "m_c can feel {PRONOUN/m_c/poss} heartbeat when {PRONOUN/m_c/subject} {VERB/m_c/stand/stands} up."
+    ],
+    "curved spine": [
+        "m_c's spine has always been a little different, but it seems growing up has only made it worse. {PRONOUN/m_c/subject} clearly have a curved spine.",
+        "m_c can barely get out of {PRONOUN/m_c/poss} bed due to back pain. r_c feels {PRONOUN/m_c/poss} back and realizes that {PRONOUN/m_c/poss} spine is curved."
+    ],
+    "jumbled mind": [
+        "m_c frequently stumbles over {PRONOUN/m_c/poss} words. The medicine cat suspects {PRONOUN/m_c/subject} may have a jumbled mind."
+    ],
+    "counting fog": [
+        "r_c notices that m_c always repeats numbers when counting. It seems {PRONOUN/m_c/subject} may have counting fog."
     ]
 }

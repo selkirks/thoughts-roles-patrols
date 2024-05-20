@@ -234,6 +234,10 @@
             {
                 "name": "joint pain",
                 "chance": 20
+            },
+            {
+                "name": "curved spine",
+                "chance": 80
             }
         ],
         "herbs": [
@@ -888,16 +892,24 @@
 			},
             {
                 "name": "budding spirit",
-                "chance": 70
+                "chance": 75
             },
             {
                 "name": "shattered soul",
-                "chance": 70
+                "chance": 75
+            },
+            {
+                "name": "jumbled mind",
+                "chance": 75
+            },
+            {
+                "name": "counting fog",
+                "chance": 75
             }
         ],
         "herbs": [ ]
     },
-    "ocd": {
+    "obsessive mind": {
         "severity": "minor",
         "congenital": "always",
         "moons_until": 3,
@@ -1073,11 +1085,19 @@
 			},
             {
                 "name": "budding spirit",
-                "chance": 70
+                "chance": 75
             },
             {
                 "name": "shattered soul",
-                "chance": 70
+                "chance": 75
+            },
+            {
+                "name": "jumbled mind",
+                "chance": 75
+            },
+            {
+                "name": "counting fog",
+                "chance": 75
             }
         ],
         "herbs":[
@@ -2319,6 +2339,71 @@
         "severity": "minor",
         "congenital": "sometimes",
         "moons_until": 12,
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+        ],
+        "herbs": []
+    },
+    "curved spine": {
+        "severity": "major",
+        "congenital": "sometimes",
+        "moons_until": 8,
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+            {
+                "name": "sore",
+                "chance": 20
+            },
+            {
+                "name": "joint pain",
+                "chance": 40
+            }
+        ],
+        "herbs": [ "poppy"]
+    },
+    "jumbled mind": {
+        "severity": "minor",
+        "congenital": "sometimes",
+        "moons_until": 4,
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+        ],
+        "herbs": []
+    },
+    "counting fog": {
+        "severity": "minor",
+        "congenital": "sometimes",
+        "moons_until": 4,
         "mortality": {
             "newborn": 0,
             "kitten": 0,
