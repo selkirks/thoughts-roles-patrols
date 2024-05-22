@@ -964,6 +964,10 @@
             {
                 "name": "body biter",
                 "chance": 70
+            },
+            {
+                "name": "cracked pads",
+                "chance": 10
             }
         ],
         "herbs":[
@@ -1364,7 +1368,7 @@
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "senior": 0 
+            "senior": 0
         },
         "illness_infectiousness": [
         ],

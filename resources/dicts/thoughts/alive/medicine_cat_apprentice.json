@@ -212,7 +212,7 @@
             "Is wondering why r_c decided to be a medicine cat",
             "Is worried r_c likes to hurt patients",
             "Is skeptical of StarClan's choice of r_c as a medicine cat",
-            "Is startled to find r_c has a stock pile of death berries"
+            "Is startled to find r_c has a stock pile of deathberries"
         ],
         "main_trait_constraint": [
             "thoughtful",
@@ -301,14 +301,14 @@
         ]
 	},
 	{
-        "id": "ocd_medicine_cat_apprentice",
+        "id": "obsessive_mind_medicine_cat_apprentice",
         "thoughts": [
             "Is intently focusing on the herbs {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} sorting",
 			"Forgot to eat today and is stressing about it to {PRONOUN/m_c/poss} denmates",
 			"Is recounting the herbs and making sure they're even",
 			"Is sorting the herbs into piles based on size",
 			"Is double checking that none of the herbs have gone bad",
-			"Is talking to r_c about an issue {PRONOUN/m_c/subject} ran into about the den last week",
+			"Is talking to r_c about an issue {PRONOUN/m_c/subject} ran into concerning the den last week",
 			"Was seen chucking out day old herbs",
 			"Is crying to r_c because {PRONOUN/m_c/subject} don't think {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} good enough to be a medicine cat",
 			"Cries while sorting the moss for the nests",
@@ -316,7 +316,7 @@
         ],
         "perm_conditions": {
             "m_c": [
-                "ocd"
+                "obsessive mind"
             ]
         },
         "random_status_constraint": [
@@ -329,6 +329,53 @@
             "deputy",
             "leader",
             "elder"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+	},
+	{
+        "id": "anxiety_medicine_cat_apprentice",
+        "thoughts": [
+            "Is smelling some lavender to help {PRONOUN/m_c/object} stay calm",
+            "Is smelling some mint to help {PRONOUN/m_c/object} stay calm",
+            "Finds the scents of the medicine den calming",
+            "Is telling r_c about how much {PRONOUN/m_c/subject} like the smell of lavender",
+            "Is telling r_c about how much {PRONOUN/m_c/subject} like the smell of mint"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "anxiety"
+            ]
+        },
+        "random_status_constraint": [
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+	},
+	{
+        "id": "anxiety_medicine_cat_apprentice_to_medicine_cat",
+        "thoughts": [
+            "Asks r_c if they can collect more lavender the next time they go out foraging together",
+            "Asks r_c if they can collect more mint the next time they go out foraging together"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "anxiety"
+            ]
+        },
+        "random_status_constraint": [
+            "medicine cat"
         ],
         "random_living_status": [
             "living"

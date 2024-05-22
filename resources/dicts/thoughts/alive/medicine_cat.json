@@ -396,5 +396,34 @@
             "apprentice",
             "kitten"
         ]
-    }     
+    },
+	{
+        "id": "anxiety_med_cat",
+        "thoughts": [
+            "Is smelling some lavender to help {PRONOUN/m_c/object} stay calm",
+            "Is smelling some mint to help {PRONOUN/m_c/object} stay calm",
+            "Finds the scents of the medicine den calming",
+            "Is telling r_c about how much {PRONOUN/m_c/subject} like the smell of lavender",
+            "Is telling r_c about how much {PRONOUN/m_c/subject} like the smell of mint"
+        ],
+        "perm_conditions": {
+            "m_c": [
+                "anxiety"
+            ]
+        },
+        "random_status_constraint": [
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice",
+            "warrior",
+            "medicine cat",
+            "mediator",
+            "deputy",
+            "leader",
+            "elder"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+	}
 ]

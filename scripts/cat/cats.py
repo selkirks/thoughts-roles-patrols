@@ -1932,7 +1932,7 @@ class Cat():
                 moons_until = randint(moons_until - 1, moons_until + 4)
             if name == "otherworldly mind":
                 moons_until = randint(moons_until - 1, moons_until + 4)
-            if name == "ocd":
+            if name == "obsessive mind":
                 moons_until = randint(moons_until - 1, moons_until + 3)
             if name == "falling paws":
                 moons_until = randint(moons_until - 1, moons_until + 3)
