@@ -2441,8 +2441,14 @@ class Events:
                 possible_deputies = list(
                     filter(
                         lambda x: not x.dead and not x.outside and x.status ==
-                                  "warrior" and (x.apprentice or x.former_apprentices),
+                                  "warrior" and ([i for i in x.former_apprentices if 'apprentice' not in Cat.all_cats.get(i).status]),
                         Cat.all_cats_list))
+                if not possible_deputies:
+                    possible_deputies = list(
+                        filter(
+                            lambda x: not x.dead and not x.outside and x.status ==
+                                    "warrior" and (x.apprentice or x.former_apprentices),
+                            Cat.all_cats_list))
 
                 # If there are possible deputies, choose from that list.
                 if possible_deputies:
