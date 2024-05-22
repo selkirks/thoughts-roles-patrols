@@ -6105,7 +6105,7 @@ class Breed_checker:
             return False
         if genotype.silver[0] == "I" and genotype.agouti[0] == "a" and (genotype.eumelanin == "bl" or genotype.dilute[0] == "d"):
             return False
-        if genotype.mack[0] == "mc" and (genotype.eumelanin != "B" or genotype.dilute[0] == "d"):
+        if genotype.mack[0] == "mc" and (genotype.eumelanin[0] != "B" or genotype.dilute[0] == "d"):
             return False
         if genotype.eumelanin[0] != "B" and genotype.silver[0] != "I":
             return False
