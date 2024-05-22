@@ -390,7 +390,7 @@ def create_new_cat(Cat,
             if not int(random() * chance):
                 possible_conditions = []
                 for condition in PERMANENT:
-                    if (kit or litter) and PERMANENT[condition]['congenital'] not in ['always', 'sometimes']:
+                    if (kit or litter) and PERMANENT[condition]['congenital'] not in ['always', 'sometimes'] and condition not in ['manx syndrome', 'ocular albinism', 'albinism', 'rabbit gait']:
                         continue
                     # next part ensures that a kit won't get a condition that takes too long to reveal
                     age = new_cat.moons
