@@ -110,7 +110,7 @@ class Sprites():
 
         for x in [
             'lineart', 'singlecolours', 'speckledcolours', 'tabbycolours',
-            'whitepatches', 'eyes', 'eyes2', 'skin', 'scars', 'missingscars',
+            'whitepatches', 'eyes', 'eyes2', 'eyes3', 'eyes4', 'skin', 'scars', 'missingscars',
             'collars', 'bellcollars', 'bowcollars', 'nyloncollars',
             'bengalcolours', 'marbledcolours', 'rosettecolours', 'smokecolours', 'tickedcolours', 
             'mackerelcolours', 'classiccolours', 'sokokecolours', 'agouticolours', 'singlestripecolours',
@@ -164,6 +164,15 @@ class Sprites():
                 'PALEYELLOW', 'GOLD', 'GREENYELLOW']):
             self.make_group('eyes', (a, 1), f'eyes{i}')
             self.make_group('eyes2', (a, 1), f'eyes2{i}')
+
+        for a, i in enumerate(
+                ['ETA', 'CARINA', 'EAGLE', 'GHOST HEAD', 'LAGOON', 'MILKY WAY', 'SOUL', 'SWAN', 'TARANTULA', 'VEIL', 'SHROUD', 'CARITA']):
+            self.make_group('eyes3', (a, 0), f'eyes{i}')
+            self.make_group('eyes4', (a, 0), f'eyes2{i}')
+        for a, i in enumerate(
+                ['SEA FOAM', 'LILAC', 'AZURE', 'STORM', 'RUSSET', 'SAND', 'MIST', 'AMETHYST', 'TEMPEST']):
+            self.make_group('eyes3', (a, 1), f'eyes{i}')
+            self.make_group('eyes4', (a, 1), f'eyes2{i}')
 
         # white patches
         for a, i in enumerate(['FULLWHITE', 'ANY', 'TUXEDO', 'LITTLE', 'COLOURPOINT', 'VAN', 'ANYTWO',
