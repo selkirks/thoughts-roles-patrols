@@ -166,7 +166,7 @@ class Sprites():
             self.make_group('eyes2', (a, 1), f'eyes2{i}')
 
         for a, i in enumerate(
-                ['ETA', 'CARINA', 'EAGLE', 'GHOST HEAD', 'LAGOON', 'MILKY WAY', 'SOUL', 'SWAN', 'TARANTULA', 'VEIL', 'SHROUD', 'CARITA']):
+                ['ETA', 'CARINA', 'EAGLE', 'GHOST HEAD', 'LAGOON', 'MILKY WAY', 'SOUL', 'SWAN', 'TARANTULA', 'VEIL', 'SHROUD', 'CARI']):
             self.make_group('eyes3', (a, 0), f'eyes{i}')
             self.make_group('eyes4', (a, 0), f'eyes2{i}')
         for a, i in enumerate(

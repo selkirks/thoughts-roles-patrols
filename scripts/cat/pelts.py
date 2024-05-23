@@ -55,7 +55,7 @@ class Pelt():
 
     pelt_length = ["short", "medium", "long"]
     eye_colours = ['YELLOW', 'AMBER', 'HAZEL', 'PALEGREEN', 'GREEN', 'BLUE', 'DARKBLUE', 'GREY', 'CYAN', 'EMERALD', 'PALEBLUE', 
-        'PALEYELLOW', 'GOLD', 'HEATHERBLUE', 'COPPER', 'SAGE', 'COBALT', 'SUNLITICE', 'GREENYELLOW', 'BRONZE', 'SILVER', 'ETA', 'CARINA', 'EAGLE', 'GHOST HEAD', 'LAGOON', 'MILKY WAY', 'SOUL', 'SWAN', 'TARANTULA', 'VEIL', 'SHROUD', 'CARITA', 'SEA FOAM', 'LILAC', 'AZURE', 'STORM', 'RUSSET', 'SAND', 'MIST', 'AMETHYST', 'TEMPEST']
+        'PALEYELLOW', 'GOLD', 'HEATHERBLUE', 'COPPER', 'SAGE', 'COBALT', 'SUNLITICE', 'GREENYELLOW', 'BRONZE', 'SILVER', 'ETA', 'CARI', 'CARINA', 'EAGLE', 'GHOST HEAD', 'LAGOON', 'MILKY WAY', 'SOUL', 'SWAN', 'TARANTULA', 'VEIL', 'SHROUD', 'SEA FOAM', 'LILAC', 'AZURE', 'STORM', 'RUSSET', 'SAND', 'MIST', 'AMETHYST', 'TEMPEST']
     yellow_eyes = ['YELLOW', 'AMBER', 'PALEYELLOW', 'GOLD', 'COPPER', 'GREENYELLOW', 'BRONZE', 'SILVER', 'CARINA', 'RUSSET', 'SAND']
     blue_eyes = ['BLUE', 'DARKBLUE', 'CYAN', 'PALEBLUE', 'HEATHERBLUE', 'COBALT', 'SUNLITICE', 'GREY', 'ETA', 'EAGLE', 'LAGOON', 'MILKY WAY', 'SOUL', 'SWAN', 'TARANTULA', 'VEIL', 'SHROUD', 'LILAC', 'AZURE', 'STORM', 'MIST', 'AMETHYST', 'TEMPEST']
     green_eyes = ['PALEGREEN', 'GREEN', 'EMERALD', 'SAGE', 'HAZEL', 'GHOST HEAD', 'CARI', 'SEA FOAM']
@@ -288,12 +288,7 @@ class Pelt():
             self.tortiepattern = sub("tortie", "", self.tortiepattern.lower())
             if self.tortiepattern == "solid":
                 self.tortiepattern = "single"
-                
-        if self.white_patches in convert_dict["old_creamy_patches"]:
-            self.white_patches = convert_dict["old_creamy_patches"][self.white_patches]
-            self.white_patches_tint = "darkcream"
-        elif self.white_patches in ['SEPIAPOINT', 'MINKPOINT', 'SEALPOINT']:
-            self.white_patches_tint = "none"
+
         
         # Eye Color Convert Stuff
         if self.eye_colour == "BLUE2":
@@ -329,16 +324,6 @@ class Pelt():
             elif self.cat_sprites['senior'] == 5:
                 self.cat_sprites['senior'] = 14
         
-        if self.pattern in convert_dict["old_tortie_patches"]:
-            old_pattern = self.pattern
-            self.pattern = convert_dict["old_tortie_patches"][old_pattern][1]
-            
-            # If the pattern is old, there is also a change the base color is stored in
-            # tortiecolour, and that may be different from the pelt color (main for torties
-            # generated before the "ginger-on-ginger" update. If it was generated after that update,
-            # tortiecolour and pelt_colour will be the same. Therefore, lets also re-set the pelt color
-            self.colour = self.tortiecolour
-            self.tortiecolour = convert_dict["old_tortie_patches"][old_pattern][0]
             
         if self.pattern == "MINIMAL1":
             self.pattern = "MINIMALONE"
