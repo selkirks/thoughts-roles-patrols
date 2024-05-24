@@ -167,7 +167,8 @@ class MakeClanScreen(Screens):
         # When the next_step button is pressed, go to the Clan count selection page.
         elif event.ui_element == self.elements['next_step']:
             game.settings['game_mode'] = self.game_mode
-            self.open_clan_count()
+            #self.open_clan_count()
+            self.open_name_clan()
     
     def handle_clan_count_mode_event(self, event):
         """Handle events for the clan count screen"""
@@ -226,7 +227,8 @@ class MakeClanScreen(Screens):
             self.open_choose_leader()
         elif event.ui_element == self.elements['previous_step']:
             self.clan_name = ""
-            self.open_clan_count()
+            #self.open_clan_count()
+            self.open_game_mode()
     
     def handle_name_clan_key(self, event):
         if event.key == pygame.K_ESCAPE:
