@@ -79,7 +79,7 @@ def get_med_cats(Cat, working=True):
     """
     all_cats = Cat.all_cats.values()
     possible_med_cats = [i for i in all_cats if
-                         i.status in ['medicine cat apprentice', 'medicine cat'] and not (i.dead or i.outside)]
+                         i.status in ['healer apprentice', 'healer'] and not (i.dead or i.outside)]
 
     if working:
         possible_med_cats = [i for i in possible_med_cats if not i.not_working()]
@@ -273,11 +273,11 @@ def create_new_cat(Cat,
             age = 0
         elif litter or kit:
             age = randint(1, 5)
-        elif status in ('apprentice', 'medicine cat apprentice', 'mediator apprentice'):
+        elif status in ('apprentice', 'healer apprentice', 'mediator apprentice'):
             age = randint(6, 11)
         elif status == 'warrior':
             age = randint(23, 120)
-        elif status == 'medicine cat':
+        elif status == 'healer':
             age = randint(23, 140)
         elif status == 'elder':
             age = randint(120, 130)

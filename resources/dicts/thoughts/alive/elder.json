@@ -142,9 +142,9 @@
     {
         "id": "gen_retired_disabled_to_med_thoughts",
         "thoughts": [
-            "Wonders if the medicine cat needs any help today",
+            "Wonders if the healer needs any help today",
             "Offers to help r_c sort herbs",
-            "Wonders if {PRONOUN/m_c/subject} could've been a medicine cat with r_c instead of retiring",
+            "Wonders if {PRONOUN/m_c/subject} could've been a healer with r_c instead of retiring",
             "Brought r_c some fresh-kill"
         ],
         "perm_conditions": {
@@ -156,7 +156,7 @@
             "elder"
         ],
         "random_status_constraint":[
-            "medicine cat"
+            "healer"
         ]
     },
     {
@@ -194,8 +194,8 @@
             "elder"
         ],
         "random_status_constraint": [
-            "medicine cat apprentice",
-            "medicine cat"
+            "healer apprentice",
+            "healer"
         ]
     },
     {
@@ -296,8 +296,8 @@
             "adolescent"
         ],
         "random_status_constraint": [
-            "medicine cat apprentice",
-            "medicine cat"
+            "healer apprentice",
+            "healer"
         ]
     },
 
@@ -342,7 +342,7 @@
         ],
         "random_status_constraint": [
             "apprentice",
-            "medicine cat apprentice",
+            "healer apprentice",
             "mediator apprentice"
         ]
     },
@@ -363,8 +363,8 @@
             "adolescent"
         ],
         "random_status_constraint": [
-            "medicine cat apprentice",
-            "medicine cat"
+            "healer apprentice",
+            "healer"
         ]
     },
     {
@@ -402,8 +402,8 @@
             "elder"
         ],
         "random_status_constraint": [
-            "medicine cat apprentice",
-            "medicine cat"
+            "healer apprentice",
+            "healer"
         ]
     },
     {
@@ -447,7 +447,7 @@
         ],
         "random_status_constraint": [
             "apprentice",
-            "medicine cat apprentice",
+            "healer apprentice",
             "mediator apprentice"
         ]
     },
@@ -494,7 +494,7 @@
         ],
         "random_status_constraint": [
             "apprentice",
-            "medicine cat apprentice",
+            "healer apprentice",
             "mediator apprentice"
         ]
     },
@@ -773,8 +773,8 @@
             "elder"
         ],
         "random_status_constraint": [
-            "medicine cat",
-            "medicine cat apprentice"
+            "healer",
+            "healer apprentice"
         ]
     }
 ]

@@ -50,10 +50,10 @@
         "main_status_constraint": [
             "apprentice",
             "mediator apprentice",
-            "medicine cat apprentice",
+            "healer apprentice",
             "warrior", 
             "mediator", 
-            "medicine cat", 
+            "healer", 
             "deputy", 
             "leader", 
             "elder"
@@ -74,10 +74,10 @@
         "main_status_constraint": [
             "apprentice",
             "mediator apprentice",
-            "medicine cat apprentice",
+            "healer apprentice",
             "warrior", 
             "mediator", 
-            "medicine cat", 
+            "healer", 
             "deputy", 
             "leader", 
             "elder"
@@ -94,10 +94,10 @@
         "main_status_constraint": [
             "apprentice",
             "mediator apprentice",
-            "medicine cat apprentice",
+            "healer apprentice",
             "warrior", 
             "mediator", 
-            "medicine cat", 
+            "healer", 
             "deputy", 
             "leader", 
             "elder"
@@ -114,7 +114,7 @@
         "main_status_constraint": [
             "warrior", 
             "mediator", 
-            "medicine cat", 
+            "healer", 
             "deputy", 
             "leader", 
             "elder"
@@ -129,10 +129,10 @@
         "main_status_constraint": [
            "apprentice",
             "mediator apprentice",
-            "medicine cat apprentice",
+            "healer apprentice",
             "warrior", 
             "mediator", 
-            "medicine cat", 
+            "healer", 
             "deputy", 
             "leader", 
             "elder"
@@ -152,14 +152,14 @@
         "main_status_constraint": [
             "warrior", 
             "mediator", 
-            "medicine cat", 
+            "healer", 
             "deputy", 
             "leader", 
             "elder"
         ],
         "random_status_constraint": [
             "apprentice",
-            "medicine cat apprentice",
+            "healer apprentice",
             "mediator apprentice"
         ],
         "random_living_status": [

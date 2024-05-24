@@ -185,7 +185,7 @@
                 ]
             },
             {
-                "text": "A mischievous look in their eye, the deputy challenges their Clanmates - whoever catches one of the squirrels gets to skip dawn patrol for a whole moon. They're all eager to shimmy up the trees at that, and before long someone calls out in triumph. Not only do they have the squirrel, but they also have a pawful of oak leaves for the medicine cat as well!",
+                "text": "A mischievous look in their eye, the deputy challenges their Clanmates - whoever catches one of the squirrels gets to skip dawn patrol for a whole moon. They're all eager to shimmy up the trees at that, and before long someone calls out in triumph. Not only do they have the squirrel, but they also have a pawful of oak leaves for the healer as well!",
                 "exp": 40,
                 "weight": 5,
                 "herbs": ["oak_leaves"],
@@ -235,7 +235,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "The patrol fans out, some cats climbing, some staying on the ground. The hunt comes to an abrupt end, however, when r_c yowls in fear as they plummet from the branches and land heavily on the ground. Their Clanmates help them home and settle them into the medicine cat's den, guilt and regret prickling at them for pursuing such a foolhardy hunt.",
+                "text": "The patrol fans out, some cats climbing, some staying on the ground. The hunt comes to an abrupt end, however, when r_c yowls in fear as they plummet from the branches and land heavily on the ground. Their Clanmates help them home and settle them into the healer's den, guilt and regret prickling at them for pursuing such a foolhardy hunt.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1026,7 +1026,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "The patrol launches into battle, but r_c is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping r_c back to the medicine cat den.",
+                "text": "The patrol launches into battle, but r_c is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping r_c back to the healer den.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1162,7 +1162,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "The patrol launches into battle, but r_c is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping r_c back to the medicine cat den.",
+                "text": "The patrol launches into battle, but r_c is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping r_c back to the healer den.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -5475,8 +5475,8 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "p_l finds a patch of herbs that {PRONOUN/p_l/subject} believe c_n might need for their stores. {PRONOUN/p_l/subject/CAP} freely admit to {PRONOUN/p_l/poss} patrol {PRONOUN/p_l/subject} {VERB/p_l/aren't/isn't} a medicine cat, and ask {PRONOUN/p_l/poss} companions' advice. What do they know about this part of the forest's herbal properties, especially in the harvest season of leaf-fall?",
-        "decline_text": "They decide to focus on hunting and leave the herb collecting to the medicine cats.",
+        "intro_text": "p_l finds a patch of herbs that {PRONOUN/p_l/subject} believe c_n might need for their stores. {PRONOUN/p_l/subject/CAP} freely admit to {PRONOUN/p_l/poss} patrol {PRONOUN/p_l/subject} {VERB/p_l/aren't/isn't} a healer, and ask {PRONOUN/p_l/poss} companions' advice. What do they know about this part of the forest's herbal properties, especially in the harvest season of leaf-fall?",
+        "decline_text": "They decide to focus on hunting and leave the herb collecting to the healers.",
         "chance_of_success": 50,
         "success_outcomes": [
             {

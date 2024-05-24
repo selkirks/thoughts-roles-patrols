@@ -93,7 +93,7 @@
 			"m_c feels worse after r_c gave {PRONOUN/m_c/object} the wrong treatment for something minor."
 		],
 		"random_status_constraint": [
-			"medicine cat"
+			"healer"
 		]
 	},
 	{
@@ -108,7 +108,7 @@
 			"elder"
 		],
 		"random_status_constraint": [
-			"medicine cat"
+			"healer"
 		]
 	},
 	{
@@ -118,11 +118,11 @@
 			"m_c accuses r_c of treating cats incorrectly on purpose!",
 			"m_c saw r_c bringing deathberries into the medicine den.",
 			"r_c was rough with m_c during a recent treatment.",
-			"m_c isn't sure why r_c became a medicine cat at all since {PRONOUN/r_c/subject} {VERB/r_c/seem/seems} to not like helping any cats.",
+			"m_c isn't sure why r_c became a healer at all since {PRONOUN/r_c/subject} {VERB/r_c/seem/seems} to not like helping any cats.",
 			"m_c wouldn't be surprised if r_c faked signs from StarClan..."
 		],
 		"random_status_constraint": [
-			"medicine cat"
+			"healer"
 		],
 		"random_trait_constraint": [
 			"cold",
@@ -138,10 +138,10 @@
 			"m_c growls frustratingly at r_c when {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} pay attention to m_c's health concerns... again.",
 			"m_c looks for r_c for treatment on a minor wound, only to find {PRONOUN/r_c/object} playing with catmint!",
 			"m_c hopes to never have a serious illness with r_c in charge of treatments...",
-			"m_c complains that r_c never takes {PRONOUN/r_c/poss} role of medicine cat seriously."
+			"m_c complains that r_c never takes {PRONOUN/r_c/poss} role of healer seriously."
 		],
 		"random_status_constraint": [
-			"medicine cat"
+			"healer"
 		],
 		"random_trait_constraint": [
 			"oblivious",

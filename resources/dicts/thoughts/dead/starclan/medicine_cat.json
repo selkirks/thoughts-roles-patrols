@@ -7,7 +7,7 @@
             "Wishes {PRONOUN/m_c/subject} could point r_c to where the elusive herbs are"
         ],
         "random_status_constraint": [
-            "medicine cat apprentice"
+            "healer apprentice"
         ],
         "random_living_status": [
             "living",

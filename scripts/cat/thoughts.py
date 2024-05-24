@@ -270,11 +270,11 @@ class Thoughts():
         status = main_cat.status
         loaded_thoughts = []
 
-        if status == "medicine cat apprentice":
+        if status == "healer apprentice":
             status = "medicine_cat_apprentice"
         elif status == "mediator apprentice":
             status = "mediator_apprentice"
-        elif status == "medicine cat":
+        elif status == "healer":
             status = "medicine_cat"
         elif status == 'former Clancat':
             status = 'former_Clancat'

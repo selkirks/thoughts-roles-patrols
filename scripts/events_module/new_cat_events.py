@@ -103,9 +103,9 @@ class NewCatEvents:
         elif "new_app" in new_cat_event.tags:
             status = "apprentice"
         elif "new_med_app" in new_cat_event.tags:
-            status = "medicine cat apprentice"
+            status = "healer apprentice"
         elif "new_med" in new_cat_event.tags:
-            status = "medicine cat"
+            status = "healer"
 
         cat_type = ""
         blood_parent = None
@@ -352,7 +352,7 @@ class NewCatEvents:
     @staticmethod
     def update_cat_properties(cat):
         if cat.backstory in BACKSTORIES["backstory_categories"]["healer_backstories"]:
-            cat.status = "medicine cat"
+            cat.status = "healer"
         elif cat.age in ["newborn", "kitten"]:
             cat.status = cat.age
         elif cat.age == "senior":

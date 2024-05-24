@@ -71,10 +71,10 @@
         ],
         "main_status_constraint": [
             "apprentice",
-            "medicine cat apprentice",
+            "healer apprentice",
             "mediator apprentice",
             "warrior",
-            "medicine cat",
+            "healer",
             "mediator",
             "deputy",
             "leader",
@@ -110,7 +110,7 @@
             "Wishes {PRONOUN/m_c/subject} understood what r_c is doing"
         ],
         "random_status_constraint": [
-            "medicine cat"
+            "healer"
         ]
     },
     {
@@ -125,7 +125,7 @@
             "Wishes {PRONOUN/m_c/subject} understood what r_c is doing"
         ],
         "random_status_constraint": [
-            "medicine cat apprentice"
+            "healer apprentice"
         ]
     },
     {
@@ -147,10 +147,10 @@
         ],
         "main_status_constraint": [
             "apprentice",
-            "medicine cat apprentice",
+            "healer apprentice",
             "mediator apprentice",
             "warrior",
-            "medicine cat",
+            "healer",
             "mediator",
             "deputy",
             "leader",
@@ -173,10 +173,10 @@
         ],
         "main_status_constraint": [
             "apprentice",
-            "medicine cat apprentice",
+            "healer apprentice",
             "mediator apprentice",
             "warrior",
-            "medicine cat",
+            "healer",
             "mediator",
             "deputy",
             "leader",
@@ -205,10 +205,10 @@
         "main_status_constraint": [
             "kitten",
             "apprentice",
-            "medicine cat apprentice",
+            "healer apprentice",
             "mediator apprentice",
             "warrior",
-            "medicine cat",
+            "healer",
             "mediator",
             "deputy",
             "leader",
@@ -225,25 +225,25 @@
         "id": "gen_to_alive_med_cat_app",
         "thoughts": [
             "Is grateful to r_c for {PRONOUN/m_c/poss} treatment",
-            "Is in awe of r_c's growth as a medicine cat apprentice",
-            "Thinks r_c will make a good medicine cat",
+            "Is in awe of r_c's growth as a healer apprentice",
+            "Thinks r_c will make a good healer",
             "Has doubts about r_c's abilities",
             "Saw r_c almost use the wrong herbs"
         ],
         "main_status_constraint": [
             "kitten",
             "apprentice",
-            "medicine cat apprentice",
+            "healer apprentice",
             "mediator apprentice",
             "warrior",
-            "medicine cat",
+            "healer",
             "mediator",
             "deputy",
             "leader",
             "elder"
         ],
         "random_status_constraint": [
-            "medicine cat apprentice"
+            "healer apprentice"
         ],
         "random_living_status": [
             "living"
@@ -281,22 +281,22 @@
         "thoughts": [
             "Is grateful to r_c for {PRONOUN/m_c/poss} treatment",
             "Wonders if StarClan has given r_c any prophecies lately",
-            "Chats with r_c about what it's like to be a medicine cat"
+            "Chats with r_c about what it's like to be a healer"
         ],
         "main_status_constraint": [
             "kitten",
             "apprentice",
-            "medicine cat apprentice",
+            "healer apprentice",
             "mediator apprentice",
             "warrior",
-            "medicine cat",
+            "healer",
             "mediator",
             "deputy",
             "leader",
             "elder"
         ],
         "random_status_constraint": [
-            "medicine cat"
+            "healer"
         ],
         "random_living_status": [
             "living"
@@ -314,10 +314,10 @@
         ],
         "main_status_constraint": [
             "apprentice",
-            "medicine cat apprentice",
+            "healer apprentice",
             "mediator apprentice",
             "warrior",
-            "medicine cat",
+            "healer",
             "mediator",
             "deputy",
             "leader",
@@ -359,10 +359,10 @@
         "main_status_constraint": [
             "kitten",
             "apprentice",
-            "medicine cat apprentice",
+            "healer apprentice",
             "mediator apprentice",
             "warrior",
-            "medicine cat",
+            "healer",
             "mediator"
         ],
         "random_status_constraint": [
@@ -379,7 +379,7 @@
         ],
         "main_status_constraint": [
             "warrior",
-            "medicine cat",
+            "healer",
             "mediator",
             "deputy",
             "leader",
@@ -402,10 +402,10 @@
         "main_status_constraint": [
             "kitten",
             "apprentice",
-            "medicine cat apprentice",
+            "healer apprentice",
             "mediator apprentice",
             "warrior",
-            "medicine cat",
+            "healer",
             "mediator",
             "deputy",
             "leader",
@@ -469,7 +469,7 @@
             "any"
         ],
         "random_status_constraint": [
-            "medicine cat apprentice"
+            "healer apprentice"
         ],
         "random_living_status": [
             "starclan"
@@ -521,7 +521,7 @@
             "any"
         ],
         "random_status_constraint": [
-            "medicine cat"
+            "healer"
         ],
         "random_living_status": [
             "starclan"
@@ -601,10 +601,10 @@
         ],
         "main_status_constraint": [
             "apprentice",
-            "medicine cat apprentice",
+            "healer apprentice",
             "mediator apprentice",
             "warrior",
-            "medicine cat",
+            "healer",
             "mediator",
             "deputy",
             "leader",
@@ -619,10 +619,10 @@
         ],
         "main_status_constraint": [
             "apprentice",
-            "medicine cat apprentice",
+            "healer apprentice",
             "mediator apprentice",
             "warrior",
-            "medicine cat",
+            "healer",
             "mediator",
             "deputy",
             "leader",
@@ -639,10 +639,10 @@
         ],
         "main_status_constraint": [
             "apprentice",
-            "medicine cat apprentice",
+            "healer apprentice",
             "mediator apprentice",
             "warrior",
-            "medicine cat",
+            "healer",
             "mediator",
             "deputy",
             "elder"
@@ -663,10 +663,10 @@
         ],
         "main_status_constraint": [
             "apprentice",
-            "medicine cat apprentice",
+            "healer apprentice",
             "mediator apprentice",
             "warrior",
-            "medicine cat",
+            "healer",
             "mediator",
             "deputy",
             "leader",
@@ -686,10 +686,10 @@
         ],
         "main_status_constraint": [
             "apprentice",
-            "medicine cat apprentice",
+            "healer apprentice",
             "mediator apprentice",
             "warrior",
-            "medicine cat",
+            "healer",
             "mediator",
             "deputy",
             "leader",
@@ -710,10 +710,10 @@
         ],
         "main_status_constraint": [
             "apprentice",
-            "medicine cat apprentice",
+            "healer apprentice",
             "mediator apprentice",
             "warrior",
-            "medicine cat",
+            "healer",
             "mediator",
             "deputy",
             "elder"
@@ -782,7 +782,7 @@
         ],
         "main_backstory_constraint": ["kittypet1", "kittypet2", "kittypet3", "kittypet4", "refugee3", "tragedy_survivor3", "guided1"],
         "main_status_constraint": [
-            "medicine cat"]
+            "healer"]
     },
     {
         "id": "gen_former_kittypet_deputy",
@@ -819,8 +819,8 @@
             "Is visiting the nursery to give r_c a checkup"
         ],
         "main_status_constraint": [
-            "medicine cat",
-            "medicine cat apprentice"
+            "healer",
+            "healer apprentice"
         ],  
         "random_status_constraint": [
             "kitten"
@@ -832,8 +832,8 @@
             "Is checking up on the warriors"
         ],
         "main_status_constraint": [
-            "medicine cat",
-            "medicine cat apprentice"
+            "healer",
+            "healer apprentice"
         ],
         "random_status_constraint": [
             "warrior"
@@ -866,7 +866,7 @@
         "main_status_constraint": [
             "apprentice",
             "mediator apprentice",
-            "medicine cat apprentice"
+            "healer apprentice"
         ]
     },
     {
@@ -876,7 +876,7 @@
         ],
         "main_status_constraint": [
             "apprentice",
-            "medicine cat apprentice",
+            "healer apprentice",
             "mediator apprentice"
         ],
         "random_status_constraint":[
@@ -901,7 +901,7 @@
         "main_status_constraint": [
             "apprentice",
             "mediator apprentice",
-            "medicine cat apprentice"
+            "healer apprentice"
         ],
         "relationship_constraint":[
             "app/mentor"
@@ -914,7 +914,7 @@
         ],
         "main_status_constraint": [
             "apprentice",
-            "medicine cat apprentice",
+            "healer apprentice",
             "mediator apprentice"
         ],
         "random_status_constraint": [
@@ -933,7 +933,7 @@
         ],
         "main_status_constraint": [
             "apprentice",
-            "medicine cat apprentice",
+            "healer apprentice",
             "mediator apprentice"
         ],
         "random_status_constraint": [
@@ -946,28 +946,28 @@
     {
         "id": "apprentice_alive_med_cat",
         "thoughts": [
-            "Is at the medicine cat den after a small injury"
+            "Is at the healer den after a small injury"
         ],
         "main_status_constraint": [
             "apprentice",
             "mediator apprentice"
         ],
         "random_status_constraint": [
-            "medicine cat"
+            "healer"
         ]
     },
     {
         "id": "apprentice_alive_med_cat_app",
         "thoughts": [
-            "Wants to visit r_c at the medicine cat den",
-            "Is speaking with r_c about what being a medicine cat apprentice is like"
+            "Wants to visit r_c at the healer den",
+            "Is speaking with r_c about what being a healer apprentice is like"
         ],
         "main_status_constraint": [
             "apprentice",
             "mediator apprentice"
         ],
         "random_status_constraint": [
-            "medicine cat apprentice"
+            "healer apprentice"
         ],
         "random_living_status": [
             "living"
@@ -987,7 +987,7 @@
         ],
         "main_status_constraint": [
             "apprentice",
-            "medicine cat apprentice",
+            "healer apprentice",
             "mediator apprentice"
         ],
         "random_status_constraint": [
@@ -1005,7 +1005,7 @@
         ],
         "main_status_constraint": [
             "apprentice",
-            "medicine cat apprentice",
+            "healer apprentice",
             "mediator apprentice"
         ],
         "random_status_constraint": [
@@ -1022,7 +1022,7 @@
         ],
         "main_status_constraint": [
             "apprentice",
-            "medicine cat apprentice",
+            "healer apprentice",
             "mediator apprentice"
         ],
         "random_status_constraint": [
@@ -1043,8 +1043,8 @@
             "mediator apprentice"
         ],
         "random_status_constraint": [
-            "medicine cat",
-            "medicine cat apprentice"
+            "healer",
+            "healer apprentice"
         ],
         "random_living_status": [
             "starclan"
@@ -1058,11 +1058,11 @@
         "main_status_constraint": [
             "apprentice",
             "mediator apprentice",
-            "medicine cat apprentice"
+            "healer apprentice"
         ],
         "random_status_constraint": [
             "apprentice",
-            "medicine cat apprentice",
+            "healer apprentice",
             "mediator apprentice"
         ],
         "main_age_constraint": [
@@ -1093,7 +1093,7 @@
         "main_status_constraint": [
             "apprentice",
             "mediator apprentice",
-            "medicine cat apprentice"
+            "healer apprentice"
         ],
         "random_status_constraint": [
             "kitten"
@@ -1114,7 +1114,7 @@
         "main_status_constraint": [
             "apprentice",
             "mediator apprentice",
-            "medicine cat apprentice"
+            "healer apprentice"
         ],
         "main_backstory_constraint": ["rogue1", "rogue2", "rogue3", "refugee4", "tragedy_survivor2", "guided2"]
     },
@@ -1127,7 +1127,7 @@
         "main_status_constraint": [
             "apprentice",
             "mediator apprentice",
-            "medicine cat apprentice"
+            "healer apprentice"
         ],
         "main_backstory_constraint": ["rogue1", "rogue2", "rogue3", "refugee4", "tragedy_survivor2", "guided2"],
         "relationship_constraint": [
@@ -1147,7 +1147,7 @@
         "main_status_constraint": [
             "apprentice",
             "mediator apprentice",
-            "medicine cat apprentice"
+            "healer apprentice"
         ],
         "main_backstory_constraint": ["rogue1", "rogue2", "rogue3", "refugee4", "tragedy_survivor2", "guided2"],
         "random_status_constraint": [
@@ -1167,7 +1167,7 @@
         "main_status_constraint": [
             "apprentice",
             "mediator apprentice",
-            "medicine cat apprentice"
+            "healer apprentice"
         ],
         "main_trait_constraint": [
             "troublesome"
@@ -1182,7 +1182,7 @@
         "main_status_constraint": [
             "apprentice",
             "mediator apprentice",
-            "medicine cat apprentice"
+            "healer apprentice"
         ],
         "main_trait_constraint": [
             "vengeful"
@@ -1203,7 +1203,7 @@
         "main_status_constraint": [
             "apprentice",
             "mediator apprentice",
-            "medicine cat apprentice"
+            "healer apprentice"
         ],
         "main_trait_constraint": [
             "wise"
@@ -1217,7 +1217,7 @@
         "main_status_constraint": [
             "apprentice",
             "mediator apprentice",
-            "medicine cat apprentice"
+            "healer apprentice"
         ],
         "main_trait_constraint": [
             "shameless"
@@ -1233,7 +1233,7 @@
         "main_status_constraint": [
             "apprentice",
             "mediator apprentice",
-            "medicine cat apprentice"
+            "healer apprentice"
         ],
         "main_trait_constraint": [
             "sneaky"
@@ -1249,7 +1249,7 @@
         "main_status_constraint": [
             "apprentice",
             "mediator apprentice",
-            "medicine cat apprentice"
+            "healer apprentice"
         ],
         "main_trait_constraint": [
             "strange"
@@ -1264,7 +1264,7 @@
         "main_status_constraint": [
             "apprentice",
             "mediator apprentice",
-            "medicine cat apprentice"
+            "healer apprentice"
         ],
         "main_trait_constraint": [
             "strict"
@@ -1280,7 +1280,7 @@
         "main_status_constraint": [
             "apprentice",
             "mediator apprentice",
-            "medicine cat apprentice"
+            "healer apprentice"
         ],
         "main_trait_constraint": [
             "playful"
@@ -1295,7 +1295,7 @@
         "main_status_constraint": [
             "apprentice",
             "mediator apprentice",
-            "medicine cat apprentice"
+            "healer apprentice"
         ],
         "main_trait_constraint": [
             "responsible"
@@ -1309,7 +1309,7 @@
         "main_status_constraint": [
             "apprentice",
             "mediator apprentice",
-            "medicine cat apprentice"
+            "healer apprentice"
         ],
         "main_trait_constraint": [
             "righteous"
@@ -1325,7 +1325,7 @@
         "main_status_constraint": [
             "apprentice",
             "mediator apprentice",
-            "medicine cat apprentice"
+            "healer apprentice"
         ],
         "main_trait_constraint": [
             "lonesome"
@@ -1339,14 +1339,14 @@
         "main_status_constraint": [
             "apprentice",
             "mediator apprentice",
-            "medicine cat apprentice"
+            "healer apprentice"
         ],
         "main_trait_constraint": [
             "loving"
         ],
         "random_status_constraint":[
             "apprentice",
-            "medicine cat apprentice",
+            "healer apprentice",
             "mediator apprentice"
         ]
     },
@@ -1359,7 +1359,7 @@
         "main_status_constraint": [
             "apprentice",
             "mediator apprentice",
-            "medicine cat apprentice"
+            "healer apprentice"
         ],
         "main_trait_constraint": [
             "loyal"
@@ -1377,7 +1377,7 @@
         "main_status_constraint": [
             "apprentice",
             "mediator apprentice",
-            "medicine cat apprentice"
+            "healer apprentice"
         ],
         "main_trait_constraint": [
             "nervous"
@@ -1393,7 +1393,7 @@
         "main_status_constraint": [
             "apprentice",
             "mediator apprentice",
-            "medicine cat apprentice"
+            "healer apprentice"
         ],
         "main_trait_constraint": [
             "bold"
@@ -1407,11 +1407,11 @@
         "main_status_constraint": [
             "apprentice",
             "mediator apprentice",
-            "medicine cat apprentice"
+            "healer apprentice"
         ],
         "random_status_constraint":[
             "apprentice",
-            "medicine cat apprentice",
+            "healer apprentice",
             "mediator apprentice"
         ],
         "main_trait_constraint": [
@@ -1426,7 +1426,7 @@
         "main_status_constraint": [
             "apprentice",
             "mediator apprentice",
-            "medicine cat apprentice"
+            "healer apprentice"
         ],
         "main_trait_constraint": [
             "careful"
@@ -1442,12 +1442,12 @@
         "main_status_constraint": [
             "apprentice",
             "mediator apprentice",
-            "medicine cat apprentice"
+            "healer apprentice"
         ],
         "random_status_constraint": [
             "apprentice",
             "mediator apprentice",
-            "medicine cat apprentice"
+            "healer apprentice"
         ],
         "main_trait_constraint": [
             "charismatic"
@@ -1461,12 +1461,12 @@
         "main_status_constraint": [
             "apprentice",
             "mediator apprentice",
-            "medicine cat apprentice"
+            "healer apprentice"
         ],
         "random_status_constraint": [
             "apprentice",
             "mediator apprentice",
-            "medicine cat apprentice"
+            "healer apprentice"
         ],
         "main_trait_constraint": [
             "childish"
@@ -1497,7 +1497,7 @@
         "main_status_constraint": [
             "apprentice",
             "mediator apprentice",
-            "medicine cat apprentice"
+            "healer apprentice"
         ],
         "random_status_constraint": [
             "apprentice"
@@ -1516,7 +1516,7 @@
         "main_status_constraint": [
             "apprentice",
             "mediator apprentice",
-            "medicine cat apprentice"
+            "healer apprentice"
         ],
         "main_trait_constraint": [
             "daring"
@@ -1532,7 +1532,7 @@
         "main_status_constraint": [
             "apprentice",
             "mediator apprentice",
-            "medicine cat apprentice"
+            "healer apprentice"
         ],
         "main_trait_constraint": [
             "faithful"
@@ -1551,7 +1551,7 @@
         "main_status_constraint": [
             "apprentice",
             "mediator apprentice",
-            "medicine cat apprentice"
+            "healer apprentice"
         ],
         "main_trait_constraint": [
             "insecure"
@@ -1564,7 +1564,7 @@
         ],
         "main_status_constraint": [
             "mediator apprentice",
-            "medicine cat apprentice"
+            "healer apprentice"
         ],
         "main_trait_constraint": [
             "insecure"
@@ -1578,7 +1578,7 @@
         ],
         "main_status_constraint": [
             "apprentice",
-            "medicine cat apprentice"
+            "healer apprentice"
         ],
         "main_trait_constraint": [
             "adventurous"
@@ -1599,7 +1599,7 @@
         "main_status_constraint": [
             "apprentice",
             "mediator apprentice",
-            "medicine cat apprentice"
+            "healer apprentice"
         ],
         "main_trait_constraint": [
             "ambitious"
@@ -1614,7 +1614,7 @@
         "main_status_constraint": [
             "apprentice",
             "mediator apprentice",
-            "medicine cat apprentice"
+            "healer apprentice"
         ],
         "main_trait_constraint": [
             "bloodthirsty"
@@ -1722,7 +1722,7 @@
         ],
         "random_status_constraint": [
             "apprentice",
-            "medicine cat apprentice",
+            "healer apprentice",
             "mediator apprentice"
         ]
     },
@@ -1784,7 +1784,7 @@
         ],
         "random_status_constraint": [
             "apprentice",
-            "medicine cat apprentice",
+            "healer apprentice",
             "mediator apprentice"
         ]
     },
@@ -1856,7 +1856,7 @@
         ],
         "random_status_constraint": [
             "apprentice",
-            "medicine cat apprentice",
+            "healer apprentice",
             "mediator apprentice"
         ]
     },
@@ -1954,8 +1954,8 @@
             "adolescent"
         ],
         "random_status_constraint": [
-            "medicine cat apprentice",
-            "medicine cat"
+            "healer apprentice",
+            "healer"
         ]
     },
     {

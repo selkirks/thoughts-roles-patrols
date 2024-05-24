@@ -968,7 +968,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "The patrol launches into battle, but r_c is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping r_c back to the medicine cat den.",
+                "text": "The patrol launches into battle, but r_c is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping r_c back to the healer den.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1104,7 +1104,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "The patrol launches into battle, but r_c is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping r_c back to the medicine cat den.",
+                "text": "The patrol launches into battle, but r_c is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping r_c back to the healer den.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1546,7 +1546,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "The patrol fans out, some cats climbing, some staying on the ground. The hunt comes to an abrupt end, however, when r_c yowls in fear as {PRONOUN/r_c/subject} {VERB/r_c/plummet/plummets} from the branches and land heavily on the ground. {PRONOUN/r_c/poss/CAP} Clanmates help {PRONOUN/r_c/object} home and settle {PRONOUN/r_c/object} into the medicine cat's den, guilt and regret prickling at them for pursuing such a foolhardy hunt.",
+                "text": "The patrol fans out, some cats climbing, some staying on the ground. The hunt comes to an abrupt end, however, when r_c yowls in fear as {PRONOUN/r_c/subject} {VERB/r_c/plummet/plummets} from the branches and land heavily on the ground. {PRONOUN/r_c/poss/CAP} Clanmates help {PRONOUN/r_c/object} home and settle {PRONOUN/r_c/object} into the healer's den, guilt and regret prickling at them for pursuing such a foolhardy hunt.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1985,7 +1985,7 @@
                 }
             },
             {
-                "text": "Who cares about vultures or buzzards? The Clan needs fresh-kill! The buzzard does, and gives s_c a nasty bite to remember them by, and the medicine cat gets to tell them the difference between common buzzards and vultures.",
+                "text": "Who cares about vultures or buzzards? The Clan needs fresh-kill! The buzzard does, and gives s_c a nasty bite to remember them by, and the healer gets to tell them the difference between common buzzards and vultures.",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": ["childish", "playful", "nervous", "troublesome", "insecure"],

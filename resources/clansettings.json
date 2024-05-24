@@ -41,8 +41,8 @@
             false
         ],
         "random med cat": [
-            "Allow medicine cats to be randomly selected on patrol",
-            "Medicine cats can be selected with the patrol buttons +1, +3,+6.",
+            "Allow healers to be randomly selected on patrol",
+            "Healers can be selected with the patrol buttons +1, +3,+6.",
             true
         ],
         "fading": [
@@ -183,7 +183,7 @@
         ],
         "herb gathering":[
             "Assisting with Herb Gathering",
-            "The Clan will focus on herb gathering, each medicine cat and medicine cat apprentice will gather additional herbs on each moonskip due to extra help from the warriors.",
+            "The Clan will focus on herb gathering, each healer and healer apprentice will gather additional herbs on each moonskip due to extra help from the warriors.",
             false,
             "herb_focus",
             "#herb_focus_button"

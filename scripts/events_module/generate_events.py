@@ -200,7 +200,7 @@ class GenerateEvents:
             warrior_adjacent_ranks.extend(["deputy", "apprentice", "leader"])
             excluded_from_general.extend(["kitten", "leader", "newborn"])
 
-        if cat_type in ["medicine cat", "medicine cat apprentice"]:
+        if cat_type in ["healer", "healer apprentice"]:
             cat_type = "medicine"
         elif cat_type in ["mediator", "mediator apprentice"]:
             cat_type = "mediator"
@@ -349,9 +349,9 @@ class GenerateEvents:
                     continue
 
             # check meddie tags
-            if "medicine_cat" in event.tags and cat.status != "medicine cat":
+            if "medicine_cat" in event.tags and cat.status != "healer":
                 continue
-            elif "medicine_cat_app" in event.tags and cat.status != "medicine cat apprentice":
+            elif "medicine_cat_app" in event.tags and cat.status != "healer apprentice":
                 continue
 
             # other Clan related checks
@@ -390,9 +390,9 @@ class GenerateEvents:
                     continue
                 if "other_cat_dep" in event.tags and other_cat.status != "deputy":
                     continue
-                if "other_cat_med" in event.tags and other_cat.status != "medicine cat":
+                if "other_cat_med" in event.tags and other_cat.status != "healer":
                     continue
-                if "other_cat_med_app" in event.tags and other_cat.status != "medicine cat apprentice":
+                if "other_cat_med_app" in event.tags and other_cat.status != "healer apprentice":
                     continue
                 if "other_cat_warrior" in event.tags and other_cat.status != "warrior":
                     continue
@@ -727,7 +727,7 @@ Following tags are used for new cat events:
 "parent" < this litter or kit also comes with a parent (this does not include adoptive parents from within the clan)
 "m_c" < the event text includes the main cat, not just the new cat
 "other_cat" < the event text includes the other cat, not just the new cat and main cat
-"new_warrior", "new_apprentice", "new_medicine cat apprentice", "new_medicine cat" < make the new cat start with the tagged for status
+"new_warrior", "new_apprentice", "new_healer apprentice", "new_healer" < make the new cat start with the tagged for status
 "injured" < tag along with a second tag that's the name of the injury you want the new_cat to have
 "major_injury" < tag to give the new cat a random major-severity injury
 

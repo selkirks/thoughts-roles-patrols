@@ -188,8 +188,8 @@
 			"m_c drops into the medicine den to ask r_c if {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} eaten yet."
 		],
 		"random_status_constraint": [
-			"medicine cat",
-			"medicine cat apprentice"
+			"healer",
+			"healer apprentice"
 		],
 		"reaction_random_cat": {
 			"comfortable": "increase",

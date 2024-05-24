@@ -100,19 +100,19 @@ class SingleInteractionCatConstraints(unittest.TestCase):
         warrior = Cat()
         warrior.status = "warrior"
         medicine = Cat()
-        medicine.status = "medicine cat"
+        medicine.status = "healer"
 
         # when
         warrior_to_all = Single_Interaction("test")
         warrior_to_all.main_status_constraint = ["warrior"]
-        warrior_to_all.random_status_constraint = ["warrior", "medicine cat"]
+        warrior_to_all.random_status_constraint = ["warrior", "healer"]
 
         warrior_to_warrior = Single_Interaction("test")
         warrior_to_warrior.main_status_constraint = ["warrior"]
         warrior_to_warrior.random_status_constraint = ["warrior"]
 
         medicine_to_warrior = Single_Interaction("test")
-        medicine_to_warrior.main_status_constraint = ["medicine cat"]
+        medicine_to_warrior.main_status_constraint = ["healer"]
         medicine_to_warrior.random_status_constraint = ["warrior"]
 
         # then

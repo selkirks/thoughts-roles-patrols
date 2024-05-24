@@ -173,7 +173,7 @@ class DisasterEvents():
 
         # removing events that mention ranks if those ranks are not currently filled in the clan
         for event in text_list:
-            if (event.find('med_name') == -1 or event.find('medicine cat') == -1) and not med_exists:
+            if (event.find('med_name') == -1 or event.find('healer') == -1) and not med_exists:
                 text_list.remove(event)
             if (event.find('dep_name') == -1 or event.find('deputy') == -1) and not dep_exists:
                 text_list.remove(event)

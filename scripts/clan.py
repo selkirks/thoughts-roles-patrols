@@ -106,7 +106,7 @@ class Clan():
         
         self.med_cat_number = len(
             self.med_cat_list
-        )  # Must do this after the medicine cat is added to the list.
+        )  # Must do this after the healer is added to the list.
         self.herbs = {}
         self.age = 0
         self.current_season = 'Newleaf'
@@ -181,8 +181,8 @@ class Clan():
         if self.medicine_cat is not None:
             self.clan_cats.append(self.medicine_cat.ID)
             self.med_cat_list.append(self.medicine_cat.ID)
-            if self.medicine_cat.status != 'medicine cat':
-                Cat.all_cats[self.medicine_cat.ID].status_change('medicine cat')
+            if self.medicine_cat.status != 'healer':
+                Cat.all_cats[self.medicine_cat.ID].status_change('healer')
     def create_clan(self):
         """
         This function is only called once a new clan is
@@ -190,8 +190,8 @@ class Clan():
         the program starts
         """
 
-        self.instructor = Cat(status=choice(["apprentice", "mediator apprentice", "medicine cat apprentice", "warrior",
-                                             "medicine cat", "leader", "mediator", "deputy", "elder"]),
+        self.instructor = Cat(status=choice(["apprentice", "mediator apprentice", "healer apprentice", "warrior",
+                                             "healer", "leader", "mediator", "deputy", "elder"]),
                               )
         self.instructor.dead = True
         self.instructor.dead_for = randint(20, 200)
@@ -378,8 +378,8 @@ class Clan():
         TODO: DOCS
         """
         if medicine_cat:
-            if medicine_cat.status != 'medicine cat':
-                Cat.all_cats[medicine_cat.ID].status_change('medicine cat')
+            if medicine_cat.status != 'healer':
+                Cat.all_cats[medicine_cat.ID].status_change('healer')
             if medicine_cat.ID not in self.med_cat_list:
                 self.med_cat_list.append(medicine_cat.ID)
             medicine_cat = self.med_cat_list[0]

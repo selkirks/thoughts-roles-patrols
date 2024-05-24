@@ -10,7 +10,7 @@
         "max_cats": 6,
         "min_max_status": {
             "apprentice": [-1, -1],
-            "medicine cat": [1, 6],
+            "healer": [1, 6],
             "healer cats": [1, 6],
             "normal adult": [-1, -1]
         },
@@ -140,11 +140,11 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
-            "medicine cat": [1, 6],
+            "healer": [1, 6],
             "healer cats": [1, 6]
         },
         "weight": 20,
-        "intro_text": "As the medicine cats' patrol pads out into c_n territory, r_c tells p_l about the dream {PRONOUN/r_c/subject} had last night, and what the StarClan vision could mean for c_n.",
+        "intro_text": "As the healers' patrol pads out into c_n territory, r_c tells p_l about the dream {PRONOUN/r_c/subject} had last night, and what the StarClan vision could mean for c_n.",
         "decline_text": "The cats don't talk about the vision, mouths too full of herbs.",
         "chance_of_success": 40,
         "success_outcomes": [
@@ -171,7 +171,7 @@
                 ]
             },
             {
-                "text": "p_l takes r_c aside, giving {PRONOUN/r_c/object} the full benefits of p_l's experience as they discuss r_c's vision. As a medicine cat, {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} take the responsibility lightly, and both of them work together to divine the vision's meaning.",
+                "text": "p_l takes r_c aside, giving {PRONOUN/r_c/object} the full benefits of p_l's experience as they discuss r_c's vision. As a healer, {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} take the responsibility lightly, and both of them work together to divine the vision's meaning.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["random_herbs"],
@@ -193,7 +193,7 @@
                 ]
             },
             {
-                "text": "s_c chooses to pad pelt-to-pelt with r_c, the spiritual medicine cat gently guiding the conversation. r_c feels deeply privileged, and far more at peace, after confiding in {PRONOUN/s_c/object}, and {PRONOUN/r_c/subject} {VERB/r_c/know/knows} that c_n is in safe paws.",
+                "text": "s_c chooses to pad pelt-to-pelt with r_c, the spiritual healer gently guiding the conversation. r_c feels deeply privileged, and far more at peace, after confiding in {PRONOUN/s_c/object}, and {PRONOUN/r_c/subject} {VERB/r_c/know/knows} that c_n is in safe paws.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["random_herbs"],
@@ -273,11 +273,11 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
-            "medicine cat": [1, 6],
+            "healer": [1, 6],
             "healer cats": [1, 6]
         },
         "weight": 20,
-        "intro_text": "As the medicine cats' patrol pads out into c_n territory, r_c tells p_l about the dream {PRONOUN/r_c/subject} had last night, and what the StarClan vision could mean for c_n.",
+        "intro_text": "As the healers' patrol pads out into c_n territory, r_c tells p_l about the dream {PRONOUN/r_c/subject} had last night, and what the StarClan vision could mean for c_n.",
         "decline_text": "The cats don't talk about the vision, mouths too full of herbs.",
         "chance_of_success": 40,
         "success_outcomes": [
@@ -304,7 +304,7 @@
                 ]
             },
             {
-                "text": "p_l takes r_c aside, giving {PRONOUN/r_c/object} the full benefits of p_l's seniority and experience as they discuss r_c's vision. As a medicine cat, {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} take the responsibility lightly, and both of them work together to divine the vision's meaning.",
+                "text": "p_l takes r_c aside, giving {PRONOUN/r_c/object} the full benefits of p_l's seniority and experience as they discuss r_c's vision. As a healer, {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} take the responsibility lightly, and both of them work together to divine the vision's meaning.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["random_herbs"],
@@ -405,7 +405,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "medicine cat": [1, 6],
+            "healer": [1, 6],
             "healer cats": [1, 6]
         },
         "weight": 20,
@@ -447,7 +447,7 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
-            "medicine cat apprentice": [1, 6],
+            "healer apprentice": [1, 6],
             "healer cats": [1, 6]
         },
         "weight": 20,
@@ -593,7 +593,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "medicine cat": [1, 6],
+            "healer": [1, 6],
             "healer cats": [1, 6],
             "all apprentices": [-1, -1]
         },
@@ -771,8 +771,8 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "medicine cat": [1, 6],
-            "medicine cat apprentice": [1, 6],
+            "healer": [1, 6],
+            "healer apprentice": [1, 6],
             "healer cats": [1, 6]
         },
         "weight": 20,
@@ -832,8 +832,8 @@
         "max_cats": 6,
         "min_max_status": {
             "apprentice": [-1, -1],
-            "medicine cat": [1, 6],
-            "medicine cat apprentice": [1, 6],
+            "healer": [1, 6],
+            "healer apprentice": [1, 6],
             "healer cats": [1, 6],
             "normal adult": [-1, -1]
         },
@@ -947,7 +947,7 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "medicine cat": [1, 6],
+            "healer": [1, 6],
             "healer cats": [1, 6],
             "all apprentices": [-1, -1],
             "normal adult": [1, 6]
@@ -1031,7 +1031,7 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "medicine cat": [1, 6],
+            "healer": [1, 6],
             "healer cats": [1, 6],
             "all apprentices": [-1, -1],
             "normal adult": [1, 6]
@@ -1101,7 +1101,7 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "medicine cat": [1, 6],
+            "healer": [1, 6],
             "healer cats": [1, 6],
             "all apprentices": [-1, -1],
             "normal adult": [1, 6]
@@ -1155,12 +1155,12 @@
         "max_cats": 6,
         "min_max_status": {
             "apprentice": [-1, -1],
-            "medicine cat": [1, 6],
+            "healer": [1, 6],
             "healer cats": [1, 6],
             "normal adult": [-1, -1]
         },
         "weight": 20,
-        "intro_text": "The gaggle of medicine cats strolls through c_n's territory, chatting amicably amongst themselves. It's a rare opportunity, for all of them to be out like this together, and each cat plans to make the most of it.",
+        "intro_text": "The gaggle of healers strolls through c_n's territory, chatting amicably amongst themselves. It's a rare opportunity, for all of them to be out like this together, and each cat plans to make the most of it.",
         "decline_text": "Before they get very far, one of their Clanmates catches up to inform them of a small emergency back at camp that needs their attention. Oh well, maybe they'll get the chance again another day.",
         "chance_of_success": 20,
         "success_outcomes": [
@@ -1213,7 +1213,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The medicine cats are too caught up in chatting with one another - they don't collect a single leaf.",
+                "text": "The healers are too caught up in chatting with one another - they don't collect a single leaf.",
                 "exp": 0,
                 "weight": 20
             }
@@ -1230,12 +1230,12 @@
         "max_cats": 6,
         "min_max_status": {
             "apprentice": [-1, -1],
-            "medicine cat": [1, 6],
+            "healer": [1, 6],
             "healer cats": [1, 6],
             "normal adult": [-1, -1]
         },
         "weight": 20,
-        "intro_text": "The gaggle of medicine cats strolls through c_n's territory, chatting amicably amongst themselves. It's a rare opportunity, for all of them to be out like this together, and though the weather is poor and not really ideal for herb-gathering, each cat plans to make the most of it.",
+        "intro_text": "The gaggle of healers strolls through c_n's territory, chatting amicably amongst themselves. It's a rare opportunity, for all of them to be out like this together, and though the weather is poor and not really ideal for herb-gathering, each cat plans to make the most of it.",
         "decline_text": "Before they get very far, it starts pouring rain, and none of the cats feel like getting soaked today. At least they can spend time together organizing the herb stores instead!",
         "chance_of_success": 30,
         "success_outcomes": [
@@ -1305,13 +1305,13 @@
         "max_cats": 3,
         "min_max_status": {
             "apprentice": [-1, -1],
-            "medicine cat apprentice": [1, 6],
+            "healer apprentice": [1, 6],
             "healer cats": [1, 6],
             "all apprentices": [3, 3],
             "normal adult": [-1, -1]
         },
         "weight": 20,
-        "intro_text": "The trio of apprentices strolls through c_n's territory, chatting amicably amongst themselves. The senior medicine cats are all busy back at camp, so the young cats get the chance to be out on their own today, which has everyone excited!",
+        "intro_text": "The trio of apprentices strolls through c_n's territory, chatting amicably amongst themselves. The senior healers are all busy back at camp, so the young cats get the chance to be out on their own today, which has everyone excited!",
         "decline_text": "Before they get very far, one of their Clanmates catches up to inform them that they're wanted back at camp. Oh well, maybe they'll get the chance again another day.",
         "chance_of_success": 30,
         "success_outcomes": [
@@ -1365,13 +1365,13 @@
         "max_cats": 4,
         "min_max_status": {
             "apprentice": [-1, -1],
-            "medicine cat apprentice": [1, 6],
+            "healer apprentice": [1, 6],
             "healer cats": [1, 6],
             "all apprentices": [4, 4],
             "normal adult": [-1, -1]
         },
         "weight": 20,
-        "intro_text": "The quartet of apprentices strolls through c_n's territory, chatting amicably amongst themselves. The senior medicine cats are all busy back at camp, so the young cats get the chance to be out on their own today, which has everyone excited!",
+        "intro_text": "The quartet of apprentices strolls through c_n's territory, chatting amicably amongst themselves. The senior healers are all busy back at camp, so the young cats get the chance to be out on their own today, which has everyone excited!",
         "decline_text": "Before they get very far, one of their Clanmates catches up to inform them that they're wanted back at camp. Oh well, maybe they'll get the chance again another day.",
         "chance_of_success": 50,
         "success_outcomes": [
@@ -1425,13 +1425,13 @@
         "max_cats": 5,
         "min_max_status": {
             "apprentice": [-1, -1],
-            "medicine cat apprentice": [1, 6],
+            "healer apprentice": [1, 6],
             "healer cats": [1, 6],
             "all apprentices": [5, 5],
             "normal adult": [-1, -1]
         },
         "weight": 20,
-        "intro_text": "The quintet of apprentices strolls through c_n's territory, chatting amicably amongst themselves. The senior medicine cats are all busy back at camp, so the young cats get the chance to be out on their own today, which has everyone excited!",
+        "intro_text": "The quintet of apprentices strolls through c_n's territory, chatting amicably amongst themselves. The senior healers are all busy back at camp, so the young cats get the chance to be out on their own today, which has everyone excited!",
         "decline_text": "Before they get very far, one of their Clanmates catches up to inform them that they're wanted back at camp. Oh well, maybe they'll get the chance again another day.",
         "chance_of_success": 50,
         "success_outcomes": [
@@ -1485,12 +1485,12 @@
         "max_cats": 6,
         "min_max_status": {
             "apprentice": [-1, -1],
-            "medicine cat apprentice": [1, 6],
+            "healer apprentice": [1, 6],
             "healer cats": [1, 6],
             "normal adult": [-1, -1]
         },
         "weight": 20,
-        "intro_text": "The gaggle of apprentices strolls through c_n's territory, chatting amicably amongst themselves. The senior medicine cats are all busy back at camp, so the young cats get the chance to be out on their own today, which has everyone excited!",
+        "intro_text": "The gaggle of apprentices strolls through c_n's territory, chatting amicably amongst themselves. The senior healers are all busy back at camp, so the young cats get the chance to be out on their own today, which has everyone excited!",
         "decline_text": "Before they get very far, one of their Clanmates catches up to inform them that they're wanted back at camp. Oh well, maybe they'll get the chance again another day.",
         "chance_of_success": 50,
         "success_outcomes": [
@@ -1543,13 +1543,13 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "medicine cat apprentice": [1, 6],
+            "healer apprentice": [1, 6],
             "healer cats": [1, 6],
             "normal adult": [1, 6]
         },
         "weight": 20,
         "intro_text": "p_l eyes the warrior chosen to escort {PRONOUN/p_l/object} to fetch herbs, feeling a little bit giddy. Apprentices getting to boss around warriors is something that almost never happens, and p_l is going to make sure {PRONOUN/p_l/subject} {VERB/p_l/make/makes} the most of it.",
-        "decline_text": "Just as they're about to leave, r_c is called off to help on a hunting patrol instead. p_l lashes {PRONOUN/p_l/poss} tail in frustration, but doesn't protest, and heads back to the medicine cat's den alone.",
+        "decline_text": "Just as they're about to leave, r_c is called off to help on a hunting patrol instead. p_l lashes {PRONOUN/p_l/poss} tail in frustration, but doesn't protest, and heads back to the healer's den alone.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
@@ -1610,13 +1610,13 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "medicine cat apprentice": [1, 6],
+            "healer apprentice": [1, 6],
             "healer cats": [1, 6],
             "normal adult": [1, 6]
         },
         "weight": 20,
         "intro_text": "r_c eyes p_l as the younger cat approaches, ears slightly drawn back. The prospect of being bossed around by an apprentice is downright humiliating, and the warrior is <i>not</i> looking forward to this experience.",
-        "decline_text": "Just as they're about to leave, r_c is called off to help on a hunting patrol instead, and eagerly rushes off, not sparing a second glance back at the young medicine cat.",
+        "decline_text": "Just as they're about to leave, r_c is called off to help on a hunting patrol instead, and eagerly rushes off, not sparing a second glance back at the young healer.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
@@ -1651,7 +1651,7 @@
         "max_cats": 2,
         "min_max_status": {
             "apprentice": [1, 6],
-            "medicine cat apprentice": [1, 6],
+            "healer apprentice": [1, 6],
             "healer cats": [1, 6],
             "all apprentices": [2, 2]
         },
@@ -1662,7 +1662,7 @@
         "relationship_constraint": ["siblings", "platonic_20"],
         "success_outcomes": [
             {
-                "text": "p_l and app2 walk with their tails entwined and pelts brushing together, thrilled to be able to patrol together. p_l doesn't regret becoming a medicine cat, but {PRONOUN/p_l/subject} {VERB/p_l/do/does} feel secluded at times, watching app2 train and patrol with everyone. The siblings make the most of their time together, returning home side-by-side with their jaws full of herbs.",
+                "text": "p_l and app2 walk with their tails entwined and pelts brushing together, thrilled to be able to patrol together. p_l doesn't regret becoming a healer, but {PRONOUN/p_l/subject} {VERB/p_l/do/does} feel secluded at times, watching app2 train and patrol with everyone. The siblings make the most of their time together, returning home side-by-side with their jaws full of herbs.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["random_herbs"],
@@ -1750,7 +1750,7 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "medicine cat": [1, 6],
+            "healer": [1, 6],
             "healer cats": [1, 6],
             "normal adult": [1, 6]
         },
@@ -1761,7 +1761,7 @@
         "relationship_constraint": ["siblings", "platonic_20"],
         "success_outcomes": [
             {
-                "text": "p_l and r_c walk with their tails entwined and pelts brushing together, thrilled to be able to patrol together. p_l doesn't regret becoming a medicine cat, but {PRONOUN/p_l/subject} {VERB/p_l/do/does} feel secluded at times, watching r_c train and patrol with everyone. The siblings make the most of their time together, returning home side-by-side with their jaws full of herbs.",
+                "text": "p_l and r_c walk with their tails entwined and pelts brushing together, thrilled to be able to patrol together. p_l doesn't regret becoming a healer, but {PRONOUN/p_l/subject} {VERB/p_l/do/does} feel secluded at times, watching r_c train and patrol with everyone. The siblings make the most of their time together, returning home side-by-side with their jaws full of herbs.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["random_herbs"],
@@ -1866,8 +1866,8 @@
         "max_cats": 2,
         "min_max_status": {
             "apprentice": [1, 6],
-            "medicine cat": [1, 6],
-            "medicine cat apprentice": [1, 6],
+            "healer": [1, 6],
+            "healer apprentice": [1, 6],
             "healer cats": [1, 6],
             "all apprentices": [1, 1]
         },
@@ -1966,8 +1966,8 @@
         "max_cats": 2,
         "min_max_status": {
             "apprentice": [1, 6],
-            "medicine cat": [1, 6],
-            "medicine cat apprentice": [1, 6],
+            "healer": [1, 6],
+            "healer apprentice": [1, 6],
             "healer cats": [1, 6],
             "all apprentices": [1, 1]
         },
@@ -2066,8 +2066,8 @@
         "max_cats": 2,
         "min_max_status": {
             "apprentice": [1, 6],
-            "medicine cat": [1, 6],
-            "medicine cat apprentice": [1, 6],
+            "healer": [1, 6],
+            "healer apprentice": [1, 6],
             "healer cats": [1, 6],
             "all apprentices": [1, 1]
         },
@@ -2166,8 +2166,8 @@
         "max_cats": 2,
         "min_max_status": {
             "apprentice": [1, 6],
-            "medicine cat": [1, 6],
-            "medicine cat apprentice": [1, 6],
+            "healer": [1, 6],
+            "healer apprentice": [1, 6],
             "healer cats": [1, 6],
             "all apprentices": [1, 1]
         },
@@ -2266,8 +2266,8 @@
         "max_cats": 2,
         "min_max_status": {
             "apprentice": [1, 6],
-            "medicine cat": [1, 6],
-            "medicine cat apprentice": [1, 6],
+            "healer": [1, 6],
+            "healer apprentice": [1, 6],
             "healer cats": [1, 6],
             "all apprentices": [1, 1]
         },
@@ -2366,7 +2366,7 @@
         "max_cats": 2,
         "min_max_status": {
             "apprentice": [-1, -1],
-            "medicine cat": [1, 6],
+            "healer": [1, 6],
             "healer cats": [1, 6],
             "all apprentices": [-1, -1],
             "normal adult": [-1, -1]
@@ -2425,7 +2425,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The two medicine cats walk in circles for a while, before realizing that they've completely forgotten where the herb patch is since it's been so long. How embarrassing!",
+                "text": "The two healers walk in circles for a while, before realizing that they've completely forgotten where the herb patch is since it's been so long. How embarrassing!",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -2451,7 +2451,7 @@
         "max_cats": 2,
         "min_max_status": {
             "apprentice": [-1, -1],
-            "medicine cat": [1, 6],
+            "healer": [1, 6],
             "healer cats": [1, 6],
             "all apprentices": [-1, -1],
             "normal adult": [-1, -1]
@@ -2510,7 +2510,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The two medicine cats walk in circles for a while, before realizing that they've completely forgotten where the herb patch is since it's been so long. How embarrassing!",
+                "text": "The two healers walk in circles for a while, before realizing that they've completely forgotten where the herb patch is since it's been so long. How embarrassing!",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -2536,7 +2536,7 @@
         "max_cats": 2,
         "min_max_status": {
             "apprentice": [-1, -1],
-            "medicine cat": [1, 6],
+            "healer": [1, 6],
             "healer cats": [1, 6],
             "all apprentices": [-1, -1],
             "normal adult": [-1, -1]
@@ -2579,7 +2579,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The two medicine cats walk in circles for a while, before realizing that they've completely forgotten where the herb patch is since it's been so long. How embarrassing!",
+                "text": "The two healers walk in circles for a while, before realizing that they've completely forgotten where the herb patch is since it's been so long. How embarrassing!",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -2605,7 +2605,7 @@
         "max_cats": 2,
         "min_max_status": {
             "apprentice": [-1, -1],
-            "medicine cat": [1, 6],
+            "healer": [1, 6],
             "healer cats": [1, 6],
             "all apprentices": [-1, -1],
             "normal adult": [-1, -1]
@@ -2648,7 +2648,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The two medicine cats walk in circles for a while, before realizing that they've completely forgotten where the herb patch is since it's been so long. How embarrassing!",
+                "text": "The two healers walk in circles for a while, before realizing that they've completely forgotten where the herb patch is since it's been so long. How embarrassing!",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -2674,7 +2674,7 @@
         "max_cats": 2,
         "min_max_status": {
             "apprentice": [-1, -1],
-            "medicine cat": [1, 6],
+            "healer": [1, 6],
             "healer cats": [1, 6],
             "all apprentices": [-1, -1],
             "normal adult": [-1, -1]
@@ -2717,7 +2717,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The two medicine cats walk in circles for a while, before realizing that they've completely forgotten where the herb patch is since it's been so long. How embarrassing!",
+                "text": "The two healers walk in circles for a while, before realizing that they've completely forgotten where the herb patch is since it's been so long. How embarrassing!",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -2743,7 +2743,7 @@
         "max_cats": 2,
         "min_max_status": {
             "apprentice": [1, 6],
-            "medicine cat apprentice": [1, 6],
+            "healer apprentice": [1, 6],
             "healer cats": [1, 6],
             "all apprentices": [2, 2]
         },
@@ -2877,7 +2877,7 @@
         "max_cats": 2,
         "min_max_status": {
             "apprentice": [1, 6],
-            "medicine cat apprentice": [1, 6],
+            "healer apprentice": [1, 6],
             "healer cats": [1, 6],
             "all apprentices": [2, 2]
         },
@@ -2918,7 +2918,7 @@
         "max_cats": 2,
         "min_max_status": {
             "apprentice": [-1, -1],
-            "medicine cat": [1, 6],
+            "healer": [1, 6],
             "all apprentices": [-1, -1],
             "normal adult": [-1, -1]
         },
@@ -2986,7 +2986,7 @@
         "max_cats": 2,
         "min_max_status": {
             "apprentice": [-1, -1],
-            "medicine cat": [1, 6],
+            "healer": [1, 6],
             "normal adult": [-1, -1]
         },
         "weight": 20,
@@ -3067,7 +3067,7 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "medicine cat": [1, 6],
+            "healer": [1, 6],
             "healer cats": [1, 6],
             "all apprentices": [-1, -1],
             "normal adult": [1, 6]
@@ -3157,7 +3157,7 @@
     	"max_cats": 6,
     	"min_max_status": {
         	"normal adult": [1, 5],
-	        "medicine cat": [1, 1]
+	        "healer": [1, 1]
     	},
     	"weight": 40,
     	"intro_text": "p_l is out alone in c_n's territory when a shiver runs down {PRONOUN/p_l/poss} spine. {PRONOUN/p_l/subject/CAP} {VERB/p_l/stop/stops}. {PRONOUN/p_l/subject/CAP} slowly {VERB/p_l/turn/turns} {PRONOUN/p_l/poss} head. On the rosemary bush next to {PRONOUN/p_l/object}, the moth lazily stretches its wings, the Twoleg skull on its back grinning.",
@@ -3204,7 +3204,7 @@
         "max_cats": 2,
         "min_max_status": {
             "all apprentices": [-1, -1],
-            "medicine cat": [1, 1],
+            "healer": [1, 1],
             "normal adult": [1, 1]
         },
         "weight": 20,
@@ -3246,7 +3246,7 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "medicine cat": [1, 6]
+            "healer": [1, 6]
         },
         "weight": 20,
         "intro_text": "p_l is hoping to find some herbs growing in defiance of the weather, which is becoming increasingly cold. r_c offered to come along to help search. After some back and forth, they decide to see what's growing among the fields near a Twoleg farm.",

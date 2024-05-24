@@ -1137,7 +1137,7 @@
                 "can_have_stat": ["app"]
             },
             {
-                "text": "The apprentice wanders along obliviously and slips, and tumbling right down into a well-hidden gully. Bruised and sore, app1 has to report to the medicine cat den when they return to camp.",
+                "text": "The apprentice wanders along obliviously and slips, and tumbling right down into a well-hidden gully. Bruised and sore, app1 has to report to the healer den when they return to camp.",
                 "exp": 0,
                 "weight": 10,
                 "art": "gen_train_soggykitty_mad_app",

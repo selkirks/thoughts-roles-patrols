@@ -337,7 +337,7 @@
                 ]
             },
             {
-                "text": "While on the hunt, app1 tumbles right down into a rock pool while {PRONOUN/app1/poss} attention is elsewhere. Bruised and sore, app1 has to report to the medicine cat den when {PRONOUN/app1/subject} {VERB/app1/return/returns} to camp.",
+                "text": "While on the hunt, app1 tumbles right down into a rock pool while {PRONOUN/app1/poss} attention is elsewhere. Bruised and sore, app1 has to report to the healer den when {PRONOUN/app1/subject} {VERB/app1/return/returns} to camp.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -2863,7 +2863,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "The patrol launches into battle, but r_c is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping r_c back to the medicine cat den.",
+                "text": "The patrol launches into battle, but r_c is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping r_c back to the healer den.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -3036,7 +3036,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "The patrol launches into battle, but r_c is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping r_c back to the medicine cat den.",
+                "text": "The patrol launches into battle, but r_c is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping r_c back to the healer den.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -5182,7 +5182,7 @@
                 ]
             },
             {
-                "text": "p_l gives the dolphins a few of their fish and is surprised and grateful when {PRONOUN/p_l/subject} {VERB/p_l/receive/receives} some useful herbs in return for the medicine cat den.",
+                "text": "p_l gives the dolphins a few of their fish and is surprised and grateful when {PRONOUN/p_l/subject} {VERB/p_l/receive/receives} some useful herbs in return for the healer den.",
                 "exp": 5,
                 "weight": 5,
                 "herbs": ["random_herbs"],

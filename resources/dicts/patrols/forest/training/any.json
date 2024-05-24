@@ -1107,7 +1107,7 @@
                 "can_have_stat": ["app"]
             },
             {
-                "text": "The apprentice wanders along obliviously and slips, tumbling right down a well-hidden gully. Bruised and sore, r_c has to report to the medicine cat den when they return to camp.",
+                "text": "The apprentice wanders along obliviously and slips, tumbling right down a well-hidden gully. Bruised and sore, r_c has to report to the healer den when they return to camp.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [

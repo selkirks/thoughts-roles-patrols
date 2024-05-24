@@ -125,7 +125,7 @@ class Patrol():
         for cat in patrol_cats:
             self.patrol_cats.append(cat)
             
-            if cat.status == 'apprentice' or cat.status == 'medicine cat apprentice':
+            if cat.status == 'apprentice' or cat.status == 'healer apprentice':
                 self.patrol_apprentices.append(cat)
             
             self.patrol_status_list.append(cat.status)
@@ -136,13 +136,13 @@ class Patrol():
                 self.patrol_statuses[cat.status] = 1
             
             # Combined patrol_statuses catagories
-            if cat.status in ("medicine cat", "medicine cat apprentice"):
+            if cat.status in ("healer", "healer apprentice"):
                 if "healer cats" in self.patrol_statuses:
                     self.patrol_statuses["healer cats"] += 1
                 else:
                     self.patrol_statuses["healer cats"] = 1
             
-            if cat.status in ("apprentice", "medicine cat apprentice"):
+            if cat.status in ("apprentice", "healer apprentice"):
                 if "all apprentices" in self.patrol_statuses:
                     self.patrol_statuses["all apprentices"] += 1
                 else:
@@ -161,13 +161,13 @@ class Patrol():
 
         # DETERMINE PATROL LEADER
         # sets medcat as leader if they're in the patrol
-        if "medicine cat" in self.patrol_status_list:
-            index = self.patrol_status_list.index("medicine cat")
+        if "healer" in self.patrol_status_list:
+            index = self.patrol_status_list.index("healer")
             self.patrol_leader = self.patrol_cats[index]
-        # If there is no medicine cat, but there is a medicine cat apprentice, set them as the patrol leader.
-        # This prevents warrior from being treated as medicine cats in medicine cat patrols.
-        elif "medicine cat apprentice" in self.patrol_status_list:
-            index = self.patrol_status_list.index("medicine cat apprentice")
+        # If there is no healer, but there is a healer apprentice, set them as the patrol leader.
+        # This prevents warrior from being treated as healers in healer patrols.
+        elif "healer apprentice" in self.patrol_status_list:
+            index = self.patrol_status_list.index("healer apprentice")
             self.patrol_leader = self.patrol_cats[index]
             # then we just make sure that this app will also be app1
             self.patrol_apprentices.remove(self.patrol_leader)
@@ -182,7 +182,7 @@ class Patrol():
         else:
             # Get the oldest cat
             possible_leader = [i for i in self.patrol_cats if i.status not in 
-                               ["medicine cat apprentice", "apprentice"]]
+                               ["healer apprentice", "apprentice"]]
             if possible_leader:
                 # Flip a coin to pick the most experience, or oldest. 
                 if randint(0, 1):
@@ -224,7 +224,7 @@ class Patrol():
 
         possible_patrols = []
         # this next one is needed for Classic specifically
-        patrol_type = "med" if ['medicine cat', 'medicine cat apprentice'] in self.patrol_status_list else patrol_type
+        patrol_type = "med" if ['healer', 'healer apprentice'] in self.patrol_status_list else patrol_type
         patrol_size = len(self.patrol_cats)
         reputation = game.clan.reputation  # reputation with outsiders
         other_clan = self.other_clan
@@ -598,7 +598,7 @@ class Patrol():
 
             #  correct button check
             if patrol_type == "general":
-                if not ("medicine cat" in self.patrol_status_list or "medicine cat apprentice" in self.patrol_status_list) and not set(patrol.types).intersection({"hunting", "border", "training"}):
+                if not ("healer" in self.patrol_status_list or "healer apprentice" in self.patrol_status_list) and not set(patrol.types).intersection({"hunting", "border", "training"}):
                     continue
             else:
                 if 'hunting' not in patrol.types and patrol_type == 'hunting':
@@ -1111,8 +1111,8 @@ This is a good starting point for writing your own patrols.
     "max_cats": 6,
     "min_max_status": {
         "apprentice": [0, 6],
-        "medicine cat apprentice": [0, 6],
-        "medicine cat": [0, 6],
+        "healer apprentice": [0, 6],
+        "healer": [0, 6],
         "deputy": [0, 6]
         "warrior": [0, 6],
         "leader": [0, 6],

@@ -285,13 +285,13 @@
     {
         "id": "healer_deputy_medcat",
         "thoughts": [
-            "Takes a patrol out to gather herbs for the medicine cat"
+            "Takes a patrol out to gather herbs for the healer"
         ],
         "main_skill_constraint": [
             "HEALER,1"
         ],
         "random_status_constraint": [
-            "medicine cat"
+            "healer"
         ]
     },
     {

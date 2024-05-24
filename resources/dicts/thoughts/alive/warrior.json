@@ -139,11 +139,11 @@
     {
         "id": "warrior_gen_medicine_cat",
         "thoughts": [
-            "Plans to visit the medicine cat",
-            "Is helping to escort the medicine cat to gather herbs"
+            "Plans to visit the healer",
+            "Is helping to escort the healer to gather herbs"
         ],
         "random_status_constraint": [
-            "medicine cat"
+            "healer"
         ],
         "random_living_status": [
             "living"
@@ -269,7 +269,7 @@
         "thoughts": [
             "Is getting some looks after speaking out of turn at the last Clan meeting",
             "Spoke out of turn at the last Clan meeting",
-            "Bravely offers to help the medicine cat pick herbs from a dangerous spot",
+            "Bravely offers to help the healer pick herbs from a dangerous spot",
             "Runs out of {PRONOUN/m_c/poss} den into 'battle', only to find that it was just a storm",
             "Prances around with {PRONOUN/m_c/poss} tail up high, ready for anything",
             "Promises the kits {PRONOUN/m_c/subject}'ll protect them when the time comes",
@@ -311,7 +311,7 @@
         "id": "careful_warrior",
         "thoughts": [
             "Is double-checking {PRONOUN/m_c/poss} nest for burrs",
-            "Is getting a small scratch checked out by the medicine cat",
+            "Is getting a small scratch checked out by the healer",
             "Is slowly and methodically grooming {PRONOUN/m_c/self}",
             "Is chiding a younger cat for being so reckless",
             "Is padding back and forth, across the camp",
@@ -483,10 +483,10 @@
     {
         "id": "compassionate_warrior_to_living_med_cat",
         "thoughts": [
-            "Is helping the medicine cat organize herb stores"
+            "Is helping the healer organize herb stores"
         ],
         "random_status_constraint": [
-            "medicine cat"
+            "healer"
         ],
         "main_trait_constraint": [
             "compassionate"
@@ -569,7 +569,7 @@
             "Thanked StarClan for {PRONOUN/m_c/poss} catch out on a hunting patrol today",
             "Prays to StarClan that next season will be a good one",
             "Rolls {PRONOUN/m_c/poss} eyes at the kits laughing about spirits not being real",
-            "Goes to the medicine cat to ask for spiritual advice",
+            "Goes to the healer to ask for spiritual advice",
             "Wonders if StarClan can hear {PRONOUN/m_c/object}",
             "Leaves fresh-kill at the grave of a dead loved one"
         ],
@@ -590,7 +590,7 @@
             "Thinks that {PRONOUN/m_c/subject} could take on a dog solo",
             "Hopes to earn more battle scars to show off",
             "Was recently chastised by the deputy for reckless behavior out on patrol",
-            "Is asking the medicine cat for herbs that may help {PRONOUN/m_c/object} in battle",
+            "Is asking the healer for herbs that may help {PRONOUN/m_c/object} in battle",
             "Is showing off {PRONOUN/m_c/poss} battle moves",
             "Offered to lead a border patrol today",
             "Wishes {PRONOUN/m_c/subject} had more scars",
@@ -669,7 +669,7 @@
         "id": "loving_warrior",
         "thoughts": [
             "Is feeling content with the little things in life",
-            "Is offering any help {PRONOUN/m_c/subject} can to the medicine cat",
+            "Is offering any help {PRONOUN/m_c/subject} can to the healer",
             "Is purring with friends",
             "Is purring loudly",
             "Is purring gently",
@@ -981,13 +981,13 @@
     {
         "id": "thoughtful_warrior",
         "thoughts": [
-            "Offered to fetch herbs for the medicine cat",
+            "Offered to fetch herbs for the healer",
             "Is offering helpful advice to a gloomy Clanmate",
-            "Brought back a much-needed herb to the medicine cat after a hunting patrol",
+            "Brought back a much-needed herb to the healer after a hunting patrol",
             "Prepares the perfect gift for a friend",
             "Notices a Clanmate is tired and offers to take their chores",
             "Gets an injured Clanmate a piece of fresh-kill",
-            "Spends some time helping out the medicine cat today",
+            "Spends some time helping out the healer today",
             "Reassures an apprentice who's nervous to go on patrol"
         ],
         "main_trait_constraint": [
@@ -1008,7 +1008,7 @@
             "Is bored, and looking for trouble to get into",
             "Ate {PRONOUN/m_c/poss} fill and then some from the fresh-kill pile",
             "Is considering bending the rules just this once... again",
-            "Is grumbling as {PRONOUN/m_c/subject} {VERB/m_c/carry/carries} out a task for the medicine cat",
+            "Is grumbling as {PRONOUN/m_c/subject} {VERB/m_c/carry/carries} out a task for the healer",
             "Climbed up a tree and nearly fell out",
             "Ate a mouse while out on patrol",
             "Is talking far too loud, to the annoyance of every cat in camp",
@@ -1123,7 +1123,7 @@
     {
         "id": "recurring shock",
         "thoughts": [
-            "Visits the medicine cat den for thyme",
+            "Visits the healer den for thyme",
 			"Wakes up screaming after a nightmare",
 			"Panics after hearing a noise",
 			"Is seen trembling and looking around nervously",

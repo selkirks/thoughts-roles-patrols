@@ -40,7 +40,7 @@
 
     ],
     "one bad eye": [
-        "Spotting m_c stumbling over something on {PRONOUN/m_c/poss} right side, r_c brings {PRONOUN/m_c/object} to the medicine cat den, where it becomes clear that eye isn't working as normal.",
+        "Spotting m_c stumbling over something on {PRONOUN/m_c/poss} right side, r_c brings {PRONOUN/m_c/object} to the healer den, where it becomes clear that eye isn't working as normal.",
         "m_c has become good at not letting things approaching on {PRONOUN/m_c/poss} bad side startle {PRONOUN/m_c/object}, except it turns out that's not a normal universal experience for a kitten to have."
 
     ],
@@ -65,7 +65,7 @@
 
     ],
     "seizure prone": [
-        "r_c wakes m_c slowly. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'ve/'s} had a seizure, and are in the medicine cat den just while {PRONOUN/m_c/subject} {VERB/m_c/recover/recovers}, r_c explains. It might happen again in the future, and m_c needs to be prepared.",
+        "r_c wakes m_c slowly. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'ve/'s} had a seizure, and are in the healer den just while {PRONOUN/m_c/subject} {VERB/m_c/recover/recovers}, r_c explains. It might happen again in the future, and m_c needs to be prepared.",
         "In the middle of camp, right as {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} about to pounce, m_c falls to the ground and begins shaking, a seizure rolling through {PRONOUN/m_c/poss} little body."
 
     ],
@@ -75,8 +75,8 @@
 
     ],
     "persistent headaches": [
-        "r_c notices with some concern that any time m_c opens {PRONOUN/m_c/poss} eyes, {PRONOUN/m_c/subject} {VERB/m_c/mewl/mewls} incessantly and try to wriggle into the darkest corners of the medicine cat den. r_c suspects {PRONOUN/m_c/subject} may have chronic headaches.",
-        "Rather than go outside in the bright sunlight to play with {PRONOUN/m_c/poss} littermates, m_c prefers to huddle by {PRONOUN/m_c/self} in the dark and quiet of the medicine cat den, {PRONOUN/m_c/poss} head hurting too much to move."
+        "r_c notices with some concern that any time m_c opens {PRONOUN/m_c/poss} eyes, {PRONOUN/m_c/subject} {VERB/m_c/mewl/mewls} incessantly and try to wriggle into the darkest corners of the healer den. r_c suspects {PRONOUN/m_c/subject} may have chronic headaches.",
+        "Rather than go outside in the bright sunlight to play with {PRONOUN/m_c/poss} littermates, m_c prefers to huddle by {PRONOUN/m_c/self} in the dark and quiet of the healer den, {PRONOUN/m_c/poss} head hurting too much to move."
     ],
     "rabbit gait": [
         "m_c has been hopping with a rabbit-like gait. It was cute at first, but by now it's clear that it's not going away.",

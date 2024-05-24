@@ -176,7 +176,7 @@
         "thoughts": [
             "Is wishing {PRONOUN/m_c/subject} could have a mate and kits",
             "Wishes {PRONOUN/m_c/poss} Clanmates could understand {PRONOUN/m_c/poss} struggles",
-            "Wishes there were more medicine cats in the Clan",
+            "Wishes there were more healers in the Clan",
             "Wonders why the warriors won't share prey with {PRONOUN/m_c/object}",
             "Wishes {PRONOUN/m_c/subject} could make friends with someone",
             "Wishes the warriors shared an interest in herbs",
@@ -204,7 +204,7 @@
         "id": "loyal_medicine_cat",
         "thoughts": [
             "Refuses to share gossip at the half-moon meeting",
-            "Refuses to give another Clan's medicine cat some herbs"
+            "Refuses to give another Clan's healer some herbs"
         ],
         "main_trait_constraint": [
             "loyal"
@@ -338,8 +338,8 @@
             "Is sure that {PRONOUN/m_c/subject} saw r_c appear in the forest today... why?"
         ],
         "main_status_constraint": [
-            "medicine cat",
-            "medicine cat apprentice"
+            "healer",
+            "healer apprentice"
         ],
         "random_living_status": [
             "starclan"
@@ -383,7 +383,7 @@
             "Has been hearing the voices of StarClan cats...",
             "Has the foul taste of bitter herbs in {PRONOUN/m_c/poss} mouth",
             "Is wondering if {PRONOUN/m_c/subject} could borrow some catmint from the other Clans",
-            "Is happy that {PRONOUN/m_c/subject} chose life as a medicine cat",
+            "Is happy that {PRONOUN/m_c/subject} chose life as a healer",
             "Is proud of {PRONOUN/m_c/poss} ability to care for {PRONOUN/m_c/poss} Clanmates"
         ]
     },

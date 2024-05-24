@@ -751,7 +751,7 @@
         "reputation": [
             "hostile"
         ],
-        "event_text": "n_c, the medicine cat of o_c, has defected to c_n in the war. {PRONOUN/n_c/subject/CAP} {VERB/n_c/decide/decides} to keep {PRONOUN/n_c/poss} name.",
+        "event_text": "n_c, the healer of o_c, has defected to c_n in the war. {PRONOUN/n_c/subject/CAP} {VERB/n_c/decide/decides} to keep {PRONOUN/n_c/poss} name.",
         "other_clan": true,
         "backstory": [
             "medicine_cat",

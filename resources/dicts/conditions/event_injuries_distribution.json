@@ -9,7 +9,7 @@
         "major": 2,
         "severe": 1
     },
-    "medicine cat apprentice": {
+    "healer apprentice": {
         "minor": 5,
         "major": 2,
         "severe": 1
@@ -24,7 +24,7 @@
         "major": 3,
         "severe": 1
     },
-    "medicine cat": {
+    "healer": {
         "minor": 4,
         "major": 2,
         "severe": 1

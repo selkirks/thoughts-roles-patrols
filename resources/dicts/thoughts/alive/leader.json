@@ -116,7 +116,7 @@
             "Is debating if {PRONOUN/m_c/subject} should declare a war with another Clan",
             "Is wondering if {PRONOUN/m_c/subject} could hold apprentice ceremonies at 4 moons old instead",
             "Is hoping to postpone the retirement of {PRONOUN/m_c/poss} Clanmates",
-            "Is asking the medicine cats to have a stock of deathberries at {PRONOUN/m_c/poss} disposal",
+            "Is asking the healers to have a stock of deathberries at {PRONOUN/m_c/poss} disposal",
             "Doesn't understand StarClan's resentment towards {PRONOUN/m_c/object}",
             "Is thinking about taking kits from another Clan",
             "Encourages warriors to destroy other Clan's herb supplies",
@@ -249,11 +249,11 @@
             "Is instructing r_c to let a sick cat die",
             "Is telling r_c to make a poultice with deathberries",
             "Is asking r_c to fake a sign from StarClan to prepare the Clan for war",
-            "Is pleased with having a like-minded medicine cat like r_c",
+            "Is pleased with having a like-minded healer like r_c",
             "Is listening to r_c explain the pointlessness of treating weak or old cats"
         ],
         "random_status_constraint": [
-            "medicine cat"
+            "healer"
         ],
         "random_living_status":[
             "living"

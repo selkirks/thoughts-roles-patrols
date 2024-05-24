@@ -108,7 +108,7 @@
 			"elder",
 			"warrior",
 			"mediator",
-			"medicine cat",
+			"healer",
 			"deputy",
 			"leader"
 		],
@@ -116,7 +116,7 @@
 			"kitten",
 			"apprentice",
 			"mediator apprentice",
-			"medicine cat apprentice"
+			"healer apprentice"
 		],
 		"reaction_random_cat": {
 			"trust": "increase"
@@ -136,15 +136,15 @@
 			"warrior",
 			"mediator apprentice",
 			"mediator",
-			"medicine cat apprentice",
-			"medicine cat",
+			"healer apprentice",
+			"healer",
 			"deputy",
 			"leader"
 		],
 		"random_status_constraint": [
 			"elder",
 			"mediator",
-			"medicine cat",
+			"healer",
 			"leader"
 		],
 		"reaction_random_cat": {
@@ -210,8 +210,8 @@
 			"m_c tells r_c about {PRONOUN/m_c/poss} last encounter with StarClan."
 		],
 		"main_status_constraint": [
-			"medicine cat apprentice",
-			"medicine cat",
+			"healer apprentice",
+			"healer",
 			"leader"
 		],
 		"relationship_constraint": [
@@ -221,8 +221,8 @@
 			"elder",
 			"warrior",
 			"mediator",
-			"medicine cat apprentice",
-			"medicine cat",
+			"healer apprentice",
+			"healer",
 			"deputy",
 			"leader"
 		],
@@ -244,7 +244,7 @@
 		"random_status_constraint": [
 			"deputy",
 			"elder",
-			"medicine cat"
+			"healer"
 		],
 		"reaction_random_cat": {
 			"trust": "increase"
@@ -258,12 +258,12 @@
 			"m_c asks r_c about a specific treatment method."
 		],
 		"main_status_constraint": [
-			"medicine cat apprentice",
-			"medicine cat"
+			"healer apprentice",
+			"healer"
 		],
 		"random_status_constraint": [
-			"medicine cat apprentice",
-			"medicine cat"
+			"healer apprentice",
+			"healer"
 		],
 		"reaction_random_cat": {
 			"trust": "increase"
@@ -276,8 +276,8 @@
 			"m_c feels like {PRONOUN/m_c/subject} can count on r_c to give {PRONOUN/m_c/object} the best treatment possible."
 		],
 		"random_status_constraint": [
-			"medicine cat apprentice",
-			"medicine cat"
+			"healer apprentice",
+			"healer"
 		]
 	}
 ]

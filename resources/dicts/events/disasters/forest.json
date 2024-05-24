@@ -71,7 +71,7 @@
             "moon1": [
                 "Even the trees look dry. The cats of c_n cart moss between camp and their water source, bringing back vital liquid to their youngest and oldest Clanmates. But there are murmurs of discontented gossip - what will they do if their water dries up?",
                 "The prey that cats bring back to the fresh-kill pile is beginning to look weak. Difficult to say what's taking its toll - the heat, or the difficulty of finding water.",
-                "med_name feels the crunch of leaf litter so dry it shatters under their footsteps. They swallow their concern - drought cannot be fought by the Clan's warriors, but med_name can stock the medicine cat's den with remedies against heat stroke and exhaustion."
+                "med_name feels the crunch of leaf litter so dry it shatters under their footsteps. They swallow their concern - drought cannot be fought by the Clan's warriors, but med_name can stock the healer's den with remedies against heat stroke and exhaustion."
             ],
             "moon2": [
                 "The drought continues. The cats of c_n pant in the shade, too hot to move, their tongues dry and tacky.",
@@ -341,7 +341,7 @@
         "rarity": "uncommon",
         "trigger_events": [
             "The objects the Twolegs bring smell so enticing, but the cats of c_n avoid them as much as possible. It only occurs to them that the prey they so rely on for food might not do the same when the first cats start getting sick.",
-            "The prey has been easy to catch lately, though even the freshest of fresh-kill has seemed a little... off. The medicine cat den has more work than usual, and bellyaches are now very common."
+            "The prey has been easy to catch lately, though even the freshest of fresh-kill has seemed a little... off. The healer den has more work than usual, and bellyaches are now very common."
         ],
         "progress_events": {
             "moon1": [

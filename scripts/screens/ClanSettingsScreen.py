@@ -339,9 +339,9 @@ class ClanSettingsScreen(Screens):
                 continue
             
             living_cats += 1
-            if cat.status == "medicine cat":
+            if cat.status == "healer":
                 med_cats += 1
-            elif cat.status == "medicine cat apprentice":
+            elif cat.status == "healer apprentice":
                 med_cat_apprentices += 1
             elif cat.status == "warrior":
                 warriors += 1
@@ -360,8 +360,8 @@ class ClanSettingsScreen(Screens):
         f"StarClan Cats: {starclan}\n" \
         f"Dark Forest Cats: {df}\n" \
         f"Unknown Residence Cats: {ur}\n" \
-        f"Medicine Cats: {med_cats}\n" \
-        f"Medicine Cat Apprentices: {med_cat_apprentices}\n" \
+        f"Healers: {med_cats}\n" \
+        f"Healer Apprentices: {med_cat_apprentices}\n" \
         f"Warriors: {warriors}\n" \
         f"Warrior Apprentices: {warrior_apprentices}\n" \
         f"Mediators: {mediators}\n" \

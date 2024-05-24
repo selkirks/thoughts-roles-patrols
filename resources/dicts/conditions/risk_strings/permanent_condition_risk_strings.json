@@ -51,7 +51,7 @@
     },
     "lost their tail": {
         "an infected wound": [
-            "r_c drags m_c into the medicine cat den, to apply a herbal salve despite m_c's protests - {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} begun to smell infection in the tail stump.",
+            "r_c drags m_c into the healer den, to apply a herbal salve despite m_c's protests - {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} begun to smell infection in the tail stump.",
             "The stump where m_c's tail used to be has become infected."
         ],
         "phantom pain": [
@@ -61,7 +61,7 @@
     },
     "paralyzed": {
         "an infected wound": [
-            "r_c brings m_c into the medicine cat den and starts searching - the sick stink of infection is coming from {PRONOUN/m_c/object}, but m_c hasn't noticed anything that could cause it.",
+            "r_c brings m_c into the healer den and starts searching - the sick stink of infection is coming from {PRONOUN/m_c/object}, but m_c hasn't noticed anything that could cause it.",
             "It seems that m_c has gotten a scratch on the part of {PRONOUN/m_c/poss} body {PRONOUN/m_c/subject} can't feel. The wound went unnoticed until the stench of infection began to waft from it."
         ],
         "joint pain": [
@@ -154,7 +154,7 @@
             "m_c growls as another wave of head pain hits {PRONOUN/m_c/object}. It's on-and-off, and herbs have been helping, but StarClan help {PRONOUN/m_c/object}, having so many headaches gets annoying."
         ],
         "severe headache": [
-            "r_c sees m_c headed towards the medicine cat den, wincing with every step, and ducks inside to prepare a nest for {PRONOUN/m_c/object} in the darkest, quietest corner possible.",
+            "r_c sees m_c headed towards the healer den, wincing with every step, and ducks inside to prepare a nest for {PRONOUN/m_c/object} in the darkest, quietest corner possible.",
             "m_c wakes up with pounding head pain and horrible light sensitivity. {PRONOUN/m_c/subject/CAP} {VERB/m_c/curl/curls} up as tightly in {PRONOUN/m_c/poss} nest as {PRONOUN/m_c/subject} can, screwing {PRONOUN/m_c/poss} eyes shut and flattening {PRONOUN/m_c/poss} ears. There's no way {PRONOUN/m_c/subject}'ll get work done today."
         ]
     },

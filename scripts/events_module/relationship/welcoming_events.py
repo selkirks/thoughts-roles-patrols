@@ -30,7 +30,7 @@ class Welcoming_Events():
 
         # setup the status as "key" to use it
         status = clan_cat.status
-        if status == "medicine cat" or status == "medicine cat apprentice":
+        if status == "healer" or status == "healer apprentice":
             status = "medicine"
 
         if status == "mediator apprentice":

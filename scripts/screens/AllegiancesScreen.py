@@ -111,13 +111,13 @@ class AllegiancesScreen(Screens):
         living_kits = []
         living_elders = []
         for cat in living_cats:
-            if cat.status == "medicine cat":
+            if cat.status == "healer":
                 living_meds.append(cat)
             elif cat.status == "warrior":
                 living_warriors.append(cat)
             elif cat.status == "mediator":
                 living_mediators.append(cat)
-            elif cat.status in ["apprentice", "medicine cat apprentice", "mediator apprentice"]:
+            elif cat.status in ["apprentice", "healer apprentice", "mediator apprentice"]:
                 living_apprentices.append(cat)
             elif cat.status in ["kitten", "newborn"]:
                 living_kits.append(cat)
@@ -165,11 +165,11 @@ class AllegiancesScreen(Screens):
                 x[2]
             ])
 
-        # Medicine Cat Box:
+        # Healer Box:
         if living_meds:
             if len(living_meds) == 1:
                 _box = ["", "", "", ""]
-                _box[0] = '<b><u>MEDICINE CAT</u></b>'
+                _box[0] = '<b><u>HEALER</u></b>'
                 x = self.generate_one_entry(living_meds[0])
                 _box[1] = x[0]
                 _box[2] = x[1]
@@ -179,7 +179,7 @@ class AllegiancesScreen(Screens):
                 for i in range(len(living_meds)):    
                     _box = ["", "", "", ""]
                     if i == 0:    
-                        _box[0] = '<b><u>MEDICINE CATS</u></b>'
+                        _box[0] = '<b><u>HEALERS</u></b>'
                     else:
                         _box[0] = ""
                     x = self.generate_one_entry(living_meds[i])
@@ -432,8 +432,8 @@ class MedDenScreen(Screens):
                 (1450, 50), (68, 68))),
                 "",
                 object_id="#help_button", manager=MANAGER,
-                tool_tip_text="Your medicine cats will gather herbs over each timeskip and during any patrols you send "
-                              "them on. You can see what was gathered in the Log below! Your medicine cats will give"
+                tool_tip_text="Your healers will gather herbs over each timeskip and during any patrols you send "
+                              "them on. You can see what was gathered in the Log below! Your healers will give"
                               " these to any hurt or sick cats that need them, helping those cats to heal quicker."
                               "<br><br>"
                               "Hover your mouse over the medicine den image to see what herbs your Clan has!",
@@ -573,13 +573,13 @@ class MedDenScreen(Screens):
             number = medical_cats_condition_fulfilled(Cat.all_cats.values(), amount_per_med,
                                                       give_clanmembers_covered=True)
             if len(self.meds) == 1:
-                insert = 'medicine cat'
+                insert = 'healer'
             else:
-                insert = 'medicine cats'
+                insert = 'healers'
             meds_cover = f"Your {insert} can care for a Clan of up to {number} members, including themselves."
 
             if len(self.meds) >= 1 and number == 0:
-                meds_cover = f"You have no medicine cats who are able to work. Your Clan will be at a higher risk of death and disease."
+                meds_cover = f"You have no healers who are able to work. Your Clan will be at a higher risk of death and disease."
 
             herb_amount = sum(game.clan.herbs.values())
             med_concern = f"This should not appear."
@@ -587,33 +587,33 @@ class MedDenScreen(Screens):
                 med_concern = f"The herb stores are empty and bare, this does not bode well."
             elif 0 < herb_amount <= 8:
                 if len(self.meds) == 1:
-                    med_concern = f"The medicine cat worries over the herb stores, they don't have nearly enough for the Clan."
+                    med_concern = f"The healer worries over the herb stores, they don't have nearly enough for the Clan."
                 else:
-                    med_concern = f"The medicine cats worry over the herb stores, they don't have nearly enough for the Clan."
+                    med_concern = f"The healers worry over the herb stores, they don't have nearly enough for the Clan."
             elif 8 < herb_amount <= 20:
                 med_concern = f"The herb stores are small, but it's enough for now."
             elif 20 < herb_amount <= 30:
                 if len(self.meds) == 1:
-                    med_concern = f"The medicine cat is content with how many herbs they have stocked up."
+                    med_concern = f"The healer is content with how many herbs they have stocked up."
                 else:
-                    med_concern = f"The medicine cats are content with how many herbs they have stocked up."
+                    med_concern = f"The healers are content with how many herbs they have stocked up."
             elif 30 < herb_amount <= 50:
                 if len(self.meds) == 1:
-                    med_concern = f"The herb stores are overflowing and the medicine cat has little worry."
+                    med_concern = f"The herb stores are overflowing and the healer has little worry."
                 else:
-                    med_concern = f"The herb stores are overflowing and the medicine cats have little worry."
+                    med_concern = f"The herb stores are overflowing and the healers have little worry."
             elif 50 < herb_amount:
                 if len(self.meds) == 1:
-                    med_concern = f"StarClan has blessed them with plentiful herbs and the medicine cat sends their thanks to Silverpelt."
+                    med_concern = f"StarClan has blessed them with plentiful herbs and the healer sends their thanks to Silverpelt."
                 else:
-                    med_concern = f"StarClan has blessed them with plentiful herbs and the medicine cats send their thanks to Silverpelt."
+                    med_concern = f"StarClan has blessed them with plentiful herbs and the healers send their thanks to Silverpelt."
 
             med_messages.append(meds_cover)
             med_messages.append(med_concern)
             self.meds_messages.set_text("<br>".join(med_messages))
 
         else:
-            meds_cover = f"You have no medicine cats, your clan will be at higher risk of death and sickness."
+            meds_cover = f"You have no healers, your clan will be at higher risk of death and sickness."
             self.meds_messages.set_text(meds_cover)
 
     def handle_tab_toggles(self):

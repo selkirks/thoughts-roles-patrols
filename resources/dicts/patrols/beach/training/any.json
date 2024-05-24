@@ -716,7 +716,7 @@
                 "can_have_stat": ["app"]
             },
             {
-                "text": "The apprentice wanders along obliviously and slips, tumbling right down into a rocky pool. Bruised and sore, r_c has to report to the medicine cat den when {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp.",
+                "text": "The apprentice wanders along obliviously and slips, tumbling right down into a rocky pool. Bruised and sore, r_c has to report to the healer den when {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1844,7 +1844,7 @@
         },
         "weight": 20,
         "intro_text": "As p_l and r_c wander across the beach with only the stars to light their way, they notice sparkles of light where the waves break upon the shore.",
-        "decline_text": "A little freaked out, the warriors go to fetch a medicine cat to interpret this omen for them.",
+        "decline_text": "A little freaked out, the warriors go to fetch a healer to interpret this omen for them.",
         "chance_of_success": 60,
         "success_outcomes": [
             {

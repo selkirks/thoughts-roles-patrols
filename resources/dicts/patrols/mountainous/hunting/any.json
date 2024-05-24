@@ -221,7 +221,7 @@
                 "can_have_stat": ["app"]
             },
             {
-                "text": "During the hunt, r_c tumbles right down a steep slope while {PRONOUN/r_c/poss} attention is elsewhere. Bruised and sore, r_c has to report to the medicine cat den when {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp.",
+                "text": "During the hunt, r_c tumbles right down a steep slope while {PRONOUN/r_c/poss} attention is elsewhere. Bruised and sore, r_c has to report to the healer den when {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [

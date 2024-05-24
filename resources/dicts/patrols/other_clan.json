@@ -435,7 +435,7 @@
         "max_cats": 1,
         "min_max_status": {
             "apprentice": [-1, -1],
-            "medicine cat": [1, 6],
+            "healer": [1, 6],
             "healer cats": [1, 6],
             "normal adult": [-1, -1]
         },
@@ -445,21 +445,21 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "They pad over to the border and hesitate only momentarily before crossing. They quickly gather some of the berries, making sure to leave plenty for o_c_n's medicine cat if they need some, too.",
+                "text": "They pad over to the border and hesitate only momentarily before crossing. They quickly gather some of the berries, making sure to leave plenty for o_c_n's healer if they need some, too.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["raspberry"],
                 "other_clan_rep": 2
             },
             {
-                "text": "They pad to the border and pause for a heartbeat to scent the air. o_c_n's scent is very strong, but there's something else... o_c_n's medicine cat appears at that moment. They're walking towards the raspberries when they spot p_l and wave their tail in greeting. They invite p_l to gather some, as there's plenty. p_l gratefully accepts.",
+                "text": "They pad to the border and pause for a heartbeat to scent the air. o_c_n's scent is very strong, but there's something else... o_c_n's healer appears at that moment. They're walking towards the raspberries when they spot p_l and wave their tail in greeting. They invite p_l to gather some, as there's plenty. p_l gratefully accepts.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["raspberry"],
                 "other_clan_rep": 2
             },
             {
-                "text": "p_l is about to step over the border when a hiss stops them in {PRONOUN/p_l/poss} tracks. A o_c_n warrior bounds into view, bristling. They quickly explain that they're the medicine cat and the Warrior Code allows them to cross the border and assure that they won't take many of the berries. The warrior looks torn, but agrees to this.",
+                "text": "p_l is about to step over the border when a hiss stops them in {PRONOUN/p_l/poss} tracks. A o_c_n warrior bounds into view, bristling. They quickly explain that they're the healer and the Warrior Code allows them to cross the border and assure that they won't take many of the berries. The warrior looks torn, but agrees to this.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["MEDIATOR,1"],
@@ -469,13 +469,13 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l starts to step over the border but a hiss stops them in {PRONOUN/p_l/poss} tracks. A o_c_n patrol is running {PRONOUN/p_l/poss} way. They force {PRONOUN/p_l/poss} fur to lie flat as the patrol approaches and swiftly blurt out that they're a medicine cat. One of the warrior snarls that they can't spare any herbs for other Clans and p_l needs to leave. They oblige quickly.",
+                "text": "p_l starts to step over the border but a hiss stops them in {PRONOUN/p_l/poss} tracks. A o_c_n patrol is running {PRONOUN/p_l/poss} way. They force {PRONOUN/p_l/poss} fur to lie flat as the patrol approaches and swiftly blurt out that they're a healer. One of the warrior snarls that they can't spare any herbs for other Clans and p_l needs to leave. They oblige quickly.",
                 "exp": 0,
                 "weight": 20,
                 "other_clan_rep": -1
             },
             {
-                "text": "p_l starts to step over the border but a hiss stops them in {PRONOUN/p_l/poss} tracks. A o_c_n patrol is running {PRONOUN/p_l/poss} way. They force {PRONOUN/p_l/poss} fur to lie flat as the patrol approaches and swiftly blurt out that they're a medicine cat. The warriors either don't hear them or don't care and they get in a good scratch before the medicine cat can retreat.",
+                "text": "p_l starts to step over the border but a hiss stops them in {PRONOUN/p_l/poss} tracks. A o_c_n patrol is running {PRONOUN/p_l/poss} way. They force {PRONOUN/p_l/poss} fur to lie flat as the patrol approaches and swiftly blurt out that they're a healer. The warriors either don't hear them or don't care and they get in a good scratch before the healer can retreat.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [

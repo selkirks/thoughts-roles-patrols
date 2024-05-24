@@ -30,13 +30,13 @@
 			"kitten",
 			"apprentice",
 			"mediator apprentice",
-			"medicine cat apprentice",
+			"healer apprentice",
 			"warrior"
 		],
 		"random_status_constraint": [
 			"warrior",
 			"elder",
-			"medicine cat",
+			"healer",
 			"mediator",
 			"deputy"
 		]
@@ -50,10 +50,10 @@
 		"main_status_constraint": [
 			"apprentice",
 			"mediator apprentice",
-			"medicine cat apprentice"
+			"healer apprentice"
 		],
 		"random_status_constraint": [
-			"medicine cat apprentice",
+			"healer apprentice",
 			"apprentice",
 			"mediator apprentice"
 		],
@@ -74,10 +74,10 @@
 		"main_status_constraint": [
 			"apprentice",
 			"mediator apprentice",
-			"medicine cat apprentice"
+			"healer apprentice"
 		],
 		"random_status_constraint": [
-			"medicine cat apprentice"
+			"healer apprentice"
 		],
 		"reaction_random_cat": {
 			"comfortable": "increase"

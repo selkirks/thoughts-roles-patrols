@@ -7,8 +7,8 @@
             "Wants to switch herbs places in the store so r_c will accidentally poison a Clanmate"
             ],  
         "random_status_constraint": [
-                "medicine cat",
-                "medicine cat apprentice"
+                "healer",
+                "healer apprentice"
             ],
          "random_living_status": [
                 "living"
@@ -22,7 +22,7 @@
                "Is trying to teach r_c poisonous herbs in {PRONOUN/r_c/poss} dreams"
             ],
         "random_status_constraint": [
-              "medicine cat apprrentice"
+              "healer apprrentice"
             ],
         "random_living_status" : [
               "living"

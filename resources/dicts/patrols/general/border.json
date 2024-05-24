@@ -2121,7 +2121,7 @@
                 ]
             },
             {
-                "text": "app1 raises {PRONOUN/app1/poss} hackles, staring down the other apprentice until they spit a challenge back. Tempers flare, and the patrols size each other up. It doesn't take much for the o_c_n patrol to decide c_n has put a paw wrong and leap across the border with claws unsheathed and teeth bared. s_c breaks up the skirmish, convincing {PRONOUN/s_c/poss} Clanmates not to waste all the medicine cat's herbs on a petty dispute.",
+                "text": "app1 raises {PRONOUN/app1/poss} hackles, staring down the other apprentice until they spit a challenge back. Tempers flare, and the patrols size each other up. It doesn't take much for the o_c_n patrol to decide c_n has put a paw wrong and leap across the border with claws unsheathed and teeth bared. s_c breaks up the skirmish, convincing {PRONOUN/s_c/poss} Clanmates not to waste all the healer's herbs on a petty dispute.",
                 "exp": 0,
                 "weight": 40,
                 "stat_skill": [ "MEDIATOR,1", "SPEAKER,1", "TEACHER,1", "INSIGHTFUL,1"],

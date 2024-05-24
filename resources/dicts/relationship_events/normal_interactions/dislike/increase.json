@@ -121,8 +121,8 @@
 			"warrior",
 			"mediator apprentice",
 			"mediator",
-			"medicine cat apprentice",
-			"medicine cat",
+			"healer apprentice",
+			"healer",
 			"deputy",
 			"leader"
 		],
@@ -162,8 +162,8 @@
 			"m_c always tends to r_c last."
 		],
 		"main_status_constraint": [
-			"medicine cat apprentice",
-			"medicine cat"
+			"healer apprentice",
+			"healer"
 		],
 		"reaction_random_cat": {
 			"dislike": "increase"
@@ -244,7 +244,7 @@
 		],
 		"main_status_constraint": [
 			"elder",
-			"medicine cat",
+			"healer",
 			"deputy",
 			"leader"
 		],
@@ -312,7 +312,7 @@
 		"id": "dislike_kit_inc_med3",
 		"interactions": [
 			"m_c whines that r_c won't play with {PRONOUN/m_c/object}, even though {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} always around camp.",
-			"m_c doesn't understand why r_c won't let {PRONOUN/m_c/object} play in the medicine cat den."
+			"m_c doesn't understand why r_c won't let {PRONOUN/m_c/object} play in the healer den."
 		],
 		"main_status_constraint": [
 			"kitten"
@@ -320,7 +320,7 @@
 		"random_status_constraint": [
 			"elder",
 			"mediator apprentice",
-			"medicine cat apprentice"
+			"healer apprentice"
 		]
 	}
 ]

@@ -74,7 +74,7 @@ class WarriorDenScreen(Screens):
                             ))
                             if len(mediator_list) < 1:
                                 self.save_button.disable()
-                        elif "medicine cat" in description and self.save_button.is_enabled:
+                        elif "healer" in description and self.save_button.is_enabled:
                             meds = get_med_cats(Cat, working=False)
                             if len(meds) < 1:
                                 self.save_button.disable()

@@ -254,13 +254,13 @@ class PatrolOutcome():
         for kitty in patrol.patrol_cats:
             # First, the blanet requirments
             if "app" in self.can_have_stat \
-                    and kitty.status not in ['apprentice', "medicine cat apprentice"]:
+                    and kitty.status not in ['apprentice', "healer apprentice"]:
                 continue
             
-            if "adult" in self.can_have_stat and kitty.status in ['apprentice', "medicine cat apprentice"]:
+            if "adult" in self.can_have_stat and kitty.status in ['apprentice', "healer apprentice"]:
                 continue
             
-            if "healer" in self.can_have_stat and kitty.status not in ["medicine cat", "medicine cat apprentice"]:
+            if "healer" in self.can_have_stat and kitty.status not in ["healer", "healer apprentice"]:
                 continue
                 
             # Then, move on the the specfic requirements. 
@@ -339,7 +339,7 @@ class PatrolOutcome():
 
         if gained_exp or app_exp:
             for cat in patrol.patrol_cats:
-                if cat.status in ["apprentice", "medicine cat apprentice"]:
+                if cat.status in ["apprentice", "healer apprentice"]:
                     cat.experience = cat.experience + app_exp
                 else:
                     cat.experience = cat.experience + gained_exp
@@ -860,7 +860,7 @@ class PatrolOutcome():
             # TODO: make this less ugly
             for index in mate_indexes:
                 if index in in_patrol_cats:
-                    if in_patrol_cats[index] in ("apprentice", "medicine cat apprentice"):
+                    if in_patrol_cats[index] in ("apprentice", "healer apprentice"):
                         print("Can't give apprentices mates")
                         continue
                     
@@ -904,8 +904,8 @@ class PatrolOutcome():
                 continue
             
             if match.group(1) in ("newborn", "kitten", "elder", "apprentice", "warrior", 
-                                  "mediator apprentice", "mediator", "medicine cat apprentice", 
-                                  "medicine cat"):
+                                  "mediator apprentice", "mediator", "healer apprentice", 
+                                  "healer"):
                 status = match.group(1)
                 break
         
@@ -953,9 +953,9 @@ class PatrolOutcome():
         # CHOOSE DEFAULT BACKSTORY BASED ON CAT TYPE, STATUS.
         if status in ("kitten", "newborn"):
             chosen_backstory = choice(BACKSTORIES["backstory_categories"]["abandoned_backstories"])
-        elif status == "medicine cat" and cat_type == "former Clancat":
+        elif status == "healer" and cat_type == "former Clancat":
             chosen_backstory = choice(["medicine_cat", "disgraced1"])
-        elif status == "medicine cat":
+        elif status == "healer":
             chosen_backstory = choice(["wandering_healer1", "wandering_healer2"])
         else:
             if cat_type == "former Clancat":

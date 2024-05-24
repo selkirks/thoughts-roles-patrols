@@ -47,9 +47,9 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "death_text": "m_c was killed while trying to save the medicine cat of o_c.",
+        "death_text": "m_c was killed while trying to save the healer of o_c.",
         "history_text": {
-            "reg_death": "m_c was killed while trying to save o_c's medicine cat."
+            "reg_death": "m_c was killed while trying to save o_c's healer."
         },
         "cat_trait": [
             "bold",

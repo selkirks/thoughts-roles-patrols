@@ -799,7 +799,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "The patrol launches into battle, but r_c is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping r_c back to the medicine cat den.",
+                "text": "The patrol launches into battle, but r_c is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping r_c back to the healer den.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -935,7 +935,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "The patrol launches into battle, but r_c is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping r_c back to the medicine cat den.",
+                "text": "The patrol launches into battle, but r_c is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping r_c back to the healer den.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1330,7 +1330,7 @@
                 ]
             },
             {
-                "text": "A mischievous look in their eye, the deputy challenges their Clanmates - whoever catches one of the squirrels gets to skip dawn patrol for a whole moon. They're all eager to shimmy up the trees at that, and before long someone calls out in triumph. Not only do they have the squirrel, but they now also have a pawful of oak leaves for the medicine cat too!",
+                "text": "A mischievous look in their eye, the deputy challenges their Clanmates - whoever catches one of the squirrels gets to skip dawn patrol for a whole moon. They're all eager to shimmy up the trees at that, and before long someone calls out in triumph. Not only do they have the squirrel, but they now also have a pawful of oak leaves for the healer too!",
                 "exp": 40,
                 "weight": 5,
                 "herbs": ["oak_leaves"],
@@ -1380,7 +1380,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "The patrol fans out, some cats climbing, some staying on the ground. The hunt comes to an abrupt end, however, when r_c yowls in fear as {PRONOUN/r_c/subject} {VERB/r_c/plummet/plummets} from the branches and land heavily on the ground. {PRONOUN/r_c/poss/CAP} Clanmates help {PRONOUN/r_c/object} home and settle {PRONOUN/r_c/object} into the medicine cat's den, guilt and regret prickling at them for pursuing such a foolhardy hunt.",
+                "text": "The patrol fans out, some cats climbing, some staying on the ground. The hunt comes to an abrupt end, however, when r_c yowls in fear as {PRONOUN/r_c/subject} {VERB/r_c/plummet/plummets} from the branches and land heavily on the ground. {PRONOUN/r_c/poss/CAP} Clanmates help {PRONOUN/r_c/object} home and settle {PRONOUN/r_c/object} into the healer's den, guilt and regret prickling at them for pursuing such a foolhardy hunt.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [

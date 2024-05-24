@@ -93,8 +93,8 @@
       "The newly arrived {insert} that m_c has just given birth to looks suspiciously like r_c. "
     ],
     "death": [
-      "Later, as the medicine cat wails with m_c's blood streaked through their pelt, and a warrior comes to move the body for its vigil, no one knows what to do with the {insert}.",
-      "As the sun tracks across the sky, m_c's bleeding gets worse and worse. It was still worth it, m_c decides, even as the medicine cat fights an impossible battle to keep {PRONOUN/m_c/object} out of StarClan. Still so worth it.",
+      "Later, as the healer wails with m_c's blood streaked through their pelt, and a warrior comes to move the body for its vigil, no one knows what to do with the {insert}.",
+      "As the sun tracks across the sky, m_c's bleeding gets worse and worse. It was still worth it, m_c decides, even as the healer fights an impossible battle to keep {PRONOUN/m_c/object} out of StarClan. Still so worth it.",
       "The birth was stressful, and m_c is exhausted and still bleeding and really just wants to sleep. Unfortunately, {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} ever wake up again.",
       "m_c wasn't expecting {PRONOUN/m_c/poss} birth to be so incredibly painful, and as the day wears on {PRONOUN/m_c/poss} condition deteriorates, leaving {PRONOUN/m_c/poss} {insert} mewling and trying to suckle a cooling body.",
       "It breaks {PRONOUN/m_c/poss} heart that {PRONOUN/m_c/subject} won't get to be with {PRONOUN/m_c/poss} {insert} as they grow. m_c pants out instructions and pleads to {PRONOUN/m_c/poss} friends around {PRONOUN/m_c/object}, as the blood loss from birth slowly takes {PRONOUN/m_c/poss} life.",
@@ -123,7 +123,7 @@
 	],
 	"outside_death": [
 		"Some say m_c didn't make it.",
-		"Some say m_c would have needed a medicine cat to survive."
+		"Some say m_c would have needed a healer to survive."
 	],
 	"lead_death": [
 		"m_c lost one of {PRONOUN/m_c/poss} nine lives, but gave birth to a {insert}.",
