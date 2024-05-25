@@ -317,7 +317,7 @@
 		"base_app_timeskip_ex": [[3, 12],[5, 6]],
 		"base_med_app_timeskip_ex": [[2, 7],[2, 3]],
 		"max_apprentice_age": {
-			"medicine cat apprentice": 30,
+			"healer apprentice": 30,
 			"apprentice": 25,
 			"mediator apprentice": 25
 		},
@@ -338,7 +338,7 @@
         "herb gathering" : {
             "med": 3,
             "med_apprentice" : 2,
-            "comment": "Defines how much a working warrior(leader/deputy) or (apprentice) medicine cat gathers additionally."
+            "comment": "Defines how much a working warrior(leader/deputy) or (apprentice) healer gathers additionally."
         },
         "outsiders" : {
             "reputation": 5,
@@ -352,7 +352,7 @@
             "prey_warrior": 3,
             "herb_medicine": 4,
             "injury_chance_warrior": 18,
-            "injury_chance_medicine cat": 33,
+            "injury_chance_healer": 33,
             "chance_increase_per_clan": 3,
             "injuries": {
                 "claw-wound": 15,
@@ -369,8 +369,8 @@
             "relation": 3,
             "comments": [
                 "prey_warrior - how much prey each working warrior(leader/deputy) will gather",
-                "herb_medicine - how much herb each working medicine cat will gather",
-                "injury chance of each warrior(leader/deputy) or medicine cat to get injured",
+                "herb_medicine - how much herb each working healer will gather",
+                "injury chance of each warrior(leader/deputy) or healer to get injured",
                 "chance_increase_per_clan - the more clan which are raided the more likely it is to get injured",
                 "injuries - list of injuries which can occur and to which distribution",
                 "relation - amount of decrease; Clan relation is between 0 and 30, therefore a smaller number is chosen",
@@ -381,7 +381,7 @@
             "prey_warrior": 1,
             "herb_medicine": 2,
             "injury_chance_warrior": 25,
-            "injury_chance_medicine cat": 35,
+            "injury_chance_healer": 35,
             "injuries": {
                 "cracked pads": 15,
                 "sore": 15,
@@ -401,10 +401,10 @@
             },
             "comments": [
                 "prey_warrior - how much prey each working warrior(leader/deputy) will gather",
-                "herb_medicine - how much herb each working medicine cat will gather",
-                "injury chance of each warrior(leader/deputy) or medicine cat to get injured",
+                "herb_medicine - how much herb each working healer will gather",
+                "injury chance of each warrior(leader/deputy) or healer to get injured",
                 "injuries - list of injuries which can occur and to which distribution",
-                "illness chance of each warrior(leader/deputy) and medicine cat to get sick",
+                "illness chance of each warrior(leader/deputy) and healer to get sick",
                 "illnesses - list of illnesses which can occur and to which distribution",
                 "INFO: a cat can get EITHER injured OR sick, not both - for simpler distribution (50/50 chance decide which condition will be used)",
                 "INFO: current sum of injuries is 100 - for easier understanding it should stay the same"
