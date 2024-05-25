@@ -301,7 +301,7 @@
 		"rerolls": 3,
 		"comment": "Set this to -1 for it to be infinite"
 	},
-	"genetic_chances": {
+	"genetics_config": {
 		"chimera" : 1000,
 		"intersex" : 100,
 		"XXX/XXY" : 1000,

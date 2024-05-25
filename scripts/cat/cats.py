@@ -194,7 +194,7 @@ class Cat():
         self.parent2 = parent2
 
         self.adoptive_parents = []
-        self.genotype = Genotype(game.config['genetic_chances'])
+        self.genotype = Genotype(game.config['genetics_config'])
         #print(genotype)
         if genotype:
             self.genotype.fromJSON(genotype)
@@ -208,19 +208,19 @@ class Cat():
                     print(e)
                     self.genotype.Generator()
 
-            if(randint(1, game.config['genetic_chances']['intersex']) == 1):
+            if(randint(1, game.config['genetics_config']['intersex']) == 1):
                 self.genotype.gender = "intersex"
                 if(randint(1, 25) == 1 and 'Y' in self.genotype.sexgene):
                     self.genotype.gender = 'molly'
         elif kittypet or status == 'kittypet':
             self.genotype.AltGenerator(special=self.gender)
-            if(randint(1, game.config['genetic_chances']['intersex']) == 1):
+            if(randint(1, game.config['genetics_config']['intersex']) == 1):
                 self.genotype.gender = "intersex"
                 if(randint(1, 25) == 1 and 'Y' in self.genotype.sexgene):
                     self.genotype.gender = 'molly'
         else:
             self.genotype.Generator(special=self.gender)
-            if(randint(1, game.config['genetic_chances']['intersex']) == 1):
+            if(randint(1, game.config['genetics_config']['intersex']) == 1):
                 self.genotype.gender = "intersex"
                 if(randint(1, 25) == 1 and 'Y' in self.genotype.sexgene):
                     self.genotype.gender = 'molly'
