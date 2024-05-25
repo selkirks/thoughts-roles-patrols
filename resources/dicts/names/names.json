@@ -94,7 +94,7 @@
     "Lily", "Lion", "Little", "Lizard", "Locust", "Long", "Lotus", "Loud", "Low", "Luck", "Lupine", "Lynx", "Mallow", "Mantis",
     "Maple", "Marigold", "Marsh", "Meadow", "Midge", "Milk", "Milkweed", "Mink", "Minnow", "Mistle", "Mite", "Mole", "Moon",
     "Moor", "Morning", "Moss", "Mossy", "Moth", "Mottle", "Mottled", "Mouse", "Mumble", "Murk", "Myrtle", "Nectar", "Needle",
-    "Nettle", "Newt", "Nightingale", "Nimble", "Nut", "Oak", "Oat", "Odd", "One", "Oriole", "Osprey", "Pansy", "Panther", "Parsley",
+    "Nettle", "Newt", "Nightingale", "Nimble", "Nut", "Oak", "Oat", "One", "Oriole", "Osprey", "Pansy", "Panther", "Parsley",
     "Partridge", "Patch", "Patchouli", "Peak", "Pear", "Peat", "Perch", "Petal", "Petunia", "Pheasant", "Pigeon", "Pike", "Pine",
     "Piper", "Plover", "Plum", "Pod", "Pond", "Pool", "Pop", "Poppy", "Posy", "Pounce", "Prance", "Prickle", "Prim", "Primrose",
     "Puddle", "Python", "Quail", "Quick", "Quiet", "Quill", "Quiver", "Rabbit", "Raccoon", "Ragged", "Rain", "Rainbow", "Rat",
@@ -295,11 +295,12 @@
     "COPPER": ["Copper", "Red", "Amber", "Brown", "Fire", "Cinnamon"],
     "SAGE": ["Sage", "Leaf", "Olive", "Bush", "Clove", "Green", "Weed"],
     "COBALT": ["Blue", "Blue", "Ice", "Icy", "Sky", "Lake", "Frost", "Water", "Frosty", "Rime"],
-    "SUNLITICE": ["Sun", "Ice", "Icy", "Frost", "Dawn", "Dusk", "Odd", "Glow", "Mouse"],
+    "SUNLITICE": ["Sun", "Ice", "Icy", "Frost", "Dawn", "Dusk", "Glow", "Mouse"],
     "GREENYELLOW": ["Green", "Yellow", "Tawny", "Hazel", "Gold", "Daisy", "Sand", "Sandy", "Weed"]
   },
 
   "loner_names": [
+    "Song", "Error", "Blackkat","Kat", "Moss", "Echo", "Pixil", "Bingle", "Capyy", "Jay", "Tinderwing", "Hackenslasher", "Sparrow Moon", "Tetris",
     "Abigail", "Abuko", "Abyss", "Acacia", "Ace", "Adaliz", "Adam", "Admiral", "Adora", "Aether", "Agatha", "Agent Smith", "Agnes", "Ah ha", "Ah", "Aidan", "Aiden",
     "Akila", "Akilah", "Alaska", "Alastair", "Alba", "Albedo", "Alcina", "Alcyone", "Aldrich", "Alec", "Alexa", "Alfie", "Alfredo", "Algernon", "Alice",
     "Alien", "Alma", "Alonzo", "Alphonse", "Alphys", "Altair", "Amani", "Amaretto", "Amari", "Amaya", "Amber", "Amelia", "Amethyst", "Amigo", "Amir", "Amity",
@@ -432,6 +433,6 @@
 	],
 	"inappropriate_names": [
 		"wetback", "yellowface", "redface", "blackface", "brownface", "pancakeface", "yellowbone", "bleaksight", "lostface", "deadfoot", "tornface", "brokentail", "crookedjaw", "crookedeye", "crookedfoot",
-    "brokeneye", "brokentooth", "brokenfoot", "brokenjaw", "brokenspirit", "crookedarch"
+    "brokeneye", "brokentooth", "brokenfoot", "brokenjaw", "brokenspirit", "crookedarch", "burneyes", "burneye", "burntail", "burnleg", "burnfoot", "burnface"
 	]
 }
