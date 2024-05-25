@@ -1772,7 +1772,8 @@ class Cat():
         for condition in PERMANENT:
             possible = PERMANENT[condition]
             if possible["congenital"] in ['always', 'sometimes']:
-                possible_conditions.append(condition)
+                if not(condition == "excess testosterone" or condition == "testosterone deficiency" or condition == "aneuploidy" or condition == "mosaicism" or condition == "chimerism"):
+                    possible_conditions.append(condition)
 
         new_condition = choice(possible_conditions)
 

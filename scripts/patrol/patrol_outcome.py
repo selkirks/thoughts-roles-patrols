@@ -798,6 +798,8 @@ class PatrolOutcome():
                     results.append(f"The patrol met {cat.name}.")
                 else:
                     results.append(f"{cat.name} joined the Clan.")
+                
+                cat.pelt.inventory = []
             
         # Check to see if any young litters joined with alive parents.
         # If so, see if recovering from birth condition is needed

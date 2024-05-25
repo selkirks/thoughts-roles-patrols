@@ -62,6 +62,7 @@ class NewCatEvents:
                 for the_cat in outside_cat.all_cats.values():
                     if the_cat.dead or the_cat.outside or the_cat.ID == outside_cat.ID:
                         continue
+                    the_cat.pelt.inventory = []
                     the_cat.create_one_relationship(outside_cat)
                     outside_cat.create_one_relationship(the_cat)
 
@@ -134,6 +135,8 @@ class NewCatEvents:
         for new_cat in created_cats:
             
             involved_cats.append(new_cat.ID)
+
+            new_cat.pelt.inventory = []
             
             # Set the blood parent, if one was created.
             # Also set adoptive parents if needed. 
