@@ -241,6 +241,8 @@ class Breed_generator:
     @staticmethod
     def Aby(genoclass, special):
         # FUR LENGTH
+
+        genoclass.longtype = 'long'
         
         if random() < 0.01:
             genoclass.furLength = ["L", "l"]
@@ -1336,6 +1338,7 @@ class Breed_generator:
     def Birman(genoclass, special):
         # FUR LENGTH
         
+        genoclass.longtype = 'long'
         if random() < 0.125:
             genoclass.furLength = ["L", choice(["L", "l"])]
         else:
@@ -3404,6 +3407,8 @@ class Breed_generator:
         genoclass.furLength = ["L", "L"]
 
         genoclass = Breed_generator.AllColours(genoclass, special)
+
+        genoclass.white = ['w', 'w']
 
         # ALBINO
 
@@ -7692,7 +7697,7 @@ def find_my_breed(genotype, phenotype, config):
             return "Lambkin"
         elif breed == "Napoleon" and phenotype.length != "hairless" and genotype.lykoi[0] == "Ly" and genotype.breeds.get("Persian/Exotic", 0) and genotype.breeds.get("Munchkin", 0):
             return "Napoleon"
-        elif breed == "Peterbald" and genotype.ruhr[0] == "Hrbd" and genotype.breeds.get("Oriental/Siamese", 0) and genotype.breeds.get("Donskoy", 0):
+        elif breed == "Peterbald" and genotype.breeds.get("Oriental/Siamese", 0) and genotype.breeds.get("Donskoy", 0):
             return "Peterbald"
         elif breed == "Serengeti" and Breed_checker.Serengeti(genotype, phenotype) and genotype.breeds.get("Oriental/Siamese", 0) and genotype.breeds.get("Bengal", 0):
             return "Serengeti"
