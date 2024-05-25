@@ -128,25 +128,27 @@ class Condition_Events():
                 cat.get_ill(chosen_illness)
 
                 # create event text
-                if chosen_illness in ["running nose", "stomachache"]:
+                if chosen_illness == "stomachache":
                     event_string = f"{cat.name} has gotten a {chosen_illness}."
+                elif chosen_illness == "running nose":
+                    event_string = f"{cat.name}'s nose has started running."
                 elif chosen_illness == "zoomies":
-                    event_string = f"{cat.name} has gotten the {chosen_illness}."
+                    event_string = f"{cat.name} has gotten the {chosen_illness}!"
                 elif chosen_illness == "sleeplessness":
                     event_string = f"{cat.name} has been unable to get any sleep."
                 elif chosen_illness == "burn out":
                     event_string = f"{cat.name} has gotten burnt out."
                 elif chosen_illness == "anxiety attack":
-                    event_string = f"{cat.name} has worked up into an {chosen_illness}."
+                    event_string = f"{cat.name} has gotten worked up into an {chosen_illness}."
                 elif chosen_illness == "seasonal lethargy":
                     event_string = f"{cat.name} is experiencing some {chosen_illness}."
                 elif chosen_illness in ['nest wetting', 'night dirtmaking']:
-                    event_string = f"Somewhat embarrassingly {cat.name} is experiencing {chosen_illness}."
+                    event_string = f"{cat.name} is experiencing {chosen_illness}."
                 elif chosen_illness == "nightmares":
                     event_string = f"{cat.name} has been struggling recently with nightmares."
                 elif chosen_illness in ['kittenspace', 'puppyspace']:
-                    event_string = f"{cat.name} has been acting a bit different than usual recently." \
-                                   f" It seems like {cat.name} may have gone into {chosen_illness}."
+                    event_string = f"Recently, {cat.name} has been acting a bit differently than usual." \
+                                   f" It seems like they may have gone into {chosen_illness}."
                 else:
                     event_string = f"{cat.name} has gotten {chosen_illness}."
 
@@ -408,7 +410,7 @@ class Condition_Events():
         scarless_conditions = [
             "weak leg", "paralyzed", "raspy lungs", "wasting disease", "blind", "failing eyesight",
             "one bad eye", "partial hearing loss", "deaf", "constant joint pain", "constantly dizzy",
-            "recurring shock", "lasting grief", "comet spirit", "heavy soul", "starwalker", "obsessive mind", "antisocial", "anxiety"
+            "recurring shock", "lasting grief", "persistent headaches", "comet spirit", "heavy soul", "starwalker", "obsessive mind", "antisocial", "anxiety",
             "constant roaming pain", "thunderous spirit", "otherworldly mind", "kitten regressor", "puppy regressor", "snow vision",
             "echoing shock", "irritable bowels", "loose body", "longcough", "burning light", "disrupted senses",
             "constant nightmares", "constant rash", "jellyfish joints", "lazy eye", "shattered soul", "budding spirit",
@@ -917,7 +919,7 @@ class Condition_Events():
                     event = possible_string_list[random_index]
                 except KeyError:
                     print(f"WARNING: {condition} couldn't be found in the risk strings! placeholder string was used")
-                    event = "m_c's condition has gotten worse."
+                    event = f"m_c has gotten {condition}"
 
                 event = event_text_adjust(Cat, event, cat, other_cat=med_cat)  # adjust the text
                 event_list.append(event)
