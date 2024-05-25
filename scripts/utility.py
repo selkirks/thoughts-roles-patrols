@@ -374,8 +374,10 @@ def create_new_cat(Cat,
                 chance = game.config["cat_generation"]["base_permanent_condition"] + 10
             if not int(random() * chance):
                 possible_conditions = []
+                genetics_exclusive = ["excess testosterone", "aneuploidy", "testosterone deficiency", "chimerism",
+                                      "mosaicism"]
                 for condition in PERMANENT:
-                    if (kit or litter) and PERMANENT[condition]['congenital'] not in ['always', 'sometimes']:
+                    if (kit or litter) and (PERMANENT[condition]['congenital'] not in ['always', 'sometimes']) or (condition in genetics_exclusive):
                         continue
                     # next part ensures that a kit won't get a condition that takes too long to reveal
                     age = new_cat.moons
@@ -393,9 +395,9 @@ def create_new_cat(Cat,
                     new_cat.get_permanent_condition(chosen_condition, born_with)
 
                     # assign scars
-                    if chosen_condition in ['lost a leg', 'born without a leg']:
+                    if chosen_condition in ['lost a leg', 'born without a leg'] and ('NOPAW') not in new_cat.pelt.scars:
                         new_cat.pelt.scars.append('NOPAW')
-                    elif chosen_condition in ['lost their tail', 'born without a tail']:
+                    elif chosen_condition in ['lost their tail', 'born without a tail'] and ('NOTAIL') not in new_cat.pelt.scars:
                         new_cat.pelt.scars.append("NOTAIL")
 
         if outside:

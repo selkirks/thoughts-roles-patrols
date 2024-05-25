@@ -1456,7 +1456,7 @@
         ],
         "risks": [
             {
-                "name": "strong attachement",
+                "name": "strong attachment",
                 "chance": 10
             },
             {
@@ -1491,7 +1491,7 @@
         ],
         "herbs":[]
     },		
-    "otherworldy mind": {
+    "otherworldly mind": {
         "severity": "minor",
         "congenital": "always",
         "moons_until": 2,
