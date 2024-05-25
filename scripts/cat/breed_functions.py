@@ -449,7 +449,7 @@ class Breed_generator:
         else:
             genoclass.soktype = soktypes[2]
 
-        genoclass.breeds["Abyssinian/Somali"] = 100
+        genoclass.breeds["Abyssinian"] = 100
         return genoclass
     
     @staticmethod
@@ -7731,7 +7731,7 @@ def find_my_breed(genotype, phenotype, config):
 
 breed_functions = {
     "generator" : {
-        "Abyssinian/Somali" : Breed_generator.Aby,
+        "Abyssinian" : Breed_generator.Aby,
         "American Bobtail" : Breed_generator.AmBob,
         "American Curl" : Breed_generator.AmCurl,
         "American Shorthair" : Breed_generator.AmSH,
@@ -7806,7 +7806,7 @@ breed_functions = {
         "Skookum" : Breed_generator.Skookum
     },
     "checker": {
-        "Abyssinian/Somali" : Breed_checker.Aby,
+        "Abyssinian" : Breed_checker.Aby,
         "American Bobtail" : Breed_checker.AmBob,
         "American Curl" : Breed_checker.AmCurl,
         "American Shorthair" : Breed_checker.AmSH,
