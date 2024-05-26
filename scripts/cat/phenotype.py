@@ -217,6 +217,8 @@ class Phenotype():
 
         if(self.genotype.karp[0] == 'K'):
             self.karpati = "karpati "
+        if(self.genotype.white[0] == 'wsal'):
+            self.karpati += "salmiak "
         
         if(self.genotype.bleach[0] == "lb"):
             self.fade = "bleached "

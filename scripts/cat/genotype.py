@@ -418,6 +418,8 @@ class Genotype:
                 self.white[i] = "wg"
             elif randint(1, 100) == 1:
                 self.white[i] = "wt"
+            elif randint(1, 100) == 1:
+                self.white[i] = "wsal"
             elif randint(1, 20) == 1:
                 self.white[i] = "W"
             elif randint(1, 2) == 1:
@@ -981,6 +983,8 @@ class Genotype:
                 self.white[i] = "wg"
             elif randint(1, 25) == 1:
                 self.white[i] = "wt"
+            elif randint(1, 25) == 1:
+                self.white[i] = "wsal"
             elif randint(1, 20) == 1:
                 self.white[i] = "W"
             elif randint(1, 2) == 1:
@@ -2194,10 +2198,13 @@ class Genotype:
         if self.white[0] == "wg":
             self.white[0] = self.white[1]
             self.white[1] = "wg"
-        elif self.white[0] == "w" and self.white[1] != "wg":
+        elif self.white[0] == "wsal" and self.white[1] != "wg":
+            self.white[0] = self.white[1]
+            self.white[1] = "wsal"
+        elif self.white[0] == "w" and self.white[1] != "wg" and self.white[1] != "wsal":
             self.white[0] = self.white[1]
             self.white[1] = "w"
-        elif self.white[0] == "wt" and self.white[1] != "wg" and self.white[1] != "w":
+        elif self.white[0] == "wt" and self.white[1] != "wg" and self.white[1] != "w" and self.white[1] != "wsal":
             self.white[0] = self.white[1]
             self.white[1] = "wt"
         elif self.white[1] == "W":
@@ -2760,9 +2767,9 @@ class Genotype:
                     self.white[1] = 'W'
             elif(random() < 0.2):
                 if(self.white[1] == 'w'):
-                    self.white[1] = 'wg'
+                    self.white[1] = choice(['wg', 'wsal'])
                 else:
-                    self.white[0] = 'wg'
+                    self.white[0] = choice(['wg', 'wsal'])
             else:
                 if(self.white[0] == 'w'):
                     self.white[0] = choice(['wt', 'ws', 'ws', 'ws', 'ws'])
