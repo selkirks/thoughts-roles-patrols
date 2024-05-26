@@ -223,7 +223,7 @@ class Phenotype():
         elif(self.genotype.ghosting[0] == "Gh"):
             self.fade = "faded "
     def SolidWhite(self, pattern=None):
-        if(self.genotype.white[0] == "W" or self.genotype.pointgene[0] == "c" or (self.genotype.white[1] in ['wt', 'ws'] and self.genotype.whitegrade == 5)):
+        if(self.genotype.white[0] == "W" or self.genotype.pointgene[0] == "c" or (self.genotype.white[1] in ['wt', 'ws'] and self.genotype.whitegrade == 5) or (self.genotype.brindledbi and 'o' not in self.genotype.sexgene)):
             self.highwhite = ""
             self.fade = ""
             if(self.genotype.pointgene[0] == "c"):
@@ -334,7 +334,7 @@ class Phenotype():
         if('o' not in self.genotype.sexgene or self.genotype.agouti[0] != 'a' or self.tabtype != '' or ('smoke' in self.silvergold and self.length == 'shorthaired') or self.genotype.ext[0] not in ['Eg', 'E']):
             FindPattern()
         
-        if(self.tortie != '' and self.tabby != '' and self.tortie != ' brindled bicolour '):
+        if(self.tortie != '' and self.tabby != '' and self.tortie != 'brindled bicolour '):
             if(self.tortie == 'calico '):
                 self.tortie = ' caliby '
             else:
