@@ -663,7 +663,7 @@
     },
     "rabbit gait": {
         "severity": "minor",
-        "congenital": "sometimes",
+        "congenital": "always",
         "moons_until": 4,
         "mortality": {
             "newborn": 0,

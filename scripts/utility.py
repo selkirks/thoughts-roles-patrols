@@ -387,10 +387,13 @@ def create_new_cat(Cat,
                 chance = int(game.config["cat_generation"]["base_permanent_condition"] / 11.25)
             else:
                 chance = game.config["cat_generation"]["base_permanent_condition"] + 10
+            chance = 1
             if not int(random() * chance):
                 possible_conditions = []
                 for condition in PERMANENT:
-                    if (kit or litter) and PERMANENT[condition]['congenital'] not in ['always', 'sometimes'] and condition not in ['manx syndrome', 'ocular albinism', 'albinism', 'rabbit gait']:
+                    if (kit or litter) and PERMANENT[condition]['congenital'] not in ['always', 'sometimes']:
+                        continue
+                    if condition in ['manx syndrome', 'ocular albinism', 'albinism', 'rabbit gait']:
                         continue
                     # next part ensures that a kit won't get a condition that takes too long to reveal
                     age = new_cat.moons

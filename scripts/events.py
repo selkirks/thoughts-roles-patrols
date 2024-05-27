@@ -106,7 +106,7 @@ class Events:
 
         #Kill kits as needed
         if game.clan.clan_settings['modded_kits']:
-            self.kit_deaths(Cat.all_cats_list)
+            faded_kits = self.kit_deaths(Cat.all_cats_list)
 
         # Calling of "one_moon" functions.
         for cat in Cat.all_cats.copy().values():
@@ -158,7 +158,7 @@ class Events:
                         f"lives are shared in stories around the circle of mourners as those that were closest to them " \
                         f"take them to their final resting place."
 
-                if len(ghost_names) > 2:
+                if len(ghost_names)-faded_kits > 2:
                     alive_cats = list(
                         filter(
                             lambda kitty: (kitty.status != "leader" and not kitty.dead and
@@ -1003,6 +1003,8 @@ class Events:
                 event_text += " has"
             event_text += " faded over the course of a few days."
             game.cur_events_list.append(Single_Event(event_text, ['birth_death'], fading_kits))
+        
+        return len(fading_kits)
 
     def one_moon_cat(self, cat):
         """
