@@ -266,7 +266,9 @@ class ProfileScreen(Screens):
                 else: self.the_cat.pronouns = [self.the_cat.default_pronouns[0].copy()]'''
             #when button is pressed...
             elif event.ui_element == self.cis_trans_button:
-                nonbiney_list = ['nonbinary', 'genderfluid', 'demigirl', 'demiboy', 'genderfae', 'genderfaun', 'bigender', 'genderqueer', 'agender', '???']
+                genderqueer_list = ['nonbinary', 'neutrois', 'agender', 'genderqueer', 'demigirl', 'demiboy',
+                                    'demienby', 'genderfluid', 'genderfae', 'genderfaun', 'genderflor',
+                                    'bigender', 'pangender', '???']
                 trans_list = ['trans female', 'trans male']
                 #if the cat is anything besides m/f/transm/transf/i then turn them back to cis
                 if self.the_cat.genderalign not in ["female", "trans female", "male", "trans male", "intersex"]:
@@ -288,13 +290,13 @@ class ProfileScreen(Screens):
                 #if the cat is trans then set them to nonbinary
                 elif self.the_cat.genderalign in ["trans female", "trans male"]:
                     if self.the_cat.gender == "intersex":
-                        intergenderchance = randint(1, 2)
+                        intergenderchance = random.randint(1, 2)
                         if intergenderchance == 1:
                             self.the_cat.genderalign = "intergender"
                         else:
-                            self.the_cat.genderalign = random.choice(nonbiney_list)
+                            self.the_cat.genderalign = random.choice(genderqueer_list)
                     else:
-                        self.the_cat.genderalign = random.choice(nonbiney_list)
+                        self.the_cat.genderalign = random.choice(genderqueer_list)
                 '''#pronoun handler
                 if self.the_cat.genderalign in ["female", "trans female"]:
                     self.the_cat.pronouns = [self.the_cat.default_pronouns[1].copy()]
@@ -2211,7 +2213,7 @@ class ProfileScreen(Screens):
                                                       manager=MANAGER)
             elif self.the_cat.gender == "intersex" and self.the_cat.genderalign == "intersex":
                 self.cis_trans_button = UIImageButton(scale(pygame.Rect((804, 972), (344, 104))), "",
-                                                      starting_height=2, object_id="#change_trans_female_button",
+                                                      starting_height=2, object_id="#change_trans_button",
                                                       manager=MANAGER)
             elif self.the_cat.genderalign in ['trans female', 'trans male']:
                 self.cis_trans_button = UIImageButton(scale(pygame.Rect((804, 972), (344, 104))), "",

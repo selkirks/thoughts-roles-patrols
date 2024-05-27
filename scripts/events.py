@@ -296,7 +296,7 @@ class Events:
 
             prey_amount += random.randint(lower_value, upper_value)
         if FRESHKILL_ACTIVE:
-            game.freshkill_event_list.append(f"The clan managed to catch {prey_amount} pieces of prey in this moon.")
+            game.freshkill_event_list.append(f"The Clan managed to catch {prey_amount} pieces of prey in this moon.")
         game.clan.freshkill_pile.add_freshkill(prey_amount)
 
     def herb_gather(self):
@@ -604,7 +604,7 @@ class Events:
             'After a long journey, m_c has finally returned home to c_n.',
             'm_c was found at the border, tired, but happy to be home.',
             "m_c strides into camp, much to the everyone's surprise. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} home!",
-            "{PRONOUN/m_c/subject/CAP} met so many friends on {PRONOUN/m_c/poss} jouney, but c_n is where m_c truly belongs. With a tearful goodbye, "
+            "{PRONOUN/m_c/subject/CAP} met so many friends on {PRONOUN/m_c/poss} journey, but c_n is where m_c truly belongs. With a tearful goodbye, " 
                 "{PRONOUN/m_c/subject} {VERB/m_c/return/returns} home."
         ]
         lost_cat.outside = False
@@ -1991,38 +1991,59 @@ class Events:
     def coming_out(self, cat):
         """turnin' the kitties trans..."""
         if cat.genderalign == cat.gender:
-            if cat.moons < 6:
-                return
-
             involved_cats = [cat.ID]
-            if cat.age == 'adolescent':
-                transing_chance = random.getrandbits(8)  # 2/256
+            if cat.age == 'kitten':
+                transing_chance = random.randint(0, 128)
+            elif cat.age == 'adolescent':
+                transing_chance = random.randint(0, 128)
             elif cat.age == 'young adult':
-                transing_chance = random.getrandbits(9)  # 2/512
+                transing_chance = random.randint(0, 256)
+            elif cat.age == 'adult':
+                transing_chance = random.randint(0, 384)
             else:
-                # adult, senior adult, elder
-                transing_chance = random.getrandbits(10)  # 2/1028
+                # senior adult & elder
+                transing_chance = random.randint(0, 514)
 
             if transing_chance:
                 # transing_chance != 0, no trans kitties today...    L
                 return
 
+            genderqueer_list = ["nonbinary", "neutrois", "agender", "genderqueer", "demigirl", "demiboy", "demienby",
+                                "genderfluid", "genderfae", "genderfaun", "genderflor", "bigender", "pangender", "???"]
+
             if random.getrandbits(1):  # 50/50
                 if cat.gender == "male":
                     cat.genderalign = "trans female"
                     # cat.pronouns = [cat.default_pronouns[1].copy()]
-                else:
+                elif cat.gender == "female":
                     cat.genderalign = "trans male"
                     # cat.pronouns = [cat.default_pronouns[2].copy()]
+                else:
+                    cat.genderalign = random.choice(["trans female", "trans male"])
+            elif cat.gender == "intersex":
+                intergenderchance = random.randint(1, 2)
+                if intergenderchance == 1:
+                    cat.genderalign = "intergender"
+                else:
+                    cat.genderalign = random.choice(genderqueer_list)
             else:
-                cat.genderalign = "nonbinary"
+                cat.genderalign = random.choice(genderqueer_list)
                 # cat.pronouns = [cat.default_pronouns[0].copy()]
 
             if cat.gender == 'male':
                 gender = 'tom'
-            else:
+            elif cat.gender == 'female':
                 gender = 'she-cat'
-            text = f"{cat.name} has realized that {gender} doesn't describe how they feel anymore."
+            else:
+                gender = cat.gender
+
+            if cat.genderalign == "trans male":
+                trans = "tom"
+            elif cat.genderalign == "trans female":
+                trans = "she-cat"
+            else:
+                trans = cat.genderalign
+            text = f"{cat.name} has realized that {gender} doesn't describe how they feel anymore - {trans} does it much better."
             game.cur_events_list.append(
                 Single_Event(text, "misc", involved_cats))
             # game.misc_events_list.append(text)
@@ -2136,7 +2157,7 @@ class Events:
                             f"StarClan that they are the right choice for the Clan.",  # pylint: disable=line-too-long
                             f"{random_cat.name} has been chosen as the new deputy. Although"  # pylint: disable=line-too-long
                             f"they are nervous, they put on a brave front and look forward to serving"  # pylint: disable=line-too-long
-                            f"the clan.",
+                            f"the Clan.",
                         ]
                         # No additional involved cats
                         text = random.choice(possible_events)

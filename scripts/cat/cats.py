@@ -276,9 +276,9 @@ class Cat():
             self.backstory = 'clanborn'
         else:
             self.backstory = self.backstory
-        
-        nonbiney_list = ["nonbinary", "genderfluid", "demigirl", "demiboy", "genderfae", "genderfaun", "bigender", "genderqueer", "agender", "???"]
 
+        genderqueer_list = ["nonbinary", "neutrois", "agender", "genderqueer", "demigirl", "demiboy", "demienby",
+                            "genderfluid", "genderfae", "genderfaun", "genderflor", "bigender", "pangender", "???"]
 
         # sex!?!??!?!?!??!?!?!?!??
         if self.gender is None:
@@ -306,21 +306,21 @@ class Cat():
             # trans cat chances
             trans_chance = randint(0, 50)
             nb_chance = randint(0, 75)
-            if self.gender == "female" and not self.status in ['newborn', 'kitten']:
+            if self.gender == "female" and not self.status in ['newborn']:
                 if trans_chance == 1:
                     self.genderalign = "trans male"
                 elif nb_chance == 1:
-                    self.genderalign = choice(nonbiney_list)
+                    self.genderalign = choice(genderqueer_list)
                 else:
                     self.genderalign = self.gender
-            elif self.gender == "male" and not self.status in ['newborn', 'kitten']:
+            elif self.gender == "male" and not self.status in ['newborn']:
                 if trans_chance == 1:
                     self.genderalign = "trans female"
                 elif nb_chance == 1:
-                    self.genderalign = choice(nonbiney_list)
+                    self.genderalign = choice(genderqueer_list)
                 else:
                     self.genderalign = self.gender
-            elif self.gender == "intersex" and not self.status in ['newborn', 'kitten']:
+            elif self.gender == "intersex" and not self.status in ['newborn']:
                 if trans_chance == 1:
                     self.genderalign = choice(["trans male", "trans female"])
                 elif nb_chance == 1:
@@ -328,7 +328,7 @@ class Cat():
                     if intergenderchance == 1:
                         self.genderalign = "intergender"
                     else:
-                        self.genderalign = choice(nonbiney_list)
+                        self.genderalign = choice(genderqueer_list)
                 else:
                     self.genderalign = self.gender
             else:
@@ -455,13 +455,13 @@ class Cat():
         text = ""
         if self.status == 'leader':
             if game.clan.leader_lives > 0:
-                self.thought = 'Was startled to find themselves in Silverpelt for a moment... did they lose a life?'
+                self.thought = 'Was startled to find themself in Silverpelt for a moment... did they lose a life?'
                 return ""
             elif game.clan.leader_lives <= 0:
                 self.dead = True
                 game.just_died.append(self.ID)
                 game.clan.leader_lives = 0
-                self.thought = 'Is surprised to find themselves walking the stars of Silverpelt'
+                self.thought = 'Is surprised to find themself walking the stars of Silverpelt'
                 if game.clan.instructor.df is False:
                     text = 'They\'ve lost their last life and have travelled to StarClan.'
                 else:
@@ -469,7 +469,7 @@ class Cat():
         else:
             self.dead = True
             game.just_died.append(self.ID)
-            self.thought = 'Is surprised to find themselves walking the stars of Silverpelt'
+            self.thought = 'Is surprised to find themself walking the stars of Silverpelt'
 
         # Clear Relationships. 
         self.relationships = {}
@@ -490,7 +490,7 @@ class Cat():
                 game.clan.add_to_starclan(self)
             elif game.clan.instructor.df is True:
                 self.df = True
-                self.thought = "Is startled to find themselves wading in the muck of a shadowed forest"
+                self.thought = "Is startled to find themself wading in the muck of a shadowed forest"
                 game.clan.add_to_darkforest(self)
         else:
             self.thought = "Is fascinated by the new ghostly world they've stumbled into"
@@ -1503,8 +1503,9 @@ class Cat():
         rng = randint(1,20)
         gender="???"
         if rng <= 2:
-            nonbiney_list = ["nonbinary", "genderfluid", "demigirl", "demiboy", "genderfae", "genderfaun", "bigender", "genderqueer", "agender", "???"]
-            gender = choice(nonbiney_list)
+            genderqueer_list = ["nonbinary", "neutrois", "agender", "genderqueer", "demigirl", "demiboy", "demienby",
+                                "genderfluid", "genderfae", "genderfaun", "genderflor", "bigender", "pangender", "???"]
+            gender = choice(genderqueer_list)
         elif rng <= 6:
             gender = "male"
         else:

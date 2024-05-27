@@ -2886,6 +2886,23 @@
             }
         }
     },
+    "#change_trans_button": {
+        "prototype": "#image_button",
+        "images": {
+            "normal_image": {
+                "path": "resources/images/buttons/change_trans.png"
+            },
+            "hovered_image": {
+                "path": "resources/images/buttons/change_trans_hover.png"
+            },
+            "selected_image": {
+                "path": "resources/images/buttons/change_trans_hover.png"
+            },
+            "disabled_image": {
+                "path": "resources/images/buttons/change_trans_unavailable.png"
+            }
+        }
+    },
     "#change_cis_button": {
         "prototype": "#image_button",
         "images": {
