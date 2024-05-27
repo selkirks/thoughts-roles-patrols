@@ -7656,8 +7656,6 @@ def find_my_breed(genotype, phenotype, config):
         hybrids["Bambino"] = 0
     if not genotype.breeds.get("Ocicat", False) or not genotype.breeds.get("Bengal", False):
         hybrids["Cheetoh"] = 0
-    if not genotype.breeds.get("American Curl", False) or not genotype.breeds.get("Sphynx", False):
-        hybrids["Elf"] = 0
     if not genotype.breeds.get("Persian/Exotic", False) or not genotype.breeds.get("British", False) or genotype.breeds.get("Munchkin", False):
         hybrids["Foldex"] = 0
     if not genotype.breeds.get("Munchkin", False) or not genotype.breeds.get("Persian/Exotic", False) or not genotype.breeds.get("British", False):
