@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: ascii -*-
 import os
+import random
 from random import choice
 
 import pygame
@@ -266,8 +267,9 @@ class ProfileScreen(Screens):
             #when button is pressed...
             elif event.ui_element == self.cis_trans_button:
                 nonbiney_list = ['nonbinary', 'genderfluid', 'demigirl', 'demiboy', 'genderfae', 'genderfaun', 'bigender', 'genderqueer', 'agender', '???']
-                #if the cat is anything besides m/f/transm/transf then turn them back to cis
-                if self.the_cat.genderalign not in ["female", "trans female", "male", "trans male"]:
+                trans_list = ['trans female', 'trans male']
+                #if the cat is anything besides m/f/transm/transf/i then turn them back to cis
+                if self.the_cat.genderalign not in ["female", "trans female", "male", "trans male", "intersex"]:
                     self.the_cat.genderalign = self.the_cat.gender
                 elif self.the_cat.gender == "male" and self.the_cat.genderalign == 'female':
                     self.the_cat.genderalign = self.the_cat.gender
@@ -280,9 +282,19 @@ class ProfileScreen(Screens):
                 #cis females -> trans male
                 elif self.the_cat.gender == "female" and self.the_cat.genderalign == 'female':
                     self.the_cat.genderalign = 'trans male'
+                #intersex -> trans females/males
+                elif self.the_cat.gender == "intersex" and self.the_cat.genderalign == 'intersex':
+                    self.the_cat.genderalign = random.choice(trans_list)
                 #if the cat is trans then set them to nonbinary
                 elif self.the_cat.genderalign in ["trans female", "trans male"]:
-                    self.the_cat.genderalign = choice(nonbiney_list)
+                    if self.the_cat.gender == "intersex":
+                        intergenderchance = randint(1, 2)
+                        if intergenderchance == 1:
+                            self.the_cat.genderalign = "intergender"
+                        else:
+                            self.the_cat.genderalign = random.choice(nonbiney_list)
+                    else:
+                        self.the_cat.genderalign = random.choice(nonbiney_list)
                 '''#pronoun handler
                 if self.the_cat.genderalign in ["female", "trans female"]:
                     self.the_cat.pronouns = [self.the_cat.default_pronouns[1].copy()]
@@ -918,33 +930,237 @@ class ProfileScreen(Screens):
                 output += choice(can_front)
                 '''
                 output += "\n"
-                
-            
 
+        already_sick_injured = False
         if the_cat.is_injured():
-            if "recovering from birth" in the_cat.injuries:
-                output += 'recovering from birth!'
-            elif "pregnant" in the_cat.injuries:
-                output += 'pregnant!'
-            else:
+            special_conditions = [
+                "overstimulation", "understimulation", "fatigue", "fainting"
+            ]
+            all_special = True
+            for condition in the_cat.injuries:
+                if condition not in special_conditions:
+                    all_special = False
+                if not all_special:
+                    break
+
+            if not all_special:
                 output += "injured!"
-            output += "\n"
+                already_sick_injured = True
+
+            if "recovering from birth" in the_cat.injuries:
+                if already_sick_injured:
+                    output += '\nrecovering from birth!'
+                else:
+                    output += 'recovering from birth!'
+                    already_sick_injured = True
+
+            if "overstimulation" in the_cat.injuries:
+                if already_sick_injured:
+                    output += '\noverstimulated!'
+                else:
+                    output += 'overstimulated!'
+                    already_sick_injured = True
+
+            if "understimulation" in the_cat.injuries:
+                if already_sick_injured:
+                    output += '\nunderstimulated!'
+                else:
+                    output += 'understimulated!'
+                    already_sick_injured = True
+
+            if "fatigue" in the_cat.injuries:
+                if already_sick_injured:
+                    output += '\nfatigued!'
+                else:
+                    output += 'fatigued!'
+                    already_sick_injured = True
+
+            if "fainting" in the_cat.injuries:
+                if already_sick_injured:
+                    output += '\nfainted!'
+                else:
+                    output += 'fainted!'
+                    already_sick_injured = True
+
+            if "pregnant" in the_cat.injuries:
+                if already_sick_injured:
+                    output += '\npregnant!'
+                else:
+                    output += 'pregnant!'
+                    already_sick_injured = True
 
         if the_cat.is_ill():
+            special_conditions = [
+                "grief stricken", "fleas", "malnourished", "starving", "paranoia", "seasonal lethargy", "lethargy",
+                "special interest", "hyperfixation", "stimming", "indecision", "impulsivity", "zoomies",
+                "sleeplessness", "burn out", "kittenspace", "puppyspace", "tics", "tic attack", "dizziness"
+            ]
+            all_special = True
+            for condition in the_cat.illnesses:
+                if condition not in special_conditions:
+                    all_special = False
+                if not all_special:
+                    break
+
+            if not all_special:
+                if already_sick_injured:
+                    output += '\nsick!'
+                else:
+                    output += 'sick!'
+                    already_sick_injured = True
+
             if "grief stricken" in the_cat.illnesses:
-                output += 'grieving!'
-            elif "fleas" in the_cat.illnesses:
-                output += 'flea-ridden!'
-            elif "puppyspace" in the_cat.illnesses:
-                output += 'in puppyspace'
-            elif "kittenspace" in the_cat.illnesses:
-                output += 'in kittenspace'
-            elif the_cat.illnesses in ["lethargy", "seasonal lethargy"]:
-                output += 'experiencing lethargy'
-            elif "indecision" in the_cat.illnesses:
-                output += 'indecisive'
-            else:
-                output += 'sick!'
+                if already_sick_injured:
+                    output += '\ngrieving!'
+                else:
+                    output += 'grieving!'
+                    already_sick_injured = True
+
+            if "fleas" in the_cat.illnesses:
+                if already_sick_injured:
+                    output += '\nflea-ridden!'
+                else:
+                    output += 'flea-ridden!'
+                    already_sick_injured = True
+
+            if "malnourished" in the_cat.illnesses:
+                if already_sick_injured:
+                    output += '\nmalnourished!'
+                else:
+                    output += 'malnourished!'
+                    already_sick_injured = True
+
+            if "starving" in the_cat.illnesses:
+                if already_sick_injured:
+                    # I don't think cats can be malnourished and starving at the same time, but jic
+                    if "malnourished!" in output:
+                        output = output.replace('malnourished!', 'starving!')
+                    else:
+                        output += '\nstarving!'
+                else:
+                    output += 'starving!'
+                    already_sick_injured = True
+
+            if "paranoia" in the_cat.illnesses:
+                if already_sick_injured:
+                    output += '\nparanoid!'
+                else:
+                    output += 'paranoid!'
+                    already_sick_injured = True
+
+            if ("lethargy" or "seasonal lethargy") in the_cat.illnesses:
+                if already_sick_injured:
+                    if game.settings['warriorified names']:
+                        output += '\nlethargic!'
+                    else:
+                        output += '\ndepressed!'
+                else:
+                    if game.settings['warriorified names']:
+                        output += 'lethargic!'
+                    else:
+                        output += 'depressed!'
+                    already_sick_injured = True
+
+            if "special interest" in the_cat.illnesses:
+                if already_sick_injured:
+                    output += '\nhas a special interest'
+                else:
+                    output += 'has a special interest'
+                    already_sick_injured = True
+
+            if "hyperfixation" in the_cat.illnesses:
+                if already_sick_injured:
+                    output += '\nhas a hyperfixation'
+                else:
+                    output += 'has a hyperfixation'
+                    already_sick_injured = True
+
+            if "stimming" in the_cat.illnesses:
+                if already_sick_injured:
+                    output += '\nstimming'
+                else:
+                    output += 'stimming'
+                    already_sick_injured = True
+
+            if "indecision" in the_cat.illnesses:
+                if already_sick_injured:
+                    output += '\nindecisive!'
+                else:
+                    output += 'indecisive!'
+                    already_sick_injured = True
+
+            if "impulsivity" in the_cat.illnesses:
+                if already_sick_injured:
+                    output += '\nimpulsive!'
+                else:
+                    output += 'impulsive!'
+                    already_sick_injured = True
+
+            if "zoomies" in the_cat.illnesses:
+                if already_sick_injured:
+                    output += '\nzoomin\''
+                else:
+                    output += 'zoomin\''
+                    already_sick_injured = True
+
+            if "sleeplessness" in the_cat.illnesses:
+                if already_sick_injured:
+                    if game.settings['warriorified names']:
+                        output += '\nsleepless!'
+                    else:
+                        output += '\ninsomniac!'
+                else:
+                    if game.settings['warriorified names']:
+                        output += 'sleepless!'
+                    else:
+                        output += 'insomniac!'
+                    already_sick_injured = True
+
+            if "burn out" in the_cat.illnesses:
+                if already_sick_injured:
+                    output += '\nburnt out!'
+                else:
+                    output += 'burnt out!'
+                    already_sick_injured = True
+
+            if "puppyspace" in the_cat.illnesses:
+                if already_sick_injured:
+                    if game.settings['warriorified names']:
+                        output += '\nin puppyspace'
+                    else:
+                        output += '\nin petspace'
+                else:
+                    if game.settings['warriorified names']:
+                        output += 'in puppyspace'
+                    else:
+                        output += 'in petspace'
+                    already_sick_injured = True
+
+            if "kittenspace" in the_cat.illnesses:
+                if already_sick_injured:
+                    if game.settings['warriorified names']:
+                        output += '\nin kittenspace'
+                    else:
+                        output += '\nin littlespace'
+                else:
+                    if game.settings['warriorified names']:
+                        output += 'in kittenspace'
+                    else:
+                        output += 'in littlespace'
+                    already_sick_injured = True
+
+            if ("tics" or "tic attack") in the_cat.illnesses:
+                if already_sick_injured:
+                    output += '\nticing!'
+                else:
+                    output += 'ticing!'
+                    already_sick_injured = True
+
+            if "dizziness" in the_cat.illnesses:
+                if already_sick_injured:
+                    output += '\ndizzy!'
+                else:
+                    output += 'dizzy!'
 
         return output
 
@@ -1602,39 +1818,83 @@ class ProfileScreen(Screens):
 
         x_pos = 30
         for con in all_illness_injuries[self.conditions_page]:
-            #for ele in con:
-                #print(ele)
+            condition_name = self.change_condition_name(con[0])
             # Background Box
             pygame_gui.elements.UIImage(
-                    scale(pygame.Rect((x_pos, 25), (280, 276))),
-                    self.condition_details_box, manager=MANAGER,
-                    container=self.condition_container)
-            
+                scale(pygame.Rect((x_pos, 25), (280, 276))),
+                self.condition_details_box, manager=MANAGER,
+                container=self.condition_container)
+
             y_adjust = 60
-            
+
             name = UITextBoxTweaked(
-                    con[0],
-                    scale(pygame.Rect((x_pos, 26), (272, -1))),
-                    line_spacing=.90,
-                    object_id="#text_box_30_horizcenter",
-                    container=self.condition_container, manager=MANAGER)
-            
+                condition_name,
+                scale(pygame.Rect((x_pos, 26), (272, -1))),
+                line_spacing=.90,
+                object_id="#text_box_30_horizcenter",
+                container=self.condition_container, manager=MANAGER)
+
             y_adjust = name.get_relative_rect().height
             details_rect = scale(pygame.Rect((x_pos, 0), (276, -1)))
             details_rect.y = y_adjust
             
             UITextBoxTweaked(
-                    con[1],
-                    details_rect,
-                    line_spacing=.90,
-                    object_id="#text_box_22_horizcenter_pad_20_20",
-                    container=self.condition_container, manager=MANAGER)
-            
-            
+                con[1],
+                details_rect,
+                line_spacing=.90,
+                object_id="#text_box_22_horizcenter_pad_20_20",
+                container=self.condition_container, manager=MANAGER)
+
             x_pos += 304
         
         return
-    
+
+    @staticmethod
+    def change_condition_name(condition):
+        dad_names = {
+            "starwalker": "autism",
+            "obsessive mind": "OCD",
+            "heavy soul": "chronic depression",
+            "comet spirit": "ADHD",
+            "antisocial": "ASPD",
+            "constant roaming pain": "fibromyalgia",
+            "ongoing sleeplessness": "chronic insomnia",
+            "body biter": "BFRD",
+            "thunderous spirit": "BPD",
+            "otherworldly mind": "schizophrenia",
+            "snow vision": "visual snow",
+            "kitten regressor": "age regressor",
+            "puppy regressor": "pet regressor",
+            "irritable bowels": "IBS",
+            "jellyfish joints": "HSD",
+            "loose body": "hEDS",
+            "burning light": "chronic light sensitivity",
+            "jumbled noise": "APD",
+            "disrupted senses": "SPD",
+            "constant rash": "eczema",
+            "chattering tongue": "tourette's",
+            "falling paws": "orthostatic hypotension",
+            "shattered soul": "DID",
+            "budding spirit": "OSDD",
+            "curved spine": "scoliosis",
+            "jumbled mind": "dyslexia",
+            "counting fog": "dyscalculia",
+
+            "sunblindness": "light sensitivity",
+
+            "seasonal lethargy": "seasonal depression",
+            "lethargy": "depression",
+            "sleeplessness": "insomnia",
+            "ear buzzing": "tinnitus",
+            "kittenspace": "littlespace",
+            "puppyspace": "petspace"
+        }
+        if not game.settings['warriorified names']:
+            if condition in dad_names:
+                condition = condition.replace(condition, dad_names.get(condition))
+
+        return condition
+
     def get_alter_details(self, alter):
         text_list = []
         text_list.append(f"alter")
@@ -1684,7 +1944,20 @@ class ProfileScreen(Screens):
             
             if name == 'recovering from birth':
                 insert = 'has been recovering for'
-            elif name == 'pregnant':
+
+            if name == 'overstimulation':
+                insert = 'has been overstimulated for'
+
+            if name == 'understimulation':
+                insert = 'has been understimulated for'
+
+            if name == 'fatigue':
+                insert = 'has been fatigued for'
+
+            if name == 'fainting':
+                insert = 'has been fainted for'
+
+            if name == 'pregnant':
                 insert = 'has been pregnant for'
             
             if moons_with != 1:
@@ -1712,10 +1985,67 @@ class ProfileScreen(Screens):
 
             if name == 'grief stricken':
                 insert = 'has been grieving for'
-            if name in 'kittenspace':
-                insert = 'has been in kittenspace for'
-            if name in 'puppyspace':
-                insert = 'has been in puppyspace for'
+
+            if name == 'malnourished':
+                insert = 'has been malnourished for'
+
+            if name == 'starving':
+                insert = 'has been starving for'
+
+            if name == 'paranoia':
+                insert = 'has been paranoid for'
+
+            if name in ['seasonal lethargy', 'lethargy']:
+                if game.settings['warriorified names']:
+                    insert = 'has been lethargic for'
+                else:
+                    insert = 'has been depressed for'
+
+            if name == 'special interest':
+                insert = 'has been interested for'
+
+            if name == 'hyperfixation':
+                insert = 'has been fixated for'
+
+            if name == 'stimming':
+                insert = 'has been stimming for'
+
+            if name == 'indecision':
+                insert = 'has been indecisive for'
+
+            if name == 'impulsivity':
+                insert = 'has been impulsive for'
+
+            if name == 'zoomies':
+                insert = 'has been zooming for'
+
+            if name == 'sleeplessness':
+                if game.settings['warriorified names']:
+                    insert = 'has been sleepless for'
+                else:
+                    insert = 'has been insomniac for'
+
+            if name == 'burn out':
+                insert = 'has been burnt out for'
+
+            if name == 'kittenspace':
+                if game.settings['warriorified names']:
+                    insert = 'has been in kittenspace for'
+                else:
+                    insert = 'has been in littlespace for'
+
+            if name == 'puppyspace':
+                if game.settings['warriorified names']:
+                    insert = 'has been in puppyspace for'
+                else:
+                    insert = 'has been in petspace for'
+
+            if name in ['tics', 'tic attack']:
+                insert = 'has been ticing for'
+
+            if name == 'dizziness':
+                insert = 'has been dizzy for'
+
             if moons_with != 1:
                 text_list.append(f"{insert} {moons_with} moons")
             else:
@@ -1878,6 +2208,10 @@ class ProfileScreen(Screens):
             elif self.the_cat.gender == "female" and self.the_cat.genderalign == "female":
                 self.cis_trans_button = UIImageButton(scale(pygame.Rect((804, 972), (344, 104))), "",
                                                       starting_height=2, object_id="#change_trans_male_button",
+                                                      manager=MANAGER)
+            elif self.the_cat.gender == "intersex" and self.the_cat.genderalign == "intersex":
+                self.cis_trans_button = UIImageButton(scale(pygame.Rect((804, 972), (344, 104))), "",
+                                                      starting_height=2, object_id="#change_trans_female_button",
                                                       manager=MANAGER)
             elif self.the_cat.genderalign in ['trans female', 'trans male']:
                 self.cis_trans_button = UIImageButton(scale(pygame.Rect((804, 972), (344, 104))), "",

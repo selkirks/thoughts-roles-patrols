@@ -151,6 +151,7 @@ class Condition_Events():
                                    f" It seems like they may have gone into {chosen_illness}."
                 else:
                     event_string = f"{cat.name} has gotten {chosen_illness}."
+                event_string = Condition_Events.change_condition_name(event_string)
 
         # if an event happened, then add event to cur_event_list and save death if it happened.
         if event_string:
@@ -245,6 +246,7 @@ class Condition_Events():
 
                     #print(injury_event.event_text)
                     text = event_text_adjust(Cat, injury_event.event_text, cat, other_cat, other_clan_name)
+                    text = Condition_Events.change_condition_name(text)
 
                     if game.clan.game_mode == "classic":
                         if "scar" in injury_event.tags and len(cat.pelt.scars) < 4:
@@ -520,6 +522,7 @@ class Condition_Events():
                 # choose event string
                 random_index = int(random.random() * len(possible_string_list))
                 event = possible_string_list[random_index]
+                event = Condition_Events.change_condition_name(event)
                 event = event_text_adjust(Cat, event, cat, other_cat=None)
                 event_list.append(event)
                 game.herb_events_list.append(event)
@@ -590,6 +593,7 @@ class Condition_Events():
                     print(f'WARNING: {injury} does not have an injury death string, placeholder used')
                     event = "m_c was killed by their injuries."
 
+                event = Condition_Events.change_condition_name(event)
                 event = event_text_adjust(Cat, event, cat)
 
                 if cat.status == 'leader':
@@ -619,6 +623,7 @@ class Condition_Events():
                     except KeyError:
                         print(f"WARNING: {injury} couldn't be found in the healed strings dict! placeholder string was used.")
                         event = f"m_c's injury {injury} has healed"
+                event = Condition_Events.change_condition_name(event)
                 event = event_text_adjust(Cat, event, cat, other_cat=None)
 
                 game.herb_events_list.append(event)
@@ -652,6 +657,7 @@ class Condition_Events():
                         random_index = 2
 
                     event = possible_string_list[random_index]
+                    event = Condition_Events.change_condition_name(event)
                     event = event_text_adjust(Cat, event, cat, other_cat=med_cat)  # adjust the text
                 if event is not None:
                     event_list.append(event)
@@ -696,12 +702,14 @@ class Condition_Events():
                 triggered = True
                 event_types.append("birth_death")
                 event = f"{cat.name} died from complications caused by {condition}."
+                if cat.status == "leader" and not cat.dead:
+                    event = f"{cat.name} lost a life from complications caused by {condition}."
                 event_list.append(event)
 
                 if cat.status != 'leader':
-                    History.add_death(cat, death_text=event)
+                    History.add_death(cat, death_text=f"complications caused by {condition}")
                 else:
-                    History.add_death(cat, death_text=f"killed by complications caused by {condition}")
+                    History.add_death(cat, death_text=f"died from complications caused by {condition}")
 
                 game.herb_events_list.append(event)
                 break
@@ -751,6 +759,7 @@ class Condition_Events():
                     if med_cat == cat:
                         random_index = 1
                 event = possible_string_list[random_index]
+                event = Condition_Events.change_condition_name(event)
                 event = event_text_adjust(Cat, event, cat, other_cat=med_cat)  # adjust the text
                 event_list.append(event)
                 continue
@@ -775,6 +784,55 @@ class Condition_Events():
             event_string = ' '.join(event_list)
             game.cur_events_list.append(Single_Event(event_string, event_types, cat.ID))
         return
+
+    @staticmethod
+    def change_condition_name(text):
+        dad_names = {
+            "a starwalker": "autistic",
+            "starwalker traits": "autistic traits",
+            "an obsessive mind": "OCD",
+            "a heavy soul": "depression",
+            "a comet spirit": "ADHD",
+            "constant roaming pain": "fibromyalgia",
+            "ongoing sleeplessness": "chronic insomnia",
+            "{VERB/m_c/'re/'s} a body biter": " {VERB/m_c/have/has} a body-focused repetitive disorder",
+            "a thunderous spirit": "BPD",
+            "an otherworldly mind": "schizophrenia",
+            "snow vision": "visual snow",
+            "kitten regressor": "age regressor",
+            "puppy regressor": "pet regressor",
+            "irritable bowels": "IBS",
+            "jellyfish joints": "HSD",
+            "loose body": "hEDS",
+            "burning light": "chronic light sensitivity",
+            "wait out the burn": "wait out the sensitivity",
+            "jumbled noise": "auditory processing disorder",
+            "some disrupted senses": "sensory processing disorder",
+            "constant rash": "eczema",
+            "a chattering tongue": "tourette's",
+            "has falling paws": "orthostatic hypotension",
+            "with falling paws": "orthostatic hypotension",
+            "shattered soul": "system",
+            "budding spirit": "system",
+            "a curved spine": "scoliosis",
+            "a jumbled mind": "dyslexia",
+            "counting fog": "dyscalculia",
+
+            "sunblindness": "light sensitivity",
+
+            "seasonal lethargy": "seasonal depression",
+            "lethargy": "depression",
+            "sleeplessness": "insomnia",
+            "ear buzzing": "tinnitus",
+            "kittenspace": "littlespace",
+            "puppyspace": "petspace"
+        }
+        if not game.settings['warriorified names']:
+            for con in dad_names:
+                if con in text:
+                    text = text.replace(con, dad_names.get(con))
+
+        return text
 
     @staticmethod
     def determine_retirement(cat, triggered):
@@ -918,9 +976,15 @@ class Condition_Events():
                             random_index = 1
                     event = possible_string_list[random_index]
                 except KeyError:
-                    print(f"WARNING: {condition} couldn't be found in the risk strings! placeholder string was used")
-                    event = f"m_c has gotten {condition}"
+                    if condition not in (cat.permanent_condition and cat.illnesses and cat.injuries):
+                        print(f"WARNING: {condition} couldn't be found in the risk strings! placeholder string was used")
+                        event = f"m_c has gotten {condition}."
+                        event = Condition_Events.change_condition_name(event)
+                    else:
+                        print(f"the game tried to give a cat {condition}, but they already have it! Please report in #bugs-and-typos in DaD's server")
+                        event = "this should not appear"
 
+                event = Condition_Events.change_condition_name(event)
                 event = event_text_adjust(Cat, event, cat, other_cat=med_cat)  # adjust the text
                 event_list.append(event)
 
