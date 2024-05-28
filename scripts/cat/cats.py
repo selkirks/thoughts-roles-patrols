@@ -1765,7 +1765,7 @@ class Cat():
                 "event_triggered": new_illness.new
             }
 
-    def _injured(self, name, event_triggered=False, lethal=True, severity='default'):
+    def get_injured(self, name, event_triggered=False, lethal=True, severity='default'):
         if game.clan.game_mode == "classic":
             return
         
@@ -1789,7 +1789,7 @@ class Cat():
         else:
             injury_severity = severity
 
-        if medical_cats_condition_fulfilled(Cat.all_cats.values(), _amount_cat_for_one_medic(game.clan)):
+        if medical_cats_condition_fulfilled(Cat.all_cats.values(), get_amount_cat_for_one_medic(game.clan)):
             duration = med_duration
         if severity != 'minor':
             duration += randrange(-1, 1)
