@@ -498,7 +498,7 @@ class Pregnancy_Events():
                         out_par = None
                         while not out_par or 'infertility' in out_par.permanent_condition:
                             if(out_par):
-                                Cat.all_cats.remove(out_par)
+                                del Cat.all_cats[out_par]
                             out_par = create_new_cat(Cat, Relationship,
                                                     status=cat_type,
                                                     backstory=BACKSTORIES["backstory_categories"][backstories[cat_type]],
@@ -1132,10 +1132,10 @@ class Pregnancy_Events():
         # Add the adoptive parents.
         for kit in all_kitten:
             kit.adoptive_parents = final_adoptive_parents
-            if blood_parent2:
-                for birth_p in blood_parent2:
-                    if birth_p.ID != kit.parent2 and birth_p.ID not in kit.adoptive_parents:
-                        kit.adoptive_parents.append(birth_p.ID)
+            # if blood_parent2:
+            #     for birth_p in blood_parent2:
+            #         if birth_p.ID != kit.parent2 and birth_p.ID not in kit.adoptive_parents:
+            #             kit.adoptive_parents.append(birth_p.ID)
             kit.inheritance.update_inheritance()
             kit.inheritance.update_all_related_inheritance()
 
