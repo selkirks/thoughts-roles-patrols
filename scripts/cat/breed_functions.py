@@ -6498,9 +6498,9 @@ class Breed_checker:
         if genotype.silver[0] == 'I' or genotype.pointgene[0] != "C":
             return False
         
-        if genotype.breeds.get("Chartreux", 0) >= genotype.odds['purebred_min']:
+        if genotype.breeds.get("Chartreux", 0) >= 75:
             return "Chartreux"
-        if genotype.breeds.get("Korat", 0) >= genotype.odds['purebred_min']:
+        if genotype.breeds.get("Korat", 0) >= 75:
             return "Korat"
 
         return "Huh????"
@@ -6571,11 +6571,11 @@ class Breed_checker:
         if (('cm' in genotype.pointgene or 'c' in genotype.pointgene) and genotype.pointgene[0] != "C"):
             return False
     
-        if genotype.breeds.get("Cornish Rex", 0) >= genotype.odds['purebred_min']:
+        if genotype.breeds.get("Cornish Rex", 0) >= 75:
             if genotype.furLength[0] == "l":
                 return "Californian Rex"
             return "Cornish Rex"
-        if genotype.breeds.get("German Rex", 0) >= genotype.odds['purebred_min']:
+        if genotype.breeds.get("German Rex", 0) >= 75:
             if genotype.furLength[0] == "l":
                 return False
             return "German Rex"
@@ -6651,9 +6651,9 @@ class Breed_checker:
             return False
     
         
-        if genotype.breeds.get("Egyptian Mau", 0) >= genotype.odds['purebred_min']:
+        if genotype.breeds.get("Egyptian Mau", 0) >= 75:
             return "Egyptian Mau"
-        if genotype.breeds.get("Savannah", 0) >= genotype.odds['purebred_min']:
+        if genotype.breeds.get("Savannah", 0) >= 75:
             return "Savannah"
 
         return "Huh????"
@@ -7635,8 +7635,8 @@ class Breed_checker:
 
 
 def find_my_breed(genotype, phenotype, config):
-    purebred_range = config.get("purebred_min", 75)
-    mix_range = config.get("mix_min", 12.5)
+    purebred_range = 75
+    mix_range = 12.5
 
     hybrids = {
         "Bambino" : genotype.breeds.get("Munchkin", 0) + genotype.breeds.get("Sphynx", 0), 

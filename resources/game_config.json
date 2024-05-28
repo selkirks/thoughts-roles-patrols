@@ -309,9 +309,7 @@
 		"vitiligo" : 100,
 		"random_mutation" : 100,
 		"kittypet_breed" : 75,
-		"other_breed" : 1000,
-		"purebred_min" : 75,
-		"mix_min" : 12.5
+		"other_breed" : 1000
 	},
 	"graduation": {
 		"base_app_timeskip_ex": [[3, 12],[5, 6]],
