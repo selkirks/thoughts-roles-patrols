@@ -258,10 +258,12 @@ class MedDenScreen(Screens):
             number = medical_cats_condition_fulfilled(Cat.all_cats.values(), amount_per_med,
                                                       give_clanmembers_covered=True)
             if len(self.meds) == 1:
-                insert = 'medicine cat'
+                insert1 = 'medicine cat'
+                insert2 = 'themself'
             else:
-                insert = 'medicine cats'
-            meds_cover = f"Your {insert} can care for a Clan of up to {number} members, including themselves."
+                insert1 = 'medicine cats'
+                insert2 = 'themselves'
+            meds_cover = f"Your {insert1} can care for a Clan of up to {number} members, including {insert2}."
 
             if len(self.meds) >= 1 and number == 0:
                 meds_cover = f"You have no medicine cats who are able to work. Your Clan will be at a higher risk of death and disease."
@@ -458,8 +460,9 @@ class MedDenScreen(Screens):
                 condition_list.extend(cat.illnesses.keys())
             if cat.permanent_condition:
                 for condition in cat.permanent_condition:
-                    if cat.permanent_condition[condition]["moons_until"] == -2:
+                    if cat.permanent_condition[condition]["moons_until"] == -2 and condition not in condition_list:
                         condition_list.extend(cat.permanent_condition.keys())
+            condition_list = self.change_condition_name(condition_list)
             conditions = ",<br>".join(condition_list)
 
             self.cat_buttons["able_cat" + str(i)] = UISpriteButton(scale(pygame.Rect
@@ -483,6 +486,55 @@ class MedDenScreen(Screens):
                 pos_x = 350
                 pos_y += 160
             i += 1
+
+    @staticmethod
+    def change_condition_name(list):
+        dad_names = {
+            "starwalker": "autism",
+            "obsessive mind": "OCD",
+            "heavy soul": "chronic depression",
+            "comet spirit": "ADHD",
+            "antisocial": "ASPD",
+            "constant roaming pain": "fibromyalgia",
+            "ongoing sleeplessness": "chronic insomnia",
+            "body biter": "BFRD",
+            "thunderous spirit": "BPD",
+            "otherworldly mind": "schizophrenia",
+            "snow vision": "visual snow",
+            "kitten regressor": "age regressor",
+            "puppy regressor": "pet regressor",
+            "irritable bowels": "IBS",
+            "jellyfish joints": "HSD",
+            "loose body": "hEDS",
+            "burning light": "chronic light sensitivity",
+            "jumbled noise": "APD",
+            "disrupted senses": "SPD",
+            "constant rash": "eczema",
+            "chattering tongue": "tourette's",
+            "falling paws": "orthostatic hypotension",
+            "shattered soul": "DID",
+            "budding spirit": "OSDD",
+            "curved spine": "scoliosis",
+            "jumbled mind": "dyslexia",
+            "counting fog": "dyscalculia",
+
+            "sunblindness": "light sensitivity",
+
+            "seasonal lethargy": "seasonal depression",
+            "lethargy": "depression",
+            "sleeplessness": "insomnia",
+            "ear buzzing": "tinnitus",
+            "kittenspace": "littlespace",
+            "puppyspace": "petspace"
+        }
+        length = 0
+        if not game.settings['warriorified names']:
+            while length < len(list):
+                if list[length] in dad_names:
+                    list[length] = list[length].replace(list[length], dad_names.get(list[length]))
+                length += 1
+
+        return list
 
     def draw_med_den(self):
         sorted_dict = dict(sorted(game.clan.herbs.items()))
