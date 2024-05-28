@@ -1518,7 +1518,7 @@ class Cat():
             with open('resources/dicts/names/names.json') as read_file:
                 names_dict = ujson.loads(read_file.read())
         if template["other"] == "fictive" or template["other"] == "fuzztive":
-            canon_chance = randint(1,3)
+            canon_chance = randint(1,5)
             if canon_chance == 2:
                 alter_name = choice(["Fireheart", "Graystripe", "Sandstorm", "Squirrelflight", "Brambleclaw", "Hollyleaf",
                                     "Jayfeather", "Lionblaze", "Dovewing", "Ivypool", "Yellowfang", "Ravenpaw", "Bristlefrost",
@@ -1527,7 +1527,7 @@ class Cat():
                                     "Night", "Violetshine", "Twigbranch",  "Sol", "Mapleshade", "Moth Flight", "Cinderheart", "Tall Shadow",
                                     "Talltail", "Onewhisker", "Darktail", "Tigerclaw", "Scourge", "Brightheart", "Briarlight", "Cloudtail",
                                     "Thunder", "Feathertail", "Spottedleaf", "Bluefur", "Bumblestripe", "Poppyfrost", "Stormfur", "Mistyfoot",
-                                    "Star Flower", "Fallen Leaves", "Berrynose", "Tawnypelt", "Webfoot"])
+                                    "Star Flower", "Fallen Leaves", "Berrynose", "Tawnypelt", "Webfoot", "Jake", "Sparkpelt", "Rootspring", "Nightcloud"])
             else:
                 alter_name = choice(names_dict["normal_prefixes"])
         else:
@@ -1538,6 +1538,9 @@ class Cat():
                 canon_chance = randint(1,50)
                 if canon_chance == 2:
                     alter_name = choice(["Snowkit", "Mosskit"])
+                else:
+                    alter_name = choice(names_dict["normal_prefixes"])
+                    alter_name += choice(["kit","paw"])
             else:
                 alter_name = choice(names_dict["normal_prefixes"])
                 alter_name += choice(["kit","paw"])
