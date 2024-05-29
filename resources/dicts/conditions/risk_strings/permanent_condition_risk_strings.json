@@ -155,7 +155,7 @@
 			"m_c keeps stopping and shaking {PRONOUN/m_c/poss} head rapidly, trying to get rid of the buzzing that fills {PRONOUN/m_c/poss} ears."
 		],
 		"ear infection": [
-			"r_c sighs and tells m_c that {PRONOUN/m_c/object} {PRONOUN/m_c/have/has} gotten an ear infection.",
+			"r_c sighs and tells m_c that {PRONOUN/m_c/object} {VERB/m_c/have/has} gotten an ear infection.",
 			"m_c has gotten an ear infection because of {PRONOUN/m_c/poss} damaged ears.",
 			"m_c has an ear infection."
 		]
@@ -172,7 +172,7 @@
 			"Frustrated at not been able to tell if {PRONOUN/m_c/subject} {VERB/m_c/are/is} speaking clearly, m_c just decides to use {PRONOUN/m_c/poss} best communication method instead."
 		],
 		"ear infection": [
-			"r_c sighs and tells m_c that {PRONOUN/m_c/object} {PRONOUN/m_c/have/has} gotten an ear infection.",
+			"r_c sighs and tells m_c that {PRONOUN/m_c/object} {VERB/m_c/have/has} gotten an ear infection.",
 			"m_c has gotten an ear infection because of {PRONOUN/m_c/poss} damaged ears.",
 			"m_c has an ear infection."
 		]
@@ -1382,7 +1382,7 @@
 			"m_c shakes the cobwebs out of {PRONOUN/m_c/poss} head when {PRONOUN/m_c/subject} {VERB/m_c/stand/stands} up and {PRONOUN/m_c/subject} {VERB/m_c/get/gets} a headache."
 		],
 		"fainting": [
-			"r_c pads over to check on m_c when {PRONOUN/r_c/subject} {VERB/m_s/realize/realizes} that m_c has fainted standing up.",
+			"r_c pads over to check on m_c when {PRONOUN/r_c/subject} {VERB/m_c/realize/realizes} that m_c has fainted standing up.",
 			"m_c stood up too fast and has passed out.",
 			"m_c could feel it coming and sits down right before passing out.",
 			"m_c has fainted and before {PRONOUN/m_c/subject} could have fainted, m_c sat down.",

@@ -235,7 +235,8 @@
     ],
     "excess testosterone": [
         "The medicine cat carefully soothes over all of m_c's parent's worries. Being intersex is perfectly normal and m_c will do great!",
-        "While checking in on the nursery, the medicine cat notices something slightly different about m_c. It seems that m_c is intersex. "
+        "While checking in on the nursery, the medicine cat notices something slightly different about m_c. It seems that m_c is intersex. ",
+        "m_c doesn't look like a she-cat entirely, it looks like {PRONOUN/m_c/subject} has some excess testosterone, and that's okay!"
     ],
     "aneuploidy": [
         "The medicine cat carefully soothes over all of m_c's parent's worries. Being intersex is perfectly normal and m_c will do great!",
@@ -250,10 +251,14 @@
         "While checking in on the nursery, the medicine cat notices something slightly different about m_c. It seems that m_c is intersex."
     ],
     "infertile": [
-        "r_c explains to m_c that {PRONOUN/m_c/subject} may be infertile."
+        "r_c explains to m_c that {PRONOUN/m_c/subject} may be infertile.",
+        "m_c has discovered that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} infertile.",
+        "After m_c discovers that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} infertile, {PRONOUN/m_c/subject} {VERB/m_c/realize/realizes} that {PRONOUN/m_c/subject} {VERB/m_c/have/has} a lot more to think about than {PRONOUN/m_c/subject} previously thought."
     ],
     "pcos": [
-        "After m_c comes to the medicine den asking for more herbs for their cramps, r_c insists on checking up on {PRONOUN/m_c/object}. It appears to be pcos."
+        "After m_c comes to the medicine den asking for more herbs for their cramps, r_c insists on checking up on {PRONOUN/m_c/object}. It appears to be pcos.",
+        "After m_c has had a shark week for more than a week, r_c has dedided to check up on {PRONOUN/m_c/object}. It turns out that m_c has PCOS!",
+        "After m_c was stuck in {PRONOUN/m_c/poss} nest with cramps for days, r_c diagnoses m_c with PCOS."
     ],
     "falling paws": [
         "m_c complains about feeling lightheaded whenever {PRONOUN/m_c/subject} {VERB/m_c/stand/stands} up too quickly. After running a few tests, r_c has come to the conclussion that m_c has falling paws.",
@@ -266,9 +271,11 @@
         "m_c can barely get out of {PRONOUN/m_c/poss} bed due to back pain. r_c feels {PRONOUN/m_c/poss} back and realizes that {PRONOUN/m_c/poss} spine is curved."
     ],
     "jumbled mind": [
-        "m_c frequently stumbles over {PRONOUN/m_c/poss} words. The medicine cat suspects {PRONOUN/m_c/subject} may have a jumbled mind."
+        "m_c frequently stumbles over {PRONOUN/m_c/poss} words. The medicine cat suspects {PRONOUN/m_c/subject} may have a jumbled mind.",
+        "m_c can't get a sentance out and is almost brought to tears. This has become a pattern and the medicine cat thinks that m_c has a jumbled mind."
     ],
     "counting fog": [
-        "r_c notices that m_c always repeats numbers when counting. It seems {PRONOUN/m_c/subject} may have counting fog."
+        "r_c notices that m_c always repeats numbers when counting. It seems {PRONOUN/m_c/subject} may have counting fog.",
+        "When m_c notices that r_c had a lot of trouble with numbers, r_c does some testing to figure out what's going on with m_c. It turns out that m_c has some counting fog!"
     ]
 }
