@@ -1421,7 +1421,7 @@ class Breed_generator:
 
         a = randint(1, 5)
 
-        if a == 1:
+        if a == 1 and not genoclass.ban_genes:
             genoclass.fold[0] = "Fd"
         
         genoclass.breeds["British"] = 100

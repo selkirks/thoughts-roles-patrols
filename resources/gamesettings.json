@@ -65,6 +65,11 @@
             "Randomize relationship values when creating Clan",
             "Clan founder cats will start the game with established relationships.",
             true
+        ],
+        "ban problem genes": [
+            "Hide genes directly associated with health issues.",
+            "Newly generated cats will not have genes that are directly correlated with permanent conditions.",
+            true
         ]
     },
     "..": "these are special. they do not have a display name or a tooltip",

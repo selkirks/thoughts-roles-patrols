@@ -5,8 +5,9 @@ from operator import xor
 
 
 class Genotype:
-    def __init__(self, odds, spec=None):
+    def __init__(self, odds, ban_genes=True, spec=None):
         self.odds = odds
+        self.ban_genes = ban_genes
         if spec:
             self.chimera = False
             self.chimerapattern = None
@@ -18,7 +19,7 @@ class Genotype:
                 self.chimera = False
             self.chimerapattern = None
         if self.chimera:
-            self.chimerageno = Genotype(self.odds, 'chimera')
+            self.chimerageno = Genotype(self.odds, self.ban_genes, 'chimera')
         else:
             self.chimerageno = None
         
@@ -134,7 +135,7 @@ class Genotype:
         self.chimera = jsonstring['chimera']
         self.chimerapattern = jsonstring['chimerapattern']
         if(jsonstring["chimerageno"]):
-            self.chimerageno = Genotype(self.odds, 'chimera')
+            self.chimerageno = Genotype(self.odds, self.ban_genes, 'chimera')
             self.chimerageno.fromJSON(jsonstring["chimerageno"])
         else:
             self.chimerageno = None    
@@ -435,7 +436,7 @@ class Genotype:
             c = randint(1, 10)
             d = randint(1, 5)
 
-            if a == 1:
+            if a == 1 and not self.ban_genes:
                 self.pointgene[i] = "c"
             elif b == 1:
                 self.pointgene[i] = "cm"
@@ -544,7 +545,7 @@ class Genotype:
             b = randint(1, 40)
             c = randint(1, 40)
 
-            if a == 1:
+            if a == 1 and not self.ban_genes:
                 self.sedesp[i] = "hr"
             elif b == 1:
                 self.sedesp[i] = "re"
@@ -556,9 +557,9 @@ class Genotype:
 
         a = randint(1, 10000)
 
-        if a == 1:
+        if a == 1 and not self.ban_genes:
             self.ruhr = ["Hrbd", "Hrbd"]
-        elif a <= 101:
+        elif a <= 101 and not self.ban_genes:
             self.ruhr = ["Hrbd", "hrbd"]
         
         a = randint(1, 4)
@@ -572,18 +573,18 @@ class Genotype:
 
         a = randint(1, 10000)
 
-        if a == 1:
+        if a == 1 and not self.ban_genes:
             self.lykoi = ["ly", "ly"]
-        elif a <= 101:
+        elif a <= 101 and not self.ban_genes:
             self.lykoi = ["Ly", "ly"]
 
         # pinkdilute + dilutemd
 
         a = randint(1, 2500)
 
-        if a == 1:
+        if a == 1 and not self.ban_genes:
             self.pinkdilute = ["dp", "dp"]
-        elif a <= 51:
+        elif a <= 51 and not self.ban_genes:
             self.pinkdilute[1] = "dp"
         
         a = randint(1, 2500)
@@ -668,7 +669,7 @@ class Genotype:
         
         a = randint(1, 50)
 
-        if a == 1:
+        if a == 1 and not self.ban_genes:
             self.fold[0] = "Fd"
 
 
@@ -679,7 +680,7 @@ class Genotype:
 
         if a == 1:
             self.manx = ["Ab", "ab"]
-        elif b == 1:
+        elif b == 1 and not self.ban_genes:
             self.manx = ["M", "m"]
         
         for i in range(5):
@@ -715,7 +716,7 @@ class Genotype:
 
         a = randint(1, 50)
 
-        if a == 1:
+        if a == 1 and not self.ban_genes:
             self.munch[0] = "Mk"
         
         a = randint(1, 100)
@@ -727,7 +728,7 @@ class Genotype:
         
         a = randint(1, 2500)
 
-        if a == 1:
+        if a == 1 and not self.ban_genes:
             self.altai = ["Al", "Al"]
         elif a <= 51:
             self.altai[0] = "Al"
@@ -1000,7 +1001,7 @@ class Genotype:
             c = randint(1, 10)
             d = randint(1, 5)
 
-            if a == 1:
+            if a == 1 and not self.ban_genes:
                 self.pointgene[i] = "c"
             elif b == 1:
                 self.pointgene[i] = "cm"
@@ -1111,7 +1112,7 @@ class Genotype:
             b = randint(1, 10)
             c = randint(1, 10)
 
-            if a == 1:
+            if a == 1 and not self.ban_genes:
                 self.sedesp[i] = "hr"
             elif b == 1:
                 self.sedesp[i] = "re"
@@ -1123,9 +1124,9 @@ class Genotype:
 
         a = randint(1, 100)
 
-        if a == 1:
+        if a == 1 and not self.ban_genes:
             self.ruhr = ["Hrbd", "Hrbd"]
-        elif a <= 21:
+        elif a <= 21 and not self.ban_genes:
             self.ruhr = ["Hrbd", "hrbd"]
         
         a = randint(1, 4)
@@ -1139,9 +1140,9 @@ class Genotype:
 
         a = randint(1, 100)
 
-        if a == 1:
+        if a == 1 and not self.ban_genes:
             self.lykoi = ["ly", "ly"]
-        elif a <= 21:
+        elif a <= 21 and not self.ban_genes:
             self.lykoi = ["Ly", "ly"]
 
         a = randint(1, 200)
@@ -1150,9 +1151,9 @@ class Genotype:
 
         a = randint(1, 125)
 
-        if a == 1:
+        if a == 1 and not self.ban_genes:
             self.pinkdilute = ["dp", "dp"]
-        elif a <= 26:
+        elif a <= 26 and not self.ban_genes:
             self.pinkdilute[1] = "dp"
         
         a = randint(1, 125)
@@ -1237,7 +1238,7 @@ class Genotype:
         
         a = randint(1, 25)
 
-        if a == 1:
+        if a == 1 and not self.ban_genes:
             self.fold[0] = "Fd"
 
 
@@ -1248,7 +1249,7 @@ class Genotype:
 
         if a == 1:
             self.manx = ["Ab", "ab"]
-        elif b == 1:
+        elif b == 1 and not self.ban_genes:
             self.manx = ["M", "m"]
         
         for i in range(5):
@@ -1284,7 +1285,7 @@ class Genotype:
 
         a = randint(1, 20)
 
-        if a == 1:
+        if a == 1 and not self.ban_genes:
             self.munch[0] = "Mk"
         
         a = randint(1, 25)
@@ -1296,7 +1297,7 @@ class Genotype:
         
         a = randint(1, 125)
 
-        if a == 1:
+        if a == 1 and not self.ban_genes:
             self.altai = ["Al", "Al"]
         elif a <= 26:
             self.altai[0] = "Al"
@@ -1493,8 +1494,31 @@ class Genotype:
             "Tennessee Rex", "Thai", "Tonkinese", "Toybob", "Toyger", "Turkish", 
             "Ural Rex"
         ]
-
-        gen = breed_functions["generator"][choice(breedlist)]
+        editedlist = [
+            "Abyssinian", "American Bobtail", "American Curl", "American Shorthair", "American Burmese", "Aphrodite", 
+                "Arabian Mau", "Asian/Burmese", "Australian Mist",
+            "Bengal", "Birman", "Brazilian Shorthair", "British", 
+            "Cheetoh", "Ceylon", "Chartreux", "Chausie", "Clippercat", "Cornish Rex",
+            "Devon Rex", 
+            "Egyptian Mau", "European Shorthair", 
+            "German Longhair", "German Rex",
+            "Havana", "Highlander", 
+            "Japanese Bobtail", 
+            "Kanaani", "Karelian Bobtail", "Khao Manee", "Korat", "Kurilian Bobtail",
+            "LaPerm", "Lin-Qing Lion cat",
+            "Mandalay/Burmese", "Maine Coon", "Mekong Bobtail", 
+            "New Zealand", "Norwegian Forest cat", 
+            "Ocicat", "Oriental/Siamese", 
+            "Pixie-Bob", 
+            "Ragamuffin", "Ragdoll", "Russian",
+            "Savannah", "Selkirk Rex", "Serengeti", "Siberian", "Singapura", "Snowshoe", "Sokoke",
+            "Tennessee Rex", "Thai", "Tonkinese", "Toybob", "Toyger", "Turkish", 
+            "Ural Rex"
+        ]
+        if self.ban_genes:
+            gen = breed_functions["generator"][choice(editedlist)]
+        else:    
+            gen = breed_functions["generator"][choice(breedlist)]
 
         self = gen(self, special)
         
@@ -2483,6 +2507,11 @@ class Genotype:
 
     def Bodymutation(self):
         whichgene = ["curl", "fold", "manx", "karel", "kuril", "toybob", "japanese", "ringtail", "munchkin", "polydactyl", "polydactyl", "polydactyl", "polydactyl"]
+        
+        if self.ban_genes:
+            whichgene.remove("fold")
+            whichgene.remove("munchkin")
+        
         which = choice(whichgene)
 
         if(which == "curl"):
@@ -2501,12 +2530,12 @@ class Genotype:
                 self.Mutate()
         elif(which == 'manx'):
             if(self.manx[0] == 'm' or self.manx[0] == 'ab'):
-                if(random() < 0.34):
+                if(random() < 0.34) and not self.ban_genes:
                     self.manx[0] = 'M'
                 else:
                     self.manx[0] = 'Ab'
             if(self.manx[1] == 'm' or self.manx[1] == 'ab'):
-                if(random() < 0.34):
+                if(random() < 0.34) and not self.ban_genes:
                     self.manx[1] = 'M'
                 else:
                     self.manx[1] = 'Ab'
@@ -2566,6 +2595,11 @@ class Genotype:
     
     def FurTypemutation(self):
         whichgene = ["wirehair", "laperm", "cornish", "urals", "tennessee", "fleecy", "sedesp", "sedesp", "sedesp", "lykoi", "russian"]
+        
+        if self.ban_genes:
+            whichgene.remove("lykoi")
+            whichgene.remove("russian")
+
         which = choice(whichgene)
 
         if(which == 'wirehair'):
@@ -2620,12 +2654,12 @@ class Genotype:
                     self.sedesp[1] = 'Se'
             else:
                 if(self.sedesp[1] == 'Hr'):
-                    if(random() < 0.25):
+                    if(random() < 0.25) and not self.ban_genes:
                         self.sedesp[1] = 'hr'
                     else:
                         self.sedesp[1] = 're'
                 else:
-                    if(random() < 0.25):
+                    if(random() < 0.25) and not self.ban_genes:
                         self.sedesp[0] = 'hr'
                     else:
                         self.sedesp[0] = 're'
@@ -2647,6 +2681,10 @@ class Genotype:
 
     def OtherCoatmutation(self):
         whichgene = ["dilute mod", "pinkdilute", "extention", "corin", "karpati", "bleaching", "ghosting", "satin", "glitter"]
+
+        if self.ban_genes:
+            whichgene.remove("pinkdilute")
+
         which = choice(whichgene)
 
         if(which == 'pinkdilute'):
@@ -2780,8 +2818,12 @@ class Genotype:
                 self.Mutate()
             elif(self.pointgene[1] == 'C'):
                 self.pointgene[1] = choice([choice(['c', 'cm']), choice(['cs', 'cb']), choice(['cs', 'cb']), choice(['cs', 'cb']), choice(['cs', 'cb'])])
+                if self.ban_genes:
+                    self.pointgene[1] = choice(['cm', choice(['cs', 'cb']), choice(['cs', 'cb']), choice(['cs', 'cb']), choice(['cs', 'cb'])])
             else:
                 self.pointgene[0] = choice([choice(['c', 'cm']), choice(['cs', 'cb']), choice(['cs', 'cb']), choice(['cs', 'cb']), choice(['cs', 'cb'])])
+                if self.ban_genes:
+                    self.pointgene[0] = choice(['cm', choice(['cs', 'cb']), choice(['cs', 'cb']), choice(['cs', 'cb']), choice(['cs', 'cb'])])
         elif(which == 'silver'):
             if(self.silver[0] == 'i'):
                 self.silver[0] = 'I'

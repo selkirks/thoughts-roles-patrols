@@ -194,7 +194,7 @@ class Cat():
         self.parent2 = parent2
 
         self.adoptive_parents = []
-        self.genotype = Genotype(game.config['genetics_config'])
+        self.genotype = Genotype(game.config['genetics_config'], game.settings["ban problem genes"])
         #print(genotype)
         if genotype:
             self.genotype.fromJSON(genotype)
