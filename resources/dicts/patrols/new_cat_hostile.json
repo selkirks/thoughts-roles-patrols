@@ -1,17 +1,17 @@
 [
     {
         "patrol_id": "gen_bord_newcat_hostile1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["new_cat"],
-        "patrol_art": "bord_general_intro",
+        "patrol_art": "gen_gen_newcat_hostile",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol scents a loner on the territory. They confront the cat, who quickly surrenders and begs for shelter.",
-        "decline_text": "Your patrol decides the loner isn't worth their time.",
+        "intro_text": "The patrol scents a loner on the territory. They confront the cat, who quickly surrenders and begs for shelter.",
+        "decline_text": "The patrol decides the loner isn't worth their time.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -63,7 +63,7 @@
         ],
         "antag_fail_outcomes": [
             {
-                "text": "Your patrol advances threateningly towards the loner, who retaliates with a quick swipe to p_l's muzzle. While p_l is stunned, they make their getaway.",
+                "text": "The patrol advances threateningly towards the loner, who retaliates with a quick swipe to p_l's muzzle. While p_l is stunned, they make their getaway.",
                 "exp": 0,
                 "weight": 20,
                 "outsider_rep": -1
@@ -71,7 +71,7 @@
         ],
         "antag_success_outcomes": [
             {
-                "text": "Your patrol tells the cat to leave or feel their claws. The loner seems to choose life and quickly takes off.",
+                "text": "The patrol tells the cat to leave or feel their claws. The loner seems to choose life and quickly takes off.",
                 "exp": 10,
                 "weight": 20,
                 "outsider_rep": -2
@@ -80,11 +80,11 @@
     },
     {
         "patrol_id": "gen_bord_newcat_hostile2",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["new_cat"],
-        "patrol_art": "bord_general_intro",
+        "patrol_art": "gen_gen_newcat_hostile",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -159,8 +159,8 @@
     },
     {
         "patrol_id": "gen_bord_newcatkittypet3",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["new_cat"],
         "patrol_art": "bord_general_intro",
@@ -168,8 +168,8 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol scents a kittypet on the territory. They confront the cat, who quickly surrenders and begs for shelter.",
-        "decline_text": "Your patrol decides the kittypet isn't worth their time.",
+        "intro_text": "The patrol scents a kittypet on the territory. They confront the cat, who quickly surrenders and begs for shelter.",
+        "decline_text": "The patrol decides the kittypet isn't worth their time.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -221,7 +221,7 @@
         ],
         "antag_fail_outcomes": [
             {
-                "text": "Your patrol advances threateningly towards the kittypet, who retaliates with a quick swipe to p_l's muzzle. While p_l is stunned, they make their getaway.",
+                "text": "The patrol advances threateningly towards the kittypet, who retaliates with a quick swipe to p_l's muzzle. While p_l is stunned, they make their getaway.",
                 "exp": 0,
                 "weight": 20,
                 "outsider_rep": -1
@@ -229,7 +229,7 @@
         ],
         "antag_success_outcomes": [
             {
-                "text": "Your patrol tells the cat to leave or feel their claws. The kittypet seems to choose life and quickly takes off.",
+                "text": "The patrol tells the cat to leave or feel their claws. The kittypet seems to choose life and quickly takes off.",
                 "exp": 10,
                 "weight": 20,
                 "outsider_rep": -2
@@ -238,8 +238,8 @@
     },
     {
         "patrol_id": "gen_bord_newcatkittypet4",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["new_cat"],
         "patrol_art": "bord_general_intro",
@@ -317,8 +317,8 @@
     },
     {
         "patrol_id": "gen_bord_newcatthunderpath2",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["new_cat"],
         "patrol_art": "gen_bord_newcatthunderpath",
@@ -367,7 +367,7 @@
         ],
         "antag_success_outcomes": [
             {
-                "text": "Your patrol drives the cat off of the territory. It's not c_n's problem.",
+                "text": "The patrol drives the cat off of the territory. It's not c_n's problem.",
                 "exp": 10,
                 "weight": 20,
                 "outsider_rep": -2
@@ -376,8 +376,8 @@
     },
     {
         "patrol_id": "gen_bord_newcatthunderpath6",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["new_cat"],
         "patrol_art": "gen_bord_newcatthunderpath",
@@ -434,9 +434,374 @@
         ]
     },
     {
+        "patrol_id": "gen_bord_hostilesparrowgift1",
+        "biome": ["any"],
+        "season": ["any"],
+        "types": ["border"],
+        "tags": ["new_cat"],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+            "normal adult": [1, 6]
+        },
+        "weight": 20,
+        "intro_text": "In the middle of remarking the border, p_l finds a distinct scent trail has crossed it.",
+        "decline_text": "p_l makes a note of it, but it'll have to wait til {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} done with this and back at camp.",
+        "chance_of_success": 40,
+        "success_outcomes": [
+            {
+                "text": "The patrol immediately stops their border marking and switches to tracking the scent of the intruder instead. At the end of the trail they find an old kittypet, wheezing {PRONOUN/n_c:0/poss} Twoleg's name. Begrudgingly, p_l orders the patrol to drag {PRONOUN/n_c:0/object} back to camp - this cat needs medicinal attention.",
+                "exp": 10,
+                "weight": 20,
+                "new_cat": [
+                    ["age:senior", "male", "backstory:refugee6"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1,
+                "injury": [
+                    {
+                        "cats": ["n_c:0"],
+                        "injuries": ["carrionplace disease"],
+                        "no_results": true
+                    }
+                ]
+            },
+            {
+                "text": "The patrol immediately stops their border marking and switches to tracking the scent of the intruder instead. At the end of the trail they find an old kittypet, wheezing {PRONOUN/n_c:0/poss} Twoleg's name. s_c gets between the patrol (furious at the intrusion) and the hapless intruder - in Tigger's name, this cat deserves their help.",
+                "exp": 30,
+                "weight": 20,
+                "stat_skill": ["LORE,1", "STORY,1"],
+                "can_have_stat": ["any"],
+                "new_cat": [
+                    ["age:senior", "male", "backstory:refugee6"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 10
+                    }
+                ],
+                "outsider_rep": 1,
+                "injury": [
+                    {
+                        "cats": ["n_c:0"],
+                        "injuries": ["carrionplace disease"],
+                        "no_results": true
+                    }
+                ]
+            },
+            {
+                "text": "Swerving to follow the scent trail, the patrol almost falls over a hissing queen. Reeling with surprise, no one hears exactly what she spits out about never letting herself be taken - but she grabs something and flees. It's only as the patrol regroups that they hear the distressed calls of her other kittens.",
+                "exp": 20,
+                "weight": 5,
+                "new_cat": [
+                    ["female", "loner", "age:has_kits", "meeting"],
+                    ["litter", "parent:0", "status:newborn", "backstory:abandoned2"],
+                    ["age:newborn", "loner", "meeting", "parent:0"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["dislike", "jealous"],
+                        "amount": 50
+                    },
+                    {
+                        "cats_from": ["patrol"],
+                        "cats_to": ["n_c:0"],
+                        "values": ["dislike"],
+                        "amount": 5
+                    }
+                ],
+                "outsider_rep": -2
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "r_c tells p_l {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} as good as scent-blind, and the patrol ignores the scent.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": 0,
+                "relationships": [
+                    {
+                        "cats_from": ["p_l"],
+                        "cats_to": ["r_c"],
+                        "values": ["dislike", "jealous"],
+                        "mutual": false,
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "Try as they might, the patrol can't identify who left this scent trail or where it leads. It doesn't smell like a Clancat, but that's little reassurance as the cats head back to report this to the rest of c_n.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": 0
+            }
+        ],
+        "antag_fail_outcomes": [
+            {
+                "text": "The patrol immediately stops their border marking and switches to tracking the scent of the intruder instead. At the end of the trail they find an old kittypet, wheezing {PRONOUN/n_c:0/poss} Twoleg's name. They try to drive the kittypet off - but {PRONOUN/n_c:0/poss} too weak, and the warriors too practiced at strong battle.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": -4,
+                "new_cat": [
+                    ["age:senior", "male", "backstory:refugee6", "meeting", "dead"]
+                ]
+            }
+        ],
+        "antag_success_outcomes": [
+            {
+                "text": "The patrol immediately stops their border marking and switches to tracking the scent of the intruder instead. At the end of the trail they find an old kittypet, wheezing {PRONOUN/n_c:0/poss} Twoleg's name. They drive the struggling kittypet off c_n territory, protecting the Clan from a source of sickness - no mercy for intruders.",
+                "exp": 10,
+                "weight": 20,
+                "outsider_rep": -2,
+                "new_cat": [
+                    ["age:senior", "male", "backstory:refugee6", "meeting", "dead"]
+                ]
+            }
+        ]
+    },
+    {
+        "patrol_id": "gen_bord_hostilebinglegift1",
+        "biome": ["any"],
+        "season": ["any"],
+        "types": ["border"],
+        "tags": ["new_cat"],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "normal adult": [1, 6]
+        },
+        "weight": 20,
+        "intro_text": "Padding along the border, p_l checks once - twice - threes times... and crosses over c_n's markers, venturing beyond into unclaimed land.",
+        "decline_text": "p_l thinks better of {PRONOUN/p_l/poss} risky adventure, and retreats back to known territory.",
+        "chance_of_success": 40,
+        "success_outcomes": [
+            {
+                "text": "There's no guarentee that {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} still in the area - so p_l's ears perk up to pick up {PRONOUN/n_c:0/poss} scent. n_c:0 is basking on some Twoleg rubbish, but when {PRONOUN/n_c:0/subject} spot p_l, {PRONOUN/n_c:0/subject} jump down, trotting over with tail up, happily touching noses with p_l.",
+                "exp": 10,
+                "weight": 20,
+                "new_cat": [
+                    ["age:adult", "meeting", "backstory:loner3"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["p_l"],
+                        "mutual": true,
+                        "values": ["platonic", "trust", "comfort"],
+                        "amount": 30
+                    }
+                ],
+                "outsider_rep": 1
+            },
+            {
+                "text": "Since n_c:0 stumbled into {PRONOUN/p_l/poss} life, everything's changed. {PRONOUN/p_l/subject}'d never trade the flutter in {PRONOUN/p_l/poss} whiskers, the thrill in {PRONOUN/p_l/poss} heart at these stolen moments. But c_n would never approve.",
+                "exp": 10,
+                "weight": 20,
+                "new_cat": [
+                    ["age:mate", "meeting", "mate:p_l", "backstory:loner3"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["p_l"],
+                        "mutual": true,
+                        "values": ["trust", "comfort"],
+                        "amount": 30
+                    },
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["p_l"],
+                        "mutual": true,
+                        "values": ["platonic", "romantic"],
+                        "amount": 50
+                    }
+                ],
+                "outsider_rep": 1
+            },
+            {
+                "text": "Every heartbeat {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} spent with n_c:0 has been uncertain, new, exciting, and as temporary as a flower's bloom. {PRONOUN/n_c:0/subject/CAP} {VERB/n_c:0/aren't/isn't} coming home with p_l, p_l's accepted that. But they can still see each other, for as long as n_c:0 lingers near c_n's borders.",
+                "exp": 10,
+                "weight": 20,
+                "new_cat": [
+                    ["age:mate", "meeting", "mate:p_l", "backstory:loner3"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["p_l"],
+                        "mutual": true,
+                        "values": ["trust", "comfort"],
+                        "amount": 30
+                    },
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["p_l"],
+                        "mutual": true,
+                        "values": ["platonic", "romantic"],
+                        "amount": 50
+                    }
+                ],
+                "outsider_rep": 1
+            },
+            {
+                "text": "n_c:0 - p_l's heart leaps and drops with every single visit, each time a gamble on if {PRONOUN/p_l/poss} hidden love will still be there for the next stolen moment. p_l will fight for them, please, <i>please</i> n_c:0, come back to c_n. Stay.",
+                "exp": 10,
+                "weight": 20,
+                "new_cat": [
+                    ["age:mate", "mate:p_l", "backstory:loner4"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["p_l"],
+                        "mutual": true,
+                        "values": ["trust", "comfort"],
+                        "amount": 30
+                    },
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["p_l"],
+                        "mutual": true,
+                        "values": ["platonic", "romantic"],
+                        "amount": 50
+                    },
+                    {
+                        "cats_from": ["clan"],
+                        "cats_to": ["p_l"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": -20
+                    }
+                ],
+                "outsider_rep": 1
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The sweetest times last the least long. Every heartbeat spent with n_c:0 is uncertain, new, exciting, and as temporary as a flower's bloom. {PRONOUN/n_c:0/subject/CAP} {VERB/n_c:0/aren't/isn't} coming home with p_l, p_l's accepted that. But the thing is - p_l can go with {PRONOUN/n_c:0/object}.",
+                "exp": 0,
+                "weight": 20,
+                "new_cat": [
+                    ["age:mate", "meeting", "mate:p_l", "backstory:loner3"]
+                ],
+                "lost_cats": ["p_l"],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["p_l"],
+                        "mutual": true,
+                        "values": ["trust", "comfort"],
+                        "amount": 30
+                    },
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["p_l"],
+                        "mutual": true,
+                        "values": ["platonic", "romantic"],
+                        "amount": 50
+                    }
+                ],
+                "outsider_rep": 0
+            },
+            {
+                "text": "Come back to c_n, p_l urges when {PRONOUN/p_l/subject} {VERB/p_l/find/finds} n_c:0, resuming the argument they've been having. Come back, join c_n, be p_l's mate for real. But n_c:0 shakes {PRONOUN/n_c:0/poss} head. c_n will never accept an outsider. <br>Then leave. Leave, and if p_l ever sees n_c:0 again, well, p_l will <i>not</i> forgive this.",
+                "exp": 0,
+                "weight": 20,
+                "new_cat": [
+                    ["age:mate", "meeting", "mate:p_l", "backstory:loner3"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["p_l"],
+                        "mutual": true,
+                        "values": ["trust", "comfort"],
+                        "amount": 30
+                    },
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["p_l"],
+                        "mutual": true,
+                        "values": ["dislike", "romantic"],
+                        "amount": 50
+                    }
+                ],
+                "outsider_rep": 0
+            }
+        ],
+        "antag_fail_outcomes": [
+            {
+                "text": "Come back to c_n, p_l urges when {PRONOUN/p_l/subject} {VERB/p_l/find/finds} n_c:0, resuming the argument they've been having. It's useless. In response to p_l urging {PRONOUN/n_c:0/object}, hounding {PRONOUN/n_c:0/object}, demanding things n_c:0 isn't prepared to give, the loner simply turns {PRONOUN/n_c:0/poss} back, walking away for the last time.",
+                "exp": 10,
+                "weight": 20,
+                "new_cat": [
+                    ["age:mate", "meeting", "mate:p_l", "backstory:loner3"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["p_l"],
+                        "mutual": true,
+                        "values": ["platonic", "comfort"],
+                        "amount": 30
+                    },
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["p_l"],
+                        "mutual": true,
+                        "values": ["dislike", "romantic"],
+                        "amount": 50
+                    }
+                ],
+                "outsider_rep": -1
+            }
+        ],
+        "antag_success_outcomes": [
+            {
+                "text": "Come back to c_n, p_l urges when {PRONOUN/p_l/subject} {VERB/p_l/find/finds} n_c:0, resuming the argument they've been having. Come back, join c_n, be p_l's mate for real. But n_c:0 shakes {PRONOUN/n_c:0/poss} head. c_n will never accept an outsider. <br>Then leave. Leave, and if p_l ever sees n_c:0 again, well, p_l will <i>not</i> forgive this.",
+                "exp": 10,
+                "weight": 20,
+                "new_cat": [
+                    ["age:mate", "meeting", "mate:p_l", "backstory:loner3"]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["p_l"],
+                        "mutual": true,
+                        "values": ["platonic", "comfort"],
+                        "amount": 30
+                    },
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["p_l"],
+                        "mutual": true,
+                        "values": ["dislike", "romantic"],
+                        "amount": 50
+                    }
+                ],
+                "outsider_rep": -2
+            }
+        ]
+    },
+    {
         "patrol_id": "gen_bord_newkit3",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["new_cat"],
         "patrol_art": "gen_bord_newkit",
@@ -482,7 +847,7 @@
         ],
         "antag_fail_outcomes": [
             {
-                "text": "The kit smells of Twolegs, your patrol has no interest in what will surely grow to be a weak cat.",
+                "text": "The kit smells of Twolegs, the patrol has no interest in what will surely grow to be a weak cat.",
                 "exp": 0,
                 "weight": 20,
                 "outsider_rep": -1
@@ -490,7 +855,7 @@
         ],
         "antag_success_outcomes": [
             {
-                "text": "Your patrol moves the kit away from the territory, they have no interest in strange kits.",
+                "text": "The patrol moves the kit away from the territory, they have no interest in strange kits.",
                 "exp": 10,
                 "weight": 20,
                 "outsider_rep": -2
@@ -499,8 +864,8 @@
     },
     {
         "patrol_id": "gen_bord_newkit4",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["new_cat"],
         "patrol_art": "gen_bord_newkit",
@@ -563,8 +928,8 @@
     },
     {
         "patrol_id": "gen_bord_healer_hostile1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["new_cat"],
         "patrol_art": "bord_general_intro",
@@ -572,7 +937,7 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol scents a loner on the territory. r_c finds the loner, who offers their healing skills in exchange for shelter.",
+        "intro_text": "The patrol scents a loner on the territory. r_c finds the loner, who offers their healing skills in exchange for shelter.",
         "decline_text": "The patrol declines their offer and sends them off.",
         "chance_of_success": 40,
         "success_outcomes": [
@@ -625,7 +990,7 @@
         ],
         "antag_fail_outcomes": [
             {
-                "text": "Your patrol advances threateningly towards the loner, who retaliates with a quick swipe to p_l's muzzle. While p_l is stunned, they make their getaway.",
+                "text": "The patrol advances threateningly towards the loner, who retaliates with a quick swipe to p_l's muzzle. While p_l is stunned, they make their getaway.",
                 "exp": 0,
                 "weight": 20,
                 "outsider_rep": -1
@@ -633,7 +998,7 @@
         ],
         "antag_success_outcomes": [
             {
-                "text": "Healer or not, your patrol tells the cat to leave or feel their claws. The loner seems to choose life and quickly takes off.",
+                "text": "Healer or not, the patrol tells the cat to leave or feel their claws. The loner seems to choose life and quickly takes off.",
                 "exp": 10,
                 "weight": 20,
                 "outsider_rep": -2
@@ -642,8 +1007,8 @@
     },
     {
         "patrol_id": "gen_bord_healer_hostile2",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["new_cat"],
         "patrol_art": "bord_general_intro",
@@ -721,8 +1086,8 @@
     },
     {
         "patrol_id": "gen_bord_lonerchase2",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": ["new_cat"],
         "patrol_art": "gen_bord_lonerchase",
@@ -730,7 +1095,7 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Your patrol cautiously moves towards the sound of barking. Near the border, they spot a dog chasing something. Oh no, it's a cat!",
+        "intro_text": "The patrol cautiously moves towards the sound of barking. Near the border, they spot a dog chasing something. Oh no, it's a cat!",
         "decline_text": "The patrol decides not to interfere. Surely the cat can handle itself, the dog isn't even that big.",
         "chance_of_success": 40,
         "success_outcomes": [
@@ -805,7 +1170,7 @@
         ],
         "antag_success_outcomes": [
             {
-                "text": "Your patrol watches as the loner climbs up a spindly tree to escape the dog, and then promptly proceed to chase the dog out of the territory and viciously spit at the loner not to cross the border.",
+                "text": "The patrol watches as the loner climbs up a spindly tree to escape the dog, and then promptly proceed to chase the dog out of the territory and viciously spit at the loner not to cross the border.",
                 "exp": 10,
                 "weight": 20,
                 "outsider_rep": -2
@@ -815,7 +1180,7 @@
     {
         "patrol_id": "fst_bord_noise3",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "bord_general_intro",
@@ -833,7 +1198,7 @@
                 "weight": 20
             },
             {
-                "text": "p_l pads towards the bush to check on the noise when a rabbit suddenly bursts out! None of the cats are quick enough to catch it, but at least the noise was nothing dangerous.",
+                "text": "p_l pads towards the bush to check on the noise when a rabbit bursts out! None of the cats are quick enough to catch it, but at least the noise was nothing dangerous.",
                 "exp": 10,
                 "weight": 5
             },
@@ -860,7 +1225,7 @@
                 "text": "p_l takes the lead in checking the source of the noise and comes face to face with a rogue hiding in the bush! The rogue takes a swipe at p_l, but doesn't get much damage in before p_l retaliates and chases the intruder out of c_n territory.",
                 "exp": 0,
                 "weight": 10,
-                "injury":  [
+                "injury": [
                     {
                         "cats": ["p_l"],
                         "injuries": ["battle_injury"],
@@ -909,10 +1274,10 @@
     {
         "patrol_id": "fst_hunt_twolegplacekittens1",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": ["new_cat"],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "fst_hunt_twolegplace",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {},
@@ -927,8 +1292,13 @@
                 "exp": 30,
                 "weight": 20,
                 "new_cat": [
-                    ["kittypet", "female", "dead",  "age:has_kits"],
-                    ["litter", "parent:0", "status:kitten", "backstory:abandoned1,abandoned4"]
+                    ["kittypet", "female", "dead", "age:has_kits"],
+                    [
+                        "litter",
+                        "parent:0",
+                        "status:kitten",
+                        "backstory:abandoned1,abandoned4"
+                    ]
                 ],
                 "relationships": [
                     {
@@ -946,7 +1316,12 @@
                 "weight": 5,
                 "new_cat": [
                     ["kittypet", "female", "dead", "age:has_kits"],
-                    ["litter", "parent:0", "status:kitten", "backstory:abandoned1,abandoned4"]
+                    [
+                        "litter",
+                        "parent:0",
+                        "status:kitten",
+                        "backstory:abandoned1,abandoned4"
+                    ]
                 ],
                 "relationships": [
                     {
@@ -965,7 +1340,12 @@
                 "stat_trait": ["careful", "thoughtful"],
                 "new_cat": [
                     ["kittypet", "female", "dead", "age:has_kits"],
-                    ["litter", "parent:0", "status:kitten", "backstory:abandoned1,abandoned4"]
+                    [
+                        "litter",
+                        "parent:0",
+                        "status:kitten",
+                        "backstory:abandoned1,abandoned4"
+                    ]
                 ],
                 "relationships": [
                     {
@@ -1005,8 +1385,8 @@
     },
     {
         "patrol_id": "gen_med_rescue5",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": ["new_cat"],
         "patrol_art": "gen_med_rescue",
@@ -1086,8 +1466,8 @@
     },
     {
         "patrol_id": "gen_med_rescue6",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": ["new_cat"],
         "patrol_art": "gen_med_rescue",
@@ -1109,7 +1489,12 @@
                 "weight": 20,
                 "new_cat": [
                     ["age:has_kits", "dead", "meeting", "can_birth"],
-                    ["litter", "parent:0", "status:newborn", "backstory:orphaned1,orphaned2"]
+                    [
+                        "litter",
+                        "parent:0",
+                        "status:newborn",
+                        "backstory:orphaned1,orphaned2"
+                    ]
                 ],
                 "relationships": [
                     {
@@ -1127,7 +1512,12 @@
                 "weight": 5,
                 "new_cat": [
                     ["age:has_kits", "dead", "meeting", "can_birth"],
-                    ["litter", "parent:0", "status:newborn", "backstory:orphaned1,orphaned2"]
+                    [
+                        "litter",
+                        "parent:0",
+                        "status:newborn",
+                        "backstory:orphaned1,orphaned2"
+                    ]
                 ],
                 "relationships": [
                     {
@@ -1167,8 +1557,8 @@
     },
     {
         "patrol_id": "gen_med_rescue7",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": ["new_cat"],
         "patrol_art": "gen_med_rescue",
@@ -1250,8 +1640,8 @@
     },
     {
         "patrol_id": "gen_med_rescue8",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": ["new_cat"],
         "patrol_art": "gen_med_rescue",
@@ -1275,7 +1665,12 @@
                 "weight": 20,
                 "new_cat": [
                     ["age:has_kits", "dead", "meeting", "can_birth"],
-                    ["litter", "parent:0", "status:newborn", "backstory:orphaned1,orphaned2"]
+                    [
+                        "litter",
+                        "parent:0",
+                        "status:newborn",
+                        "backstory:orphaned1,orphaned2"
+                    ]
                 ],
                 "relationships": [
                     {
@@ -1293,7 +1688,12 @@
                 "weight": 5,
                 "new_cat": [
                     ["age:has_kits", "dead", "meeting", "can_birth"],
-                    ["litter", "parent:0", "status:newborn", "backstory:orphaned1,orphaned2"]
+                    [
+                        "litter",
+                        "parent:0",
+                        "status:newborn",
+                        "backstory:orphaned1,orphaned2"
+                    ]
                 ],
                 "relationships": [
                     {
@@ -1333,8 +1733,8 @@
     },
     {
         "patrol_id": "gen_med_rescuesoloapp_hostile1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": ["new_cat"],
         "patrol_art": "med_general_intro",
@@ -1415,8 +1815,8 @@
     },
     {
         "patrol_id": "gen_med_rescuesoloapp_hostile2",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": ["new_cat"],
         "patrol_art": "med_general_intro",
@@ -1439,7 +1839,12 @@
                 "weight": 20,
                 "new_cat": [
                     ["age:has_kits", "dead", "meeting", "can_birth"],
-                    ["litter", "parent:0", "status:newborn", "backstory:orphaned1,orphaned2"]
+                    [
+                        "litter",
+                        "parent:0",
+                        "status:newborn",
+                        "backstory:orphaned1,orphaned2"
+                    ]
                 ],
                 "relationships": [
                     {
@@ -1457,7 +1862,12 @@
                 "weight": 5,
                 "new_cat": [
                     ["age:has_kits", "dead", "meeting", "can_birth"],
-                    ["litter", "parent:0", "status:newborn", "backstory:orphaned1,orphaned2"]
+                    [
+                        "litter",
+                        "parent:0",
+                        "status:newborn",
+                        "backstory:orphaned1,orphaned2"
+                    ]
                 ],
                 "relationships": [
                     {

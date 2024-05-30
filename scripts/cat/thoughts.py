@@ -67,6 +67,11 @@ class Thoughts():
             if camp not in thought["camp"]:
                 return False
 
+        # This is for checking the 'not_working' status
+        if "not_working" in thought:
+            if thought["not_working"] != main_cat.not_working():
+                return False
+
         # This is for checking if another cat is needed and there is a other cat
         r_c_in = [thought_str for thought_str in thought["thoughts"] if "r_c" in thought_str]
         if len(r_c_in) > 0 and not random_cat:
@@ -291,15 +296,17 @@ class Thoughts():
             spec_dir = ""
 
         THOUGHTS = []
-        with open(f"{base_path}{life_dir}{spec_dir}/{status}.json", 'r') as read_file:
-            THOUGHTS = ujson.loads(read_file.read())
-        GENTHOUGHTS = []
-        with open(f"{base_path}{life_dir}{spec_dir}/general.json", 'r') as read_file:
-            GENTHOUGHTS = ujson.loads(read_file.read())
         # newborns only pull from their status thoughts. this is done for convenience
         if main_cat.age == 'newborn':
+            with open(f"{base_path}{life_dir}{spec_dir}/newborn.json", 'r') as read_file:
+                THOUGHTS = ujson.loads(read_file.read())
             loaded_thoughts = THOUGHTS
         else:
+            with open(f"{base_path}{life_dir}{spec_dir}/{status}.json", 'r') as read_file:
+                THOUGHTS = ujson.loads(read_file.read())
+            GENTHOUGHTS = []
+            with open(f"{base_path}{life_dir}{spec_dir}/general.json", 'r') as read_file:
+                GENTHOUGHTS = ujson.loads(read_file.read())
             loaded_thoughts = THOUGHTS 
             loaded_thoughts += GENTHOUGHTS
         final_thoughts = Thoughts.create_thoughts(loaded_thoughts, main_cat, other_cat, game_mode, biome, season, camp)

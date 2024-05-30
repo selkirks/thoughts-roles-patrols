@@ -78,11 +78,9 @@ class EventsScreen(Screens):
             return
         
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
-            
             if event.ui_element == self.timeskip_button:
-                
                 self.events_thread = self.loading_screen_start_work(events_class.one_moon)
-            
+
             # Change the type of events displayed
             elif event.ui_element == self.all_events_button:
                 if self.event_container.vert_scroll_bar:
@@ -268,14 +266,6 @@ class EventsScreen(Screens):
         self.timeskip_button = UIImageButton(scale(pygame.Rect((620, 436), (360, 60))), "", object_id="#timeskip_button"
                                              , manager=MANAGER)
 
-        # commenting out for now as there seems to be a consensus that it isn't needed anymore?
-        #if game.clan.closed_borders:
-        #    self.toggle_borders_button = pygame_gui.elements.UIButton(scale(pygame.Rect((500, 210), (200, 30))),
-        #                                                              "Open Clan Borders")
-        #else:
-        #    self.toggle_borders_button = pygame_gui.elements.UIButton(scale(pygame.Rect((500, 210), (200, 30))),
-        #                                                              "Close Clan Borders")
-
         # Sets up the buttons to switch between the event types.
         self.all_events_button = UIImageButton(
             scale(pygame.Rect((120, 570), (300, 60))),
@@ -400,7 +390,7 @@ class EventsScreen(Screens):
             ele.kill()
         self.cat_profile_buttons = []
 
-        # self.hide_menu_buttons()
+        self.hide_menu_buttons()
 
     def on_use(self):
         
@@ -669,5 +659,6 @@ class EventsScreen(Screens):
 
     def make_events_container(self):
         """ In its own function so that there is only one place the box size is set"""
-        self.event_container = pygame_gui.elements.UIScrollingContainer(scale(pygame.Rect((432, 552), (1028, 700)))
-                                                                        , manager=MANAGER)
+        self.event_container = pygame_gui.elements.UIScrollingContainer(scale(pygame.Rect((432, 552), (1028, 700))),
+                                                                        allow_scroll_x=False,
+                                                                        manager=MANAGER)

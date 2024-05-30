@@ -78,7 +78,9 @@ class ClanScreen(Screens):
                 self.change_screen('clearing screen')
             else:
                 self.menu_button_pressed(event)
-
+            if event.ui_element == self.warrior_den_label:
+                self.change_screen('warrior den screen')
+        
         elif event.type == pygame.KEYDOWN and game.settings['keybinds']:
             if event.key == pygame.K_RIGHT:
                 self.change_screen('starclan screen')
@@ -105,7 +107,7 @@ class ClanScreen(Screens):
             self.layout = game.clan.layouts["default"]
 
         self.choose_cat_positions()
-
+        
         self.set_disabled_menu_buttons(["camp_screen"])
         self.update_heading_text(f'{game.clan.name}Clan')
         self.show_menu_buttons()
@@ -133,14 +135,15 @@ class ClanScreen(Screens):
                     )
                 except:
                     print(f"ERROR: placing {Cat.all_cats[x].name}\'s sprite on Clan page")
-
+                    
         # Den Labels
         # Redo the locations, so that it uses layout on the Clan page
-        self.warrior_den_label = pygame_gui.elements.UIImage(
-            scale(pygame.Rect(self.layout["warrior den"], (242, 56))),
-            pygame.transform.scale(
-                image_cache.load_image('resources/images/warrior_den.png'),
-                (242, 56)))
+        self.warrior_den_label = UIImageButton(scale(pygame.Rect(
+            self.layout["warrior den"], (242, 56))),
+            "",
+            object_id="#warrior_den_button",
+            starting_height=2
+        )
         self.leader_den_label = pygame_gui.elements.UIImage(
             scale(pygame.Rect(self.layout["leader den"], (224, 56))),
             pygame.transform.scale(
@@ -336,7 +339,7 @@ class ClanScreen(Screens):
             if Cat.all_cats[x].dead or Cat.all_cats[x].outside:
                 continue
 
-            # Newborns are not meant to be placed. They are hiding.
+            # Newborns are not meant to be placed. They are hiding. 
             if Cat.all_cats[x].status == 'newborn' or game.config['fun']['all_cats_are_newborn']:
                 if game.config['fun']['all_cats_are_newborn'] or game.config['fun']['newborns_can_roam']:
                     # Free them
@@ -344,7 +347,7 @@ class ClanScreen(Screens):
                                                                                      [1, 100, 1, 1, 1, 100, 50])
                 else:
                     continue
-
+ 
             if Cat.all_cats[x].status in ['apprentice', 'mediator apprentice']:
                 Cat.all_cats[x].placement = self.choose_nonoverlapping_positions(first_choices, all_dens,
                                                                                  [1, 50, 1, 1, 100, 100, 1])
@@ -369,7 +372,7 @@ class ClanScreen(Screens):
             elif Cat.all_cats[x].status == "leader":
                 game.clan.leader.placement = self.choose_nonoverlapping_positions(first_choices, all_dens,
                                                                                   [1, 200, 1, 1, 1, 1, 1])
-
+                                                                                  
 
     def update_buttons_and_text(self):
         if game.switches['saved_clan']:
@@ -381,7 +384,7 @@ class ClanScreen(Screens):
 
         self.label_toggle.kill()
         if game.clan.clan_settings['den labels']:
-            self.label_toggle = UIImageButton(scale(pygame.Rect((50, 1282), (68, 68))), "",
+            self.label_toggle = UIImageButton(scale(pygame.Rect((50, 1282), (68, 68))), "", starting_height=2,
                                               object_id="#checked_checkbox")
             self.warrior_den_label.show()
             self.clearing_label.show()
@@ -391,7 +394,7 @@ class ClanScreen(Screens):
             self.med_den_label.show()
             self.elder_den_label.show()
         else:
-            self.label_toggle = UIImageButton(scale(pygame.Rect((50, 1282), (68, 68))), "",
+            self.label_toggle = UIImageButton(scale(pygame.Rect((50, 1282), (68, 68))), "", starting_height=2,
                                               object_id="#unchecked_checkbox")
             self.warrior_den_label.hide()
             self.clearing_label.hide()

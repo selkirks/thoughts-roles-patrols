@@ -1,6 +1,6 @@
 [
     {
-        "injury": "",
+        "injury": "snake bite",
         "tags": [
             "Newleaf",
             "Greenleaf",
@@ -11,7 +11,7 @@
         ],
         "event_text": "m_c was bitten by a snake, and miraculously survived!",
         "history_text": {
-            "scar": "m_c was scarred by a .",
+            "scar": "m_c was scarred by a snake bite.",
             "reg_death": "m_c died after {PRONOUN/m_c/subject} {VERB/m_c/were/was} bitten by a snake."
         },
         "cat_trait": null,
@@ -56,34 +56,6 @@
             "Leaf-bare"
         ],
         "event_text": "m_c slipped on some rocks and dislocated {PRONOUN/m_c/poss} leg.",
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null
-    },
-    {
-        "injury": "subluxated joint",
-        "tags": [
-            "Newleaf",
-            "Greenleaf",
-            "Leaf-fall",
-            "Leaf-bare"
-        ],
-        "event_text": "m_c misstepped and slipped from a rock, subluxating a joint.",
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null
-    },
-    {
-        "injury": "subluxated joint",
-        "tags": [
-            "Newleaf",
-            "Greenleaf",
-            "Leaf-fall",
-            "Leaf-bare"
-        ],
-        "event_text": "m_c slipped on some rocks and subluxated their leg.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -792,7 +764,7 @@
         "negate_other_cat_skill": null,
         "backstory_constraint": null
     },
-	{
+    {
         "injury": "headache",
         "camp": "any",
         "tags": [
@@ -822,134 +794,115 @@
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
-        "other_cat_skill": null			
-	},		
-    {
-        "injury": "rash",
+        "other_cat_skill": null
+    },
+        {
+        "injury": "mangled leg",
         "camp": "any",
         "tags": [
             "Newleaf",
             "Greenleaf",
             "Leaf-fall",
             "Leaf-bare",
-			"scar",
-			"RASH"
+            "other_clan",
+            "rel_down",
+            "war"
         ],
-        "event_text": "m_c was out on a walk alone when {PRONOUN/m_c/subject} heard a dog approaching! {PRONOUN/m_c/subject/CAP} crawled into a nearby bush to hide only to discover to {PRONOUN/m_c/poss} dismay it was poison ivy.",
-        "cat_trait": ["nervous", "wise", "insecure", "careful", "calm", "sneaky", "strange"],
-        "cat_skill": [
-            "CLEVER,1"
-        ],
-        "history_text": {
-            "scar": "m_c got a scar from a poison-ivy rash.",
-            "reg_death": "m_c died from exposure to poison ivy."
-        },
+        "event_text": "While patrolling the o_c borders, m_c stepped on a concealed pit trap set by what seemed to be o_c warriors. m_c freezes with shock as {PRONOUN/m_c/subject} {VERB/m_c/plunge/plunges} into the depths of the trap, causing m_c to limp back to camp, flanked by other cats on the patrol.",
+        "cat_negate_trait": "careful",
+        "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
     },
     {
-        "injury": "wrenched claws",
-        "tags": [
-            "Newleaf",
-            "Greenleaf",
-            "Leaf-fall",
-            "Leaf-bare",
-            "scar",
-            "DECLAWED"
-        ],
-        "event_text": "m_c was captured by twolegs, but managed to escape and return home",
-        "history_text": {
-            "scar": "m_c was scarred when they were taken by Twolegs.",
-            "reg_death": "m_c died after they were taken away by Twolegs."
-        }
-    },
-    {
-        "injury": "wrenched claws",
+        "injury": "claw-wound",
         "camp": "any",
         "tags": [
             "Newleaf",
             "Greenleaf",
             "Leaf-fall",
             "Leaf-bare",
-            "scar",
-            "DECLAWED"
+            "other_clan",
+            "rel_down",
+            "war",
+            "other_cat",
+            "rc_to_mc",
+            "respect",
+            "trust"
         ],
-        "event_text": "m_c got curious while out wandering the territory and got captured briefly by twolegs.",
-        "history_text": {
-            "scar": "m_c was scarred when they were taken by Twolegs.",
-            "reg_death": "m_c died after they were taken away by Twolegs."
-        },
-        "cat_trait": ["strange"],
+        "event_text": "During a skirmish, m_c bounds into battle against an o_c warrior, protecting r_c from a powerful blow. m_c bears the brunt of the strike, and r_c helps them back to camp.",
+        "cat_negate_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
-        "other_cat_skill": null
+        "other_cat_skill": null,
+        "cat_trait": [
+            "fierce",
+            "bloodthirsty",
+            "charismatic",
+            "bold",
+            "daring",
+            "ambitious",
+            "confident",
+            "adventurous",
+            "vengeful",
+            "competitive",
+            "rebellious",
+            "flamboyant"
+        ]
     },
     {
-        "injury": "wrenched claws",
+        "injury": "claw-wound",
+        "camp": "any",
         "tags": [
             "Newleaf",
             "Greenleaf",
             "Leaf-fall",
             "Leaf-bare",
-            "scar",
-            "DECLAWED"
+            "other_clan",
+            "rel_down",
+            "war",
+            "other_cat",
+            "other_cat_kit"
         ],
-        "event_text": "Thinking that {PRONOUN/m_c/subject} could easily fight a twoleg m_c went out into the territory hissing and spitting only to come back subdued.",
-        "history_text": {
-            "scar": "m_c was scarred when they were taken by Twolegs.",
-            "reg_death": "m_c died after they were taken away by Twolegs."
-        },
-        "cat_trait": ["vengeful", "ambitious", "bloodthirsty"],
+        "event_text": "While o_c attempted a surprise attack on the c_n camp, m_c fiercely guarded the nursery. However, it didn't end with m_c unscathed, and {PRONOUN/m_c/subject} walked away with a gushing wound in {PRONOUN/m_c/poss} flank.",
+        "cat_negate_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
     },
     {
-       "injury": "earache",
-       "camp": "any",
-       "tags": [
-           "Newleaf",
-           "Greenleaf",
-           "Leaf-fall",
-           "Leaf-bare"
-       ],
-       "event_text": "Poor m_c has gotten an earache this moon.",
-       "history_text": null,
-       "cat_trait": null,
-       "cat_skill": null,
-       "other_cat_trait": null,
-       "other_cat_skill": null
-    },    
-	{
-       "injury": "earache",
-       "camp": "any",
-       "tags": [
-           "Newleaf",
-           "Greenleaf",
-           "Leaf-fall",
-           "Leaf-bare"
-       ],
-       "event_text": "After m_c visits the medicine den over some dizziness it turns out that {PRONOUN/m_c/subject} just {VERB/m_c/has/have} a small earache.",
-       "history_text": null,
-       "cat_trait": null,
-       "cat_skill": null,
-       "other_cat_trait": null,
-       "other_cat_skill": null
-    },    
-	{
-       "injury": "fatigue",
-       "camp": "any",
-       "tags": [
-           "Newleaf",
-           "Greenleaf",
-           "Leaf-fall",
-           "Leaf-bare"
-       ],
-       "event_text": "Despite sleeping, m_c still feels absolutely exhausted, it would seem that {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} gotten some fatigue.",
-       "history_text": null,
-       "cat_trait": null,
-       "cat_skill": null,
-       "other_cat_trait": null,
-       "other_cat_skill": null
+        "injury": "cat bite",
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "other_clan",
+            "rel_down",
+            "war"
+        ],
+        "event_text": "On a border patrol near the o_c border, m_c could no longer take o_c's jeers and smirks. {PRONOUN/m_c/subject/CAP} lashed out at the first jeering cat {PRONOUN/m_c/subject} saw, although the hotheaded move wasn't smart as m_c couldn't escape the skirmish without injury.",
+        "cat_negate_trait": null,
+        "cat_skill": null,
+        "cat_trait": [
+            "troublesome",
+            "fierce",
+            "bloodthirsty",
+            "cold",
+            "bold",
+            "daring",
+            "righteous",
+            "ambitious",
+            "confident",
+            "adventurous",
+            "shameless",
+            "vengeful",
+            "arrogant",
+            "competitive",
+            "flamboyant",
+            "rebellious"
+        ],
+        "other_cat_skill": null
     }
 ]

@@ -7,7 +7,8 @@ from scripts.utility import (
     get_highest_romantic_relation,
     get_med_cats,
     event_text_adjust,
-    get_personality_compatibility
+    get_personality_compatibility,
+    change_relationship_values
 )
 from scripts.game_structure.game_essentials import game
 from scripts.cat.cats import Cat, cat_class
@@ -195,43 +196,74 @@ class Pregnancy_Events():
         if (cat and cat.no_kits) or (other_cat and other_cat.no_kits):
             return
 
-        # even with no_gendered_breeding on a male cat with no second parent should not be count as pregnant
-        # instead, the cat should get the kit instantly
-        if not other_cat and cat.gender in ['male' , 'intersex']:
-            amount = Pregnancy_Events.get_amount_of_kits(cat)
-            kits = Pregnancy_Events.get_kits(amount, cat, None, clan)
-            insert = 'this should not display'
-            if amount == 1:
-                insert = 'a single kitten'
-            if amount > 1:
-                insert = f'a litter of {amount} kits'
-            print_event = f"{cat.name} brought {insert} back to camp, but refused to talk about their origin."
-            cats_involved = [cat.ID]
-            for kit in kits:
-                cats_involved.append(kit.ID)
-            game.cur_events_list.append(Single_Event(print_event, "birth_death", cats_involved))
-            return
+        if clan.clan_settings['same sex birth']:
+            # 50/50 for single cats to get pregnant or just bring a litter back
+            if not other_cat and random.randint(0,1):
+                amount = Pregnancy_Events.get_amount_of_kits(cat)
+                kits = Pregnancy_Events.get_kits(amount, cat, None, clan)
+                insert = 'this should not display'
+                if amount == 1:
+                    insert = 'a single kitten'
+                if amount > 1:
+                    insert = f'a litter of {amount} kits'
+                print_event = f"{cat.name} brought {insert} back to camp, but refused to talk about their origin."
+                cats_involved = [cat.ID]
+                for kit in kits:
+                    cats_involved.append(kit.ID)
+                game.cur_events_list.append(Single_Event(print_event, "birth_death", cats_involved))
+                return
+            
+            # same sex birth enables all cats to get pregnant,
+            # therefore the main cat will be used, regarding of gender
+            clan.pregnancy_data[cat.ID] = {
+                "second_parent": str(other_cat.ID) if other_cat else None,
+                "moons": 0,
+                "amount": 0
+            }
 
-        # if the other cat is a female and the current cat is a male, make the female cat pregnant
-        pregnant_cat = cat
-        second_parent = other_cat
-        if cat.gender == 'male' and other_cat is not None and other_cat.gender == 'female':
-            pregnant_cat = other_cat
-            second_parent = cat
+            text = choice(Pregnancy_Events.PREGNANT_STRINGS["announcement"])
+            if clan.game_mode != 'classic':
+                severity = random.choices(["minor", "major"], [3, 1], k=1)
+                cat.get_injured("pregnant", severity=severity[0])
+                text += choice(Pregnancy_Events.PREGNANT_STRINGS[f"{severity[0]}_severity"])
+            text = event_text_adjust(Cat, text, cat, clan=clan)
+            game.cur_events_list.append(Single_Event(text, "birth_death", cat.ID))
+        else:
+            if not other_cat and cat.gender == 'male':
+                amount = Pregnancy_Events.get_amount_of_kits(cat)
+                kits = Pregnancy_Events.get_kits(amount, cat, None, clan)
+                insert = 'this should not display'
+                if amount == 1:
+                    insert = 'a single kitten'
+                if amount > 1:
+                    insert = f'a litter of {amount} kits'
+                print_event = f"{cat.name} brought {insert} back to camp, but refused to talk about their origin."
+                cats_involved = [cat.ID]
+                for kit in kits:
+                    cats_involved.append(kit.ID)
+                game.cur_events_list.append(Single_Event(print_event, "birth_death", cats_involved))
+                return
 
-        clan.pregnancy_data[pregnant_cat.ID] = {
-            "second_parent": str(second_parent.ID) if second_parent else None,
-            "moons": 0,
-            "amount": 0
-        }
+            # if the other cat is a female and the current cat is a male, make the female cat pregnant
+            pregnant_cat = cat
+            second_parent = other_cat
+            if cat.gender == 'male' and other_cat is not None and other_cat.gender == 'female':
+                pregnant_cat = other_cat
+                second_parent = cat
 
-        text = choice(Pregnancy_Events.PREGNANT_STRINGS["announcement"])
-        if clan.game_mode != 'classic':
-            severity = random.choices(["minor", "major"], [3, 1], k=1)
-            pregnant_cat.get_injured("pregnant", severity=severity[0])
-            text += choice(Pregnancy_Events.PREGNANT_STRINGS[f"{severity[0]}_severity"])
-        text = event_text_adjust(Cat, text, pregnant_cat, clan=clan)
-        game.cur_events_list.append(Single_Event(text, "birth_death", pregnant_cat.ID))
+            clan.pregnancy_data[pregnant_cat.ID] = {
+                "second_parent": str(second_parent.ID) if second_parent else None,
+                "moons": 0,
+                "amount": 0
+            }
+
+            text = choice(Pregnancy_Events.PREGNANT_STRINGS["announcement"])
+            if clan.game_mode != 'classic':
+                severity = random.choices(["minor", "major"], [3, 1], k=1)
+                pregnant_cat.get_injured("pregnant", severity=severity[0])
+                text += choice(Pregnancy_Events.PREGNANT_STRINGS[f"{severity[0]}_severity"])
+            text = event_text_adjust(Cat, text, pregnant_cat, clan=clan)
+            game.cur_events_list.append(Single_Event(text, "birth_death", pregnant_cat.ID))
 
     @staticmethod
     def handle_one_moon_pregnant(cat: Cat, clan=game.clan):
@@ -379,6 +411,8 @@ class Pregnancy_Events():
 
             if cat.outside:
                 possible_events = events["birth"]["outside_death"]
+            if game.clan.leader_lives > 1:
+                possible_events = events["birth"]["lead_death"]
             event_list.append(choice(possible_events))
 
             if cat.status == 'leader':
@@ -391,16 +425,11 @@ class Pregnancy_Events():
             History.add_death(cat, death_text=death_event)
         elif clan.game_mode != 'classic' and not cat.outside:  # if cat doesn't die, give recovering from birth
             cat.get_injured("recovering from birth", event_triggered=True)
-            ##turmoil = random.randint(1, 100)
-            ##if turmoil <= 20:
-                ##cat.get_ill("turmoiled litter", event_triggered=True)
-                ##possible_events = events["birth"]["turmoiled_birth"]
-                ##event_list.append(choice(possible_events))
             if 'blood loss' in cat.injuries:
                 if cat.status == 'leader':
                     death_event = ("died after a harsh kitting")
                 else:
-                    death_event = (f"{cat.name} after a harsh kitting.")
+                    death_event = (f"{cat.name} died after a harsh kitting.")
                 History.add_possible_history(cat, 'blood loss', death_text=death_event)
                 possible_events = events["birth"]["difficult_birth"]
                 # just makin sure meds aren't mentioned if they aren't around or if they are a parent
@@ -428,104 +457,6 @@ class Pregnancy_Events():
     # ---------------------------------------------------------------------------- #
     #                          check if event is triggered                         #
     # ---------------------------------------------------------------------------- #
-    @staticmethod
-    def check_intersex_parents(cat: Cat,
-                            second_parent: Cat,
-                            same_sex_adoption:bool):
-        #only if same sex is OFF
-        if cat.gender == 'intersex':
-            if second_parent.gender == 'male':
-                if "excess testosterone" in cat.permanent_condition:
-                    return True, False
-                elif "aneuploidy" in cat.permanent_condition:
-                    return True, False
-                elif "chimerism" in cat.permanent_condition:
-                    return True, False
-                else:
-                    if not same_sex_adoption:
-                        return False, False
-                    else:
-                        return True, True
-            elif second_parent.gender == 'female':
-                if "testosterone deficient" in cat.permanent_condition:
-                    return True, False
-                elif "chimerism" in cat.permanent_condition:
-                    return True, False
-                elif "mosaicism" in cat.permanent_condition:
-                    return True, False
-                else:
-                    if not same_sex_adoption:
-                        return False, False
-                    else:
-                        return True, True
-            else:
-                if "chimerism" in cat.permanent_condition or "chimerism" in second_parent.permanent_condition:
-                    return True, False
-                elif "mosaicism" in cat.permanent_condition:
-                    if "excess testosterone" in second_parent.permanent_condition:
-                        return True, False
-                    elif "mosaicism"in second_parent.permanent_condition:
-                        return True, False
-                    else:
-                        if not same_sex_adoption:
-                            return False, False
-                        else:
-                            return True, True
-                elif "aneuploidy" in cat.permanent_condition:
-                    if "testosterone deficient" in second_parent.permanent_condition:
-                        return True, False
-                    else:
-                        if not same_sex_adoption:
-                            return False, False
-                        else:
-                            return True, True
-                elif "testosterone deficient" in cat.permanent_condition:
-                    if "excess testosterone" in second_parent.permanent_condition:
-                        return True, False
-                    elif "mosaicism" in second_parent.permanent_condition:
-                        return True, False
-                    else:
-                        if not same_sex_adoption:
-                            return False, False
-                        else:
-                            return True, True
-                elif "excess testosterone" in cat.permanent_condition:
-                    if "testosterone deficient" in second_parent.permanent_condition:
-                        return True, False
-                    else:
-                        if not same_sex_adoption:
-                            return False, False
-                        else:
-                            return True, True
-                    
-        elif second_parent.gender == 'intersex':
-            if cat.gender == 'male':
-                if "excess testosterone" in second_parent.permanent_condition:
-                    return True, False
-                elif "aneuploidy" in second_parent.permanent_condition:
-                    return True, False
-                elif "chimerism" in second_parent.permanent_condition:
-                    return True, False
-                else:
-                    if not same_sex_adoption:
-                        return False, False
-                    else:
-                        return True, True
-            elif cat.gender == 'female':
-                if "testosterone deficient" in second_parent.permanent_condition:
-                    return True, False
-                elif "chimerism" in second_parent.permanent_condition:
-                    return True, False
-                elif "mosaicism" in second_parent.permanent_condition:
-                    return True, False
-                else:
-                    if not same_sex_adoption:
-                        return False, False
-                    else:
-                        return True, True
-
-        return False, False
-
 
     @staticmethod
     def check_if_can_have_kits(cat, single_parentage, allow_affair):
@@ -537,9 +468,6 @@ class Pregnancy_Events():
             return False
 
         if 'recovering from birth' in cat.injuries:
-            return False
-        
-        if 'infertile' in cat.permanent_condition:
             return False
 
         # decide chances of having kits, and if it's possible at all.
@@ -580,16 +508,6 @@ class Pregnancy_Events():
             return False, False
 
         # Check to see if the pair can have kits.
-            
-        if "infertile" in cat.permanent_condition or "infertile" in second_parent.permanent_condition:
-            True, True
-        
-        if cat.gender == 'intersex' or second_parent.gender == 'intersex':
-            if same_sex_birth:
-                return True, False
-            else:
-                return Pregnancy_Events.check_intersex_parents(cat, second_parent, same_sex_adoption)
-        
         if cat.gender == second_parent.gender:
             if same_sex_birth:
                 return True, False
@@ -767,7 +685,6 @@ class Pregnancy_Events():
         
         #### GENERATE THE KITS ######
         for kit in range(kits_amount):
-            
             kit = None
             if not cat: 
                 
@@ -789,21 +706,20 @@ class Pregnancy_Events():
                 kit = Cat(parent1=blood_parent.ID ,moons=0, backstory=backstory, status='newborn')
             elif cat and other_cat:
                 # Two parents provided
+                # The cat that gave birth is always parent1 so there is no need to check gender
                 kit = Cat(parent1=cat.ID, parent2=other_cat.ID, moons=0, status='newborn')
-                
-                if cat.gender == 'female':
-                    kit.thought = f"Snuggles up to the belly of {cat.name}"
-                elif cat.gender == 'male' and other_cat.gender == 'male':
-                    kit.thought = f"Snuggles up to the belly of {cat.name}"
-                else:
-                    kit.thought = f"Snuggles up to the belly of {other_cat.name}"
+                kit.thought = f"Snuggles up to the belly of {cat.name}"
             else:
                 # A one blood parent litter is the only option left. 
                 kit = Cat(parent1=cat.ID, moons=0, backstory=backstory, status='newborn')
                 kit.thought = f"Snuggles up to the belly of {cat.name}"
-                
-            kit.adoptive_parents = all_adoptive_parents  # Add the adoptive parents. 
+
+            # Prevent duplicate prefixes in the same litter
+            while kit.name.prefix in [kitty.name.prefix for kitty in all_kitten]:
+                kit.name = Name("newborn")
+
             all_kitten.append(kit)
+            # adoptive parents are set at the end, when everything else is decided
 
             # remove scars
             kit.pelt.scars.clear()
@@ -828,31 +744,34 @@ class Pregnancy_Events():
                 if the_cat.dead or the_cat.outside:
                     continue
                 if the_cat.ID in kit.get_parents():
-                    y = random.randrange(0, 20)
+                    parent_to_kit = game.config["new_cat"]["parent_buff"]["parent_to_kit"]
+                    y = random.randrange(0, 15)
                     start_relation = Relationship(the_cat, kit, False, True)
-                    start_relation.platonic_like += 30 + y
-                    start_relation.comfortable = 10 + y
-                    start_relation.admiration = 15 + y
-                    start_relation.trust = 10 + y
+                    start_relation.platonic_like += parent_to_kit["platonic"] + y
+                    start_relation.comfortable = parent_to_kit["comfortable"] + y
+                    start_relation.admiration = parent_to_kit["admiration"] + y
+                    start_relation.trust = parent_to_kit["trust"] + y
                     the_cat.relationships[kit.ID] = start_relation
-                    y = random.randrange(0, 20)
+
+                    kit_to_parent = game.config["new_cat"]["parent_buff"]["kit_to_parent"]
+                    y = random.randrange(0, 15)
                     start_relation = Relationship(kit, the_cat, False, True)
-                    start_relation.platonic_like += 30 + y
-                    start_relation.comfortable = 10 + y
-                    start_relation.admiration = 15 + y
-                    start_relation.trust = 10 + y
+                    start_relation.platonic_like += kit_to_parent["platonic"] + y
+                    start_relation.comfortable = kit_to_parent["comfortable"] + y
+                    start_relation.admiration = kit_to_parent["admiration"] + y
+                    start_relation.trust = kit_to_parent["trust"] + y
                     kit.relationships[the_cat.ID] = start_relation
                 else:
                     the_cat.relationships[kit.ID] = Relationship(the_cat, kit)
                     kit.relationships[the_cat.ID] = Relationship(kit, the_cat)
-            
+
             #### REMOVE ACCESSORY ###### 
             kit.pelt.accessory = None
             clan.add_cat(kit)
 
             #### GIVE HISTORY ###### 
             History.add_beginning(kit, clan_born=bool(cat))
-        
+
         # check other cats of Clan for siblings
         for kitten in all_kitten:
             # update/buff the relationship towards the siblings
@@ -865,6 +784,46 @@ class Pregnancy_Events():
                 kitten.relationships[second_kitten.ID].trust += 10 + y
             
             kitten.create_inheritance_new_cat() # Calculate inheritance. 
+
+        # check if the possible adoptive cat is not already in the family tree and
+        # add them as adoptive parents if not
+        final_adoptive_parents = []
+        for adoptive_p in all_adoptive_parents:
+            if adoptive_p not in all_kitten[0].inheritance.all_involved:
+                final_adoptive_parents.append(adoptive_p)
+
+        # Add the adoptive parents.
+        for kit in all_kitten:
+            kit.adoptive_parents = final_adoptive_parents
+            kit.inheritance.update_inheritance()
+            kit.inheritance.update_all_related_inheritance()
+
+            # update relationship for adoptive parents
+            for parent_id in final_adoptive_parents:
+                parent = Cat.fetch_cat(parent_id)
+                if parent:
+                    kit_to_parent = game.config["new_cat"]["parent_buff"]["kit_to_parent"]
+                    parent_to_kit = game.config["new_cat"]["parent_buff"]["parent_to_kit"]
+                    change_relationship_values(
+                        cats_from=[kit],
+                        cats_to=[parent.ID],
+                        platonic_like=kit_to_parent["platonic"],
+                        dislike=kit_to_parent["dislike"],
+                        admiration=kit_to_parent["admiration"],
+                        comfortable=kit_to_parent["comfortable"],
+                        jealousy=kit_to_parent["jealousy"],
+                        trust=kit_to_parent["trust"]
+                    )
+                    change_relationship_values(
+                        cats_from=[parent],
+                        cats_to=[kit.ID],
+                        platonic_like=parent_to_kit["platonic"],
+                        dislike=parent_to_kit["dislike"],
+                        admiration=parent_to_kit["admiration"],
+                        comfortable=parent_to_kit["comfortable"],
+                        jealousy=parent_to_kit["jealousy"],
+                        trust=parent_to_kit["trust"]
+                    )
 
         if blood_parent:
             blood_parent.outside = True

@@ -9,9 +9,9 @@ class Sprites():
     white_patches_tints = {}
 
     def __init__(self, size=None):
-        """Class that handles and hold all spritesheets.
+        """Class that handles and hold all spritesheets. 
         Size is normall automatically determined by the size
-        of the lineart. If a size is passed, it will override
+        of the lineart. If a size is passed, it will override 
         this value. """
         self.size = None
         self.spritesheets = {}
@@ -20,7 +20,7 @@ class Sprites():
 
         # Shared empty sprite for placeholders
         self.blank_sprite = None
-
+        
         self.load_tints()
 
     def load_tints(self):
@@ -35,7 +35,7 @@ class Sprites():
                 self.white_patches_tints = ujson.loads(read_file.read())
         except:
             print("ERROR: Reading White Patches Tints")
-
+            
     def spritesheet(self, a_file, name):
         """
         Add spritesheet called name from a_file.
@@ -59,7 +59,7 @@ class Sprites():
         spritesheet -- Name of spritesheet.
         pos -- (x,y) tuple of offsets. NOT pixel offset, but offset of other sprites.
         name -- Name of group to make.
-
+        
         Keyword Arguments
         sprites_x -- Number of sprites horizontally (default: 3)
         sprites_y -- Number of sprites vertically (default: 3)
@@ -110,13 +110,14 @@ class Sprites():
 
         for x in [
             'lineart', 'singlecolours', 'speckledcolours', 'tabbycolours',
-            'whitepatches', 'eyes', 'eyes2', 'lazyeyes', 'skin', 'scars', 'missingscars',
+            'whitepatches', 'eyes', 'eyes2', 'skin', 'scars', 'missingscars',
             'collars', 'bellcollars', 'bowcollars', 'nyloncollars',
-            'bengalcolours', 'marbledcolours', 'rosettecolours', 'smokecolours', 'tickedcolours',
-            'mackerelcolours', 'classiccolours', 'sokokecolours', 'agouticolours', 'singlestripecolours','maskedcolours',
-            'shadersnewwhite', 'lineartdead', 'tortiepatchesmasks',
+            'bengalcolours', 'marbledcolours', 'rosettecolours', 'smokecolours', 'tickedcolours', 
+            'mackerelcolours', 'classiccolours', 'sokokecolours', 'agouticolours', 'singlestripecolours',
+            'maskedcolours', 
+            'shadersnewwhite', 'lineartdead', 'tortiepatchesmasks', 
             'medcatherbs', 'lineartdf', 'lightingnew', 'fademask',
-            'fadestarclan', 'fadedarkforest', 'disabilityscars', 'disabilityaccs'
+            'fadestarclan', 'fadedarkforest'
 
         ]:
             if 'lineart' in x and game.config['fun']['april_fools']:
@@ -139,23 +140,21 @@ class Sprites():
             self.make_group('fadedarkforest', (i, 0), f'fadedf{i}')
 
         for a, i in enumerate(
-                ['YELLOW', 'AMBER', 'HAZEL', 'PALEGREEN', 'GREEN', 'BLUE',
+                ['YELLOW', 'AMBER', 'HAZEL', 'PALEGREEN', 'GREEN', 'BLUE', 
                 'DARKBLUE', 'GREY', 'CYAN', 'EMERALD', 'HEATHERBLUE', 'SUNLITICE']):
             self.make_group('eyes', (a, 0), f'eyes{i}')
             self.make_group('eyes2', (a, 0), f'eyes2{i}')
-            self.make_group('lazyeyes', (a, 0), f'lazyeyes{i}')
         for a, i in enumerate(
                 ['COPPER', 'SAGE', 'COBALT', 'PALEBLUE', 'BRONZE', 'SILVER',
                 'PALEYELLOW', 'GOLD', 'GREENYELLOW']):
             self.make_group('eyes', (a, 1), f'eyes{i}')
             self.make_group('eyes2', (a, 1), f'eyes2{i}')
-            self.make_group('lazyeyes', (a, 1), f'lazyeyes{i}')
 
         # white patches
         for a, i in enumerate(['FULLWHITE', 'ANY', 'TUXEDO', 'LITTLE', 'COLOURPOINT', 'VAN', 'ANYTWO',
             'MOON', 'PHANTOM', 'POWDER', 'BLEACHED', 'SAVANNAH', 'FADESPOTS', 'PEBBLESHINE']):
             self.make_group('whitepatches', (a, 0), f'white{i}')
-        for a, i in enumerate(['EXTRA', 'ONEEAR', 'BROKEN', 'LIGHTTUXEDO', 'BUZZARDFANG', 'RAGDOLL',
+        for a, i in enumerate(['EXTRA', 'ONEEAR', 'BROKEN', 'LIGHTTUXEDO', 'BUZZARDFANG', 'RAGDOLL', 
             'LIGHTSONG', 'VITILIGO', 'BLACKSTAR', 'PIEBALD', 'CURVED', 'PETAL', 'SHIBAINU', 'OWL']):
             self.make_group('whitepatches', (a, 1), f'white{i}')
         # ryos white patches
@@ -285,7 +284,7 @@ class Sprites():
             self.make_group('maskedcolours', (a, 1), f'masked{i}')
         for a, i in enumerate(['LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN', 'CHOCOLATE']):
             self.make_group('maskedcolours', (a, 2), f'masked{i}')
-
+            
         # new new torties
         for a, i in enumerate(['ONE', 'TWO', 'THREE', 'FOUR', 'REDTAIL', 'DELILAH', 'HALF', 'STREAK', 'MASK', 'SMOKE']):
             self.make_group('tortiepatchesmasks', (a, 0), f"tortiemask{i}")
@@ -313,7 +312,7 @@ class Sprites():
         Loads scar sprites and puts them into groups.
         """
         for a, i in enumerate(
-                ["ONE", "TWO", "THREE", "MANLEG", "BRIGHTHEART", "MANTAIL",
+                ["ONE", "TWO", "THREE", "MANLEG", "BRIGHTHEART", "MANTAIL", 
                  "BRIDGE", "RIGHTBLIND", "LEFTBLIND", "BOTHBLIND", "BURNPAWS", "BURNTAIL"]):
             self.make_group('scars', (a, 0), f'scars{i}')
         for a, i in enumerate(
@@ -323,12 +322,10 @@ class Sprites():
         for a, i in enumerate(
                 ["TAILSCAR", "SNOUT", "CHEEK", "SIDE", "THROAT", "TAILBASE", "BELLY", "TOETRAP", "SNAKE",
                  "LEGBITE", "NECKBITE", "FACE"]):
-            sprites.make_group('scars', (a, 2), f'scars{i}')
-        #disability mod related
+            self.make_group('scars', (a, 2), f'scars{i}')
         for a, i in enumerate(
-                ["RASH", "DECLAWED"]):
-            sprites.make_group('disabilityscars', (a, 0), f'scars{i}')
-
+                ["HINDLEG", "BACK", "QUILLSIDE", "SCRATCHSIDE", "TOE", "BEAKSIDE", "CATBITETWO", "SNAKETWO", "FOUR"]):
+            self.make_group('scars', (a, 3), f'scars{i}')
         # missing parts
         for a, i in enumerate(
                 ["LEFTEAR", "RIGHTEAR", "NOTAIL", "NOLEFTEAR", "NORIGHTEAR", "NOEAR", "HALFTAIL", "NOPAW"]):
@@ -385,11 +382,7 @@ class Sprites():
             self.make_group('nyloncollars', (a, 1), f'collars{i}')
         for a, i in enumerate(["PINKNYLON", "PURPLENYLON", "MULTINYLON", "INDIGONYLON"]):
             self.make_group('nyloncollars', (a, 2), f'collars{i}')
-        #dismod accessories
-        for a, i in enumerate(["BALL", "MOUSE", "MOSSBLANKIE", "BONE"]):
-            sprites.make_group('disabilityaccs', (a, 0), f'acc_dismod{i}')
-        for a, i in enumerate(["AUTISMFLAG", "DISFLAG", "ZEBFLAG"]):
-            sprites.make_group('disabilityaccs', (a, 1), f'acc_dismod{i}')
+            
 
-# CREATE INSTANCE
+# CREATE INSTANCE 
 sprites = Sprites()

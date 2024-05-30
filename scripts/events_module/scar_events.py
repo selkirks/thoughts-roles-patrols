@@ -15,27 +15,27 @@ class Scar_Events():
 
     # scar pools
     bite_scars = [
-        "CATBITE"
+        "CATBITE", "CATBITETWO"
     ]
     rat_scars = [
-        "RATBITE"
+        "RATBITE", "TOE"
     ]
     beak_scars = [
-        'BEAKCHEEK', 'BEAKLOWER'
+        "BEAKCHEEK", "BEAKLOWER", "BEAKSIDE"
     ]
     canid_scars = [
         "LEGBITE", "NECKBITE", "TAILSCAR", "BRIGHTHEART"
     ]
     snake_scars = [
-        "SNAKE"
+        "SNAKE", "SNAKETWO"
     ]
     claw_scars = [
         "ONE", "TWO", "SNOUT", "TAILSCAR", "CHEEK",
         "SIDE", "THROAT", "TAILBASE", "BELLY", "FACE",
-        "BRIDGE"
+        "BRIDGE", "HINDLEG", "BACK", "SCRATCHSIDE"
     ]
     leg_scars = [
-        "NOPAW", "TOETRAP", "MANLEG",
+        "NOPAW", "TOETRAP", "MANLEG", "FOUR"
     ]
     tail_scars = [
         "TAILSCAR", "TAILBASE", "NOTAIL", "HALFTAIL", "MANTAIL"
@@ -54,24 +54,18 @@ class Scar_Events():
         "BRIGHTHEART", "BURNPAWS", "BURNTAIL", "BURNBELLY", "BURNRUMP"
     ]
     quill_scars = [
-        "QUILLCHUNK", "QUILLSCRATCH"
+        "QUILLCHUNK", "QUILLSCRATCH", "QUILLSIDE"
     ]
     head_scars = [
         "SNOUT", "CHEEK", "BRIDGE", "BEAKCHEEK"
     ]
     bone_scars = [
-        "MANLEG",  "TOETRAP"
+        "MANLEG", "TOETRAP", "FOUR"
     ]
     back_scars = [
-        "TWO", "TAILBASE"
+        "TWO", "TAILBASE", "BACK"
     ]
-    rash_scars = [
-        "RASH"
-    ]
-    declawed_scars = [
-        "DECLAWED"
-    ]
-
+    
     scar_allowed = {
         "bite-wound": canid_scars,
         "cat-bite": bite_scars,
@@ -90,9 +84,6 @@ class Scar_Events():
         "broken jaw": head_scars,
         "broken back": back_scars,
         "broken bone": bone_scars,
-        "head damage": head_scars,
-        "rash": rash_scars,
-        "wrenched claws": declawed_scars
     }
 
     @staticmethod
@@ -111,10 +102,8 @@ class Scar_Events():
         amount_per_med = get_amount_cat_for_one_medic(game.clan)
         if medical_cats_condition_fulfilled(game.cat_class.all_cats.values(), amount_per_med):
             chance += 2
-        if injury_name == "wrenched claws":
-            chance = random.randint(0, 25)
-            
-        if len(cat.pelt.scars) < 6 and not int(random.random() * chance):
+        
+        if len(cat.pelt.scars) < 4 and not int(random.random() * chance):
             
             # move potential scar text into displayed scar text
             
@@ -198,4 +187,5 @@ class Scar_Events():
             return random.choice(scar_gain_strings), specialty
         else:
             return None, None
+           
 

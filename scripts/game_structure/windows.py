@@ -21,7 +21,6 @@ from pygame_gui.elements import UIWindow
 
 from scripts.housekeeping.datadir import get_save_dir, get_cache_dir, get_saved_images_dir, get_data_dir
 from scripts.game_structure import image_cache
-from scripts.game_structure.game_essentials import game, screen_x, screen_y
 from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked
 from scripts.housekeeping.progress_bar_updater import UIUpdateProgressBar
 from scripts.housekeeping.update import self_update, UpdateChannel, get_latest_version_number
@@ -39,7 +38,8 @@ class SaveCheck(UIWindow):
         super().__init__(scale(pygame.Rect((500, 400), (600, 400))),
                          window_display_title='Save Check',
                          object_id='#save_check_window',
-                         resizable=False)
+                         resizable=False,
+                         always_on_top=True)
 
         self.clan_name = "UndefinedClan"
         if game.clan:
@@ -88,6 +88,7 @@ class SaveCheck(UIWindow):
             pygame.transform.scale(
                 image_cache.load_image('resources/images/save_clan_saved.png'),
                 (228, 60)),
+            starting_height=top_stack_menu_layer_height + 2,
             container=self)
         self.save_button_saved_state.hide()
         self.save_button_saving_state = pygame_gui.elements.UIImage(
@@ -96,6 +97,7 @@ class SaveCheck(UIWindow):
                 image_cache.load_image(
                     'resources/images/save_clan_saving.png'),
                 (228, 60)),
+            starting_height=top_stack_menu_layer_height + 1,
             container=self)
         self.save_button_saving_state.hide()
 
@@ -916,6 +918,7 @@ class ChangelogPopup(UIWindow):
 
         self.scrolling_container = pygame_gui.elements.UIScrollingContainer(
             scale(pygame.Rect((20, 130), (960, 650))),
+            allow_scroll_x=False,
             container=self,
             manager=MANAGER)
 
@@ -925,7 +928,7 @@ class ChangelogPopup(UIWindow):
                 ["git", "log", r"--pretty=format:%H|||%cd|||%b|||%s", "-15", "--no-decorate", "--merges", "--grep=Merge pull request", "--date=short"]).decode("utf-8")
             dynamic_changelog = True
         else:
-            with open("changelog.txt", "r") as read_file:
+            with open("changelog.txt", "r", encoding='utf-8') as read_file:
                 file_cont = read_file.read()
 
         if get_version_info().is_dev() and not get_version_info().is_source_build:
@@ -936,15 +939,15 @@ class ChangelogPopup(UIWindow):
             file_cont = ""
             for line in commits:
                 info = line.split("|||")
-
+                                
                 # Get PR number so we can link the PR
                 pr_number = re_search(r"Merge pull request #([0-9]*?) ", info[3])
                 if pr_number:
-
-                    # For some reason, multi-line links on pygame_gui's text boxes don't work very well.
+                    
+                    # For some reason, multi-line links on pygame_gui's text boxes don't work very well. 
                     # So, to work around that, just add a little "link" at the end
                     info[2] += f" <a href='https://github.com/ClanGenOfficial/clangen/pull/{pr_number.group(1)}'>(link)</a>"
-
+                
                 # Format: DATE- \n PR Title (link)
                 file_cont += f"<b>{info[1]}</b>\n- {info[2]}\n"
 
@@ -1053,6 +1056,7 @@ class RelationshipLog(UIWindow):
         game.switches['window_open'] = False
         for button in self.disable_button_list:
             button.enable()
+
         for button in self.hide_button_list:
             button.show()
             button.enable()
@@ -1239,10 +1243,10 @@ class SaveAsImage(UIWindow):
 
 class EventLoading(UIWindow):
     def __init__(self, pos):
-
-        if pos is None:
+        
+        if pos is None: 
             pos = (800, 700)
-
+        
         super().__init__(scale(pygame.Rect(pos, (200, 200))),
                          window_display_title='Game Over',
                          object_id='#loading_window',
@@ -1307,33 +1311,33 @@ class ChangeCatToggles(UIWindow):
 
         self.checkboxes = {}
         self.refresh_checkboxes()
-
+        
         # Text
-        self.text_1 = pygame_gui.elements.UITextBox("Prevent fading", scale(pygame.Rect(110, 60, -1, 50)),
+        self.text_1 = pygame_gui.elements.UITextBox("Prevent fading", scale(pygame.Rect(110, 60, -1, 50)), 
                                                     object_id="#text_box_30_horizleft_pad_0_8",
                                                     container=self)
-
-        self.text_2 = pygame_gui.elements.UITextBox("Prevent kits", scale(pygame.Rect(110, 110, -1, 50)),
+        
+        self.text_2 = pygame_gui.elements.UITextBox("Prevent kits", scale(pygame.Rect(110, 110, -1, 50)), 
                                                     object_id="#text_box_30_horizleft_pad_0_8",
                                                     container=self)
-
-        self.text_3 = pygame_gui.elements.UITextBox("Prevent retirement", scale(pygame.Rect(110, 160, -1, 50)),
+        
+        self.text_3 = pygame_gui.elements.UITextBox("Prevent retirement", scale(pygame.Rect(110, 160, -1, 50)), 
                                                     object_id="#text_box_30_horizleft_pad_0_8",
                                                     container=self)
-
+        
         self.text_4 = pygame_gui.elements.UITextBox("Limit romantic interactions and mate changes",
-                                                    scale(pygame.Rect(110, 210, -1, 50)),
+                                                    scale(pygame.Rect(110, 210, -1, 50)), 
                                                     object_id="#text_box_30_horizleft_pad_0_8",
                                                     container=self)
-
+        
         # Text
-
+        
     def refresh_checkboxes(self):
-
+        
         for x in self.checkboxes.values():
             x.kill()
         self.checkboxes = {}
-
+        
         # Prevent Fading
         if self.the_cat == game.clan.instructor:
             box_type = "#checked_checkbox"
@@ -1344,17 +1348,17 @@ class ChangeCatToggles(UIWindow):
         else:
             box_type = "#unchecked_checkbox"
             tool_tip = "Prevents cat from fading away after being dead for 202 moons."
-
+        
         # Fading
         self.checkboxes["prevent_fading"] = UIImageButton(scale(pygame.Rect(45, 50, 68, 68)), "",
                                                           container=self,
                                                           object_id=box_type,
                                                           tool_tip_text=tool_tip)
-
+        
         if self.the_cat == game.clan.instructor:
             self.checkboxes["prevent_fading"].disable()
-
-
+        
+        
         #No Kits
         if self.the_cat.no_kits:
             box_type = "#checked_checkbox"
@@ -1362,12 +1366,12 @@ class ChangeCatToggles(UIWindow):
         else:
             box_type = "#unchecked_checkbox"
             tool_tip = "Prevent the cat from adopting or having kittens."
-
+        
         self.checkboxes["prevent_kits"] = UIImageButton(scale(pygame.Rect(45, 100, 68, 68)), "",
                                                         container=self,
                                                         object_id=box_type,
                                                         tool_tip_text=tool_tip)
-
+        
         #No Retire
         if self.the_cat.no_retire:
             box_type = "#checked_checkbox"
@@ -1375,12 +1379,12 @@ class ChangeCatToggles(UIWindow):
         else:
             box_type = "#unchecked_checkbox"
             tool_tip = "Prevent cat from retiring automatically."
-
+        
         self.checkboxes["prevent_retire"] = UIImageButton(scale(pygame.Rect(45, 150, 68, 68)), "",
                                                           container=self,
                                                           object_id=box_type,
                                                           tool_tip_text=tool_tip)
-
+        
         #No mates
         if self.the_cat.no_mates:
             box_type = "#checked_checkbox"
@@ -1388,7 +1392,7 @@ class ChangeCatToggles(UIWindow):
         else:
             box_type = "#unchecked_checkbox"
             tool_tip = "Prevent cat from automatically taking a mate, breaking up, or having romantic interactions with non-mates."
-
+        
         self.checkboxes["prevent_mates"] = UIImageButton(scale(pygame.Rect(45, 200, 68, 68)), "",
                                                          container=self,
                                                          object_id=box_type,
@@ -1413,5 +1417,99 @@ class ChangeCatToggles(UIWindow):
             elif event.ui_element == self.checkboxes["prevent_mates"]:
                 self.the_cat.no_mates = not self.the_cat.no_mates
                 self.refresh_checkboxes()
-
+        
         return super().process_event(event)
+
+class SelectFocusClans(UIWindow):
+    """This window allows the user to select the clans to be sabotaged, aided or raided in the focus setting."""
+
+    def __init__(self):
+        super().__init__(scale(pygame.Rect((500, 420), (600, 450))),
+                         window_display_title='Change Cat Name',
+                         object_id='#change_cat_name_window',
+                         resizable=False)
+        game.switches['window_open'] = True
+        self.set_blocking(True)
+        self.back_button = UIImageButton(
+            scale(pygame.Rect((540, 10), (44, 44))),
+            "",
+            object_id="#exit_window_button",
+            container=self
+        )
+        self.save_button = UIImageButton(
+            scale(pygame.Rect((161, 360),(278, 60))),
+            "",
+            object_id="#change_focus_button",
+            container=self
+        )
+        self.save_button.disable()
+
+        self.checkboxes = {}
+        self.refresh_checkboxes()
+
+        # Text
+        self.texts = {}
+        self.texts["prompt"] = pygame_gui.elements.UITextBox(
+            "<b>Which Clans will you target?</b>",
+            scale(pygame.Rect((0, 10), (600, 60))),
+            object_id="#text_box_30_horizcenter",
+            container=self
+        )
+        n = 0
+        for clan in game.clan.all_clans:
+            self.texts[clan.name] = pygame_gui.elements.UITextBox(
+                clan.name + "clan",
+                scale(pygame.Rect(215, n * 55 + 77, -1, 50)),
+                object_id="#text_box_30_horizleft_pad_0_8",
+                container=self
+            )
+            n += 1
+        
+    def refresh_checkboxes(self):
+        for x in self.checkboxes.values():
+            x.kill()
+        self.checkboxes = {}
+
+        n = 0
+        for clan in game.clan.all_clans:
+            box_type = "#unchecked_checkbox"
+            if clan.name in game.clan.clans_in_focus:
+                box_type = "#checked_checkbox"
+
+            self.checkboxes[clan.name] = UIImageButton(
+                scale(pygame.Rect(150, n * 55 + 70, 68, 68)),
+                "",
+                container=self,
+                object_id=box_type
+            )
+            n += 1
+
+    def process_event(self, event):
+        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            if event.ui_element == self.back_button:
+                game.clan.clans_in_focus = []
+                game.switches['window_open'] = False
+                game.all_screens['warrior den screen'].exit_screen()
+                game.all_screens['warrior den screen'].screen_switches()
+                self.kill()
+            if event.ui_element == self.save_button:
+                game.switches['window_open'] = False
+                game.all_screens['warrior den screen'].save_focus()
+                game.all_screens['warrior den screen'].exit_screen()
+                game.all_screens['warrior den screen'].screen_switches()
+                self.kill()
+            if event.ui_element in self.checkboxes.values():
+                for clan_name, value in self.checkboxes.items():
+                    if value == event.ui_element:
+                        if value.object_ids[1] == "#unchecked_checkbox":
+                            game.clan.clans_in_focus.append(clan_name)
+                        if value.object_ids[1] == "#checked_checkbox":
+                            game.clan.clans_in_focus.remove(clan_name)
+                        self.refresh_checkboxes()
+                if len(game.clan.clans_in_focus) < 1 and self.save_button.is_enabled:
+                    self.save_button.disable()
+                if len(game.clan.clans_in_focus) >= 1 and not self.save_button.is_enabled:
+                    self.save_button.enable()
+        
+        return super().process_event(event)
+

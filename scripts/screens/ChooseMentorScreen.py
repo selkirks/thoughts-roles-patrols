@@ -3,7 +3,7 @@ import pygame_gui.elements
 
 from .Screens import Screens
 
-from scripts.utility import get_text_box_theme, scale
+from scripts.utility import get_text_box_theme, scale, shorten_text_to_fit
 from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache
 from scripts.game_structure.image_button import UIImageButton, UISpriteButton
@@ -237,13 +237,11 @@ class ChooseMentorScreen(Screens):
             object_id="#text_box_22_horizcenter_vertcenter_spacing_95",
             manager=MANAGER)
 
-        name = str(self.the_cat.name)  # get name
-        if 11 <= len(name):  # check name length
-            short_name = str(name)[0:9]
-            name = short_name + '...'
+        name = str(self.the_cat.name)
+        short_name = shorten_text_to_fit(name, 239, 34)
         self.apprentice_details["apprentice_name"] = pygame_gui.elements.ui_label.UILabel(
-            scale(pygame.Rect((1240, 230), (220, 60))),
-            name,
+            scale(pygame.Rect((1240, 230), (235, 65))),
+            short_name,
             object_id="#text_box_34_horizcenter", manager=MANAGER)
 
         self.find_next_previous_cats()  # Determine where the next and previous cat buttons lead
@@ -361,22 +359,18 @@ class ChooseMentorScreen(Screens):
                                                                                    manager=MANAGER)
 
             name = str(self.selected_mentor.name)  # get name
-            if 11 <= len(name):  # check name length
-                short_name = str(name)[0:9]
-                name = short_name + '...'
+            short_name = shorten_text_to_fit(name, 239, 34)
             self.selected_details["mentor_name"] = pygame_gui.elements.ui_label.UILabel(
-                scale(pygame.Rect((130, 230), (220, 60))),
-                name,
+                scale(pygame.Rect((130, 230), (235, 65))),
+                short_name,
                 object_id="#text_box_34_horizcenter", manager=MANAGER)
 
     def update_cat_list(self):
         """Updates the cat sprite buttons. """
         valid_mentors = self.chunks(self.get_valid_mentors(), 30)
 
-        # If the number of pages becomes smaller than the number of our current page, set
-        #   the current page to the last page
-        if self.current_page > len(valid_mentors):
-            self.list_page = len(valid_mentors)
+        # clamp current page to a valid page number
+        self.current_page = max(1, min(self.current_page, len(valid_mentors)))
 
         # Handle which next buttons are clickable.
         if len(valid_mentors) <= 1:

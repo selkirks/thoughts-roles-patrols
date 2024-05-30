@@ -14,7 +14,7 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "p_l goes out with a warrior escort, both for safety as {PRONOUN/p_l/subject} {VERB/p_l/look/looks} for useful fresh supplies that have survived leaf-bare so far, and for carrying capacity should {PRONOUN/p_l/subject} find anything.",
+        "intro_text": "p_l goes out with a warrior escort to look for useful fresh supplies that have survived leaf-bare so far, both for safety and for carrying capacity should {PRONOUN/p_l/subject} find anything.",
         "decline_text": "{PRONOUN/p_l/poss/CAP} escort is called away on a different mission, and p_l decides to reorganize the herb store instead.",
         "chance_of_success": 60,
         "success_outcomes": [
@@ -34,7 +34,7 @@
                 ]
             },
             {
-                "text": "p_l and r_c have a pleasant conversation, swapping knowlege and insight from their unique prespectives. They return to camp with a growing foundness of each other - and mouths full of herbs.",
+                "text": "p_l and r_c have a pleasant conversation, swapping knowledge and insight from their unique perspectives. They return to camp with a growing fondness of each other - and mouths full of herbs.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["random_herbs", "many_herbs"],
@@ -49,7 +49,7 @@
                 ]
             },
             {
-                "text": "s_c has always been good at talking, so it isn't a big surprise that p_l finds it so easy to chat with {PRONOUN/s_c/object}. It's just a herb gathering patrol, but p_l feels more relaxed than {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} felt in moons when {PRONOUN/p_l/subject} {VERB/p_l/come/comes} back to camp, smiling softly.",
+                "text": "s_c has always been good at talking, so it isn't a big surprise that p_l finds it so easy to chat with {PRONOUN/s_c/object}. It's just an herb gathering patrol, but p_l feels more relaxed than {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} felt in moons when {PRONOUN/p_l/subject} {VERB/p_l/come/comes} back to camp, smiling softly.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SPEAKER,1"],
@@ -82,7 +82,7 @@
                 ]
             },
             {
-                "text": "Not only do {PRONOUN/p_l/subject} not find anything, p_l wants to murder s_c. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} obnoxious, troublesome, childish... simply not someone p_l enjoys interacting with.",
+                "text": "Not only do {PRONOUN/p_l/subject} not find anything, p_l wants to murder s_c. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} obnoxious, troublesome, childish... and simply not someone p_l enjoys interacting with.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["troublesome", "childish"],
@@ -135,7 +135,7 @@
                 ]
             },
             {
-                "text": "p_l and r_c have a pleasant conversation, sharing possible new treatments and messages from StarClan. They return to camp with a growing foundness of each other - and mouths full of herbs.",
+                "text": "p_l and r_c have a pleasant conversation, sharing possible new treatments and messages from StarClan. They return to camp with a growing fondness of each other - and mouths full of herbs.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["random_herbs", "many_herbs"],
@@ -150,7 +150,7 @@
                 ]
             },
             {
-                "text": "s_c has always been good at talking, so it isn't a big surprise that p_l finds it so easy to chat with {PRONOUN/s_c/object}. It's just a herb gathering patrol, but p_l feels more relaxed than {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} felt in moons when {PRONOUN/p_l/subject} {VERB/p_l/come/comes} back to camp, smiling softly.",
+                "text": "s_c has always been good at talking, so it isn't a big surprise that p_l finds it so easy to chat with {PRONOUN/s_c/object}. It's just an herb gathering patrol, but p_l feels more relaxed than {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} felt in moons when {PRONOUN/p_l/subject} {VERB/p_l/come/comes} back to camp, smiling softly.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SPEAKER,1", "MEDIATOR,1"],
@@ -183,7 +183,7 @@
                 ]
             },
             {
-                "text": "Not only do they not find anything, p_l wants to murder s_c. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} obnoxious, troublesome, childish... simply not someone p_l enjoys interacting with.",
+                "text": "Not only do they not find anything, p_l wants to murder s_c. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} obnoxious, troublesome, childish... and simply not someone p_l enjoys interacting with.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["troublesome", "childish"],
@@ -206,7 +206,7 @@
         "season": ["leaf-bare"],
         "types": ["herb_gathering"],
         "tags": [],
-        "patrol_art": "med_general_intro",
+        "patrol_art": "gen_med_gatheringblackberry_leaf-bare1",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -216,7 +216,7 @@
         },
         "weight": 20,
         "intro_text": "Hmm. p_l heads out, deciding that c_n needs more blackberry leaves in {PRONOUN/p_l/poss} stores.",
-        "decline_text": "They have second thoughts about leaving their patients behind, and decide to go another day.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -226,13 +226,13 @@
                 "herbs": ["blackberry"]
             },
             {
-                "text": "Edging out on a slippery frozen rock to get more height, p_l manages to pick away some still living leaves from the blackberry plant.",
+                "text": "Edging out on a slippery frozen rock to get more height, p_l manages to pick away some still-living leaves from the blackberry plant.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["blackberry"]
             },
             {
-                "text": "s_c spots a sheltered corner that has protected a branch of blackberry from the cold, and expertly maneuvers in to pluck the leaves for c_n.",
+                "text": "s_c spots a sheltered corner that has protected a branch of blackberry from the cold and expertly maneuvers in to pluck the leaves for c_n.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -251,16 +251,16 @@
                 "weight": 20
             },
             {
-                "text": "p_l carefully edges out onto a slippery, frozen rock, trying to get closer to a branch of blackberry leaves that are still green. {PRONOUN/p_l/subject/CAP} over-compensate {PRONOUN/p_l/poss} balance, falling into a deep snowbank that {PRONOUN/p_l/subject} {VERB/p_l/emerge/emerges} from with a deep shiver racking {PRONOUN/p_l/poss} body.",
+                "text": "p_l carefully edges out onto a slippery, frozen rock, trying to get closer to a branch of blackberry leaves that are still green. {PRONOUN/p_l/subject/CAP} overcompensate {PRONOUN/p_l/poss} balance, falling into a deep snowbank that {PRONOUN/p_l/subject} {VERB/p_l/emerge/emerges} from with a deep shiver racking {PRONOUN/p_l/poss} body.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
                 "history_text": {
-                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                   "reg_death": "m_c died of frostbite from searching for herbs in leaf-bare."
                 }
             },
             {
-                "text": "p_l carefully edges out onto a slippery, frozen rock, trying to get closer to a branch of blackberry leaves that are still green. {PRONOUN/p_l/subject/CAP} over-compensate {PRONOUN/p_l/poss} balance, falling into a deep snowbank that {PRONOUN/p_l/subject} {VERB/p_l/emerge/emerges} from with a deep shiver racking {PRONOUN/p_l/poss} body.",
+                "text": "p_l carefully edges out onto a slippery, frozen rock, trying to get closer to a branch of blackberry leaves that are still green. {PRONOUN/p_l/subject/CAP} overcompensate {PRONOUN/p_l/poss} balance, falling into a deep snowbank that {PRONOUN/p_l/subject} {VERB/p_l/emerge/emerges} from with a deep shiver racking {PRONOUN/p_l/poss} body.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -271,7 +271,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare.",
+                    "reg_death": "m_c died of frostbite from searching for herbs in leaf-bare."
                 }
             }
         ]
@@ -294,7 +295,7 @@
         },
         "weight": 20,
         "intro_text": "Hmm. p_l heads out with app1, deciding that c_n needs more blackberry leaves in {PRONOUN/p_l/poss} stores.",
-        "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/object} also bringing {PRONOUN/p_l/poss} apprentice, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -342,7 +343,7 @@
                 ]
             },
             {
-                "text": "s_c spots a sheltered corner that has protected a branch of blackberry from the cold, and expertly maneuvers in to pluck the leaves for c_n. {PRONOUN/s_c/subject/CAP} {VERB/s_c/leave/leaves} app1 outside, not wanting to risk {PRONOUN/s_c/poss} apprentice in the snow and thorns.",
+                "text": "s_c spots a sheltered corner that has protected a branch of blackberry from the cold and expertly maneuvers in to pluck the leaves for c_n. {PRONOUN/s_c/subject/CAP} {VERB/s_c/leave/leaves} app1 outside, not wanting to risk {PRONOUN/s_c/poss} apprentice in the snow and thorns.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -389,7 +390,7 @@
                 ]
             },
             {
-                "text": "r_c carefully edges out onto a slippery, frozen rock, trying to get closer to a branch of blackberry leaves that are still green. {PRONOUN/r_c/subject/CAP} over-compensate {PRONOUN/r_c/poss} balance, falling into a deep snowbank that {PRONOUN/r_c/subject} {VERB/r_c/emerge/emerges} from with a deep shiver racking {PRONOUN/r_c/poss} body.",
+                "text": "r_c carefully edges out onto a slippery, frozen rock, trying to get closer to a branch of blackberry leaves that are still green. {PRONOUN/r_c/subject/CAP} overcompensate {PRONOUN/r_c/poss} balance, falling into a deep snowbank that {PRONOUN/r_c/subject} {VERB/r_c/emerge/emerges} from with a deep shiver racking {PRONOUN/r_c/poss} body.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -410,12 +411,12 @@
                 ]
             },
             {
-                "text": "r_c carefully edges out onto a slippery, frozen rock, trying to get closer to a branch of blackberry leaves that are still green. {PRONOUN/r_c/subject/CAP} over-compensate {PRONOUN/r_c/poss} balance, falling into a deep snowbank that {PRONOUN/r_c/subject} {VERB/r_c/emerge/emerges} from with a deep shiver racking {PRONOUN/r_c/poss} body.",
+                "text": "r_c carefully edges out onto a slippery, frozen rock, trying to get closer to a branch of blackberry leaves that are still green. {PRONOUN/r_c/subject/CAP} overcompensate {PRONOUN/r_c/poss} balance, falling into a deep snowbank that {PRONOUN/r_c/subject} {VERB/r_c/emerge/emerges} from with a deep shiver racking {PRONOUN/r_c/poss} body.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
                 "history_text": {
-                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                    "reg_death": "m_c died of frostbite from searching for herbs in leaf-bare."
                 },
                 "relationships": [
                     {
@@ -435,7 +436,7 @@
                 ]
             },
             {
-                "text": "r_c carefully edges out onto a slippery, frozen rock, trying to get closer to a branch of blackberry leaves that are still green. {PRONOUN/r_c/subject/CAP} over-compensate {PRONOUN/r_c/poss} balance, falling into a deep snowbank that {PRONOUN/r_c/subject} {VERB/r_c/emerge/emerges} from with a deep shiver racking {PRONOUN/r_c/poss} body.",
+                "text": "r_c carefully edges out onto a slippery, frozen rock, trying to get closer to a branch of blackberry leaves that are still green. {PRONOUN/r_c/subject/CAP} overcompensate {PRONOUN/r_c/poss} balance, falling into a deep snowbank that {PRONOUN/r_c/subject} {VERB/r_c/emerge/emerges} from with a deep shiver racking {PRONOUN/r_c/poss} body.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -446,7 +447,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare.",
+                    "reg_death": "m_c died of frostbite from searching for herbs in leaf-bare."
                 },
                 "relationships": [
                     {
@@ -487,7 +489,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "While blackberries don't lose their leaves completely, leaf-bare is hard on any plant. p_l has to balance the plant's needs, the Clan's needs, and {PRONOUN/p_l/poss} own frozen paws, as {PRONOUN/p_l/subject} {VERB/p_l/try/tries} to gather what {PRONOUN/p_l/subject} can. The patrol sees {PRONOUN/p_l/poss} stress, and gathers around to support {PRONOUN/p_l/object}.",
+                "text": "While blackberries don't lose their leaves completely, leaf-bare is hard on any plant. p_l has to balance the plant's needs, the Clan's needs, and {PRONOUN/p_l/poss} own frozen paws, as {PRONOUN/p_l/subject} {VERB/p_l/try/tries} to gather what {PRONOUN/p_l/subject} can. The patrol sees {PRONOUN/p_l/poss} stress and gathers around to support {PRONOUN/p_l/object}.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["blackberry"],
@@ -531,7 +533,7 @@
                 ]
             },
             {
-                "text": "s_c spots a sheltered corner that has protected a branch of blackberry from the cold, and expertly maneuvers in to pluck the leaves for c_n. {PRONOUN/p_l/subject/CAP} {VERB/p_l/pass/passes} them out to the members of the patrol from within the thicket, and {PRONOUN/p_l/poss} entourage ensures that p_l is able to bring a huge quantity of fresh blackberry leaves home.",
+                "text": "s_c spots a sheltered corner that has protected a branch of blackberry from the cold and expertly maneuvers in to pluck the leaves for c_n. {PRONOUN/p_l/subject/CAP} {VERB/p_l/pass/passes} them out to the members of the patrol from within the thicket, and {PRONOUN/p_l/poss} entourage ensures that p_l is able to bring a huge quantity of fresh blackberry leaves home.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -577,7 +579,7 @@
                 ]
             },
             {
-                "text": "r_c carefully edges out onto a slippery, frozen rock, trying to get closer to a branch of blackberry leaves that are still green. {PRONOUN/r_c/subject/CAP} over-compensate {PRONOUN/r_c/poss} balance, falling into a deep snowbank that {PRONOUN/r_c/subject} {VERB/r_c/emerge/emerges} from with a deep shiver racking {PRONOUN/r_c/poss} body.",
+                "text": "r_c carefully edges out onto a slippery, frozen rock, trying to get closer to a branch of blackberry leaves that are still green. {PRONOUN/r_c/subject/CAP} overcompensate {PRONOUN/r_c/poss} balance, falling into a deep snowbank that {PRONOUN/r_c/subject} {VERB/r_c/emerge/emerges} from with a deep shiver racking {PRONOUN/r_c/poss} body.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -598,12 +600,12 @@
                 ]
             },
             {
-                "text": "r_c carefully edges out onto a slippery, frozen rock, trying to get closer to a branch of blackberry leaves that are still green. {PRONOUN/r_c/subject/CAP} over-compensate {PRONOUN/r_c/poss} balance, falling into a deep snowbank that {PRONOUN/r_c/subject} {VERB/r_c/emerge/emerges} from with a deep shiver racking {PRONOUN/r_c/poss} body.",
+                "text": "r_c carefully edges out onto a slippery, frozen rock, trying to get closer to a branch of blackberry leaves that are still green. {PRONOUN/r_c/subject/CAP} overcompensate {PRONOUN/r_c/poss} balance, falling into a deep snowbank that {PRONOUN/r_c/subject} {VERB/r_c/emerge/emerges} from with a deep shiver racking {PRONOUN/r_c/poss} body.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
                 "history_text": {
-                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                    "reg_death": "m_c died of frostbite from searching for herbs in leaf-bare."
                 },
                 "relationships": [
                     {
@@ -623,7 +625,7 @@
                 ]
             },
             {
-                "text": "r_c carefully edges out onto a slippery, frozen rock, trying to get closer to a branch of blackberry leaves that are still green. {PRONOUN/r_c/subject/CAP} over-compensate {PRONOUN/r_c/poss} balance, falling into a deep snowbank that {PRONOUN/r_c/subject} {VERB/r_c/emerge/emerges} from with a deep shiver racking {PRONOUN/r_c/poss} body.",
+                "text": "r_c carefully edges out onto a slippery, frozen rock, trying to get closer to a branch of blackberry leaves that are still green. {PRONOUN/r_c/subject/CAP} overcompensate {PRONOUN/r_c/poss} balance, falling into a deep snowbank that {PRONOUN/r_c/subject} {VERB/r_c/emerge/emerges} from with a deep shiver racking {PRONOUN/r_c/poss} body.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -634,7 +636,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare.",
+                    "reg_death": "m_c died of frostbite from searching for herbs in leaf-bare."
                 },
                 "relationships": [
                     {
@@ -671,7 +674,7 @@
         },
         "weight": 20,
         "intro_text": "As the snows of leaf-bare blow around camp, p_l eyes {PRONOUN/p_l/poss} herb stores. {PRONOUN/p_l/subject/CAP} should still be able to dig up burdock. p_l heads out to replenish the Clan's stocks.",
-        "decline_text": "They have second thoughts about leaving their patients behind, and decide to go another day.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 20,
         "success_outcomes": [
             {
@@ -709,9 +712,16 @@
                 "text": "r_c digs and digs and digs, but eventually {PRONOUN/r_c/subject} {VERB/r_c/have/haves} to admit failure and give up the search for burdock root. The cold has leached all the heat from {PRONOUN/r_c/poss} pelt, and {PRONOUN/r_c/subject} {VERB/r_c/arrive/arrives} back at camp miserable and cold.",
                 "exp": 0,
                 "weight": 10,
-                "dead_cats": ["r_c"],
+				"injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["cold_injury"],
+                        "scars": ["FROSTMITT"]
+                    }
+                ],
                 "history_text": {
-                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare.",
+                    "reg_death": "m_c died of frostbite from searching for herbs in leaf-bare."
                 }
             },
             {
@@ -726,7 +736,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare.",
+                    "reg_death": "m_c died of frostbite from searching for herbs in leaf-bare."
                 }
             }
         ]
@@ -749,7 +760,7 @@
         },
         "weight": 20,
         "intro_text": "As the snows of leaf-bare blow around camp, p_l eyes {PRONOUN/p_l/poss} herb stores. {PRONOUN/p_l/subject/CAP} should still be able to dig up burdock. p_l heads out to replenish the Clan's stocks, bringing app1 along.",
-        "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/object} also bringing {PRONOUN/p_l/poss} apprentice, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 20,
         "success_outcomes": [
             {
@@ -870,7 +881,7 @@
                 "weight": 10,
                 "dead_cats": ["r_c"],
                 "history_text": {
-                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                    "reg_death": "m_c died of frostbite from searching for herbs in leaf-bare."
                 },
                 "relationships": [
                     {
@@ -901,7 +912,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare.",
+                    "reg_death": "m_c died of frostbite from searching for herbs in leaf-bare."
                 },
                 "relationships": [
                     {
@@ -1058,7 +1070,7 @@
                 "weight": 10,
                 "dead_cats": ["r_c"],
                 "history_text": {
-                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                    "reg_death": "m_c died of frostbite from searching for herbs in leaf-bare."
                 },
                 "relationships": [
                     {
@@ -1089,7 +1101,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare.",
+                    "reg_death": "m_c died of frostbite from searching for herbs in leaf-bare."
                 },
                 "relationships": [
                     {
@@ -1116,7 +1129,7 @@
         "season": ["leaf-bare"],
         "types": ["herb_gathering"],
         "tags": [],
-        "patrol_art": "med_general_intro",
+        "patrol_art": "gen_med_gatheringdaisy_leaf-bare1",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -1126,7 +1139,7 @@
         },
         "weight": 20,
         "intro_text": "In the leaf-bare snow, the chances of finding any usable daisies seem slim. p_l hesitates - should {PRONOUN/p_l/subject} even try to look?",
-        "decline_text": "They have second thoughts about leaving their patients behind, and decide to go another day.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
@@ -1167,7 +1180,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare.",
+                    "reg_death": "m_c died of frostbite from searching for herbs in leaf-bare."
                 }
             }
         ]
@@ -1190,7 +1204,7 @@
         },
         "weight": 20,
         "intro_text": "In the leaf-bare snow, the chances of finding any usable daisies seem slim. p_l hesitates - should {PRONOUN/p_l/subject} even try to look? And is bringing app1 a good idea?",
-        "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/object} also bringing {PRONOUN/p_l/poss} apprentice, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
@@ -1238,7 +1252,7 @@
                 ]
             },
             {
-                "text": "It's not just spotting things that s_c is talented at - finding daisies in leaf-bare is hard enough, but finding good, non-wilted leaves is next to impossible, and it's a mark of s_c's unique skills that {PRONOUN/s_c/subject} {VERB/s_c/manage/manages} it. app1 trails in {PRONOUN/s_c/poss} wake, wide eyed and impressed.",
+                "text": "It's not just spotting things that s_c is talented at - finding daisies in leaf-bare is hard enough, but finding good, non-wilted leaves is next to impossible, and it's a mark of s_c's unique skills that {PRONOUN/s_c/subject} {VERB/s_c/manage/manages} it. app1 trails in {PRONOUN/s_c/poss} wake, wide-eyed and impressed.",
                 "exp": 40,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -1311,7 +1325,7 @@
                 "weight": 10,
                 "dead_cats": ["r_c"],
                 "history_text": {
-                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                    "reg_death": "m_c died of frostbite from searching for herbs in leaf-bare."
                 },
                 "relationships": [
                     {
@@ -1342,7 +1356,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare.",
+                    "reg_death": "m_c died of frostbite from searching for herbs in leaf-bare."
                 },
                 "relationships": [
                     {
@@ -1482,6 +1497,9 @@
                         "injuries": ["shivering"]
                     }
                 ],
+                "history_text": {
+                    "reg_death": "This cat froze to death."
+                },
                 "relationships": [
                     {
                         "cats_to": ["p_l"],
@@ -1511,7 +1529,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare.",
+                    "reg_death": "m_c died of frostbite from searching for herbs in leaf-bare."
                 },
                 "relationships": [
                     {
@@ -1548,7 +1567,7 @@
         },
         "weight": 20,
         "intro_text": "The cold of leaf-bare might have killed off a lot of greenery, but p_l knows that the dandelions are only playing dead. If {PRONOUN/p_l/subject} can get {PRONOUN/p_l/poss} paws on a plant, the roots will still hold fresh, milky-white sap.",
-        "decline_text": "They have second thoughts about leaving their patients behind, and decide to go another day.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -1580,20 +1599,6 @@
             {
                 "text": "Not only does r_c end up soaked to the skin, {PRONOUN/r_c/subject} can't even find any dandelions under the snow, and {PRONOUN/r_c/subject}'re left shivering violently by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp.",
                 "exp": 0,
-                "weight": 20
-            },
-            {
-                "text": "Not only does r_c end up soaked to the skin, {PRONOUN/r_c/subject} can't even find any dandelions under the snow, and {PRONOUN/r_c/subject}'re left shivering violently by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp.",
-                "exp": 0,
-                "weight": 10,
-                "dead_cats": ["r_c"],
-                "history_text": {
-                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
-                }
-            },
-            {
-                "text": "Not only does r_c end up soaked to the skin, {PRONOUN/r_c/subject} can't even find any dandelions under the snow, and {PRONOUN/r_c/subject}'re left shivering violently by the time {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp.",
-                "exp": 0,
                 "weight": 10,
                 "injury": [
                     {
@@ -1603,7 +1608,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare.",
+                    "reg_death": "m_c died of frostbite from searching for herbs in leaf-bare."
                 }
             }
         ]
@@ -1626,7 +1632,7 @@
         },
         "weight": 20,
         "intro_text": "The cold of leaf-bare might have killed off a lot of greenery, but p_l knows that the dandelions are only playing dead. If {PRONOUN/p_l/subject} can get {PRONOUN/p_l/poss} paws on a plant, the roots will still hold fresh, milky-white sap. Seems it's time for app1 to learn about what resources are still available to gather during leaf-bare.",
-        "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/object} also bringing {PRONOUN/p_l/poss} apprentice, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -1674,7 +1680,7 @@
                 ]
             },
             {
-                "text": "It's not just spotting things that s_c is talented at - finding dandelions in leaf-bare is hard enough, but finding good, non-wilted leaves is next to impossible, and it's a mark of s_c's unique skills that {PRONOUN/s_c/subject} {VERB/s_c/manage/manages} it. app1 trails in {PRONOUN/s_c/poss} wake, wide eyed and impressed.",
+                "text": "It's not just spotting things that s_c is talented at - finding dandelions in leaf-bare is hard enough, but finding good, non-wilted leaves is next to impossible, and it's a mark of s_c's unique skills that {PRONOUN/s_c/subject} {VERB/s_c/manage/manages} it. app1 trails in {PRONOUN/s_c/poss} wake, wide-eyed and impressed.",
                 "exp": 40,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -1747,7 +1753,7 @@
                 "weight": 10,
                 "dead_cats": ["r_c"],
                 "history_text": {
-                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                    "reg_death": "m_c died of frostbite from searching for herbs in leaf-bare."
                 },
                 "relationships": [
                     {
@@ -1778,7 +1784,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare.",
+                    "reg_death": "m_c died of frostbite from searching for herbs in leaf-bare."
                 },
                 "relationships": [
                     {
@@ -1935,7 +1942,7 @@
                 "weight": 10,
                 "dead_cats": ["r_c"],
                 "history_text": {
-                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                    "reg_death": "m_c died of frostbite from searching for herbs in leaf-bare."
                 },
                 "relationships": [
                     {
@@ -1966,7 +1973,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare.",
+                    "reg_death": "m_c died of frostbite from searching for herbs in leaf-bare."
                 },
                 "relationships": [
                     {
@@ -1993,7 +2001,7 @@
         "season": ["leaf-bare"],
         "types": ["herb_gathering"],
         "tags": [],
-        "patrol_art": "med_general_intro",
+        "patrol_art": "gen_med_gatheringjuniper_leaf-bare1",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -2002,8 +2010,8 @@
             "normal adult": [-1, -1]
         },
         "weight": 20,
-        "intro_text": "It's not finding fresh juniper that's the problem. An evergreen plant, they reliably grow through the cold - but they're large shrubs, sometimes large enough to be trees, and climbing in these slippery conditions might be dangerous.",
-        "decline_text": "They have second thoughts about leaving their patients behind, and decide to go another day.",
+        "intro_text": "It's not finding fresh juniper that's the problem. As an evergreen plant,  juniper is known to grow reliably even during the cold seasons - the problem is that juniper grows in large shrubs sometimes large enough to be trees, and trying to climb in these slippery conditions is a disaster just waiting to happen.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -2019,7 +2027,7 @@
                 "herbs": ["juniper"]
             },
             {
-                "text": "Sometimes, its not finding plants to harvest that is the problem, it's finding plants to <i>safely</i> harvest. s_c finds a juniper tree on a slope, with easily accessible lower branches to harvest from without needing to risk {PRONOUN/s_c/object} climbing in leaf-bare.",
+                "text": "Sometimes, it's not finding plants to harvest that is the problem, it's finding plants to <i>safely</i> harvest. s_c finds a juniper tree on a slope with easily accessible lower branches to harvest from without needing to risk {PRONOUN/s_c/object} climbing in leaf-bare.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -2043,7 +2051,7 @@
                 "weight": 10,
                 "dead_cats": ["r_c"],
                 "history_text": {
-                    "scar": "m_c was scarred from falling from a juniper tree, trying to harvest its leaves in the cold snow of leaf-bare."
+                    "reg_death": "m_c died from falling from a juniper tree, trying to harvest its leaves in the cold snow of leaf-bare."
                 }
             },
             {
@@ -2058,7 +2066,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred from falling from a juniper tree, trying to harvest its leaves in the cold snow of leaf-bare."
+                    "scar": "m_c was scarred from falling from a juniper tree, trying to harvest its leaves in the cold snow of leaf-bare.",
+                    "reg_death": "m_c died from injuries sustained after falling from a juniper tree, trying to harvest its leaves in the cold snow of leaf-bare."
                 }
             }
         ]
@@ -2080,8 +2089,8 @@
             "normal adult": [-1, -1]
         },
         "weight": 20,
-        "intro_text": "It's not finding fresh juniper that's the problem. An evergreen plant, {PRONOUN/p_l/subject} reliably grow through the cold - but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} large shrubs, sometimes large enough to be trees, and climbing in these slippery conditions might be dangerous. p_l hesitates in bringing app1 along under these conditions, but tells themself it's a learning opportunity.",
-        "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
+        "intro_text": "It's not finding fresh juniper that's the problem. As an evergreen plant,  juniper is known to grow reliably even during the cold seasons - the problem is that juniper grows in large shrubs sometimes large enough to be trees, and trying to climb in these slippery conditions is a disaster just waiting to happen. p_l hesitates in bringing app1 along under these conditions, but tells themself it's a learning opportunity.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/object} also bringing {PRONOUN/p_l/poss} apprentice, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -2129,7 +2138,7 @@
                 ]
             },
             {
-                "text": "Sometimes, its not finding plants to harvest that is the problem, it's finding plants to <i>safely</i> harvest. s_c finds a juniper tree on a slope, with easily accessible lower branches to harvest from without s_c or app1 needing to risk {PRONOUN/s_c/object} climbing in leaf-bare.",
+                "text": "Sometimes, it's not finding plants to harvest that is the problem, it's finding plants to <i>safely</i> harvest. s_c finds a juniper tree on a slope with easily accessible lower branches to harvest from without s_c or app1 needing to risk {PRONOUN/s_c/object} climbing in leaf-bare.",
                 "exp": 40,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -2233,7 +2242,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred from falling from a juniper tree, trying to harvest its leaves in the cold snow of leaf-bare."
+                    "scar": "m_c was scarred from falling from a juniper tree, trying to harvest its leaves in the cold snow of leaf-bare.",
+                    "reg_death": "m_c died from injuries sustained after falling from a juniper tree, trying to harvest its leaves in the cold snow of leaf-bare."
                 },
                 "relationships": [
                     {
@@ -2269,7 +2279,7 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "It's not finding fresh juniper that's the problem. An evergreen plant, {PRONOUN/p_l/subject} reliably grow through the cold - but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} large shrubs, sometimes large enough to be trees, and climbing in these slippery conditions might be dangerous. Hopefully the warriors accompanying p_l will be able to help.",
+        "intro_text": "It's not finding fresh juniper that's the problem. As an evergreen plant,  juniper is known to grow reliably even during the cold seasons - the problem is that juniper grows in large shrubs sometimes large enough to be trees, and trying to climb in these slippery conditions is a disaster just waiting to happen. Hopefully the warriors accompanying p_l will be able to help.",
         "decline_text": "{PRONOUN/p_l/subject/CAP}'re stopped before {PRONOUN/p_l/subject} {VERB/p_l/leave/leaves} camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
         "chance_of_success": 20,
         "success_outcomes": [
@@ -2318,7 +2328,7 @@
                 ]
             },
             {
-                "text": "Sometimes, its not finding plants to harvest that is the problem, it's finding plants to <i>safely</i> harvest. s_c finds a juniper tree on a slope, with easily accessible lower branches to harvest from without any cat needing to risk {PRONOUN/s_c/object} climbing in leaf-bare.",
+                "text": "Sometimes, it's not finding plants to harvest that is the problem, it's finding plants to <i>safely</i> harvest. s_c finds a juniper tree on a slope with easily accessible lower branches to harvest from without any cat needing to risk {PRONOUN/s_c/object} climbing in leaf-bare.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -2421,7 +2431,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred from falling from a juniper tree, trying to harvest its leaves in the cold snow of leaf-bare."
+                    "scar": "m_c was scarred from falling from a juniper tree, trying to harvest its leaves in the cold snow of leaf-bare.",
+                    "reg_death": "m_c died from injuries sustained after falling from a juniper tree, trying to harvest its leaves in the cold snow of leaf-bare."
                 },
                 "relationships": [
                     {
@@ -2458,7 +2469,7 @@
         },
         "weight": 20,
         "intro_text": "There's a limited selection of herbs p_l can even look for in leaf-bare, but if {PRONOUN/p_l/subject} can remember where the wild garlic grew in greenleaf, it's theirs for the taking.",
-        "decline_text": "They have second thoughts about leaving their patients behind, and decide to go another day.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
@@ -2468,7 +2479,7 @@
                 "herbs": ["wild_garlic"]
             },
             {
-                "text": "Something you really don't want in leaf-bare is an infection, and that's exactly what garlic's stinky speciality is. After a long, exhausting day in the cold, p_l manages to bring back a good haul of their bulbs for the herb stores.",
+                "text": "Something you really don't want in leaf-bare is an infection, and that's exactly what garlic's stinky specialty is. After a long, exhausting day in the cold, p_l manages to bring back a good haul of their bulbs for the herb stores.",
                 "exp": 30,
                 "weight": 5,
                 "herbs": ["many_herbs", "wild_garlic"]
@@ -2488,17 +2499,17 @@
                 "weight": 20
             },
             {
-                "text": "When p_l arrives back at camp, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} shivering and cold. Digging into the leaf-bare ground in a search for bulbs that weren't there was both unproductive and senseless.",
+                "text": "When p_l arrives back at camp, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} shivering and cold. Digging into the leaf-bare ground in a search for bulbs that weren't there was both unproductive and senseless. At least {PRONOUN/p_l/poss} den is nice and warm, chasing away the chill.",
                 "exp": 0,
                 "weight": 20
             },
             {
-                "text": "When p_l arrives back at camp, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} shivering and cold. Digging into the leaf-bare ground in a search for bulbs that weren't there was both unproductive and senseless.",
+                "text": "Digging into the leaf-bare ground in a search for bulbs that weren't there was both unproductive and senseless, and this mistake cost r_c {PRONOUN/r_c/poss} life.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
                 "history_text": {
-                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                    "reg_death": "m_c froze to death from searching for herbs in leaf-bare."
                 }
             },
             {
@@ -2513,7 +2524,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare.",
+                    "reg_death": "m_c died of frostbite from searching for herbs in leaf-bare."
                 }
             }
         ]
@@ -2536,7 +2548,7 @@
         },
         "weight": 20,
         "intro_text": "There's a limited selection of herbs p_l can even look for in leaf-bare, but if {PRONOUN/p_l/subject} or app1 can only remember where the wild garlic grew in greenleaf it's theirs for the taking.",
-        "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/object} also bringing {PRONOUN/p_l/poss} apprentice, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
@@ -2562,7 +2574,7 @@
                 ]
             },
             {
-                "text": "Something you really don't want in leaf-bare is an infection, and that's exactly what garlic's stinky speciality is. After a long, exhausting day in the cold, p_l manages to bring back a good haul of their bulbs for the herb stores with app1.",
+                "text": "Something you really don't want in leaf-bare is an infection, and that's exactly what garlic's stinky specialty is. After a long, exhausting day in the cold, p_l manages to bring back a good haul of their bulbs for the herb stores with app1.",
                 "exp": 40,
                 "weight": 5,
                 "herbs": ["many_herbs", "wild_garlic"],
@@ -2631,7 +2643,7 @@
                 ]
             },
             {
-                "text": "When the failed patrol arrives back at camp, r_c is shivering and cold. Digging into the leaf-bare ground in a search for bulbs that weren't there was both unproductive and senseless.",
+                "text": "When the failed patrol arrives back at camp, r_c is shivering and cold. Digging into the leaf-bare ground in a search for bulbs that weren't there was both unproductive and senseless. Luckily r_c's Clanmates help to keep the chill from getting worse.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -2652,12 +2664,12 @@
                 ]
             },
             {
-                "text": "When the failed patrol arrives back at camp, r_c is shivering and cold. Digging into the leaf-bare ground in a search for bulbs that weren't there was both unproductive and senseless.",
+                "text": "When the failed patrol arrives back at camp, it's clear that one member didn't survive the cold. Digging into the leaf-bare ground in a search for bulbs that weren't there was both unproductive, senseless, and had cost them a friend.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
                 "history_text": {
-                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                    "reg_death": "m_c froze to death from searching for herbs in leaf-bare."
                 },
                 "relationships": [
                     {
@@ -2688,7 +2700,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare.",
+                    "reg_death": "m_c died of frostbite from searching for herbs in leaf-bare."
                 },
                 "relationships": [
                     {
@@ -2751,7 +2764,7 @@
                 ]
             },
             {
-                "text": "Something you really don't want in leaf-bare is an infection, and that's exactly what garlic's stinky speciality is. After a long, exhausting day in the cold, p_l manages to bring back a good haul of their bulbs for the herb stores with the patrol.",
+                "text": "Something you really don't want in leaf-bare is an infection, and that's exactly what garlic's stinky specialty is. After a long, exhausting day in the cold, p_l manages to bring back a good haul of their bulbs for the herb stores with the patrol.",
                 "exp": 30,
                 "weight": 5,
                 "herbs": ["many_herbs", "wild_garlic"],
@@ -2819,7 +2832,7 @@
                 ]
             },
             {
-                "text": "When the failed patrol arrives back at camp, r_c is shivering and cold. Digging into the leaf-bare ground in a search for bulbs that weren't there was both unproductive and senseless.",
+                "text": "When the failed patrol arrives back at camp, r_c is shivering and cold. Digging into the leaf-bare ground in a search for bulbs that weren't there was both unproductive and senseless. With r_c's Clanmates by {PRONOUN/r_c/poss} side, the chill was prevented from seeping in.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -2840,12 +2853,12 @@
                 ]
             },
             {
-                "text": "When the failed patrol arrives back at camp, r_c is shivering and cold. Digging into the leaf-bare ground in a search for bulbs that weren't there was both unproductive and senseless.",
+                "text": "When the failed patrol arrives back at camp, r_c is frozen stiff, beyond saving. Digging into the leaf-bare ground in a search for bulbs that weren't there was both unproductive, senseless, and had cost them a friend.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
                 "history_text": {
-                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                    "reg_death": "m_c died of frostbite from searching for herbs in leaf-bare."
                 },
                 "relationships": [
                     {
@@ -2876,7 +2889,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare."
+                    "scar": "m_c was scarred by frostbite from searching for herbs in leaf-bare.",
+                    "reg_death": "m_c died of frostbite from searching for herbs in leaf-bare."
                 },
                 "relationships": [
                     {
