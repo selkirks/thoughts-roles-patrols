@@ -1846,50 +1846,19 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
             gensprite = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
             gensprite = MakeCat(gensprite, phenotype.maincolour, phenotype.spritecolour)
             
-            if (genotype.ext[0] == 'Eg' and genotype.agouti[0] != 'a') and genotype.satin[0] != "st" and genotype.tenn[0] != 'tr' and not ('red' in phenotype.maincolour or 'cream' in phenotype.maincolour or 'honey' in phenotype.maincolour or 'ivory' in phenotype.maincolour or 'apricot' in phenotype.maincolour):    
-                gensprite.blit(sprites.sprites['satin0'], (0, 0))
-            elif (genotype.glitter[0] == 'gl' or genotype.ghosting[0] == 'Gh') and (genotype.agouti[0] != 'a' or ('red' in phenotype.maincolour or 'cream' in phenotype.maincolour or 'honey' in phenotype.maincolour or 'ivory' in phenotype.maincolour or 'apricot' in phenotype.maincolour)):    
-                if genotype.satin[0] != "st" and genotype.tenn[0] != 'tr':    
-                    gensprite.blit(sprites.sprites['satin0'], (0, 0))
-                if(genotype.ghosting[0] == 'Gh'):
-                    fading = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
-                    fading.blit(sprites.sprites['tabbyghost'+cat_sprite], (0, 0))
-                    fading.set_alpha(50)
-                    gensprite.blit(fading, (0, 0))
-                    gensprite.blit(sprites.sprites['satin0'], (0, 0))
-
-            
-            if not ('red' in phenotype.maincolour or 'cream' in phenotype.maincolour or 'honey' in phenotype.maincolour or 'ivory' in phenotype.maincolour or 'apricot' in phenotype.maincolour) and (genotype.ext[0] != "Eg" and genotype.agouti[0] !='a' and (genotype.sunshine[0] == 'sg' or genotype.sunshine[0] == 'sh' or ('ec' in genotype.ext and genotype.ext[0] != "Eg") or (genotype.ext[0] == 'ea' and cat.moons > 6) or (genotype.silver[0] == 'i' and genotype.sunshine[0] == 'fg'))):
-                sunshine = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
-                sunshine.blit(sprites.sprites['bimetal' + cat_sprite], (0, 0))
-
-                colours = phenotype.FindRed(genotype, cat.moons, special='nosilver')
-                underbelly = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
-                underbelly = MakeCat(underbelly, colours[0], colours[1], special='nounders')
-                sunshine.blit(underbelly, (0, 0), special_flags=pygame.BLEND_RGBA_MIN)
-
-                sunshine.set_alpha(100)
-                gensprite.blit(sunshine, (0, 0))
-
-            if(phenotype.patchmain != ""):
-                tortpatches = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
-                tortpatches = MakeCat(tortpatches, phenotype.patchmain, phenotype.patchcolour)
-                
-                if phenotype.caramel == 'caramel' and not ('red' in phenotype.patchmain or 'cream' in phenotype.patchmain or 'honey' in phenotype.patchmain or 'ivory' in phenotype.patchmain or 'apricot' in phenotype.patchmain): 
-                    tortpatches.blit(sprites.sprites['caramel0'], (0, 0))
-                if (genotype.ext[0] == 'Eg' and genotype.agouti[0] != 'a') and genotype.satin[0] != "st" and genotype.tenn[0] != 'tr' and not ('red' in phenotype.patchmain or 'cream' in phenotype.patchmain or 'honey' in phenotype.patchmain or 'ivory' in phenotype.patchmain or 'apricot' in phenotype.patchmain): 
-                    tortpatches.blit(sprites.sprites['satin0'], (0, 0))
-                elif (genotype.glitter[0] == 'gl' or genotype.ghosting[0] == 'Gh') and (genotype.agouti[0] != 'a' or ('red' in phenotype.patchmain or 'cream' in phenotype.patchmain or 'honey' in phenotype.patchmain or 'ivory' in phenotype.patchmain or 'apricot' in phenotype.patchmain)):  
+            def ApplyPatchEffects(sprite):
+                if (genotype.ext[0] == 'Eg' and genotype.agouti[0] != 'a') and genotype.satin[0] != "st" and genotype.tenn[0] != 'tr' and not ('red' in phenotype.maincolour or 'cream' in phenotype.maincolour or 'honey' in phenotype.maincolour or 'ivory' in phenotype.maincolour or 'apricot' in phenotype.maincolour):    
+                    sprite.blit(sprites.sprites['satin0'], (0, 0))
+                elif (genotype.glitter[0] == 'gl' or genotype.ghosting[0] == 'Gh') and (genotype.agouti[0] != 'a' or ('red' in phenotype.maincolour or 'cream' in phenotype.maincolour or 'honey' in phenotype.maincolour or 'ivory' in phenotype.maincolour or 'apricot' in phenotype.maincolour)):    
                     if genotype.satin[0] != "st" and genotype.tenn[0] != 'tr':    
-                        tortpatches.blit(sprites.sprites['satin0'], (0, 0))
+                        sprite.blit(sprites.sprites['satin0'], (0, 0))
                     if(genotype.ghosting[0] == 'Gh'):
                         fading = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
                         fading.blit(sprites.sprites['tabbyghost'+cat_sprite], (0, 0))
                         fading.set_alpha(50)
-                        tortpatches.blit(fading, (0, 0))
-                        tortpatches.blit(sprites.sprites['satin0'], (0, 0))
-
-                if not ('red' in phenotype.patchmain or 'cream' in phenotype.patchmain or 'honey' in phenotype.patchmain or 'ivory' in phenotype.patchmain or 'apricot' in phenotype.patchmain) and (genotype.agouti[0] !='a' and (genotype.sunshine[0] == 'sg' or genotype.sunshine[0] == 'sh' or (genotype.ext[0] != 'Eg' and 'ec' in genotype.ext) or (genotype.ext[0] == 'ea' and cat.moons > 6) or (genotype.silver[0] == 'i' and genotype.sunshine[0] == 'fg'))):
+                        sprite.blit(fading, (0, 0))
+                        sprite.blit(sprites.sprites['satin0'], (0, 0))
+                if not ('red' in phenotype.maincolour or 'cream' in phenotype.maincolour or 'honey' in phenotype.maincolour or 'ivory' in phenotype.maincolour or 'apricot' in phenotype.maincolour) and (genotype.ext[0] != "Eg" and genotype.agouti[0] !='a' and (genotype.sunshine[0] == 'sg' or genotype.sunshine[0] == 'sh' or ('ec' in genotype.ext and genotype.ext[0] != "Eg") or (genotype.ext[0] == 'ea' and cat.moons > 6) or (genotype.silver[0] == 'i' and genotype.sunshine[0] == 'fg'))):
                     sunshine = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
                     sunshine.blit(sprites.sprites['bimetal' + cat_sprite], (0, 0))
 
@@ -1899,7 +1868,18 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
                     sunshine.blit(underbelly, (0, 0), special_flags=pygame.BLEND_RGBA_MIN)
 
                     sunshine.set_alpha(100)
-                    tortpatches.blit(sunshine, (0, 0))
+                    sprite.blit(sunshine, (0, 0))
+                return sprite
+            gensprite = ApplyPatchEffects(gensprite)
+            
+
+            if(phenotype.patchmain != ""):
+                tortpatches = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
+                tortpatches = MakeCat(tortpatches, phenotype.patchmain, phenotype.patchcolour)
+                
+                if phenotype.caramel == 'caramel' and not ('red' in phenotype.patchmain or 'cream' in phenotype.patchmain or 'honey' in phenotype.patchmain or 'ivory' in phenotype.patchmain or 'apricot' in phenotype.patchmain): 
+                    tortpatches.blit(sprites.sprites['caramel0'], (0, 0))
+                tortpatches = ApplyPatchEffects(tortpatches)
                 
                 tortpatches2 = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
                 tortpatches2.blit(sprites.sprites['tortiemask' + phenotype.tortpattern.replace('rev', "") + cat_sprite], (0, 0))
@@ -1999,12 +1979,6 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
 
             if(genotype.fold[0] != 'Fd' or genotype.curl[0] == 'Cu'):
                 gensprite.blit(sprites.sprites['ears' + cat_sprite], (0, 0))
-
-            # draw eyes & scars1
-            #eyes = sprites.sprites['eyes' + cat.pelt.eye_colour + cat_sprite].copy()
-            #if cat.pelt.eye_colour2 != None:
-            #    eyes.blit(sprites.sprites['eyes2' + cat.pelt.eye_colour2 + cat_sprite], (0, 0))
-            #new_sprite.blit(eyes, (0, 0))
 
             if(int(cat_sprite) < 18):
                 lefteye = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
