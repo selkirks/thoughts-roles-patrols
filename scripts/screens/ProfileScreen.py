@@ -8,7 +8,7 @@ import pygame
 from ..cat.history import History
 from ..cat.phenotype import Phenotype
 from ..housekeeping.datadir import get_save_dir
-from ..game_structure.windows import ChangeCatName, SpecifyCatGender, KillCat, ChangeCatToggles
+from ..game_structure.windows import ChangeCatName, KillCat, ChangeCatToggles
 
 import ujson
 
@@ -267,13 +267,8 @@ class ProfileScreen(Screens):
             if event.ui_element == self.change_name_button:
                 ChangeCatName(self.the_cat)
             elif event.ui_element == self.specify_gender_button:
-                SpecifyCatGender(self.the_cat)
-                '''if self.the_cat.genderalign in ["molly", "trans molly"]:
-                    self.the_cat.pronouns = [self.the_cat.default_pronouns[1].copy()]
-                elif self.the_cat.genderalign in ["tom", "trans tom"]:
-                    self.the_cat.pronouns = [self.the_cat.default_pronouns[2].copy()]
-                else: self.the_cat.pronouns = [self.the_cat.default_pronouns[0].copy()]'''
-            # when button is pressed...
+                self.change_screen("change gender screen")
+            #when button is pressed...
             elif event.ui_element == self.cis_trans_button:
                 #if the cat is anything besides m/f/transm/transf then turn them back to cis
                 if self.the_cat.genderalign.replace("intersex ", "") not in ["molly", "trans molly", "tom", "trans tom"]:
@@ -304,15 +299,13 @@ class ProfileScreen(Screens):
                     self.the_cat.genderalign = 'sam'
                     if self.the_cat.gender == 'intersex':
                         self.the_cat.genderalign = 'intersex sam'
-                '''#pronoun handler
-                if self.the_cat.genderalign in ["molly", "trans molly"]:
-                    self.the_cat.pronouns = [self.the_cat.default_pronouns[1].copy()]
-                elif self.the_cat.genderalign in ["tom", "trans tom"]:
-                    self.the_cat.pronouns = [self.the_cat.default_pronouns[2].copy()]
-                elif self.the_cat.genderalign in ["nonbinary"]:
-                    self.the_cat.pronouns = [self.the_cat.default_pronouns[0].copy()]
-                elif self.the_cat.genderalign not in ["molly", "trans molly", "tom", "trans tom"]:
-                    self.the_cat.pronouns = [self.the_cat.default_pronouns[0].copy()]'''
+                if 'molly' in self.the_cat.genderalign:
+                    self.pronouns = [self.the_cat.default_pronouns[1].copy()]
+                elif 'tom' in self.the_cat.genderalign:
+                    self.pronouns = [self.the_cat.default_pronouns[2].copy()]
+                else:
+                    self.pronouns = [self.the_cat.default_pronouns[0].copy()]
+
                 self.clear_profile()
                 self.build_profile()
                 self.update_disabled_buttons_and_text()

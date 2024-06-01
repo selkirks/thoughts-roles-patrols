@@ -2389,16 +2389,16 @@ class Events:
                         cat.genderalign = 'intersex trans molly'
                     else:    
                         cat.genderalign = "trans molly"
-                    # cat.pronouns = [cat.default_pronouns[1].copy()]
+                    cat.pronouns = [cat.default_pronouns[1].copy()]
                 else:
                     if(cat.gender == 'intersex'):
                         cat.genderalign = 'intersex trans tom'
                     else:    
                         cat.genderalign = "trans tom"
-                    # cat.pronouns = [cat.default_pronouns[2].copy()]
+                    cat.pronouns = [cat.default_pronouns[2].copy()]
             else:
                 cat.genderalign = "sam"
-                # cat.pronouns = [cat.default_pronouns[0].copy()]
+                cat.pronouns = [cat.default_pronouns[0].copy()]
 
             if "tom" in cat.gender:
                 gender = 'tom'
