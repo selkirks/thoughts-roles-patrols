@@ -130,7 +130,8 @@ class Sprites():
             'collars', 'bellcollars', 'bowcollars', 'nyloncollars',
             'shadersnewwhite', 'tortiepatchesmasks', 
             'medcatherbs', 'lightingnew', 'fademask',
-            'fadestarclan', 'fadedarkforest'
+            'fadestarclan', 'fadedarkforest',
+            'symbols'
 
         ]:
             if 'lineart' in x and game.config['fun']['april_fools']:
@@ -305,7 +306,7 @@ class Sprites():
 
         for row, patches in enumerate(white_patches):
             for col, patch in enumerate(patches):
-                self.make_group('whitepatches', (col, row), f'white{patch}')
+                self.make_group('whitepatches', (col, row), patch)
             
         # tortiepatchesmasks
         tortiepatchesmasks = [
