@@ -1438,7 +1438,7 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
                     whichmain.blit(sprites.sprites['lightbasecolours0'], (0, 0))
                     if(genotype.pointgene[0] == "c"):
                         whichmain.blit(sprites.sprites['albino' + cat_sprite], (0, 0))
-                elif(whichcolour != whichbase):
+                elif(whichcolour != whichbase and special != 'masked silver'):
                     if(genotype.pointgene[0] == "C"):
                         whichmain = TabbyBase(whichcolour, whichbase, special)
 
@@ -1845,6 +1845,16 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
 
             gensprite = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
             gensprite = MakeCat(gensprite, phenotype.maincolour, phenotype.spritecolour)
+
+            if('masked' in phenotype.silvergold):
+                masked = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
+                masked = MakeCat(masked, phenotype.maincolour, phenotype.spritecolour, special="masked silver")
+                masked2 = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
+                masked2.blit(sprites.sprites["tortiemaskBLUE-TIPPED" + cat_sprite], (0, 0))
+                masked2.blit(masked, (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
+                masked2.set_alpha(120)
+                gensprite.blit(masked2, (0, 0))
+                
             
             def ApplyPatchEffects(sprite):
                 if (genotype.ext[0] == 'Eg' and genotype.agouti[0] != 'a') and genotype.satin[0] != "st" and genotype.tenn[0] != 'tr' and not ('red' in phenotype.maincolour or 'cream' in phenotype.maincolour or 'honey' in phenotype.maincolour or 'ivory' in phenotype.maincolour or 'apricot' in phenotype.maincolour):    
@@ -1876,6 +1886,15 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
             if(phenotype.patchmain != ""):
                 tortpatches = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
                 tortpatches = MakeCat(tortpatches, phenotype.patchmain, phenotype.patchcolour)
+                if('masked' in phenotype.silvergold):
+                    masked = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
+                    masked = MakeCat(masked, phenotype.maincolour, phenotype.spritecolour, special="masked silver")
+                    masked2 = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
+                    masked2.blit(sprites.sprites["tortiemaskBLUE-TIPPED" + cat_sprite], (0, 0))
+                    masked2.blit(masked, (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
+                    masked2.set_alpha(120)
+                    tortpatches.blit(masked2, (0, 0))
+                    
                 
                 if phenotype.caramel == 'caramel' and not ('red' in phenotype.patchmain or 'cream' in phenotype.patchmain or 'honey' in phenotype.patchmain or 'ivory' in phenotype.patchmain or 'apricot' in phenotype.patchmain): 
                     tortpatches.blit(sprites.sprites['caramel0'], (0, 0))
