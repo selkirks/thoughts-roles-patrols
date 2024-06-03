@@ -111,6 +111,7 @@ class Events:
             self.handle_lost_cats_return()
 
         #Kill kits as needed
+        faded_kits = []
         if game.clan.clan_settings['modded_kits']:
             faded_kits = self.kit_deaths(Cat.all_cats_list)
 
