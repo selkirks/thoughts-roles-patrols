@@ -1,23 +1,18 @@
-import os
-
 import pygame
 
 import ujson
 
-from scripts.cat.names import names
 from scripts.game_structure.game_essentials import game
 
 class Sprites():
     cat_tints = {}
     white_patches_tints = {}
-    clan_symbols = []
 
-    def __init__(self):
+    def __init__(self, size=None):
         """Class that handles and hold all spritesheets. 
-        Size is normally automatically determined by the size
+        Size is normall automatically determined by the size
         of the lineart. If a size is passed, it will override 
         this value. """
-        self.symbol_dict = None
         self.size = None
         self.spritesheets = {}
         self.images = {}
@@ -56,17 +51,18 @@ class Sprites():
                    pos,
                    name,
                    sprites_x=3,
-                   sprites_y=7,
-                   no_index=False):  # pos = ex. (2, 3), no single pixels
-
+                   sprites_y=7):  # pos = ex. (2, 3), no single pixels
         """
-        Divide sprites on a spritesheet into groups of sprites that are easily accessible
-        :param spritesheet: Name of spritesheet file
-        :param pos: (x,y) tuple of offsets. NOT pixel offset, but offset of other sprites
-        :param name: Name of group being made
-        :param sprites_x: default 3, number of sprites horizontally
-        :param sprites_y: default 3, number of sprites vertically
-        :param no_index: default False, set True if sprite name does not require cat pose index
+        Divide sprites on a sprite-sheet into groups of sprites that are easily accessible.
+
+        Parameters:
+        spritesheet -- Name of spritesheet.
+        pos -- (x,y) tuple of offsets. NOT pixel offset, but offset of other sprites.
+        name -- Name of group to make.
+        
+        Keyword Arguments
+        sprites_x -- Number of sprites horizontally (default: 3)
+        sprites_y -- Number of sprites vertically (default: 3)
         """
 
         group_x_ofs = pos[0] * sprites_x * self.size
@@ -76,10 +72,6 @@ class Sprites():
         # splitting group into singular sprites and storing into self.sprites section
         for y in range(sprites_y):
             for x in range(sprites_x):
-                if no_index:
-                    full_name = f"{name}"
-                else:
-                    full_name = f"{name}{i}"
                 try:
                     new_sprite = pygame.Surface.subsurface(
                         self.spritesheets[spritesheet],
@@ -89,14 +81,13 @@ class Sprites():
                     )
                 except ValueError:
                     # Fallback for non-existent sprites
-                    print(f"WARNING: nonexistent sprite - {full_name}")
                     if not self.blank_sprite:
                         self.blank_sprite = pygame.Surface(
                             (self.size, self.size),
                             pygame.HWSURFACE | pygame.SRCALPHA
                         )
                     new_sprite = self.blank_sprite
-                self.sprites[full_name] = new_sprite
+                self.sprites[f'{name}{i}'] = new_sprite
                 i += 1
 
     def load_all(self):
@@ -111,12 +102,11 @@ class Sprites():
         elif width / 3 == height / 7:
             self.size = width / 3
         else:
-            self.size = 50  # default, what base clangen uses
+            self.size = 50 # default, what base clangen uses
             print(f"lineart.png is not 3x7, falling back to {self.size}")
-            print(
-                f"if you are a modder, please update scripts/cat/sprites.py and do a search for 'if width / 3 == height / 7:'")
+            print(f"if you are a modder, please update scripts/cat/sprites.py and do a search for 'if width / 3 == height / 7:'")
 
-        del width, height  # unneeded
+        del width, height # unneeded
 
         for x in [
             'lineart', 'singlecolours', 'speckledcolours', 'tabbycolours',
@@ -127,7 +117,7 @@ class Sprites():
             'maskedcolours', 
             'shadersnewwhite', 'lineartdead', 'tortiepatchesmasks', 
             'medcatherbs', 'lineartdf', 'lightingnew', 'fademask',
-            'fadestarclan', 'fadedarkforest', 'symbols',
+            'fadestarclan', 'fadedarkforest',
 
             #OHDANS
             'flower_accessories', 'plant2_accessories', 'snake_accessories', 'smallAnimal_accessories', 'deadInsect_accessories',
@@ -340,7 +330,6 @@ class Sprites():
             self.make_group('skin', (a, 2), f"skin{i}")
 
         self.load_scars()
-        self.load_symbols()
 
     def load_scars(self):
         """
@@ -417,37 +406,6 @@ class Sprites():
             self.make_group('nyloncollars', (a, 1), f'collars{i}')
         for a, i in enumerate(["PINKNYLON", "PURPLENYLON", "MULTINYLON", "INDIGONYLON"]):
             self.make_group('nyloncollars', (a, 2), f'collars{i}')
-    def load_symbols(self):
-        """
-        loads clan symbols
-        """
-
-        if os.path.exists('resources/dicts/clan_symbols.json'):
-            with open('resources/dicts/clan_symbols.json') as read_file:
-                self.symbol_dict = ujson.loads(read_file.read())
-
-        # U and X omitted from letter list due to having no prefixes
-        letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T",
-                   "V", "W", "Y", "Z"]
-
-        # sprite names will format as "symbol{PREFIX}{INDEX}", ex. "symbolSPRING0"
-        y_pos = 1
-        for letter in letters:
-            for i, symbol in enumerate([symbol for symbol in self.symbol_dict if
-                                        letter in symbol and self.symbol_dict[symbol]["variants"]]):
-                x_mod = 0
-                for variant_index in range(self.symbol_dict[symbol]["variants"]):
-                    x_mod += variant_index
-                    self.clan_symbols.append(f"symbol{symbol.upper()}{variant_index}")
-                    self.make_group('symbols',
-                                    (i + x_mod, y_pos),
-                                    f"symbol{symbol.upper()}{variant_index}",
-                                    sprites_x=1, sprites_y=1, no_index=True)
-
-            y_pos += 1
-
-
-
             # ohdan's accessories
         for a, i in enumerate([
             "DAISY", "DIANTHUS", "BLEEDING HEARTS", "FRANGIPANI", "BLUE GLORY", "CATNIP FLOWER", "BLANKET FLOWER", "ALLIUM", "LACELEAF", "PURPLE GLORY"]):
