@@ -400,7 +400,7 @@ def create_new_cat(Cat,
                 chance = int(game.config["cat_generation"]["base_permanent_condition"] / 11.25)
             else:
                 chance = game.config["cat_generation"]["base_permanent_condition"] + 10
-            chance = 1
+            
             if not int(random() * chance):
                 possible_conditions = []
                 for condition in PERMANENT:
