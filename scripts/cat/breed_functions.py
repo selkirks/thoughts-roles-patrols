@@ -7173,7 +7173,7 @@ class Breed_checker:
             return False
         
         genotype.longtype = "medium"
-        if genotype.pointgene[0] == "cs":
+        if genotype.pointgene[0] == "cs" and genotype.white[0] != 'W':
             if genotype.furLength[0] == "l":
                 return "Balinese"
             return "Siamese"
