@@ -40,7 +40,7 @@
     "event_text": "m_c compliments o_c's newest warriors at the Gathering.",
     "rel_change": 1,
     "m_c": {
-      "status": ["deputy", "medicine cat", "medicine cat apprentice", "mediator", "mediator apprentice", "warrior"],
+      "status": ["deputy", "healer", "healer apprentice", "mediator", "mediator apprentice", "warrior"],
       "trait": ["fierce", "childish", "playful", "charismatic", "bold", "daring", "nervous", "righteous", "insecure", "strict", "compassionate", "thoughtful", "ambitious", "confident", "adventurous", "calm", "careful", "faithful", "loving",  "responsible", "shameless", "sneaky", "strange", "vengeful", "wise", "cunning", "oblivious", "sincere", "flamboyant"]
     },
     "player_clan_temper": ["any"],
