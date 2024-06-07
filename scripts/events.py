@@ -1386,7 +1386,7 @@ class Events:
             event_text += " faded over the course of a few days."
             game.cur_events_list.append(Single_Event(event_text, ['birth_death'], fading_kits))
         
-        return len(fading_kits)
+        return fading_kits
 
     def one_moon_cat(self, cat):
         """
