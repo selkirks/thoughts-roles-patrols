@@ -168,7 +168,7 @@ class Events:
                         f"lives are shared in stories around the circle of mourners as those that were closest to them " \
                         f"take them to their final resting place."
 
-                if len(ghost_names)-faded_kits > 2:
+                if len(ghost_names)-len(faded_kits) > 2:
                     alive_cats = list(
                         filter(
                             lambda kitty: (kitty.status != "leader" and not kitty.dead and
