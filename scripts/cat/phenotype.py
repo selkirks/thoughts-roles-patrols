@@ -225,7 +225,7 @@ class Phenotype():
         elif(self.genotype.ghosting[0] == "Gh"):
             self.fade = "faded "
     def SolidWhite(self, pattern=None):
-        if(self.genotype.white[0] == "W" or self.genotype.pointgene[0] == "c" or (self.genotype.white[1] in ['wt', 'ws'] and self.genotype.whitegrade == 5) or (self.genotype.brindledbi and 'o' not in self.genotype.sexgene)):
+        if(self.genotype.white[0] == "W" or self.genotype.pointgene[0] == "c" or (self.genotype.brindledbi and 'o' not in self.genotype.sexgene)):
             self.highwhite = ""
             self.fade = ""
             if(self.genotype.pointgene[0] == "c"):
