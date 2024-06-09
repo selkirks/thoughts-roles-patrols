@@ -531,7 +531,7 @@ class Cat:
             else:
                 faded_cats = []
 
-            while potential_id in [self.all_cats, faded_cats]:
+            while potential_id in self.all_cats or potential_id in faded_cats:
                 potential_id = str(next(Cat.id_iter))
             self.ID = potential_id
         else:
@@ -2635,7 +2635,7 @@ class Cat:
             for cat in self.all_cats.values():
                 if self.is_valid_mentor(cat):
                     potential_mentors.append(cat)
-                    if not cat.apprentice and not cat.not_working():
+                    if not cat.apprentice and not cat.not_working() and not cat.moons < 24:
                         priority_mentors.append(cat)
             # First try for a cat who currently has no apprentices and is working
             if priority_mentors:  # length of list > 0

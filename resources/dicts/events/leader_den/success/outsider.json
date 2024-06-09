@@ -26,7 +26,7 @@
     "reputation": ["any"],
     "rep_change": -1,
     "m_c": {
-      "status": ["loner", "rogue", "kittypet"],
+      "status": ["loner", "rogue", "kittypet", "former Clancat"],
       "new_thought": "Is curious about the Clan that sought {PRONOUN/m_c/object} out",
       "kit_thought": "Is curious about the new place {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} in",
       "relationships": [

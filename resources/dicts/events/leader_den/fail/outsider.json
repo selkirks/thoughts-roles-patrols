@@ -109,7 +109,7 @@
     "reputation": ["any"],
     "rep_change": 1,
     "m_c": {
-      "status": ["loner", "rogue", "kittypet"],
+      "status": ["loner", "rogue", "kittypet", "former Clancat"],
       "new_thought": "Heard rumors that a Clan was searching for them",
       "relationships": [
         {

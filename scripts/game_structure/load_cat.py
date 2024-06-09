@@ -44,12 +44,9 @@ def json_load():
         game.switches["traceback"] = e
         raise
 
-    old_tortie_patches = convert["old_tortie_patches"]
-
     # create new cat objects
     for i, cat in enumerate(cat_data):
         try:
-            
             try:
                 new_cat = Cat(ID=cat["ID"],
                         prefix=cat["name_prefix"],

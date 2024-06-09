@@ -274,15 +274,11 @@ class Thoughts:
         status = main_cat.status
 
         status = status.replace(" ", "_")
-        # match status:
-        #     case "healer apprentice":
-        #         status = "medicine_cat_apprentice"
-        #     case "mediator apprentice":
-        #         status = "mediator_apprentice"
-        #     case "healer":
-        #         status = "medicine_cat"
-        #     case 'former Clancat':
-        #         status = 'former_Clancat'
+        match status:
+            case "healer_apprentice":
+                status = "medicine_cat_apprentice"
+            case "healer":
+                status = "medicine_cat"
 
         if not main_cat.dead:
             life_dir = "alive"

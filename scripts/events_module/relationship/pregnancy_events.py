@@ -496,10 +496,10 @@ class Pregnancy_Events:
                         'rogue' : 'rogue_backstories',
                         'kittypet' : 'kittypet_backstories'
                     }
-                    backkit = 'outsider_roots2'
+                    backkit = 'outsider_roots1'
                 else:
                     cat_type = 'Clancat'
-                    backkit = 'halfclan2'
+                    backkit = 'halfclan1'
                 
                 nr_of_parents = 1
                 if clan.clan_settings['multisire'] and cat_type != 'Clancat':
@@ -529,7 +529,7 @@ class Pregnancy_Events:
                         other_cat.append(out_par)
 
             else:
-                backkit = 'outsider_roots2'
+                backkit = 'outsider_roots1'
                 other_cat = []
                 nr_of_parents = 1
                 if clan.clan_settings['multisire']:
