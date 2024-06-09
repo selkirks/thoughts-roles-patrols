@@ -274,7 +274,7 @@ class Thoughts:
         status = main_cat.status
 
         status = status.replace(" ", "_")
-        if status == "healer apprentice":
+        if status == "healer_apprentice":
             status = "medicine_cat_apprentice"
         elif status == "healer":
             status = "medicine_cat"
