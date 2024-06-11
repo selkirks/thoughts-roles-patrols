@@ -344,7 +344,7 @@ class Thoughts:
             spec_dir = "/starclan"
         elif darkforest:
             spec_dir = "/darkforest"
-        THOUGHTS: []
+        THOUGHTS = []
         try:
             if lives_left > 0:
                 with open(f"{base_path}{spec_dir}/leader_life.json", 'r') as read_file:
@@ -372,7 +372,7 @@ class Thoughts:
             spec_dir = "/starclan"
         elif darkforest:
             spec_dir = "/darkforest"
-        THOUGHTS: []
+        THOUGHTS = []
         try:
             with open(f"{base_path}{spec_dir}/general.json", 'r') as read_file:
                 THOUGHTS = ujson.loads(read_file.read())
