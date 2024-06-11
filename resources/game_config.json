@@ -334,6 +334,7 @@
         "hunting":{
             "warrior": 2,
             "apprentice": 1,
+            "emergency": 1,
             "comment": "Defines how much a working warrior(leader/deputy) or apprentice gathers additionally."
         },
         "herb gathering" : {

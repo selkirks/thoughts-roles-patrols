@@ -699,6 +699,21 @@ class Events:
                 len(healthy_apprentices) * game.config["focus"]["hunting"]["apprentice"]
             )
 
+            if warrior_amount + app_amount == 0:
+                healthy_other = list(
+                    filter(
+                        lambda c: c.moons > 3
+                        and not c.dead
+                        and not c.outside
+                        and not c.exiled
+                        and not c.not_working(),
+                        Cat.all_cats.values(),
+                    )
+                )
+                warrior_amount = (
+                    len(healthy_other) * game.config["focus"]["hunting"]["emergency"]
+                )
+
             # finish
             total_amount = warrior_amount + app_amount
             game.clan.freshkill_pile.add_freshkill(total_amount)
