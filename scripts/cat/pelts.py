@@ -78,15 +78,10 @@ class Pelt:
 
     # make sure to add plural and singular forms of new accs to acc_display.json so that they will display nicely
     plant_accessories = ["MAPLE LEAF", "HOLLY", "BLUE BERRIES", "FORGET ME NOTS", "RYE STALK", "LAUREL",
-                        "BLUEBELLS", "NETTLE", "POPPY", "LAVENDER", "HERBS", "PETALS", "DRY HERBS",
-                        "OAK LEAVES", "CATMINT", "MAPLE SEED", "JUNIPER",  "OAK LEAVES", "CATMINT", "MAPLE SEED", "JUNIPER",
-                        "LILYPAD", "LARGE DEATHBERRY", "SMALL DEATHBERRY", "ACORN2", "PINECONE", "VINE",
-                        "CHERRY2", "BLEEDING HEARTS", "SHELL PACK", "FERNS", "GOLD FERNS", "WHEAT", "BLACK WHEAT",
-                        "BERRIES", "CLOVERS", "CLOVER", "MOSS", "FLOWER MOSS", "MUSHROOMS"
-                        ]
-    wild_accessories = ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS", "MOTH WINGS", "CICADA WINGS", "LARGE LUNA", "LARGE COMET", "SMALL LUNA", "SMALL COMET", "LADYBUG",
-                    "MUD PAWS", "ASHY PAWS", "ORANGEBUTTERFLY", "BLUEBUTTERFLY", "BROWNPELT", "GRAYPELT", "BROWNMOSSPELT", "GRAYMOSSPELT",
- "FERN", "MOREFERN", "BLEEDINGHEART", "LILY"]
+                         "BLUEBELLS", "NETTLE", "POPPY", "LAVENDER", "HERBS", "PETALS", "DRY HERBS",
+                         "OAK LEAVES", "CATMINT", "MAPLE SEED", "JUNIPER"]
+
+    wild_accessories = ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS", "MOTH WINGS", "CICADA WINGS"]
     tail_accessories = ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]
     collars = [
         "CRIMSON", "BLUE", "YELLOW", "CYAN", "RED", "LIME", "GREEN", "RAINBOW",
@@ -98,38 +93,7 @@ class Pelt:
         "PURPLEBOW", "MULTIBOW", "INDIGOBOW", "CRIMSONNYLON", "BLUENYLON", "YELLOWNYLON", "CYANNYLON",
         "REDNYLON", "LIMENYLON", "GREENNYLON", "RAINBOWNYLON",
         "BLACKNYLON", "SPIKESNYLON", "WHITENYLON", "PINKNYLON", "PURPLENYLON", "MULTINYLON", "INDIGONYLON",
-        "REDHARNESS", "NAVYHARNESS", "YELLOWHARNESS", "TEALHARNESS", "ORANGEHARNESS", "GREENHARNESS","MOSSHARNESS", "RAINBOWHARNESS", "BLACKHARNESS", "BEEHARNESS", "CREAMHARNESS","PINKHARNESS", "MAGENTAHARNESS", "PEACHHARNESS", "VIOLETHARNESS"
     ]
-
-    # ohdan's accessories
-    flower_accessories = ["DAISY", "DIANTHUS", "BLEEDING HEARTS", "FRANGIPANI", "BLUE GLORY",
-                          "CATNIP FLOWER", "BLANKET FLOWER", "ALLIUM", "LACELEAF", "PURPLE GLORY",
-                          "YELLOW PRIMROSE", "HESPERIS", "MARIGOLD", "WISTERIA", "PINKFLOWERCROWN", "YELLOWFLOWERCROWN", "BLUEFLOWERCROWN", "PURPLEFLOWERCROWN"]
-    
-    plant2_accessories = ["CLOVER", "STICK", "PUMPKIN", "MOSS", "IVY", "ACORN", "MOSS PELT", "REEDS", "BAMBOO"]
-
-    snake_accessories = ["GRASS SNAKE", "BLUE RACER", "WESTERN COACHWHIP", "KINGSNAKE"]
-
-    smallAnimal_accessories = ["GRAY SQUIRREL", "RED SQUIRREL", "CRAB", "WHITE RABBIT", "BLACK RABBIT",
-                           "BROWN RABBIT", "INDIAN GIANT SQUIRREL", "FAWN RABBIT",
-                           "BROWN AND WHITE RABBIT", "BLACK AND WHITE RABBIT", "WHITE AND FAWN RABBIT",
-                           "BLACK VITILIGO RABBIT", "BROWN VITILIGO RABBIT", "FAWN VITILIGO RABBIT",
-                           "BLACKBIRD", "ROBIN", "JAY", "THRUSH", "CARDINAL", "MAGPIE", "CUBAN TROGON",
-                           "TAN RABBIT", "TAN AND WHITE RABBIT", "TAN VITILIGO RABBIT",
-                           "RAT", "WHITE MOUSE", "BLACK MOUSE", "GRAY MOUSE", "BROWN MOUSE",
-                           "GRAY RABBIT", "GRAY AND WHITE RABBIT", "GRAY VITILIGO RABBIT"]
-    
-    deadInsect_accessories = ["LUNAR MOTH", "ROSY MAPLE MOTH", "MONARCH BUTTERFLY", "DAPPLED MONARCH",
-                              "POLYPHEMUS MOTH", "MINT MOTH"]
-    
-    aliveInsect_accessories = ["BROWN SNAIL", "RED SNAIL", "WORM", "BLUE SNAIL", "ZEBRA ISOPOD", "DUCKY ISOPOD", "DAIRY COW ISOPOD",
-                               "BEETLEJUICE ISOPOD", "BEE", "RED LADYBUG", "ORANGE LADYBUG", "YELLOW LADYBUG"]
-    
-    fruit_accessories = ["RASPBERRY", "BLACKBERRY", "GOLDEN RASPBERRY", "CHERRY", "YEW"]
-
-    crafted_accessories = ["WILLOWBARK BAG", "CLAY DAISY POT", "CLAY AMANITA POT", "CLAY BROWNCAP POT", "BIRD SKULL", "LEAF BOW"]
-
-    tail2_accessories = ["SEAWEED", "DAISY CORSAGE"]
 
 
     tabbies = ["Tabby", "Ticked", "Mackerel", "Classic", "Sokoke", "Agouti"]
@@ -208,8 +172,6 @@ class Pelt:
                  senior_sprite:int=None,
                  para_adult_sprite:int=None,
                  reverse:bool=False,
-                 accessories:list=None,
-                 inventory:list=[],
                  fur_texture:str=None,
                  build:str=None,
                  height:str=None
@@ -227,8 +189,6 @@ class Pelt:
         self.length = length
         self.points = points
         self.accessory = accessory
-        self.accessories = accessories if accessories is not None else []
-        self.inventory = inventory
         self.paralyzed = paralyzed
         self.opacity = opacity
         self.scars = scars if isinstance(scars, list) else []
@@ -709,16 +669,7 @@ class Pelt:
         if acc_display_choice == 1:
             self.accessory = choice([
                 choice(Pelt.plant_accessories),
-                choice(Pelt.wild_accessories),
-                choice(Pelt.flower_accessories),
-                choice(Pelt.plant2_accessories),
-                choice(Pelt.snake_accessories),
-                choice(Pelt.smallAnimal_accessories),
-                choice(Pelt.deadInsect_accessories),
-                choice(Pelt.aliveInsect_accessories),
-                choice(Pelt.fruit_accessories),
-                choice(Pelt.crafted_accessories),
-                choice(Pelt.tail2_accessories)
+                choice(Pelt.wild_accessories)
             ])
         else:
             self.accessory = None
