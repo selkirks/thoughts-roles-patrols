@@ -297,12 +297,6 @@ class Pelt:
             if self.tortiepattern == "solid":
                 self.tortiepattern = "single"
 
-        if self.white_patches in convert_dict["old_creamy_patches"]:
-            self.white_patches = convert_dict["old_creamy_patches"][self.white_patches]
-            self.white_patches_tint = "darkcream"
-        elif self.white_patches in ['SEPIAPOINT', 'MINKPOINT', 'SEALPOINT']:
-            self.white_patches_tint = "none"
-
         # Eye Color Convert Stuff
         if self.eye_colour == "BLUE2":
             self.eye_colour = "COBALT"
