@@ -485,6 +485,8 @@ class Events:
                 if additional_kits:
                     for kit_ID in additional_kits:
                         kit = Cat.fetch_cat(kit_ID)
+                        if kit.dead:
+                            continue
                         kit.thought = event_text_adjust(
                             Cat,
                             text=cat_dict["kit_thought"],
