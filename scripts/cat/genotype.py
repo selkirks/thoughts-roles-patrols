@@ -2317,7 +2317,7 @@ class Genotype:
             if randint(1, 5) == 1:
                 self.piggrade = self.piggrade - 1
         
-        if self.pointgene == ["cb", "cs"] or self.piggrade == 0 or ((self.pointgene == ["cb", "cm"] or self.pointgene == ["cm", "cm"] or self.pointgene == ["cm", "c"]) and randint(1, 5) == 1):
+        if self.pinkdilute[0] == 'dp' or self.pointgene == ["cb", "cs"] or self.piggrade == 0 or ((self.pointgene == ["cb", "cm"] or self.pointgene == ["cm", "cm"] or self.pointgene == ["cm", "c"]) and randint(1, 5) == 1):
             self.piggrade = 1
 
         def RefTypeFind(x, piggrade):

@@ -3207,6 +3207,9 @@ def generate_sprite(
                     special.blit(sprites.sprites[genotype.extraeye + cat_sprite], (0, 0))
                     special.blit(sprites.sprites[genotype.extraeyetype + "/" + cat_sprite], (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
                     gensprite.blit(special, (0, 0))
+
+                if(genotype.pinkdilute[0] == 'dp'):
+                    gensprite.blit(sprites.sprites['redpupils' + cat_sprite], (0, 0))
             
             return gensprite
 

@@ -814,7 +814,7 @@ class Cat:
         
         if(self.genotype.pointgene[0] == 'c'):
             self.get_permanent_condition('albinism', born_with=True, genetic=True)
-        elif('albino' in self.genotype.lefteyetype):
+        elif('albino' in self.genotype.lefteyetype or self.genotype.pinkdilute[0] == 'dp'):
             self.get_permanent_condition('ocular albinism', born_with=True, genetic=True)
 
     @property

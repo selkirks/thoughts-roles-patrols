@@ -264,6 +264,8 @@ class Sprites:
         for b, x in enumerate(['P11', 'P10', 'P9', 'P8', 'P7', 'P6', 'P5', 'P4', 'P3', 'P2', 'P1', 'blue', 'albino']):
             for a, y in enumerate(range(1, 12)):
                 self.make_group('Other/eyes_full', (a, b), f'R{y} ; {x}/', sprites_y=6)
+        
+        self.make_group('Other/red_pupils', (0, 0), 'redpupils')
 
         # Line art
         self.make_group('lineart', (0, 0), 'lines')
