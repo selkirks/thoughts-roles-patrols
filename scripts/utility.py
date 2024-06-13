@@ -34,7 +34,6 @@ from scripts.game_structure.game_essentials import game, screen_x, screen_y
 # ---------------------------------------------------------------------------- #
 
 
-
 def get_alive_clan_queens(living_cats):
     living_kits = [
         cat
