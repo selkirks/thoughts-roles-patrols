@@ -484,7 +484,10 @@ class Patrol:
         # This make sure general only gets hunting, border, or training patrols
         # chose fix type will make it not depending on the content amount
         if patrol_type == "general":
-            patrol_type = random.choice(["hunting", "border", "training", "med", "med"])
+            if not ("healer" in self.patrol_status_list or "healer apprentice" in self.patrol_status_list):
+                patrol_type = random.choice(["hunting", "border", "training"])
+            else:
+                patrol_type = random.choice(["hunting", "border", "training", "med", "med"])
 
         # makes sure that it grabs patrols in the correct biomes, season, with the correct number of cats
         for patrol in possible_patrols:
