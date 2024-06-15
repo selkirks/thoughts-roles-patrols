@@ -2,16 +2,16 @@ import pygame
 import pygame_gui
 
 from scripts.cat.cats import Cat
-from scripts.game_structure.image_button import UISpriteButton, UIImageButton, UITextBoxTweaked, AllegiancesCat
-from scripts.utility import get_text_box_theme, get_button_theme, scale, shorten_text_to_fit, get_alive_clan_queens
 from scripts.game_structure.game_essentials import game, screen_x, screen_y, MANAGER
-from scripts.game_structure.image_button import (
+from scripts.game_structure.ui_elements import (
     UISpriteButton,
     UIImageButton,
-    UITextBoxTweaked,
+    UITextBoxTweaked, 
+    AllegiancesCat
 )
 from scripts.utility import (
-    get_text_box_theme,
+    get_text_box_theme, 
+    get_button_theme,
     scale,
     get_alive_status_cats,
     shorten_text_to_fit,
@@ -69,7 +69,7 @@ class AllegiancesScreen(Screens):
                                    container=self.scroll_container, manager=MANAGER))
                 self.ranks_boxes[-1].disable()
 
-            self.names_buttons.append(AllegiancesCat(scale(pygame.Rect((290, y_pos+10), (1060, -1))),
+            self.names_buttons.append(AllegiancesCat(scale(pygame.Rect((290, y_pos+8), (1060, -1))),
                                     x[1],
                                     object_id=get_button_theme(),
                                     container=self.scroll_container, manager=MANAGER))
