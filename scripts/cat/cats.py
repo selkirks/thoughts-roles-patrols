@@ -288,7 +288,7 @@ class Cat:
                 while None in white_pattern:
                     white_pattern.remove(None)
 
-            if white_pattern is None and (KIT[0] != "W" and KIT[0] != "w"):
+            if white_pattern is None and (KIT[0] != "W" and KIT[0] != "w" and KIT[0] != 'wsal'):
                 white_pattern = []
                 if(vit):
                     white_pattern.append(choice(vitiligo))
