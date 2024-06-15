@@ -2406,7 +2406,7 @@ class Genotype:
         if self.altai != ["al","al"] and randint(0, 4)!= 0:
             hetindex = 0
 
-        if het2index == 0 and not (self.pinkdilute[0] == "dp" or ("c" in self.pointgene and self.pointgene[0] != "C")) and blueindex != 0:
+        if het2index == 0 and not ("c" in self.pointgene and self.pointgene[0] != "C") and blueindex != 0:
             tempref = randint(1, 11)
             temppig = randint(1, 12)
             if randint(1, 2)==1:
@@ -2435,7 +2435,7 @@ class Genotype:
             self.extraeyetype = SecondaryRefTypeFind(a[0], a[1])
                 
                 
-            if self.pinkdilute[0] == "dp" or ("c" in self.pointgene and self.pointgene[0] != "C"):
+            if "c" in self.pointgene and self.pointgene[0] != "C":
                 self.lefteye = RefTypeFind(self.refgrade, 13)
                 self.righteye = RefTypeFind(self.refgrade, 13)
 

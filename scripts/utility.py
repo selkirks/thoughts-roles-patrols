@@ -3169,7 +3169,7 @@ def generate_sprite(
                     gensprite.blit(sprites.sprites['dorsal2' + cat_sprite], (0, 0))
 
 
-            if(cat.genotype.sedesp == ['hr', 're'] or (cat.genotype.sedesp[0] == 're' and cat.moons < 12)):
+            if cat.genotype.sedesp == ['hr', 're'] or (cat.genotype.sedesp[0] == 're' and cat.moons < 12) or (cat.genotype.laperm[0] == 'Lp' and cat.moons < 4):
                 gensprite.blit(sprites.sprites['furpoint' + cat_sprite], (0, 0))
                 gensprite.blit(sprites.sprites['furpoint' + cat_sprite], (0, 0))
             elif(cat.pelt.length == 'hairless'):
