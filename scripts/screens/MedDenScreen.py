@@ -522,6 +522,7 @@ class MedDenScreen(Screens):
                 for condition in cat.permanent_condition:
                     if cat.permanent_condition[condition]["moons_until"] == -2:
                         condition_list.extend(cat.permanent_condition.keys())
+                        break
             conditions = ",<br>".join(condition_list)
 
             self.cat_buttons["able_cat" + str(i)] = UISpriteButton(
