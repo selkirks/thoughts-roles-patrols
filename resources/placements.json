@@ -1,7 +1,7 @@
 {
     "default": {
         "leader den": [688, 200],
-        "medicine den": [210, 400],
+        "healer den": [210, 400],
         "nursery": [1240, 400],
         "clearing": [635, 570],
         "apprentice den": [140, 820],
@@ -35,7 +35,7 @@
     },
     "Forestcamp2": {
         "leader den": [688, 188],
-        "medicine den": [160, 400],
+        "healer den": [160, 400],
         "nursery": [1240, 400],
         "clearing": [720, 589],
         "apprentice den": [164, 860],
@@ -73,7 +73,7 @@
     },
     "Forestcamp3": {
         "leader den": [688, 188],
-        "medicine den": [160, 400],
+        "healer den": [160, 400],
         "nursery": [1240, 400],
         "clearing": [720, 589],
         "apprentice den": [164, 860],
@@ -110,7 +110,7 @@
     },
     "Forestcamp4": {
     "leader den": [650, 425],
-    "medicine den": [64, 500],
+    "healer den": [64, 500],
     "nursery": [1140, 950],
     "clearing": [700, 789],
     "apprentice den": [150, 960],
@@ -142,7 +142,7 @@
 },
     "Mountainouscamp1": {
         "leader den": [798, 188],
-        "medicine den": [122, 338],
+        "healer den": [122, 338],
         "nursery": [1270, 368],
         "clearing": [720, 589],
         "apprentice den": [164, 802],
@@ -187,7 +187,7 @@
     },
     "Mountainouscamp2": {
         "leader den": [798, 186],
-        "medicine den": [68, 372],
+        "healer den": [68, 372],
         "nursery": [1178, 326],
         "clearing": [720, 589],
         "apprentice den": [164, 860],
@@ -230,7 +230,7 @@
     },
     "Mountainouscamp3": {
         "leader den": [956, 191],
-        "medicine den": [70, 300],
+        "healer den": [70, 300],
         "nursery": [1378, 350],
         "clearing": [799, 500],
         "apprentice den": [77, 825],
@@ -266,7 +266,7 @@
     },
     "Mountainouscamp4": {
         "leader den": [832, 278],
-        "medicine den": [250, 190],
+        "healer den": [250, 190],
         "nursery": [1245, 214],
         "clearing": [694, 624],
         "apprentice den": [146, 884],
@@ -303,7 +303,7 @@
     },
     "Beachcamp1": {
         "leader den": [798, 188],
-        "medicine den": [122, 338],
+        "healer den": [122, 338],
         "nursery": [1234, 334],
         "clearing": [720, 589],
         "apprentice den": [164, 802],
@@ -338,7 +338,7 @@
     },
     "Beachcamp3": {
         "leader den": [688, 188],
-        "medicine den": [160, 400],
+        "healer den": [160, 400],
         "nursery": [1240, 400],
         "clearing": [720, 589],
         "apprentice den": [164, 860],
@@ -370,7 +370,7 @@
     },
     "Plainscamp2": {
         "leader den": [830, 189],
-        "medicine den": [22, 348],
+        "healer den": [22, 348],
         "nursery": [1240, 400],
         "clearing": [742, 528],
         "apprentice den": [212, 820],
@@ -411,7 +411,7 @@
     },
 	"Plainscamp3": {
         "leader den": [750, 205],
-        "medicine den": [190, 310],
+        "healer den": [190, 310],
         "nursery": [1240, 400],
         "clearing": [730, 510],
         "apprentice den": [200, 785],

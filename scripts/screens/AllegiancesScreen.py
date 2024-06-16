@@ -471,7 +471,7 @@ class MedDenScreen(Screens):
                 "them on. You can see what was gathered in the Log below! Your healers will give"
                 " these to any hurt or sick cats that need them, helping those cats to heal quicker."
                 "<br><br>"
-                "Hover your mouse over the medicine den image to see what herbs your Clan has!",
+                "Hover your mouse over the healer den image to see what herbs your Clan has!",
             )
             self.last_page = UIImageButton(
                 scale(pygame.Rect((660, 1272), (68, 68))),
@@ -493,7 +493,7 @@ class MedDenScreen(Screens):
                 manager=MANAGER,
             )
             self.log_title = pygame_gui.elements.UITextBox(
-                "Medicine Den Log",
+                "Healer den Log",
                 scale(pygame.Rect((281, 820), (400, 60))),
                 object_id=get_text_box_theme("#text_box_40_horizcenter"),
                 manager=MANAGER,

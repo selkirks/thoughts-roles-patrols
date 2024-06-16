@@ -22,7 +22,7 @@ status_dict = {
     "ceremony screen": "Holding a ceremony",
     "starclan screen": "Viewing StarClan",
     "dark forest screen": "Viewing the Dark Forest",
-    "med den screen": "In the medicine den",
+    "med den screen": "In the healer den",
 }
 
 

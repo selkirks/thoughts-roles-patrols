@@ -153,7 +153,7 @@ class ClanScreen(Screens):
             object_id="#lead_den_button",
             starting_height=2)
         self.med_den_label = UIImageButton(scale(pygame.Rect(
-            self.layout["medicine den"], (302, 56))),
+            self.layout["healer den"], (302, 56))),
             "",
             object_id="#med_den_button",
             starting_height=2
