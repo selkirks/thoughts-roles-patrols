@@ -761,23 +761,23 @@ class Phenotype():
             
             if ('masked' in self.silvergold and genes.wbsum > 15) or (genes.agouti[0] != "a" and genes.ext[0] != "Eg") or (genes.ext[0] not in ['Eg', 'E']):
                 if genes.silver[0] == "I" or genes.brindledbi or (moons < 3 and genes.karp[0] == "K"):
-                    if genes.sunshine[0] == "sg" or genes.ext[0] == 'ec':
+                    if genes.sunshine[0] == "sg":
                         colour =  colour + "silver" + "chinchilla"
-                    elif genes.sunshine[0] == "sh" or genes.sunshine[0] == "fg" or (genes.ext[0] == 'ea' and moons > 3):
+                    elif genes.sunshine[0] == "sh" or genes.sunshine[0] == "fg" or genes.ext[0] == 'ec' or (genes.ext[0] == 'ea' and moons > 3):
                         colour =  colour + "silver" + "shaded"
                     else:
                         colour =  colour + "silver" + genes.wbtype
                 elif genes.pointgene[0] != "C" or genes.agouti[0] == "Apb":
-                    if genes.sunshine[0] == "sg" or genes.ext[0] == 'ec':
+                    if genes.sunshine[0] == "sg":
                         colour =  colour + "low" + "chinchilla"
-                    elif genes.sunshine[0] == "sh" or genes.sunshine[0] == "fg" or (genes.ext[0] == 'ea' and moons > 3):
+                    elif genes.sunshine[0] == "sh" or genes.sunshine[0] == "fg" or genes.ext[0] == 'ec' or (genes.ext[0] == 'ea' and moons > 3):
                         colour =  colour + "low" + "shaded"
                     else:
                         colour = colour + "low" + genes.wbtype
                 else:
-                    if genes.sunshine[0] == "sg" or genes.ext[0] == 'ec':
+                    if genes.sunshine[0] == "sg":
                         colour =  colour + genes.ruftype + "chinchilla"
-                    elif genes.sunshine[0] == "sh" or genes.sunshine[0] == "fg" or (genes.ext[0] == 'ea' and moons > 3):
+                    elif genes.sunshine[0] == "sh" or genes.sunshine[0] == "fg" or genes.ext[0] == 'ec' or (genes.ext[0] == 'ea' and moons > 3):
                         colour =  colour + genes.ruftype + "shaded"
                     else:
                         colour = colour + genes.ruftype + genes.wbtype
