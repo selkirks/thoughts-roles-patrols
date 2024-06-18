@@ -711,11 +711,11 @@ class Phenotype():
         if special=='er':
             return self.FindRed(genes, moons, special)
         else:
-            if genes.eumelanin[0] == "bl" or (genes.eumelanin[0] == 'b' and genes.ext[0] == 'er'):
-                if(genes.dilutemd[0] == 'Dm' or (genes.ext[0] == 'er' and moons < 12 and moons > 5)):
+            if genes.eumelanin[0] == "bl":
+                if genes.dilutemd[0] == 'Dm':
                     self.caramel = 'caramel'
                 
-                if(genes.dilute[0] == "d" or (genes.ext[0] == 'er' and moons < 12)):
+                if genes.dilute[0] == "d":
                     if(genes.pinkdilute[0] == "dp"):
                         colour = "beige"
                     else:
@@ -726,11 +726,11 @@ class Phenotype():
                     else:
                         colour = "cinnamon"
                         self.caramel = ""
-            elif genes.eumelanin[0] == "b" or genes.ext[0] == 'er':
-                if(genes.dilutemd[0] == 'Dm' or (genes.ext[0] == 'er' and moons < 12 and moons > 5)):
+            elif genes.eumelanin[0] == "b":
+                if genes.dilutemd[0] == 'Dm':
                     self.caramel = 'caramel'
                 
-                if(genes.dilute[0] == "d" or (genes.ext[0] == 'er' and moons < 12)):
+                if genes.dilute[0] == "d":
                     if(genes.pinkdilute[0] == "dp"):
                         colour = "lavender"
                     else:

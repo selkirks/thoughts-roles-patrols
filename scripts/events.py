@@ -1306,10 +1306,8 @@ class Events:
             event_text = "Throughout kittenhood m_c has gotten many comments about their unique coat. Well, it looks by now to have turned completely " + red_colour + "."
         if cat.genotype.ext[0] == 'ea' and ((cat.moons == 12 and cat.genotype.agouti[0] != 'a') or (cat.moons == 24 and cat.genotype.agouti[0] == 'a')):
             event_text = "m_c has gotten used to the odd comment of 'is your fur more "+ red_colour + " today?', having heard it practically since kithood. But by now, nobody can deny it, there's barely a trace of any other coat colour left."
-        if cat.genotype.ext[0] == 'er' and cat.moons == 12 and cat.genotype.dilute[0] == 'D' and cat.genotype.pinkdilute[0] == 'Dp':
-            event_text = "'What an odd cat' many would say, having marveled at how m_c's coat changed with time to be nigh unrecogniseable since kittenhood. The healers couldn't explain it either..."
-        if cat.genotype.ext[0] == 'er' and cat.moons == 24 and cat.genotype.dilute[0] == 'D' and cat.genotype.pinkdilute[0] == 'Dp':
-            event_text = "Well what do you know? Full of surprises, m_c's coat has turned a whole new colour - this time "+ red_colour + ", even. Everyone's jokingly asking what colour they're trying out next."
+        if cat.genotype.ext[0] == 'er' and cat.moons == 24:
+            event_text = "m_c has gotten used to the odd comment of 'is your fur more "+ red_colour + " today?', having heard it practically since kithood. But by now, nobody can deny it, there's barely a trace of any other coat colour left."
 
         if event_text:
             event_text = event_text_adjust(Cat, event_text, cat)
