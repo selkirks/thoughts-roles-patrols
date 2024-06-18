@@ -86,6 +86,11 @@
             "Allow warriors and elders to choose to become mediators",
             "Warriors and elders will have a chance to become mediators upon timeskip.",
             false
+        ],
+        "patrol_lock_meds": [
+            "Healers will always default to herb gathering patrols",
+            "Different types of patrols can still be selected manually",
+            false
         ]
     },
     "relation": {

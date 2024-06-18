@@ -1128,15 +1128,6 @@ class Events:
 
         death_chances = game.config['death_related']['kit_death_chances']
 
-        # If at war, grab enemy clans
-        enemy_clan = None
-        if game.clan.war.get("at_war", False):
-            
-            for other_clan in game.clan.all_clans:
-                if other_clan.name == game.clan.war["enemy"]:
-                    enemy_clan = other_clan
-                    break
-
         for kit in cats:
             if kit.moons < 2 and not kit.dead:
                 if random.random() < death_chances[str(kit.moons)]:
