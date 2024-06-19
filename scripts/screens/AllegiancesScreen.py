@@ -69,7 +69,7 @@ class AllegiancesScreen(Screens):
                                    container=self.scroll_container, manager=MANAGER))
                 self.ranks_boxes[-1].disable()
 
-            self.names_buttons.append(AllegiancesCat(scale(pygame.Rect((290, y_pos+7), (1060, -1))),
+            self.names_buttons.append(AllegiancesCat(scale(pygame.Rect((290, y_pos+8), (1060, -1))),
                                     x[1],
                                     object_id=get_button_theme(),
                                     container=self.scroll_container, manager=MANAGER))
