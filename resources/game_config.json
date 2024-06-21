@@ -318,7 +318,7 @@
 		"kittypet_neuter" : 0.66,
 		"loner_tnr" : 0.1,
 		"Clan_tnr" : 0.99,
-		"Clan_tnr2" : 0.66,
+		"Clan_tnr2" : 0.5,
 		"notes" : [
 			"Controls how likely cats are to be artificially infertile - spayed and neutered",
 			"kittypet_neuter decides what percentage of kittypets are altered",

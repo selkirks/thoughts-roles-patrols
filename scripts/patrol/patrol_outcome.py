@@ -221,7 +221,7 @@ class PatrolOutcome:
             if random.random() < game.config['tnr_mode']['Clan_tnr']:
                 tnr = True
         if 'tnr2' in patrol.patrol_event.tags and game.clan.clan_settings['tnr_mode']:
-            if random() < game.config['tnr_mode']['Clan_tnr2']:
+            if random.random() < game.config['tnr_mode']['Clan_tnr2']:
                 tnr = True
 
         # the text has to be processed before - otherwise leader might be referenced with their warrior name
