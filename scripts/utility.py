@@ -902,7 +902,7 @@ def create_new_cat(
             else:
                 chance = game.config["cat_generation"]["base_permanent_condition"] + 10
             
-            if not is_parent and game.clan.clan_settings['tnr_mode']:
+            if not is_parent and game.clan.clan_settings['tnr_mode'] and age > 5:
                 kittypet_n = game.config['tnr_mode']['kittypet_neuter']
                 loner_n = game.config['tnr_mode']['loner_tnr']
                 if kittypet and random() < kittypet_n:
