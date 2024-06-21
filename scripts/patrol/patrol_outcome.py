@@ -217,12 +217,14 @@ class PatrolOutcome:
         results = [self._handle_new_cats(patrol)]
 
         tnr = False
+        tnr2 = False
         if 'tnr' in patrol.patrol_event.tags and game.clan.clan_settings['tnr_mode']:
             if random.random() < game.config['tnr_mode']['Clan_tnr']:
                 tnr = True
         if 'tnr2' in patrol.patrol_event.tags and game.clan.clan_settings['tnr_mode']:
             if random.random() < game.config['tnr_mode']['Clan_tnr2']:
                 tnr = True
+                tnr2 = True
 
         # the text has to be processed before - otherwise leader might be referenced with their warrior name
         processed_text = event_text_adjust(Cat,
@@ -238,7 +240,7 @@ class PatrolOutcome:
 
         # This order is important. 
         results.append(self._handle_death(patrol))
-        results.append(self._handle_lost(patrol, tnr))
+        results.append(self._handle_lost(patrol, tnr, tnr2))
         results.append(self._handle_condition_and_scars(patrol))
         results.append(unpack_rel_block(Cat, self.relationship_effects, patrol, stat_cat=self.stat_cat))
         results.append(self._handle_rep_changes())
@@ -467,7 +469,7 @@ class PatrolOutcome:
 
         return " ".join(results)
 
-    def _handle_lost(self, patrol: "Patrol", tnr) -> str:
+    def _handle_lost(self, patrol: "Patrol", tnr, tnr2) -> str:
         """Handle losing cats"""
 
         if not self.lost_cats:
@@ -486,7 +488,8 @@ class PatrolOutcome:
             results.append(f"{_cat.name} has been lost.")
             _cat.gone()
             if tnr and 'TNR' not in _cat.pelt.scars:
-                _cat.pelt.scars.append("TNR")
+                if not tnr2:
+                    _cat.pelt.scars.append("TNR")
                 _cat.get_permanent_condition("infertility", False)
             # _cat.greif(body=False)
 
