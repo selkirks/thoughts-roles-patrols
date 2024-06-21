@@ -405,9 +405,16 @@ class HandleShortEvents():
             if self.main_cat not in self.dead_cats:
                 self.dead_cats.append(self.main_cat)  # got to include the cat that rolled for death in the first place
 
+            tnr = False
+            if 'tnr' in self.chosen_event.tags and game.clan.clan_settings['tnr_mode']:
+                if random.random() < game.config['tnr_mode']['Clan_tnr']:
+                    tnr = True
             for kitty in self.dead_cats:
                 if "lost" in self.chosen_event.tags:
                     kitty.gone()
+                    if tnr and 'TNR' not in kitty.pelt.scars:
+                        kitty.pelt.scars.append("TNR")
+                        kitty.get_permanent_condition("infertility", False)
                     self.dead_cats.remove(kitty)
                 self.multi_cat.append(kitty)
                 if kitty.ID not in self.involved_cats:

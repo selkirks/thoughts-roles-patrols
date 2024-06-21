@@ -35,6 +35,11 @@
             "Gives larger litters, and higher kit death chances",
             false
         ],
+        "tnr_mode": [
+            "Cats can be spayed/neutered by Twolegs",
+            "Kittypets, loners, and Clan cats caught by Twolegs now have a chance of ending up spayed or neutered",
+            false
+        ],
         "showxp": [
             "Show exact XP and nutrition status",
             "Will turn 'experience: proficient' into 'experience: proficient (151)'; and 'nutrition: full' into 'nutrition: full (70)'.",
