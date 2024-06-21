@@ -2481,7 +2481,6 @@ class Cat:
         if (
             (not self.is_ill() and not self.is_injured() and not self.is_disabled())
             or self.dead
-            or self.outside
         ):
             if os.path.exists(condition_file_path):
                 os.remove(condition_file_path)
