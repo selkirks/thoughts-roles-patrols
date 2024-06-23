@@ -247,5 +247,29 @@
             "Without fur, m_c has been struggling to keep properly warm at night.",
             "Without fur, m_c has been struggling to keep properly warm at night."
         ]
+    },
+    "bad back" : {
+        "back pain": [
+            "Sleepily, m_c thanks r_c for the pain relief. It feels like moons since {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} been able to have a good rest without the awful pain that's been so intense lately.",
+            "m_c's back pain is worse than usual this moon, {PRONOUN/m_c/subject} {VERB/m_c/find/finds} {PRONOUN/m_c/self} barely able to get up out of {PRONOUN/m_c/poss} nest."
+        ]
+    },
+    "narrowed chest" : {
+        "whitecough": [
+            "r_c worst fears are realized as whitecough has infected m_c thanks to {PRONOUN/m_c/poss} narrowed chest.",
+            "m_c's narrowed chest has left {PRONOUN/m_c/object} coughing and wheezing this moon, unable to resist potential sickness."
+        ],
+        "greencough": [
+            "r_c worst fears are realized as greencough has infected m_c thanks to {PRONOUN/m_c/poss} narrowed chest.",
+            "m_c's narrowed chest has left {PRONOUN/m_c/object} coughing and wheezing this moon, unable to resist potential sickness."
+        ],
+        "yellowcough": [
+            "If only {PRONOUN/r_c/subject} had lungwort... r_c searches the herb stores, desperate for a way to help m_c through yellowcough.",
+            "m_c has been weak and fevered, only barely coherent... it seems {PRONOUN/m_c/subject} {VERB/m_c/have/has} yellowcough."
+        ],
+        "redcough": [
+            "r_c has quietly begun making m_c comfortable... or as comfortable as {PRONOUN/m_c/subject} can be while hacking blood.",
+            "m_c has been hacking up blood, {PRONOUN/m_c/poss} body growing weaker and weaker.  {PRONOUN/m_c/subject/CAP} may not last much longer."
+        ]
     }
 }

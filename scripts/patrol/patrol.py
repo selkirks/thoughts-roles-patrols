@@ -158,11 +158,16 @@ class Patrol:
                 else:
                     self.patrol_statuses["all apprentices"] = 1
 
-            if cat.status in ("warrior", "deputy", "leader", "healer"):
+            if cat.status in ("warrior", "deputy", "leader"):
                 if "normal adult" in self.patrol_statuses:
                     self.patrol_statuses["normal adult"] += 1
                 else:
                     self.patrol_statuses["normal adult"] = 1
+            if cat.status in ("healer"):
+                if "healer adult" in self.patrol_statuses:
+                    self.patrol_statuses["healer adult"] += 1
+                else:
+                    self.patrol_statuses["healer adult"] = 1
 
             game.patrolled.append(cat.ID)
 
@@ -491,6 +496,12 @@ class Patrol:
             
             if ("healer" in self.patrol_status_list or "healer apprentice" in self.patrol_status_list) and game.clan.clan_settings["patrol_lock_meds"]:
                 patrol_type = "med"
+        
+        if patrol_type != "med" and "healer adult" in self.patrol_statuses:
+            if "normal adult" in self.patrol_statuses:
+                self.patrol_statuses["normal adult"] += self.patrol_statuses["healer adult"]
+            else:
+                self.patrol_statuses["normal adult"] = self.patrol_statuses["healer adult"]
 
         # makes sure that it grabs patrols in the correct biomes, season, with the correct number of cats
         for patrol in possible_patrols:

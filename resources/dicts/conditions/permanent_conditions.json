@@ -824,7 +824,7 @@
             }
         ],
         "herbs": [
-            
+            "moss"
         ]
     },
     "partially hairless": {
@@ -861,7 +861,95 @@
             }
         ],
         "herbs": [
-            
+            "moss"
+        ]
+    },
+    "bad back": {
+        "severity": "minor",
+        "congenital": "always",
+        "moons_until": 3,
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+            {
+                "name": "back pain",
+                "chance": 20
+            }
+        ],
+        "herbs": [
+            "daisy",
+            "juniper",
+            "marigold",
+            "ragwort"
+        ]
+    },
+    "narrowed chest": {
+        "severity": "major",
+        "congenital": "always",
+        "moons_until": 1,
+        "mortality": {
+            "newborn": 40,
+            "kitten": 50,
+            "adolescent": 75,
+            "young adult": 120,
+            "adult": 120,
+            "senior adult": 120,
+            "senior": 60
+        },
+        "illness_infectiousness": [
+            {
+                "name": "running nose",
+                "chance": 4
+            },
+            {
+                "name": "whitecough",
+                "chance": 3
+            },
+            {
+                "name": "greencough",
+                "chance": 5
+            },
+            {
+                "name": "yellowcough",
+                "chance": 4
+            }
+        ],
+        "risks": [
+            {
+                "name": "running nose",
+                "chance": 10
+            },
+            {
+                "name": "whitecough",
+                "chance": 20
+            },
+            {
+                "name": "greencough",
+                "chance": 40
+            },
+            {
+                "name": "yellowcough",
+                "chance": 80
+            },
+            {
+                "name": "redcough",
+                "chance": 120
+            }
+        ],
+        "herbs": [
+            "betony",
+            "mullein",
+            "juniper",
+            "ragwort"
         ]
     }
 }

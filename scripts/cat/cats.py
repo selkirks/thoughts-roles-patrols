@@ -821,6 +821,15 @@ class Cat:
             self.get_permanent_condition('fully hairless', born_with=True, genetic=True)
         if self.phenotype.length == 'fur-pointed' or 'patchy ' in self.phenotype.furtype:
             self.get_permanent_condition('partially hairless', born_with=True, genetic=True)
+        
+        if self.genotype.munch[0] == 'Mk':
+            if random() < 0.33:
+                self.get_permanent_condition('constant joint pain', born_with=True, genetic=True, custom_reveal=randint(24, 120))
+            if random() < 0.15:
+                self.get_permanent_condition('bad back', born_with=True, genetic=True)
+            if random() < 0.1:
+                self.get_permanent_condition('narrowed chest', born_with=True, genetic=True)
+
 
     @property
     def mentor(self):
@@ -2287,7 +2296,7 @@ class Cat:
 
         self.get_permanent_condition(new_condition, born_with=True)
 
-    def get_permanent_condition(self, name, born_with=False, event_triggered=False, genetic=False):
+    def get_permanent_condition(self, name, born_with=False, event_triggered=False, genetic=False, custom_reveal=None):
         with open(f"resources/dicts/conditions/permanent_conditions.json", 'r') as read_file:
             PERMANENT = ujson.loads(read_file.read())
         if name not in PERMANENT:
@@ -2332,6 +2341,9 @@ class Cat:
 
         if name == 'partially hairless' and self.phenotype.length != 'fur-pointed':
             moons_until = 11
+        if custom_reveal:
+            moons_until = custom_reveal
+
         if born_with and self.status not in ["kitten", "newborn"]:
             moons_until = -2
         elif born_with is False:

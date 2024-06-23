@@ -102,5 +102,13 @@
     "partially hairless": [
         "m_c is a rather odd case - fur in some places, no fur in others.",
         "m_c is a rather odd case - fur in some places, no fur in others."
+    ],
+    "bad back": [
+        "m_c's back looks unusually curved. r_c warns this will likely cause trouble.",
+        "m_c's back looks unusually curved."
+    ],
+    "narrowed chest": [
+        "It doesn't take long for cats to notice - m_c has more trouble breathing than most kittens. r_c frets about the risk of coughs.",
+        "It doesn't take long for cats to notice - m_c has more trouble breathing than most kittens."
     ]
 }

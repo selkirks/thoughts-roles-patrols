@@ -284,7 +284,7 @@
 		"base_murder_kill_chance": 80,
 		"old_age_death_start": 150,
 		"old_age_death_curve": 4.5,
-		"kit_death_chances":{"0" : 0.25, "1" : 0.2, "2" : 0.2, "3" : 0.15, "4" : 0.1, "5" : 0.05},
+		"kit_death_chances":{"0" : 0.25, "1" : 0.2, "2" : 0.15, "3" : 0.1, "4" : 0.05, "5" : 0.05},
 		"comment": [
 			"old_age_death_curve is a multiplier that affects the chances of cats dying once they are over old_age_death_start moons.",
 			"Average life expectancy with default old_age_death_start of 150 moons:",
