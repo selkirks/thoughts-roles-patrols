@@ -830,6 +830,8 @@ class Cat:
             if random() < 0.05:
                 self.get_permanent_condition('narrowed chest', born_with=True, genetic=True)
 
+        if self.genotype.lykoi[0] == 'ly':
+            self.get_permanent_condition('bumpy skin', born_with=True, genetic=True, custom_reveal=randint(36, 60))
 
     @property
     def mentor(self):
@@ -2284,7 +2286,7 @@ class Cat:
 
         for condition in PERMANENT:
             possible = PERMANENT[condition]
-            if possible["congenital"] in ['always', 'sometimes'] and condition not in ['albinism', 'ocular albinism', 'manx syndrome', 'rabbit gait']:
+            if possible["congenital"] in ['always', 'sometimes'] and condition not in ['albinism', 'ocular albinism', 'manx syndrome', 'rabbit gait', "fully hairless", "partially hairless", "bad back", "narrowed chest", "bumpy skin"]:
                 possible_conditions.append(condition)
 
         new_condition = choice(possible_conditions)
@@ -2306,7 +2308,7 @@ class Cat:
             )
             return
         
-        if not genetic and name in ["manx syndrome", "rabbit gait", "albinism", "ocular albinism", 'fully hairless', 'partially hairless']:
+        if not genetic and name in ["manx syndrome", "rabbit gait", "albinism", "ocular albinism", 'fully hairless', 'partially hairless', "bad back", "narrowed chest", "bumpy skin"]:
             return
         if "blind" in self.permanent_condition and name == "failing eyesight":
             return

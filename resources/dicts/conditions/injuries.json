@@ -1497,5 +1497,37 @@
             "daisy",
             "poppy"
         ]
+    },
+
+    "cyst":{
+        "duration": 2,
+        "severity": "minor",
+        "medicine_duration": 2,
+        "mortality": {
+            "newborn": 200,
+            "kitten": 200,
+            "adolescent": 200,
+            "young adult": 200,
+            "adult": 200,
+            "senior adult": 200,
+            "senior": 200
+        },
+        "illness_infectiousness": [],
+        "risks": [
+            {
+                "name": "an infected wound",
+                "chance": 50
+            }
+        ],
+        "also_got": [
+        ],
+        "cause_permanent": [
+        ],
+        "herbs": [
+            "marigold",
+            "burdock",
+            "wild_garlic",
+            "poppy"
+        ]
     }
 }

@@ -219,5 +219,11 @@
             "Despite r_c's warnings not to, m_c can't help but scratch at {PRONOUN/m_c/poss} itching skin. Now they've got to deal with a fresh infection festering where the skin broke.",
             "m_c can't help but scratch at the itchy spots of skin. {PRONOUN/r_c/subject} barely {VERB/m_c/notice/notices} the small wounds until one grows infected"
         ]
+    },
+    "cyst" : {
+        "an infected wound" : [
+            "Despite both r_c and m_c's efforts, the spot where the cyst had popped looks to have become infected.",
+            "Despite m_c's efforts, the spot where the cyst had popped looks to have become infected."
+        ]
     }
 }

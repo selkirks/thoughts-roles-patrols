@@ -919,7 +919,7 @@ def create_new_cat(
                         "sometimes",
                     ]:
                         continue
-                    if condition in ['manx syndrome', 'ocular albinism', 'albinism', 'rabbit gait', 'fully hairless', 'partially hairless']:
+                    if condition in ['manx syndrome', 'ocular albinism', 'albinism', 'rabbit gait', 'fully hairless', 'partially hairless', "bad back", "narrowed chest", "bumpy skin"]:
                         continue
                     # next part ensures that a kit won't get a condition that takes too long to reveal
                     age = new_cat.moons

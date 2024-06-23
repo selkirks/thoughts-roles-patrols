@@ -271,5 +271,11 @@
             "r_c has quietly begun making m_c comfortable... or as comfortable as {PRONOUN/m_c/subject} can be while hacking blood.",
             "m_c has been hacking up blood, {PRONOUN/m_c/poss} body growing weaker and weaker.  {PRONOUN/m_c/subject/CAP} may not last much longer."
         ]
+    },
+    "bumpy skin" : {
+        "cyst" : [
+            "r_c urges m_c to keep the area extra clean after one of the bumps pops.",
+            "One of the bumps on m_c's skin has popped, but {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} working to keep it clean."
+        ]
     }
 }

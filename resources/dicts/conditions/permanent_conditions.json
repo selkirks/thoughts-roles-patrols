@@ -951,5 +951,29 @@
             "juniper",
             "ragwort"
         ]
+    },
+    "bumpy skin": {
+        "severity": "minor",
+        "congenital": "always",
+        "moons_until": 36,
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "illness_infectiousness": [],
+        "risks": [
+            {
+                "name": "cyst",
+                "chance": 20
+            }
+        ],
+        "herbs": [
+            "moss"
+        ]
     }
 }
