@@ -816,6 +816,11 @@ class Cat:
             self.get_permanent_condition('albinism', born_with=True, genetic=True)
         elif('albino' in self.genotype.lefteyetype or self.genotype.pinkdilute[0] == 'dp'):
             self.get_permanent_condition('ocular albinism', born_with=True, genetic=True)
+        
+        if self.phenotype.length == 'hairless':
+            self.get_permanent_condition('fully hairless', born_with=True, genetic=True)
+        if self.phenotype.length == 'fur-pointed' or 'patchy ' in self.phenotype.furtype:
+            self.get_permanent_condition('partially hairless', born_with=True, genetic=True)
 
     @property
     def mentor(self):
@@ -2292,7 +2297,7 @@ class Cat:
             )
             return
         
-        if not genetic and name in ["manx syndrome", "rabbit gait", "albinism", "ocular albinism"]:
+        if not genetic and name in ["manx syndrome", "rabbit gait", "albinism", "ocular albinism", 'fully hairless', 'partially hairless']:
             return
         if "blind" in self.permanent_condition and name == "failing eyesight":
             return
@@ -2325,6 +2330,8 @@ class Cat:
             )  # creating a range in which a condition can present
             moons_until = max(moons_until, 0)
 
+        if name == 'partially hairless' and self.phenotype.length != 'fur-pointed':
+            moons_until = 11
         if born_with and self.status not in ["kitten", "newborn"]:
             moons_until = -2
         elif born_with is False:

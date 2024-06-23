@@ -1135,7 +1135,7 @@
       "flamboyant",
       "rebellious"
     ],
-    "After m_c touches noses with (mentor), {PRONOUN/m_c/subject} immediately {VERB/m_c/run/runs} towards the medicine den, boasting that {PRONOUN/m_c/subject} will be the best healer any Clan has ever seen."
+    "After m_c touches noses with (mentor), {PRONOUN/m_c/subject} immediately {VERB/m_c/run/runs} towards the healer den, boasting that {PRONOUN/m_c/subject} will be the best healer any Clan has ever seen."
   ],
   "med_app_26": [
     [
@@ -1465,7 +1465,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "(previous_mentor) still remembers when (old_name) was just a kit batting around in the medicine den, asking endless questions about everything under the sun. (previous_mentor) chuckles with fondness as m_c asks why {PRONOUN/m_c/poss} new name was chosen with shining eyes and twitching whiskers."
+    "(previous_mentor) still remembers when (old_name) was just a kit batting around in the healer den, asking endless questions about everything under the sun. (previous_mentor) chuckles with fondness as m_c asks why {PRONOUN/m_c/poss} new name was chosen with shining eyes and twitching whiskers."
   ],
   "med_8": [
     [
@@ -1728,7 +1728,7 @@
       "insecure",
       "gloomy"
     ],
-    "While the rest of the Clan may not understand it, (old_name) enjoys {PRONOUN/m_c/poss} time alone in the medicine den. In fact, now that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} m_c, {PRONOUN/m_c/subject} can't wait to get back to it - and away from the center of attention."
+    "While the rest of the Clan may not understand it, (old_name) enjoys {PRONOUN/m_c/poss} time alone in the healer den. In fact, now that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} m_c, {PRONOUN/m_c/subject} can't wait to get back to it - and away from the center of attention."
   ],
   "med_29": [
     [

@@ -685,7 +685,7 @@
     "manx syndrome": {
         "severity": "minor",
         "congenital": "always",
-        "moons_until": 1,
+        "moons_until": 0,
         "mortality": {
             "newborn": 0,
             "kitten": 0,
@@ -780,6 +780,88 @@
         "herbs": [
             "poppy",
             "juniper"
+        ]
+    },
+    "fully hairless": {
+        "severity": "major",
+        "congenital": "always",
+        "moons_until": 0,
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+            {
+                "name": "body sunburn",
+                "chance": 50
+            },
+            {
+                "name": "itchy skin",
+                "chance": 75
+            },
+            {
+                "name": "ear infection",
+                "chance": 100
+            },
+            {
+                "name" : "failing eyesight",
+                "chance": 150
+            },
+            {
+                "name" : "shivering",
+                "chance": 50
+            },
+            {
+                "name" : "frostbite",
+                "chance": 100
+            }
+        ],
+        "herbs": [
+            
+        ]
+    },
+    "partially hairless": {
+        "severity": "major",
+        "congenital": "always",
+        "moons_until": 0,
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+            {
+                "name": "body sunburn",
+                "chance": 50
+            },
+            {
+                "name": "itchy skin",
+                "chance": 75
+            },
+            {
+                "name" : "shivering",
+                "chance": 50
+            },
+            {
+                "name" : "frostbite",
+                "chance": 100
+            }
+        ],
+        "herbs": [
+            
         ]
     }
 }

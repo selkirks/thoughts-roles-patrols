@@ -94,5 +94,13 @@
     "ocular albinism": [
         "m_c's eyes are rather unique. Even in fairly normal light {PRONOUN/m_c/poss} pupils look reddish.",
         "m_c has always been squinting, complaining about the light. Upon inspections, {PRONOUN/m_c/poss} eyes are rather odd."
+    ],
+    "fully hairless": [
+        "Where most kittens are balls of fuzz, m_c looks to lack almost any trace of fur.",
+        "m_c lacks most any kitten fuzz."
+    ],
+    "partially hairless": [
+        "m_c is a rather odd case - fur in some places, no fur in others.",
+        "m_c is a rather odd case - fur in some places, no fur in others."
     ]
 }

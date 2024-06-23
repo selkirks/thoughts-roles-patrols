@@ -64,6 +64,9 @@
     "Starvation finally caught up to m_c.",
     "Skinny and exhausted, m_c could no longer continue without food.",
     "The lack of food has finally killed m_c."
+  ],
+  "ear infection" : [
+    "m_c's ear infection has gone too deep, {PRONOUN/m_c/subject} never woke up from {PRONOUN/m_c/poss} sleep."
   ]
 
 }

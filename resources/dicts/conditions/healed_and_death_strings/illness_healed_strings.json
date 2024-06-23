@@ -87,5 +87,11 @@
 	"starving": [
         "m_c's paws no longer feel quite so heavy. {PRONOUN/m_c/subject/CAP} can tell that {PRONOUN/m_c/subject} still need to eat more, but at least the situation isn't as dire.",
         "m_c still feels the rumbles of hunger in {PRONOUN/m_c/poss} belly, but it's nothing compared to the emptiness {PRONOUN/m_c/subject}'d so recently experienced."
+    ],
+    "itchy skin" : [
+        "m_c thanks the stars now that the urge to scratch is gone."
+    ],
+    "ear infection" : [
+        "m_c's ears feel much better."
     ]
 }
