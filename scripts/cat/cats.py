@@ -825,9 +825,9 @@ class Cat:
         if self.genotype.munch[0] == 'Mk':
             if random() < 0.33:
                 self.get_permanent_condition('constant joint pain', born_with=True, genetic=True, custom_reveal=randint(24, 120))
-            if random() < 0.15:
+            if random() < 0.2:
                 self.get_permanent_condition('bad back', born_with=True, genetic=True)
-            if random() < 0.1:
+            if random() < 0.05:
                 self.get_permanent_condition('narrowed chest', born_with=True, genetic=True)
 
 
