@@ -934,15 +934,15 @@
             },
             {
                 "name": "greencough",
-                "chance": 40
+                "chance": 60
             },
             {
                 "name": "yellowcough",
-                "chance": 80
+                "chance": 120
             },
             {
                 "name": "redcough",
-                "chance": 120
+                "chance": 180
             }
         ],
         "herbs": [
