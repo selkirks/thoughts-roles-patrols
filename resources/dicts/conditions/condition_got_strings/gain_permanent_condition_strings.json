@@ -106,6 +106,38 @@
 
         ]
     },
+    "greencough": {
+      "raspy lungs": [
+        "r_c places a bunch of fragrant herbs under m_c's nose, hoping the scent will help the rasp in {PRONOUN/m_c/poss} throat {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} had since {PRONOUN/m_c/poss} current bout of greencough. Unfortunately it seems this rasp may never leave.",
+        "The damage to m_c's lungs is permanent - r_c gives {PRONOUN/m_c/object} strict instructions about not overexerting {PRONOUN/m_c/self}.",
+          "Ever since {PRONOUN/m_c/subject}'s case of greencough, m_c's lungs haven't felt right."
+
+      ]
+    },
+    "yellowcough": {
+      "raspy lungs": [
+        "r_c places a bunch of fragrant herbs under m_c's nose, hoping the scent will help the rasp in {PRONOUN/m_c/poss} throat {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} had since {PRONOUN/m_c/poss} current bout of yellowcough. Unfortunately it seems this rasp may never leave.",
+        "The damage to m_c's lungs is permanent - r_c gives {PRONOUN/m_c/object} strict instructions about not overexerting {PRONOUN/m_c/self}.",
+          "Ever since {PRONOUN/m_c/subject}'s case of yellowcough, m_c's lungs haven't felt right."
+
+      ]
+    },
+    "redcough": {
+      "raspy lungs": [
+        "r_c places a bunch of fragrant herbs under m_c's nose, hoping the scent will help the rasp in {PRONOUN/m_c/poss} throat {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} had since {PRONOUN/m_c/poss} current bout of redcough. Unfortunately it seems this rasp may never leave.",
+        "The damage to m_c's lungs is permanent - r_c gives {PRONOUN/m_c/object} strict instructions about not overexerting {PRONOUN/m_c/self}.",
+          "Ever since {PRONOUN/m_c/subject}'s case of redcough, m_c's lungs haven't felt right."
+
+      ]
+    },
+    "kittencough": {
+      "raspy lungs": [
+        "r_c places a bunch of fragrant herbs under m_c's nose, hoping the scent will help the rasp in {PRONOUN/m_c/poss} throat {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} had since {PRONOUN/m_c/poss} current bout of kittencough. Unfortunately it seems this rasp may never leave.",
+        "The damage to m_c's lungs is permanent - r_c gives {PRONOUN/m_c/object} strict instructions about not overexerting {PRONOUN/m_c/self}.",
+          "Ever since {PRONOUN/m_c/subject}'s case of kittencough, m_c's lungs haven't felt right."
+
+      ]
+    },
     "severe burn": {
         "lost their tail": [
             "m_c makes a weak, very bad joke about {PRONOUN/m_c/poss} tail smelling like Twoleg food. Gently, r_c breaks the news that {PRONOUN/m_c/poss} burned flesh is going to need to be removed.",
