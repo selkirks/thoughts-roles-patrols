@@ -3484,10 +3484,10 @@
     "season": ["any"],
     "sub_type": ["ceremony", "accessory"],
     "weight": 20,
-    "event_text": "r_c feels so lucky to have {PRONOUN/r_c/poss} own sibling become a medicine cat apprentice. Knowing how time consuming it is to gather herbs, r_c spends a long time gathering up acc_plural to help out m_c. While m_c appreciates the efforts, none of these are particularly useful. Instead m_c uses the acc_plural to decorate {PRONOUN/m_c/poss} pelt.",
+    "event_text": "r_c feels so lucky to have {PRONOUN/r_c/poss} own sibling become a healer apprentice. Knowing how time consuming it is to gather herbs, r_c spends a long time gathering up acc_plural to help out m_c. While m_c appreciates the efforts, none of these are particularly useful. Instead m_c uses the acc_plural to decorate {PRONOUN/m_c/poss} pelt.",
     "new_accessory": ["HERBS", "DRY HERBS"],
     "m_c": {
-      "status": ["medicine cat apprentice"],
+      "status": ["healer apprentice"],
       "relationship_status":["siblings"]
     },
     "r_c": {
@@ -3545,7 +3545,7 @@
     "event_text": "m_c has been so excited for {PRONOUN/m_c/poss} first lesson with r_c. However, instead of something like hunting or moss gathering, r_c takes {PRONOUN/m_c/object} on a tour of the territory. At the end of the lesson, r_c gives m_c acc_plural, saying {PRONOUN/r_c/subject} {VERB/r_c/are/is} glad to be m_c's mentor.",
     "new_accessory": ["WILD", "PLANT"],
     "m_c": {
-      "status": ["apprentice", "medicine cat apprentice", "mediator apprentice"],
+      "status": ["apprentice", "healer apprentice", "mediator apprentice"],
       "relationship_status":["app/mentor"]
     },
     "r_c": {
@@ -3578,7 +3578,7 @@
     "event_text": "As a new mentor, r_c wants to make a good initial impression on {PRONOUN/r_c/poss} apprentice, and after some careful consideration {PRONOUN/r_c/subject} {VERB/r_c/decide/decides} the best way is a gift. Taking m_c to the side, r_c gives {PRONOUN/m_c/object} acc_plural, telling {PRONOUN/m_c/object} with a soft voice that if m_c has any sort of issue then {PRONOUN/m_c/subject} can come to {PRONOUN/r_c/object} for help.",
     "new_accessory": ["WILD", "PLANT"],
     "m_c": {
-      "status": ["apprentice", "medicine cat apprentice", "mediator apprentice"],
+      "status": ["apprentice", "healer apprentice", "mediator apprentice"],
       "relationship_status":["app/mentor"]
     },
     "r_c": {
@@ -3611,7 +3611,7 @@
     "event_text": "m_c yowls in shock, claws unsheathing from an unexpected to weight pinning {PRONOUN/m_c/object}. When {PRONOUN/m_c/subject} {VERB/m_c/are/is} able to get up, m_c's surprised and a bit upset to see that it had been {PRONOUN/m_c/poss} mentor who attacked {PRONOUN/m_c/object}. r_c doesn't seem to notice m_c's discomfort as {PRONOUN/r_c/subject} excitedly tell m_c about the acc_plural that now adorns {PRONOUN/m_c/poss} pelt.",
     "new_accessory": ["WILD", "PLANT"],
     "m_c": {
-      "status": ["apprentice", "medicine cat apprentice", "mediator apprentice"],
+      "status": ["apprentice", "healer apprentice", "mediator apprentice"],
       "relationship_status":["app/mentor"]
     },
     "r_c": {
