@@ -2990,6 +2990,8 @@ class Genotype:
             'right back bicolour2' : 'back leg', 
             'left back bicolour2' : 'back leg'
         }
+        if not self.somatic.get('gene', False):
+            return ""
 
         return self.somatic['gene'] + ' mutated to \'' + self.somatic['allele'] + "\' on " + body[self.somatic['base']]
 
