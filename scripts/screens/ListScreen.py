@@ -448,6 +448,8 @@ class ListScreen(Screens):
             manager=MANAGER,
         )  # Text will be filled in later
 
+
+
         # Determine the starting list of cats.
         self.get_cat_list()
         self.update_cat_list()
