@@ -1144,7 +1144,8 @@ class Events:
                                             main_cat=kit,
                                             random_cat=random.choice(cats),
                                             freshkill_pile=game.clan.freshkill_pile)
-                    kit.moons -= 1
+                    if kit.dead:
+                        kit.moons -= 1
 
         if len(fading_kits) > 0:
             event_text = "In the past moon, "
@@ -1153,7 +1154,7 @@ class Events:
                 event_text += " have"
             else:
                 event_text += " has"
-            event_text += " faded over the course of a few days."
+            event_text += " faded over the course of a week."
             game.cur_events_list.append(Single_Event(event_text, ['birth_death'], fading_kits))
         
         return fading_kits
@@ -1244,6 +1245,7 @@ class Events:
 
         cat.relationship_interaction()
         cat.thoughts()
+        self.handle_colour_changes(cat)
 
         # relationships have to be handled separately, because of the ceremony name change
         if not cat.dead and not cat.outside:
@@ -1255,7 +1257,6 @@ class Events:
 
         self.invite_new_cats(cat)
         self.other_interactions(cat)
-        self.handle_colour_changes(cat)
         # self.gain_accessories(cat)
 
         # switches between the two death handles
