@@ -311,6 +311,7 @@
 		"brindled_bicolour" : 250,
 		"vitiligo" : 100,
 		"random_mutation" : 100,
+		"somatic_mutation" : 150,
 		"kittypet_breed" : 75,
 		"other_breed" : 1000
 	},

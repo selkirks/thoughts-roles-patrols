@@ -16,6 +16,7 @@ build/
 develop-eggs/
 dist/
 downloads/
+medibang/
 eggs/
 .eggs/
 lib/

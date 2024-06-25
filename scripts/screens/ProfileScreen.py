@@ -2446,7 +2446,7 @@ class ProfileScreen(Screens):
                 if self.genetic_text_box:
                     self.genetic_text_box.kill()
 
-                self.genelist = str(self.the_cat.phenotype.PhenotypeOutput()) + "\n" + str(self.the_cat.genotype.ShowGenes())
+                self.genelist = str(self.the_cat.phenotype.PhenotypeOutput()) + "\n" + str(self.the_cat.genotype.ShowGenes()) + "\n" + self.the_cat.genotype.FormatSomatic()
                 if(self.the_cat.genotype.chimera):
                     chimpheno = Phenotype(self.the_cat.genotype.chimerageno)
                     self.genelist += "\n\n" + str(chimpheno.PhenotypeOutput(self.the_cat.genotype.chimerageno.gender)) + "\n" + str(self.the_cat.genotype.chimerageno.ShowGenes())

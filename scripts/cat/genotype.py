@@ -121,7 +121,11 @@ class Genotype:
         self.extraeyecolour = ""
 
         self.breeds = {}
+        self.somatic = {}
 
+    def __getitem__(self, name):
+        return getattr(self, name)
+    
     def fromJSON(self, jsonstring):
         #jsonstring = json.loads(jsonstring)
 
@@ -239,6 +243,10 @@ class Genotype:
             self.breeds = json.loads(jsonstring["breeds"])
         except:
             self.breeds = {}
+        try:
+            self.somatic = json.loads(jsonstring["somatic"])
+        except:
+            self.somatic = {}
 
         self.PolyEval()
         self.EyeColourName()
@@ -328,7 +336,8 @@ class Genotype:
             "extraeyetype" :self.extraeyetype,
             "extraeyecolour" : self.extraeyecolour,
 
-            "breeds" : json.dumps(self.breeds)
+            "breeds" : json.dumps(self.breeds),
+            "somatic" : json.dumps(self.somatic)
         }
 
     def Generator(self, special=None):
@@ -893,6 +902,9 @@ class Genotype:
             self.piggrade = 11
 
         self.GeneSort()
+
+        if randint(1, self.odds['somatic_mutation']) == 1:
+            self.GenerateSomatic()
 
         self.EyeColourFinder()
 
@@ -1464,6 +1476,9 @@ class Genotype:
 
         self.GeneSort()
 
+        if randint(1, self.odds['somatic_mutation']) == 1:
+            self.GenerateSomatic()
+
         self.EyeColourFinder()
 
         self.refgrade = "R" + str(self.refgrade)
@@ -1585,6 +1600,9 @@ class Genotype:
             self.piggrade = 11
 
         self.GeneSort()
+
+        if randint(1, self.odds['somatic_mutation']) == 1:
+            self.GenerateSomatic()
 
         self.EyeColourFinder()
 
@@ -2062,6 +2080,9 @@ class Genotype:
             self.Mutate()
 
         self.GeneSort()
+
+        if randint(1, self.odds['somatic_mutation']) == 1:
+            self.GenerateSomatic()
         self.PolyEval()
         self.EyeColourFinder()
 
@@ -2866,3 +2887,113 @@ class Genotype:
                 self.Mutate()
         print(which)
     
+    def GenerateSomatic(self):
+        self.somatic["base"] = choice(['Somatic/leftface', 'Somatic/rightface', 'Somatic/tail', 
+                                    'underbelly1', 'right front bicolour2', 'left front bicolour2', 
+                                    'right back bicolour2', 'left back bicolour2'])
+
+        possible_mutes = {
+        "furtype" : ["wirehair", "laperm", "cornish", "urals", "tenn", "fleece", "sedesp"],
+        "other" : ["pinkdilute", "ext", "sunshine", "karp"],
+        "main" : ["eumelanin", "sexgene", "dilute", "white", "pointgene", "silver", "agouti"]
+        }
+
+        for gene in possible_mutes["furtype"]:
+            if gene in ['wirehair', 'laperm', 'sedesp']:
+                if self[gene][0] in ['Wh', 'Lp', 'Se', 'hr', 're']:
+                    possible_mutes["furtype"].remove(gene)
+            try:
+                if self[gene][0] in ['r', 'ru', 'tr', 'fc']:
+                    possible_mutes["furtype"].remove(gene)
+                elif self[gene][1] in ['R', 'Ru', 'Tr', 'Fc']:
+                    possible_mutes["furtype"].remove(gene)
+            except:
+                continue
+        for gene in possible_mutes["other"]:
+            if gene == 'sunshine' and (self.agouti[0] == 'a' or self.ext[0] == 'Eg'):
+                possible_mutes["other"].remove(gene)
+                continue
+            elif gene in ['ext', 'karp', 'ghosting']:
+                if self[gene][0] in ['Eg', 'K', 'Gh']:
+                    possible_mutes["other"].remove(gene)
+                    continue
+            if self[gene][0] in ['dp', 'ec', 'ea', 'er', 'sh', 'sg', 'fg', 'lb', 'st', 'gl']:
+                possible_mutes["other"].remove(gene)
+            elif self[gene][1] in ['Dp', 'E', 'N', 'Lb', 'St', 'Gl']:
+                possible_mutes["other"].remove(gene)
+        for gene in possible_mutes["main"]:
+            if gene in ['mack', 'ticked', 'silver'] and (self.agouti[0] == 'a' or self.ext[0] == 'Eg'):
+                possible_mutes["main"].remove(gene)
+                continue
+            elif gene == 'agouti' and self.ext[0] == 'Eg':
+                possible_mutes["main"].remove(gene)
+                continue
+            elif gene in ['sexgene', 'white']:
+                if self[gene][0] in ['O', 'W', 'ws', 'wt']:
+                    possible_mutes["main"].remove(gene)
+                    continue
+            if self[gene][0] in ['b', 'bl', 'd', 'wg', 'wsal', 'cs', 'cb', 'cm', 'c', 'Apb', 'a']:
+                possible_mutes["main"].remove(gene)
+            elif self[gene][1] in ['B', 'D', 'w', 'C', 'A']:
+                possible_mutes["main"].remove(gene)
+        
+        whichgene = ['furtype', 'other', 'main', 'other', 'main', 'main']
+        if self.white[0] == 'W':
+            whichgene = ['furtype']
+        for cate in whichgene:
+            if len(possible_mutes[cate]) == 0:
+                whichgene.remove(cate);
+        if len(whichgene) > 0:
+            self.somatic["gene"] = choice(possible_mutes[choice(whichgene)])
+
+        
+        if self.white[1] in ['ws', 'wt'] and self.somatic["base"] not in ['Somatic/leftface', 'Somatic/rightface', 'Somatic/tail']:
+            self.somatic["base"] = choice(['Somatic/leftface', 'Somatic/rightface', 'Somatic/tail'])
+        if self.somatic["gene"] in possible_mutes["furtype"]:
+            self.somatic["base"] = "Somatic/tail"
+        
+        alleles = {
+            "wirehair" : ['Wh'],
+            "laperm" : ['Lp'],
+            "cornish" : ['r'],
+            "urals" : ['ru'],
+            "tenn" : ['tr'],
+            "fleece" : ['fc'],
+            "sedesp" : ['Se'],
+
+            'pinkdilute' : ['dp'],
+            "ext" : ['Eg', 'ec', 'er', 'ea'],
+            "sunshine" : ['sh', 'sg', 'fg'],
+            "karp" : ['K'],
+            "bleach" : ['lb'],
+            "ghosting" : ['Gh'],
+
+            'eumelanin' : ['b', 'bl'],
+            'sexgene' : ['O'],
+            "dilute" : ['d'],
+            "white" : ['W', 'wsal'],
+            "pointgene" : ['cb', 'cs', 'cm', 'c'],
+            "silver" : ['I'],
+            "agouti" : ['Apb', 'a']
+        }
+
+        self.somatic["allele"] = choice(alleles[self.somatic['gene']])
+
+    def FormatSomatic(self):
+        body = {
+            "Somatic/leftface" : "face",
+            "Somatic/rightface" : "face",
+            "Somatic/tail" : 'tail',
+            "underbelly1" : 'underbelly',
+            'right front bicolour2' : 'front leg', 
+            'left front bicolour2' : 'front leg', 
+            'right back bicolour2' : 'back leg', 
+            'left back bicolour2' : 'back leg'
+        }
+
+        return self.somatic['gene'] + ' mutated to \'' + self.somatic['allele'] + "\' on " + body[self.somatic['base']]
+
+
+
+
+

@@ -12,6 +12,7 @@ from itertools import combinations
 from random import choice, choices, randint, random, sample, randrange
 from sys import exit as sys_exit
 from typing import List
+from copy import deepcopy
 
 import pygame
 
@@ -2479,9 +2480,22 @@ def generate_sprite(
         (sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA
     )
 
-    vitiligo = ['MOON', 'PHANTOM', 'POWDER', 'BLEACHED', 'VITILIGO', 'VITILIGOTWO', 'SMOKEY']
+    def draw_sprite(genotype, phenotype, cat_sprite, somatic = False):
 
-    try:
+        new_sprite = pygame.Surface(
+            (sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA
+        )
+
+        vitiligo = ['MOON', 'PHANTOM', 'POWDER', 'BLEACHED', 'VITILIGO', 'VITILIGOTWO', 'SMOKEY']
+        
+        if somatic:
+            genotype[genotype.somatic["gene"]][0] = genotype.somatic["allele"]
+            genotype.GeneSort()
+            if genotype.somatic["gene"] == 'sexgene':
+                genotype.sexgene = ['O', 'Y']
+            phenotype = Phenotype(genotype)
+            phenotype.PhenotypeOutput(genotype.gender)
+
         solidcolours = {
             'black' : 0,
             'chocolate' : 1,
@@ -3239,13 +3253,13 @@ def generate_sprite(
             
             return gensprite
 
-        gensprite.blit(GenSprite(cat.genotype, cat.phenotype), (0, 0))
+        gensprite.blit(GenSprite(genotype, phenotype), (0, 0))
 
         if(cat.genotype.chimera):
             chimerapatches = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
             chimerapatches.blit(sprites.sprites['tortiemask' + cat.genotype.chimerapattern + cat_sprite], (0, 0))
-            chimerapheno = Phenotype(cat.genotype.chimerageno)
-            chimerapatches.blit(GenSprite(cat.genotype.chimerageno, chimerapheno), (0, 0), special_flags=pygame.BLEND_RGB_MULT)
+            chimerapheno = Phenotype(genotype.chimerageno)
+            chimerapatches.blit(GenSprite(genotype.chimerageno, chimerapheno), (0, 0), special_flags=pygame.BLEND_RGB_MULT)
             gensprite.blit(chimerapatches, (0, 0))
 
         if not scars_hidden:
@@ -3317,7 +3331,7 @@ def generate_sprite(
         earlines.set_colorkey((0, 0, 255))
 
         lineart.blit(earlines, (0, 0))
-        if('rexed' in cat.phenotype.furtype or 'wiry' in cat.phenotype.furtype):
+        if('rexed' in phenotype.furtype or 'wiry' in phenotype.furtype):
             if not dead:
                 bodylines.blit(sprites.sprites['rexlineart' + cat_sprite], (0, 0))
             elif cat.df:
@@ -3404,10 +3418,17 @@ def generate_sprite(
                 temp = sprites.sprites["fadestarclan" + stage + cat_sprite].copy()
                 temp.blit(new_sprite, (0, 0))
                 new_sprite = temp
+        
+        return new_sprite
 
-        # reverse, if assigned so
-        if cat.pelt.reverse:
-            new_sprite = pygame.transform.flip(new_sprite, True, False)
+    try:
+        geno = deepcopy(cat.genotype)
+        new_sprite = draw_sprite(geno, cat.phenotype, cat_sprite)
+        if cat.genotype.somatic.get('base', False):
+            som_sprite = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
+            som_sprite.blit(sprites.sprites[geno.somatic["base"] + cat_sprite], (0, 0))
+            som_sprite.blit(draw_sprite(geno, cat.phenotype, cat_sprite, somatic=True), (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
+            new_sprite.blit(som_sprite, (0, 0))
 
     except (TypeError, KeyError):
         logger.exception("Failed to load sprite")
@@ -3416,6 +3437,10 @@ def generate_sprite(
         new_sprite = image_cache.load_image(
             f"sprites/error_placeholder.png"
         ).convert_alpha()
+    
+    # reverse, if assigned so
+    if cat.pelt.reverse:
+        new_sprite = pygame.transform.flip(new_sprite, True, False)
 
     return new_sprite
 
