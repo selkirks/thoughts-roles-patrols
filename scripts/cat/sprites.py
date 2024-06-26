@@ -1,7 +1,8 @@
+import os
 import pygame
 
 import ujson
-
+from scripts.cat.names import names
 from scripts.game_structure.game_essentials import game
 
 class Sprites():
