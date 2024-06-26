@@ -630,7 +630,7 @@ class Pregnancy_Events:
                 involved_cats.append(WhoDied.ID)
                 RandomChoice = WhoDied
             event_list.append(choice(events["birth"]["dead_mate"]))
-        elif len(cat.mate) < 1 and not Both_Unmated and not Dead_Mate:
+        elif len(cat.mate) < 1 and Both_Unmated and not Dead_Mate:
             involved_cats.append(RandomChoice.ID)
             event_list.append(choice(events["birth"]["both_unmated"]))
         elif (len(cat.mate) > 0 and Affair) or\
