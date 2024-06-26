@@ -322,7 +322,7 @@ class Pelt():
         pelt_white = new_pelt.init_pattern_color(parents, gender)
         new_pelt.init_white_patches(pelt_white, parents)
         new_pelt.init_sprite()
-        new_pelt.init_scars(age, dead_for)
+        new_pelt.init_scars(age)
         new_pelt.init_accessories(age)
         new_pelt.init_eyes(parents)
         new_pelt.init_pattern()
