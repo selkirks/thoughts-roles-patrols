@@ -480,6 +480,11 @@
     "plural": "yellow primroses",
     "singular": "yellow primroses"
   },
+    "BUTTERFLIES": {
+    "default": "butterflies",
+    "plural": "butterflies",
+    "singular": "swarm of butterflies"
+  },
   "HESPERIS": {
     "default": "hesperis",
     "plural": "hesperis flowers",
@@ -959,6 +964,171 @@
     "default": "bundle of moss",
     "plural": "moss",
     "singular": "bundle of moss"
+  },
+  "TWIGS": {
+    "default": "twigs",
+    "plural": "twigs",
+    "singular": "twig"
+  },
+  "MONSTERA": {
+    "default": "monstera leaf",
+    "plural": "monstera leaves",
+    "singular": "monstera leaf"
+  },
+  "WILD FLOWERS": {
+    "default": "wild flowers",
+    "plural": "wild flowers",
+    "singular": "bunch of flowers"
+  },
+  "SHELL": {
+    "default": "sea shell",
+    "plural": "shells",
+    "singular": "shell"
+  },
+  "CRYSTAL": {
+    "default": "crystal",
+    "plural": "crystal shards",
+    "singular": "crystal formation"
+  },
+  "SERPENT": {
+    "default": "snake skeleton",
+    "plural": "snake bones",
+    "singular": "snake skeleton"
+  },
+  "MOSS BALL": {
+    "default": "moss ball",
+    "plural": "moss balls",
+    "singular": "moss ball"
+  },
+  "CRIMSONFANG": {
+    "default": "crimson dog-tooth collar",
+    "plural": "crimson dog-tooth collars",
+    "singular": "crimson dog-tooth collar"
+  },
+  "BLUEFANG": {
+    "default": "blue dog-tooth collar",
+    "plural": "blue dog-tooth collars",
+    "singular": "blue dog-tooth collar"
+  },
+  "CYANFANG": {
+    "default": "cyan dog-tooth collar",
+    "plural": "cyan dog-tooth collars",
+    "singular": "cyan dog-tooth collar"
+  },
+  "YELLOWFANG": {
+    "default": "yellow dog-tooth collar",
+    "plural": "yellow dog-tooth collars",
+    "singular": "yellow dog-tooth collar"
+  },
+  "LIMEFANG": {
+    "default": "lime dog-tooth collar",
+    "plural": "lime dog-tooth collars",
+    "singular": "lime dog-tooth collar"
+  },
+  "GREENFANG": {
+    "default": "green dog-tooth collar",
+    "plural": "green dog-tooth collars",
+    "singular": "green dog-tooth collar"
+  },
+  "REDFANG": {
+    "default": "red dog-tooth collar",
+    "plural": "red dog-tooth collars",
+    "singular": "red dog-tooth collar"
+  },
+  "RAINBOWFANG": {
+    "default": "rainbow dog-tooth collar",
+    "plural": "rainbow dog-tooth collars",
+    "singular": "rainbow dog-tooth collar"
+  },
+  "BLACKFANG": {
+    "default": "black dog-tooth collar",
+    "plural": "black dog-tooth collars",
+    "singular": "black dog-tooth collar"
+  },
+  "SPIKESFANG": {
+    "default": "spiky dog-tooth collar",
+    "plural": "spiky dog-tooth collars",
+    "singular": "spiky dog-tooth collar"
+  },
+  "WHITEFANG": {
+    "default": "white dog-tooth collar",
+    "plural": "white dog-tooth collars",
+    "singular": "white dog-tooth collar"
+  },
+  "PINKFANG": {
+    "default": "pink dog-tooth collar",
+    "plural": "pink dog-tooth collars",
+    "singular": "pink dog-tooth collar"
+  },
+  "PURPLEFANG": {
+    "default": "purple dog-tooth collar",
+    "plural": "purple dog-tooth collars",
+    "singular": "purple dog-tooth collar"
+  },
+  "MULTIFANG": {
+    "default": "pale rainbow dog-tooth collar",
+    "plural": "pale rainbow dog-tooth collars",
+    "singular": "pale rainbow dog-tooth collar"
+  },
+  "INDIGOFANG": {
+    "default": "indigo dog-tooth collar",
+    "plural": "indigo dog-tooth collars",
+    "singular": "indigo dog-tooth collar"
+  },
+  "SUNGLASSES": {
+    "default": "sunglasses",
+    "plural": "pair of sunglasses",
+    "singular": "sunglasses"
+  },
+  "COWBOY HAT": {
+    "default": "cowboy hat",
+    "plural": "cowboy hats",
+    "singular": "cowboy hat"
+  },
+  "RED BANDANA": {
+    "default": "red bandana",
+    "plural": "red bandanas",
+    "singular": "red bandana"
+  },
+  "ORANGE BANDANA": {
+    "default": "orange bandana",
+    "plural": "orange bandanas",
+    "singular": "orange bandana"
+  },
+  "YELLOW BANDANA": {
+    "default": "yellow bandana",
+    "plural": "yellow bandanas",
+    "singular": "yellow bandana"
+  },
+  "GREEN BANDANA": {
+    "default": "green bandana",
+    "plural": "green bandanas",
+    "singular": "green bandana"
+  },
+  "BLUE BANDANA": {
+    "default": "blue bandana",
+    "plural": "blue bandanas",
+    "singular": "blue bandana"
+  },
+  "PURPLE BANDANA": {
+    "default": "purple bandana",
+    "plural": "purple bandanas",
+    "singular": "purple bandana"
+  },
+  "PINK BANDANA": {
+    "default": "pink bandana",
+    "plural": "pink bandanas",
+    "singular": "pink bandana"
+  },
+  "BLACK BANDANA": {
+    "default": "black bandana",
+    "plural": "black bandanas",
+    "singular": "black bandana"
+  },
+  "WHITE BANDANA": {
+    "default": "white bandana",
+    "plural": "white bandanas",
+    "singular": "white bandana"
   },
   "FLOWER MOSS": {
     "default": "bundle of flowering moss",

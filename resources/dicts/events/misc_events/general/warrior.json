@@ -73,7 +73,9 @@
         "other_cat_skill": null,
         "accessories": [
             "WILD",
-            "PLANT"
+            "PLANT",
+            "WILD2",
+            "PLANT2"
         ]
     },
     {
@@ -96,7 +98,9 @@
         "other_cat_skill": null,
         "accessories": [
             "WILD",
-            "PLANT"
+            "PLANT",
+            "WILD2",
+            "PLANT2"
         ]
     },
     {
@@ -113,7 +117,7 @@
         "other_cat_trait": null,
         "other_cat_skill": null,
         "accessories": [
-            "COLLAR"
+            "COLLAR", "RED BANDANA", "ORANGE BANDANA", "YELLOW BANDANA", "GREEN BANDANA", "BLUE BANDANA", "PURPLE BANDANA", "WHITE BANDANA", "BLACK BANDANA", "PINK BANDANA"
         ]
     },
     {
