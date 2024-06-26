@@ -905,24 +905,7 @@
             "senior adult": 120,
             "senior": 60
         },
-        "illness_infectiousness": [
-            {
-                "name": "running nose",
-                "chance": 4
-            },
-            {
-                "name": "whitecough",
-                "chance": 3
-            },
-            {
-                "name": "greencough",
-                "chance": 5
-            },
-            {
-                "name": "yellowcough",
-                "chance": 4
-            }
-        ],
+        "illness_infectiousness": [],
         "risks": [
             {
                 "name": "running nose",

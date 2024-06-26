@@ -900,7 +900,7 @@ class Pregnancy_Events:
                 i
                 for i in Cat.all_cats_list
                 if i.is_potential_mate(cat, for_love_interest=True)
-                and (samesex or 'Y' in i.genotype.sexgene != 'Y' in cat.genotype.sexgene)
+                and (samesex or xor('Y' in i.genotype.sexgene, 'Y' in cat.genotype.sexgene))
                 and i.ID not in cat.mate
             ]
             if special_affair:
@@ -1373,7 +1373,7 @@ class Pregnancy_Events:
             inverse_chance = game.config["pregnancy"]["primary_chance_unmated"]
         else:
             inverse_chance = game.config["pregnancy"]["modded_primary_chance_unmated"]
-        if len(first_parent.mate) > 0 and not affair:
+        if len(first_parent.mate) > 0:
             if not (clan.clan_settings['modded_kits']):
                 inverse_chance = game.config["pregnancy"]["primary_chance_mated"]
             else:
@@ -1381,7 +1381,7 @@ class Pregnancy_Events:
 
         # SETTINGS
         # - decrease inverse chance if only mated pairs can have kits
-        if clan.clan_settings["single parentage"]:
+        if not clan.clan_settings["single parentage"]:
             inverse_chance = int(inverse_chance * 0.7)
 
         # - decrease inverse chance if affairs are not allowed
@@ -1401,6 +1401,7 @@ class Pregnancy_Events:
         # COMPATIBILITY
         # - decrease / increase depending on the compatibility
         comp = None
+        inv = inverse_chance
         if second_parent:
             for x in second_parent:
                 if comp == True:
@@ -1410,7 +1411,7 @@ class Pregnancy_Events:
                     buff = 0.85
                     if not comp:
                         buff += 0.3
-                    inverse_chance = int(inverse_chance * buff)
+                    inverse_chance = int(inv * buff)
 
 
         average_romantic_love = -1000
@@ -1441,26 +1442,26 @@ class Pregnancy_Events:
                 if x_trust > average_trust:
                     average_trust = x_trust
 
-                if average_romantic_love >= 85:
-                    inverse_chance -= int(inverse_chance * 0.3)
-                elif average_romantic_love >= 55:
-                    inverse_chance -= int(inverse_chance * 0.2)
-                elif average_romantic_love >= 35:
-                    inverse_chance -= int(inverse_chance * 0.1)
+            if average_romantic_love >= 85:
+                inverse_chance -= int(inverse_chance * 0.3)
+            elif average_romantic_love >= 55:
+                inverse_chance -= int(inverse_chance * 0.2)
+            elif average_romantic_love >= 35:
+                inverse_chance -= int(inverse_chance * 0.1)
 
-                if average_comfort >= 85:
-                    inverse_chance -= int(inverse_chance * 0.3)
-                elif average_comfort >= 55:
-                    inverse_chance -= int(inverse_chance * 0.2)
-                elif average_comfort >= 35:
-                    inverse_chance -= int(inverse_chance * 0.1)
+            if average_comfort >= 85:
+                inverse_chance -= int(inverse_chance * 0.3)
+            elif average_comfort >= 55:
+                inverse_chance -= int(inverse_chance * 0.2)
+            elif average_comfort >= 35:
+                inverse_chance -= int(inverse_chance * 0.1)
 
-                if average_trust >= 85:
-                    inverse_chance -= int(inverse_chance * 0.3)
-                elif average_trust >= 55:
-                    inverse_chance -= int(inverse_chance * 0.2)
-                elif average_trust >= 35:
-                    inverse_chance -= int(inverse_chance * 0.1)
+            if average_trust >= 85:
+                inverse_chance -= int(inverse_chance * 0.3)
+            elif average_trust >= 55:
+                inverse_chance -= int(inverse_chance * 0.2)
+            elif average_trust >= 35:
+                inverse_chance -= int(inverse_chance * 0.1)
         
         # AGE
         # - decrease the inverse chance if the whole clan is really old
