@@ -318,8 +318,8 @@ class Pregnancy_Events:
                                                 is_parent=True)[0]
                         outside_parent.thought = "Is wondering what their kits are doing"
                         if random.random() < 0.2:
-                            outside_parent.set_mate(cat.ID)
-                            cat.set_mate(outside_parent.ID)
+                            outside_parent.set_mate(cat)
+                            cat.set_mate(outside_parent)
                     
                     outside_parent = [outside_parent]
 
@@ -529,8 +529,8 @@ class Pregnancy_Events:
                             out_par.thought = f"Is wondering how {cat.name} is doing"
                         
                         if random.random() < 0.2:
-                            out_par.set_mate(cat.ID)
-                            cat.set_mate(out_par.ID)
+                            out_par.set_mate(cat)
+                            cat.set_mate(out_par)
 
                         other_cat.append(out_par)
 
