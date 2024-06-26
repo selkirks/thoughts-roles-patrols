@@ -1,0 +1,54 @@
+{
+  "colour_groups":
+  {
+    "YELLOW": "yellow",
+    "PALE YELLOW": "yellow",
+    "GOLD": "yellow",
+    "BLUE":"blue",
+    "DARK BLUE": "blue",
+    "CYAN": "blue",
+    "BRIGHT BLUE": "blue",
+    "PALE BLUE": "blue",
+    "HAZEL": "green",
+    "PALE GREEN": "green",
+    "GREEN": "green",
+    "EMERALD": "green",
+    "SAGE": "green",
+    "LIME": "green",
+    "AMBER": "red",
+    "COPPER": "red",
+    "HAZELNUT": "red",
+    "DARK AMBER": "red",
+    "RUBY": "red",
+    "CHOCOLATE": "red",
+    "GREY": "monochrome",
+    "DARK GREY": "monochrome",
+    "SLATE": "monochrome",
+    "LIGHT GREY": "monochrome",
+    "HEATHER BLUE": "purple",
+    "LAVENDER": "purple",
+    "PINK": "purple",
+    "SUN-LIT ICE": "special",
+    "LILAC": "special",
+    "DARK HAZEL": "special"
+  },
+  "possible_tints": {
+    "basic": ["orange", "blue", "green", "none", "none"],
+    "yellow": ["green", "orange", "none", "none"],
+    "blue": ["green", "purple", "none", "none"],
+    "green": ["blue", "yellow", "none", "none"],
+    "red": ["orange", "yellow", "none", "none"],
+    "monochrome": ["none", "none"],
+    "purple": ["blue", "none", "none"],
+    "special": ["none", "none"]
+  },
+  "tint_colours":
+  {
+    "orange": [255, 216, 191],
+    "blue": [189, 214, 252],
+    "green": [194, 255, 209],
+    "purple": [219, 196, 255],
+    "yellow": [247, 255, 194],
+    "none": null
+  }
+}

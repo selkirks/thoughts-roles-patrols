@@ -1365,17 +1365,17 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
     # setting the cat_sprite (bc this makes things much easier)
     if not no_not_working and cat.not_working() and age != 'newborn' and game.config['cat_sprites']['sick_sprites']:
         if age in ['kitten', 'adolescent']:
-            cat_sprite = str(19)
+            cat_sprite = str(37)
         else:
-            cat_sprite = str(18)
+            cat_sprite = str(36)
     elif cat.pelt.paralyzed and age != 'newborn':
         if age in ['kitten', 'adolescent']:
-            cat_sprite = str(17)
+            cat_sprite = str(32)
         else:
             if cat.pelt.length == 'long':
-                cat_sprite = str(16)
+                cat_sprite = str(31)
             else:
-                cat_sprite = str(15)
+                cat_sprite = str(30)
     else:
         if age == 'elder' and not game.config['fun']['all_cats_are_newborn']:
             age = 'senior'
@@ -1403,8 +1403,7 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
             else:
                 tortie_pattern = cat.pelt.tortiepattern
 
-            patches = sprites.sprites[
-                tortie_pattern + cat.pelt.tortiecolour + cat_sprite].copy()
+            patches = sprites.sprites[tortie_pattern + cat.pelt.tortiecolour + cat_sprite].copy()
             patches.blit(sprites.sprites["tortiemask" + cat.pelt.pattern + cat_sprite], (0, 0),
                          special_flags=pygame.BLEND_RGBA_MULT)
             # Add patches onto cat.
@@ -1446,11 +1445,19 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
         if cat.pelt.vitiligo:
             new_sprite.blit(sprites.sprites['white' + cat.pelt.vitiligo + cat_sprite], (0, 0))
 
-        # draw eyes & scars1
-        eyes = sprites.sprites['eyes' + cat.pelt.eye_colour + cat_sprite].copy()
+        # draw eyes
         if cat.pelt.eye_colour2 != None:
-            eyes.blit(sprites.sprites['eyes2' + cat.pelt.eye_colour2 + cat_sprite], (0, 0))
-        new_sprite.blit(eyes, (0, 0))
+            eyes = sprites.sprites["eyes" + cat.pelt.eye_colour + cat_sprite].copy().convert_alpha()
+            new_sprite.blit(eyes, (0, 0))
+            second_eye = sprites.sprites["eyes" + cat.pelt.eye_colour2 + cat_sprite].copy().convert_alpha()
+            second_eye.blit(sprites.sprites["eyes2" + cat.pelt.eye_pattern + cat_sprite], (0, 0),
+                            special_flags=pygame.BLEND_RGBA_MULT)
+            new_sprite.blit(second_eye, (0, 0))
+        else:
+            eyes = sprites.sprites['eyes' + cat.pelt.eye_colour + cat_sprite].copy()
+            new_sprite.blit(eyes, (0, 0))
+
+        #scars1
 
         if not scars_hidden:
             for scar in cat.pelt.scars:
@@ -1566,34 +1573,33 @@ def generate_sprite(cat, life_state=None, scars_hidden=False, acc_hidden=False, 
         for i in cat.pelt.accessories:
             if i not in clangen_accessories and game.settings['new accessories'] is False:
                 continue
-            if not acc_hidden:
-                try:
-                    if i in cat.pelt.plant_accessories:
-                        new_sprite.blit(sprites.sprites['acc_herbs' + i + cat_sprite], (0, 0))
-                    elif i in cat.pelt.wild_accessories:
-                        new_sprite.blit(sprites.sprites['acc_wild' + i + cat_sprite], (0, 0))
-                    elif i in cat.pelt.collars:
-                        new_sprite.blit(sprites.sprites['collars' + i + cat_sprite], (0, 0))
-                    elif i in cat.pelt.flower_accessories:
-                        new_sprite.blit(sprites.sprites['acc_flower' + i + cat_sprite], (0, 0))
-                    elif i in cat.pelt.plant2_accessories:
-                        new_sprite.blit(sprites.sprites['acc_plant2' + i + cat_sprite], (0, 0))
-                    elif i in cat.pelt.snake_accessories:
-                        new_sprite.blit(sprites.sprites['acc_snake' + i + cat_sprite], (0, 0))
-                    elif i in cat.pelt.smallAnimal_accessories:
-                        new_sprite.blit(sprites.sprites['acc_smallAnimal' + i + cat_sprite], (0, 0))
-                    elif i in cat.pelt.deadInsect_accessories:
-                        new_sprite.blit(sprites.sprites['acc_deadInsect' + i + cat_sprite], (0, 0))
-                    elif i in cat.pelt.aliveInsect_accessories:
-                        new_sprite.blit(sprites.sprites['acc_aliveInsect' + i + cat_sprite], (0, 0))
-                    elif i in cat.pelt.fruit_accessories:
-                        new_sprite.blit(sprites.sprites['acc_fruit' + i + cat_sprite], (0, 0))
-                    elif i in cat.pelt.crafted_accessories:
-                        new_sprite.blit(sprites.sprites['acc_crafted' + i + cat_sprite], (0, 0))
-                    elif i in cat.pelt.tail2_accessories:
-                        new_sprite.blit(sprites.sprites['acc_tail2' + i + cat_sprite], (0, 0))
-                except:
-                    continue
+        if not acc_hidden:
+            if cat.pelt.accessory in cat.pelt.plant_accessories:
+                new_sprite.blit(sprites.sprites['acc_herbs' + cat.pelt.accessory + cat_sprite], (0, 0))
+            elif cat.pelt.accessory in cat.pelt.wild_accessories:
+                new_sprite.blit(sprites.sprites['acc_wild' + cat.pelt.accessory + cat_sprite], (0, 0))
+            elif cat.pelt.accessory in cat.pelt.collars:
+                new_sprite.blit(sprites.sprites['collars' + cat.pelt.accessory + cat_sprite], (0, 0))
+            elif cat.pelt.accessory in cat.pelt.living_accessories:
+                new_sprite.blit(sprites.sprites['acc_moss' + cat.pelt.accessory + cat_sprite], (0, 0))
+            elif cat.pelt.accessory in cat.pelt.plant2_accessories:
+                new_sprite.blit(sprites.sprites['acc_moss' + cat.pelt.accessory + cat_sprite], (0, 0))
+            elif cat.pelt.accessory in cat.pelt.wild2_accessories:
+                new_sprite.blit(sprites.sprites['acc_moss' + cat.pelt.accessory + cat_sprite], (0, 0))
+            elif cat.pelt.accessory in cat.pelt.beach_accessories:
+                new_sprite.blit(sprites.sprites['acc_moss' + cat.pelt.accessory + cat_sprite], (0, 0))
+            elif cat.pelt.accessory in cat.pelt.mountain_accessories:
+                new_sprite.blit(sprites.sprites['acc_moss' + cat.pelt.accessory + cat_sprite], (0, 0))
+            elif cat.pelt.accessory in cat.pelt.plains_accessories:
+                new_sprite.blit(sprites.sprites['acc_moss' + cat.pelt.accessory + cat_sprite], (0, 0))
+            elif cat.pelt.accessory in cat.pelt.forest_accessories:
+                new_sprite.blit(sprites.sprites['acc_moss' + cat.pelt.accessory + cat_sprite], (0, 0))
+            elif cat.pelt.accessory in cat.pelt.special_accessories:
+                new_sprite.blit(sprites.sprites['acc_moss' + cat.pelt.accessory + cat_sprite], (0, 0))
+            elif cat.pelt.accessory in cat.pelt.dog_collars:
+                new_sprite.blit(sprites.sprites['dogcollars' + cat.pelt.accessory + cat_sprite], (0, 0))
+            elif cat.pelt.accessory in cat.pelt.kitty_accessories:
+                new_sprite.blit(sprites.sprites['acc_kitty' + cat.pelt.accessory + cat_sprite], (0, 0))
 
         # Apply fading fog
         if cat.pelt.opacity <= 97 and not cat.prevent_fading and game.clan.clan_settings["fading"] and dead:
