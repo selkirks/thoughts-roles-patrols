@@ -1206,9 +1206,9 @@ class MakeClanScreen(Screens):
             skin=self.skin,
             white_patches_tint=self.white_patches_tint,
             kitten_sprite=self.kitten_sprite,
-            adol_sprite=self.adolescent_pose if self.adolescent_pose > 2 else self.adolescent_pose + 3,
-            adult_sprite=self.adult_pose if self.adult_pose > 2 else self.adult_pose + 6,
-            senior_sprite=self.elder_pose if self.elder_pose > 2 else self.elder_pose + 12,
+            adol_sprite=self.adolescent_pose if self.adolescent_pose > 5 else self.adolescent_pose + 3,
+            adult_sprite=self.adult_pose if self.adult_pose > 11 else self.adult_pose + 12,
+            senior_sprite=self.elder_pose if self.elder_pose > 23 else self.elder_pose + 9,
             reverse=self.reverse,
             accessories=[self.accessory] if self.accessory else []
         )
@@ -1309,28 +1309,28 @@ class MakeClanScreen(Screens):
                 scale(pygame.Rect((column1_x, y_pos[7] ),(1200,-1))),
                 object_id=get_text_box_theme("#text_box_30_horizleft"), manager=MANAGER
             )
-        self.elements['pose'] = pygame_gui.elements.UIDropDownMenu(["0", "1", "2"], str(self.kitten_sprite), scale(pygame.Rect((column1_x, y_pos[8]), (250, 70))), manager=MANAGER)
+        self.elements['pose'] = pygame_gui.elements.UIDropDownMenu(["0", "1", "2", "3", "4", "5"], str(self.kitten_sprite), scale(pygame.Rect((column1_x, y_pos[8]), (250, 70))), manager=MANAGER)
             
         self.elements['pose text2'] = pygame_gui.elements.UITextBox(
                 'Adolescent Pose',
                 scale(pygame.Rect((column2_x, y_pos[7] ),(1200,-1))),
                 object_id=get_text_box_theme("#text_box_30_horizleft"), manager=MANAGER
             )
-        self.elements['adolescent pose'] = pygame_gui.elements.UIDropDownMenu(["0", "1", "2"], str(self.adolescent_pose), scale(pygame.Rect((column2_x, y_pos[8]), (250, 70))), manager=MANAGER)
+        self.elements['adolescent pose'] = pygame_gui.elements.UIDropDownMenu(["0", "1", "2", "3", "4", "5"], str(self.adolescent_pose), scale(pygame.Rect((column2_x, y_pos[8]), (250, 70))), manager=MANAGER)
 
         self.elements['pose text3'] = pygame_gui.elements.UITextBox(
                 'Adult Pose',
                 scale(pygame.Rect((column1_x, y_pos[9] ),(1200,-1))),
                 object_id=get_text_box_theme("#text_box_30_horizleft"), manager=MANAGER
             )
-        self.elements['adult pose'] = pygame_gui.elements.UIDropDownMenu(["0", "1", "2"], str(self.adult_pose), scale(pygame.Rect((column1_x, y_pos[10]), (250, 70))), manager=MANAGER)
+        self.elements['adult pose'] = pygame_gui.elements.UIDropDownMenu(["0", "1", "2", "3", "4", "5"], str(self.adult_pose), scale(pygame.Rect((column1_x, y_pos[10]), (250, 70))), manager=MANAGER)
 
         self.elements['pose text4'] = pygame_gui.elements.UITextBox(
                 'Elder Pose',
                 scale(pygame.Rect((column2_x, y_pos[9] ),(1200,-1))),
                 object_id=get_text_box_theme("#text_box_30_horizleft"), manager=MANAGER
             )
-        self.elements['elder pose'] = pygame_gui.elements.UIDropDownMenu(["0", "1", "2"], str(self.elder_pose), scale(pygame.Rect((column2_x, y_pos[10]), (250, 70))), manager=MANAGER)
+        self.elements['elder pose'] = pygame_gui.elements.UIDropDownMenu(["0", "1", "2", "3", "4", "5"], str(self.elder_pose), scale(pygame.Rect((column2_x, y_pos[10]), (250, 70))), manager=MANAGER)
 
 
         # page 0
@@ -1852,9 +1852,9 @@ class MakeClanScreen(Screens):
             skin=self.skin,
             white_patches_tint=self.white_patches_tint,
             kitten_sprite=self.kitten_sprite,
-            adol_sprite=self.adolescent_pose if self.adolescent_pose > 2 else self.adolescent_pose + 3,
-            adult_sprite=self.adult_pose if self.adult_pose > 2 else self.adult_pose + 6,
-            senior_sprite=self.elder_pose if self.elder_pose > 2 else self.elder_pose + 12,
+            adol_sprite=self.adolescent_pose if self.adolescent_pose > 5 else self.adolescent_pose + 6,
+            adult_sprite=self.adult_pose if self.adult_pose > 11 else self.adult_pose + 12,
+            senior_sprite=self.elder_pose if self.elder_pose > 23 else self.elder_pose + 0,
             reverse=self.reverse,
             accessories=[self.accessory] if self.accessory else []
         )
