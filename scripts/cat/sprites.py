@@ -127,7 +127,7 @@ class Sprites():
             'charcoalbengalcolours', 'dustcolours',
 
             #OHDANS
-            'flower_accessories', 'plant2_accessories', 'snake_accessories', 'smallAnimal_accessories', 'deadInsect_accessories',
+            'flower_accessories', 'snake_accessories', 'smallAnimal_accessories', 'deadInsect_accessories',
             'aliveInsect_accessories', 'fruit_accessories', 'crafted_accessories', 'tail2_accessories',
 
             #WILDS
@@ -448,10 +448,6 @@ class Sprites():
         for a, i in enumerate([
             "YELLOW PRIMROSE", "HESPERIS", "MARIGOLD", "WISTERIA"]):
             self.make_group('flower_accessories', (a, 1), f'acc_flower{i}')
-        
-        for a, i in enumerate([
-            "CLOVER", "STICK", "PUMPKIN", "MOSS", "IVY", "ACORN", "MOSS PELT", "REEDS", "BAMBOO"]):
-            self.make_group('plant2_accessories', (a, 0), f'acc_plant2{i}')
 
         for a, i in enumerate([
             "GRASS SNAKE", "BLUE RACER", "WESTERN COACHWHIP", "KINGSNAKE"]):

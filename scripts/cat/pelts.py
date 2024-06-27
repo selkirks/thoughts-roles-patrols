@@ -123,7 +123,6 @@ class Pelt():
                         ]
     tail_accessories = ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]
     living_accessories = ["LUNA MOTH", "ATLAS MOTH", "BUTTERFLIES", "FIREFLIES"]
-    plant2_accessories = ["DAISY", "IVY", "CLOVER", "WREATH", "FLOWER WREATH", "WILD FLOWERS", "LILAC", "MONSTERA"]
     wild2_accessories = ["BIRD SKULL", "ANTLERS", "TWIGS", "SERPENT"]
     beach_accessories = ["SEAWEED", "SHELL"]
     mountain_accessories = ["CRYSTAL"]
@@ -159,8 +158,6 @@ class Pelt():
                           "YELLOW PRIMROSE", "HESPERIS", "MARIGOLD", "WISTERIA", "PINKFLOWERCROWN", "YELLOWFLOWERCROWN", "BLUEFLOWERCROWN", "PURPLEFLOWERCROWN"]
     
     wild2_accessories = ["BIRD SKULL", "ANTLERS", "TWIGS", "SERPENT"]
-    
-    plant2_accessories = ["CLOVER", "STICK", "PUMPKIN", "MOSS", "IVY", "ACORN", "MOSS PELT", "REEDS", "BAMBOO"]
 
     snake_accessories = ["GRASS SNAKE", "BLUE RACER", "WESTERN COACHWHIP", "KINGSNAKE"]
 
@@ -893,7 +890,6 @@ class Pelt():
                 choice(Pelt.plant_accessories),
                 choice(Pelt.wild_accessories),
                 choice(Pelt.flower_accessories),
-                choice(Pelt.plant2_accessories),
                 choice(Pelt.wild2_accessories),
                 choice(Pelt.snake_accessories),
                 choice(Pelt.smallAnimal_accessories),

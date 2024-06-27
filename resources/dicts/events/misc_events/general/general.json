@@ -78,8 +78,7 @@
         "accessories": [
             "WILD",
             "PLANT",
-            "WILD2",
-            "PLANT2"
+            "WILD2"
         ]
     },
     {
@@ -95,8 +94,7 @@
         "accessories": [
             "WILD",
             "PLANT",
-            "WILD2",
-            "PLANT2"
+            "WILD2"
         ]
     },
     {
@@ -128,8 +126,7 @@
         "accessories": [
             "WILD",
             "PLANT",
-            "WILD2",
-            "PLANT2"
+            "WILD2"
         ]
     },
     {
@@ -152,8 +149,7 @@
         "accessories": [
             "WILD",
             "PLANT",
-            "WILD2",
-            "PLANT2"
+            "WILD2"
         ]
     },
     {
@@ -186,8 +182,7 @@
         "accessories": [
             "WILD",
             "PLANT",
-            "WILD2",
-            "PLANT2"
+            "WILD2"
         ]
     },
     {
@@ -209,8 +204,8 @@
         "accessories": [
             "WILD",
             "PLANT",
-            "WILD2",
-            "PLANT2"        ]
+            "WILD2"
+        ]
     },
     {
         "camp": "any",
@@ -738,8 +733,7 @@
         "event_text": "m_c received a present, acc_plural, from r_c and decided to keep it with {PRONOUN/m_c/object} on {PRONOUN/m_c/poss} pelt.",
         "accessories": [
             "WILD",
-            "PLANT",
-            "PLANT2"
+            "PLANT"
         ]
     },
     {
@@ -757,7 +751,6 @@
             "PLANT",
             "FLOWER",
             "HESPERIS",
-            "PLANT2",
             "DEADINSECT",
             "FRUIT"
         ]
@@ -781,7 +774,6 @@
             "WILD",
             "PLANT",
             "FLOWER",
-            "PLANT2",
             "DEADINSECT"
         ]
     },
@@ -806,7 +798,6 @@
             "WILD",
             "PLANT",
             "FLOWER",
-            "PLANT2",
             "FRUIT"
         ]
     },
@@ -827,7 +818,6 @@
         "event_text": "r_c tells m_c that {PRONOUN/m_c/subject} {VERB/m_c/have/has} been waiting for this day for ages... and prepared a pretty new accessory for them to wear.",
         "accessories": [
             "FLOWER",
-            "PLANT2",
             "DEADINSECT",
             "FRUIT",
             "BIRD SKULL"
@@ -870,7 +860,6 @@
             "WILD",
             "PLANT",
             "FLOWER",
-            "PLANT2",
             "DEADINSECT",
             "FRUIT",
             "DAISY CORSAGE"
@@ -916,7 +905,6 @@
         "accessories": [
             "PLANT",
             "FLOWER",
-            "PLANT2",
             "FRUIT"
         ]
     },
@@ -940,7 +928,6 @@
         "accessories": [
             "PLANT",
             "FLOWER",
-            "PLANT2",
             "FRUIT"
         ]
     },
@@ -955,7 +942,6 @@
             "BLUEBELLS",
             "POPPY",
             "FLOWER",
-            "PLANT2",
             "FRUIT"
         ]
     },

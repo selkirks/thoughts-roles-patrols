@@ -156,7 +156,7 @@
             "trust"
         ],
         "event_text": "m_c gifts {PRONOUN/m_c/poss} beloved r_c with a acc_singular to wear in {PRONOUN/r_c/poss} pelt.",
-        "accessories": ["WILD", "PLANT", "FLOWER", "PLANT2", "FRUIT"]
+        "accessories": ["WILD", "PLANT", "FLOWER", "FRUIT"]
     },
     {
       "camp": "any",
@@ -172,7 +172,7 @@
         "trust"
     ],
       "event_text": "m_c gives r_c a singular_acc to make up for a bad fight between them.",
-      "accessories": ["WILD", "PLANT", "FLOWER", "PLANT2", "FRUIT"]
+      "accessories": ["WILD", "PLANT", "FLOWER", "FRUIT"]
     },
     {
         "camp": "any",
@@ -191,7 +191,7 @@
             "other_cat_mate"
         ],
         "event_text": "m_c and r_c take a late night patrol out of camp to watch the sun rise. m_c comes back flustered, and with a new accessory -- a gift from r_c!",
-        "accessories": ["PLANT", "FLOWER", "PLANT2", "FRUIT"]
+        "accessories": ["PLANT", "FLOWER", "FRUIT"]
     },
     {
         "camp": "any",
@@ -210,7 +210,7 @@
             "other_cat_mate"
         ],
         "event_text": "m_c and r_c take an early evening patrol out of camp to watch the moon rise. m_c comes back flustered, and with a new accessory -- a gift from r_c!",
-        "accessories": ["PLANT", "FLOWER", "PLANT2", "FRUIT"]
+        "accessories": ["PLANT", "FLOWER", "FRUIT"]
     },
     {
         "camp": "any",
