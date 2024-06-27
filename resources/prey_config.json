@@ -50,12 +50,17 @@
     "hunter_exp_bonus": {
         "untrained": 0.1,
         "trainee": 1,
-        "prepared": 2,
-        "competent": 3,
-        "proficient": 4,
-        "skilled": 5,
-        "expert": 6,
-        "master": 7
+        "beginner": 2,
+        "novice": 3,
+        "prepared": 4,
+        "competent": 5,
+        "skilled": 6,
+        "proficient": 7,
+        "advanced": 8,
+        "expert": 9,
+        "adept": 10, 
+        "master": 11,
+        "grandmaster": 12
     },
     "patrol_weight_adaption": {
         "1_class_bigger_prey_allowed": [15,19],
