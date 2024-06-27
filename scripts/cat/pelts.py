@@ -62,10 +62,18 @@ class Pelt:
 
     pelt_length = ["short", "medium", "long"]
     eye_colours = ['YELLOW', 'AMBER', 'HAZEL', 'PALEGREEN', 'GREEN', 'BLUE', 'DARKBLUE', 'GREY', 'CYAN', 'EMERALD', 'PALEBLUE', 
-        'PALEYELLOW', 'GOLD', 'HEATHERBLUE', 'COPPER', 'SAGE', 'COBALT', 'SUNLITICE', 'GREENYELLOW', 'BRONZE', 'SILVER', 'ETA', 'CARI', 'CARINA', 'EAGLE', 'GHOST HEAD', 'LAGOON', 'MILKY WAY', 'SOUL', 'SWAN', 'TARANTULA', 'VEIL', 'SHROUD', 'SEA FOAM', 'LILAC', 'AZURE', 'STORM', 'RUSSET', 'SAND', 'MIST', 'AMETHYST', 'TEMPEST']
-    yellow_eyes = ['YELLOW', 'AMBER', 'PALEYELLOW', 'GOLD', 'COPPER', 'GREENYELLOW', 'BRONZE', 'SILVER', 'CARINA', 'RUSSET', 'SAND']
-    blue_eyes = ['BLUE', 'DARKBLUE', 'CYAN', 'PALEBLUE', 'HEATHERBLUE', 'COBALT', 'SUNLITICE', 'GREY', 'ETA', 'EAGLE', 'LAGOON', 'MILKY WAY', 'SOUL', 'SWAN', 'TARANTULA', 'VEIL', 'SHROUD', 'LILAC', 'AZURE', 'STORM', 'MIST', 'AMETHYST', 'TEMPEST']
-    green_eyes = ['PALEGREEN', 'GREEN', 'EMERALD', 'SAGE', 'HAZEL', 'GHOST HEAD', 'CARI', 'SEA FOAM']
+        'PALEYELLOW', 'GOLD', 'HEATHERBLUE', 'COPPER', 'SAGE', 'COBALT', 'SUNLITICE', 'GREENYELLOW', 'BRONZE', 'SILVER', 'ETA', 'CARI', 'CARINA', 'EAGLE', 'GHOST HEAD', 'LAGOON', 'MILKY WAY', 'SOUL', 'SWAN', 'TARANTULA', 'VEIL', 'SHROUD', 'SEA FOAM', 'LILAC', 'AZURE', 'STORM', 'RUSSET', 'SAND', 'MIST', 'AMETHYST', 'TEMPEST', 'ROSE',
+        'ALGAE', 'SEAFOAM', 'LIGHT FLAME', 'CLOUDY', 'RED', 'TURQUOISE', 'SWAMP', 'RAINY', 'AQUAMARINE', 'EARTH', 'PUMPKIN', 'LILAC2',
+        'PERIWINKLE', 'VIOLET', 'POND', 'DIRT', 'BROWN', 'CEDAR', 'CHRISTMAS', 'COTTON CANDY', 'DARK PINE', 'FALL', 'FOREST FIRE',
+        'GOLD MOON', 'HALLOWEEN', 'LOBELIA', 'MIDNIGHT', 'MOONSTONE', 'OXIDIZED', 'SNOW', 'BERRY BANANA', 'DAWN SKY', 'TWILIGHT SKY',
+        'WORMY', 'BLUE HAZEL', 'THUNDERBOLT', 'VOLCANO', 'SEASHELL', 'PARADOX', 'CURSE', 'BLESSING']
+    yellow_eyes = ['YELLOW', 'AMBER', 'PALEYELLOW', 'GOLD', 'COPPER', 'GREENYELLOW', 'BRONZE', 'SILVER', 'CARINA', 'RUSSET', 'SAND', 'ROSE', 'LIGHT FLAME', 'RED',
+                   'PUMPKIN', 'BROWN', 'CEDAR', 'DARK PINE', 'FALL', 'GOLD MOON', 'OXIDIZED', 'BERRY BANANA', 'WORMY', 'THUNDERBOLT',
+                   'VOLCANO', 'SEASHELL', 'PARADOX', 'BLESSING']
+    blue_eyes = ['BLUE', 'DARKBLUE', 'CYAN', 'PALEBLUE', 'HEATHERBLUE', 'COBALT', 'SUNLITICE', 'GREY', 'ETA', 'EAGLE', 'LAGOON', 'MILKY WAY', 'SOUL', 'SWAN', 'TARANTULA', 'VEIL', 'SHROUD', 'LILAC', 'AZURE', 'STORM', 'MIST', 'AMETHYST', 'TEMPEST','SEAFOAM', 'CLOUDY', 'TURQUOISE',
+                 'RAINY', 'LILAC2', 'PERIWINKLE', 'VIOLET', 'POND', 'COTTON CANDY', 'HALLOWEEN', 'LOBELIA', 'MIDNIGHT', 'MOONSTONE', 'SNOW',
+                 'DAWN SKY', 'TWILIGHT SKY', 'BLUE HAZEL', 'CURSE']
+    green_eyes = ['PALEGREEN', 'GREEN', 'EMERALD', 'SAGE', 'HAZEL', 'GHOST HEAD', 'CARI', 'SEA FOAM', 'ALGAE', 'SWAMP', 'AQUAMARINE', 'EARTH', 'DIRT', 'CHRISTMAS', 'FOREST FIRE']
     # scars1 is scars from other cats, other animals - scars2 is missing parts - scars3 is "special" scars that could only happen in a special event
     # bite scars by @wood pank on discord
 
@@ -774,10 +782,7 @@ class Pelt:
                 for p in _temp.copy():
                     if p in Pelt.little_white + Pelt.mid_white:
                         _temp.remove(p)
-
-            # Only proceed with the direct inheritance if there are white patches that match the pelt.
-            if _temp:
-                chosen_white_patches = set()
+            chosen_white_patches = set()
             # Only proceed with the direct inheritance if there are white patches that match the pelt.
             if _temp:
                 chosen_white_patches.add(choice(list(_temp)))
@@ -854,7 +859,7 @@ class Pelt:
                 weights = [2, 1, 0, 0, 0]
 
         
-                chosen_white_patches = set()
+        chosen_white_patches = set()
         chosen_white_patches.add(choice(
             random.choices(white_list, weights=weights, k=1)[0]
         ))
@@ -940,7 +945,7 @@ class Pelt:
         if self.points and self.white_patches in [Pelt.high_white, Pelt.mostly_white, 'FULLWHITE']:
             self.points = None
 
-    def init_white_patches(self, pelt_white, parents: tuple):
+    def init_white_patches(self, pelt_white, parents:tuple):
         # Vit can roll for anyone, not just cats who rolled to have white in their pelt. 
         par_vit = []
         for p in parents:
@@ -1088,11 +1093,11 @@ class Pelt:
                 else:
                     color_name = cat.pelt.name.lower()
             else:
-                color_name = cat.pelt.tortiebase.lower()
-                if color_name in Pelt.tabbies + ['bengal', 'rosette', 'speckled']:
-                    color_name = 'tabby'
+                base = cat.pelt.tortiebase.lower()
+                if base in Pelt.tabbies + ['bengal', 'rosette', 'speckled']:
+                    base = 'tabby'
                 else:
-                    color_name = ''
+                    base = ''
 
                 patches_color = cat.pelt.tortiecolour.lower()
                 if patches_color in renamed_colors:
@@ -1100,8 +1105,8 @@ class Pelt:
                 color_name = f"{color_name}/{patches_color}"
 
                 if cat.pelt.colour in Pelt.black_colours + Pelt.brown_colours + Pelt.white_colours and \
-                        cat.pelt.tortiecolour in Pelt.black_colours + Pelt.brown_colours + Pelt.white_colours:
-                    color_name = f"{color_name} mottled"
+                    cat.pelt.tortiecolour in Pelt.black_colours + Pelt.brown_colours + Pelt.white_colours:
+                        color_name = f"{color_name} mottled"
                 else:
                     color_name = f"{color_name} {cat.pelt.name.lower()}"
 
@@ -1109,7 +1114,7 @@ class Pelt:
             if cat.pelt.white_patches == "FULLWHITE":
                 # If the cat is fullwhite, discard all other information. They are just white
                 color_name = "white"
-            if cat.pelt.white_patches in Pelt.mostly_white and cat.pelt.name != "Calico":
+            if any(white in Pelt.mostly_white for white in cat.pelt.white_patches) and cat.pelt.name != "Calico":
                 color_name = f"white and {color_name}"
             elif cat.pelt.name != "Calico":
                 color_name = f"{color_name} and white"

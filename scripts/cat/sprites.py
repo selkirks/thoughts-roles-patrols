@@ -120,7 +120,7 @@ class Sprites:
 
         for x in [
             'lineart', 'singlecolours', 'speckledcolours', 'tabbycolours',
-            'whitepatches', 'minkstorties', 'minkswhite', 'eyes', 'eyes2', 'eyes3', 'eyes4', 'skin', 'scars', 'missingscars',
+            'whitepatches', 'minkstorties', 'minkswhite', 'eyes', 'eyes2', 'eyes3', 'eyes4', 'beetleeyes', 'beetleeyes2', 'beetlemore', 'beetlemore2', 'skin', 'scars', 'missingscars',
             'collars', 'bellcollars', 'bowcollars', 'nyloncollars',
             'bengalcolours', 'marbledcolours', 'rosettecolours', 'smokecolours', 'tickedcolours', 
             'mackerelcolours', 'classiccolours', 'sokokecolours', 'agouticolours', 'singlestripecolours',
@@ -149,25 +149,45 @@ class Sprites:
             self.make_group('fadestarclan', (i, 0), f'fadestarclan{i}')
             self.make_group('fadedarkforest', (i, 0), f'fadedf{i}')
 
-        for a, i in enumerate(
-                ['YELLOW', 'AMBER', 'HAZEL', 'PALEGREEN', 'GREEN', 'BLUE', 
-                'DARKBLUE', 'GREY', 'CYAN', 'EMERALD', 'HEATHERBLUE', 'SUNLITICE']):
-            self.make_group('eyes', (a, 0), f'eyes{i}')
-            self.make_group('eyes2', (a, 0), f'eyes2{i}')
-        for a, i in enumerate(
-                ['COPPER', 'SAGE', 'COBALT', 'PALEBLUE', 'BRONZE', 'SILVER',
-                'PALEYELLOW', 'GOLD', 'GREENYELLOW']):
-            self.make_group('eyes', (a, 1), f'eyes{i}')
-            self.make_group('eyes2', (a, 1), f'eyes2{i}')
+        # Define eye colors
+        eye_colors = [
+            ['YELLOW', 'AMBER', 'HAZEL', 'PALEGREEN', 'GREEN', 'BLUE', 'DARKBLUE', 'GREY', 'CYAN', 'EMERALD',
+             'HEATHERBLUE', 'SUNLITICE'],
+            ['COPPER', 'SAGE', 'COBALT', 'PALEBLUE', 'BRONZE', 'SILVER', 'PALEYELLOW', 'GOLD', 'GREENYELLOW']
+        ]
+        beetle_eyes = [
+            ['ROSE', 'ALGAE', 'SEAFOAM', 'LIGHT FLAME', 'CLOUDY', 'RED', 'TURQUOISE',
+             'SWAMP', 'RAINY', 'AQUAMARINE', 'EARTH', 'PUMPKIN'],
+            ['LILAC', 'PERIWINKLE', 'VIOLET', 'POND', 'DIRT', 'BROWN', 'CEDAR', 'CHRISTMAS', 'COTTON CANDY'],
+        ]
+        beetle_more = [    
+            ['DARK PINE', 'FALL', 'FOREST FIRE', 'GOLD MOON', 'HALLOWEEN', 'LOBELIA', 
+             'MIDNIGHT', 'MOONSTONE', 'OXIDIZED', 'SNOW', 'BERRY BANANA', 'DAWN SKY'],
+            ['TWILIGHT SKY', 'WORMY', 'BLUE HAZEL', 'THUNDERBOLT', 'VOLCANO', 'SEASHELL', 'PARADOX', 'CURSE', 'BLESSING']
+        ]
+        myst_eyes = [    
+            ['ETA', 'CARINA', 'EAGLE', 'GHOST HEAD', 'LAGOON', 'MILKY WAY', 'SOUL', 'SWAN', 'TARANTULA', 'VEIL', 'SHROUD', 'CARI'],
+            ['SEA FOAM', 'LILAC', 'AZURE', 'STORM', 'RUSSET', 'SAND', 'MIST', 'AMETHYST', 'TEMPEST']
+        ]
+        for row, colors in enumerate(eye_colors):
+            for col, color in enumerate(colors):
+                self.make_group('eyes', (col, row), f'eyes{color}')
+                self.make_group('eyes2', (col, row), f'eyes2{color}')
 
-        for a, i in enumerate(
-                ['ETA', 'CARINA', 'EAGLE', 'GHOST HEAD', 'LAGOON', 'MILKY WAY', 'SOUL', 'SWAN', 'TARANTULA', 'VEIL', 'SHROUD', 'CARI']):
-            self.make_group('eyes3', (a, 0), f'eyes{i}')
-            self.make_group('eyes4', (a, 0), f'eyes2{i}')
-        for a, i in enumerate(
-                ['SEA FOAM', 'LILAC', 'AZURE', 'STORM', 'RUSSET', 'SAND', 'MIST', 'AMETHYST', 'TEMPEST']):
-            self.make_group('eyes3', (a, 1), f'eyes{i}')
-            self.make_group('eyes4', (a, 1), f'eyes2{i}')
+        for row, colors in enumerate(myst_eyes):
+            for col, color in enumerate(colors):
+                self.make_group('eyes3', (col, row), f'eyes{color}')
+                self.make_group('eyes4', (col, row), f'eyes2{color}')
+        
+        for row, colors in enumerate(beetle_eyes):
+            for col, color in enumerate(colors):
+                self.make_group('beetleeyes', (col, row), f'eyes{color}')
+                self.make_group('beetleeyes2', (col, row), f'eyes2{color}')
+
+        for row, colors in enumerate(beetle_more):
+            for col, color in enumerate(colors):
+                self.make_group('beetlemore', (col, row), f'eyes{color}')
+                self.make_group('beetlemore2', (col, row), f'eyes2{color}')
 
         # white patches
         for a, i in enumerate(['FULLWHITE', 'ANY', 'TUXEDO', 'LITTLE', 'COLOURPOINT', 'VAN', 'ANYTWO',
