@@ -2,6 +2,7 @@ from random import choice, randint, random
 import json
 from scripts.cat.breed_functions import breed_functions
 from operator import xor
+import math
 
 
 class Genotype:
@@ -103,13 +104,8 @@ class Genotype:
         self.ticktype = ""
         self.ticksum = 0
 
-        self.refraction = ""
-        self.refgrade = ""
-        self.refsum = 0
-
-        self.pigmentation = ""
-        self.piggrade = ""
-        self.pigsum = 0
+        self.refraction = False
+        self.pigmentation = False
 
         self.lefteye = ""
         self.righteye = ""
@@ -223,12 +219,7 @@ class Genotype:
         #self.ticksum = jsonstring["ticksum"]
 
         self.refraction = jsonstring["refraction"]
-        #self.refgrade = jsonstring["refgrade"]
-        #self.refsum = jsonstring["refsum"]
-
         self.pigmentation = jsonstring["pigmentation"]
-        #self.piggrade = jsonstring["piggrade"]
-        #self.pigsum = jsonstring["pigsum"]
 
         self.lefteye = jsonstring["lefteye"]
         self.righteye = jsonstring["righteye"]
@@ -238,6 +229,9 @@ class Genotype:
         self.extraeye = jsonstring["extraeye"]
         self.extraeyetype = jsonstring["extraeyetype"]
         self.extraeyecolour = jsonstring["extraeyecolour"]
+
+        if len(str(self.refraction)) > 2:
+            self.EyeConvert()
 
         try:
             self.breeds = json.loads(jsonstring["breeds"])
@@ -830,14 +824,10 @@ class Genotype:
 
         soktypes = ["normal markings", "mild fading", "full sokoke"]
 
-        eyegenes = ["2", "2", "1", "1", "1", "1", "0", "0", "0"]
-        higheyegenes = ["2", "2", "2", "2", "2", "2", "2", "2", "2", "1", "1", "1", "1", "0"]
-        superhigheyegenes = ["2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "1", "1", "0"]
-        loweyegenes = ["2", "1", "1", "1", "1", "0", "0", "0", "0", "0", "0", "0", "0", "0"]
-        superloweyegenes = ["2", "1", "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0"]
+        sokgenes = ["2", "2", "1", "1", "1", "1", "0", "0", "0"]
 
         for i in range(0, 4):
-            self.sokoke += choice(eyegenes)
+            self.sokoke += choice(sokgenes)
             self.soksum += int(self.sokoke[i])
 
         if self.soksum < 4: 
@@ -847,69 +837,12 @@ class Genotype:
         else:
             self.soktype = soktypes[2]
 
-        pickedref = choice([eyegenes, eyegenes, eyegenes, loweyegenes, superloweyegenes, higheyegenes, superhigheyegenes])
-        pickedpig = choice([eyegenes, eyegenes, eyegenes, loweyegenes, superloweyegenes, higheyegenes, superhigheyegenes])
-        for i in range(0, 9):
-            self.refraction += choice(pickedref)
-            self.refsum += int(self.refraction[i])
-            self.pigmentation += choice(pickedpig)
-            self.pigsum += int(self.pigmentation[i])
-
-        if self.refsum == 0:
-            self.refgrade = 1
-        elif self.refsum <= 1:
-            self.refgrade = 2
-        elif self.refsum <= 3:
-            self.refgrade = 3
-        elif self.refsum <= 5:
-            self.refgrade = 4
-        elif self.refsum <= 7:
-            self.refgrade = 5
-        elif self.refsum <= 10:
-            self.refgrade = 6
-        elif self.refsum <= 12:
-            self.refgrade = 7
-        elif self.refsum <= 14:
-            self.refgrade = 8
-        elif self.refsum <= 16:
-            self.refgrade = 9
-        elif self.refsum < 18:
-            self.refgrade = 10
-        else:
-            self.refgrade = 11
-
-        if self.pigsum == 0:
-            self.piggrade = 1
-        elif self.pigsum <= 1:
-            self.piggrade = 2
-        elif self.pigsum <= 3:
-            self.piggrade = 3
-        elif self.pigsum <= 5:
-            self.piggrade = 4
-        elif self.pigsum <= 7:
-            self.piggrade = 5
-        elif self.pigsum <= 10:
-            self.piggrade = 6
-        elif self.pigsum <= 12:
-            self.piggrade = 7
-        elif self.pigsum <= 14:
-            self.piggrade = 8
-        elif self.pigsum <= 16:
-            self.piggrade = 9
-        elif self.pigsum < 18:
-            self.piggrade = 10
-        else:
-            self.piggrade = 11
-
         self.GeneSort()
 
         if randint(1, self.odds['somatic_mutation']) == 1:
             self.GenerateSomatic()
 
         self.EyeColourFinder()
-
-        self.refgrade = "R" + str(self.refgrade)
-        self.piggrade = "P" + str(self.piggrade)
 
     def AltGenerator(self, special=None):
         if randint(1, self.odds["kittypet_breed"]) == 1:
@@ -1402,14 +1335,10 @@ class Genotype:
 
         soktypes = ["normal markings", "mild fading", "full sokoke"]
 
-        eyegenes = ["2", "2", "1", "1", "1", "1", "0", "0", "0"]
-        higheyegenes = ["2", "2", "2", "2", "2", "2", "2", "2", "2", "1", "1", "1", "1", "0"]
-        superhigheyegenes = ["2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "1", "1", "0"]
-        loweyegenes = ["2", "1", "1", "1", "1", "0", "0", "0", "0", "0", "0", "0", "0", "0"]
-        superloweyegenes = ["2", "1", "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0"]
+        sokgenes = ["2", "2", "1", "1", "1", "1", "0", "0", "0"]
 
         for i in range(0, 4):
-            self.sokoke += choice(eyegenes)
+            self.sokoke += choice(sokgenes)
             self.soksum += int(self.sokoke[i])
 
         if self.soksum < 4: 
@@ -1419,70 +1348,12 @@ class Genotype:
         else:
             self.soktype = soktypes[2]
 
-        pickedref = choice([eyegenes, eyegenes, loweyegenes, superloweyegenes, higheyegenes, superhigheyegenes, higheyegenes, superhigheyegenes])
-        pickedpig = choice([eyegenes, eyegenes, loweyegenes, superloweyegenes, higheyegenes, superhigheyegenes, higheyegenes, superhigheyegenes])
-        for i in range(0, 9):
-            self.refraction += choice(pickedref)
-            self.refsum += int(self.refraction[i])
-            self.pigmentation += choice(pickedpig)
-            self.pigsum += int(self.pigmentation[i])
-
-        
-        if self.refsum == 0:
-            self.refgrade = 1
-        elif self.refsum <= 1:
-            self.refgrade = 2
-        elif self.refsum <= 3:
-            self.refgrade = 3
-        elif self.refsum <= 5:
-            self.refgrade = 4
-        elif self.refsum <= 7:
-            self.refgrade = 5
-        elif self.refsum <= 10:
-            self.refgrade = 6
-        elif self.refsum <= 12:
-            self.refgrade = 7
-        elif self.refsum <= 14:
-            self.refgrade = 8
-        elif self.refsum <= 16:
-            self.refgrade = 9
-        elif self.refsum < 18:
-            self.refgrade = 10
-        else:
-            self.refgrade = 11
-
-        if self.pigsum == 0:
-            self.piggrade = 1
-        elif self.pigsum <= 1:
-            self.piggrade = 2
-        elif self.pigsum <= 3:
-            self.piggrade = 3
-        elif self.pigsum <= 5:
-            self.piggrade = 4
-        elif self.pigsum <= 7:
-            self.piggrade = 5
-        elif self.pigsum <= 10:
-            self.piggrade = 6
-        elif self.pigsum <= 12:
-            self.piggrade = 7
-        elif self.pigsum <= 14:
-            self.piggrade = 8
-        elif self.pigsum <= 16:
-            self.piggrade = 9
-        elif self.pigsum < 18:
-            self.piggrade = 10
-        else:
-            self.piggrade = 11
-
         self.GeneSort()
 
         if randint(1, self.odds['somatic_mutation']) == 1:
             self.GenerateSomatic()
 
         self.EyeColourFinder()
-
-        self.refgrade = "R" + str(self.refgrade)
-        self.piggrade = "P" + str(self.piggrade)
 
     def BreedGenerator(self, special=None):
         if self.chimera:
@@ -1537,67 +1408,6 @@ class Genotype:
             gen = breed_functions["generator"][choice(breedlist)]
 
         self = gen(self, special)
-        
-        eyegenes = ["2", "2", "1", "1", "1", "1", "0", "0", "0"]
-        higheyegenes = ["2", "2", "2", "2", "2", "2", "2", "2", "2", "1", "1", "1", "1", "0"]
-        superhigheyegenes = ["2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "1", "1", "0"]
-        loweyegenes = ["2", "1", "1", "1", "1", "0", "0", "0", "0", "0", "0", "0", "0", "0"]
-        superloweyegenes = ["2", "1", "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0"]
-
-        pickedref = choice([eyegenes, eyegenes, loweyegenes, superloweyegenes, higheyegenes, superhigheyegenes, higheyegenes, superhigheyegenes])
-        pickedpig = choice([eyegenes, eyegenes, loweyegenes, superloweyegenes, higheyegenes, superhigheyegenes, higheyegenes, superhigheyegenes])
-        for i in range(0, 9):
-            self.refraction += choice(pickedref)
-            self.refsum += int(self.refraction[i])
-            self.pigmentation += choice(pickedpig)
-            self.pigsum += int(self.pigmentation[i])
-
-        
-        if self.refsum == 0:
-            self.refgrade = 1
-        elif self.refsum <= 1:
-            self.refgrade = 2
-        elif self.refsum <= 3:
-            self.refgrade = 3
-        elif self.refsum <= 5:
-            self.refgrade = 4
-        elif self.refsum <= 7:
-            self.refgrade = 5
-        elif self.refsum <= 10:
-            self.refgrade = 6
-        elif self.refsum <= 12:
-            self.refgrade = 7
-        elif self.refsum <= 14:
-            self.refgrade = 8
-        elif self.refsum <= 16:
-            self.refgrade = 9
-        elif self.refsum < 18:
-            self.refgrade = 10
-        else:
-            self.refgrade = 11
-
-        if self.pigsum == 0:
-            self.piggrade = 1
-        elif self.pigsum <= 1:
-            self.piggrade = 2
-        elif self.pigsum <= 3:
-            self.piggrade = 3
-        elif self.pigsum <= 5:
-            self.piggrade = 4
-        elif self.pigsum <= 7:
-            self.piggrade = 5
-        elif self.pigsum <= 10:
-            self.piggrade = 6
-        elif self.pigsum <= 12:
-            self.piggrade = 7
-        elif self.pigsum <= 14:
-            self.piggrade = 8
-        elif self.pigsum <= 16:
-            self.piggrade = 9
-        elif self.pigsum < 18:
-            self.piggrade = 10
-        else:
-            self.piggrade = 11
 
         self.GeneSort()
 
@@ -1605,9 +1415,6 @@ class Genotype:
             self.GenerateSomatic()
 
         self.EyeColourFinder()
-
-        self.refgrade = "R" + str(self.refgrade)
-        self.piggrade = "P" + str(self.piggrade)
 
     def KitGenerator(self, par1, par2=None):
         try:
@@ -1624,6 +1431,8 @@ class Genotype:
                     self.breeds[breed] += par2.breeds[breed] / 2
                 else:
                     self.breeds[breed] = par2.breeds[breed] / 2 
+        
+        self.KitEyes(par1, par2)
 
         if self.chimera:
             self.chimerageno.KitGenerator(par1, par2)
@@ -2053,28 +1862,6 @@ class Genotype:
                 self.ticksum +=1
             self.tickgenes += str(temptick)
 
-        self.refraction = ""
-        for i in range(9):
-            tempref = 0
-            if par1.refraction[i] == "2" or (par1.refraction[i] == "1" and randint(1, 2) == 1):
-                tempref = tempref+1
-                self.refsum +=1
-            if par2.refraction[i] == "2" or (par2.refraction[i] == "1" and randint(1, 2) == 1):
-                tempref = tempref+1
-                self.refsum +=1
-            self.refraction += str(tempref)
-
-        self.pigmentation = ""
-        for i in range(9):
-            temppig = 0
-            if par1.pigmentation[i] == "2" or (par1.pigmentation[i] == "1" and randint(1, 2) == 1):
-                temppig = temppig+1
-                self.pigsum +=1
-            if par2.pigmentation[i] == "2" or (par2.pigmentation[i] == "1" and randint(1, 2) == 1):
-                temppig = temppig+1
-                self.pigsum +=1
-            self.pigmentation += str(temppig)
-
 
         if(randint(1, self.odds['random_mutation']) == 1):
             self.Mutate()
@@ -2086,9 +1873,45 @@ class Genotype:
         self.PolyEval()
         self.EyeColourFinder()
 
-        self.refgrade = "R" + str(self.refgrade)
-        self.piggrade = "P" + str(self.piggrade)
+    def KitEyes(self, par1, par2):
+        multipliers = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+        multipliers2 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
     
+        def maths(par, m):
+            m[par-1] += 10
+            for i in range(0, par-1):
+                m[i] += 10 / 5 ** (par-i-1);
+            
+            for i in range(par, 11):
+                m[i] += 10 / 5 ** (i-par+1);
+            return m
+    
+        multipliers = maths(par1.refraction, multipliers)
+        multipliers = maths(par2.refraction, multipliers)
+        multipliers = maths(math.floor((int(par1.refraction) + int(par2.refraction))/2), multipliers)
+        multipliers2 = maths(par1.pigmentation, multipliers2)
+        multipliers2 = maths(par2.pigmentation, multipliers2)
+        multipliers2 = maths(math.floor((int(par1.pigmentation) + int(par2.pigmentation))/2), multipliers2)
+
+        x = sum(multipliers)
+        x2 = sum(multipliers2)
+
+        def getindexes(m):
+            inds = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            
+            for i in range(0, 11):
+                for j in range(0, i+1):
+                    inds[i] += m[j]
+            
+            return inds
+        indexes = getindexes(multipliers)
+        indexes2 = getindexes(multipliers2)
+
+        num = random() * x
+        self.refraction = next((n for n in range(len(indexes)) if num < indexes[n]))
+        num = random() * x2
+        self.pigmentation = next((n for n in range(len(indexes2)) if num < indexes2[n]))
+
     def PolyEval(self):
         wbtypes = ["low", "medium", "high", "shaded", "chinchilla"]
         ruftypes = ["low", "medium", "rufoused"]
@@ -2099,8 +1922,6 @@ class Genotype:
         self.soksum = 0
         self.spotsum = 0
         self.ticksum = 0
-        self.refsum = 0
-        self.pigsum = 0
         
         for i in self.wideband:
             self.wbsum += int(i)
@@ -2114,10 +1935,6 @@ class Genotype:
             self.spotsum += int(i)
         for i in self.tickgenes:
             self.ticksum += int(i)
-        for i in self.refraction:
-            self.refsum += int(i)
-        for i in self.pigmentation:
-            self.pigsum += int(i)
         
         if self.wbsum < 6:
             self.wbtype = wbtypes[0]
@@ -2176,52 +1993,6 @@ class Genotype:
             self.soktype = soktypes[1]
         else:
             self.soktype = soktypes[2]
-
-        if self.refsum == 0:
-            self.refgrade = 1
-        elif self.refsum <= 1:
-            self.refgrade = 2
-        elif self.refsum <= 3:
-            self.refgrade = 3
-        elif self.refsum <= 5:
-            self.refgrade = 4
-        elif self.refsum <= 7:
-            self.refgrade = 5
-        elif self.refsum <= 10:
-            self.refgrade = 6
-        elif self.refsum <= 12:
-            self.refgrade = 7
-        elif self.refsum <= 14:
-            self.refgrade = 8
-        elif self.refsum <= 16:
-            self.refgrade = 9
-        elif self.refsum < 18:
-            self.refgrade = 10
-        else:
-            self.refgrade = 11
-
-        if self.pigsum == 0:
-            self.piggrade = 1
-        elif self.pigsum <= 1:
-            self.piggrade = 2
-        elif self.pigsum <= 3:
-            self.piggrade = 3
-        elif self.pigsum <= 5:
-            self.piggrade = 4
-        elif self.pigsum <= 7:
-            self.piggrade = 5
-        elif self.pigsum <= 10:
-            self.piggrade = 6
-        elif self.pigsum <= 12:
-            self.piggrade = 7
-        elif self.pigsum <= 14:
-            self.piggrade = 8
-        elif self.pigsum <= 16:
-            self.piggrade = 9
-        elif self.pigsum < 18:
-            self.piggrade = 10
-        else:
-            self.piggrade = 11
     
     def GeneSort(self):
         if self.eumelanin[0] == "bl":
@@ -2336,12 +2107,21 @@ class Genotype:
         blueindex = 1
         hetindex = 1
 
+        if not self.refraction:
+            refgrade = choice([1, 2, 2, 3, 3, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 8, 8, 8, 9, 9, 10, 10, 11])
+            piggrade = choice([1, 2, 2, 3, 3, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 8, 8, 8, 9, 9, 10, 10, 11])
+            self.refraction = refgrade
+            self.pigmentation = piggrade
+        else:
+            refgrade = self.refraction
+            piggrade = self.pigmentation
+
         if self.dilute[0] == "d" or self.pointgene == ["cb", "cb"] or self.pointgene == ["cb", "c"] or self.pointgene == ["cb", "cm"]:
             if randint(1, 5) == 1:
-                self.piggrade = self.piggrade - 1
+                piggrade = piggrade - 1
         
-        if self.pinkdilute[0] == 'dp' or self.pointgene == ["cb", "cs"] or self.piggrade == 0 or ((self.pointgene == ["cb", "cm"] or self.pointgene == ["cm", "cm"] or self.pointgene == ["cm", "c"]) and randint(1, 5) == 1):
-            self.piggrade = 1
+        if self.pinkdilute[0] == 'dp' or self.pointgene == ["cb", "cs"] or piggrade == 0 or ((self.pointgene == ["cb", "cm"] or self.pointgene == ["cm", "cm"] or self.pointgene == ["cm", "c"]) and randint(1, 5) == 1):
+            piggrade = 1
 
         def RefTypeFind(x, piggrade):
             y = eyecolours['R' + str(x)][piggrade-1]
@@ -2411,22 +2191,22 @@ class Genotype:
             temppig = randint(1, 12)
             if randint(1, 2)==1:
                 self.lefteye = RefTypeFind(tempref, temppig)
-                self.righteye = RefTypeFind(self.refgrade, self.piggrade)
+                self.righteye = RefTypeFind(refgrade, piggrade)
 
                 self.lefteyetype = SecondaryRefTypeFind(tempref, temppig)
-                self.righteyetype = SecondaryRefTypeFind(self.refgrade, self.piggrade)
+                self.righteyetype = SecondaryRefTypeFind(refgrade, piggrade)
             else:
                 self.righteye = RefTypeFind(tempref, temppig)
-                self.lefteye = RefTypeFind(self.refgrade, self.piggrade)
+                self.lefteye = RefTypeFind(refgrade, piggrade)
 
-                self.lefteyetype = SecondaryRefTypeFind(self.refgrade, self.piggrade)
+                self.lefteyetype = SecondaryRefTypeFind(refgrade, piggrade)
                 self.righteyetype = SecondaryRefTypeFind(tempref, temppig)
         else:
-            self.righteye = RefTypeFind(self.refgrade, self.piggrade)
-            self.lefteye = RefTypeFind(self.refgrade, self.piggrade)
+            self.righteye = RefTypeFind(refgrade, piggrade)
+            self.lefteye = RefTypeFind(refgrade, piggrade)
 
-            self.lefteyetype = SecondaryRefTypeFind(self.refgrade, self.piggrade)
-            self.righteyetype = SecondaryRefTypeFind(self.refgrade, self.piggrade)
+            self.lefteyetype = SecondaryRefTypeFind(refgrade, piggrade)
+            self.righteyetype = SecondaryRefTypeFind(refgrade, piggrade)
 
             if(sectoralindex == 0):
                 self.extraeye = 'sectoral' + str(randint(1, 6))
@@ -2436,11 +2216,11 @@ class Genotype:
                 
                 
             if "c" in self.pointgene and self.pointgene[0] != "C":
-                self.lefteye = RefTypeFind(self.refgrade, 13)
-                self.righteye = RefTypeFind(self.refgrade, 13)
+                self.lefteye = RefTypeFind(refgrade, 13)
+                self.righteye = RefTypeFind(refgrade, 13)
 
-                self.lefteyetype = SecondaryRefTypeFind(self.refgrade, 13)
-                self.righteyetype = SecondaryRefTypeFind(self.refgrade, 13)
+                self.lefteyetype = SecondaryRefTypeFind(refgrade, 13)
+                self.righteyetype = SecondaryRefTypeFind(refgrade, 13)
 
                 if het2index == 0:
                     tempref = randint(1, 11)
@@ -2454,11 +2234,11 @@ class Genotype:
                     self.extraeyecolour = RefTypeFind(a[0], 13)
                     self.extraeyetype = SecondaryRefTypeFind(a[0], 13)
             elif(blueindex == 0):
-                self.lefteye = RefTypeFind(self.refgrade, 12)
-                self.righteye = RefTypeFind(self.refgrade, 12)
+                self.lefteye = RefTypeFind(refgrade, 12)
+                self.righteye = RefTypeFind(refgrade, 12)
 
-                self.lefteyetype = SecondaryRefTypeFind(self.refgrade, 12)
-                self.righteyetype = SecondaryRefTypeFind(self.refgrade, 12)
+                self.lefteyetype = SecondaryRefTypeFind(refgrade, 12)
+                self.righteyetype = SecondaryRefTypeFind(refgrade, 12)
 
                 if het2index == 0:
                     tempref = randint(1, 11)
@@ -2473,11 +2253,11 @@ class Genotype:
                     self.extraeyetype = SecondaryRefTypeFind(a[0], 12)
             elif hetindex == 0:
                 if(randint(0,1)==0):
-                    self.lefteye = RefTypeFind(self.refgrade, 12)
-                    self.lefteyetype = SecondaryRefTypeFind(self.refgrade, 12)
+                    self.lefteye = RefTypeFind(refgrade, 12)
+                    self.lefteyetype = SecondaryRefTypeFind(refgrade, 12)
                 else:
-                    self.righteye = RefTypeFind(self.refgrade, 12)
-                    self.righteyetype = SecondaryRefTypeFind(self.refgrade, 12)
+                    self.righteye = RefTypeFind(refgrade, 12)
+                    self.righteyetype = SecondaryRefTypeFind(refgrade, 12)
 
     def EyeColourName(self):
     
@@ -2505,6 +2285,66 @@ class Genotype:
         if self.extraeyecolour != '':
             self.extraeyecolour = setup(self.extraeyetype)
 
+    def EyeConvert(self):
+        refsum = 0
+        pigsum = 0
+        refgrade = 1
+        piggrade = 1
+
+        for i in self.refraction:
+            refsum += int(i)
+        for i in self.pigmentation:
+            pigsum += int(i)
+            
+        if refsum == 0:
+            refgrade = 1
+        elif refsum <= 1:
+            refgrade = 2
+        elif refsum <= 3:
+            refgrade = 3
+        elif refsum <= 5:
+            refgrade = 4
+        elif refsum <= 7:
+            refgrade = 5
+        elif refsum <= 10:
+            refgrade = 6
+        elif refsum <= 12:
+            refgrade = 7
+        elif refsum <= 14:
+            refgrade = 8
+        elif refsum <= 16:
+            refgrade = 9
+        elif refsum < 18:
+            refgrade = 10
+        else:
+            refgrade = 11
+
+        if pigsum == 0:
+            piggrade = 1
+        elif pigsum <= 1:
+            piggrade = 2
+        elif pigsum <= 3:
+            piggrade = 3
+        elif pigsum <= 5:
+            piggrade = 4
+        elif pigsum <= 7:
+            piggrade = 5
+        elif pigsum <= 10:
+            piggrade = 6
+        elif pigsum <= 12:
+            piggrade = 7
+        elif pigsum <= 14:
+            piggrade = 8
+        elif pigsum <= 16:
+            piggrade = 9
+        elif pigsum < 18:
+            piggrade = 10
+        else:
+            piggrade = 11
+
+        self.refraction = refgrade
+        self.pigmentation = piggrade
+
     def ShowGenes(self):
         self.PolyEval()
         self.Cat_Genes = [self.furLength, self.eumelanin, self.sexgene, self.dilute, self.white, self.pointgene, self.silver,
@@ -2513,7 +2353,7 @@ class Genotype:
         self.Other_Colour = [self.pinkdilute, self.dilutemd, self.ext, self.sunshine, self.karp, self.bleach, self.ghosting, self.satin, self.glitter]
         self.Body_Genes = [self.curl, self.fold, self.manx, self.kab, self.toybob, self.jbob, self.kub, self.ring, self.munch, self.poly, self.altai]
         self.Polygenes = ["Rufousing:", self.rufousing, self.ruftype, "Bengal:", self.bengal, self.bengtype, "Sokoke:", self.sokoke, self.soktype, "Spotted:", self.spotted, self.spottype, "Ticked:", self.tickgenes, self.ticktype]
-        self.Polygenes2 = ["Wideband:", self.wideband, self.wbtype, "Refraction:", self.refraction, self.refgrade, "Pigmentation:", self.pigmentation, self.piggrade]
+        self.Polygenes2 = ["Wideband:", self.wideband, self.wbtype, "Refraction:", self.refraction, "Pigmentation:", self.pigmentation]
 
         return self.Cat_Genes, "Other Fur Genes: ", self.Fur_Genes, "Other Colour Genes: ", self.Other_Colour, "Body Mutations: ", self.Body_Genes, "Polygenes: ", self.Polygenes, self.Polygenes2
     
