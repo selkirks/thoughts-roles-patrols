@@ -167,7 +167,7 @@ class Sprites:
         ]
         myst_eyes = [    
             ['ETA', 'CARINA', 'EAGLE', 'GHOST HEAD', 'LAGOON', 'MILKY WAY', 'SOUL', 'SWAN', 'TARANTULA', 'VEIL', 'SHROUD', 'CARI'],
-            ['SEA FOAM', 'LILAC', 'AZURE', 'STORM', 'RUSSET', 'SAND', 'MIST', 'AMETHYST', 'TEMPEST']
+            ['SEA FOAM', 'LILAC2', 'AZURE', 'STORM', 'RUSSET', 'SAND', 'MIST', 'AMETHYST', 'TEMPEST']
         ]
         for row, colors in enumerate(eye_colors):
             for col, color in enumerate(colors):

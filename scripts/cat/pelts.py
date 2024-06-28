@@ -698,9 +698,6 @@ class Pelt:
                         chosen_pattern.add(choice(Pelt.tortiepatterns))
                         num += 3
 
-                if len(chosen_pattern) >= 2:
-                    print("DoublePatches: "+str(len(chosen_pattern))+" tortie patches!")
-
                 self.pattern = list(chosen_pattern)
 
             wildcard_chance = game.config["cat_generation"]["wildcard_tortie"]
@@ -794,8 +791,6 @@ class Pelt:
                         if _temp:
                             chosen_white_patches.add(choice(list(_temp)))
 
-                if len(chosen_white_patches) >= 2:
-                    print("DoublePatches: "+str(len(chosen_white_patches))+" white patches!")
                 self.white_patches = list(chosen_white_patches)
                 # Direct inheritance also effect the point marking.
                 if par_points and self.name != "Tortie":
@@ -890,9 +885,6 @@ class Pelt:
                 ))
                 num += 1
 
-        if len(chosen_white_patches) >= 2:
-            print("DoublePatches: "+str(len(chosen_white_patches))+" white patches!")
-
         self.white_patches = list(chosen_white_patches)
         if self.points and self.white_patches in [Pelt.high_white, Pelt.mostly_white, 'FULLWHITE']:
             self.points = None
@@ -937,9 +929,6 @@ class Pelt:
                     random.choices(white_list, weights=weights, k=1)[0]
                 ))
                 num += 1
-
-        if len(chosen_white_patches) >= 2:
-            print("DoublePatches: "+str(len(chosen_white_patches))+" white patches!")
 
         self.white_patches = list(chosen_white_patches)
         if self.points and self.white_patches in [Pelt.high_white, Pelt.mostly_white, 'FULLWHITE']:
