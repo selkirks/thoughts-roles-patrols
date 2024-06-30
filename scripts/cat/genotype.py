@@ -1454,6 +1454,7 @@ class Genotype:
         if randint(1, self.odds['somatic_mutation']) == 1:
             self.GenerateSomatic()
 
+        self.PolyEval()
         self.EyeColourFinder()
 
     def KitGenerator(self, par1, par2=None):
