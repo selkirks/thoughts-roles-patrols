@@ -104,6 +104,26 @@ class Genotype:
         self.ticktype = ""
         self.ticksum = 0
 
+        self.body_ranges = [1, 4, 9, 27, 9, 4, 1]
+        self.height_ranges = [1, 4, 9, 27, 81, 27, 9, 2, 2, 1]
+
+        def getindexes(m, size):
+            inds = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            
+            for i in range(0, size):
+                for j in range(0, i+1):
+                    inds[i] += m[j]
+            
+            return inds
+        self.body_indexes = getindexes(self.body_ranges, 7)
+        self.height_indexes = getindexes(self.height_ranges, 10)
+
+        self.body_value = 0
+        self.height_value = 0
+        self.shoulder_height = 0
+        self.body_label = ""
+        self.height_label = ""
+
         self.refraction = False
         self.pigmentation = False
 
@@ -241,6 +261,12 @@ class Genotype:
             self.somatic = json.loads(jsonstring["somatic"])
         except:
             self.somatic = {}
+        try:
+            self.body_value = json.loads(jsonstring["body_type"])
+            self.height_value = json.loads(jsonstring["height"])
+            self.shoulder_height = json.loads(jsonstring["shoulder_height"])
+        except:
+            self.GenerateBody()
 
         self.PolyEval()
         self.EyeColourName()
@@ -330,6 +356,10 @@ class Genotype:
             "extraeyetype" :self.extraeyetype,
             "extraeyecolour" : self.extraeyecolour,
 
+            "body_type" : self.body_value,
+            "height" : self.height_value,
+            "shoulder_height" : self.shoulder_height,
+
             "breeds" : json.dumps(self.breeds),
             "somatic" : json.dumps(self.somatic)
         }
@@ -343,6 +373,8 @@ class Genotype:
         a = randint(1, self.odds['vitiligo'])
         if a == 1:
             self.vitiligo = True
+        
+        self.GenerateBody()
 
         # FUR LENGTH
         
@@ -853,6 +885,9 @@ class Genotype:
         a = randint(1, self.odds['vitiligo'])
         if a == 1:
             self.vitiligo = True
+        
+        self.GenerateBody()
+
         # FUR LENGTH
 
         a = randint(1, 4)
@@ -1862,6 +1897,12 @@ class Genotype:
                 self.ticksum +=1
             self.tickgenes += str(temptick)
 
+        wobble = randint(1, int(sum(self.body_ranges) / 20))
+        self.body_value = randint(min(par1.body_value-wobble, par2.body_value-wobble), max(par1.body_value+wobble, par2.body_value+wobble))
+
+        wobble = randint(1, int(sum(self.height_ranges) / 20))
+        self.height_value = randint(min(par1.height_value-wobble, par2.height_value-wobble), max(par1.height_value+wobble, par2.height_value+wobble))
+
 
         if(randint(1, self.odds['random_mutation']) == 1):
             self.Mutate()
@@ -1870,6 +1911,7 @@ class Genotype:
 
         if randint(1, self.odds['somatic_mutation']) == 1:
             self.GenerateSomatic()
+        
         self.PolyEval()
         self.EyeColourFinder()
 
@@ -1912,6 +1954,15 @@ class Genotype:
         num = random() * x2
         self.pigmentation = next((n for n in range(len(indexes2)) if num < indexes2[n]))
 
+    def GenerateBody(self):
+        x = sum(self.body_ranges)
+
+        self.body_value = randint(1, x)
+
+        x = sum(self.height_ranges)
+
+        self.height_value = randint(1, x)
+ 
     def PolyEval(self):
         wbtypes = ["low", "medium", "high", "shaded", "chinchilla"]
         ruftypes = ["low", "medium", "rufoused"]
@@ -1993,6 +2044,57 @@ class Genotype:
             self.soktype = soktypes[1]
         else:
             self.soktype = soktypes[2]
+
+        body_types = ['snub-nosed', 'cobby', 'semi-cobby', 'intermediate', 'semi-oriental', 'oriental', 'wedge-faced']
+        height_types = ['teacup', 'tiny', 'small', 'below average', 'average', 'above average', 'large', 'massive', 'giant', 'goliath']
+
+        index = next((n for n in range(7) if self.body_value <= self.body_indexes[n]))
+        self.body_label = body_types[index]
+
+        index = next((n for n in range(10) if self.height_value <= self.height_indexes[n]))
+        self.height_label = height_types[index]
+
+        match index:
+            case 0:
+                self.shoulder_height = 5.00
+            case 1:
+                value = self.height_value - self.height_indexes[index-1]
+                step = (6-5.01) / self.height_ranges[index]
+                self.shoulder_height = 5.01 + value * (random() * step)
+            case 2:
+                value = self.height_value - self.height_indexes[index-1]
+                step = (7.5-6.01) / self.height_ranges[index]
+                self.shoulder_height = 6.01 + value * (random() * step)
+            case 3:
+                value = self.height_value - self.height_indexes[index-1]
+                step = (8.99-7.51) / self.height_ranges[index]
+                self.shoulder_height = 7.51 + value * (random() * step)
+            case 4:
+                value = self.height_value - self.height_indexes[index-1]
+                step = (11-9) / self.height_ranges[index]
+                self.shoulder_height = 9 + value * (random() * step)
+            case 5:
+                value = self.height_value - self.height_indexes[index-1]
+                step = (12.5-11.01) / self.height_ranges[index]
+                self.shoulder_height = 11.01 + value * (random() * step)
+            case 6:
+                value = self.height_value - self.height_indexes[index-1]
+                step = (14-12.51) / self.height_ranges[index]
+                self.shoulder_height = 12.51 + value * (random() * step)
+            case 7:
+                value = self.height_value - self.height_indexes[index-1]
+                step = (14.99-14.01) / self.height_ranges[index]
+                self.shoulder_height = 14.01 + value * (random() * step)
+            case 8:
+                value = self.height_value - self.height_indexes[index-1]
+                step = (15.99-15.00) / self.height_ranges[index]
+                self.shoulder_height = 15.00 + value * (random() * step)
+            case 9:
+                self.shoulder_height = 16.00
+        
+        if self.munch[0] == 'Mk':
+            self.shoulder_height /= 1.75
+        self.shoulder_height = round(self.shoulder_height, 2)
     
     def GeneSort(self):
         if self.eumelanin[0] == "bl":
