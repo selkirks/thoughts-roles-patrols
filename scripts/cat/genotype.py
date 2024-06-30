@@ -2060,43 +2060,42 @@ class Genotype:
         index = next((n for n in range(10) if self.height_value <= self.height_indexes[n]))
         self.height_label = height_types[index]
 
-        match index:
-            case 0:
-                self.shoulder_height = 5.00
-            case 1:
-                value = self.height_value - self.height_indexes[index-1]
-                step = (6-5.01) / self.height_ranges[index]
-                self.shoulder_height = 5.01 + value * (random() * step)
-            case 2:
-                value = self.height_value - self.height_indexes[index-1]
-                step = (7.5-6.01) / self.height_ranges[index]
-                self.shoulder_height = 6.01 + value * (random() * step)
-            case 3:
-                value = self.height_value - self.height_indexes[index-1]
-                step = (8.99-7.51) / self.height_ranges[index]
-                self.shoulder_height = 7.51 + value * (random() * step)
-            case 4:
-                value = self.height_value - self.height_indexes[index-1]
-                step = (11-9) / self.height_ranges[index]
-                self.shoulder_height = 9 + value * (random() * step)
-            case 5:
-                value = self.height_value - self.height_indexes[index-1]
-                step = (12.5-11.01) / self.height_ranges[index]
-                self.shoulder_height = 11.01 + value * (random() * step)
-            case 6:
-                value = self.height_value - self.height_indexes[index-1]
-                step = (14-12.51) / self.height_ranges[index]
-                self.shoulder_height = 12.51 + value * (random() * step)
-            case 7:
-                value = self.height_value - self.height_indexes[index-1]
-                step = (14.99-14.01) / self.height_ranges[index]
-                self.shoulder_height = 14.01 + value * (random() * step)
-            case 8:
-                value = self.height_value - self.height_indexes[index-1]
-                step = (15.99-15.00) / self.height_ranges[index]
-                self.shoulder_height = 15.00 + value * (random() * step)
-            case 9:
-                self.shoulder_height = 16.00
+        if index == 0:
+            self.shoulder_height = 5.00
+        elif index == 1:
+            value = self.height_value - self.height_indexes[index-1]
+            step = (6-5.01) / self.height_ranges[index]
+            self.shoulder_height = 5.01 + value * (random() * step)
+        elif index == 2:
+            value = self.height_value - self.height_indexes[index-1]
+            step = (7.5-6.01) / self.height_ranges[index]
+            self.shoulder_height = 6.01 + value * (random() * step)
+        elif index == 3:
+            value = self.height_value - self.height_indexes[index-1]
+            step = (8.99-7.51) / self.height_ranges[index]
+            self.shoulder_height = 7.51 + value * (random() * step)
+        elif index == 4:
+            value = self.height_value - self.height_indexes[index-1]
+            step = (11-9) / self.height_ranges[index]
+            self.shoulder_height = 9 + value * (random() * step)
+        elif index == 5:
+            value = self.height_value - self.height_indexes[index-1]
+            step = (12.5-11.01) / self.height_ranges[index]
+            self.shoulder_height = 11.01 + value * (random() * step)
+        elif index == 6:
+            value = self.height_value - self.height_indexes[index-1]
+            step = (14-12.51) / self.height_ranges[index]
+            self.shoulder_height = 12.51 + value * (random() * step)
+        elif index == 7:
+            value = self.height_value - self.height_indexes[index-1]
+            step = (14.99-14.01) / self.height_ranges[index]
+            self.shoulder_height = 14.01 + value * (random() * step)
+        elif index == 8:
+            value = self.height_value - self.height_indexes[index-1]
+            step = (15.99-15.00) / self.height_ranges[index]
+            self.shoulder_height = 15.00 + value * (random() * step)
+        elif index == 9:
+            self.shoulder_height = 16.00
         
         if self.munch[0] == 'Mk':
             self.shoulder_height /= 1.75
