@@ -1446,6 +1446,11 @@ class Genotype:
 
         self.GeneSort()
 
+        if self.body_value == 0:
+            self.body_value = randint(self.body_indexes[2]+1, self.body_indexes[4]-1)
+        if self.height_value == 0:
+            self.height_value = randint(self.height_indexes[3]+1, self.height_indexes[5]-1)
+
         if randint(1, self.odds['somatic_mutation']) == 1:
             self.GenerateSomatic()
 
