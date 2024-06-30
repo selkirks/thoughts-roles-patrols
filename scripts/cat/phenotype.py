@@ -336,7 +336,7 @@ class Phenotype():
         if('o' not in self.genotype.sexgene or self.genotype.agouti[0] != 'a' or self.tabtype != '' or ('smoke' in self.silvergold and self.length == 'shorthaired') or self.genotype.ext[0] not in ['Eg', 'E']):
             FindPattern()
         
-        if(self.tortie != '' and self.tabby != '' and self.tortie != 'brindled bicolour '):
+        if(self.tortie != '' and self.tabby != '' and self.tortie != "brindled bicolour "):
             if(self.tortie == 'calico '):
                 self.tortie = ' caliby '
             else:

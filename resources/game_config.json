@@ -316,8 +316,8 @@
 		"other_breed" : 1000
 	},
 	"tnr_mode": {
-		"kittypet_neuter" : 0.66,
-		"loner_tnr" : 0.1,
+		"kittypet_neuter" : 0.8,
+		"loner_tnr" : 0.05,
 		"Clan_tnr" : 0.99,
 		"Clan_tnr2" : 0.5,
 		"notes" : [
