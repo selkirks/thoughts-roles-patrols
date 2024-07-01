@@ -261,10 +261,11 @@ class Genotype:
             self.somatic = json.loads(jsonstring["somatic"])
         except:
             self.somatic = {}
+        
         try:
-            self.body_value = json.loads(jsonstring["body_type"])
-            self.height_value = json.loads(jsonstring["height"])
-            self.shoulder_height = json.loads(jsonstring["shoulder_height"])
+            self.body_value = jsonstring["body_type"]
+            self.height_value = jsonstring["height"]
+            self.shoulder_height = jsonstring["shoulder_height"]
         except:
             self.GenerateBody()
 
@@ -2059,6 +2060,9 @@ class Genotype:
 
         index = next((n for n in range(10) if self.height_value <= self.height_indexes[n]))
         self.height_label = height_types[index]
+
+        if self.shoulder_height > 0:
+            return
 
         if index == 0:
             self.shoulder_height = 5.00
