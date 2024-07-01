@@ -860,7 +860,10 @@ class ProfileScreen(Screens):
         # HEIGHT
         output += "height: " + the_cat.genotype.height_label
         if game.clan.clan_settings["showheight"]:
-            output += " ("+ str(the_cat.genotype.shoulder_height) +"\")"
+            if game.clan.clan_settings["metric_toggle"]:
+                output += f" ({the_cat.genotype.shoulder_height * 2.54:.2f} cm)"
+            else:
+                output += " ("+ str(the_cat.genotype.shoulder_height) +"\")"
 
         # ACCESSORY
         if the_cat.pelt.accessory:

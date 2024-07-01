@@ -45,6 +45,15 @@
             "Adds exact shoulder height in inches to cats",
             false
         ],
+        "metric_toggle": [
+            "Convert inches to cm",
+            "Converts heights from inches to centimetres",
+            false,
+            [
+                "showheight",
+                true
+            ]
+        ],
         "showxp": [
             "Show exact XP and nutrition status",
             "Will turn 'experience: proficient' into 'experience: proficient (151)'; and 'nutrition: full' into 'nutrition: full (70)'.",
