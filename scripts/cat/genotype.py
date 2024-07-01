@@ -2228,7 +2228,7 @@ class Genotype:
             piggrade = self.pigmentation
 
         if self.dilute[0] == "d" or self.pointgene == ["cb", "cb"] or self.pointgene == ["cb", "c"] or self.pointgene == ["cb", "cm"]:
-            if randint(1, 5) == 1:
+            if randint(1, 5) == 1 and piggrade > 1:
                 piggrade = piggrade - 1
         
         if self.pinkdilute[0] == 'dp' or self.pointgene == ["cb", "cs"] or piggrade == 0 or ((self.pointgene == ["cb", "cm"] or self.pointgene == ["cm", "cm"] or self.pointgene == ["cm", "c"]) and randint(1, 5) == 1):
@@ -2353,7 +2353,7 @@ class Genotype:
 
                 if het2index == 0:
                     tempref = randint(1, 11)
-                    if(randint(0,1)==0):
+                    if random() < 0.5:
                         self.lefteye = RefTypeFind(tempref, 12)
                         self.lefteyetype = SecondaryRefTypeFind(tempref, 12)
                     else:
@@ -2363,7 +2363,7 @@ class Genotype:
                     self.extraeyecolour = RefTypeFind(a[0], 12)
                     self.extraeyetype = SecondaryRefTypeFind(a[0], 12)
             elif hetindex == 0:
-                if(randint(0,1)==0):
+                if random() < 0.5:
                     self.lefteye = RefTypeFind(refgrade, 12)
                     self.lefteyetype = SecondaryRefTypeFind(refgrade, 12)
                 else:
