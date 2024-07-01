@@ -2052,6 +2052,9 @@ class Genotype:
         else:
             self.soktype = soktypes[2]
 
+        if self.body_value == 0 or self.height_value == 0:
+            self.GenerateBody()
+
         body_types = ['snub-nosed', 'cobby', 'semi-cobby', 'intermediate', 'semi-oriental', 'oriental', 'wedge-faced']
         height_types = ['teacup', 'tiny', 'small', 'below average', 'average', 'above average', 'large', 'massive', 'giant', 'goliath']
 
