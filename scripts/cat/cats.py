@@ -283,12 +283,12 @@ class Cat:
 
         #white patterns
         
-        def GenerateWhite(KIT, KITgrade, vit, white_pattern):
+        def GenerateWhite(KIT, KITgrade, vit, white_pattern, pax3):
             def clean_white():
                 while None in white_pattern:
                     white_pattern.remove(None)
 
-            if white_pattern is None and (KIT[0] != "W" and KIT[0] != "w" and KIT[0] != 'wsal'):
+            if white_pattern is None and ((KIT[0] != "W" and KIT[0] != "w" and KIT[0] != 'wsal') or 'NoDBE' not in pax3 or 'DBEre' in pax3):
                 white_pattern = []
                 if(vit):
                     white_pattern.append(choice(vitiligo))
@@ -300,11 +300,13 @@ class Cat:
                     else:
                         white_pattern.append("dorsal2")
                 
-                if KIT[0] == "wg":
+                if KIT[0] == "wg" and 'NoDBE' in pax3:
                     for mark in ["left front mitten", "left back mitten", "right front mitten", "right back mitten"]:
                         white_pattern.append(mark)
-                elif KIT[0] in ["ws", "wt"] and KIT[1] not in ["ws", "wt"]:
-                    
+                elif (KIT[0] in ["ws", "wt"] or 'DBEre' in pax3) and KIT[1] not in ["ws", "wt"] and 'NoDBE' in pax3:
+                    if not KIT[0] in ["ws", "wt"]:
+                        KITgrade = min(KITgrade, 3)
+
                     if(randint(1, 4) == 1):
                         white_pattern.append(choice(maingame_white["low"].get(str(KITgrade))))
                         clean_white()
@@ -487,18 +489,15 @@ class Cat:
             
             elif white_pattern is None and vit:
                 white_pattern = [choice(vitiligo)]
-            if white_pattern == [] or white_pattern is None or (KIT == ["w", "w"] and not vit):
+            if white_pattern == [] or white_pattern is None or (KIT == ["w", "w"] and not vit and 'DBEre' not in pax3 and 'NoDBE' in pax3):
                 white_pattern = "No"
             return white_pattern
 
-        self.genotype.white_pattern = GenerateWhite(self.genotype.white, self.genotype.whitegrade, self.genotype.vitiligo, white_pattern)
+        self.genotype.white_pattern = GenerateWhite(self.genotype.white, self.genotype.whitegrade, self.genotype.vitiligo, white_pattern, self.genotype.pax3)
 
         white_pattern = chim_white
         if self.genotype.chimera:    
-            self.genotype.chimerageno.white_pattern = GenerateWhite(self.genotype.chimerageno.white, self.genotype.chimerageno.whitegrade, self.genotype.chimerageno.vitiligo, white_pattern)
-        
-        #elif white_pattern == "No":
-        #    white_pattern = None
+            self.genotype.chimerageno.white_pattern = GenerateWhite(self.genotype.chimerageno.white, self.genotype.chimerageno.whitegrade, self.genotype.chimerageno.vitiligo, white_pattern, self.genotype.pax3)
         
         # Various behavior toggles
         self.no_kits = False
@@ -514,7 +513,7 @@ class Cat:
         self.faded = faded  # This is only used to flag cats that are faded, but won't be added to the faded list until
         # the next save.
         
-        if (self.genotype.munch[1] == "Mk" or self.genotype.fold[1] == "Fd" or (self.genotype.manx[1] == "Ab" or self.genotype.manx[1] == "M")):
+        if self.genotype.munch[1] == "Mk" or self.genotype.fold[1] == "Fd" or (self.genotype.manx[1] == "Ab" or self.genotype.manx[1] == "M") or ('NoDBE' not in self.genotype.pax3 and 'DBEalt' not in self.genotype.pax3):
             self.dead = True
 
         self.favourite = False

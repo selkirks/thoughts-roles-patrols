@@ -1161,9 +1161,9 @@ class Breed_generator:
             c = randint(1, 40)
 
             if c == 1:
-                genoclass.sunshine[i] = "fg" #Flaxen Gold
+                genoclass.corin[i] = "fg" #Flaxen Gold
             else:
-                genoclass.sunshine[i] = "N" #No
+                genoclass.corin[i] = "N" #No
 
         # curl + fold
 
@@ -3532,9 +3532,9 @@ class Breed_generator:
 
         for i in range(2):
             if random() < 0.125:
-                genoclass.sunshine[i] = "sh" #sunSHine
+                genoclass.corin[i] = "sh" #sunSHine
             elif random() < 0.0625:
-                genoclass.sunshine[i] = "sg" #Siberian Gold / extreme sunshine
+                genoclass.corin[i] = "sg" #Siberian Gold / extreme sunshine
 
         genes = ["2", "2", "1", "1", "1", "1", "1", "1", "0", "0"]
         
@@ -4868,7 +4868,7 @@ class Breed_generator:
 class Breed_checker:
     @staticmethod
     def Cheetoh(genotype, phenotype):
-        if genotype.ext[0] != "E" or genotype.sunshine[0] != "N" or phenotype.length != "shorthaired" or 'O' in genotype.sexgene:
+        if genotype.ext[0] != "E" or genotype.corin[0] != "N" or phenotype.length != "shorthaired" or 'O' in genotype.sexgene:
             return False
         if genotype.white[0] != "w" or genotype.ticked[0] != "ta" or phenotype.furtype != [""] or genotype.pinkdilute[0] == "dp":
             return False
@@ -4899,7 +4899,7 @@ class Breed_checker:
         
         if phenotype.fade != "" or genotype.karp[0] == "K":
             return False
-        if genotype.ext[0] != "E" or genotype.sunshine[0] != "N":
+        if genotype.ext[0] != "E" or genotype.corin[0] != "N":
             return False
         if genotype.dilutemd[0] != "dm" or genotype.pinkdilute[0] == "dp":
             return False
@@ -4923,7 +4923,7 @@ class Breed_checker:
         
         if phenotype.fade != "" or genotype.karp[0] == "K":
             return False
-        if genotype.ext[0] != "E" or genotype.sunshine[0] != "N":
+        if genotype.ext[0] != "E" or genotype.corin[0] != "N":
             return False
         if genotype.dilutemd[0] != "dm" or genotype.pinkdilute[0] == "dp":
             return False
@@ -4946,7 +4946,7 @@ class Breed_checker:
         
         if phenotype.fade != "" or genotype.karp[0] == "K":
             return False
-        if genotype.ext[0] != "E" or genotype.sunshine[0] != "N":
+        if genotype.ext[0] != "E" or genotype.corin[0] != "N":
             return False
         if genotype.dilutemd[0] != "dm" or genotype.pinkdilute[0] == "dp":
             return False
@@ -4968,7 +4968,7 @@ class Breed_checker:
         
         if phenotype.fade != "" or genotype.karp[0] == "K":
             return False
-        if genotype.ext[0] != "E" or genotype.sunshine[0] != "N":
+        if genotype.ext[0] != "E" or genotype.corin[0] != "N":
             return False
         if genotype.dilutemd[0] != "dm" or genotype.pinkdilute[0] == "dp":
             return False
@@ -4990,7 +4990,7 @@ class Breed_checker:
         
         if phenotype.fade != "" or genotype.karp[0] == "K":
             return False
-        if genotype.ext[0] != "E" or genotype.sunshine[0] != "N":
+        if genotype.ext[0] != "E" or genotype.corin[0] != "N":
             return False
         if genotype.dilutemd[0] != "dm" or genotype.pinkdilute[0] == "dp":
             return False
@@ -5015,7 +5015,7 @@ class Breed_checker:
         
         if phenotype.fade != "" or genotype.karp[0] == "K":
             return False
-        if genotype.ext[0] != "E" or genotype.sunshine[0] != "N":
+        if genotype.ext[0] != "E" or genotype.corin[0] != "N":
             return False
         if genotype.dilutemd[0] != "dm" or genotype.pinkdilute[0] == "dp":
             return False
@@ -5036,7 +5036,7 @@ class Breed_checker:
         
         if phenotype.fade != "" or genotype.karp[0] == "K":
             return False
-        if genotype.ext[0] != "E" or genotype.sunshine[0] != "N":
+        if genotype.ext[0] != "E" or genotype.corin[0] != "N":
             return False
         if genotype.dilutemd[0] != "dm" or genotype.pinkdilute[0] == "dp":
             return False
@@ -5059,7 +5059,7 @@ class Breed_checker:
         
         if phenotype.fade != "" or genotype.karp[0] == "K":
             return False
-        if genotype.ext[0] != "E" or genotype.sunshine[0] != "N":
+        if genotype.ext[0] != "E" or genotype.corin[0] != "N":
             return False
         if genotype.dilutemd[0] != "dm" or genotype.pinkdilute[0] == "dp":
             return False
@@ -5085,7 +5085,7 @@ class Breed_checker:
         
         if phenotype.fade != "" or genotype.karp[0] == "K":
             return False
-        if genotype.ext[0] != "E" or genotype.sunshine[0] != "N":
+        if genotype.ext[0] != "E" or genotype.corin[0] != "N":
             return False
         if genotype.dilutemd[0] != "dm" or genotype.pinkdilute[0] == "dp":
             return False
@@ -5114,7 +5114,7 @@ class Breed_checker:
         
         if phenotype.fade != "" or genotype.karp[0] == "K":
             return False
-        if genotype.ext[0] != "E" or genotype.sunshine[0] != "N":
+        if genotype.ext[0] != "E" or genotype.corin[0] != "N":
             return False
         if genotype.pinkdilute[0] == "dp":
             return False
@@ -5137,7 +5137,7 @@ class Breed_checker:
         
         if phenotype.fade != "" or genotype.karp[0] == "K":
             return False
-        if genotype.ext[0] != "E" or genotype.sunshine[0] != "N":
+        if genotype.ext[0] != "E" or genotype.corin[0] != "N":
             return False
         if genotype.dilutemd[0] != "dm" or genotype.pinkdilute[0] == "dp":
             return False
@@ -5160,7 +5160,7 @@ class Breed_checker:
         
         if phenotype.fade != "" or genotype.karp[0] == "K":
             return False
-        if genotype.ext[0] != "E" or genotype.sunshine[0] != "N":
+        if genotype.ext[0] != "E" or genotype.corin[0] != "N":
             return False
         if genotype.pinkdilute[0] == "dp":
             return False
@@ -5185,7 +5185,7 @@ class Breed_checker:
         
         if phenotype.fade != "" or genotype.karp[0] == "K":
             return False
-        if genotype.ext[0] != "E" or genotype.sunshine[0] != "N":
+        if genotype.ext[0] != "E" or genotype.corin[0] != "N":
             return False
         if genotype.dilutemd[0] != "dm" or genotype.pinkdilute[0] == "dp":
             return False
@@ -5235,7 +5235,7 @@ class Breed_checker:
         
         if phenotype.fade != "" or genotype.karp[0] == "K":
             return False
-        if genotype.ext[0] != "E" or genotype.sunshine[0] != "N":
+        if genotype.ext[0] != "E" or genotype.corin[0] != "N":
             return False
         if genotype.dilutemd[0] != "dm" or genotype.pinkdilute[0] == "dp":
             return False
@@ -5258,7 +5258,7 @@ class Breed_checker:
         
         if phenotype.fade != "" or genotype.karp[0] == "K":
             return False
-        if genotype.ext[0] != "E" or genotype.sunshine[0] != "N":
+        if genotype.ext[0] != "E" or genotype.corin[0] != "N":
             return False
         if genotype.dilutemd[0] != "dm" or genotype.pinkdilute[0] == "dp":
             return False
@@ -5286,7 +5286,7 @@ class Breed_checker:
         
         if phenotype.fade != "" or genotype.karp[0] == "K":
             return False
-        if genotype.ext[0] not in ["E", "Eg"] or genotype.sunshine[0] != "N":
+        if genotype.ext[0] not in ["E", "Eg"] or genotype.corin[0] != "N":
             return False
         if genotype.dilutemd[0] != "dm" or genotype.pinkdilute[0] == "dp":
             return False
@@ -5309,7 +5309,7 @@ class Breed_checker:
         
         if phenotype.fade != "" or genotype.karp[0] == "K":
             return False
-        if genotype.ext[0] != "E" or genotype.sunshine[0] != "N":
+        if genotype.ext[0] != "E" or genotype.corin[0] != "N":
             return False
         if genotype.dilutemd[0] != "dm" or genotype.pinkdilute[0] == "dp":
             return False
@@ -5332,7 +5332,7 @@ class Breed_checker:
         
         if phenotype.fade != "" or genotype.karp[0] == "K":
             return False
-        if genotype.ext[0] != "E" or genotype.sunshine[0] != "N":
+        if genotype.ext[0] != "E" or genotype.corin[0] != "N":
             return False
         if genotype.pinkdilute[0] == "dp":
             return False
@@ -5361,7 +5361,7 @@ class Breed_checker:
         
         if phenotype.fade != "" or genotype.karp[0] == "K":
             return False
-        if genotype.ext[0] != "E" or genotype.sunshine[0] != "N":
+        if genotype.ext[0] != "E" or genotype.corin[0] != "N":
             return False
         if genotype.pinkdilute[0] == "dp":
             return False
@@ -5383,7 +5383,7 @@ class Breed_checker:
         
         if phenotype.fade != "" or genotype.karp[0] == "K":
             return False
-        if genotype.ext[0] != "E" or genotype.sunshine[0] != "N":
+        if genotype.ext[0] != "E" or genotype.corin[0] != "N":
             return False
         if genotype.dilutemd[0] == "Dm":
             return False
@@ -5405,7 +5405,7 @@ class Breed_checker:
         
         if phenotype.fade != "" or genotype.karp[0] == "K":
             return False
-        if genotype.ext[0] != "E" or genotype.sunshine[0] != "N":
+        if genotype.ext[0] != "E" or genotype.corin[0] != "N":
             return False
         if genotype.dilutemd[0] != "dm" or genotype.pinkdilute[0] == "dp":
             return False
@@ -5439,7 +5439,7 @@ class Breed_checker:
         
         if phenotype.fade != "" or genotype.karp[0] == "K":
             return False
-        if genotype.ext[0] != "E" or genotype.sunshine[0] != "N":
+        if genotype.ext[0] != "E" or genotype.corin[0] != "N":
             return False
         if genotype.dilutemd[0] != "dm" or genotype.pinkdilute[0] == "dp":
             return False
@@ -5463,7 +5463,7 @@ class Breed_checker:
         
         if phenotype.fade != "":
             return False
-        if genotype.ext[0] != "E" or genotype.sunshine[0] != "N":
+        if genotype.ext[0] != "E" or genotype.corin[0] != "N":
             return False
         if genotype.dilutemd[0] != "dm" or genotype.pinkdilute[0] == "dp":
             return False
@@ -5486,7 +5486,7 @@ class Breed_checker:
         
         if phenotype.fade != "" or genotype.karp[0] == "K":
             return False
-        if genotype.ext[0] != "E" or genotype.sunshine[0] != "N":
+        if genotype.ext[0] != "E" or genotype.corin[0] != "N":
             return False
         if genotype.dilutemd[0] != "dm" or genotype.pinkdilute[0] == "dp":
             return False
@@ -5509,7 +5509,7 @@ class Breed_checker:
         
         if phenotype.fade != "" or genotype.karp[0] == "K":
             return False
-        if genotype.ext[0] != "E" or genotype.sunshine[0] != "N":
+        if genotype.ext[0] != "E" or genotype.corin[0] != "N":
             return False
         if genotype.dilutemd[0] != "dm" or genotype.pinkdilute[0] == "dp":
             return False
@@ -5532,7 +5532,7 @@ class Breed_checker:
         
         if phenotype.fade != "" or genotype.karp[0] == "K":
             return False
-        if genotype.ext[0] != "E" or genotype.sunshine[0] != "N":
+        if genotype.ext[0] != "E" or genotype.corin[0] != "N":
             return False
         if genotype.dilutemd[0] != "dm" or genotype.pinkdilute[0] == "dp":
             return False
@@ -5555,7 +5555,7 @@ class Breed_checker:
         
         if phenotype.fade != "" or genotype.karp[0] == "K":
             return False
-        if genotype.ext[0] != "E" or genotype.sunshine[0] != "N":
+        if genotype.ext[0] != "E" or genotype.corin[0] != "N":
             return False
         if genotype.dilutemd[0] != "dm" or genotype.pinkdilute[0] == "dp":
             return False
@@ -5580,7 +5580,7 @@ class Breed_checker:
         
         if phenotype.fade != "" or genotype.karp[0] == "K":
             return False
-        if genotype.ext[0] != "E" or genotype.sunshine[0] != "N":
+        if genotype.ext[0] != "E" or genotype.corin[0] != "N":
             return False
         if genotype.dilutemd[0] != "dm" or genotype.pinkdilute[0] == "dp":
             return False
@@ -5606,7 +5606,7 @@ class Breed_checker:
         
         if phenotype.fade != "" or genotype.karp[0] == "K":
             return False
-        if genotype.ext[0] != "E" or genotype.sunshine[0] != "N":
+        if genotype.ext[0] != "E" or genotype.corin[0] != "N":
             return False
         if genotype.dilutemd[0] != "dm" or genotype.pinkdilute[0] == "dp":
             return False
@@ -5625,7 +5625,7 @@ class Breed_checker:
         
         if phenotype.fade != "" or genotype.karp[0] == "K":
             return False
-        if genotype.ext[0] not in ["E", 'ec'] or genotype.sunshine[0] != "N":
+        if genotype.ext[0] not in ["E", 'ec'] or genotype.corin[0] != "N":
             return False
         if genotype.dilutemd[0] != "dm" or genotype.pinkdilute[0] == "dp":
             return False
@@ -5651,7 +5651,7 @@ class Breed_checker:
         
         if genotype.ghosting[0] == "Gh":
             return False
-        if genotype.ext[0] != "E" or genotype.sunshine[0] != "N":
+        if genotype.ext[0] != "E" or genotype.corin[0] != "N":
             return False
         if genotype.pinkdilute[0] == "dp":
             return False
@@ -5673,7 +5673,7 @@ class Breed_checker:
         
         if phenotype.fade != "" or genotype.karp[0] == "K":
             return False
-        if genotype.ext[0] != "E" or genotype.sunshine[0] != "N":
+        if genotype.ext[0] != "E" or genotype.corin[0] != "N":
             return False
         if genotype.dilutemd[0] != "dm" or genotype.pinkdilute[0] == "dp":
             return False
@@ -5696,7 +5696,7 @@ class Breed_checker:
         
         if phenotype.fade != "" or genotype.karp[0] == "K":
             return False
-        if genotype.ext[0] != "E" or genotype.sunshine[0] != "N":
+        if genotype.ext[0] != "E" or genotype.corin[0] != "N":
             return False
         if genotype.dilutemd[0] != "dm" or genotype.pinkdilute[0] == "dp":
             return False
@@ -5718,7 +5718,7 @@ class Breed_checker:
         
         if phenotype.fade != "" or genotype.karp[0] == "K":
             return False
-        if genotype.ext[0] not in ["E", "er"] or genotype.sunshine[0] != "N":
+        if genotype.ext[0] not in ["E", "er"] or genotype.corin[0] != "N":
             return False
         if genotype.pinkdilute[0] == "dp":
             return False
@@ -5743,7 +5743,7 @@ class Breed_checker:
         
         if phenotype.fade != "" or genotype.karp[0] == "K":
             return False
-        if genotype.ext[0] != "E" or genotype.sunshine[0] != "N":
+        if genotype.ext[0] != "E" or genotype.corin[0] != "N":
             return False
         if genotype.dilutemd[0] != "dm" or genotype.pinkdilute[0] == "dp":
             return False
@@ -5768,7 +5768,7 @@ class Breed_checker:
         
         if phenotype.fade != "" or genotype.karp[0] == "K":
             return False
-        if genotype.ext[0] not in ["E", 'ec'] or genotype.sunshine[0] != "N":
+        if genotype.ext[0] not in ["E", 'ec'] or genotype.corin[0] != "N":
             return False
         if genotype.pinkdilute[0] == "dp":
             return False
@@ -5797,7 +5797,7 @@ class Breed_checker:
         
         if phenotype.fade != "" or genotype.karp[0] == "K":
             return False
-        if genotype.ext[0] != "E" or genotype.sunshine[0] != "N":
+        if genotype.ext[0] != "E" or genotype.corin[0] != "N":
             return False
         if genotype.dilutemd[0] != "dm" or genotype.pinkdilute[0] == "dp":
             return False
@@ -5823,7 +5823,7 @@ class Breed_checker:
         
         if phenotype.fade != "":
             return False
-        if genotype.ext[0] != "E" or genotype.sunshine[0] != "N":
+        if genotype.ext[0] != "E" or genotype.corin[0] != "N":
             return False
         if genotype.dilutemd[0] != "dm" or genotype.pinkdilute[0] == "dp":
             return False
@@ -5846,7 +5846,7 @@ class Breed_checker:
         
         if phenotype.fade != "" or genotype.karp[0] == "K":
             return False
-        if genotype.ext[0] != "E" or genotype.sunshine[0] != "N":
+        if genotype.ext[0] != "E" or genotype.corin[0] != "N":
             return False
         if genotype.dilutemd[0] != "dm" or genotype.pinkdilute[0] == "dp":
             return False
@@ -5874,7 +5874,7 @@ class Breed_checker:
         
         if phenotype.fade != "" or genotype.karp[0] == "K":
             return False
-        if genotype.ext[0] not in ["E", 'ea'] or genotype.sunshine[0] != "N":
+        if genotype.ext[0] not in ["E", 'ea'] or genotype.corin[0] != "N":
             return False
         if genotype.dilutemd[0] != "dm" or genotype.pinkdilute[0] == "dp":
             return False
@@ -5901,7 +5901,7 @@ class Breed_checker:
         
         if phenotype.fade != "" or genotype.karp[0] == "K":
             return False
-        if genotype.ext[0] != "E" or genotype.sunshine[0] != "N":
+        if genotype.ext[0] != "E" or genotype.corin[0] != "N":
             return False
         if genotype.dilutemd[0] != "dm" or genotype.pinkdilute[0] == "dp":
             return False
@@ -5931,7 +5931,7 @@ class Breed_checker:
         
         if phenotype.fade != "" or genotype.karp[0] == "K":
             return False
-        if genotype.ext[0] != "E" or genotype.sunshine[0] != "N":
+        if genotype.ext[0] != "E" or genotype.corin[0] != "N":
             return False
         if genotype.pinkdilute[0] == "dp":
             return False
@@ -5962,7 +5962,7 @@ class Breed_checker:
         
         if phenotype.fade != "" or genotype.karp[0] == "K":
             return False
-        if genotype.ext[0] != "E" or genotype.sunshine[0] != "N":
+        if genotype.ext[0] != "E" or genotype.corin[0] != "N":
             return False
         if genotype.pinkdilute[0] == "dp":
             return False
@@ -5991,7 +5991,7 @@ class Breed_checker:
         
         if phenotype.fade != "" or genotype.karp[0] == "K":
             return False
-        if genotype.ext[0] != "E" or genotype.sunshine[0] != "N":
+        if genotype.ext[0] != "E" or genotype.corin[0] != "N":
             return False
         if genotype.dilutemd[0] != "dm" or genotype.pinkdilute[0] == "dp":
             return False
@@ -6017,7 +6017,7 @@ class Breed_checker:
         
         if phenotype.fade != "" or genotype.karp[0] == "K":
             return False
-        if genotype.ext[0] != "E" or genotype.sunshine[0] != "N":
+        if genotype.ext[0] != "E" or genotype.corin[0] != "N":
             return False
         if genotype.dilutemd[0] != "dm" or genotype.pinkdilute[0] == "dp":
             return False
@@ -6041,7 +6041,7 @@ class Breed_checker:
         
         if phenotype.fade != "" or genotype.karp[0] == "K":
             return False
-        if genotype.ext[0] != "E" or genotype.sunshine[0] != "N":
+        if genotype.ext[0] != "E" or genotype.corin[0] != "N":
             return False
         if genotype.pinkdilute[0] == "dp":
             return False
@@ -6066,7 +6066,7 @@ class Breed_checker:
         
         if phenotype.fade != "" or genotype.karp[0] == "K":
             return False
-        if genotype.ext[0] != "E" or genotype.sunshine[0] != "N":
+        if genotype.ext[0] != "E" or genotype.corin[0] != "N":
             return False
         if genotype.dilutemd[0] != "dm" or genotype.pinkdilute[0] == "dp":
             return False
@@ -6097,7 +6097,7 @@ class Breed_checker:
         
         if phenotype.fade != "" or genotype.karp[0] == "K":
             return False
-        if genotype.ext[0] != "E" or genotype.sunshine[0] != "N":
+        if genotype.ext[0] != "E" or genotype.corin[0] != "N":
             return False
         if genotype.pinkdilute[0] == "dp":
             return False
@@ -6121,7 +6121,7 @@ class Breed_checker:
         
         if phenotype.fade != "" or genotype.karp[0] == "K":
             return False
-        if genotype.ext[0] != "E" or genotype.sunshine[0] == "fg":
+        if genotype.ext[0] != "E" or genotype.corin[0] == "fg":
             return False
         if genotype.dilutemd[0] != "dm" or genotype.pinkdilute[0] == "dp":
             return False
@@ -6147,7 +6147,7 @@ class Breed_checker:
         
         if phenotype.fade != "" or genotype.karp[0] == "K":
             return False
-        if genotype.ext[0] != "E" or genotype.sunshine[0] != "N":
+        if genotype.ext[0] != "E" or genotype.corin[0] != "N":
             return False
         if genotype.dilutemd[0] != "dm" or genotype.pinkdilute[0] == "dp":
             return False
@@ -6170,7 +6170,7 @@ class Breed_checker:
         
         if phenotype.fade != "" or genotype.karp[0] == "K":
             return False
-        if genotype.ext[0] != "E" or genotype.sunshine[0] != "N":
+        if genotype.ext[0] != "E" or genotype.corin[0] != "N":
             return False
         if genotype.pinkdilute[0] == "dp":
             return False
@@ -6194,7 +6194,7 @@ class Breed_checker:
         
         if phenotype.fade != "" or genotype.karp[0] == "K":
             return False
-        if genotype.ext[0] != "E" or genotype.sunshine[0] != "N":
+        if genotype.ext[0] != "E" or genotype.corin[0] != "N":
             return False
         if genotype.dilutemd[0] != "dm" or genotype.pinkdilute[0] == "dp":
             return False
@@ -6219,7 +6219,7 @@ class Breed_checker:
         
         if phenotype.fade != "" or genotype.karp[0] == "K":
             return False
-        if genotype.ext[0] != "E" or genotype.sunshine[0] != "N":
+        if genotype.ext[0] != "E" or genotype.corin[0] != "N":
             return False
         if genotype.dilutemd[0] == "Dm" or genotype.pinkdilute[0] == "dp":
             return False
@@ -6241,7 +6241,7 @@ class Breed_checker:
         
         if phenotype.fade != "" or genotype.karp[0] == "K":
             return False
-        if genotype.ext[0] != "E" or genotype.sunshine[0] != "N":
+        if genotype.ext[0] != "E" or genotype.corin[0] != "N":
             return False
         if genotype.dilutemd[0] == "Dm" or genotype.pinkdilute[0] == "dp":
             return False
@@ -6263,7 +6263,7 @@ class Breed_checker:
         
         if phenotype.fade != "" or genotype.karp[0] == "K":
             return False
-        if genotype.ext[0] != "E" or genotype.sunshine[0] != "N":
+        if genotype.ext[0] != "E" or genotype.corin[0] != "N":
             return False
         if genotype.dilutemd[0] == "Dm" or genotype.pinkdilute[0] == "dp":
             return False
@@ -6287,7 +6287,7 @@ class Breed_checker:
         
         if phenotype.fade != "" or genotype.karp[0] == "K":
             return False
-        if genotype.ext[0] != "E" or genotype.sunshine[0] != "N":
+        if genotype.ext[0] != "E" or genotype.corin[0] != "N":
             return False
         if genotype.pinkdilute[0] == "dp":
             return False
@@ -6311,7 +6311,7 @@ class Breed_checker:
         
         if phenotype.fade != "" or genotype.karp[0] == "K":
             return False
-        if genotype.ext[0] != "E" or genotype.sunshine[0] != "N":
+        if genotype.ext[0] != "E" or genotype.corin[0] != "N":
             return False
         if genotype.dilutemd[0] != "dm" or genotype.pinkdilute[0] == "dp":
             return False
@@ -6334,7 +6334,7 @@ class Breed_checker:
         
         if phenotype.fade != "" or genotype.karp[0] == "K":
             return False
-        if genotype.ext[0] != "E" or genotype.sunshine[0] != "N":
+        if genotype.ext[0] != "E" or genotype.corin[0] != "N":
             return False
         if genotype.dilutemd[0] != "dm" or genotype.pinkdilute[0] == "dp":
             return False
@@ -6359,7 +6359,7 @@ class Breed_checker:
         
         if phenotype.fade != "" or genotype.karp[0] == "K":
             return False
-        if genotype.ext[0] != "E" or genotype.sunshine[0] != "N":
+        if genotype.ext[0] != "E" or genotype.corin[0] != "N":
             return False
         if genotype.dilutemd[0] != "dm" or genotype.pinkdilute[0] == "dp":
             return False
@@ -6389,7 +6389,7 @@ class Breed_checker:
         
         if phenotype.fade != "" or genotype.karp[0] == "K":
             return False
-        if genotype.ext[0] != "E" or genotype.sunshine[0] != "N":
+        if genotype.ext[0] != "E" or genotype.corin[0] != "N":
             return False
         if genotype.dilutemd[0] != "dm" or genotype.pinkdilute[0] == "dp":
             return False
