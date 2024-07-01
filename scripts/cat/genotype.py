@@ -762,7 +762,7 @@ class Genotype:
         elif a <= 11:
             self.poly[0] = "Pd"
         
-        a = randint(1, 25)
+        a = randint(1, 2500)
 
         if a == 1 and not self.ban_genes:
             self.pax3 = ['DBEalt', choice(['DBEcel', 'DBEcel', 'DBEre', 'DBEalt', 'DBEalt'])]
