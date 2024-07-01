@@ -1852,9 +1852,9 @@ class Genotype:
         indexes2 = getindexes(multipliers2)
 
         num = random() * x
-        self.refraction = next((n for n in range(len(indexes)) if num < indexes[n]))
+        self.refraction = next((n for n in range(len(indexes)) if num < indexes[n])) + 1
         num = random() * x2
-        self.pigmentation = next((n for n in range(len(indexes2)) if num < indexes2[n]))
+        self.pigmentation = next((n for n in range(len(indexes2)) if num < indexes2[n])) + 1
 
     def GenerateBody(self):
         x = sum(self.body_ranges)
