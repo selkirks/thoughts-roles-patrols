@@ -1910,6 +1910,16 @@ class Genotype:
         wobble = randint(1, int(sum(self.height_ranges) / 20))
         self.height_value = randint(min(par1.height_value-wobble, par2.height_value-wobble), max(par1.height_value+wobble, par2.height_value+wobble))
 
+        if self.body_value < 1:
+            self.body_value = 1
+        if self.body_value > sum(self.body_ranges):
+            self.body_value = sum(self.body_ranges)
+        
+        if self.height_value < 1:
+            self.height_value = 1
+        if self.height_value > sum(self.height_ranges):
+            self.height_value = sum(self.height_ranges)
+
 
         if(randint(1, self.odds['random_mutation']) == 1):
             self.Mutate()
