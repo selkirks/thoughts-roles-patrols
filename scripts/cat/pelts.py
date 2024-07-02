@@ -1083,8 +1083,8 @@ class Pelt:
                     color_name = cat.pelt.name.lower()
             else:
                 base = cat.pelt.tortiebase.lower()
-                if base in Pelt.tabbies + ['bengal', 'rosette', 'speckled']:
-                    base = 'tabby'
+                if base in [tabby.lower() for tabby in Pelt.tabbies] + ['bengal', 'rosette', 'speckled']:
+                    base = ' tabby'  # the extra space is intentional
                 else:
                     base = ''
 
@@ -1094,10 +1094,10 @@ class Pelt:
                 color_name = f"{color_name}/{patches_color}"
 
                 if cat.pelt.colour in Pelt.black_colours + Pelt.brown_colours + Pelt.white_colours and \
-                    cat.pelt.tortiecolour in Pelt.black_colours + Pelt.brown_colours + Pelt.white_colours:
-                        color_name = f"{color_name} mottled"
+                        cat.pelt.tortiecolour in Pelt.black_colours + Pelt.brown_colours + Pelt.white_colours:
+                    color_name = f"{color_name} mottled{base}"
                 else:
-                    color_name = f"{color_name} {cat.pelt.name.lower()}"
+                    color_name = f"{color_name} {cat.pelt.name.lower()}{base}"
 
         if cat.pelt.white_patches:
             if cat.pelt.white_patches == "FULLWHITE":
