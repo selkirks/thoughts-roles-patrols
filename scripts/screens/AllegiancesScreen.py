@@ -145,6 +145,18 @@ class AllegiancesScreen(Screens):
                 living_kits.append(cat)
             elif cat.status == "elder":
                 living_elders.append(cat)
+        if not len(living_meds):
+            for cat in living_apprentices:
+                if cat.status == "healer apprentice":
+                    living_meds.append(cat)
+                    living_apprentices.remove(cat)
+        if not len(living_mediators):
+            for cat in living_apprentices:
+                if cat.status == "mediator apprentice":
+                    living_mediators.append(cat)
+                    living_apprentices.remove(cat)
+
+
         living_meds = sorted(living_meds, key=lambda x: x.moons, reverse=True)
         living_mediators = sorted(living_mediators, key=lambda x: x.moons, reverse=True)
         living_warriors = sorted(living_warriors, key=lambda x: x.moons, reverse=True)
