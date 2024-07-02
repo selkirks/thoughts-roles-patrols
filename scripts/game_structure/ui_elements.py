@@ -886,6 +886,18 @@ class UICatListDisplay(UIContainer):
 
         show_fav = game.clan.clan_settings["show fav"]
 
+        if show_fav:
+            i = -1
+            for row in range(self.rows):
+                for column in range(self.columns):
+                    container = self.boxes[row][column]
+                    i += 1
+                    try:
+                        kitty = display_cats[i]
+                    except IndexError:
+                        break
+                    if kitty.favourite:
+                        self.create_favor_indicator(i, container)
         i = -1
         for row in range(self.rows):
             for column in range(self.columns):
@@ -898,18 +910,6 @@ class UICatListDisplay(UIContainer):
 
                 self.create_cat_button(i, kitty, container)
 
-        if show_fav:
-            i = -1
-            for row in range(self.rows):
-                for column in range(self.columns):
-                    container = self.boxes[row][column]
-                    i += 1
-                    try:
-                        kitty = display_cats[i]
-                    except IndexError:
-                        return
-                    if kitty.favourite:
-                        self.create_favor_indicator(i, container)
 
         if self.show_names:
             i = -1
@@ -939,7 +939,7 @@ class UICatListDisplay(UIContainer):
 
     def create_cat_button(self, i, kitty, container):
         self.cat_sprites[f"sprite{i}"] = UISpriteButton(
-            scale(pygame.Rect((0, 30), (100, 100))),
+            scale(pygame.Rect((0, 45), (100, 100))),
             kitty.sprite,
             cat_object=kitty,
             cat_id=kitty.ID,
@@ -952,7 +952,7 @@ class UICatListDisplay(UIContainer):
 
     def create_favor_indicator(self, i, container):
         self.favor_indicator[f"favor{i}"] = pygame_gui.elements.UIImage(
-            scale(pygame.Rect((0, 30), (100, 100))),
+            scale(pygame.Rect((0, 0), (100, 100))),
             self._favor_circle,
             object_id=f"favor_circle{i}",
             container=container,
