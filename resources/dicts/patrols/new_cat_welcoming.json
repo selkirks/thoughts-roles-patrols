@@ -2704,7 +2704,7 @@
                 "exp": 10,
                 "weight": 20,
                 "new_cat": [
-                    ["status:apprentice", "backstory:otherclan2"]
+                    ["status:apprentice", "backstory:otherclan2", "clancat"]
                 ],
                 "relationships": [
                     {
@@ -2721,7 +2721,7 @@
                 "exp": 10,
                 "weight": 10,
                 "new_cat": [
-                    ["status:apprentice", "backstory:otherclan2"]
+                    ["status:apprentice", "backstory:otherclan2", "clancat"]
                 ],
                 "relationships": [
                     {
@@ -2747,7 +2747,7 @@
                 ],
                 "can_have_stat": ["any"],
                 "new_cat": [
-                    ["status:apprentice", "backstory:otherclan2"]
+                    ["status:apprentice", "backstory:otherclan2", "clancat"]
                 ],
                 "relationships": [
                     {

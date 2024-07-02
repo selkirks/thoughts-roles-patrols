@@ -2597,7 +2597,7 @@ def generate_sprite(
             def TabbyBase(whichcolour, whichbase, special = None):
                 whichmain = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
                 whichmain.blit(sprites.sprites[whichbase + cat_sprite], (0, 0))
-                if special !='copper' and cat.moons > 12 and 'infertility' not in cat.permanent_condition and (genotype.silver[0] == 'I' and genotype.corin[0] == 'fg' and (get_current_season() == 'Leaf-fall' or get_current_season() == 'Leaf-bare')):
+                if special !='copper' and cat.moons > 12 and (genotype.silver[0] == 'I' and genotype.corin[0] == 'fg' and (get_current_season() == 'Leaf-fall' or get_current_season() == 'Leaf-bare' or 'infertility' in cat.permanent_condition)):
                     sunshine = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
                     
                     colours = phenotype.FindRed(genotype, cat.moons, special='low')
