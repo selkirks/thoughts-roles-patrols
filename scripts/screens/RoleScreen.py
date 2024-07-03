@@ -196,7 +196,7 @@ class RoleScreen(Screens):
 
         self.selected_cat_elements["cat_image"] = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((245, 40), (150, 150))),
-            pygame.transform.scale(self.the_cat.sprite, ui_scale_dimensions((150, 150))), #ENDED HERE
+            pygame.transform.scale(self.the_cat.sprite, ui_scale_dimensions((150, 150))), #ENDED
             manager=MANAGER,
         )
 
