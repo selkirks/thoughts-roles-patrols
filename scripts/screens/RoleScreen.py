@@ -9,7 +9,7 @@ from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import game, screen_x, screen_y, MANAGER
 from scripts.game_structure.ui_elements import UIImageButton, UITextBoxTweaked
-from scripts.utility import get_text_box_theme, shorten_text_to_fit
+from scripts.utility import get_text_box_theme, shorten_text_to_fit, ui_scale_dimensions
 from scripts.utility import ui_scale
 from .Screens import Screens
 
@@ -85,19 +85,19 @@ class RoleScreen(Screens):
     def screen_switches(self):
 
         self.next_cat_button = UIImageButton(
-            ui_scale(pygame.Rect((1244, 50), (306, 60))),
+            ui_scale(pygame.Rect((622, 25), (153, 30))),
             "",
             object_id="#next_cat_button",
             manager=MANAGER,
         )
         self.previous_cat_button = UIImageButton(
-            ui_scale(pygame.Rect((50, 50), (306, 60))),
+            ui_scale(pygame.Rect((25, 25), (153, 30))),
             "",
             object_id="#previous_cat_button",
             manager=MANAGER,
         )
         self.back_button = UIImageButton(
-            ui_scale(pygame.Rect((50, 120), (210, 60))),
+            ui_scale(pygame.Rect((25, 60), (105, 30))),
             "",
             object_id="#back_button",
             manager=MANAGER,
@@ -105,33 +105,33 @@ class RoleScreen(Screens):
 
         # Create the buttons
         self.bar = pygame_gui.elements.UIImage(
-            ui_scale(pygame.Rect((96, 700), (1408, 20))),
+            ui_scale(pygame.Rect((48, 350), (704, 10))),
             pygame.transform.scale(
                 image_cache.load_image("resources/images/bar.png"),
-                (1408 / 1600 * screen_x, 20 / 1400 * screen_y),
+                ui_scale_dimensions((704,10))
             ),
             manager=MANAGER,
         )
 
         self.blurb_background = pygame_gui.elements.UIImage(
-            ui_scale(pygame.Rect((100, 390), (1400, 300))),
+            ui_scale(pygame.Rect((50, 195), (700, 150))),
             pygame.transform.scale(
                 pygame.image.load(
                     "resources/images/mediation_selection_bg.png"
                 ).convert_alpha(),
-                (1400, 300),
+                ui_scale_dimensions((700, 150)),
             ),
         )
 
         # LEADERSHIP
         self.promote_leader = UIImageButton(
-            ui_scale(pygame.Rect((96, 720), (344, 72))),
+            ui_scale(pygame.Rect((48, 360), (172, 36))),
             "",
             object_id="#promote_leader_button",
             manager=MANAGER,
         )
         self.promote_deputy = UIImageButton(
-            ui_scale(pygame.Rect((96, 792), (344, 72))),
+            ui_scale(pygame.Rect((48, 396), (172, 36))),
             "",
             object_id="#promote_deputy_button",
             manager=MANAGER,
@@ -139,25 +139,25 @@ class RoleScreen(Screens):
 
         # ADULT CAT ROLES
         self.switch_warrior = UIImageButton(
-            ui_scale(pygame.Rect((451, 720), (344, 72))),
+            ui_scale(pygame.Rect((225, 360), (172, 36))),
             "",
             object_id="#switch_warrior_button",
             manager=MANAGER,
         )
         self.retire = UIImageButton(
-            ui_scale(pygame.Rect((451, 792), (344, 72))),
+            ui_scale(pygame.Rect((225, 396), (172, 36))),
             "",
             object_id="#retire_button",
             manager=MANAGER,
         )
         self.switch_med_cat = UIImageButton(
-            ui_scale(pygame.Rect((805, 720), (344, 104))),
+            ui_scale(pygame.Rect((402, 360), (172, 52))),
             "",
             object_id="#switch_med_cat_button",
             manager=MANAGER,
         )
         self.switch_mediator = UIImageButton(
-            ui_scale(pygame.Rect((805, 824), (344, 72))),
+            ui_scale(pygame.Rect((402, 412), (172, 36))),
             "",
             object_id="#switch_mediator_button",
             manager=MANAGER,
@@ -165,19 +165,19 @@ class RoleScreen(Screens):
 
         # In-TRAINING ROLES:
         self.switch_warrior_app = UIImageButton(
-            ui_scale(pygame.Rect((1159, 720), (344, 104))),
+            ui_scale(pygame.Rect((579, 360), (172, 52))),
             "",
             object_id="#switch_warrior_app_button",
             manager=MANAGER,
         )
         self.switch_med_app = UIImageButton(
-            ui_scale(pygame.Rect((1159, 824), (344, 104))),
+            ui_scale(pygame.Rect((579, 412), (172, 52))),
             "",
             object_id="#switch_med_app_button",
             manager=MANAGER,
         )
         self.switch_mediator_app = UIImageButton(
-            ui_scale(pygame.Rect((1159, 928), (344, 104))),
+            ui_scale(pygame.Rect((579, 464), (172, 52))),
             "",
             object_id="#switch_mediator_app_button",
             manager=MANAGER,
@@ -195,8 +195,8 @@ class RoleScreen(Screens):
             return
 
         self.selected_cat_elements["cat_image"] = pygame_gui.elements.UIImage(
-            ui_scale(pygame.Rect((490, 80), (300, 300))),
-            pygame.transform.scale(self.the_cat.sprite, (300, 300)),
+            ui_scale(pygame.Rect((245, 40), (150, 150))),
+            pygame.transform.scale(self.the_cat.sprite, ui_scale_dimensions((150, 150))), #ENDED HERE
             manager=MANAGER,
         )
 
