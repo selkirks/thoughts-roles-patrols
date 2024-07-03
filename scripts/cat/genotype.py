@@ -2779,7 +2779,7 @@ class Genotype:
                 possible_mutes["main"].remove(gene)
         
         whichgene = ['furtype', 'other', 'main', 'other', 'main', 'main']
-        if self.white[0] == 'W':
+        if self.white[0] == 'W' or (self.white[1] in ['ws', 'wt'] and self.whitegrade == 5):
             whichgene = ['furtype']
         for cate in whichgene:
             if len(possible_mutes[cate]) == 0:
@@ -2804,7 +2804,7 @@ class Genotype:
 
             'pinkdilute' : ['dp'],
             "ext" : ['Eg', 'ec', 'er', 'ea'],
-            "sunshine" : ['sh', 'sg', 'fg'],
+            "corin" : ['sh', 'sg', 'fg'],
             "karp" : ['K'],
             "bleach" : ['lb'],
             "ghosting" : ['Gh'],
