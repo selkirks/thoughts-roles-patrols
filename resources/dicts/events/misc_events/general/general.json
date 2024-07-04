@@ -77,7 +77,8 @@
         "event_text": "r_c gives m_c something to adorn {PRONOUN/m_c/poss} pelt as congratulations.",
         "accessories": [
             "WILD",
-            "PLANT"
+            "PLANT",
+            "WILD2"
         ]
     },
     {
@@ -92,7 +93,8 @@
         "event_text": "m_c decides to pick something to adorn {PRONOUN/m_c/poss} pelt as celebration.",
         "accessories": [
             "WILD",
-            "PLANT"
+            "PLANT",
+            "WILD2"
         ]
     },
     {
@@ -123,7 +125,8 @@
         "event_text": "m_c received a present, acc_plural, from r_c and decided to keep it with {PRONOUN/m_c/object} on {PRONOUN/m_c/poss} pelt.",
         "accessories": [
             "WILD",
-            "PLANT"
+            "PLANT",
+            "WILD2"
         ]
     },
     {
@@ -145,7 +148,8 @@
         "event_text": "m_c was given acc_plural as a congratulations, r_c watches from the side with a jealous glint in {PRONOUN/r_c/poss} eyes.",
         "accessories": [
             "WILD",
-            "PLANT"
+            "PLANT",
+            "WILD2"
         ]
     },
     {
@@ -177,7 +181,8 @@
         "event_text": "m_c finds acc_plural while out on a walk and decides to keep them.",
         "accessories": [
             "WILD",
-            "PLANT"
+            "PLANT",
+            "WILD2"
         ]
     },
     {
@@ -198,7 +203,8 @@
         "event_text": "r_c finds acc_plural while out on a walk and decides to give them to m_c.",
         "accessories": [
             "WILD",
-            "PLANT"
+            "PLANT",
+            "WILD2"
         ]
     },
     {
@@ -729,8 +735,7 @@
         "event_text": "m_c received a present, acc_plural, from r_c and decided to keep it with {PRONOUN/m_c/object} on {PRONOUN/m_c/poss} pelt.",
         "accessories": [
             "WILD",
-            "PLANT",
-            "PLANT2"
+            "PLANT"
         ]
     },
     {
@@ -748,7 +753,6 @@
             "PLANT",
             "FLOWER",
             "HESPERIS",
-            "PLANT2",
             "DEADINSECT",
             "FRUIT"
         ]
@@ -772,7 +776,6 @@
             "WILD",
             "PLANT",
             "FLOWER",
-            "PLANT2",
             "DEADINSECT"
         ]
     },
@@ -797,7 +800,6 @@
             "WILD",
             "PLANT",
             "FLOWER",
-            "PLANT2",
             "FRUIT"
         ]
     },
@@ -818,7 +820,6 @@
         "event_text": "r_c tells m_c that {PRONOUN/m_c/subject} {VERB/m_c/have/has} been waiting for this day for ages... and prepared a pretty new accessory for them to wear.",
         "accessories": [
             "FLOWER",
-            "PLANT2",
             "DEADINSECT",
             "FRUIT",
             "BIRD SKULL"
@@ -861,7 +862,6 @@
             "WILD",
             "PLANT",
             "FLOWER",
-            "PLANT2",
             "DEADINSECT",
             "FRUIT",
             "DAISY CORSAGE"
@@ -907,7 +907,6 @@
         "accessories": [
             "PLANT",
             "FLOWER",
-            "PLANT2",
             "FRUIT"
         ]
     },
@@ -931,7 +930,6 @@
         "accessories": [
             "PLANT",
             "FLOWER",
-            "PLANT2",
             "FRUIT"
         ]
     },
@@ -946,7 +944,6 @@
             "BLUEBELLS",
             "POPPY",
             "FLOWER",
-            "PLANT2",
             "FRUIT"
         ]
     },

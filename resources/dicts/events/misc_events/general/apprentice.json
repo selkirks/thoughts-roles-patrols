@@ -183,7 +183,8 @@
         "event_text": "m_c gets dared to hunt outside in the snow alone, and returns with acc_singular in {PRONOUN/m_c/poss} pelt.",
         "accessories": [
             "WILD",
-            "PLANT"
+            "PLANT",
+            "WILD2"
         ]
     },
     {
@@ -524,7 +525,7 @@
             "neg_dislike"
         ],
         "event_text": "m_c received a present, acc_plural, from r_c and decided to keep it with {PRONOUN/m_c/object} on {PRONOUN/m_c/poss} pelt.",
-        "accessories": ["WILD", "PLANT", "PLANT2"]
+        "accessories": ["WILD", "PLANT"]
     },
     {
         "camp": "any",
@@ -536,7 +537,7 @@
             "ceremony"
         ],
         "event_text": "m_c decides to pick something to adorn {PRONOUN/m_c/poss} pelt as celebration.",
-        "accessories": ["WILD", "PLANT", "FLOWER", "HESPERIS", "PLANT2", "DEADINSECT"]
+        "accessories": ["WILD", "PLANT", "FLOWER", "HESPERIS", "DEADINSECT"]
     },
     {
         "camp": "any",
@@ -553,7 +554,7 @@
             "neg_dislike"
         ],
         "event_text": "r_c gives m_c something to adorn m_c as congratulations.",
-        "accessories": ["WILD", "PLANT", "FLOWER", "PLANT2", "DEADINSECT"]
+        "accessories": ["WILD", "PLANT", "FLOWER", "DEADINSECT"]
     },
     {
         "camp": "any",
@@ -572,7 +573,7 @@
             "neg_comfort"
         ],
         "event_text": "m_c was given acc_plural as a congratulations, r_c watches from the side with a jealous glint in {PRONOUN/r_c/poss} eyes.",
-        "accessories": ["WILD", "PLANT", "FLOWER", "PLANT2", "FRUIT"]
+        "accessories": ["WILD", "PLANT", "FLOWER", "FRUIT"]
     },
     {
         "camp": "any",
@@ -600,7 +601,7 @@
             "neg_dislike"
         ],
         "event_text": "r_c finds acc_plural while out on a walk and decides to give them to m_c.",
-        "accessories": ["WILD", "PLANT", "FLOWER", "PLANT2", "DEADINSECT", "FRUIT", "DAISY CORSAGE"]
+        "accessories": ["WILD", "PLANT", "FLOWER", "DEADINSECT", "FRUIT", "DAISY CORSAGE"]
     },
     {
         "camp": "any",

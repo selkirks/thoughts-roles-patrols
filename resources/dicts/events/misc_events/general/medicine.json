@@ -73,7 +73,8 @@
         "other_cat_skill": null,
         "accessories": [
             "WILD",
-            "PLANT"
+            "PLANT",
+            "WILD2"
         ]
     },
     {
@@ -348,7 +349,7 @@
             "neg_dislike"
         ],
         "event_text": "m_c received a present, acc_plural, from r_c and decided to keep it with {PRONOUN/m_c/object} on {PRONOUN/m_c/poss} pelt.",
-        "accessories": ["WILD", "PLANT", "PLANT2"]
+        "accessories": ["WILD", "PLANT"]
     },
     {
         "camp": "any",
@@ -360,7 +361,7 @@
             "ceremony"
         ],
         "event_text": "m_c decides to pick something to adorn {PRONOUN/m_c/self} as celebration.",
-        "accessories": ["WILD", "PLANT", "FLOWER", "HESPERIS", "PLANT2", "DEADINSECT", "FRUIT"]
+        "accessories": ["WILD", "PLANT", "FLOWER", "HESPERIS", "DEADINSECT", "FRUIT"]
     },
     {
         "camp": "any",
@@ -377,7 +378,7 @@
             "neg_dislike"
         ],
         "event_text": "r_c gives m_c something to adorn m_c as congratulations.",
-        "accessories": ["WILD", "PLANT", "FLOWER", "PLANT2", "DEADINSECT"]
+        "accessories": ["WILD", "PLANT", "FLOWER", "DEADINSECT"]
     },
     {
         "camp": "any",
@@ -394,7 +395,7 @@
             "neg_dislike"
         ],
         "event_text": "r_c gives m_c something to adorn their pelt as congratulations.",
-        "accessories": ["WILD", "PLANT", "FLOWER", "PLANT2", "DEADINSECT"]
+        "accessories": ["WILD", "PLANT", "FLOWER", "DEADINSECT"]
     },
     {
         "camp": "any",
@@ -413,7 +414,7 @@
             "neg_comfort"
         ],
         "event_text": "m_c was given acc_plural as a congratulations, r_c watches from the side with a jealous glint in {PRONOUN/r_c/poss} eyes.",
-        "accessories": ["WILD", "PLANT", "FLOWER", "PLANT2", "FRUIT"]
+        "accessories": ["WILD", "PLANT", "FLOWER", "FRUIT"]
     },
     {
         "camp": "any",
@@ -430,7 +431,7 @@
             "neg_dislike"
         ],
         "event_text": "r_c tells m_c that {PRONOUN/m_c/subject} {VERB/m_c/have/has} been waiting for this day for ages... and prepared a pretty new accessory for them to wear.",
-        "accessories": ["FLOWER", "PLANT2", "DEADINSECT", "FRUIT", "BIRD SKULL"]
+        "accessories": ["FLOWER", "DEADINSECT", "FRUIT", "BIRD SKULL"]
     },
     {
         "camp": "any",
@@ -459,7 +460,7 @@
             "neg_dislike"
         ],
         "event_text": "r_c finds acc_plural while out on a walk and decides to give them to m_c.",
-        "accessories": ["WILD", "PLANT", "FLOWER", "PLANT2", "DEADINSECT", "FRUIT", "DAISY CORSAGE"]
+        "accessories": ["WILD", "PLANT", "FLOWER", "DEADINSECT", "FRUIT", "DAISY CORSAGE"]
     },
     {
         "camp": "any",
@@ -489,7 +490,7 @@
             "other_cat_mate"
         ],
         "event_text": "m_c and r_c take a late night patrol out of camp to watch the sun rise. m_c comes back flustered, and with a new accessory -- a gift from r_c!",
-        "accessories": ["PLANT", "FLOWER", "PLANT2", "FRUIT"]
+        "accessories": ["PLANT", "FLOWER", "FRUIT"]
     },
     {
         "camp": "any",
@@ -508,7 +509,7 @@
             "other_cat_mate"
         ],
         "event_text": "m_c and r_c take an early evening patrol out of camp to watch the moon rise. m_c comes back flustered, and with a new accessory -- a gift from r_c!",
-        "accessories": ["PLANT", "FLOWER", "PLANT2", "FRUIT"]
+        "accessories": ["PLANT", "FLOWER", "FRUIT"]
     },
     {
         "camp": "any",

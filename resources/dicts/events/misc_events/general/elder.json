@@ -174,7 +174,7 @@
             "neg_dislike"
         ],
         "event_text": "r_c finds acc_plural while out on a walk and decides to give them to m_c.",
-        "accessories": ["WILD", "PLANT", "FLOWER", "PLANT2", "DEADINSECT", "FRUIT", "DAISY CORSAGE"]
+        "accessories": ["WILD", "PLANT", "FLOWER", "DEADINSECT", "FRUIT", "DAISY CORSAGE"]
     },
     {
         "camp": "any",
