@@ -329,8 +329,6 @@ class Sprites():
              "NECKBITE", "FACE"],
             ["HINDLEG", "BACK", "QUILLSIDE", "SCRATCHSIDE", "TOE", "BEAKSIDE", "CATBITETWO", "SNAKETWO", "FOUR"]
         ]
-
-<<<<<<< HEAD
             # Accessories
         for a, i in enumerate([
             "MAPLE LEAF", "HOLLY", "BLUE BERRIES", "FORGET ME NOTS", "RYE STALK", "LAUREL"]):
@@ -342,7 +340,7 @@ class Sprites():
             "OAK LEAVES", "CATMINT", "MAPLE SEED", "JUNIPER"]):
             self.make_group('medcatherbs', (a, 3), f'acc_herbs{i}')
         self.make_group('medcatherbs', (5, 2), 'acc_herbs')
-=======
+
         # define missing parts
         missing_parts_data = [
             ["LEFTEAR", "RIGHTEAR", "NOTAIL", "NOLEFTEAR", "NORIGHTEAR", "NOEAR", "HALFTAIL", "NOPAW"]
@@ -418,7 +416,6 @@ class Sprites():
             for col, herb in enumerate(herbs):
                 self.make_group('medcatherbs', (col, row), f'acc_herbs{herb}')
         self.make_group('medcatherbs', (5, 2), 'acc_herbsDRY HERBS')
->>>>>>> mosslife
 
         # wild
         for row, wilds in enumerate(wild_data):

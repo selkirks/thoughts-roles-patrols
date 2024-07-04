@@ -468,13 +468,10 @@ class Events:
 
                 
     def gain_acc(self):
-<<<<<<< HEAD
         if game.clan.clan_settings["all accessories"]:
             return
         possible_accs = ["WILD", "PLANT", "COLLAR", "FLOWER", "PLANT2", "SNAKE", "SMALLANIMAL", "DEADINSECT", "ALIVEINSECT", "FRUIT", "CRAFTED", "TAIL2"]
-=======
         possible_accs = ["WILD", "PLANT", "COLLAR", "FLOWER", "SNAKE", "SMALLANIMAL", "DEADINSECT", "ALIVEINSECT", "FRUIT", "CRAFTED", "TAIL2"]
->>>>>>> mosslife
         acc_list = []
         if "WILD" in possible_accs:
             acc_list.extend(Pelt.wild_accessories)
