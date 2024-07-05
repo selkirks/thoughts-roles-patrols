@@ -3005,7 +3005,7 @@ def generate_sprite(
                         pointbase2.blit(sprites.sprites['basecolours'+ str(solidcolours.get(whichcolour))], (0, 0))
                         if phenotype.caramel == 'caramel' and not ('red' in whichcolour or 'cream' in whichcolour or 'honey' in whichcolour or 'ivory' in whichcolour or 'apricot' in whichcolour):    
                                 pointbase2.blit(sprites.sprites['caramel0'], (0, 0))
-                        whichmain = ApplySmokeEffects(whichmain)
+                        pointbase2 = ApplySmokeEffects(pointbase2)
 
                         stripebase = CreateStripes(whichcolour, "solid")
                         
