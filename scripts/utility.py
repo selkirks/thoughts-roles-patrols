@@ -2284,14 +2284,17 @@ def ceremony_text_adjust(
         )
     elif dead_parents:
         random_dead_parent = choice(dead_parents)
-        cat_dict["dead_par1"] = (
-            str(random_dead_parent.name),
-            choice(random_dead_parent.pronouns),
-        )
-        cat_dict["dead_par2"] = (
-            str(random_dead_parent.name),
-            choice(random_dead_parent.pronouns),
-        )
+        try:
+            cat_dict["dead_par1"] = (
+                str(random_dead_parent.name),
+                choice(random_dead_parent.pronouns),
+            )
+            cat_dict["dead_par2"] = (
+                str(random_dead_parent.name),
+                choice(random_dead_parent.pronouns),
+            )
+        except:
+            pass
 
     adjust_text = process_text(adjust_text, cat_dict)
 
