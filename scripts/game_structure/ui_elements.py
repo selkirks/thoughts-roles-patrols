@@ -941,7 +941,7 @@ class UICatListDisplay(UIContainer):
 
     def create_cat_button(self, i, kitty, container):
         self.cat_sprites[f"sprite{i}"] = UISpriteButton(
-            scale(pygame.Rect((0, 45), (100, 100))),
+            scale(pygame.Rect((0, 30), (100, 100))),
             kitty.sprite,
             cat_object=kitty,
             cat_id=kitty.ID,
@@ -954,7 +954,7 @@ class UICatListDisplay(UIContainer):
 
     def create_favor_indicator(self, i, container):
         self.favor_indicator[f"favor{i}"] = pygame_gui.elements.UIImage(
-            scale(pygame.Rect((0, 0), (100, 100))),
+            scale(pygame.Rect((0, 30), (100, 100))),
             self._favor_circle,
             object_id=f"favor_circle{i}",
             container=container,
