@@ -2005,12 +2005,12 @@ class Genotype:
             self.sexgene[1] = self.sexgene[0]
             self.sexgene[0] = "O"
 
-        if self.white[0] == "wg":
-            self.white[0] = self.white[1]
-            self.white[1] = "wg"
-        elif self.white[0] == "wsal" and self.white[1] != "wg":
+        if self.white[0] == "wsal":
             self.white[0] = self.white[1]
             self.white[1] = "wsal"
+        elif self.white[0] == "wg" and self.white[1] != "wsal":
+            self.white[0] = self.white[1]
+            self.white[1] = "wg"
         elif self.white[0] == "w" and self.white[1] != "wg" and self.white[1] != "wsal":
             self.white[0] = self.white[1]
             self.white[1] = "w"

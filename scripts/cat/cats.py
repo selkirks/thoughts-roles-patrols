@@ -922,7 +922,7 @@ class Cat:
             and game.clan.game_mode != "classic"
             and not self.outside
             and not self.exiled
-            and not self.moons > 1
+            and self.moons > 1
         ):
             self.grief(body)
 
