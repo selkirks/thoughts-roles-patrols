@@ -504,8 +504,8 @@ class Pregnancy_Events:
                     backkit = 'halfclan1'
                 
                 nr_of_parents = 1
-                if clan.clan_settings['multisire'] and cat_type != 'Clancat':
-                    nr_of_parents = randint(1, choice([1, 1, 1, randint(2, 5)]))
+                if clan.clan_settings['multisire'] and randint(1, game.config['genetics_config']["multi-sire_chance"]) == 1 and cat_type != 'Clancat':
+                    nr_of_parents = randint(2, game.config['genetics_config']["multi-sire_max_sires"])
                 other_cat = []
                 for i in range(0, nr_of_parents):
 
@@ -538,8 +538,8 @@ class Pregnancy_Events:
                 backkit = 'outsider_roots1'
                 other_cat = []
                 nr_of_parents = 1
-                if clan.clan_settings['multisire']:
-                    nr_of_parents = randint(1, choice([1, 1, 1, randint(2, 5)]))
+                if clan.clan_settings['multisire'] and randint(1, game.config['genetics_config']["multi-sire_chance"]) == 1:
+                    nr_of_parents = randint(2, game.config['genetics_config']["multi-sire_max_sires"])
                 
                 if nr_of_parents > len(possible_affair_partners):
                     nr_of_parents = len(possible_affair_partners)
@@ -1029,8 +1029,8 @@ class Pregnancy_Events:
                 if not blood_parent:
                     # Generate a blood parent if we haven't already. 
                     nr_of_parents = 1
-                    if clan.clan_settings['multisire']:
-                        nr_of_parents = randint(1, choice([1, 1, 1, randint(2, 5)]))
+                    if clan.clan_settings['multisire'] and randint(1, game.config['genetics_config']["multi-sire_chance"]) == 1:
+                        nr_of_parents = randint(2, game.config['genetics_config']["multi-sire_max_sires"])
                     
                     insert = "their kits are"
                     if kits_amount == 1:
@@ -1097,7 +1097,7 @@ class Pregnancy_Events:
             #kit.adoptive_parents = all_adoptive_parents  # Add the adoptive parents. 
             # Prevent duplicate prefixes in Clan
             tries = 0
-            while tries < 25 and kit.name.prefix in [kitty.name.prefix for kitty in Cat.all_cats.values() if not kitty.dead and not kitty.outside and kitty.ID != kit.ID]:
+            while tries < 20 and kit.name.prefix in [kitty.name.prefix for kitty in Cat.all_cats.values() if not kitty.dead and not kitty.outside and kitty.ID != kit.ID]:
                 kit.name = Name("newborn")
                 tries += 1
 
@@ -1194,16 +1194,20 @@ class Pregnancy_Events:
         
         # Add the adoptive parents.
         for kit in all_kitten:
-            kit.adoptive_parents = final_adoptive_parents
-            # if blood_parent2:
-            #     for birth_p in blood_parent2:
-            #         if birth_p.ID != kit.parent2 and birth_p.ID not in kit.adoptive_parents:
-            #             kit.adoptive_parents.append(birth_p.ID)
+            kit.adoptive_parents = final_adoptive_parents.copy()
+            if blood_parent2:
+                for birth_p in blood_parent2:
+                    if birth_p.ID not in [kit.parent2, kit.parent1] and birth_p.ID not in kit.adoptive_parents:
+                        kit.adoptive_parents.append(birth_p.ID)
+            if other_cat:
+                for birth_p in other_cat:
+                    if birth_p.ID not in [kit.parent2, kit.parent1] and birth_p.ID not in kit.adoptive_parents:
+                        kit.adoptive_parents.append(birth_p.ID)
             kit.inheritance.update_inheritance()
             kit.inheritance.update_all_related_inheritance()
 
             # update relationship for adoptive parents
-            for parent_id in final_adoptive_parents:
+            for parent_id in kit.adoptive_parents:
                 parent = Cat.fetch_cat(parent_id)
                 if parent:
                     kit_to_parent = game.config["new_cat"]["parent_buff"][
