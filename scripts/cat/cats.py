@@ -223,8 +223,11 @@ class Cat:
                     self.genotype.gender = 'molly'
 
         self.phenotype = Phenotype(self.genotype)
-
         self.phenotype.PhenotypeOutput(self.genotype.gender)
+        if self.genotype.chimerageno:
+            self.chimerapheno = Phenotype(self.genotype.chimerageno)
+            self.chimerapheno.PhenotypeOutput(self.genotype.chimerageno.gender)
+
         self.pelt = pelt if pelt else Pelt(self.genotype, self.phenotype)
 
         self.former_mentor = []
@@ -793,7 +796,7 @@ class Cat:
                 self.get_permanent_condition('partial hearing loss', born_with=True, genetic=True)
             elif 'partial hearing loss' not in self.permanent_condition:
                 self.get_permanent_condition(choice(['deaf', 'partial hearing loss']), born_with=True, genetic=True)
-        if ('M' in self.genotype.manx):
+        if ('M' in self.genotype.manx and self.phenotype.bobtailnr):
             if(random() > ((self.phenotype.bobtailnr + 1) * 0.2)):
                 self.get_permanent_condition('manx syndrome', born_with=True, genetic=True)
 

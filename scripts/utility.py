@@ -3261,8 +3261,7 @@ def generate_sprite(
         if(cat.genotype.chimera):
             chimerapatches = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
             chimerapatches.blit(sprites.sprites['tortiemask' + cat.genotype.chimerapattern + cat_sprite], (0, 0))
-            chimerapheno = Phenotype(genotype.chimerageno)
-            chimerapatches.blit(GenSprite(genotype.chimerageno, chimerapheno), (0, 0), special_flags=pygame.BLEND_RGB_MULT)
+            chimerapatches.blit(GenSprite(genotype.chimerageno, cat.chimerapheno), (0, 0), special_flags=pygame.BLEND_RGB_MULT)
             gensprite.blit(chimerapatches, (0, 0))
 
         if not scars_hidden:
