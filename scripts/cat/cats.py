@@ -806,9 +806,9 @@ class Cat:
         
         if self.genotype.fold[0] == 'Fd' or ('manx syndrome' in self.permanent_condition and 'M' in self.genotype.manx and self.phenotype.bobtailnr < 4 and self.phenotype.bobtailnr > 1 and random() < 0.05):
             self.get_permanent_condition('constant joint pain', born_with=True, genetic=True)
-        if 'manx syndrome' in self.permanent_condition and ((self.phenotype.bobtailnr < 2 and random() > 0.25) or (self.phenotype.bobtailnr > 1 and random() > 0.4)):
+        if 'manx syndrome' in self.permanent_condition and ((self.phenotype.bobtailnr < 2 and random() > 0.25) or (self.phenotype.bobtailnr > 1 and random() > ((self.phenotype.bobtailnr) * 0.2))):
             self.get_permanent_condition('incontinence', born_with=True, genetic=True)
-        if 'manx syndrome' in self.permanent_condition and ((self.phenotype.bobtailnr < 2 and random() > 0.2) or (self.phenotype.bobtailnr > 1 and random() > 0.8)):
+        if 'manx syndrome' in self.permanent_condition and ((self.phenotype.bobtailnr < 2 and random() > 0.2) or (self.phenotype.bobtailnr > 1 and random() > ((self.phenotype.bobtailnr) * 0.3))):
             self.get_permanent_condition('rabbit gait', born_with=True, genetic=True)
         
         if(self.genotype.pointgene[0] == 'c'):
