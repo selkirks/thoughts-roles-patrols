@@ -370,10 +370,14 @@ class Genotype:
         }
 
     def Generator(self, special=None):
+        if self.chimera:
+            par1 = Genotype(self.odds, self.ban_genes, 'chimera')
+            par2 = Genotype(self.odds, self.ban_genes, 'chimera')
+            par1.Generator()
+            par2.Generator()
+            return self.KitGenerator(par1, par2)
         if randint(1, self.odds["other_breed"]) == 1:
             return self.BreedGenerator(special)
-        if self.chimera:
-            self.chimerageno.Generator()
         
         a = randint(1, self.odds['vitiligo'])
         if a == 1:
@@ -819,11 +823,16 @@ class Genotype:
         self.EyeColourFinder()
 
     def AltGenerator(self, special=None):
+        if self.chimera:
+            par1 = Genotype(self.odds, self.ban_genes, 'chimera')
+            par2 = Genotype(self.odds, self.ban_genes, 'chimera')
+            par1.AltGenerator()
+            par2.AltGenerator()
+            return self.KitGenerator(par1, par2)
+        
         if randint(1, self.odds["kittypet_breed"]) == 1:
             return self.BreedGenerator(special)
-        
-        if self.chimera:
-            self.chimerageno.AltGenerator()
+    
         a = randint(1, self.odds['vitiligo'])
         if a == 1:
             self.vitiligo = True
