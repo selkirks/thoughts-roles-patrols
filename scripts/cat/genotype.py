@@ -375,7 +375,18 @@ class Genotype:
             par2 = Genotype(self.odds, self.ban_genes, 'chimera')
             par1.Generator()
             par2.Generator()
-            return self.KitGenerator(par1, par2)
+            self.KitGenerator(par1, par2)
+            if self.munch[1] == 'Mk':
+                self.munch[1] = "mk"
+            if self.fold[1] == 'Fd':
+                self.fold[1] = 'Fd'
+            if self.manx[1] not in ['m', 'ab']:
+                self.manx[1] = self.manx[1].lower()
+            if 'NoDBE' not in self.pax3 and 'DBEalt' not in self.pax3:
+                self.pax3[0] = 'DBEalt'
+
+            return
+
         if randint(1, self.odds["other_breed"]) == 1:
             return self.BreedGenerator(special)
         
@@ -702,7 +713,17 @@ class Genotype:
             par2 = Genotype(self.odds, self.ban_genes, 'chimera')
             par1.AltGenerator()
             par2.AltGenerator()
-            return self.KitGenerator(par1, par2)
+            self.KitGenerator(par1, par2)
+            if self.munch[1] == 'Mk':
+                self.munch[1] = "mk"
+            if self.fold[1] == 'Fd':
+                self.fold[1] = 'Fd'
+            if self.manx[1] not in ['m', 'ab']:
+                self.manx[1] = self.manx[1].lower()
+            if 'NoDBE' not in self.pax3 and 'DBEalt' not in self.pax3:
+                self.pax3[0] = 'DBEalt'
+
+            return
         
         if randint(1, self.odds["kittypet_breed"]) == 1:
             return self.BreedGenerator(special)
