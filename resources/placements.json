@@ -338,7 +338,7 @@
     },
     "Beachcamp2": {
         "leader den": [640, 200],
-        "medicine den": [122, 338],
+        "healer den": [122, 338],
         "nursery": [1234, 334],
         "clearing": [700, 620],
         "apprentice den": [164, 880],

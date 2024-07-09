@@ -289,7 +289,7 @@ class Pregnancy_Events:
                 possible_affair_partners = [i for i in unknowns if
                                         i.is_potential_mate(cat, for_love_interest=True, outsider=True) 
                                         and (clan.clan_settings['same sex birth'] or xor('Y' in i.genotype.sexgene, 'Y' in cat.genotype.sexgene)) 
-                                        and len(i.mate) == 0]
+                                        and len(i.mate) == 0 and not i.birth_cooldown]
                 if(random.random() < 0.75 or len(possible_affair_partners) < 1):
                     if(randint(1, 4) > 1):
                         cat_type = choice(['loner', 'rogue', 'kittypet'])
@@ -305,7 +305,10 @@ class Pregnancy_Events:
                     mate_age = cat.moons + randint(0, 24)-12
                     outside_parent = None
                     if cat_type != 'Clancat':
-                        outside_parent = create_new_cat(Cat,
+                        while not outside_parent or 'infertility' in outside_parent.permanent_condition:
+                            if(outside_parent):
+                                del Cat.all_cats[outside_parent]
+                            outside_parent = create_new_cat(Cat,
                                                 loner=cat_type in ["loner", "rogue"],
                                                 kittypet=cat_type == "kittypet",
                                                 other_clan=cat_type == 'former Clancat',
@@ -317,6 +320,7 @@ class Pregnancy_Events:
                                                 outside=True,
                                                 is_parent=True)[0]
                         outside_parent.thought = "Is wondering what their kits are doing"
+                        outside_parent.birth_cooldown = game.config["pregnancy"]["birth_cooldown"]
                         if random.random() < 0.2:
                             outside_parent.set_mate(cat)
                             cat.set_mate(outside_parent)
@@ -405,7 +409,7 @@ class Pregnancy_Events:
         thinking_amount = random.choices(
             ["correct", "incorrect", "unsure"], [4, 1, 1], k=1
         )
-        if amount <= 3:
+        if amount <= 6:
             correct_guess = "small"
         else:
             correct_guess = "large"
