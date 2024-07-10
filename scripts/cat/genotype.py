@@ -2001,6 +2001,8 @@ class Genotype:
             if(sectoralindex == 0):
                 self.extraeye = 'sectoral' + str(randint(1, 6))
             a = [randint(1, 11), randint(1, 12)]
+            if "c" in self.pointgene and self.pointgene[0] != "C":
+                a[1] = 13
             self.extraeyecolour = RefTypeFind(a[0], a[1])
             self.extraeyetype = SecondaryRefTypeFind(a[0], a[1])
                 
