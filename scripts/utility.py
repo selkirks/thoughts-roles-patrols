@@ -2581,14 +2581,14 @@ def generate_sprite(
                     stripebase.blit(surf, (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
                 
                 middle = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
-                if(genotype.soktype == "full sokoke" and not pattern):
+                if(genotype.soktype == "full sokoke" and not pattern and 'agouti' not in phenotype.tabby):
                     middle.blit(stripebase, (0, 0))
                     stripebase = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
                     middle.set_alpha(150)
                     stripebase.blit(middle, (0, 0))
                     middle = CreateStripes(stripecolour, whichbase, coloursurface, pattern=phenotype.GetTabbySprite(special='redbar'))
                     stripebase.blit(middle, (0, 0))
-                elif(genotype.soktype == "mild fading" and not pattern):
+                elif(genotype.soktype == "mild fading" and not pattern and 'agouti' not in phenotype.tabby):
                     middle.blit(stripebase, (0, 0))
                     stripebase = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
                     middle.set_alpha(204)
