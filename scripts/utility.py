@@ -337,7 +337,7 @@ def create_bio_parents(Cat, cat_type, flip=False):
                                     outside=True,
                                     is_parent=True)[0]
         while 'infertility' in blood_parent2.permanent_condition:
-            if(blood_parent2):
+            if blood_parent2 and Cat.all_cats[blood_parent2.ID]:
                 del Cat.all_cats[blood_parent2.ID]
             blood_parent = create_new_cat(Cat,
                                     loner=cat_type in ["loner", "rogue"],
