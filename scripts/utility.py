@@ -3267,21 +3267,22 @@ def generate_sprite(
             
             return gensprite
 
+        age = cat.moons
+
         if int(cat_sprite) == 20 and cat.moons > 0:
-            gensprite.blit(GenSprite(genotype, phenotype, 0), (0, 0))
+            age = 0
         elif int(cat_sprite) < 3 and cat.moons > 6:
-            gensprite.blit(GenSprite(genotype, phenotype, 5), (0, 0))
+            age = 5
         elif int(cat_sprite) < 6 and cat.moons > 12:
-            gensprite.blit(GenSprite(genotype, phenotype, 11), (0, 0))
+            age = 11
         elif (int(cat_sprite == 19) or int(cat_sprite) == 17) and cat.moons > 12:
-            gensprite.blit(GenSprite(genotype, phenotype, 6), (0, 0))
-        else:
-            gensprite.blit(GenSprite(genotype, phenotype, cat.moons), (0, 0))
+            age = 6
+        gensprite.blit(GenSprite(genotype, phenotype, age), (0, 0))
 
         if(cat.genotype.chimera):
             chimerapatches = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
             chimerapatches.blit(sprites.sprites['tortiemask' + cat.genotype.chimerapattern + cat_sprite], (0, 0))
-            chimerapatches.blit(GenSprite(genotype.chimerageno, cat.chimerapheno), (0, 0), special_flags=pygame.BLEND_RGB_MULT)
+            chimerapatches.blit(GenSprite(genotype.chimerageno, cat.chimerapheno, age), (0, 0), special_flags=pygame.BLEND_RGB_MULT)
             gensprite.blit(chimerapatches, (0, 0))
 
         if not scars_hidden:
