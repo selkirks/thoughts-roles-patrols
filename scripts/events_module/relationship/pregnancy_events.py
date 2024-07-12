@@ -307,8 +307,8 @@ class Pregnancy_Events:
                     outside_parent = None
                     if cat_type != 'Clancat':
                         while not outside_parent or 'infertility' in outside_parent.permanent_condition:
-                            if(outside_parent):
-                                del Cat.all_cats[outside_parent]
+                            if outside_parent and Cat.all_cats[outside_parent.ID]:
+                                del Cat.all_cats[outside_parent.ID]
                             outside_parent = create_new_cat(Cat,
                                                 loner=cat_type in ["loner", "rogue"],
                                                 kittypet=cat_type == "kittypet",
@@ -518,8 +518,8 @@ class Pregnancy_Events:
                     if cat_type != 'Clancat':
                         out_par = None
                         while not out_par or 'infertility' in out_par.permanent_condition:
-                            if(out_par):
-                                del Cat.all_cats[out_par]
+                            if out_par and Cat.all_cats[out_par.ID]:
+                                del Cat.all_cats[out_par.ID]
                             out_par = create_new_cat(Cat,
                                                     loner=cat_type in ["loner", "rogue"],
                                                     kittypet=cat_type == "kittypet",
@@ -1062,7 +1062,7 @@ class Pregnancy_Events:
                         blood_par2 = None
                         parage = parage + randint(0, 24) - 12
                         while not blood_par2 or 'infertility' in blood_par2.permanent_condition:
-                            if(blood_par2):
+                            if blood_par2 and Cat.all_cats[blood_par2.ID]:
                                 del Cat.all_cats[blood_par2.ID]
                             cat_type = random.choice(["loner", "kittypet"])
                             blood_par2 = create_new_cat(Cat,
