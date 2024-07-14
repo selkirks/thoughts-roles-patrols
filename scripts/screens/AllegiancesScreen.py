@@ -68,8 +68,12 @@ class AllegiancesScreen(Screens):
                                    object_id=get_text_box_theme("#text_box_30_horizleft"),
                                    container=self.scroll_container, manager=MANAGER))
                 self.ranks_boxes[-1].disable()
-
-            self.names_buttons.append(AllegiancesCat(scale(pygame.Rect((290, y_pos+10), (1060, -1))),
+            offset = 10
+            x_pos = 290
+            if game.settings["fullscreen"]:
+                offset = screen_y / 225
+                x_pos = 293
+            self.names_buttons.append(AllegiancesCat(scale(pygame.Rect((x_pos, y_pos+offset), (1060, -1))),
                                     x[1],
                                     object_id=get_button_theme(),
                                     container=self.scroll_container, manager=MANAGER))
