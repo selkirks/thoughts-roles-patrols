@@ -2440,7 +2440,7 @@ class Genotype:
         elif(which == 'red'):
             if('o' not in self.sexgene):
                 self.Mutate()
-            if(self.sexgene[0] == 'o'):
+            elif(self.sexgene[0] == 'o'):
                 self.sexgene[0] = 'O'
             elif(self.sexgene[1] == 'o'):
                 self.sexgene[1] = 'O'
