@@ -139,7 +139,10 @@ class Genotype:
         self.somatic = {}
 
     def __getitem__(self, name):
-        return getattr(self, name)
+        if name == "__setstate__":
+            raise AttributeError(name)
+        else:
+            return getattr(self, name)
     
     def fromJSON(self, jsonstring):
         #jsonstring = json.loads(jsonstring)
