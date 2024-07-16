@@ -358,19 +358,24 @@ class Pregnancy_Events:
             # if the other cat is a molly and the current cat is a tom, make the molly cat pregnant
             pregnant_cat = cat
             second_parent = other_cat
+            affair_partner = []
             if second_parent:
                 for x in second_parent:
                     if 'Y' in cat.genotype.sexgene and 'Y' not in x.genotype.sexgene:
                         pregnant_cat = x
                         second_parent.remove(x)
                         second_parent.append(cat)
+                        break
 
                 ids = []
                 for x in second_parent:
                     ids.append(x.ID)
+                    if x.ID not in pregnant_cat.mate:
+                        affair_partner.append(x.ID) 
             
             clan.pregnancy_data[pregnant_cat.ID] = {
                 "second_parent": ids if second_parent else None,
+                "affair_partner" : affair_partner if affair_partner else None,
                 "moons": 0,
                 "amount": 0,
             }
@@ -471,6 +476,11 @@ class Pregnancy_Events:
             stillborn_chance = 0
 
         other_cat_id = clan.pregnancy_data[cat.ID]["second_parent"]
+        affair_partner_id = []
+        affair_partners = []
+        RandomAffair = None
+        if clan.pregnancy_data[cat.ID]["affair_partner"]:
+            affair_partner_id = clan.pregnancy_data[cat.ID]["affair_partner"]
         
         other_cat = []
         if other_cat_id and type(other_cat_id) == list: 
@@ -480,6 +490,13 @@ class Pregnancy_Events:
             other_cat.append(Cat.all_cats.get(other_cat_id))
         else:
             other_cat = None
+
+        for id in affair_partner_id:
+            other_cat.append(Cat.all_cats.get(id))
+            affair_partners.append(Cat.all_cats.get(id))
+        if affair_partners:
+            RandomAffair = choice(affair_partners)
+
         backkit = None
         if not other_cat:
             
@@ -594,8 +611,6 @@ class Pregnancy_Events:
         WhoDied = 0
         All_Mates_Outside = True
         Both_Unmated = True
-        Affair = False
-        Which_Aff = 0
         RandomChoice = None
 
         if other_cat:
@@ -608,9 +623,6 @@ class Pregnancy_Events:
                     All_Mates_Outside = False
                 if len(x.mate) > 0:
                     Both_Unmated = False
-                if (x.ID not in cat.mate):
-                    Affair = True
-                    Which_Aff = x
         
         # choose event string
         # TODO: currently they don't choose which 'mate' is the 'blood' parent or not
@@ -626,10 +638,10 @@ class Pregnancy_Events:
             if other_cat and not All_Mates_Outside:
                 adding_text = choice(events["birth"]["outside_in_clan"])
             event_list.append(adding_text)
-        elif not Affair and not Dead_Mate and not All_Mates_Outside:
+        elif not affair_partners and not Dead_Mate and not All_Mates_Outside:
             involved_cats.append(RandomChoice.ID)
             event_list.append(choice(events["birth"]["two_parents"]))
-        elif not Affair and Dead_Mate or All_Mates_Outside:
+        elif not affair_partners and Dead_Mate or All_Mates_Outside:
             if WhoDied != 0:
                 involved_cats.append(WhoDied.ID)
                 RandomChoice = WhoDied
@@ -637,10 +649,10 @@ class Pregnancy_Events:
         elif len(cat.mate) < 1 and Both_Unmated and not Dead_Mate:
             involved_cats.append(RandomChoice.ID)
             event_list.append(choice(events["birth"]["both_unmated"]))
-        elif (len(cat.mate) > 0 and Affair) or\
-            (Affair and len(Which_Aff.mate) > 0 and cat.ID not in Which_Aff.mate and not Which_Aff.dead):
-            involved_cats.append(Which_Aff.ID)
-            RandomChoice = Which_Aff
+        elif (len(cat.mate) > 0 and affair_partners) or\
+            (affair_partners and len(RandomAffair.mate) > 0 and cat.ID not in RandomAffair.mate and not RandomAffair.dead):
+            involved_cats.append(RandomAffair.ID)
+            RandomChoice = RandomAffair
             event_list.append(choice(events["birth"]["affair"]))
         else:
             event_list.append(choice(events["birth"]["unmated_parent"]))
