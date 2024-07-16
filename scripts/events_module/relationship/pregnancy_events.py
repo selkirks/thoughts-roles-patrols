@@ -1,7 +1,6 @@
 import random
 from operator import xor
 from random import choice, randint
-from copy import deepcopy
 
 import ujson
 

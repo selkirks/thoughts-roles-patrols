@@ -339,6 +339,9 @@ class ClanScreen(Screens):
             first_choices[x].extend(first_choices[x])
 
         for x in game.clan.clan_cats:
+            if not Cat.all_cats.get(x, False):
+                game.clan.clan_cats.remove(x)
+                continue
             if Cat.all_cats[x].dead or Cat.all_cats[x].outside:
                 continue
 
