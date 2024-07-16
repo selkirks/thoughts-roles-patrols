@@ -799,12 +799,11 @@ class Pregnancy_Events:
             if len(second_parent) < 1:
                 return False, False
 
-            second_parent_copy = deepcopy(second_parent)
+            second_parent_copy = []
 
             for x in second_parent:
-                if not xor('Y' in cat.genotype.sexgene, 'Y' in x.genotype.sexgene):
-                    if not same_sex_birth:
-                        second_parent_copy.remove(x)
+                if xor('Y' in cat.genotype.sexgene, 'Y' in x.genotype.sexgene) or same_sex_birth:
+                    second_parent_copy.append(x)
             
             if len(second_parent_copy) < 1:
                 if same_sex_adoption:
