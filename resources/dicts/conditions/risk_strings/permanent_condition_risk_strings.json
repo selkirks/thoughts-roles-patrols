@@ -266,10 +266,6 @@
         "yellowcough": [
             "If only {PRONOUN/r_c/subject} had lungwort... r_c searches the herb stores, desperate for a way to help m_c through yellowcough.",
             "m_c has been weak and fevered, only barely coherent... it seems {PRONOUN/m_c/subject} {VERB/m_c/have/has} yellowcough."
-        ],
-        "redcough": [
-            "r_c has quietly begun making m_c comfortable... or as comfortable as {PRONOUN/m_c/subject} can be while hacking blood.",
-            "m_c has been hacking up blood, {PRONOUN/m_c/poss} body growing weaker and weaker.  {PRONOUN/m_c/subject/CAP} may not last much longer."
         ]
     },
     "bumpy skin" : {

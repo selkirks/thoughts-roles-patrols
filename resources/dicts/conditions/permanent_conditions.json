@@ -917,14 +917,10 @@
             },
             {
                 "name": "greencough",
-                "chance": 60
+                "chance": 100
             },
             {
                 "name": "yellowcough",
-                "chance": 120
-            },
-            {
-                "name": "redcough",
                 "chance": 180
             }
         ],
