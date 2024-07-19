@@ -116,6 +116,12 @@
             "m_c realizes one day that the noises around them are no longer just quiet, but functionally silent. It seems {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} lost too much of {PRONOUN/m_c/poss} hearing."
         ]
     },
+    "partial hearing loss in one ear": {
+        "deaf in one ear": [
+            "r_c listens as m_c explains that it doesn't seem like {PRONOUN/m_c/subject} can hear the details of the world much anymore.",
+            "m_c realizes one day that one side is no longer just muffled, but largely silent."
+        ]
+    },
     "constant joint pain": {
         "joint pain": [
             "Sleepily, m_c thanks r_c for the pain relief. It feels like moons since {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} been able to have a good rest without the awful pain that's been so intense lately.",

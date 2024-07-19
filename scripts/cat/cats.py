@@ -792,10 +792,13 @@ class Cat:
 
     def genetic_conditions(self):
         if self.genotype.deaf:
-            if 'blue' not in self.genotype.lefteyetype or 'blue' not in self.genotype.righteyetype:
-                self.get_permanent_condition('partial hearing loss', born_with=True, genetic=True)
-            elif 'partial hearing loss' not in self.permanent_condition:
-                self.get_permanent_condition(choice(['deaf', 'partial hearing loss']), born_with=True, genetic=True)
+            if 'blue' in self.genotype.lefteyetype and 'blue' in self.genotype.righteyetype:
+                if 'DBEre' in self.genotype.pax3:
+                    self.get_permanent_condition(choice(['deaf in one ear', 'deaf in one ear', 'partial hearing loss in one ear', 'deaf', 'deaf', 'partial hearing loss']), born_with=True, genetic=True)
+                else:
+                    self.get_permanent_condition(choice(['deaf', 'deaf', 'partial hearing loss']), born_with=True, genetic=True)
+            elif 'blue' not in self.genotype.lefteyetype or 'blue' not in self.genotype.righteyetype:
+                self.get_permanent_condition(choice(['deaf in one ear', 'deaf in one ear', 'partial hearing loss in one ear']), born_with=True, genetic=True)
         if ('M' in self.genotype.manx and self.phenotype.bobtailnr):
             if(random() > ((self.phenotype.bobtailnr + 1) * 0.2)):
                 self.get_permanent_condition('manx syndrome', born_with=True, genetic=True)
@@ -2314,7 +2317,11 @@ class Cat:
             return
         if "blind" in self.permanent_condition and name == "failing eyesight":
             return
-        if "deaf" in self.permanent_condition and name == "partial hearing loss":
+        if "deaf" in self.permanent_condition and name in ["partial hearing loss", "partial hearing loss in one ear", "deaf in one ear"]:
+            return
+        if "partial hearing loss" in self.permanent_condition and name in ["partial hearing loss in one ear"]:
+            return
+        if "deaf in one ear" in self.permanent_condition and name in ["partial hearing loss in one ear"]:
             return
 
         # remove accessories if need be

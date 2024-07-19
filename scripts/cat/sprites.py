@@ -145,8 +145,8 @@ class Sprites:
             sprites.spritesheet("sprites/genemod/Base Colours/"+x, 'base/'+x.replace('.png', ""))
         for x in os.listdir("sprites/genemod/points"):
             sprites.spritesheet("sprites/genemod/points/"+x, x.replace('.png', ""))
-        for x in os.listdir("sprites/genemod/Tabby Bases"):
-            sprites.spritesheet("sprites/genemod/Tabby Bases/"+x, 'Tabby/'+x.replace('.png', ""))
+        for x in os.listdir("sprites/genemod/New Tabbies"):
+            sprites.spritesheet("sprites/genemod/New Tabbies/"+x, 'Tabby/'+x.replace('.png', ""))
         for x in os.listdir("sprites/genemod/extra"):
             sprites.spritesheet("sprites/genemod/extra/"+x, 'Other/'+x.replace('.png', ""))
         for x in os.listdir("sprites/genemod/effects"):
@@ -199,17 +199,18 @@ class Sprites:
         for x in ["black", "blue", "dove", "platinum",
                   "chocolate", "lilac", "champagne", "lavender",
                   "cinnamon", "fawn", "buff", "beige",
-                  "red", "unders_red", "cream", "unders_cream", "honey", "unders_honey", "ivory", "unders_ivory"]:
+                  "red", "cream", "honey", "ivory"]:
             for a, i in enumerate(['rufousedlow', 'rufousedmedium', 'rufousedhigh', 'rufousedshaded', 'rufousedchinchilla']):
-                self.make_group('Tabby/'+x, (a, 0), f'{x}{i}')
+                self.make_group('Tabby/'+x, (a, 0), f'{x}{i}', sprites_x=1, sprites_y=1)
             for a, i in enumerate(['mediumlow', 'mediummedium', 'mediumhigh', 'mediumshaded', 'mediumchinchilla']):
-                self.make_group('Tabby/'+x, (a, 1), f'{x}{i}')
+                self.make_group('Tabby/'+x, (a, 1), f'{x}{i}', sprites_x=1, sprites_y=1)
             for a, i in enumerate(['lowlow', 'lowmedium', 'lowhigh', 'lowshaded', 'lowchinchilla']):
-                self.make_group('Tabby/'+x, (a, 2), f'{x}{i}')
+                self.make_group('Tabby/'+x, (a, 2), f'{x}{i}', sprites_x=1, sprites_y=1)
             for a, i in enumerate(['silverlow', 'silvermedium', 'silverhigh', 'silvershaded', 'silverchinchilla']):
-                self.make_group('Tabby/'+x, (a, 3), f'{x}{i}')
+                self.make_group('Tabby/'+x, (a, 3), f'{x}{i}', sprites_x=1, sprites_y=1)
         for a, x in enumerate(['low', 'medium', 'high', 'shaded', 'chinchilla']):
             self.make_group('Tabby/shading', (a, 0), f'{x}shading')
+        self.make_group('Tabby/unders', (0, 0), f'Tabby_unders')
 
         # genemod tabby patterns
 

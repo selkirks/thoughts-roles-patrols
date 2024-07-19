@@ -598,19 +598,19 @@ class Phenotype():
     
     def SpriteInfo(self, moons):
         self.maincolour = ""
+        self.mainunders = []
         self.spritecolour = ""
         self.caramel = ""
         self.tortpattern = ""
         self.patchmain = ""
+        self.patchunders = []
         self.patchcolour = ""
 
         if self.genotype.pointgene[0] == "c":
             self.spritecolour = "albino"
-            self.caramel = ""
             self.maincolour = self.spritecolour
         elif self.genotype.white[0] == "W" or ('DBEalt' not in self.genotype.pax3 and 'NoDBE' not in self.genotype.pax3) or (self.genotype.brindledbi and (('o' not in self.genotype.sexgene) or (self.genotype.ext[0] == 'ea' and ((moons > 11 and self.genotype.agouti[0] != 'a') or (moons > 23))) or (self.genotype.ext[0] == 'er' and moons > 23 and 'O' not in self.genotype.sexgene) or (self.genotype.ext[0] == 'ec' and (self.genotype.agouti[0] != 'a' or moons > 5)))):
             self.spritecolour = "white"
-            self.caramel = ""
             self.maincolour = self.spritecolour
         elif('o' not in self.genotype.sexgene and self.genotype.silver[0] == 'I' and self.genotype.specialred == 'merle'):
             if self.genotype.tortiepattern is not None:
@@ -618,17 +618,21 @@ class Phenotype():
                 main = self.FindRed(self.genotype, moons, 'merle')
                 self.maincolour = main[0]
                 self.spritecolour = main[1]
+                self.mainunders = [main[2], main[3]]
                 main = self.FindRed(self.genotype, moons)
                 self.patchmain = main[0]
                 self.patchcolour = main[1]
+                self.patchunders = [main[2], main[3]]
             else:
                 self.tortpattern = self.ChooseTortiePattern()
                 main = self.FindRed(self.genotype, moons, 'merle')
                 self.maincolour = main[0]
                 self.spritecolour = main[1]
+                self.mainunders = [main[2], main[3]]
                 main = self.FindRed(self.genotype, moons)
                 self.patchmain = main[0]
                 self.patchcolour = main[1]
+                self.patchunders = [main[2], main[3]]
 
                 self.genotype.tortiepattern = self.tortpattern
         elif('o' not in self.genotype.sexgene and self.genotype.specialred == 'blue-tipped'):
@@ -636,73 +640,107 @@ class Phenotype():
             main = self.FindRed(self.genotype, moons)
             self.maincolour = main[0]
             self.spritecolour = main[1]
+            self.mainunders = [main[2], main[3]]
             main = self.FindRed(self.genotype, moons, 'blue-tipped')
             self.patchmain = main[0]
             self.patchcolour = main[1]
+            self.patchunders = [main[2], main[3]]
 
             self.genotype.tortiepattern = self.tortpattern
         elif ('o' not in self.genotype.sexgene) or (self.genotype.ext[0] == 'ea' and ((moons > 11 and self.genotype.agouti[0] != 'a') or (moons > 23))) or (self.genotype.ext[0] == 'er' and moons > 23 and 'O' not in self.genotype.sexgene) or (self.genotype.ext[0] == 'ec' and moons > 0 and (self.genotype.agouti[0] != 'a' or moons > 5)):
             main = self.FindRed(self.genotype, moons, special=self.genotype.ext[0])
             self.maincolour = main[0]
             self.spritecolour = main[1]
+            self.mainunders = [main[2], main[3]]
         elif('O' not in self.genotype.sexgene):
             main = self.FindBlack(self.genotype, moons)
             self.maincolour = main[0]
             self.spritecolour = main[1]
+            self.mainunders = [main[2], main[3]]
         else:
             if self.genotype.tortiepattern is not None:
                 self.tortpattern = self.genotype.tortiepattern
-                if 'rev' in self.tortpattern:
-                    if(self.genotype.brindledbi):
-                        self.maincolour = "white"
-                        self.spritecolour = "white"
-                    else:
-                        main = self.FindRed(self.genotype, moons)
-                        self.maincolour = main[0]
-                        self.spritecolour = main[1]
-                    main = self.FindBlack(self.genotype, moons, self.genotype.ext[0])
-                    self.patchmain = main[0]
-                    self.patchcolour = main[1]
-                else:
-                    main = self.FindBlack(self.genotype, moons)
-                    self.maincolour = main[0]
-                    self.spritecolour = main[1]
-                    if(self.genotype.brindledbi):
-                        self.patchmain = "white"
-                        self.patchcolour = "white"
-                    else:
-                        main = self.FindRed(self.genotype, moons)
-                        self.patchmain = main[0]
-                        self.patchcolour = main[1]
             else:
                 self.tortpattern = self.ChooseTortiePattern()
                 if randint(1, 10) == 1:
                     self.tortpattern = 'rev'+self.tortpattern
-                    if(self.genotype.brindledbi):
-                        self.maincolour = "white"
-                        self.spritecolour = "white"
-                    else:
-                        main = self.FindRed(self.genotype, moons)
-                        self.maincolour = main[0]
-                        self.spritecolour = main[1]
-                    main = self.FindBlack(self.genotype, moons)
-                    self.patchmain = main[0]
-                    self.patchcolour = main[1]
-                else:
-                    main = self.FindBlack(self.genotype, moons)
-                    self.maincolour = main[0]
-                    self.spritecolour = main[1]
-                    if(self.genotype.brindledbi):
-                        self.patchmain = "white"
-                        self.patchcolour = "white"
-                    else:
-                        main = self.FindRed(self.genotype, moons)
-                        self.patchmain = main[0]
-                        self.patchcolour = main[1]
 
                 self.genotype.tortiepattern = self.tortpattern
+            
+            if 'rev' in self.tortpattern:
+                if(self.genotype.brindledbi):
+                    self.maincolour = "white"
+                    self.spritecolour = "white"
+                else:
+                    main = self.FindRed(self.genotype, moons)
+                    self.maincolour = main[0]
+                    self.spritecolour = main[1]
+                    self.mainunders = [main[2], main[3]]
+                main = self.FindBlack(self.genotype, moons, self.genotype.ext[0])
+                self.patchmain = main[0]
+                self.patchcolour = main[1]
+                self.patchunders = [main[2], main[3]]
+            else:
+                main = self.FindBlack(self.genotype, moons)
+                self.maincolour = main[0]
+                self.spritecolour = main[1]
+                self.mainunders = [main[2], main[3]]
+                if(self.genotype.brindledbi):
+                    self.patchmain = "white"
+                    self.patchcolour = "white"
+                else:
+                    main = self.FindRed(self.genotype, moons)
+                    self.patchmain = main[0]
+                    self.patchcolour = main[1]
+                    self.patchunders = [main[2], main[3]]
 
+    def FindEumUnders(self, genes, wideband, rufousing):
+        if(genes.dilute[0] == "d"):
+            if(genes.pinkdilute[0] == "dp"):
+                colour = "ivory"
+            else:
+                colour = "cream"
+        else:
+            if(genes.pinkdilute[0] == "dp"):
+                colour = "honey"
+            else:
+                colour = "red"
+        
+
+        if wideband in ["chinchilla", "shaded"]:
+            colour = "lightbasecolours0"
+        elif rufousing != "rufoused":
+            colour = colour + "low" + wideband + "0"
+        else:
+            colour = colour + "medium" + wideband + "0"
+        
+        return colour
+        
+    def GetSilverUnders(self, wideband):
+        if wideband == "low":
+           return 20
+        elif wideband == "medium":
+            return 40
+        elif wideband == "high":
+            return 60
+        elif wideband == "shaded":
+            return 80
+        else:
+            return 100
+    def GetRedUnders(self, wideband):
+        if wideband == "low":
+           return 20
+        elif wideband == "medium":
+            return 30
+        elif wideband == "high":
+            return 40
+        elif wideband == "shaded":
+            return 50
+        else:
+            return 60
     def FindBlack(self, genes, moons, special=None):
+        unders_colour = ""
+        unders_opacity = 0
         if special=='er':
             return self.FindRed(genes, moons, special)
         else:
@@ -753,33 +791,41 @@ class Phenotype():
                         self.caramel = ""
             
             maincolour = colour
+
+            rufousing = ""
+            banding = ""
             
             if ('masked' in self.silvergold and genes.wbsum > 15) or (genes.agouti[0] != "a" and genes.ext[0] != "Eg") or (genes.ext[0] not in ['Eg', 'E']):
                 if genes.silver[0] == "I" or genes.brindledbi or (moons < 3 and genes.karp[0] == "K"):
-                    if genes.corin[0] == "sg":
-                        colour =  colour + "silver" + "chinchilla"
-                    elif genes.corin[0] == "sh" or genes.corin[0] == "fg" or genes.ext[0] == 'ec' or (genes.ext[0] == 'ea' and moons > 3):
-                        colour =  colour + "silver" + "shaded"
-                    else:
-                        colour =  colour + "silver" + genes.wbtype
+                    rufousing = "silver"
                 elif genes.pointgene[0] != "C" or genes.agouti[0] == "Apb":
-                    if genes.corin[0] == "sg":
-                        colour =  colour + "low" + "chinchilla"
-                    elif genes.corin[0] == "sh" or genes.corin[0] == "fg" or genes.ext[0] == 'ec' or (genes.ext[0] == 'ea' and moons > 3):
-                        colour =  colour + "low" + "shaded"
-                    else:
-                        colour = colour + "low" + genes.wbtype
+                    rufousing = "low"
                 else:
-                    if genes.corin[0] == "sg":
-                        colour =  colour + genes.ruftype + "chinchilla"
-                    elif genes.corin[0] == "sh" or genes.corin[0] == "fg" or genes.ext[0] == 'ec' or (genes.ext[0] == 'ea' and moons > 3):
-                        colour =  colour + genes.ruftype + "shaded"
-                    else:
-                        colour = colour + genes.ruftype + genes.wbtype
-            
-            return [maincolour, colour]
+                    rufousing = genes.ruftype
 
+                if genes.corin[0] == "sg" or genes.wbtype == "chinchilla":
+                    banding = "chinchilla"
+                elif genes.wbtype == "shaded" or genes.corin[0] == "sh" or genes.corin[0] == "fg" or genes.ext[0] == 'ec' or (genes.ext[0] == 'ea' and moons > 3):
+                    banding = "shaded"
+                else:
+                    banding = genes.wbtype
+
+                if rufousing == "silver":
+                    unders_colour = "lightbasecolours0"
+                    unders_opacity = self.GetSilverUnders(banding)
+                else:
+                    unders_colour = self.FindEumUnders(genes, banding, rufousing)
+                    unders_opacity = 33
+                
+                colour = colour + rufousing + banding + "0"
+                
+                    
+
+
+            return [maincolour, colour, unders_colour, unders_opacity]
     def FindRed(self, genes, moons, special = None):
+        unders_colour = 'lightbasecolours0'
+        unders_opacity = 0
         maincolour = genes.ruftype
         if special == 'er':
             if(genes.eumelanin[0] == 'B'):
@@ -810,165 +856,61 @@ class Phenotype():
         
         maincolour += colour
         
-        if colour == "apricot":
-            if genes.ruftype == "low" or special=='low':
-                if genes.silver[0] == "I" and special != 'nosilver' or (moons < 3 and genes.karp[0] == "K"):
-                    if genes.corin[0] == "sg":
-                        colour =  "cream" + "silver" + "chinchilla"
-                    elif genes.corin[0] == "sh" or genes.corin[0] == "fg":
-                        colour =  "cream" + "silver" + "shaded"
-                    else:
-                        colour = "cream" + "silver" + genes.wbtype
-                else:
-                    if genes.corin[0] == "sg":
-                        colour =  "cream" + "medium" + "chinchilla"
-                    elif genes.corin[0] == "sh" or genes.corin[0] == "fg":
-                        colour =  "cream" + "medium" + "shaded"
-                    else:
-                        colour = "cream" + "medium" + genes.wbtype
-            elif genes.ruftype == "medium":
-                if genes.silver[0] == "I" and special != 'nosilver' or (moons < 3 and genes.karp[0] == "K"):
-                    if genes.corin[0] == "sg":
-                        colour =  "cream" + "silver" + "chinchilla"
-                    elif genes.corin[0] == "sh" or genes.corin[0] == "fg":
-                        colour =  "cream" + "silver" + "shaded"
-                    else:
-                        colour = "cream" + "silver" + genes.wbtype
-                else:
-                    if genes.corin[0] == "sg":
-                        colour =  "cream" + "rufoused" + "chinchilla"
-                    elif genes.corin[0] == "sh" or genes.corin[0] == "fg":
-                        colour =  "cream" + "rufoused" + "shaded"
-                    else:
-                        colour = "cream" + "rufoused" + genes.wbtype
-            else:
-                if genes.silver[0] == "I" and special != 'nosilver' or (moons < 3 and genes.karp[0] == "K"):
-                    if genes.corin[0] == "sg":
-                        colour =  "red" + "silver" + "chinchilla"
-                    elif genes.corin[0] == "sh" or genes.corin[0] == "fg":
-                        colour =  "red" + "silver" + "shaded"
-                    else:
-                        colour = "red" + "silver" + genes.wbtype
-                else:
-                    if genes.corin[0] == "sg":
-                        colour =  "red" + "low" + "chinchilla"
-                    elif genes.corin[0] == "sh" or genes.corin[0] == "fg":
-                        colour =  "red" + "low" + "shaded"
-                    else:
-                        colour = "red" + "low" + genes.wbtype
-        elif colour == "honey-apricot":
-            if genes.ruftype == "low" or special=='low':
-                if genes.silver[0] == "I" and special != 'nosilver' or (moons < 3 and genes.karp[0] == "K"):
-                    if genes.corin[0] == "sg":
-                        colour =  "honey" + "silver" + "chinchilla"
-                    elif genes.corin[0] == "sh" or genes.corin[0] == "fg":
-                        colour =  "honey" + "silver" + "shaded"
-                    else:
-                        colour = "honey" + "silver" + genes.wbtype
-                else:
-                    if genes.corin[0] == "sg":
-                        colour =  "honey" + "medium" + "chinchilla"
-                    elif genes.corin[0] == "sh" or genes.corin[0] == "fg":
-                        colour =  "honey" + "medium" + "shaded"
-                    else:
-                        colour = "honey" + "medium" + genes.wbtype
-            elif genes.ruftype == "medium":
-                if genes.silver[0] == "I" and special != 'nosilver' or (moons < 3 and genes.karp[0] == "K"):
-                    if genes.corin[0] == "sg":
-                        colour =  "honey" + "silver" + "chinchilla"
-                    elif genes.corin[0] == "sh" or genes.corin[0] == "fg":
-                        colour =  "honey" + "silver" + "shaded"
-                    else:
-                        colour = "honey" + "silver" + genes.wbtype
-                else:
-                    if genes.corin[0] == "sg":
-                        colour =  "honey" + "rufoused" + "chinchilla"
-                    elif genes.corin[0] == "sh" or genes.corin[0] == "fg":
-                        colour =  "honey" + "rufoused" + "shaded"
-                    else:
-                        colour = "honey" + "rufoused" + genes.wbtype
-            else:
-                if genes.silver[0] == "I" and special != 'nosilver' or (moons < 3 and genes.karp[0] == "K"):
-                    if genes.corin[0] == "sg":
-                        colour =  "red" + "silver" + "chinchilla"
-                    elif genes.corin[0] == "sh" or genes.corin[0] == "fg":
-                        colour =  "red" + "silver" + "shaded"
-                    else:
-                        colour = "red" + "silver" + genes.wbtype
-                else:
-                    if genes.corin[0] == "sg":
-                        colour =  "red" + "low" + "chinchilla"
-                    elif genes.corin[0] == "sh" or genes.corin[0] == "fg":
-                        colour =  "red" + "low" + "shaded"
-                    else:
-                        colour = "red" + "low" + genes.wbtype
-        elif colour == "ivory-apricot":
-            if genes.ruftype == "low" or special=='low':
-                if genes.silver[0] == "I" and special != 'nosilver' or (moons < 3 and genes.karp[0] == "K"):
-                    if genes.corin[0] == "sg":
-                        colour =  "ivory" + "silver" + "chinchilla"
-                    elif genes.corin[0] == "sh" or genes.corin[0] == "fg":
-                        colour =  "ivory" + "silver" + "shaded"
-                    else:
-                        colour = "ivory" + "silver" + genes.wbtype
-                else:
-                    if genes.corin[0] == "sg":
-                        colour =  "ivory" + "medium" + "chinchilla"
-                    elif genes.corin[0] == "sh" or genes.corin[0] == "fg":
-                        colour =  "ivory" + "medium" + "shaded"
-                    else:
-                        colour = "ivory" + "medium" + genes.wbtype
-            elif genes.ruftype == "medium":
-                if genes.silver[0] == "I" and special != 'nosilver' or (moons < 3 and genes.karp[0] == "K"):
-                    if genes.corin[0] == "sg":
-                        colour =  "ivory" + "silver" + "chinchilla"
-                    elif genes.corin[0] == "sh" or genes.corin[0] == "fg":
-                        colour =  "ivory" + "silver" + "shaded"
-                    else:
-                        colour = "ivory" + "silver" + genes.wbtype
-                else:
-                    if genes.corin[0] == "sg":
-                        colour =  "ivory" + "rufoused" + "chinchilla"
-                    elif genes.corin[0] == "sh" or genes.corin[0] == "fg":
-                        colour =  "ivory" + "rufoused" + "shaded"
-                    else:
-                        colour = "ivory" + "rufoused" + genes.wbtype
-            else:
-                if genes.silver[0] == "I" and special != 'nosilver' or (moons < 3 and genes.karp[0] == "K"):
-                    if genes.corin[0] == "sg":
-                        colour =  "honey" + "silver" + "chinchilla"
-                    elif genes.corin[0] == "sh" or genes.corin[0] == "fg":
-                        colour =  "honey" + "silver" + "shaded"
-                    else:
-                        colour = "honey" + "silver" + genes.wbtype
-                else:
-                    if genes.corin[0] == "sg":
-                        colour =  "honey" + "low" + "chinchilla"
-                    elif genes.corin[0] == "sh" or genes.corin[0] == "fg":
-                        colour =  "honey" + "low" + "shaded"
-                    else:
-                        colour = "honey" + "low" + genes.wbtype
-        elif genes.silver[0] == "I" and special != 'nosilver' or (moons < 3 and genes.karp[0] == "K"):
-            if genes.corin[0] == "sg":
-                colour =  colour + "silver" + "chinchilla"
-            elif genes.corin[0] == "sh" or genes.corin[0] == "fg":
-                colour =  colour + "silver" + "shaded"
-            else:
-                colour =  colour + "silver" + genes.wbtype
+        rufousing = ""
+        banding = ""
+        if genes.silver[0] == "I" and special != 'nosilver' or (moons < 3 and genes.karp[0] == "K"):
+            rufousing = "silver"
         elif genes.pointgene[0] not in ["C", "cm"] or special=='low':
-            if genes.corin[0] == "sg":
-                colour =  colour + "low" + "chinchilla"
-            elif genes.corin[0] == "sh" or genes.corin[0] == "fg":
-                colour =  colour + "low" + "shaded"
-            else:
-                colour = colour + "low" + genes.wbtype
+            rufousing = "low"
         else:
-            if genes.corin[0] == "sg":
-                colour =  colour + genes.ruftype + "chinchilla"
-            elif genes.corin[0] == "sh" or genes.corin[0] == "fg":
-                colour =  colour + genes.ruftype + "shaded"
+            rufousing = genes.ruftype
+
+        if genes.corin[0] == "sg" or genes.wbtype == "chinchilla":
+            banding = "chinchilla"
+        elif genes.corin[0] == "sh" or genes.corin[0] == "fg" or genes.wbtype == "shaded":
+            banding = "shaded"
+        else:
+            banding = genes.wbtype
+
+
+        if colour == "apricot":
+            if rufousing == "low":
+                colour = "cream"
+                rufousing = "medium"
+            elif rufousing == "medium":
+                colour = "cream"
+                rufousing = "rufoused"
             else:
-                colour = colour + genes.ruftype + genes.wbtype
+                colour = "red"
+                rufousing = "low"
+        elif colour == "honey-apricot":
+            if rufousing == "low":
+                colour = "honey"
+                rufousing = "medium"
+            elif rufousing == "medium":
+                colour = "honey"
+                rufousing = "rufoused"
+            else:
+                colour = "red"
+                rufousing = "low"
+        elif colour == "ivory-apricot":
+            if rufousing == "low":
+                colour = "ivory"
+                rufousing = "medium"
+            elif rufousing == "medium":
+                colour = "ivory"
+                rufousing = "rufoused"
+            else:
+                colour = "honey"
+                rufousing = "low"
+        
+        if (genes.ext[0] == "ec" and genes.agouti[0] == "a" and 'o' in genes.sexgene):
+            unders_opacity = 0
+        elif rufousing == "silver" or (genes.ext[0] == "ec" and genes.agouti[0] != "a" and 'o' in genes.sexgene):
+            unders_opacity = self.GetSilverUnders(banding)
+        else:
+            unders_opacity = self.GetRedUnders(banding)
+        colour = colour + rufousing + banding + "0"
         
         if(genes.specialred in ['blue-red', 'cinnamon']) or special == 'blue-tipped':
             colour = colour.replace('cream', 'lilac')
@@ -987,5 +929,8 @@ class Phenotype():
                 
                 if('apricot' in maincolour):
                     self.caramel = 'caramel'
+            if rufousing != "silver":
+                unders_colour = self.FindEumUnders(genes, banding, rufousing)
+                unders_opacity = 33
         
-        return [maincolour, colour]
+        return [maincolour, colour, unders_colour, unders_opacity]

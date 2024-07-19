@@ -2597,28 +2597,23 @@ def generate_sprite(
                     stripebase.blit(middle, (0, 0))
                 return stripebase
 
-            def TabbyBase(whichcolour, whichbase, special = None):
+            def TabbyBase(whichcolour, whichbase, cat_unders, special = None):
                 whichmain = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
-                whichmain.blit(sprites.sprites[whichbase + cat_sprite], (0, 0))
+                whichmain.blit(sprites.sprites[whichbase], (0, 0))
                 if special !='copper' and sprite_age > 12 and (genotype.silver[0] == 'I' and genotype.corin[0] == 'fg' and (get_current_season() == 'Leaf-fall' or get_current_season() == 'Leaf-bare' or 'infertility' in cat.permanent_condition)):
                     sunshine = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
                     
                     colours = phenotype.FindRed(genotype, sprite_age, special='low')
-                    sunshine = MakeCat(sunshine, colours[0], colours[1], special='copper')
+                    sunshine = MakeCat(sunshine, colours[0], colours[1], [colours[2], colours[3]], special='copper')
 
                     sunshine.set_alpha(150)
                     whichmain.blit(sunshine, (0, 0))
 
-                if("rufoused" in whichcolour or 'medium' in whichcolour or 'low' in whichcolour) and ('red' in whichbase or 'cream' in whichbase or 'honey' in whichbase or 'ivory' in whichbase):
-                    if(genotype.ext[0] != "Eg" and (genotype.ext[0] == "ec" and genotype.agouti[0] != "a" and 'o' in genotype.sexgene)):
-                        if("chinchilla" in whichbase):
-                            whichmain.blit(sprites.sprites["unders_" + stripecolourdict.get(whichcolour, whichcolour).replace('rufoused', '').replace('medium', '').replace('low', '')+ "silver" + "chinchilla" + cat_sprite], (0, 0))        
-                        elif("shaded" in whichbase):
-                            whichmain.blit(sprites.sprites["unders_" + stripecolourdict.get(whichcolour, whichcolour).replace('rufoused', '').replace('medium', '').replace('low', '')+ "silver" + "shaded" + cat_sprite], (0, 0))        
-                        else:
-                            whichmain.blit(sprites.sprites["unders_" + stripecolourdict.get(whichcolour, whichcolour).replace('rufoused', '').replace('medium', '').replace('low', '')+ "silver" + genotype.wbtype + cat_sprite], (0, 0))        
-                    elif(not (genotype.ext[0] == "ec" and genotype.agouti[0] == "a" and 'o' in genotype.sexgene)):
-                        whichmain.blit(sprites.sprites["unders_" + whichbase + cat_sprite], (0, 0))
+                unders = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
+                unders.blit(sprites.sprites["Tabby_unders" + cat_sprite], (0, 0))
+                unders.blit(sprites.sprites[cat_unders[0]], (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
+                unders.set_alpha(int(cat_unders[1] * 2.55))
+                whichmain.blit(unders, (0, 0))
 
                 if phenotype.caramel == 'caramel' and not ('red' in whichcolour or 'cream' in whichcolour or 'honey' in whichcolour or 'ivory' in whichcolour or 'apricot' in whichcolour):    
                     whichmain.blit(sprites.sprites['caramel0'], (0, 0))
@@ -2627,7 +2622,6 @@ def generate_sprite(
         
             def AddStripes(whichmain, whichcolour, whichbase, coloursurface=None):
                 stripebase = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
-                stripebase.blit(CreateStripes(whichcolour, whichbase, coloursurface=coloursurface), (0, 0))
                 if((genotype.corin[0] != 'N' and genotype.wbtype == 'shaded') or genotype.wbtype == 'chinchilla'):
                     if not ("rufoused" in whichcolour or 'medium' in whichcolour or 'low' in whichcolour or genotype.wbtype == 'chinchilla'):
                         stripebase.blit(CreateStripes(phenotype.FindRed(genotype, sprite_age, special='red')[0], phenotype.FindRed(genotype, sprite_age, special='red')[1], coloursurface=coloursurface), (0, 0))
@@ -2644,7 +2638,14 @@ def generate_sprite(
                     stripebase.set_alpha(200)
                     whichmain.blit(stripebase, (0, 0))
                     stripebase = CreateStripes(whichcolour, whichbase, coloursurface=coloursurface, pattern='agouti')
-                
+                elif('ec' in genotype.ext and 'Eg' not in genotype.ext):
+                    stripebase = CreateStripes(whichcolour, whichbase, coloursurface=coloursurface)
+                    stripebase.set_alpha(200)
+                    whichmain.blit(stripebase, (0, 0))
+                    stripebase = CreateStripes(whichcolour, whichbase, coloursurface=coloursurface, pattern='agouti')
+                else:
+                    stripebase.blit(CreateStripes(whichcolour, whichbase, coloursurface=coloursurface), (0, 0))
+
                 whichmain.blit(stripebase, (0, 0))
 
                 return whichmain
@@ -2666,23 +2667,23 @@ def generate_sprite(
                 
                 return whichmain
 
-            def MakeCat(whichmain, whichcolour, whichbase, special=None):
+            def MakeCat(whichmain, whichcolour, whichbase, cat_unders, special=None):
                 if (genotype.white[0] == 'W' or genotype.pointgene[0] == 'c' or whichcolour == 'white' or genotype.white_pattern == ['full white']):
                     whichmain.blit(sprites.sprites['lightbasecolours0'], (0, 0))
                     if(genotype.pointgene[0] == "c"):
                         whichmain.blit(sprites.sprites['albino' + cat_sprite], (0, 0))
                 elif(whichcolour != whichbase and special != 'masked silver'):
                     if(genotype.pointgene[0] == "C"):
-                        whichmain = TabbyBase(whichcolour, whichbase, special)
+                        whichmain = TabbyBase(whichcolour, whichbase, cat_unders, special)
 
                         whichmain = AddStripes(whichmain, whichcolour, whichbase)
                     else:
                         #create base
                         colourbase = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
                         if(whichcolour == "black" and genotype.pointgene[0] == "cm"):
-                            colourbase.blit(sprites.sprites[whichbase.replace("black", "cinnamon") + cat_sprite], (0, 0))
+                            colourbase.blit(sprites.sprites[whichbase.replace("black", "cinnamon")], (0, 0))
                         else:
-                            colourbase = TabbyBase(whichcolour, whichbase, special)
+                            colourbase = TabbyBase(whichcolour, whichbase, cat_unders, special)
 
                             if((genotype.pointgene == ["cb", "cb"] and cat_sprite != "20") or (((("cb" in genotype.pointgene or genotype.pointgene[0] == "cm") and cat_sprite != "20") or genotype.pointgene == ["cb", "cb"]) and get_current_season() == 'Leaf-bare')):
                                 colourbase.set_alpha(100)
@@ -2763,11 +2764,11 @@ def generate_sprite(
                         if(whichcolour == "black" and genotype.pointgene[0] == "cm"):
                             colourbase2 = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
                             colourbase.blit(sprites.sprites['lightbasecolours0'], (0, 0))
-                            colourbase2.blit(sprites.sprites[whichbase.replace("black", "cinnamon") + cat_sprite], (0, 0))
+                            colourbase2.blit(sprites.sprites[whichbase.replace("black", "cinnamon")], (0, 0))
                             colourbase2.set_alpha(150)
                             colourbase.blit(colourbase2, (0, 0))
                         else:
-                            colourbase = TabbyBase(whichcolour, whichbase, special)
+                            colourbase = TabbyBase(whichcolour, whichbase, cat_unders, special)
                         pointbase = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
                         pointbase2 = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
                         pointbase2.blit(sprites.sprites['lightbasecolours0'], (0, 0))
@@ -3084,11 +3085,11 @@ def generate_sprite(
                 return whichmain
 
             gensprite = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
-            gensprite = MakeCat(gensprite, phenotype.maincolour, phenotype.spritecolour)
+            gensprite = MakeCat(gensprite, phenotype.maincolour, phenotype.spritecolour, phenotype.mainunders)
 
             if('masked' in phenotype.silvergold):
                 masked = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
-                masked = MakeCat(masked, phenotype.maincolour, phenotype.spritecolour, special="masked silver")
+                masked = MakeCat(masked, phenotype.maincolour, phenotype.spritecolour, phenotype.mainunders, special="masked silver")
                 masked2 = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
                 masked2.blit(sprites.sprites["tortiemaskBLUE-TIPPED" + cat_sprite], (0, 0))
                 masked2.blit(masked, (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
@@ -3114,10 +3115,10 @@ def generate_sprite(
 
                     colours = phenotype.FindRed(genotype, sprite_age, special='nosilver')
                     underbelly = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
-                    underbelly = MakeCat(underbelly, colours[0], colours[1], special='nounders')
+                    underbelly = MakeCat(underbelly, colours[0], colours[1], [colours[2], colours[3]], special='nounders')
                     sunshine.blit(underbelly, (0, 0), special_flags=pygame.BLEND_RGBA_MIN)
 
-                    sunshine.set_alpha(100)
+                    sunshine.set_alpha(75)
                     sprite.blit(sunshine, (0, 0))
                 return sprite
             gensprite = ApplyPatchEffects(gensprite)
@@ -3125,10 +3126,10 @@ def generate_sprite(
 
             if(phenotype.patchmain != ""):
                 tortpatches = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
-                tortpatches = MakeCat(tortpatches, phenotype.patchmain, phenotype.patchcolour)
+                tortpatches = MakeCat(tortpatches, phenotype.patchmain, phenotype.patchcolour, phenotype.patchunders)
                 if('masked' in phenotype.silvergold):
                     masked = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
-                    masked = MakeCat(masked, phenotype.maincolour, phenotype.spritecolour, special="masked silver")
+                    masked = MakeCat(masked, phenotype.patchmain, phenotype.patchcolour, phenotype.patchunders, special="masked silver")
                     masked2 = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
                     masked2.blit(sprites.sprites["tortiemaskBLUE-TIPPED" + cat_sprite], (0, 0))
                     masked2.blit(masked, (0, 0), special_flags=pygame.BLEND_RGBA_MULT)

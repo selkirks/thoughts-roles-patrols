@@ -482,7 +482,7 @@ class Pregnancy_Events:
         try:
             affair_partner_id = clan.pregnancy_data[cat.ID]["affair_partner"]
         except:
-            pass
+            affair_partner_id = []
         
         other_cat = []
         if other_cat_id and type(other_cat_id) == list: 

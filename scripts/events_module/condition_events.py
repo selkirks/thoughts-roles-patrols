@@ -406,12 +406,12 @@ class Condition_Events:
             "TOETRAP": ["weak leg"],
             "NOTAIL": ["lost their tail"],
             "HALFTAIL": ["lost their tail"],
-            "LEFTEAR": ["partial hearing loss"],
-            "RIGHTEAR": ["partial hearing loss"],
+            "LEFTEAR": ["partial hearing loss in one ear"],
+            "RIGHTEAR": ["partial hearing loss in one ear"],
             "MANLEG": ["weak leg", "twisted leg"],
             "BRIGHTHEART": ["one bad eye"],
-            "NOLEFTEAR": ["partial hearing loss"],
-            "NORIGHTEAR": ["partial hearing loss"],
+            "NOLEFTEAR": ["partial hearing loss in one ear"],
+            "NORIGHTEAR": ["partial hearing loss in one ear"],
             "NOEAR": ["partial hearing loss", "deaf"],
             "LEFTBLIND": ["one bad eye", "failing eyesight"],
             "RIGHTBLIND": ["one bad eye", "failing eyesight"],
@@ -429,6 +429,8 @@ class Condition_Events:
             "one bad eye",
             "partial hearing loss",
             "deaf",
+            "partial hearing loss in one ear",
+            "deaf in one ear",
             "constant joint pain",
             "constantly dizzy",
             "recurring shock",
@@ -754,6 +756,9 @@ class Condition_Events:
             "one bad eye": "failing eyesight",
             "failing eyesight": "blind",
             "partial hearing loss": "deaf",
+            "partial hearing loss in one ear" : "deaf in one ear",
+            "partial hearing loss in one ear" : "partial hearing loss",
+            "deaf in one ear" : "deaf"
         }
 
         conditions = deepcopy(cat.permanent_condition)

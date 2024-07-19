@@ -727,6 +727,10 @@
             {
                 "name": "partial hearing loss",
                 "chance": 50
+            },
+            {
+                "name": "partial hearing loss in one ear",
+                "chance": 50
             }
         ],
         "herbs": [

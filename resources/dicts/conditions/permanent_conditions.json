@@ -422,6 +422,49 @@
         "herbs": []
 
     },
+    "partial hearing loss in one ear": {
+        "severity": "minor",
+        "congenital": "sometimes",
+        "moons_until": 2,
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+            {
+                "name": "deaf in one ear",
+                "chance": 80
+            }
+        ],
+        "herbs": []
+    },
+    "deaf in one ear": {
+        "severity": "minor",
+        "congenital": "sometimes",
+        "moons_until": 1,
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+        ],
+        "herbs": []
+
+    },
     "constant joint pain": {
         "severity": "minor",
         "congenital": "sometimes",
