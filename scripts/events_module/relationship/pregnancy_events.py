@@ -493,11 +493,12 @@ class Pregnancy_Events:
         else:
             other_cat = None
 
-        for id in affair_partner_id:
-            other_cat.append(Cat.all_cats.get(id))
-            affair_partners.append(Cat.all_cats.get(id))
-        if affair_partners:
-            RandomAffair = choice(affair_partners)
+        if affair_partner_id:
+            for id in affair_partner_id:
+                other_cat.append(Cat.all_cats.get(id))
+                affair_partners.append(Cat.all_cats.get(id))
+            if affair_partners:
+                RandomAffair = choice(affair_partners)
 
         backkit = None
         if not other_cat:
