@@ -2662,8 +2662,8 @@ def generate_sprite(
                     whichmain.blit(ghostingbase, (0, 0))
                 if (genotype.silver[0] == 'I' and cat.pelt.length != 'long'):
                     whichmain.blit(sprites.sprites['smoke' + cat_sprite], (0, 0))
-                    if(phenotype.silvergold == ' light smoke '):
-                        whichmain.blit(sprites.sprites['smoke' + cat_sprite], (0, 0))
+                if('light smoke' in phenotype.silvergold):
+                    whichmain.blit(sprites.sprites['smoke' + cat_sprite], (0, 0))
                 
                 return whichmain
 
