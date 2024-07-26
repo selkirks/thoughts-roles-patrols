@@ -142,8 +142,6 @@ class Genotype:
         return getattr(self, name)
     
     def fromJSON(self, jsonstring):
-        #jsonstring = json.loads(jsonstring)
-
         self.furLength = jsonstring["furLength"]
         self.eumelanin = jsonstring["eumelanin"]
         self.sexgene = jsonstring["sexgene"]
@@ -219,28 +217,16 @@ class Genotype:
                     self.pax3[i] = 'NoDBE'
 
         self.wideband = jsonstring["wideband"]
-        #self.wbtype = jsonstring["wbtype"]
-        #self.wbsum = jsonstring["wbsum"]
 
         self.rufousing = jsonstring["rufousing"]
-        #self.ruftype = jsonstring["ruftype"]
-        #self.rufsum = jsonstring["rufsum"]
 
         self.bengal = jsonstring["bengal"]
-        #self.bengtype = jsonstring["bengtype"]
-        #self.bengsum = jsonstring["bengsum"]
 
         self.sokoke = jsonstring["sokoke"]
-        #self.soktype = jsonstring["soktype"]
-        #self.soksum = jsonstring["soksum"]
 
         self.spotted = jsonstring["spotted"]
-        #self.spottype = jsonstring["spottype"]
-        #self.spotsum = jsonstring["spotsum"]
 
         self.tickgenes = jsonstring["tickgenes"]
-        #self.ticktype = jsonstring["ticktype"]
-        #self.ticksum = jsonstring["ticksum"]
 
         self.refraction = jsonstring["refraction"]
         self.pigmentation = jsonstring["pigmentation"]
@@ -257,10 +243,8 @@ class Genotype:
         if len(str(self.refraction)) > 2:
             self.EyeConvert()
 
-        try:
-            self.breeds = json.loads(jsonstring["breeds"])
-        except:
-            self.breeds = {}
+        self.breeds = json.loads(jsonstring["breeds"])
+        
         try:
             self.somatic = json.loads(jsonstring["somatic"])
         except:
@@ -1119,13 +1103,9 @@ class Genotype:
         
         
         self.furLength = [choice(par1.furLength), choice(par2.furLength)]
-
-        if self.furLength[0] == "l":
-            x = self.furLength[1]
-            self.furLength[1] = self.furLength[0]
-            self.furLength[0] = x
         
         self.eumelanin = [choice(par1.eumelanin), choice(par2.eumelanin)]
+
         mum = ["", ""]
         pap = ["", "Y"]
         if not xor('Y' in par1.sexgene, 'Y' in par2.sexgene):
@@ -1233,93 +1213,25 @@ class Genotype:
             self.specialred = choice(['cameo', 'cameo', 'cameo', 'cameo', 'cameo', 'cameo', 'merle', 'merle', 'merle', 'merle', 'merle', 'blue-red', 'blue-tipped', 'blue-tipped', 'cinnamon'])
 
         self.dilute = [choice(par1.dilute), choice(par2.dilute)]
-
-        if(self.dilute[0] == "d"):
-            x = self.dilute[1]
-            self.dilute[1] = self.dilute[0]
-            self.dilute[0] = x
-        
         self.white = [choice(par1.white), choice(par2.white)]
-
         self.pointgene = [choice(par1.pointgene), choice(par2.pointgene)]
 
         self.silver = [choice(par1.silver), choice(par2.silver)]
-
-        if(self.silver[0] == "i"):
-            x = self.silver[1]
-            self.silver[1] = self.silver[0]
-            self.silver[0] = x
-
         self.agouti = [choice(par1.agouti), choice(par2.agouti)]
-
         self.mack = [choice(par1.mack), choice(par2.mack)]
-
-        if(self.mack[0] == "mc"):
-            x = self.mack[1]
-            self.mack[1] = self.mack[0]
-            self.mack[0] = x
-
         self.ticked = [choice(par1.ticked), choice(par2.ticked)]
 
         if self.ticked[0] != self.ticked[1] and randint(1, 25) == 1:
             self.breakthrough = True
 
-        if(self.ticked[0] == "ta"):
-            x = self.ticked[1]
-            self.ticked[1] = self.ticked[0]
-            self.ticked[0] = x
-
         self.wirehair = [choice(par1.wirehair), choice(par2.wirehair)]
-
-        if(self.wirehair[0] == "wh"):
-            x = self.wirehair[1]
-            self.wirehair[1] = self.wirehair[0]
-            self.wirehair[0] = x
-
         self.laperm = [choice(par1.laperm), choice(par2.laperm)]
-
-        if(self.laperm[0] == "lp"):
-            x = self.laperm[1]
-            self.laperm[1] = self.laperm[0]
-            self.laperm[0] = x
-
         self.cornish = [choice(par1.cornish), choice(par2.cornish)]
-
-        if(self.cornish[0] == "r"):
-            x = self.cornish[1]
-            self.cornish[1] = self.cornish[0]
-            self.cornish[0] = x
-
         self.urals = [choice(par1.urals), choice(par2.urals)]
-
-        if(self.urals[0] == "ru"):
-            x = self.urals[1]
-            self.urals[1] = self.urals[0]
-            self.urals[0] = x
-
         self.tenn = [choice(par1.tenn), choice(par2.tenn)]
-
-        if(self.tenn[0] == "tr"):
-            x = self.tenn[1]
-            self.tenn[1] = self.tenn[0]
-            self.tenn[0] = x
-
         self.fleece = [choice(par1.fleece), choice(par2.fleece)]
-
-        if(self.fleece[0] == "fc"):
-            x = self.fleece[1]
-            self.fleece[1] = self.fleece[0]
-            self.fleece[0] = x
-
         self.sedesp = [choice(par1.sedesp), choice(par2.sedesp)]
-
         self.ruhr = [choice(par1.ruhr), choice(par2.ruhr)]
-
-        if(self.ruhr[0] == "hrbd"):
-            x = self.ruhr[1]
-            self.ruhr[1] = self.ruhr[0]
-            self.ruhr[0] = x
-
         self.ruhrmod = [choice(par1.ruhrmod), choice(par2.ruhrmod)]
 
         if(self.ruhrmod[0] == "ha"):
@@ -1329,130 +1241,29 @@ class Genotype:
 
         self.lykoi = [choice(par1.lykoi), choice(par2.lykoi)]
 
-        if(self.lykoi[0] == "ly"):
-            x = self.lykoi[1]
-            self.lykoi[1] = self.lykoi[0]
-            self.lykoi[0] = x
-
         self.pinkdilute = [choice(par1.pinkdilute), choice(par2.pinkdilute)]
-
-        if(self.pinkdilute[0] == "dp"):
-            x = self.pinkdilute[1]
-            self.pinkdilute[1] = self.pinkdilute[0]
-            self.pinkdilute[0] = x
-
         self.dilutemd = [choice(par1.dilutemd), choice(par2.dilutemd)]
-
-        if(self.dilutemd[0] == "dm"):
-            x = self.dilutemd[1]
-            self.dilutemd[1] = self.dilutemd[0]
-            self.dilutemd[0] = x
-
         self.ext = [choice(par1.ext), choice(par2.ext)]
         self.corin = [choice(par1.corin), choice(par2.corin)]
-
+        
         self.karp = [choice(par1.karp), choice(par2.karp)]
-
-        if(self.karp[0] == "k"):
-            x = self.karp[1]
-            self.karp[1] = self.karp[0]
-            self.karp[0] = x
-
         self.bleach = [choice(par1.bleach), choice(par2.bleach)]
-
-        if(self.bleach[0] == "lb"):
-            x = self.bleach[1]
-            self.bleach[1] = self.bleach[0]
-            self.bleach[0] = x
-
         self.ghosting = [choice(par1.ghosting), choice(par2.ghosting)]
-
-        if(self.ghosting[0] == "gh"):
-            x = self.ghosting[1]
-            self.ghosting[1] = self.ghosting[0]
-            self.ghosting[0] = x
-
         self.satin = [choice(par1.satin), choice(par2.satin)]
-
-        if(self.satin[0] == "st"):
-            x = self.satin[1]
-            self.satin[1] = self.satin[0]
-            self.satin[0] = x
-
         self.glitter = [choice(par1.glitter), choice(par2.glitter)]
 
-        if(self.glitter[0] == "gl"):
-            x = self.glitter[1]
-            self.glitter[1] = self.glitter[0]
-            self.glitter[0] = x
-
         self.curl = [choice(par1.curl), choice(par2.curl)]
-
-        if(self.curl[0] == "cu"):
-            self.curl[0] = self.curl[1]
-            self.curl[1] = "cu"
-
         self.fold = [choice(par1.fold), choice(par2.fold)]
-
-        if(self.fold[0] == "fd"):
-            self.fold[0] = self.fold[1]
-            self.fold[1] = "fd"
         
         self.manx = [choice(par1.manx), choice(par2.manx)]
-
         self.kab = [choice(par1.kab), choice(par2.kab)]
-
-        if(self.kab[0] == "kab"):
-            self.kab[0] = self.kab[1]
-            self.kab[1] = "kab"
-
         self.toybob = [choice(par1.toybob), choice(par2.toybob)]
-
-        if(self.toybob[0] == "tb"):
-            self.toybob[0] = self.toybob[1]
-            self.toybob[1] = "tb"
-
         self.jbob = [choice(par1.jbob), choice(par2.jbob)]
-
-        if(self.jbob[0] == "jb"):
-            self.jbob[0] = self.jbob[1]
-            self.jbob[1] = "jb"
-
         self.kub = [choice(par1.kub), choice(par2.kub)]
-
-        if(self.kub[0] == "kub"):
-            self.kub[0] = self.kub[1]
-            self.kub[1] = "kub"
-
         self.ring = [choice(par1.ring), choice(par2.ring)]
-
-        if(self.ring[0] == "rt"):
-            self.ring[0] = self.ring[1]
-            self.ring[1] = "rt"
-
         self.munch = [choice(par1.munch), choice(par2.munch)]
-
-        if(self.munch[0] == "mk"):
-            self.munch[0] = self.munch[1]
-            self.munch[1] = "mk"
-
-        self.munch = [choice(par1.munch), choice(par2.munch)]
-
-        if(self.munch[0] == "mk"):
-            self.munch[0] = self.munch[1]
-            self.munch[1] = "mk"
-
         self.poly = [choice(par1.poly), choice(par2.poly)]
-
-        if(self.poly[0] == "pd"):
-            self.poly[0] = self.poly[1]
-            self.poly[1] = "pd"
-
         self.pax3 = [choice(par1.pax3), choice(par2.pax3)]
-
-        if(self.pax3[0] == "NoDBE"):
-            self.pax3[0] = self.pax3[1]
-            self.pax3[1] = "NoDBE"
 
         self.wideband = ""
         for i in range(8):
@@ -1520,10 +1331,11 @@ class Genotype:
                 self.ticksum +=1
             self.tickgenes += str(temptick)
 
-        wobble = randint(1, int(sum(self.body_ranges) / 20))
+        wobble = randint(1, int(sum(self.body_ranges) / 25))
         self.body_value = randint(min(par1.body_value-wobble, par2.body_value-wobble), max(par1.body_value+wobble, par2.body_value+wobble))
-
-        wobble = randint(1, int(sum(self.height_ranges) / 20))
+        
+        int(sum(self.height_ranges) / 25)
+        wobble = randint(1, int(sum(self.height_ranges) / 25))
         self.height_value = randint(min(par1.height_value-wobble, par2.height_value-wobble), max(par1.height_value+wobble, par2.height_value+wobble))
 
         if self.body_value < 1:
@@ -1866,10 +1678,13 @@ class Genotype:
             piggrade = self.pigmentation
 
         if self.dilute[0] == "d" or self.pointgene == ["cb", "cb"] or self.pointgene == ["cb", "c"] or self.pointgene == ["cb", "cm"]:
-            if randint(1, 5) == 1 and piggrade > 1:
+            if randint(1, 5) == 1:
                 piggrade = piggrade - 1
+
+        if self.pinkdilute[0] == 'dp' or self.pointgene == ["cb", "cs"]:
+            piggrade = math.ceil(piggrade / 2)
         
-        if self.pinkdilute[0] == 'dp' or self.pointgene == ["cb", "cs"] or piggrade == 0 or ((self.pointgene == ["cb", "cm"] or self.pointgene == ["cm", "cm"] or self.pointgene == ["cm", "c"]) and randint(1, 5) == 1):
+        if piggrade == 0 or ((self.pointgene == ["cb", "cm"] or self.pointgene == ["cm", "cm"] or self.pointgene == ["cm", "c"]) and randint(1, 5) == 1):
             piggrade = 1
 
         def RefTypeFind(x, piggrade):

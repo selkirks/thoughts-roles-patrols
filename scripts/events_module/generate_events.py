@@ -511,14 +511,14 @@ class GenerateEvents:
 
                             if "m_c" in block["cats"]:
                                 if injury == 'mangled tail' and (
-                                        'NOTAIL' in cat.pelt.scars or 'HALFTAIL' in cat.pelt.scars or (0 < cat.phenotype.bobtailnr < 3)):
+                                        'NOTAIL' in cat.pelt.scars or 'HALFTAIL' in cat.pelt.scars or (0 < cat.phenotype.bobtailnr < 5)):
                                     continue
 
                                 if injury == 'torn ear' and 'NOEAR' in cat.pelt.scars:
                                     continue
                             if "r_c" in block["cats"]:
                                 if injury == 'mangled tail' and (
-                                        'NOTAIL' in random_cat.pelt.scars or 'HALFTAIL' in random_cat.pelt.scars or (0 < random_cat.phenotype.bobtailnr < 3)):
+                                        'NOTAIL' in random_cat.pelt.scars or 'HALFTAIL' in random_cat.pelt.scars or (0 < random_cat.phenotype.bobtailnr < 5)):
                                     continue
 
                                 if injury == 'torn ear' and 'NOEAR' in random_cat.pelt.scars:

@@ -768,6 +768,11 @@ def create_new_cat(
     else:
         number_of_cats = choices([2, 3, 4, 5], [5, 4, 1, 1], k=1)[0]
 
+    if number_of_cats == 1 and (litter or kit):
+        parent1.thought.replace('kits are safe', 'kit is safe')
+        parent2.thought.replace('kits are safe', 'kit is safe')
+    
+
     if not isinstance(age, int):
         if status == "newborn":
             age = 0
@@ -2595,6 +2600,13 @@ def generate_sprite(
                     stripebase.blit(middle, (0, 0))
                     middle = CreateStripes(stripecolour, whichbase, coloursurface, pattern=phenotype.GetTabbySprite(special='redbar'))
                     stripebase.blit(middle, (0, 0))
+
+                if cat.pelt.length == 'long':
+                    size = stripebase.get_size()
+                    scale_size = (int(size[0]*0.9), int(size[1]*0.9))
+                    stripebase = pygame.transform.smoothscale(stripebase, scale_size)
+                    stripebase = pygame.transform.smoothscale(stripebase, size)
+
                 return stripebase
 
             def TabbyBase(whichcolour, whichbase, cat_unders, special = None):
