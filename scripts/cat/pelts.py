@@ -206,7 +206,7 @@ class Pelt:
                 self.cat_sprites['young adult'] += 3
                 self.cat_sprites['senior adult'] += 3
         elif phenotype.length != 'hairless':
-            if phenotype.length == "longhaired":
+            if phenotype.length == "mediumhaired":
                 self.length = 'medium'
             else:
                 self.length="short"

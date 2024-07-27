@@ -67,7 +67,10 @@ class Phenotype():
         elif self.genotype.sedesp[0] == "hr":
             self.length = 'fur-pointed'
         elif self.genotype.furLength[0] == "l":
-            self.length = "longhaired"
+            if self.genotype.longtype == "medium":
+                self.length = "mediumhaired"
+            else:
+                self.length = "longhaired"
         else:
             self.length = "shorthaired"
 
