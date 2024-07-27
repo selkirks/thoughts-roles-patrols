@@ -354,7 +354,7 @@ class Cat:
                                     white_pattern.append(order[i] + pawtype)
                                 else:
                                     white_pattern.append(order[i] + choice([' toes', ' mitten', ' mitten', ' low sock']))
-                            white_pattern.append(choice(['belt'] + [None] * 9))
+                            white_pattern.append(choice(['belt', 'belt', 'pants'] + [None] * 9))
 
                             #face
                             if 'beard' in white_pattern:
@@ -373,7 +373,7 @@ class Cat:
                             #belly
                             if 'underbelly1' not in white_pattern:
                                 white_pattern.append('belly')
-                            white_pattern.append(choice(['belt'] + [None] * 5))
+                            white_pattern.append(choice(['belt', 'belt', 'pants'] + [None] * 5))
 
                             #paws
                             nropaws = choice([4, 4, 4, 4, 3, 3, 2, 2, 1, 0])
@@ -405,7 +405,7 @@ class Cat:
                         while len(white_pattern) < 4:
                             #chest
                             white_pattern.append('underbelly1')
-                            white_pattern.append(choice(['belt'] + [None] * 3))
+                            white_pattern.append(choice(['belt', 'belt', 'pants'] + [None] * 3))
 
                             #paws
                             nropaws = 4
@@ -440,7 +440,7 @@ class Cat:
                         while len(white_pattern) < 4:
                             #chest
                             white_pattern.append('underbelly1')
-                            white_pattern.append(choice(['belt'] + [None] * 3))
+                            white_pattern.append(choice(['belt', 'belt', 'pants'] + [None] * 3))
 
                             #paws
                             nropaws = 4
@@ -526,7 +526,7 @@ class Cat:
                         white_pattern.append(choice([None, choice(['break/left ear', 'break/right ear', 'break/tail tip', 'break/tail band', 'break/left face', 'break/right face', 'break/bowl cut', 'break/chin'])]))
 
                         if random() < 0.02:
-                            white_pattern = ["full white", "break/dorsal thai"]
+                            white_pattern = ["full white", "break/inverse thai"]
 
                         clean_white()
             
