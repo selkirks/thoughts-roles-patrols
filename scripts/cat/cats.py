@@ -518,7 +518,7 @@ class Cat:
             
             elif white_pattern is None and vit:
                 white_pattern = [choice(vitiligo)]
-            if white_pattern == [] or white_pattern is None or (KIT == ["w", "w"] and not vit and 'DBEre' not in pax3 and 'NoDBE' in pax3):
+            if white_pattern == "No" or white_pattern == [] or white_pattern is None or (KIT == ["w", "w"] and not vit and 'DBEre' not in pax3 and 'NoDBE' in pax3):
                 return "No"
             return clean_white(white_pattern)
 
