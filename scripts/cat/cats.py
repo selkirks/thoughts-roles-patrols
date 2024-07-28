@@ -288,8 +288,10 @@ class Cat:
         
         def GenerateWhite(KIT, KITgrade, vit, white_pattern, pax3):
             def clean_white():
-                while None in white_pattern:
-                    white_pattern.remove(None)
+                if white_pattern:
+                    white_pattern = list(set(white_pattern))
+                    while None in white_pattern:
+                        white_pattern.remove(None)
 
             if white_pattern is None and ((KIT[0] != "W" and KIT[0] != "w" and KIT[0] != 'wsal') or 'NoDBE' not in pax3 or 'DBEre' in pax3):
                 white_pattern = []

@@ -769,8 +769,8 @@ def create_new_cat(
         number_of_cats = choices([2, 3, 4, 5], [5, 4, 1, 1], k=1)[0]
 
     if number_of_cats == 1 and (litter or kit):
-        parent1.thought.replace('kits are safe', 'kit is safe')
-        parent2.thought.replace('kits are safe', 'kit is safe')
+        Cat.all_cats[parent1].thought.replace('kits are safe', 'kit is safe')
+        Cat.all_cats[parent2].thought.replace('kits are safe', 'kit is safe')
     
 
     if not isinstance(age, int):
