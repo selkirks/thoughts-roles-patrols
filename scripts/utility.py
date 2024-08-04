@@ -2601,7 +2601,7 @@ def generate_sprite(
                     middle = CreateStripes(stripecolour, whichbase, coloursurface, pattern=phenotype.GetTabbySprite(special='redbar'))
                     stripebase.blit(middle, (0, 0))
 
-                if cat.pelt.length == 'long':
+                if cat.genotype.furLength[0] == 'l':
                     size = stripebase.get_size()
                     scale_size = (int(size[0]*0.9), int(size[1]*0.9))
                     stripebase = pygame.transform.smoothscale(stripebase, scale_size)
@@ -3087,7 +3087,7 @@ def generate_sprite(
                 elif 'amber' in phenotype.colour:
                     phenotype.SpriteInfo(10)
                     whichcolour = phenotype.maincolour
-                    pads.blit(sprites.sprites['nosecolours' + str(pad_dict.get(whichcolour))], (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
+                    pads.blit(sprites.sprites['nosecolours' + str(pad_dict.get(whichcolour, 0))], (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
                     phenotype.SpriteInfo(sprite_age)
                 else:
                     pads.blit(sprites.sprites['nosecolours' + str(pad_dict.get(whichcolour))], (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
