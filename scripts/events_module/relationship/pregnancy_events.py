@@ -490,6 +490,9 @@ class Pregnancy_Events:
                 other_cat.append(Cat.all_cats.get(id))
         elif other_cat_id:
             other_cat.append(Cat.all_cats.get(other_cat_id))
+            if other_cat == [None]:
+                print("SECOND PARENT NOT FOUND! If you edited the pregnancy in, double check the ID, please")
+                other_cat = None
         else:
             other_cat = None
 

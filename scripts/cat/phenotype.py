@@ -493,7 +493,9 @@ class Phenotype():
                 pattern = 'redbarc'
             else:
                 pattern = 'redbar'
-        elif(self.genotype.wbtype == 'chinchilla' or self.genotype.ticked[1] == "Ta" or ((not self.genotype.breakthrough or self.genotype.mack[0] == "mc") and self.genotype.ticked[0] == "Ta")):
+        elif(special == 'ghost'):
+            pattern = 'fullbarc'
+        elif(self.genotype.wbtype == 'chinchilla' or self.genotype.ticked[1] == "Ta" or (not self.genotype.breakthrough and self.genotype.ticked[0] == "Ta")):
             if(self.genotype.ticktype == "agouti" or self.genotype.wbtype == 'chinchilla'):
                 pattern = 'agouti'
             elif(self.genotype.ticktype == 'reduced barring'):
