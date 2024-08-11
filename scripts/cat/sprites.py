@@ -386,6 +386,99 @@ class Sprites:
         for a, i in enumerate(['DARKMARBLED', 'MARBLED', 'LIGHTMARBLED', 'DARKBLUE', 'BLUE', 'LIGHTBLUE']):
             self.make_group('skin', (a, 2), f"skin{i}")
 
+
+        # Define colors and categories
+        color_categories = [
+            ['WHITE', 'PALEGREY', 'LIGHTGREY', 'GREY', 'DARKGREY', 'BLACK', 'OBSIDIAN', 'GHOST', 'PALEBLUE', 'LIGHTBLUE', 'BLUE', 'DARKBLUE', 'SILVERCHOCOLATE', 
+             'SILVERGINGER'],
+            ['DARKSLATE', 'SLATE', 'LIGHTSLATE', 'PALESLATE', 'PALELILAC', 'LIGHTLILAC', 'LILAC', 'DARKLILAC', 'DARKASH', 'ASH', 'LIGHTASH', 'PALEASH', 'SILVERCINNAMON', 
+             'SILVERRED'],
+            ['PALEBROWN', 'LIGHTBROWN', 'BROWN', 'DARKBROWN', 'EBONY', 'DARKCHOCOLATE', 'CHOCOLATE', 'LIGHTCHOCOLATE', 'PALECHOCOLATE', 'PALECINNAMON', 
+             'LIGHTCINNAMON', 'CINNAMON', 'SILVERFAWN'],
+            ['DARKCINNAMON', 'DARKFAWN', 'FAWN', 'LIGHTFAWN', 'PALEFAWN', 'PALECREAM', 'LIGHTCREAM', 'CREAM', 'DARKCREAM', 'DARKGOLD', 'GOLD', 'LIGHTGOLD', 
+             'SILVERCREAM'],
+            ['PALEGOLD', 'SUNSHINE', 'BRONZE', 'COPPER', 'DARKORANGE', 'ORANGE', 'LIGHTORANGE', 'PALEORANGE', 'PALEGINGER', 'LIGHTGINGER', 'GINGER', 
+             'DARKGINGER', 'SILVERGOLD'],
+            ['RUSSET', 'DARKRED', 'RED', 'LIGHTRED', 'PALERED', 'SILVER', 'SILVERGREY', 'SILVERBLUE', 'SILVERSLATE', 'SILVERLILAC', 'SILVERASH', 'SILVERBROWN', 
+             'SILVERORANGE']
+        ]
+
+        color_types = [
+            'singlecolours', 'tabbycolours', 'marbledcolours', 'rosettecolours',
+            'smokecolours', 'tickedcolours', 'speckledcolours', 'bengalcolours',
+            'mackerelcolours', 'classiccolours', 'sokokecolours', 'agouticolours',
+            'singlestripecolours', 'maskedcolours'
+        ]
+
+        for row, colors in enumerate(color_categories):
+            for col, color in enumerate(colors):
+                for color_type in color_types:
+                    self.make_group(color_type, (col, row), f'{color_type[:-7]}{color}')
+
+        # tortiepatchesmasks
+        tortiepatchesmasks = [
+            ['ONE', 'TWO', 'THREE', 'FOUR', 'REDTAIL', 'DELILAH', 'HALF', 'STREAK', 'MASK', 'SMOKE'],
+            ['MINIMALONE', 'MINIMALTWO', 'MINIMALTHREE', 'MINIMALFOUR', 'OREO', 'SWOOP', 'CHIMERA', 'CHEST', 'ARMTAIL',
+             'GRUMPYFACE'],
+            ['MOTTLED', 'SIDEMASK', 'EYEDOT', 'BANDANA', 'PACMAN', 'STREAMSTRIKE', 'SMUDGED', 'DAUB', 'EMBER', 'BRIE'],
+            ['ORIOLE', 'ROBIN', 'BRINDLE', 'PAIGE', 'ROSETAIL', 'SAFI', 'DAPPLENIGHT', 'BLANKET', 'BELOVED', 'BODY'],
+            ['SHILOH', 'FRECKLED', 'HEARTBEAT']
+        ]
+
+
+# Define mink's tortie patches
+        minks_tortie_patches = [
+            ['MINKFULLWHITE', 'MINKANY', 'MINKTUXEDO', 'MINKLITTLE', 'MINKCOLOURPOINT', 'MINKVAN', 'MINKANYTWO',
+             'MINKMOON', 'MINKPHANTOM', 'MINKPOWDER',
+             'MINKBLEACHED', 'MINKSAVANNAH', 'MINKFADESPOTS', 'MINKPEBBLESHINE'],
+            ['MINKEXTRA', 'MINKONEEAR', 'MINKBROKEN', 'MINKLIGHTTUXEDO', 'MINKBUZZARDFANG', 'MINKRAGDOLL',
+             'MINKLIGHTSONG', 'MINKVITILIGO', 'MINKBLACKSTAR',
+             'MINKPIEBALD', 'MINKCURVED', 'MINKPETAL', 'MINKSHIBAINU', 'MINKOWL'],
+            ['MINKTIP', 'MINKFANCY', 'MINKFRECKLES', 'MINKRINGTAIL', 'MINKHALFFACE', 'MINKPANTSTWO', 'MINKGOATEE',
+             'MINKVITILIGOTWO', 'MINKPAWS', 'MINKMITAINE',
+             'MINKBROKENBLAZE', 'MINKSCOURGE', 'MINKDIVA', 'MINKBEARD'],
+            ['MINKTAIL', 'MINKBLAZE', 'MINKPRINCE', 'MINKBIB', 'MINKVEE', 'MINKUNDERS', 'MINKHONEY', 'MINKFAROFA',
+             'MINKDAMIEN', 'MINKMISTER', 'MINKBELLY',
+             'MINKTAILTIP', 'MINKTOES', 'MINKTOPCOVER'],
+            ['MINKAPRON', 'MINKCAPSADDLE', 'MINKMASKMANTLE', 'MINKSQUEAKS', 'MINKSTAR', 'MINKTOESTAIL', 'MINKRAVENPAW',
+             'MINKPANTS', 'MINKREVERSEPANTS',
+             'MINKSKUNK', 'MINKKARPATI', 'MINKHALFWHITE', 'MINKAPPALOOSA', 'MINKDAPPLEPAW'],
+            ['MINKHEART', 'MINKLILTWO', 'MINKGLASS', 'MINKMOORISH', 'MINKSEPIAPOINT', 'MINKMINKPOINT', 'MINKSEALPOINT',
+             'MINKMAO', 'MINKLUNA', 'MINKCHESTSPECK',
+             'MINKWINGS', 'MINKPAINTED', 'MINKHEARTTWO', 'MINKWOODPECKER'],
+            ['MINKBOOTS', 'MINKMISS', 'MINKCOW', 'MINKCOWTWO', 'MINKBUB', 'MINKBOWTIE', 'MINKMUSTACHE',
+             'MINKREVERSEHEART', 'MINKSPARROW', 'MINKVEST',
+             'MINKLOVEBUG', 'MINKTRIXIE', 'MINKSAMMY', 'MINKSPARKLE'],
+            ['MINKRIGHTEAR', 'MINKLEFTEAR', 'MINKESTRELLA', 'MINKSHOOTINGSTAR', 'MINKEYESPOT', 'MINKREVERSEEYE',
+             'MINKFADEBELLY', 'MINKFRONT',
+             'MINKBLOSSOMSTEP', 'MINKPEBBLE', 'MINKTAILTWO', 'MINKBUDDY', 'MINKBACKSPOT', 'MINKEYEBAGS'],
+            ['MINKBULLSEYE', 'MINKFINN', 'MINKDIGIT', 'MINKKROPKA', 'MINKFCTWO', 'MINKFCONE', 'MINKMIA', 'MINKSCAR',
+             'MINKBUSTER', 'MINKSMOKEY', 'MINKHAWKBLAZE',
+             'MINKCAKE', 'MINKROSINA', 'MINKPRINCESS'],
+            ['MINKLOCKET', 'MINKBLAZEMASK', 'MINKTEARS', 'MINKDOUGIE']
+        ]
+
+        for row, masks in enumerate(tortiepatchesmasks):
+            for col, mask in enumerate(masks):
+                self.make_group('tortiepatchesmasks', (col, row), f"tortiemask{mask}")
+        for row, minkmasks in enumerate(minks_tortie_patches):
+            for col, minkmask in enumerate(minkmasks):
+                self.make_group('minkstorties', (col, row), f"tortiemask{minkmask}")
+        for row, masks in enumerate(tortiepatchesmasks):
+            for col, mask in enumerate(masks):
+                self.make_group('tortiepatchesmasks', (col, row), f"tortiemask{mask}")
+
+        # Define skin colors 
+        skin_colors = [
+            ['BLACK', 'RED', 'PINK', 'DARKBROWN', 'BROWN', 'LIGHTBROWN'],
+            ['DARK', 'DARKGREY', 'GREY', 'DARKSALMON', 'SALMON', 'PEACH'],
+            ['DARKMARBLED', 'MARBLED', 'LIGHTMARBLED', 'DARKBLUE', 'BLUE', 'LIGHTBLUE']
+        ]
+
+        for row, colors in enumerate(skin_colors):
+            for col, color in enumerate(colors):
+                self.make_group('skin', (col, row), f"skin{color}")
+
         self.load_scars()
         self.load_symbols()
 
