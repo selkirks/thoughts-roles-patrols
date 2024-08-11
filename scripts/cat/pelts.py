@@ -29,31 +29,19 @@ class Pelt:
 
     # ATTRIBUTES, including non-pelt related
     pelt_colours = [
-        'WHITE', 'PALEGREY', 'LIGHTGREY', 'GREY', 'DARKGREY', 'BLACK', 'OBSIDIAN', 'GHOST', 'PALEBLUE', 'LIGHTBLUE', 'BLUE', 'DARKBLUE', 'SILVERCHOCOLATE', 'SILVERGINGER',
-        'DARKSLATE', 'SLATE', 'LIGHTSLATE', 'PALESLATE', 'PALELILAC', 'LIGHTLILAC', 'LILAC', 'DARKLILAC', 'DARKASH', 'ASH', 'LIGHTASH', 'PALEASH', 'SILVERCINNAMON',
-        'SILVERRED', 'PALEBROWN', 'LIGHTBROWN', 'BROWN', 'DARKBROWN', 'EBONY', 'DARKCHOCOLATE', 'CHOCOLATE', 'LIGHTCHOCOLATE', 'PALECHOCOLATE', 'PALECINNAMON',
-        'LIGHTCINNAMON', 'CINNAMON', 'SILVERFAWN', 'DARKCINNAMON', 'DARKFAWN', 'FAWN', 'LIGHTFAWN', 'PALEFAWN', 'PALECREAM', 'LIGHTCREAM', 'CREAM', 'DARKCREAM',
-        'DARKGOLD', 'GOLD', 'LIGHTGOLD', 'SILVERCREAM', 'PALEGOLD', 'SUNSHINE', 'BRONZE', 'COPPER', 'DARKORANGE', 'ORANGE', 'LIGHTORANGE', 'PALEORANGE', 'PALEGINGER',
-        'LIGHTGINGER', 'GINGER', 'DARKGINGER', 'SILVERGOLD', 'RUSSET', 'DARKRED', 'RED', 'LIGHTRED', 'PALERED', 'SILVER', 'SILVERGREY', 'SILVERBLUE', 'SILVERSLATE', 
-        'SILVERLILAC', 'SILVERASH', 'SILVERBROWN', 'SILVERORANGE'
+        'WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'BLACK', 'CREAM', 'PALEGINGER',
+        'GOLDEN', 'GINGER', 'DARKGINGER', 'SIENNA', 'LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN',
+        'CHOCOLATE'
     ]
     pelt_c_no_white = [
-        'PALEGREY', 'LIGHTGREY', 'GREY', 'DARKGREY', 'BLACK', 'OBSIDIAN', 'GHOST', 'PALEBLUE', 'LIGHTBLUE', 'BLUE', 'DARKBLUE', 'SILVERCHOCOLATE', 'SILVERGINGER',
-        'DARKSLATE', 'SLATE', 'LIGHTSLATE', 'PALESLATE', 'PALELILAC', 'LIGHTLILAC', 'LILAC', 'DARKLILAC', 'DARKASH', 'ASH', 'LIGHTASH', 'PALEASH', 'SILVERCINNAMON',
-        'SILVERRED', 'PALEBROWN', 'LIGHTBROWN', 'BROWN', 'DARKBROWN', 'EBONY', 'DARKCHOCOLATE', 'CHOCOLATE', 'LIGHTCHOCOLATE', 'PALECHOCOLATE', 'PALECINNAMON',
-        'LIGHTCINNAMON', 'CINNAMON', 'SILVERFAWN', 'DARKCINNAMON', 'DARKFAWN', 'FAWN', 'LIGHTFAWN', 'PALEFAWN', 'PALECREAM', 'LIGHTCREAM', 'CREAM', 'DARKCREAM',
-        'DARKGOLD', 'GOLD', 'LIGHTGOLD', 'SILVERCREAM', 'PALEGOLD', 'SUNSHINE', 'BRONZE', 'COPPER', 'DARKORANGE', 'ORANGE', 'LIGHTORANGE', 'PALEORANGE', 'PALEGINGER',
-        'LIGHTGINGER', 'GINGER', 'DARKGINGER', 'SILVERGOLD', 'RUSSET', 'DARKRED', 'RED', 'LIGHTRED', 'PALERED', 'SILVER', 'SILVERGREY', 'SILVERBLUE', 'SILVERSLATE', 
-        'SILVERLILAC', 'SILVERASH', 'SILVERBROWN', 'SILVERORANGE'
+        'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'BLACK', 'CREAM', 'PALEGINGER',
+        'GOLDEN', 'GINGER', 'DARKGINGER', 'SIENNA', 'LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN',
+        'CHOCOLATE'
     ]
     pelt_c_no_bw = [
-        'PALEGREY', 'LIGHTGREY', 'GREY', 'DARKGREY', 'PALEBLUE', 'LIGHTBLUE', 'BLUE', 'DARKBLUE', 'SILVERCHOCOLATE', 'SILVERGINGER',
-        'DARKSLATE', 'SLATE', 'LIGHTSLATE', 'PALESLATE', 'PALELILAC', 'LIGHTLILAC', 'LILAC', 'DARKLILAC', 'DARKASH', 'ASH', 'LIGHTASH', 'PALEASH', 'SILVERCINNAMON',
-        'SILVERRED', 'PALEBROWN', 'LIGHTBROWN', 'BROWN', 'DARKBROWN', 'DARKCHOCOLATE', 'CHOCOLATE', 'LIGHTCHOCOLATE', 'PALECHOCOLATE', 'PALECINNAMON',
-        'LIGHTCINNAMON', 'CINNAMON', 'SILVERFAWN', 'DARKCINNAMON', 'DARKFAWN', 'FAWN', 'LIGHTFAWN', 'PALEFAWN', 'PALECREAM', 'LIGHTCREAM', 'CREAM', 'DARKCREAM',
-        'DARKGOLD', 'GOLD', 'LIGHTGOLD', 'SILVERCREAM', 'PALEGOLD', 'SUNSHINE', 'BRONZE', 'COPPER', 'DARKORANGE', 'ORANGE', 'LIGHTORANGE', 'PALEORANGE', 'PALEGINGER',
-        'LIGHTGINGER', 'GINGER', 'DARKGINGER', 'SILVERGOLD', 'RUSSET', 'DARKRED', 'RED', 'LIGHTRED', 'PALERED', 'SILVER', 'SILVERGREY', 'SILVERBLUE', 'SILVERSLATE', 
-        'SILVERLILAC', 'SILVERASH', 'SILVERBROWN', 'SILVERORANGE'
+        'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'CREAM', 'PALEGINGER',
+        'GOLDEN', 'GINGER', 'DARKGINGER', 'SIENNA', 'LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN',
+        'CHOCOLATE'
     ]
 
     tortiepatterns = ['ONE', 'TWO', 'THREE', 'FOUR', 'REDTAIL', 'DELILAH', 'MINIMALONE', 'MINIMALTWO', 'MINIMALTHREE', 'MINIMALFOUR', 'HALF',
@@ -143,24 +131,14 @@ class Pelt:
 
     # SPRITE NAMES
     single_colours = [
-'WHITE', 'PALEGREY', 'LIGHTGREY', 'GREY', 'DARKGREY', 'BLACK', 'OBSIDIAN', 'GHOST', 'PALEBLUE', 'LIGHTBLUE', 'BLUE', 'DARKBLUE', 'SILVERCHOCOLATE', 'SILVERGINGER',
-        'DARKSLATE', 'SLATE', 'LIGHTSLATE', 'PALESLATE', 'PALELILAC', 'LIGHTLILAC', 'LILAC', 'DARKLILAC', 'DARKASH', 'ASH', 'LIGHTASH', 'PALEASH', 'SILVERCINNAMON',
-        'SILVERRED', 'PALEBROWN', 'LIGHTBROWN', 'BROWN', 'DARKBROWN', 'EBONY', 'DARKCHOCOLATE', 'CHOCOLATE', 'LIGHTCHOCOLATE', 'PALECHOCOLATE', 'PALECINNAMON',
-        'LIGHTCINNAMON', 'CINNAMON', 'SILVERFAWN', 'DARKCINNAMON', 'DARKFAWN', 'FAWN', 'LIGHTFAWN', 'PALEFAWN', 'PALECREAM', 'LIGHTCREAM', 'CREAM', 'DARKCREAM',
-        'DARKGOLD', 'GOLD', 'LIGHTGOLD', 'SILVERCREAM', 'PALEGOLD', 'SUNSHINE', 'BRONZE', 'COPPER', 'DARKORANGE', 'ORANGE', 'LIGHTORANGE', 'PALEORANGE', 'PALEGINGER',
-        'LIGHTGINGER', 'GINGER', 'DARKGINGER', 'SILVERGOLD', 'RUSSET', 'DARKRED', 'RED', 'LIGHTRED', 'PALERED', 'SILVER', 'SILVERGREY', 'SILVERBLUE', 'SILVERSLATE', 
-        'SILVERLILAC', 'SILVERASH', 'SILVERBROWN', 'SILVERORANGE'
+        'WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'BLACK', 'CREAM', 'PALEGINGER',
+        'GOLDEN', 'GINGER', 'DARKGINGER', 'SIENNA', 'LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN',
+        'CHOCOLATE'
     ]
-    ginger_colours = ['SILVERGINGER', 'SILVERRED', 'PALECREAM', 'LIGHTCREAM', 'CREAM', 'DARKCREAM', 'DARKGOLD', 'GOLD', 'LIGHTGOLD', 'SILVERCREAM', 'PALEGOLD', 
-        'SUNSHINE', 'BRONZE', 'COPPER', 'DARKORANGE', 'ORANGE', 'LIGHTORANGE', 'PALEORANGE', 'PALEGINGER', 'LIGHTGINGER', 'GINGER', 'DARKGINGER', 
-        'SILVERGOLD', 'RUSSET', 'DARKRED', 'RED', 'LIGHTRED', 'PALERED', 'SILVERORANGE']
-    black_colours = ['LIGHTGREY', 'GREY', 'DARKGREY', 'BLACK', 'OBSIDIAN', 'GHOST', 'PALEBLUE', 'LIGHTBLUE', 'BLUE', 'DARKBLUE',
-        'DARKSLATE', 'SLATE', 'LIGHTSLATE', 'PALESLATE', 'PALELILAC', 'LIGHTLILAC', 'LILAC', 'DARKLILAC', 'DARKASH', 'ASH', 'LIGHTASH', 'PALEASH',
-        'SILVERGREY', 'SILVERBLUE', 'SILVERSLATE', 'SILVERLILAC', 'SILVERASH']
-    white_colours = ['WHITE', 'PALEGREY']
-    brown_colours = ['SILVERCHOCOLATE', 'PALEBROWN', 'LIGHTBROWN', 'BROWN', 'DARKBROWN', 'EBONY', 'DARKCHOCOLATE', 'CHOCOLATE', 'LIGHTCHOCOLATE', 'PALECHOCOLATE', 
-        'PALECINNAMON', 'LIGHTCINNAMON', 'CINNAMON', 'SILVERFAWN', 'DARKCINNAMON', 'DARKFAWN', 'FAWN', 'LIGHTFAWN', 'PALEFAWN', 'SILVERBROWN', 
-        'SILVERCINNAMON']
+    ginger_colours = ['CREAM', 'PALEGINGER', 'GOLDEN', 'GINGER', 'DARKGINGER', 'SIENNA']
+    black_colours = ['GREY', 'DARKGREY', 'GHOST', 'BLACK']
+    white_colours = ['WHITE', 'PALEGREY', 'SILVER']
+    brown_colours = ['LIGHTBROWN', 'LILAC', 'BROWN', 'GOLDEN-BROWN', 'DARKBROWN', 'CHOCOLATE']
     colour_categories = [ginger_colours, black_colours, white_colours, brown_colours]
     eye_sprites = [
         'YELLOW', 'AMBER', 'HAZEL', 'PALEGREEN', 'GREEN', 'BLUE', 'DARKBLUE', 'BLUEYELLOW', 'BLUEGREEN',
@@ -1138,135 +1116,33 @@ class Pelt:
             renamed_colors = {
                 "white": "pale",
                 "palegrey": "gray",
-"lightgrey": "gray",
                 "darkgrey": "gray",
                 "grey": "gray",
-                "obsidian": "black",
-                "paleslate": "slate gray",
-                "lightslate": "slate gray",
-                "slate": "slate gray",
-                "darkslate": "slate gray",
-                "paleblue": "blue",
-                "lightblue": "blue",
-                "darkblue": "blue",
-                "paleash": "ash grey",
-                "lightash": "ash grey",
-                "ash": "ash grey",
-                "darkash": "ash grey",
-                "palelilac": "lilac",
-                "lightlilac": "lilac",
-                "darklilac": "lilac",
-                "palebrown": "brown",
-                "lightbrown": "brown",
-                "darkbrown": "brown",
-                "palechocolate": "chocolate brown",
-                "lightchocolate": "chocolate brown",
-                "chocolate": "chocolate brown",
-                "darkchocolate": "chocolate brown",
-                "palecinnamon": "cinnamon",
-                "lightcinnamon": "cinnamon",
-                "darkcinnamon": "cinnamon",
-                "palefawn": "fawn",
-                "lightfawn": "fawn",
-                "darkfawn": "fawn",
-                "palecream": "cream",
-                "lightcream": "cream",
-                "darkcream": "cream",
-                "palegold": "golden",
-                "lightgold": "golden",
-                "gold": "golden",
-                "darkgold": "golden",
-                "paleorange": "orange",
-                "lightorange": "orange",
-                "darkorange": "orange",
                 "paleginger": "ginger",
-                "lightginger": "ginger",
                 "darkginger": "ginger",
-                "palered": "red",
-                "lightred": "red",
-                "darkred": "red",
-                "silver": "silvered",
-                "silvergrey": "silvered gray",
-                "silverblue": "silvered blue",
-                "silverslate": "silvered slate gray",
-                "silverlilac": "silvered lilac",
-                "silverash": "silvered ash gray",
-                "silverbrown": "silvered brown",
-                "silverchocolate": "silvered chocolate brown",
-                "silvercinnamon": "silvered cinnamon",
-                "silverfawn": "silvered fawn",
-                "silvercream": "silvered cream",
-                "silvergold": "silvered golden",
-                "silverorange": "silvered orange",
-                "silverginger": "silvered ginger",
-                "silverred": "silvered red"
+                "sienna": "ginger",
+                "lightbrown": "brown",
+                "lilac": "brown",
+                "golden-brown": "brown",
+                "darkbrown": "brown",
+                "chocolate": "brown",
+                "ghost": "black"
             }
         else:
             renamed_colors = {
                 "white": "pale",
-                "palegrey": "gray",
-                "lightgrey": "gray",
-                "darkgrey": "gray",
+                "palegrey": "pale gray",
                 "grey": "gray",
-                "obsidian": "black",
-                "paleslate": "slate gray",
-                "lightslate": "slate gray",
-                "slate": "slate gray",
-                "darkslate": "slate gray",
-                "paleblue": "blue",
-                "lightblue": "blue",
-                "darkblue": "blue",
-                "paleash": "ash grey",
-                "lightash": "ash grey",
-                "ash": "ash grey",
-                "darkash": "ash grey",
-                "palelilac": "lilac",
-                "lightlilac": "lilac",
-                "darklilac": "lilac",
-                "palebrown": "brown",
-                "lightbrown": "brown",
-                "darkbrown": "brown",
-                "palechocolate": "chocolate brown",
-                "lightchocolate": "chocolate brown",
-                "chocolate": "chocolate brown",
-                "darkchocolate": "chocolate brown",
-                "palecinnamon": "cinnamon",
-                "lightcinnamon": "cinnamon",
-                "darkcinnamon": "cinnamon",
-                "palefawn": "fawn",
-                "lightfawn": "fawn",
-                "darkfawn": "fawn",
-                "palecream": "cream",
-                "lightcream": "cream",
-                "darkcream": "cream",
-                "palegold": "golden",
-                "lightgold": "golden",
-                "gold": "golden",
-                "darkgold": "golden",
-                "paleorange": "orange",
-                "lightorange": "orange",
-                "darkorange": "orange",
-                "paleginger": "ginger",
-                "lightginger": "ginger",
-                "darkginger": "ginger",
-                "palered": "red",
-                "lightred": "red",
-                "darkred": "red",
-                "silver": "silvered",
-                "silvergrey": "silvered gray",
-                "silverblue": "silvered blue",
-                "silverslate": "silvered slate gray",
-                "silverlilac": "silvered lilac",
-                "silverash": "silvered ash gray",
-                "silverbrown": "silvered brown",
-                "silverchocolate": "silvered chocolate brown",
-                "silvercinnamon": "silvered cinnamon",
-                "silverfawn": "silvered fawn",
-                "silvercream": "silvered cream",
-                "silvergold": "silvered golden",
-                "silverorange": "silvered orange",
-                "silverginger": "silvered ginger",
-                "silverred": "silvered red"
+                "darkgrey": "dark gray",
+                "paleginger": "pale ginger",
+                "darkginger": "dark ginger",
+                "sienna": "dark ginger",
+                "lightbrown": "light brown",
+                "lilac": "light brown",
+                "golden-brown": "golden brown",
+                "darkbrown": "dark brown",
+                "chocolate": "dark brown",
+                "ghost": "black"
             }
 
         pattern_des = {
