@@ -146,10 +146,10 @@ class Phenotype():
         if self.genotype.white[1] in ["ws", 'wt'] or 'NoDBE' not in self.genotype.pax3:
             if(self.tortie != "" and self.tortie != 'brindled bicolour '):
                 self.tortie = "calico "
-            elif (self.tortie == "" or self.genotype.whitegrade > 2):
+            elif (self.tortie == "" or self.genotype.whitegrade > 1):
                 self.highwhite = "white and "
         
-        elif(self.genotype.white[0] in ['ws', 'wt'] and self.genotype.whitegrade > 2):
+        elif(self.genotype.white[0] in ['ws', 'wt'] and self.genotype.whitegrade > 1):
             if(self.tortie != "" and self.tortie != 'brindled bicolour ' and self.genotype.whitegrade > 4):
                 self.tortie = "calico "
             else:
@@ -429,6 +429,11 @@ class Phenotype():
 
         if(self.genotype.chimera and not self.genotype.chimerapattern):
             self.genotype.chimerapattern = self.ChooseTortiePattern('chim')
+        if(self.genotype.tortiepattern == "CRYPTIC" and self.tortie != "brindled bicolour "):
+            self.tortie = ""
+            self.WhiteFinder()
+            self.TabbyFinder()
+            
 
         eyes = ""
 
@@ -560,6 +565,8 @@ class Phenotype():
         if spec:
             chosen = choice([choice(tortie_high_patterns), choice(tortie_high_patterns), choice(tortie_mid_patterns), choice(tortie_mid_patterns), choice(tortie_low_patterns)])
 
+        elif randint(1, 50) == 1:
+            chosen = 'CRYPTIC'
         elif(self.genotype.white[1] == "ws" or self.genotype.white[1] == "wt"):
             if self.genotype.whitegrade > 2:
                 if(randint(1, 10) == 1):

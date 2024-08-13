@@ -2800,8 +2800,6 @@ def generate_sprite(
             def MakeCat(whichmain, whichcolour, whichbase, cat_unders, special=None):
                 if (genotype.white[0] == 'W' or genotype.pointgene[0] == 'c' or whichcolour == 'white' or genotype.white_pattern == ['full white']):
                     whichmain.blit(sprites.sprites['lightbasecolours0'], (0, 0))
-                    if(genotype.pointgene[0] == "c"):
-                        whichmain.blit(sprites.sprites['albino' + cat_sprite], (0, 0))
                 elif(whichcolour != whichbase and special != 'masked silver'):
                     if(genotype.pointgene[0] == "C"):
                         whichmain = TabbyBase(whichcolour, whichbase, cat_unders, special)

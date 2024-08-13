@@ -256,7 +256,6 @@ class Sprites:
 
         #genemod extra
         self.make_group('Other/ears', (0, 0), 'ears')
-        self.make_group('Other/albino_skin', (0, 0), 'albino')
         self.make_group('Other/noses', (0, 0), 'nose')
         self.make_group('Other/nose_colours', (0, 0), 'nosecolours', sprites_y=5)
         self.make_group('Other/paw_pads', (0, 0), 'pads')
@@ -321,7 +320,7 @@ class Sprites:
              'GRUMPYFACE'],
             ['MOTTLED', 'SIDEMASK', 'EYEDOT', 'BANDANA', 'PACMAN', 'STREAMSTRIKE', 'SMUDGED', 'DAUB', 'EMBER', 'BRIE'],
             ['ORIOLE', 'ROBIN', 'BRINDLE', 'PAIGE', 'ROSETAIL', 'SAFI', 'DAPPLENIGHT', 'BLANKET', 'BELOVED', 'BODY'],
-            ['SHILOH', 'FRECKLED', 'HEARTBEAT']
+            ['SHILOH', 'FRECKLED', 'HEARTBEAT', 'CRYPTIC']
         ]
 
         for row, masks in enumerate(tortiepatchesmasks):
