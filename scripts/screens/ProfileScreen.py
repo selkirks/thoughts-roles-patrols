@@ -890,7 +890,87 @@ class ProfileScreen(Screens):
                 output += " moon"
             elif the_cat.moons != 1:
                 output += " moons"
+        
+        # TRAITS
+        trait_descriptions = {
+            'TEETHUPPER': 'long upper fangs',
+            'TEETHSABRE': 'sabre teeth',
+            'TEETHUNDERBITE': 'underbite',
+            'EARSMALL': 'small ears',
+            'EARBIG': 'big ears',
+            'EARTALL': 'tall ears',
+            'EARPANTHER': 'rounded ears',
+            'FOLDBOTH': 'folded ears',
+            'FOLDONE': 'one folded ear',
+            'HEADFORELOCK': 'forelock',
+            'HEADCOWLICK': 'cowlick',
+            'HEADMOHAWK': 'mohawk',
+            'HEADTUFT': 'tufted head fur',
+            'HEADEMO': 'emo-style head fur',
+            'CHEEKLONG': 'long cheek fur',
+            'CHEEKPOINTED': 'pointed cheek fur',
+            'CHEEKFLUFF': 'fluffy cheeks',
+            'CHEEKCURL': 'curled cheek fur',
+            'MANESILKY': 'silky mane',
+            'MANEFLUFFY': 'fluffy mane',
+            'MANERUFF': 'ruff',
+            'MANEHORSE': 'horse-like mane',
+            'FURWAVY': 'wavy fur',
+            'FURCURLY': 'curly fur',
+            'FURPATCHY': 'patchy fur',
+            'FURKINK': 'kinked fur',
+            'MUZZLESHORT': 'short muzzle',
+            'MUZZLEBROAD': 'broad muzzle',
+            'MUZZLELONG': 'long muzzle',
+            'BODYBROAD': 'broad shoulders',
+            'BODYWIRY': 'wiry',
+            'BODYLITHE': 'lithe',
+            'BODYSKINNY': 'skinny',
+            'BODYBUFF': 'muscular',
+            'BODYCOMPACT': 'compact',
+            'SIZETINY': 'tiny',
+            'SIZESMALL': 'small',
+            'SIZESHORT': 'short',
+            'SIZETALL': 'tall',
+            'SIZELARGE': 'large',
+            'SIZEHUGE': 'huge',
+            'EARTUFTS': 'ear tufts',
+            'POLYDACTYL': 'polydactyl',
+            'LASHESUPPER': 'upper lashes',
+            'LASHESLOWER': 'lower lashes',
+            'WHISKERSLONG': 'long whiskers',
+            'TAILCROOKED': 'crooked tail',
+            'TAILLONG': 'long tail',
+            'TAILFEATHER': 'feathered tail',
+            'TAILCURL': 'curled tail',
+            'TAILTUFT': 'tufted tail',
+            'CLAWSLONG': 'unusually long claws',
+            'BACKFLUFF': 'fluffy back',
+            'BACKRIDGE': 'fur ridge on back',
+            'SHOULDERTUFT': 'tufted shoulders',
+            'LEGTUFT': 'tufted legs'
+        }
 
+        trait_list = []
+        if the_cat.pelt.physical_trait_1:
+            trait_list.append(the_cat.pelt.physical_trait_1)
+            if the_cat.pelt.physical_trait_2:
+                trait_list.append(the_cat.pelt.physical_trait_2)
+                if the_cat.pelt.physical_trait_3:
+                    trait_list.append(the_cat.pelt.physical_trait_3)
+                    if the_cat.pelt.physical_trait_4:
+                        trait_list.append(the_cat.pelt.physical_trait_4)
+
+        if trait_list:
+            output += "\n"
+            output += "traits: "
+            for trait in trait_list:
+                if trait in trait_descriptions:
+                    output += trait_descriptions[trait] + ", "
+                else:
+                    output += trait + ", "  # In case the trait is not found in the dictionary
+            output = output.rstrip(", ")  # Remove the trailing comma and space
+            
         # MATE
         if len(the_cat.mate) > 0:
             output += "\n"
