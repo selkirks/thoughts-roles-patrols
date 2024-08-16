@@ -88,12 +88,18 @@ class Cat:
     # Ranges are inclusive to both bounds
     experience_levels_range = {
         "untrained": (0, 0),
-        "trainee": (1, 50),
-        "prepared": (51, 110),
-        "competent": (110, 170),
-        "proficient": (171, 240),
-        "expert": (241, 320),
-        "master": (321, 321),
+        "trainee": (1, 30),
+        "beginner": (31, 60),
+        "novice": (61, 90), 
+        "prepared": (91, 130),
+        "competent": (131, 170),
+        "skilled": (171, 210),
+        "proficient": (211, 250),
+        "advanced": (251, 290), 
+        "expert": (291, 330),
+        "adept": (331, 370), 
+        "master": (371, 410),
+        "grandmaster": (411, 411)
     }
 
     default_pronouns = [
@@ -3294,8 +3300,8 @@ class Cat:
 
     @experience.setter
     def experience(self, exp: int):
-        if exp > self.experience_levels_range["master"][1]:
-            exp = self.experience_levels_range["master"][1]
+        if exp > self.experience_levels_range["grandmaster"][1]:
+            exp = self.experience_levels_range["grandmaster"][1]
         self._experience = int(exp)
 
         for x in self.experience_levels_range:
@@ -3436,6 +3442,9 @@ class Cat:
                 "opacity": self.pelt.opacity,
                 "prevent_fading": self.prevent_fading,
                 "favourite": self.favourite,
+                "fur_texture": self.pelt.fur_texture,
+                "height": self.pelt.height,
+                "build": self.pelt.build
             }
 
 
