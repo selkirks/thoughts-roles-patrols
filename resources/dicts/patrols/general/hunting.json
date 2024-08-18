@@ -1931,6 +1931,542 @@
     ]
 },
 {
+    "patrol_id": "forest_hunting_eyas",
+    "biome": ["forest"],
+    "season": ["newleaf"],
+    "types": ["hunting"],
+    "tags": [],
+    "patrol_art": "mtn_train_eagles",
+    "min_cats": 2,
+    "max_cats": 6,
+    "weight": 10,
+    "chance_of_success": 30,
+    "relationship_constraint": [],
+    "intro_text": "As the patrol sets out into the wooded territory, they hear loud chirping from a nearby tree.",
+    "decline_text": "The patrol ignores the chirping and carries on with the patrol.",
+    "success_outcomes": [
+        {
+            "text": "The patrol sends up a cat to investigate the tree, finding a nest of eyas chirping loudly; their mouths agape. r_c, in an act of kindness, digs up a few worms and chews them up to feed to the small birds. The patrol might not have gotten much done, but their hearts are warmed by the sweet act.",
+            "exp": 5,
+            "weight": 10,
+            "prey": ["very small"],
+            "relationships": [
+                {
+                    "cats_to": ["p_l"],
+                    "cats_from": ["r_c"],
+                    "values": ["platonic"],
+                    "amount": 10
+                }
+            ]
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "As the patrol approached the tree, a hawk swooped down from in between the branches and slashed r_c with its sharp talons. It's safe to say the patrol learned not to mess with hawk nests after that.",
+            "exp": 0,
+            "weight": 10,
+            "injury": [
+                {
+                    "cats": ["r_c"],
+                    "injuries": ["torn_pelt", "claw_wound"]
+                }
+            ]
+        }
+    ],
+    "antag_success_outcomes": [
+        {
+            "text": "Sending cats up the tree to investigate, they find a nest of eyas chirping for food. They take the nest back home for some quick snacks. It might have felt cruel to harm some hawk's children, but the possibility of them growing to harm one of their own wasn't worth ignoring the nest.",
+            "exp": 15,
+            "weight": 10,
+            "prey": ["medium"]
+        }
+    ],
+    "antag_fail_outcomes": [
+        {
+            "text": "Sending cats up the tree to investigate, they find a nest of eyas chirping for food. They decide to take the nest back to camp, but before they could lift a paw, a hawk swoops in and fatally injures r_c. The patrol runs away, but they couldn't save their clanmate in time.",
+            "exp": 0,
+            "weight": 10,
+            "dead_cats": ["r_c"],
+            "history_text": {
+                "reg_death": "m_c died while attempting to steal a nest of eyas for food.",
+                "leader_death": "m_c lost a life while attempting to steal a nest of eyas for food"
+            }
+        }
+    ]
+},
+{
+    "patrol_id": "bch_hunt_shells1",
+    "biome": ["beach"],
+    "season": ["Any"],
+    "types": ["hunting"],
+    "tags": ["death"],
+    "patrol_art": "bch_med_herblocation2",
+    "min_cats": 1,
+    "max_cats": 6,
+    "weight": 20,
+    "chance_of_success": 20,
+    "relationship_constraint": [],
+    "intro_text": "The patrol of cats come across a section of the beach covered in tide pools and beautiful shells glimmering in the sun. Perhaps some prey lies in the tide pools scattered around.",
+    "decline_text": "The patrol continued on past that area of the beach in search for better hunting grounds.",
+    "success_outcomes": [
+        {
+            "text": "The patrol finds plenty of prey hidden in the tide pools and is able to carry it all back to camp safely.",
+            "exp": 20,
+            "weight": 10,
+            "prey": ["large"]
+        },
+        {
+            "text": "The patrol wasn't able to find much prey in the tide pools but collected plenty of shells from the beach to bring to camp, so they didn't return empty-pawed.",
+            "exp": 20,
+            "weight": 10,
+            "prey": ["very_small"]
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "While the cats hunt along the tide pools, r_c is stung by a sea snail and quickly succumbs to the venom before making it back to camp.",
+            "exp": 0,
+            "weight": 5,
+            "dead_cats": ["r_c"]
+        },
+        {
+            "text": "The patrol walked along the tide pools scavenging around until r_c finds a gelatinous blob where the sand and stone met the waves. One of the cats poked it curiously and paid the price by getting poisoned and needed to be dragged back to camp.",
+            "exp": 0,
+            "weight": 5,
+            "injury": [
+                {
+                    "cats": ["r_c"],
+                    "injuries": ["poisoned"]
+                }
+            ],
+            "history_text": {
+                "reg_death": "m_c died from being poisoned after touching a gelatinous blob.",
+                "leader_death": "died from poking a gelatinous blob"
+            }
+        }
+    ]
+},
+{
+    "patrol_id": "mtn_tunnel_discovery",
+    "biome": ["mountainous"],
+    "season": ["Any"],
+    "types": ["hunting"],
+    "tags": [],
+    "patrol_art": "pln_bord_tunnel",
+    "min_cats": 2,
+    "max_cats": 6,
+    "weight": 20,
+    "chance_of_success": 30,
+    "relationship_constraint": [],
+    "intro_text": "As the hunting patrol ventures into the mountainous terrain, they discover a new cave system and wonder if they should investigate it.",
+    "decline_text": "The patrol decides to leave the cave system alone, not knowing what dangers might lurk within.",
+    "success_outcomes": [
+        {
+            "text": "The patrol explores the cave system and discovers a huge tunnel network rich with prey. They manage to catch small game, providing fresh food for the clan.",
+            "exp": 10,
+            "weight": 10,
+            "prey": ["small"]
+        },
+        {
+            "text": "The patrol discovers common herbs in the cave system, adding valuable medicinal resources to the clan's supplies.",
+            "exp": 10,
+            "weight": 10,
+            "herbs": ["any"]
+        },
+        {
+            "text": "The patrol finds new ways to navigate their territory by exploring the cave system. They learn shortcuts and hidden paths, making their future patrols more efficient.",
+            "exp": 5,
+            "weight": 20
+        },
+        {
+            "text": "The patrol discovers a hidden cave within the system, providing another clan camp for emergencies. This additional territory ensures the clan has more space and resources during times of need.",
+            "exp": 5,
+            "weight": 20
+        },
+        {
+            "text": "The patrol notices that the cave system leads directly into o_c_n's territory, posing a potential threat... or advantage. They mark the entrance and report their findings to the clan leader.",
+            "exp": 5,
+            "weight": 5
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "The patrol explores the cave system, but one of the tunnels gets smaller, trapping them inside. After a struggle, they manage to escape, but not without a few scrapes.",
+            "exp": 0,
+            "weight": 10,
+            "injury": [
+                {
+                    "cats": ["r_c"],
+                    "injuries": ["minor_injury"]
+                }
+            ]
+        },
+        {
+            "text": "The patrol encounters a dangerous predator deep within the cave system and are forced to retreat, narrowly escaping a potential disaster.",
+            "exp": 0,
+            "weight": 10
+        },
+        {
+            "text": "The patrol finds a dead end in the cave system, realizing their exploration was in vain and it was a waste of time.",
+            "exp": 0,
+            "weight": 10
+        },
+        {
+            "text": "The patrol accidentally triggers a rockfall inside the cave system, getting trapped for a while before managing to escape. They return with no prey or herbs, only scratches and exhaustion.",
+            "exp": 0,
+            "weight": 5,
+            "injury": [
+                {
+                    "cats": ["patrol"],
+                    "injuries": ["minor_injury"]
+                }
+            ]
+        }
+    ]
+},
+{
+    "patrol_id": "pln_hunt_burrowanimal",
+    "biome": ["plains"],
+    "season": ["newleaf", "greenleaf", "leaf-fall"],
+    "types": ["hunting"],
+    "tags": [],
+    "patrol_art": "pln_hunt_burrowanimal",
+    "min_cats": 1,
+    "max_cats": 6,
+    "weight": 20,
+    "chance_of_success": 30,
+    "relationship_constraint": [],
+    "intro_text": "The patrol is walking out to hunt they happen upon a hole. It could house a predator though...",
+    "decline_text": "Your cats decide some extra food isn't worth the risk for now.",
+    "success_outcomes": [
+        {
+            "text": "Your cats find multiple rabbits in the hole and catch some, happily bringing the prey back to camp for more food.",
+            "exp": 20,
+            "weight": 10,
+            "prey": ["large"]
+        },
+        {
+            "text": "r_c finds a snake in the hole, but quickly delivers a killing blow before the snake could do anything, earning some unexpected food. The patrol returns with the snake for a triumphant feast.",
+            "exp": 30,
+            "weight": 10,
+            "prey": ["small"]
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "r_c wants to prove that they can catch the prey inside because they swore they smelt rabbits in there. Before they could even react, the rabbits run off, and they huff in disappointment. The patrol returns empty-pawed.",
+            "exp": 0,
+            "weight": 10,
+            "relationships": [
+                {
+                    "cats_to": ["r_c"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["trust"],
+                    "amount": -5
+                }
+            ]
+        },
+        {
+            "text": "r_c decides to check out the hole by themself and gets bitten by a snake inside! They immediately rush back to the patrol with a snake bite injury. The patrol returns without any prey.",
+            "exp": 0,
+            "weight": 5,
+            "injury": [
+                {
+                    "cats": ["r_c"],
+                    "injuries": ["snake bite"]
+                }
+            ]
+        }
+    ]
+},
+{
+    "patrol_id": "yowling_cat2",
+    "biome": ["Any"],
+    "season": ["Any"],
+    "types": ["hunting"],
+    "tags": ["new_cat"],
+    "patrol_art": "pln_bord_tunnel",
+    "min_cats": 2,
+    "max_cats": 6,
+    "min_max_status": {},
+    "weight": 20,
+    "chance_of_success": 50,
+    "intro_text": "Your patrol decides to do some hunting. As they are about to catch some prey, desperate yowls of a cat startle the patrol, and the prey which darts out of their reach. The patrol stops, their senses on high alert, trying to pinpoint the source of the distress.",
+    "decline_text": "Your patrol, though concerned, decides not to investigate the source of the yowls and continues their patrol cautiously, aware of the dangers lurking in the shadows.",
+    "success_outcomes": [
+        {
+            "text": "Your patrol discovers a kittypet trapped in a deep hole, cleverly concealed beneath leaves and debris. Working together seamlessly, r_c and p_l manage to rescue the cat. Impressed by their bravery and kindness, the cat decides to join the clan. With a warm welcome, p_l ushers them into c_n ranks. The former kittypet, now a clan member, adopts the new name n_c:0.",
+            "exp": 10,
+            "weight": 20,
+            "new_cat": [
+                ["kittypet", "new_name"]
+            ],
+            "relationships": [
+                {
+                    "cats_from": ["n_c:0"],
+                    "cats_to": ["p_l", "r_c"],
+                    "values": ["trust", "platonic", "respect"],
+                    "amount": 10
+                }
+            ]
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "Despite the patrol's best efforts, they are unsuccessful in saving the trapped cat. With heavy hearts, p_l is forced to leave the cat behind, surrounding the hole with brambles to prevent others from falling in.",
+            "exp": 0,
+            "weight": 20
+        }
+    ],
+    "antag_fail_outcomes": [
+        {
+            "text": "Although the trapped cat is saved, the patrol decides to chase them off clan territory, ensuring they don't cause any harm to c_n.",
+            "exp": 0,
+            "weight": 20,
+            "outsider_rep": -1
+        }
+    ],
+    "antag_success_outcomes": [
+        {
+            "text": "p_l orders the patrol to bury the cat, even as they begged for help. p_l believes it isn't worth the risk of having them potentially injure the clan in the future.",
+            "exp": 0,
+            "weight": 20,
+            "outsider_rep": -2,
+            "relationships": [
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["p_l"],
+                    "values": ["trust", "platonic", "respect"],
+                    "amount": -10
+                },
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["p_l"],
+                    "values": ["dislike"],
+                    "amount": -10
+                }
+            ]
+        }
+    ]
+},
+{
+    "patrol_id": "gen_hunt_twoleg_strangeobject",
+    "biome": ["Any"],
+    "season": ["Any"],
+    "types": ["hunting"],
+    "tags": [],
+    "patrol_art": "gen_hunt_strange",
+    "min_cats": 1,
+    "max_cats": 6,
+    "min_max_status": {},
+    "weight": 20,
+    "intro_text": "Your patrol leaves camp to go on a hunt, while out they come across some prey near a strange twoleg item.",
+    "decline_text": "Your patrol decides to return to camp without catching the prey.",
+    "chance_of_success": 50,
+    "success_outcomes": [
+        {
+            "text": "r_c gets the prey without any difficulties.",
+            "exp": 10,
+            "weight": 20,
+            "prey": ["small"]
+        },
+        {
+            "text": "p_l carefully outmaneuvers the prey, successfully catching it after a thrilling chase.",
+            "exp": 15,
+            "weight": 10,
+            "prey": ["small"]
+        },
+        {
+            "text": "s_c attacks the prey aggressively, killing it messily.",
+            "exp": 20,
+            "weight": 20,
+            "prey": ["small"],
+            "stat_trait": ["bloodthirsty"]
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "When trying to catch the prey, r_c's leg got caught in the trap.",
+            "exp": 0,
+            "weight": 20,
+            "injury": [
+                {
+                    "cats": ["r_c"],
+                    "injuries": ["mangled_leg"]
+                }
+             ],
+             "history_text": {
+                "scar": "This cat was scarred by a twoleg object while hunting.",
+                "reg_death": "This cat died from an injury because of a twoleg object.",
+                "lead_death": "died while hunting near a strange twoleg object"
+             }
+        },
+        {
+            "text": "When trying to catch the prey, r_c's tail got caught in the trap.",
+            "exp": 0,
+            "weight": 20,
+            "injury": [
+                    {
+                      "cats": ["r_c"],
+                      "injuries": ["mangled_tail"]
+                     }
+                ],
+            "history_text": {
+                "scar": "This cat was scarred by a twoleg object while hunting.",
+                "reg_death": "This cat died from an injury because of a twoleg object.",
+                "lead_death": "died while hunting near a strange twoleg object"
+            }
+        },
+        {
+            "text": "When trying to catch the prey, r_c the twoleg object snapped close, and it was the last thing r_c heard.",
+            "exp": 0,
+            "weight": 20,
+            "dead_cats": ["r_c"],
+            "history_text": {
+                "reg_death": "This cat died from an injury because of a twoleg object.",
+                "lead_death": "died while hunting near a strange twoleg object"
+                }
+        }
+    ]
+},
+{
+    "patrol_id": "gen_hunt_grave",
+    "biome": ["Any"],
+    "season": ["Any"],
+    "types": ["hunting"],
+    "tags": [],
+    "patrol_art": "gen_med_gatheringrosemary",
+    "min_cats": 1,
+    "max_cats": 6,
+    "min_max_status": {},
+    "weight": 20,
+    "intro_text": "While hunting, your patrol ends up in the graveyard where the dead are buried, it might not be wise to hunt here.",
+    "decline_text": "Your patrol takes a moment to respect the dead, before heading away to hunt.",
+    "chance_of_success": 20,
+    "success_outcomes": [
+        {
+            "text": "r_c locates a mouse and begins to stalk. r_c waggles {PRONOUN/r_c/poss} haunches and leaps, pinning the mouse beneath a paw as {PRONOUN/r_c/subject} {VERB/r_c/make/makes} the killing bite.",
+            "exp": 10,
+            "weight": 20,
+            "prey": ["small"]
+        },
+        {
+            "text": "r_c locates a vole and begins to stalk. r_c waggles {PRONOUN/r_c/poss} haunches and leaps, pinning the mouse beneath a paw as {PRONOUN/r_c/subject} {VERB/r_c/make/makes} the killing bite.",
+            "exp": 10,
+            "weight": 20,
+            "prey": ["small"]
+        },
+         {
+            "text": "r_c locates a rabbit and begins to stalk. r_c waggles {PRONOUN/r_c/poss} haunches and leaps, pinning the mouse beneath a paw as {PRONOUN/r_c/subject} {VERB/r_c/make/makes} the killing bite.",
+            "exp": 10,
+            "weight": 20,
+            "prey": ["small"]
+        },
+         {
+            "text": "r_c locates a lizard and begins to stalk. r_c waggles {PRONOUN/r_c/poss} haunches and leaps, pinning the mouse beneath a paw as {PRONOUN/r_c/subject} {VERB/r_c/make/makes} the killing bite.",
+            "exp": 10,
+            "weight": 20,
+            "prey": ["small"]
+        },
+         {
+            "text": "r_c locates a bird and begins to stalk. r_c waggles {PRONOUN/r_c/poss} haunches and leaps, pinning the mouse beneath a paw as {PRONOUN/r_c/subject} {VERB/r_c/make/makes} the killing bite.",
+            "exp": 10,
+            "weight": 20,
+            "prey": ["small"]
+        },
+        {
+            "text": "r_c pinpoints the location of the prey and begins creeping forward. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'re/'s} almost within pouncing distance when the mouse suddenly bolts. With a lash of {PRONOUN/r_c/poss} tail, r_c leaps after the mouse, barely snagging it before it reaches a burrow. {PRONOUN/r_c/subject/CAP} {VERB/r_c/purr/purrs} in satisfaction as prey-blood hits {PRONOUN/r_c/poss} tongue.",
+            "exp": 10,
+            "weight": 5,
+            "prey": ["small"]
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "Your patrol locates some prey, but it escapes before they can catch it.",
+            "exp": 0,
+            "weight": 20,
+            "prey": ["very_small"]
+        },
+        {
+            "text": "r_c pinpoints the location of the prey and begins creeping forward. Just as they are about to pounce though, they feel a ghostly presence join them, and can feel the dissapointed gaze of a starclan cat.",
+            "exp": 0,
+            "weight": 5,
+            "outsider_rep": -1
+        }
+    ],
+    "antag_fail_outcomes": [
+        {
+            "text": "r_c scoffs, this was just another place to hunt, however, as they were hunting, r_c feels something push {PRONOUN/r_c/object} off the ledge.",
+            "exp": 0,
+            "weight": 20,
+            "outsider_rep": -2,
+            "injury": [
+                    {
+                      "cats": ["r_c"],
+                      "injuries": ["minor_injury", "blunt_force_injury"]
+                     }
+                ],
+            "history_text": {
+                "scar": "This cat was scarred by a starclan cat for disrespecting the graveyard.",
+                "reg_death": "This cat died disrespecting the graveyard.",
+                "lead_death": "died while trying to hunt in the graveyard"
+            }
+        },
+        {
+            "text": "r_c scoffs, this was just another place to hunt, however, as they were hunting, r_c feels something push {PRONOUN/r_c/object} off the ledge, as {PRONOUN/r_c/subject} fell, {PRONOUN/r_c/subject} felt {PRONOUN/r_c/poss} back snap, and the last thing they saw was the ghostly visage of a long gone clanmate.",
+            "exp": 0,
+            "weight": 5,
+            "outsider_rep": -2,
+            "dead_cats": ["r_c"],
+            "history_text": {
+                 "reg_death": "This cat died disrespecting the graveyard.",
+                 "lead_death": "died while trying to hunt in the graveyard"
+                }
+         }
+    ],
+    "antag_success_outcomes": [
+        {
+            "text": "p_l scoffed, this was just another place to hunt, and soon p_l's intution proved to be bountiful as the patrol catches several large prey.",
+            "exp": 20,
+            "weight": 20,
+            "outsider_rep": -2,
+            "prey": ["large"]
+        }
+    ]
+},
+{
+    "patrol_id": "silver_hunt",
+    "biome": ["Any"],
+    "season": ["Any"],
+    "types": ["hunting"],
+    "tags": [],
+    "patrol_art": "silver_hunt_rabbit",
+    "min_cats": 1,
+    "max_cats": 6,
+    "weight": 5,
+    "pl_skill_constraint": ["OMEN,1"],
+    "intro_text": "While out on patrol r_c come across an odd floating upside down cat.",
+    "decline_text": "Freaked out the patrol goes back to camp early.",
+    "chance_of_success": 50,
+    "success_outcomes": [
+        {
+            "text": "They continue toward it, the curiosity getting the better of them. Turns out it was just a silver rabbit munching on a leaf. How disappointing... though r_c does get a bit of a heart attack. Luckily they manage to catch it.",
+            "exp": 10,
+            "weight": 20,
+            "prey": ["small"]
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "The patrol tries to walk towards it, but it seems to have just been some sort of illusion. With a shrug, they continue their patrol. Distracted by the weird illusion, they don't catch any prey.",
+            "exp": 0,
+            "weight": 20
+        }
+    ]
+},
+{
     "patrol_id": "gen_hunt_verysmallprey_balancing_smallwarriorhunt1",
     "biome": ["any"],
     "season": ["any"],
@@ -3561,9 +4097,52 @@
                 "lead_death": "died after a small injury progressed to something worse"
               }
         }
+    ]   
+},
+{
+    "patrol_id": "gen_hunt_jumpscare",
+    "biome": ["any"],
+    "season": ["any"],
+    "types": ["hunting"],
+    "tags": ["halloween"],
+    "patrol_art": "jumpscare_INTRO",
+    "min_cats": 2,
+    "max_cats": 6,
+    "min_max_status": {},
+    "weight": 20,
+    "intro_text": "The patrol splits up to hunt, but after a while r_c is nowhere to be found.",
+    "decline_text": "p_l heads home without r_c, annoyed that r_c would abandon the patrol.",
+    "chance_of_success": 50,
+    "success_outcomes": [
+   	    {
+   		 "text": "p_l decides to continue on without r_c and manages to make a few good catches. Although things are going well, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} something watching {PRONOUN/p_l/object}... and getting closer! p_l turns around, ready to strike, only to find r_c sneaking up on {PRONOUN/p_l/object}! The pair of cats have a good laugh over the failed prank and carry the prey back to camp together.",
+   		 "exp": 20,
+   		 "weight": 20,
+   		 "prey": ["medium"]
+   	    },
+   	    {
+   		 "text": "After making some good catches, p_l picks up on r_c's scent. Whiskers twitching with mischief, p_l decides to give r_c a good scare and drops into a sneaking crouch. p_l creeps closer and closer until r_c is in range, but suddenly r_c turns around with a startled hiss! Both r_c and p_l jump with fright, fur puffed out and claws ready! It takes a moment but both cats have a good laugh at the scare they gave each other, and promise not to tell any cat about how easily startled they were.",
+   		 "exp": 5,
+   		 "weight": 20,
+   		 "prey": ["medium"]
+   	    }
+    ],
+    "fail_outcomes": [
+   	 {
+   		 "text": "p_l decides to continue on without r_c and manages to make a few catches. Although things are going well, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} something is watching {PRONOUN/p_l/object}... and getting closer! p_l lets out a terrified screech as something leaps out of the shadows and knocks {PRONOUN/p_l/object} over! p_l hops up, ready to strike, only to come face to face with {PRONOUN/p_l/poss} attacker... r_c, purring with laughter!",
+   		 "exp": 0,
+   		 "weight": 20,
+   		 "prey": ["small"]
+   	 },
+   	 {
+   		 "text": "p_l heads off without r_c and manages to make a few catches, when something nips {PRONOUN/p_l/poss} paw! Unable to catch a scent from whatever it was, p_l assumes it to be some kind of prank and furiously looks for r_c. Upon finding {PRONOUN/r_c/object}, p_l begins to complain but r_c cuts {PRONOUN/p_l/object} off, accusing p_l of nipping {PRONOUN/r_c/poss} paw instead! Both cats fall silent with unease when they realize something else was the culprit, likely watching them both from the shadows... The patrol quickly heads back to camp.",
+   		 "exp": 0,
+   		 "weight": 5,
+   		 "prey": ["small"]
+   	 }
     ]
 },
-  {
+{
     "patrol_id": "gen_hunt_kittylion",
     "biome": ["any"],
     "season": ["any"],
@@ -3611,49 +4190,6 @@
     ]
 },
 {
-    "patrol_id": "gen_hunt_jumpscare",
-    "biome": ["any"],
-    "season": ["any"],
-    "types": ["hunting"],
-    "tags": ["halloween"],
-    "patrol_art": "jumpscare_INTRO",
-    "min_cats": 2,
-    "max_cats": 6,
-    "min_max_status": {},
-    "weight": 20,
-    "intro_text": "The patrol splits up to hunt, but after a while r_c is nowhere to be found.",
-    "decline_text": "p_l heads home without r_c, annoyed that r_c would abandon the patrol.",
-    "chance_of_success": 50,
-    "success_outcomes": [
-   	    {
-   		 "text": "p_l decides to continue on without r_c and manages to make a few good catches. Although things are going well, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} something watching {PRONOUN/p_l/object}... and getting closer! p_l turns around, ready to strike, only to find r_c sneaking up on {PRONOUN/p_l/object}! The pair of cats have a good laugh over the failed prank and carry the prey back to camp together.",
-   		 "exp": 20,
-   		 "weight": 20,
-   		 "prey": ["medium"]
-   	    },
-   	    {
-   		 "text": "After making some good catches, p_l picks up on r_c's scent. Whiskers twitching with mischief, p_l decides to give r_c a good scare and drops into a sneaking crouch. p_l creeps closer and closer until r_c is in range, but suddenly r_c turns around with a startled hiss! Both r_c and p_l jump with fright, fur puffed out and claws ready! It takes a moment but both cats have a good laugh at the scare they gave each other, and promise not to tell any cat about how easily startled they were.",
-   		 "exp": 5,
-   		 "weight": 20,
-   		 "prey": ["medium"]
-   	    }
-    ],
-    "fail_outcomes": [
-   	 {
-   		 "text": "p_l decides to continue on without r_c and manages to make a few catches. Although things are going well, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} something is watching {PRONOUN/p_l/object}... and getting closer! p_l lets out a terrified screech as something leaps out of the shadows and knocks {PRONOUN/p_l/object} over! p_l hops up, ready to strike, only to come face to face with {PRONOUN/p_l/poss} attacker... r_c, purring with laughter!",
-   		 "exp": 0,
-   		 "weight": 20,
-   		 "prey": ["small"]
-   	 },
-   	 {
-   		 "text": "p_l heads off without r_c and manages to make a few catches, when something nips {PRONOUN/p_l/poss} paw! Unable to catch a scent from whatever it was, p_l assumes it to be some kind of prank and furiously looks for r_c. Upon finding {PRONOUN/r_c/object}, p_l begins to complain but r_c cuts {PRONOUN/p_l/object} off, accusing p_l of nipping {PRONOUN/r_c/poss} paw instead! Both cats fall silent with unease when they realize something else was the culprit, likely watching them both from the shadows... The patrol quickly heads back to camp.",
-   		 "exp": 0,
-   		 "weight": 5,
-   		 "prey": ["small"]
-   	 }
-    ]
-},
-{
     "patrol_id": "gen_hunt_scary_ghost1",
     "biome": [ "any"],
     "season": [ "any"],
@@ -3690,6 +4226,6 @@
                 }
             ]
         }
-    ]
+    ]  
 }
 ]

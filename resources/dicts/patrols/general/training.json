@@ -2973,6 +2973,70 @@
         ]
     },
     {
+        "patrol_id": "gen_train_argue4",
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "gen_train_argue",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "apprentice": [1, 6],
+            "warrior": [1, 6]
+        },
+        "weight": 20,
+        "intro_text": "While out training together, app1 starts an argument with p_l about the technique they're working on.",
+        "decline_text": "Your patrol decides to head home.",
+        "chance_of_success": 50,
+        "success_outcomes": [
+            {
+                "text": "With a deep sigh, p_l holds back their temper, and instead sits down to explain their reasoning to the young cat. They can see why app1 thinks differently, but practicing this way will help app1 build muscle better than taking the cheap way out. app1 also sighs, apologising for their outburst.",
+                "exp": 20,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "dislike"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "Tired of hearing about how they don't understand, p_l swings around, performing a flawless rendition of the technique. Chastened, app1 lowers their gaze. They'll follow p_l's way of doing things then.",
+                "exp": 20,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "dislike"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c is able to defuse the moment with a joke, and sneak in a quiet remark that has app1 rethinking things. Still, it's not the most fun training session.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["SPEAKER,2"],
+                "can_have_stat": ["p_l", "adult"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "dislike"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ]
+    },
+    {
         "patrol_id": "gen_train_vision1",
         "biome": ["any"],
         "season": ["any"],
@@ -3761,6 +3825,203 @@
                     "strict",
                     "troublesome",
                     "vengeful"
+                ],
+                "can_have_stat": ["app"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "gen_train_sneakprey2",
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": ["disrespect", "distrust"],
+        "patrol_art": "gen_train_sneakprey",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "apprentice": [1, 6]
+        },
+        "weight": 20,
+        "intro_text": "app1 is tempted to eat the prey {PRONOUN/app1/subject} just caught. After all, {PRONOUN/app1/subject}{VERB/app1/'re/'s} only practicing hunting, right? So this is {PRONOUN/app1/inposs}, it doesn't count as a true hunting patrol?",
+        "decline_text": "app1 decides against breaking the warrior code, resisting the temptation.",
+        "chance_of_success": 60,
+        "success_outcomes": [
+            {
+                "text": "{PRONOUN/app1/subject/CAP} {VERB/app1/eat/eats} the prey without anyone noticing, and {VERB/app1/return/returns} to camp, thrilled with {PRONOUN/app1/poss} little transgression.",
+                "exp": 20,
+                "weight": 20
+            },
+            {
+                "text": "s_c freezes in indecision. But the moment of peace allows {PRONOUN/s_c/object} to collect {PRONOUN/s_c/poss} thoughts, and decide that the warrior code matters more to {PRONOUN/s_c/object} than a silly afternoon snack.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": [
+                    "calm",
+                    "careful",
+                    "insecure",
+                    "lonesome",
+                    "loyal",
+                    "nervous",
+                    "sneaky",
+                    "strange"
+                ],
+                "can_have_stat": ["app"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "app1 eats the prey, but later {PRONOUN/app1/subject} {VERB/app1/feel/feels} terrible about it, slinking around guilty and ashamed for the rest of the day..",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "Whatever, it's not a big deal, and s_c's hungry. But as {PRONOUN/s_c/subject} {VERB/s_c/eat/eats}, a passing warrior spots them, and begins an outraged lecture on the values of the warrior code.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": [
+                    "adventurous",
+                    "bold",
+                    "charismatic",
+                    "childish",
+                    "confident",
+                    "daring",
+                    "playful",
+                    "righteous"
+                ],
+                "can_have_stat": ["app"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "gen_train_sneakprey3",
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": ["disrespect", "distrust"],
+        "patrol_art": "gen_train_sneakprey",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "apprentice": [1, 6]
+        },
+        "weight": 20,
+        "intro_text": "app1 is tempted to eat the prey {PRONOUN/app1/subject} just caught. After all, {PRONOUN/app1/subject}{VERB/app1/'re/'s} only practicing hunting, right? So this is {PRONOUN/app1/inposs}, it doesn't count as a true hunting patrol?",
+        "decline_text": "app1 decides against breaking the warrior code, resisting the temptation.",
+        "chance_of_success": 60,
+        "success_outcomes": [
+            {
+                "text": "{PRONOUN/app1/subject/CAP} {VERB/app1/eat/eats} the prey without anyone noticing, and {VERB/app1/return/returns} to camp, thrilled with {PRONOUN/app1/poss} little transgression.",
+                "exp": 20,
+                "weight": 20
+            },
+            {
+                "text": "It definitely doesn't count as a proper hunting patrol. But just to be safe, s_c chooses to eat {PRONOUN/s_c/poss} afternoon snack under cover.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": [
+                    "ambitious",
+                    "bloodthirsty",
+                    "cold",
+                    "fierce",
+                    "shameless",
+                    "strict",
+                    "troublesome",
+                    "vengeful",
+                    "bossy",
+                    "bullying",
+                    "impulsive"
+                ],
+                "can_have_stat": ["app"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "app1 eats the prey, but later {PRONOUN/app1/subject} {VERB/app1/feel/feels} terrible about it, slinking around guilty and ashamed for the rest of the day.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "s_c ignores {PRONOUN/s_c/poss} rumbling belly, and dutifully brings the prey back to camp, only for {PRONOUN/s_c/poss} mentor to tell {PRONOUN/s_c/object} to pick out a bite to eat before {PRONOUN/s_c/poss} stomach wakes every cat in camp. This would've all been much quicker if {PRONOUN/s_c/subject}'d eaten it when {PRONOUN/s_c/subject} first caught it.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": [
+                    "altruistic",
+                    "compassionate",
+                    "empathetic",
+                    "faithful",
+                    "loving",
+                    "patient",
+                    "responsible",
+                    "thoughtful",
+                    "wise"
+                ],
+                "can_have_stat": ["app"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "gen_train_sneakprey4",
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": ["disrespect", "distrust"],
+        "patrol_art": "gen_train_sneakprey",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "apprentice": [1, 6]
+        },
+        "weight": 20,
+        "intro_text": "app1 is tempted to eat the prey {PRONOUN/app1/subject} just caught. After all, {PRONOUN/app1/subject}{VERB/app1/'re/'s} only practicing hunting, right? So this is {PRONOUN/app1/inposs}, it doesn't count as a true hunting patrol?",
+        "decline_text": "app1 decides against breaking the warrior code, resisting the temptation.",
+        "chance_of_success": 60,
+        "success_outcomes": [
+            {
+                "text": "{PRONOUN/app1/subject/CAP} {VERB/app1/eat/eats} the prey without anyone noticing, and {VERB/app1/return/returns} to camp, thrilled with {PRONOUN/app1/poss} little transgression.",
+                "exp": 20,
+                "weight": 20
+            },
+            {
+                "text": "s_c ignores {PRONOUN/s_c/poss} rumbling belly, and dutifully brings the prey back to camp. {PRONOUN/s_c/poss/CAP} mentor congratulates {PRONOUN/s_c/object} on the catch, and {PRONOUN/s_c/subject} {VERB/s_c/get/gets} to share it with all {PRONOUN/s_c/poss} friends, feeling a warm glow in {PRONOUN/s_c/poss} heart at feeding {PRONOUN/s_c/poss} Clan.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": [
+                    "altruistic",
+                    "compassionate",
+                    "empathetic",
+                    "faithful",
+                    "loving",
+                    "patient",
+                    "responsible",
+                    "thoughtful",
+                    "wise"
+                ],
+                "can_have_stat": ["app"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "app1 eats the prey, but later {PRONOUN/app1/subject} {VERB/app1/feel/feels} terrible about it, slinking around guilty and ashamed for the rest of the day.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "It definitely doesn't count as a proper hunting patrol. But irritatingly the warrior that comes past and spots s_c eating doesn't seem to agree, and a surly s_c is brought back to camp for a lecture.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": [
+                    "ambitious",
+                    "bloodthirsty",
+                    "cold",
+                    "fierce",
+                    "shameless",
+                    "strict",
+                    "troublesome",
+                    "vengeful",
+                    "bossy",
+                    "bullying",
+                    "impulsive"
                 ],
                 "can_have_stat": ["app"]
             }
@@ -11169,6 +11430,367 @@
             }
         ]
     },
+    {
+        "patrol_id": "beach_dolphin_rescue1",
+        "biome": ["beach"],
+        "season": ["newleaf", "greenleaf", "leaf-fall"],
+        "types": ["training"],
+        "tags": ["beach_dolphin"],
+        "patrol_art": "bch_train_session1",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
+        "chance_of_success": 50,
+        "intro_text": "Your patrol ventures along the sandy shores, the rhythmic sound of the waves providing a soothing backdrop. Suddenly, r_c spots a stranded Dolphin, its sleek body glimmering in the sunlight.",
+        "decline_text": "Your patrol, feeling a mixture of sympathy and helplessness, decides to leave the Dolphin alone hoping the dolphin can sort itself out.",
+        "success_outcomes": [
+            {
+                "text": "Your patrol ingeniously crafts a route to guide the Dolphin back to the ocean. With careful teamwork, the Dolphin swims away gracefully, coming back with some herbs before vanishing off.",
+                "exp": 15,
+                "weight": 15,
+                "herbs": ["random_herbs"],
+                "outsider_rep": 2
+            },
+            {
+                "text": "Your patrol gently flips the Dolphin onto its side and ushers it back into the ocean. With patient determination, you guide the creature through the waves until it regains its freedom. The Dolphin gives a flick of its tail in acknowledgment before disappearing into the deep blue.",
+                "exp": 15,
+                "weight": 20,
+                "outsider_rep": 1
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Despite your patrols best efforts, the Dolphin proves too heavy for your patrol to bring back to the water. With heavy hearts, you abandon the rescue attempt and return home, the Dolphin's fate weighing heavily on your minds.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": -1
+            },
+            {
+                "text": "The stranded Dolphin, frightened and distressed, lashes out in fear, leaving r_c with bruises and scrapes. The patrol is forced to retreat, unable to help the creature without risking further injuries.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_from": ["clan"],
+                        "cats_to": ["patrol"],
+                        "values": ["trust"],
+                        "amount": -5
+                    }
+                ],
+                "outsider_rep": -2,
+                "injury": [
+                {
+                 "cats": ["r_c"],
+                 "injuries": ["minor_injury"]
+                }
+                ]
+            },
+            {
+                "text": "Time slips away as your patrol struggles to guide the Dolphin back to the ocean. Despite p_l's best efforts, the creature succumbs to overheating and dehydration.",
+                "exp": 0,
+                "weight": 20,
+                "outsider_rep": -2
+            }
+        ],
+        "antag_fail_outcomes": [
+            {
+                "text": "The patrol kills the dolphin without hesitation, knowing it would be valuable food. However when they returned to camp, the clan was deeply disappointed in the patrols choice and questioned their judgment, leading to strained relationships and increased tension within c_n between the patrol and the clan.",
+                "exp": 0,
+                "weight": 10,
+                "prey": ["huge"],
+                "relationships": [
+                    {
+                        "cats_from": ["clan"],
+                        "cats_to": ["patrol"],
+                        "values": ["dislike"],
+                        "amount": 25
+                    },
+                    {
+                        "cats_from": ["clan"],
+                        "cats_to": ["patrol"],
+                        "values": ["respect", "platonic", "trust", "comfort"],
+                        "amount": -10
+                    }
+                ],
+                "outsider_rep": -2
+            }
+        ],
+        "antag_success_outcomes": [
+            {
+                "text": "Your patrol kills the Dolphin and brings it back to camp as prey. The clan praises the patrols hunting skills, and the cats eat well.",
+                "exp": 10,
+                "weight": 20,
+                "prey": ["huge"],
+                "relationships": [
+                    {
+                        "cats_from": ["clan"],
+                        "cats_to": ["patrol"],
+                        "values": ["platonic", "trust", "respect"],
+                        "amount": 5
+                    }
+                ],
+                "outsider_rep": -1
+            }
+        ]
+    },
+    {
+        "patrol_id": "abandoned_kitten_rescue_training",
+        "biome": ["Any"],
+        "season": ["newleaf"],
+        "types": ["training"],
+        "tags": ["new_cat"],
+        "patrol_art": "gen_gen_newkit",
+        "min_cats": 1,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
+        "chance_of_success": 50,
+        "intro_text": "The patrol is barely able to start training before they hear soft mewls coming from a nearby bush.",
+        "decline_text": "The patrol moves spots and continues along with their training.",
+        "success_outcomes": [
+            {
+                "text": "The patrol finds an abandoned kitten tangled in the bush, they decide to bring it home and nurse it back to health.",
+                "exp": 10,
+                "weight": 20,
+                "new_cat": [
+                    ["age:newborn", "backstory:abandoned1"]
+                ],
+                "relationships": [
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["n_c:0"],
+                    "mutual": true,
+                    "values": ["trust", "platonic", "comfort"],
+                    "amount": 10
+                }
+            ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The kitten is brought back to the camp, but in the middle of the night, it dies suddenly. Perhaps it was abandoned for a reason.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "As the patrol looks in the bush, the kit is not one of their own, but that of another species! A fox kit! The patrol is soon being chased by a mother fox, and one of the cats is killed by the angry mother.",
+                "exp": 0,
+                "weight": 20,
+                "lost_cats": ["r_c"]
+            }
+        ],
+        "antag_success_outcomes": [
+            {
+                "text": "The patrol quickly grabs the fox kit and places it in o_c_n's territory. Perhaps this will eliminate some competition.",
+                "exp": 0,
+                "weight": 20,
+                "other_clan_rep": -2
+            }
+        ],
+        "antag_fail_outcomes": [
+            {
+                "text": "The mother of the fox kit came back early and now, a few cats have paid the price.",
+                "exp": 0,
+                "weight": 20,
+                "dead_cats": ["multi"],
+                "history_text": {
+                    "reg_death": "m_c died trying to use a fox kit to attack another clan.",
+                    "leader_death": "m_c lost a life trying to use a fox kit to attack another clan"
+                }
+
+            }
+        ]
+    },
+    {
+        "patrol_id": "lost_apprentices_patrol",
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "gen_hunt_lost_apps",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {
+            "apprentice": [2, 6]
+        },
+        "weight": 15,
+        "chance_of_success": 40,
+        "relationship_constraint": [],
+        "pl_skill_constraint": [],
+        "intro_text": "The apprentices set out for training, eager to explore. However, as they venture deeper, they realize they're lost.",
+        "decline_text": "The apprentices decide to turn back and regroup at the camp.",
+        "success_outcomes": [
+            {
+                "text": "The apprentices remain calm and manage to find their way back to camp, learning valuable navigation skills along the way.",
+                "exp": 10,
+                "weight": 15,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust", "platonic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The apprentices have to wait for the next patrol to find them. They feel embarrassed and frustrated by their inability to navigate, damaging their confidence.",
+                "exp": 0,
+                "weight": 15,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["comfort", "trust", "platonic"],
+                        "amount": -5
+                    },
+                    {
+                        "cats_to": ["clan"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "patrol_id": "sepperated_apprentices_patrol",
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "gen_hunt_lost_apps",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {
+            "apprentice": [2, 6]
+        },
+        "weight": 15,
+        "chance_of_success": 40,
+        "relationship_constraint": [],
+        "pl_skill_constraint": [],
+        "intro_text": "The apprentices set out for training, eager to explore. However, as they are practicing their tracking skills, they realize they have gotten truly seperated.",
+        "decline_text": "The apprentices decide to turn back and regroup at the camp.",
+        "success_outcomes": [
+            {
+                "text": "The apprentices remain calm and manage to track each other and rejoin, returning to camp successfully.",
+                "exp": 10,
+                "weight": 15,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust", "platonic", "comfort"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The apprentices start to panic and call out each others names, while this allows them to locate each other, it also brings about the attention of a nearby twoleg, and r_c is taken.",
+                "exp": 0,
+                "weight": 15,
+                "lost_cats": ["r_c"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "trust", "platonic"],
+                        "amount": -5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["comfort", "trust", "platonic", "respect"],
+                        "amount": -15
+                    }
+                ]
+            },
+            {
+                "text": "The apprentices start to panic and call out each others names, while this allows them to locate each other, it also brings about the attention of a nearby fox, and r_c is killed.",
+                "exp": 0,
+                "weight": 10,
+                "dead_cats": ["r_c"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "trust", "platonic"],
+                        "amount": -1
+                    }
+                ],
+                "history_text": {
+				"reg_death": "m_c died from a dog while training as an apprentice after getting lost from their fellow apprentices."
+				}
+            }
+        ]
+    },
+    {
+        "patrol_id": "beach_train_ice_patrol",
+        "biome": ["beach"],
+        "season": ["leaf-bare"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "mtn_train_snowcrunching",
+        "patrol_art_clean": null,
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
+        "chance_of_success": 50,
+        "relationship_constraint": [],
+        "pl_skill_constraint": [],
+        "intro_text": "The patrol is walking along the shore when they see that there is a big tide pool covered with ice.",
+        "decline_text": "The possible fun on the ice is not worth the risk, and the patrol continues on.",
+        "success_outcomes": [
+            {
+                "text": "The patrol has a fun time playing on the ice and has a good time.",
+                "exp": 10,
+                "weight": 20
+            },
+            {
+                "text": "s_c notices a crack on the ice, and alerts the others and they decide not to play anymore.",
+                "exp": 10,
+                "stat_skill": ["SENSE,5"],
+                "weight": 20
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The patrol doesn't see the cracks, and r_c falls through. {PRONOUN/r_c/subject} manage to survive but have water in {PRONOUN/r_c/poss} lungs.",
+                "exp": 0,
+                "weight": 20,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["water in their lungs"]
+                    }
+                ]
+            },
+            {
+                "text": "The patrol goes on the ice, and r_c falls through, but the others aren't able to pull them out in time.",
+                "exp": 0,
+                "weight": 5,
+                "dead_cats": ["r_c"],
+                "history_text": {
+                    "reg_death": "This cat drowned after falling through the ice.",
+                    "lead_death": "Died when they drowned after falling through the ice"
+                }
+            }
+        ]
+    },    
     {
         "patrol_id": "gen_train_amentorswisdom",
         "biome": ["any"],
