@@ -2050,14 +2050,22 @@ class Cat:
             "RED FEATHERS",
             "BLUE FEATHERS",
             "JAY FEATHERS",
-            'SEAWEED', 'DAISY CORSAGE'
+            'SEAWEED', 'DAISY CORSAGE',
+            "GULL FEATHERS",
+            "SPARROW FEATHERS",
+            "CLOVER",
+            "DAISY"
         ]:
             self.pelt.accessory = None
         if "HALFTAIL" in self.pelt.scars and self.pelt.accessory in [
             "RED FEATHERS",
             "BLUE FEATHERS",
             "JAY FEATHERS",
-            'SEAWEED', 'DAISY CORSAGE'
+            'SEAWEED', 'DAISY CORSAGE',
+            "GULL FEATHERS",
+            "SPARROW FEATHERS",
+            "CLOVER",
+            "DAISY"
         ]:
             self.pelt.accessory = None
         intersex_exclusive = ["excess testosterone", "aneuploidy", "testosterone deficiency", "chimerism", "mosaicism"]
