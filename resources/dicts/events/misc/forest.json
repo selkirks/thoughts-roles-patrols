@@ -463,10 +463,6 @@
     "m_c": {
       "age": ["any"],
       "status": ["any"]
-    },
-    "r_c": {
-      "age": ["any"],
-      "status": ["any"]
     }
   },
   {
