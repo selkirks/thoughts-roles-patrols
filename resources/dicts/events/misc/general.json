@@ -641,7 +641,7 @@
     "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c received a present, acc_plural, from r_c and decided to keep it with {PRONOUN/m_c/object} on {PRONOUN/m_c/poss} pelt.",
-    "new_accessory": ["WILD", "PLANT", "FLOWER2","SNAKE","BAT WINGS","RAT SKULL","RIBS","FISH BONES","TEETH COLLAR", "BIRD SKULL","BUTTERFLIES"],
+    "new_accessory": ["WILD", "PLANT", "FLOWER2","SNAKE","BAT WINGS","RAT SKULL","RIBS","FISH BONES","TEETH COLLAR", "BIRD SKULL1","BUTTERFLIES"],
     "m_c":{
       "age": ["any"],
       "status": ["any"]
@@ -667,7 +667,7 @@
     "sub_type": ["ceremony", "accessory"],
     "weight": 20,
     "event_text": "m_c decides to pick something to adorn {PRONOUN/m_c/poss} pelt as celebration.",
-    "new_accessory": ["WILD", "PLANT", "PLANT2", "HESPERIS", "DEADINSECT", "FLOWER", "FRUIT","SNAKE","BAT WINGS","RAT SKULL","RIBS","FISH BONES","TEETH COLLAR", "BIRD SKULL", "BUTTERFLIES"],
+    "new_accessory": ["WILD", "PLANT", "PLANT2", "HESPERIS", "DEADINSECT", "FLOWER", "FRUIT","SNAKE","BAT WINGS","RAT SKULL","RIBS","FISH BONES","TEETH COLLAR", "BIRD SKULL1", "BUTTERFLIES"],
     "m_c":{
       "age": ["any"],
       "status": ["any"]
@@ -680,7 +680,7 @@
     "sub_type": ["ceremony", "accessory"],
     "weight": 20,
     "event_text": "r_c gives m_c something to adorn {PRONOUN/m_c/poss} pelt as congratulations.",
-    "new_accessory": ["WILD", "PLANT", "FLOWER", "DEADINSECT", "PLANT2","TEETH COLLAR", "BIRD SKULL"],
+    "new_accessory": ["WILD", "PLANT", "FLOWER", "DEADINSECT", "PLANT2","TEETH COLLAR", "BIRD SKULL1"],
     "m_c":{
       "age": ["any"],
       "status": ["any"]

@@ -2080,8 +2080,8 @@ class Cat:
             "BAUBLES"
             "GULL FEATHERS",
             "SPARROW FEATHERS",
-            "CLOVER",
-            "DAISY"
+            "CLOVER1",
+            "DAISY1"
         ]:
             self.pelt.accessory = None
         if "HALFTAIL" in self.pelt.scars and self.pelt.accessory in [
@@ -2095,8 +2095,8 @@ class Cat:
             "BAUBLES",
             "GULL FEATHERS",
             "SPARROW FEATHERS",
-            "CLOVER",
-            "DAISY"
+            "CLOVER1",
+            "DAISY1"
         ]:
             self.pelt.accessory = None
         intersex_exclusive = ["excess testosterone", "aneuploidy", "testosterone deficiency", "chimerism", "mosaicism"]

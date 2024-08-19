@@ -154,12 +154,12 @@
     "plural": "pink poppies",
     "singular": "pink poppy"
   },
-  "CLOVER": {
+  "CLOVER1": {
     "default": "clover tail",
     "plural": "clovers",
     "singular": "bunch of clovers"
   },
-  "DAISY": {
+  "DAISY1": {
     "default": "daisy tail",
     "plural": "daisies",
     "singular": "bunch of daisies"
@@ -208,11 +208,6 @@
     "default": "blue flower bulb",
     "plural": "blue flower bulbs",
     "singular": "blue flower bulb"
-  },
-  "RASPBERRY": {
-    "default": "raspberries",
-    "plural": "raspberries",
-    "singular": "raspberry"
   },
   "CATTAIL": {
     "default": "cattail",
@@ -671,7 +666,7 @@
     "plural": "rosy maple moth wings",
     "singular": "rosy maple moth wing"
 },
-"MONARCH BUTTERFLY": {
+"MONARCH BUTTERFLY1": {
     "default": "monarch butterfly wings",
     "plural": "monarch butterfly wings",
     "singular": "monarch butterfly wing"
@@ -1081,7 +1076,7 @@
     "plural": "roe skulls",
     "singular": "roe skull"
   },
-  "BIRD SKULL": {
+  "BIRD SKULL1": {
     "default": "bird skull necklace",
     "plural": "bird skulls necklace",
     "singular": "bird skull necklace"
