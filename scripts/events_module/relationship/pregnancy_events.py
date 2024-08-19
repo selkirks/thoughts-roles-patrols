@@ -531,8 +531,8 @@ class Pregnancy_Events:
                     backkit = 'halfclan1'
                 
                 nr_of_parents = 1
-                if clan.clan_settings['multisire'] and randint(1, game.config['genetics_config']["multi-sire_chance"]) == 1 and cat_type != 'Clancat':
-                    nr_of_parents = randint(2, game.config['genetics_config']["multi-sire_max_sires"])
+                if clan.clan_settings['multisire'] and randint(1, game.config['pregnancy']["multi-sire_chance"]) == 1 and cat_type != 'Clancat':
+                    nr_of_parents = randint(2, game.config['pregnancy']["multi-sire_max_sires"])
                 other_cat = []
                 for i in range(0, nr_of_parents):
 
@@ -565,8 +565,8 @@ class Pregnancy_Events:
                 backkit = 'outsider_roots1'
                 other_cat = []
                 nr_of_parents = 1
-                if clan.clan_settings['multisire'] and randint(1, game.config['genetics_config']["multi-sire_chance"]) == 1:
-                    nr_of_parents = randint(2, game.config['genetics_config']["multi-sire_max_sires"])
+                if clan.clan_settings['multisire'] and randint(1, game.config['pregnancy']["multi-sire_chance"]) == 1:
+                    nr_of_parents = randint(2, game.config['pregnancy']["multi-sire_max_sires"])
                 
                 if nr_of_parents > len(possible_affair_partners):
                     nr_of_parents = len(possible_affair_partners)
@@ -1052,8 +1052,8 @@ class Pregnancy_Events:
                 if not blood_parent:
                     # Generate a blood parent if we haven't already. 
                     nr_of_parents = 1
-                    if clan.clan_settings['multisire'] and randint(1, game.config['genetics_config']["multi-sire_chance"]) == 1:
-                        nr_of_parents = randint(2, game.config['genetics_config']["multi-sire_max_sires"])
+                    if clan.clan_settings['multisire'] and randint(1, game.config['pregnancy']["multi-sire_chance"]) == 1:
+                        nr_of_parents = randint(2, game.config['pregnancy']["multi-sire_max_sires"])
                     
                     insert = "their kits are"
                     if kits_amount == 1:

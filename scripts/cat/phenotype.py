@@ -565,7 +565,7 @@ class Phenotype():
         if spec:
             chosen = choice([choice(tortie_high_patterns), choice(tortie_high_patterns), choice(tortie_mid_patterns), choice(tortie_mid_patterns), choice(tortie_low_patterns)])
 
-        elif randint(1, 50) == 1:
+        elif randint(1, self.genotype.odds['cryptic_tortie']) == 1:
             chosen = 'CRYPTIC'
         elif(self.genotype.white[1] == "ws" or self.genotype.white[1] == "wt"):
             if self.genotype.whitegrade > 2:
