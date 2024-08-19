@@ -782,8 +782,6 @@ class Pelt:
                         chosen_pattern.add(choice(Pelt.tortiepatterns))
                         num += 3
 
-                if len(chosen_pattern) >= 2:
-                    print("DoublePatches: "+str(len(chosen_pattern))+" tortie patches!")
 
                 self.pattern = list(chosen_pattern)
 
@@ -879,8 +877,6 @@ class Pelt:
                         if _temp:
                             chosen_white_patches.add(choice(list(_temp)))
 
-                if len(chosen_white_patches) >= 2:
-                    print("DoublePatches: "+str(len(chosen_white_patches))+" white patches!")
                 self.white_patches = list(chosen_white_patches)
                 # Direct inheritance also effect the point marking.
                 if par_points and self.name != "Tortie":
@@ -974,8 +970,6 @@ class Pelt:
                 ))
                 num += 1
 
-        if len(chosen_white_patches) >= 2:
-            print("DoublePatches: "+str(len(chosen_white_patches))+" white patches!")
 
         self.white_patches = list(chosen_white_patches)
         if self.points and self.white_patches in [Pelt.high_white, Pelt.mostly_white, 'FULLWHITE']:
@@ -1022,9 +1016,6 @@ class Pelt:
                     random.choices(white_list, weights=weights, k=1)[0]
                 ))
                 num += 1
-
-        if len(chosen_white_patches) >= 2:
-            print("DoublePatches: "+str(len(chosen_white_patches))+" white patches!")
 
         self.white_patches = list(chosen_white_patches)
         if self.points and self.white_patches in [Pelt.high_white, Pelt.mostly_white, 'FULLWHITE']:
@@ -1197,7 +1188,6 @@ class Pelt:
             if traitcount > 0:
                 # Select the first trait and its category
                 trait1, category1 = random.choice(trait_pool)
-                print("Trait 1:", trait1)
                 self.physical_trait_1 = trait1
                 
                 # Remove traits from the same category as the first trait
@@ -1206,7 +1196,6 @@ class Pelt:
                 if traitcount >= 2 and trait_pool:
                     # Select the second trait from the remaining pool
                     trait2, category2 = random.choice(trait_pool)
-                    print("Trait 2:", trait2)
                     self.physical_trait_2 = trait2
                     
                     # Remove traits from the same category as the second trait
@@ -1215,7 +1204,6 @@ class Pelt:
                     if traitcount >= 3 and trait_pool:
                         # Select the third trait from the remaining pool
                         trait3, category3 = random.choice(trait_pool)
-                        print("Trait 3:", trait3)
                         self.physical_trait_3 = trait3
                         
                         # Remove traits from the same category as the third trait
@@ -1224,7 +1212,6 @@ class Pelt:
                         if traitcount == 4 and trait_pool:
                             # Select the fourth trait from the remaining pool
                             trait4, category4 = random.choice(trait_pool)
-                            print("Trait 4:", trait4)
                             self.physical_trait_4 = trait4
                         else:
                             self.physical_trait_4 = None
