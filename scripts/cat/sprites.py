@@ -519,7 +519,7 @@ class Sprites:
                 # bones
         for row, bones in enumerate(bones_data):
             for col, bone in enumerate(bones):
-                self.make_group('bonesacc', (col, row), f'acc_boness{bone}')
+                self.make_group('bonesacc', (col, row), f'acc_bones{bone}')
                 
       # butterflies and moths
         for row, butterflymoth in enumerate(butterflymoth_data):

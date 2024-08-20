@@ -2669,7 +2669,7 @@ def generate_sprite(
 
             elif cat.pelt.accessory in cat.pelt.bone_accessories:
                 new_sprite.blit(
-                    sprites.sprites["acc_boness" + cat.pelt.accessory + cat_sprite],
+                    sprites.sprites["acc_bones" + cat.pelt.accessory + cat_sprite],
                     (0, 0),
                )
             
