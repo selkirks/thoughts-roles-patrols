@@ -2785,7 +2785,7 @@
                         ]
                     },
                     {
-                        "text": "It toook s_c a moment, but {PRONOUN/s_c/subject} soon recognized the area... this was the same place as the dream {PRONOUN/s_c/subject} had recently, the one s_c was sure had been a warning. In the dream, there had been a large dog... and s_c had died. s_c goes back to camp to tell them of the scent, and to avoid {PRONOUN/s_c/poss} death.",
+                        "text": "It took s_c a moment, but {PRONOUN/s_c/subject} soon recognized the area... this was the same place as the dream {PRONOUN/s_c/subject} had recently, the one s_c was sure had been a warning. In the dream, there had been a large dog... and s_c had died. s_c goes back to camp to tell them of the scent, and to avoid {PRONOUN/s_c/poss} death.",
                         "exp": 40,
                         "weight": 10,
                         "stat_skill": ["PROPHET,11", "OMEN,11"],
@@ -2978,7 +2978,7 @@
                         }
                     },
                     {
-                        "text": "It toook s_c a moment, but {PRONOUN/s_c/subject} soon recognized the area... this was the same place as the dream {PRONOUN/s_c/subject} had recently, the one s_c was sure had been a warning. In the dream, there had been a large dog... and s_c had died. However a booming bark heralded {PRONOUN/s_c/poos} doom, having recognized the signs too late.",
+                        "text": "It toook s_c a moment, but {PRONOUN/s_c/subject} soon recognized the area... this was the same place as the dream {PRONOUN/s_c/subject} had recently, the one s_c was sure had been a warning. In the dream, there had been a large dog... and s_c had died. However a booming bark heralded {PRONOUN/s_c/poss} doom, having recognized the signs too late.",
                         "exp": 40,
                         "weight": 10,
                         "stat_skill": ["PROPHET,1", "OMEN,1"],
