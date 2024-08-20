@@ -130,8 +130,9 @@ class Sprites:
             'singlecolours', 'speckledcolours', 'tabbycolours', 'bengalcolours', 'marbledcolours',
             'rosettecolours', 'smokecolours', 'tickedcolours', 'mackerelcolours', 'classiccolours',
             'sokokecolours', 'agouticolours', 'singlestripecolours', 'maskedcolours',
+            'manedcolours', 'ocelotcolours', 'lynxcolours', 'royalcolours', 'bobcatcolours', 'cheetahcolours',
             'shadersnewwhite', 'lightingnew',
-            'whitepatches', 'minkswhite', 'tortiepatchesmasks', 'minkstorties',
+            'whitepatches', 'minkswhite', 'exoticwhitepatches','tortiepatchesmasks', 'minkstorties',
             'fademask', 'fadestarclan', 'fadedarkforest',
             'symbols', 'plant2_accessories', 'flower_accessories', 'snake_accessories', 'smallAnimal_accessories', 'aliveInsect_accessories',
     'deadInsect_accessories', 'fruit_accessories', 'crafted_accessories', 'tail2_accessories', 'bonesacc', 'butterflymothacc', 'twolegstuff'
@@ -220,6 +221,9 @@ class Sprites:
             ['MINKSHILOH', 'MINKFRECKLED', 'MINKHEARTBEAT']
         ]
 
+        exotic_white_patches = [
+            ['JACKAL', 'CHITAL']    
+        ]
         for row, patches in enumerate(white_patches):
             for col, patch in enumerate(patches):
                 self.make_group('whitepatches', (col, row), f'white{patch}')
@@ -230,6 +234,9 @@ class Sprites:
         for row, patches in enumerate(white_patches):
             for col, patch in enumerate(patches):
                 self.make_group('whitepatches', (col, row), f'white{patch}')
+        for row, patches in enumerate(exotic_white_patches):
+            for col, patch in enumerate(patches):
+                self.make_group('exoticwhitepatches', (col, row), f'white{patch}')
 
         # Define colors and categories
         color_categories = [
@@ -242,7 +249,8 @@ class Sprites:
             'singlecolours', 'tabbycolours', 'marbledcolours', 'rosettecolours',
             'smokecolours', 'tickedcolours', 'speckledcolours', 'bengalcolours',
             'mackerelcolours', 'classiccolours', 'sokokecolours', 'agouticolours',
-            'singlestripecolours', 'maskedcolours'
+            'singlestripecolours', 'maskedcolours', 'manedcolours', 'ocelotcolours',
+            'lynxcolours', 'royalcolours', 'bobcatcolours', 'cheetahcolours'
         ]
 
         for row, colors in enumerate(color_categories):

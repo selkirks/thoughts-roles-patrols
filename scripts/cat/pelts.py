@@ -25,6 +25,12 @@ class Pelt:
         'Masked': 'masked',
         'Tortie': None,
         'Calico': None,
+        'Maned': 'maned',
+        'Ocelot': 'ocelot',
+        'Lynx': 'lynx',
+        'Royal': 'royal',
+        'Bobcat': 'bobcat',
+        'Cheetah': 'cheetah',
     }
 
     # ATTRIBUTES, including non-pelt related
@@ -58,7 +64,8 @@ class Pelt:
             'MINKFADEBELLY', 'MINKFRONT', 'MINKBLOSSOMSTEP', 'MINKPEBBLE', 'MINKTAILTWO', 'MINKBUDDY', 'MINKBACKSPOT', 'MINKEYEBAGS', 'MINKBULLSEYE', 'MINKFINN', 'MINKDIGIT', 'MINKKROPKA', 'MINKFCTWO', 'MINKFCONE', 'MINKMIA', 'MINKSCAR',
             'MINKBUSTER', 'MINKSMOKEY', 'MINKHAWKBLAZE', 'MINKCAKE', 'MINKROSINA', 'MINKPRINCESS', 'MINKLOCKET', 'MINKBLAZEMASK', 'MINKTEARS', 'MINKDOUGIE']
     tortiebases = ['single', 'tabby', 'bengal', 'marbled', 'ticked', 'smoke', 'rosette', 'speckled', 'mackerel',
-                   'classic', 'sokoke', 'agouti', 'singlestripe', 'masked']
+                   'classic', 'sokoke', 'agouti', 'singlestripe', 'masked','maned', 'ocelot', 'lynx', 'royal',
+                   'bobcat', 'cheetah']
 
     pelt_length = ["short", "medium", "long"]
     eye_colours = ['YELLOW', 'AMBER', 'HAZEL', 'PALEGREEN', 'GREEN', 'BLUE', 'DARKBLUE', 'GREY', 'CYAN', 'EMERALD', 'PALEBLUE', 
@@ -177,10 +184,10 @@ class Pelt:
     tail2_accessories = ["SEAWEED", "DAISY CORSAGE"
                     ]
 
-    tabbies = ["Tabby", "Ticked", "Mackerel", "Classic", "Sokoke", "Agouti"]
-    spotted = ["Speckled", "Rosette"]
+    tabbies = ["Tabby", "Ticked", "Mackerel", "Classic", "Sokoke", "Agouti", "Royal"]
+    spotted = ["Speckled", "Rosette", "Lynx", "Bobcat"]
     plain = ["SingleColour", "TwoColour", "Smoke", "Singlestripe"]
-    exotic = ["Bengal", "Marbled", "Masked"]
+    exotic = ["Bengal", "Marbled", "Masked", "Maned", "Ocelot", "Cheetah"]
     torties = ["Tortie", "Calico"]
     pelt_categories = [tabbies, spotted, plain, exotic, torties]
 
@@ -217,13 +224,13 @@ class Pelt:
     high_white = ['ANY', 'ANYTWO', 'BROKEN', 'FRECKLES', 'RINGTAIL', 'HALFFACE', 'PANTSTWO',
                 'GOATEE', 'PRINCE', 'FAROFA', 'MISTER', 'PANTS', 'REVERSEPANTS', 'HALFWHITE', 'APPALOOSA', 'PIEBALD',
                 'CURVED', 'GLASS', 'MASKMANTLE', 'MAO', 'PAINTED', 'SHIBAINU', 'OWL', 'BUB', 'SPARROW', 'TRIXIE',
-                'SAMMY', 'FRONT', 'BLOSSOMSTEP', 'BULLSEYE', 'FINN', 'SCAR', 'BUSTER', 'HAWKBLAZE', 'CAKE',
+                'SAMMY', 'FRONT', 'BLOSSOMSTEP', 'BULLSEYE', 'FINN', 'SCAR', 'BUSTER', 'HAWKBLAZE', 'CAKE', 'CHITAL',
                 'MINKTHREE', 'MINKOREO', 'MINKGRUMPYFACE', 'MINKPACMAN', 'MINKPAIGE', 'MINKMOTTLED', 'MINKDELILAH']
     mostly_white = ['VAN', 'ONEEAR', 'LIGHTSONG', 'TAIL', 'HEART', 'MOORISH', 'APRON', 'CAPSADDLE',
                     'CHESTSPECK', 'BLACKSTAR', 'PETAL', 'HEARTTWO','PEBBLESHINE', 'BOOTS', 'COW', 'COWTWO', 'LOVEBUG',
                     'SHOOTINGSTAR', 'EYESPOT', 'PEBBLE', 'TAILTWO', 'BUDDY', 'KROPKA', 'MINKHALF', 'MINKBANDANA','MINKSWOOP']
     point_markings = ['COLOURPOINT', 'RAGDOLL', 'SEPIAPOINT', 'MINKPOINT', 'SEALPOINT', 'MINKSMOKE', 'MINKBODY']
-    vit = ['VITILIGO', 'VITILIGOTWO', 'MOON', 'PHANTOM', 'KARPATI', 'POWDER', 'BLEACHED', 'SMOKEY', 'MINKBRINDLE', 'MINKFRECKLED', 'MINKSMUDGED']
+    vit = ['VITILIGO', 'VITILIGOTWO', 'MOON', 'PHANTOM', 'KARPATI', 'POWDER', 'BLEACHED', 'SMOKEY', 'MINKBRINDLE', 'MINKFRECKLED', 'MINKSMUDGED','JACKAL']
     white_sprites = [
         little_white, mid_white, high_white, mostly_white, point_markings, vit, 'FULLWHITE']
 
@@ -1307,7 +1314,13 @@ class Pelt:
             "Singlestripe": "dorsal-striped c_n",
             "Rosette": "unusually spotted c_n",
             "Sokoke": "c_n tabby",
-            "Masked": "masked c_n tabby"
+            "Masked": "masked c_n tabby",
+            "Maned": "oddly caped c_n",
+            "Ocelot": "oddly dappled c_n",
+            "Lynx": "flecked c_n",
+            "Royal": "dappled c_n",
+            "Bobcat": "spotted c_n",
+            "Cheetah": "unusually speckled c_n"
         }
 
         # Start with determining the base color name
