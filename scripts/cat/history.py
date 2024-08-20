@@ -267,7 +267,26 @@ class History:
             SkillPath.DREAM: ["understanding dreams"],
             SkillPath.CLAIRVOYANT: ["predicting the future"],
             SkillPath.PROPHET: ["understanding prophecies"],
-            SkillPath.GHOST: ["connecting to the afterlife"]
+            SkillPath.GHOST: ["connecting to the afterlife"],
+            SkillPath.GARDENER: ["tending to the Clan's garden"],
+            SkillPath.UNKNOWN: ["connecting to the unknown residence"],
+            SkillPath.WAKEFUL: ["vigilance"],
+            SkillPath.DELIVERER: ["delivering kits"],
+            SkillPath.DECORATOR: ["decorating dens"],
+            SkillPath.LEADERSHIP: ["leading"],
+            SkillPath.AGILE: ["agility"],
+            SkillPath.STEALTHY: ["stealth"],
+            SkillPath.MEMORY: ["memorization"],
+            SkillPath.MESSENGER: ["delivering messages"],
+            SkillPath.ASSIST: ["assisting Clanmates"],
+            SkillPath.HISTORIAN: ["reciting history"],
+            SkillPath.BOOKMAKER: ["creating stories"],
+            SkillPath.TUNNELER: ["tunneling"],
+            SkillPath.PATIENT: ["calmness"],
+            SkillPath.DETECTIVE: ["solving mysteries"],
+            SkillPath.HERBALIST: ["creating remedies"],
+            SkillPath.CHEF: ["preparing food"],
+            SkillPath.PRODIGY: ["learning"]
         }
 
         for _ment in cat.history.mentor_influence["skill"]:
