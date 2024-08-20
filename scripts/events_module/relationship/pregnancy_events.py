@@ -644,7 +644,7 @@ class Pregnancy_Events:
             if other_cat and not All_Mates_Outside:
                 adding_text = choice(events["birth"]["outside_in_clan"])
             event_list.append(adding_text)
-        elif not affair_partners and not Dead_Mate and not All_Mates_Outside:
+        elif not Both_Unmated and not affair_partners and not Dead_Mate and not All_Mates_Outside:
             involved_cats.append(RandomChoice.ID)
             event_list.append(choice(events["birth"]["two_parents"]))
         elif not affair_partners and Dead_Mate or All_Mates_Outside:
