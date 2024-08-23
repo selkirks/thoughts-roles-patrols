@@ -740,7 +740,7 @@ class Cat:
             self.genderalign = 'intersex '
         if nb_chance == 1:
             self.genderalign += "sam"
-        if (self.gender == "molly" or (self.gender == 'intersex' and 'Y' not in self.genotype.sexgene)):
+        elif (self.gender == "molly" or (self.gender == 'intersex' and 'Y' not in self.genotype.sexgene)):
             if trans_chance == 1:
                 self.genderalign += "trans tom"
             else:
