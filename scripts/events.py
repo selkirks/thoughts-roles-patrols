@@ -1564,7 +1564,7 @@ class Events:
                     _ready = cat.moons >= 12
                 else:
                     _ready = (
-                        cat.experience_level not in ["untrained", "trainee"]
+                        cat.experience_level not in ["untrained", "trainee","beginner"]
                         and cat.moons >= game.config["graduation"]["min_graduating_age"]
                     ) or cat.moons >= game.config["graduation"]["max_apprentice_age"][
                         cat.status
