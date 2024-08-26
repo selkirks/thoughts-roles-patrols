@@ -926,11 +926,35 @@ class Pelt:
         # PELT TINT
         # Basic tints as possible for all colors.
         base_tints = sprites.cat_tints["possible_tints"]["basic"]
-        if self.colour in sprites.cat_tints["colour_groups"]:
-            color_group = sprites.cat_tints["colour_groups"].get(self.colour, "warm")
-            color_tints = sprites.cat_tints["possible_tints"][color_group]
+        
+        colour = ""
+        if self.phenotype.genotype.white[0] == "W":
+            colour = "WHITE"
+        elif 'point' in self.phenotype.point or 'silver' in self.phenotype.silvergold or (self.phenotype.genotype.dilute[0] == 'd' and self.phenotype.genotype.pinkdilute[0] == "dp"):
+            colour = "PALE"
+        elif 'gold' in self.phenotype.silvergold or 'sunshine' in self.phenotype.silvergold:
+            colour = "GOLDEN"
         else:
-            color_tints = []
+            if (self.phenotype.genotype.dilute[0] == 'd' or self.phenotype.genotype.pinkdilute[0] == "dp"):
+                if self.phenotype.colour in ['cream', 'cream apricot', 'honey']:
+                    colour = "CREAM"
+                elif self.phenotype.colour in ['fawn', 'fawn caramel', 'buff']:
+                    colour = "FAWN"
+                elif self.phenotype.colour in ['lilac', 'lilac caramel', 'champagne']:
+                    colour = "LILAC"
+                else:
+                    colour = "BLUE"
+            else:
+                if self.phenotype.colour in ['flame', 'red']:
+                    colour = "RED"
+                elif self.phenotype.colour == "cinnamon":
+                    colour = "CINNAMON"
+                elif self.phenotype.colour == "chocolate":
+                    colour = "CHOCOLATE"
+                else:
+                    colour = "BLACK"
+        color_group = sprites.cat_tints["colour_groups"].get(colour, "warm")
+        color_tints = sprites.cat_tints["possible_tints"][color_group]
 
         if base_tints or color_tints:
             self.tint = choice(base_tints + color_tints)
@@ -942,7 +966,7 @@ class Pelt:
             # Now for white patches
             base_tints = sprites.white_patches_tints["possible_tints"]["basic"]
             if self.colour in sprites.cat_tints["colour_groups"]:
-                color_group = sprites.white_patches_tints["colour_groups"].get(self.colour, "white")
+                color_group = sprites.white_patches_tints["colour_groups"].get(colour, "white")
                 color_tints = sprites.white_patches_tints["possible_tints"][color_group]
             else:
                 color_tints = []

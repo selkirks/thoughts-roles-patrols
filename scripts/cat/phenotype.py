@@ -84,7 +84,7 @@ class Phenotype():
         if('o' not in self.genotype.sexgene):
             if(self.genotype.dilute[0] == "d"):
                 if(self.genotype.pinkdilute[0] == "dp"):
-                    colour += "ivory"
+                    colour = "ivory"
                 else:
                     colour = "cream"
 

@@ -72,10 +72,11 @@ def json_load():
                         parent2=cat["parent2"],
                         moons=cat["moons"],
                         loading_cat=True)
-                        
             new_cat.pelt = Pelt(
                 new_cat.genotype,
                 new_cat.phenotype,
+                tint=cat.get('tint', 'none'),
+                white_patches_tint=cat.get('white_tint', 'none'),
                 paralyzed=cat["paralyzed"],
                 kitten_sprite=(
                     cat["sprite_kitten"]
