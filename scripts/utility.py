@@ -3375,6 +3375,7 @@ def generate_sprite(
             gensprite.blit(nose, (0, 0))
 
             whitesprite = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
+            tintedwhitesprite = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
 
             if(genotype.white_pattern != 'No' and genotype.white_pattern):
                 for x in genotype.white_pattern:
@@ -3385,20 +3386,7 @@ def generate_sprite(
                     if('break/' in x):
                         whitesprite.blit(sprites.sprites[x + cat_sprite], (0, 0))
             whitesprite.set_colorkey((0, 0, 255))
-            if (
-                    cat.pelt.white_patches_tint != "none"
-                    and cat.pelt.white_patches_tint
-                    in sprites.white_patches_tints["tint_colours"]
-            ):
-                tint = pygame.Surface((sprites.size, sprites.size)).convert_alpha()
-                tint.fill(
-                    tuple(
-                        sprites.white_patches_tints["tint_colours"][
-                            cat.pelt.white_patches_tint
-                        ]
-                    )
-                )
-                whitesprite.blit(tint, (0, 0), special_flags=pygame.BLEND_RGB_MULT)
+            tintedwhitesprite.blit(whitesprite, (0, 0))
 
             nose.blit(sprites.sprites['pads' + cat_sprite], (0, 0))
             nose.blit(sprites.sprites['nose' + cat_sprite], (0, 0))
@@ -3412,16 +3400,32 @@ def generate_sprite(
                         nose2.blit(sprites.sprites[x + cat_sprite], (0, 0))
             nose2.blit(nose, (0, 0), special_flags=pygame.BLEND_RGBA_MIN)
 
-            gensprite.blit(whitesprite, (0, 0))
+            
+            if (
+                    cat.pelt.white_patches_tint != "none"
+                    and cat.pelt.white_patches_tint
+                    in sprites.white_patches_tints["tint_colours"]
+            ):
+                tint = pygame.Surface((sprites.size, sprites.size)).convert_alpha()
+                tint.fill(
+                    tuple(
+                        sprites.white_patches_tints["tint_colours"][
+                            cat.pelt.white_patches_tint
+                        ]
+                    )
+                )
+                tintedwhitesprite.blit(tint, (0, 0), special_flags=pygame.BLEND_RGB_MULT)
+
             if(genotype.vitiligo):
                 for x in vitiligo:
                     if x in genotype.white_pattern:
-                        gensprite.blit(sprites.sprites[x + cat_sprite], (0, 0))
+                        tintedwhitesprite.blit(sprites.sprites[x + cat_sprite], (0, 0))
             if genotype.white_pattern:
                 if 'dorsal1' in genotype.white_pattern:
-                    gensprite.blit(sprites.sprites['dorsal1' + cat_sprite], (0, 0))
+                    tintedwhitesprite.blit(sprites.sprites['dorsal1' + cat_sprite], (0, 0))
                 elif 'dorsal2' in genotype.white_pattern:
-                    gensprite.blit(sprites.sprites['dorsal2' + cat_sprite], (0, 0))
+                    tintedwhitesprite.blit(sprites.sprites['dorsal2' + cat_sprite], (0, 0))
+            gensprite.blit(tintedwhitesprite, (0, 0))
 
 
             if cat.genotype.sedesp == ['hr', 're'] or (cat.genotype.sedesp[0] == 're' and sprite_age < 12) or (cat.genotype.laperm[0] == 'Lp' and sprite_age < 4):
