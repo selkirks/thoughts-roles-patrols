@@ -2795,17 +2795,38 @@ def generate_sprite(
             def ApplySmokeEffects(whichmain):
                 if(genotype.ext[0] == 'Eg' and genotype.agouti[0] != 'a'):
                     whichmain.blit(sprites.sprites['grizzle' + cat_sprite], (0, 0))
-                if genotype.ghosting[0] == 'Gh' or (genotype.silver[0] == 'I' and cat.pelt.length == 'long'):
+                if genotype.ghosting[0] == 'Gh' and not (genotype.silver[0] == 'I' and cat.pelt.length == 'long'):
                     ghostingbase = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
                     ghostingbase.blit(sprites.sprites['ghost' + cat_sprite], (0, 0))
                     if(sprite_age < 4):
                         ghostingbase.set_alpha(150)
                     
+                    #whichmain.blit(ghostingbase, (0, 0))
+                if (genotype.silver[0] == 'I' and cat.pelt.length == 'long'):
+                    ghostingbase = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
+                    ghostingbase.blit(sprites.sprites['ghost' + cat_sprite], (0, 0))
+                    if genotype.wbtype == 'low':
+                        ghostingbase.set_alpha(150)
+                    
                     whichmain.blit(ghostingbase, (0, 0))
-                if (genotype.silver[0] == 'I' and cat.pelt.length != 'long'):
-                    whichmain.blit(sprites.sprites['smoke' + cat_sprite], (0, 0))
+                if (genotype.silver[0] == 'I'):
+                    smokeLayer = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
+                    smokeLayer.blit(sprites.sprites['smoke' + cat_sprite], (0, 0))
+                    if genotype.wbtype == 'low' and cat.pelt.length == 'long':
+                        smokeLayer.set_alpha(50)
+                    elif genotype.wbtype == 'low':
+                        smokeLayer.set_alpha(100)
+                    else:
+                        smokeLayer.set_alpha(175)
+                    whichmain.blit(smokeLayer, (0, 0))
                 if('light smoke' in phenotype.silvergold):
-                    whichmain.blit(sprites.sprites['smoke' + cat_sprite], (0, 0))
+                    smokeLayer = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
+                    smokeLayer.blit(sprites.sprites['smoke' + cat_sprite], (0, 0))
+                    if genotype.wbtype == 'high':
+                        smokeLayer.set_alpha(100)
+                    elif cat.pelt.length != 'long':
+                        smokeLayer.set_alpha(175)                    
+                    whichmain.blit(smokeLayer, (0, 0))
                 
                 return whichmain
 
@@ -3003,11 +3024,10 @@ def generate_sprite(
                             
                         whichmain = ApplySmokeEffects(whichmain)
 
-                        stripebase = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
-                    
-                        stripebase.blit(CreateStripes(whichcolour, "solid"), (0, 0))
-                        
-                        whichmain.blit(stripebase, (0, 0))
+                        if phenotype.length != "longhaired":
+                            stripebase = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
+                            stripebase.blit(CreateStripes(whichcolour, "solid"), (0, 0))
+                            whichmain.blit(stripebase, (0, 0))
                     elif("cm" in genotype.pointgene):
                         colour = None
                         coloursurface = None
@@ -3015,12 +3035,13 @@ def generate_sprite(
                             whichmain.blit(sprites.sprites['lightbasecolours2'], (0, 0)) 
                             whichmain = ApplySmokeEffects(whichmain)
 
-                            stripebase = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
-                        
-                            stripebase.blit(CreateStripes('cinnamon', 'solid', pattern="fullbar"), (0, 0))
-                            stripebase.set_alpha(150)
+                            if phenotype.length != "longhaired":
+                                stripebase = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
+                            
+                                stripebase.blit(CreateStripes('cinnamon', 'solid', pattern="fullbar"), (0, 0))
+                                stripebase.set_alpha(150)
 
-                            whichmain.blit(stripebase, (0, 0))
+                                whichmain.blit(stripebase, (0, 0))
                         else:
                             stripebase = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
                                 
@@ -3060,8 +3081,10 @@ def generate_sprite(
                                     whichmain.blit(sprites.sprites['lightbasecolours0'], (0, 0))
                                     colour = 'lightbasecolours0'
                             
-                            stripebase = CreateStripes(colour, 'solid', coloursurface=coloursurface)
-                            whichmain.blit(stripebase, (0, 0))
+                            
+                            if phenotype.length != "longhaired":
+                                stripebase = CreateStripes(colour, 'solid', coloursurface=coloursurface)
+                                whichmain.blit(stripebase, (0, 0))
 
                             pointbase = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
                             pointbase2 = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
@@ -3072,9 +3095,10 @@ def generate_sprite(
                         
                             whichmain = ApplySmokeEffects(whichmain)
 
-
-                            stripebase = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
-                            stripebase.blit(CreateStripes(whichcolour, 'solid'), (0, 0))
+                            
+                            if phenotype.length != "longhaired":
+                                stripebase = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
+                                stripebase.blit(CreateStripes(whichcolour, 'solid'), (0, 0))
 
                             pointbase2.blit(stripebase, (0, 0))
 
@@ -3153,9 +3177,12 @@ def generate_sprite(
                                 pointbase2.blit(sprites.sprites['caramel0'], (0, 0))
                         pointbase2 = ApplySmokeEffects(pointbase2)
 
-                        stripebase = CreateStripes(whichcolour, "solid")
                         
-                        pointbase2.blit(stripebase, (0, 0))
+                        if phenotype.length != "longhaired":
+                            stripebase = CreateStripes(whichcolour, "solid")
+                        
+                            pointbase2.blit(stripebase, (0, 0))
+
                         if(get_current_season() == "Greenleaf"):
                             pointbase.blit(sprites.sprites['pointsl' + cat_sprite], (0, 0))
                             pointbase.blit(pointbase2, (0, 0), 
