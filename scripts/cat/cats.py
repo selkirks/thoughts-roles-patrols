@@ -88,8 +88,8 @@ class Cat:
     # Ranges are inclusive to both bounds
     experience_levels_range = {
         "untrained": (0, 0),
-        "trainee": (1, 40),
-        "beginner": (41, 60),
+        "trainee": (1, 49),
+        "beginner": (50, 60),
         "novice": (61, 90), 
         "prepared": (91, 130),
         "competent": (131, 170),
