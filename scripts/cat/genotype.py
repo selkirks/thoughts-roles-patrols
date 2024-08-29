@@ -252,6 +252,7 @@ class Genotype:
         
         try:
             self.body_value = jsonstring["body_type"]
+            self.body_label = jsonstring["body_type_label"]
             self.height_value = jsonstring["height"]
             self.shoulder_height = jsonstring["shoulder_height"]
         except:
@@ -346,6 +347,7 @@ class Genotype:
             "extraeyecolour" : self.extraeyecolour,
 
             "body_type" : self.body_value,
+            "body_type_label" : self.body_label,
             "height" : self.height_value,
             "shoulder_height" : self.shoulder_height,
 
@@ -1407,7 +1409,15 @@ class Genotype:
         x = sum(self.height_ranges)
 
         self.height_value = randint(1, x)
- 
+    
+    def VerifyBody(self, body_types):
+        for i in range(7):
+            if i == 0:
+                if self.body_label == body_types[0] and self.body_value >= self.body_indexes[0]:
+                    self.body_value = randint(0, self.body_indexes[0]-1)
+            else:
+                if self.body_label == body_types[i] and (self.body_value >= self.body_indexes[i] or self.body_value < self.body_indexes[i-1]):
+                    self.body_value = randint(self.body_indexes[i-1], self.body_indexes[i]-1)
     def VerifyHeight(self):
         height = self.shoulder_height
         if self.munch[0] == 'Mk':
@@ -1416,43 +1426,43 @@ class Genotype:
 
         if height == 5.00:
             if self.height_value > self.height_indexes[0]:
-                self.height_value = randint(0, self.height_indexes[0])
+                self.height_value = randint(0, self.height_indexes[0]-1)
             return
         elif height == 16.00:
             if self.height_value < self.height_indexes[9]:
-                self.height_value = randint(self.height_indexes[9], sum(self.height_ranges))
+                self.height_value = randint(self.height_indexes[8], self.height_indexes[9]-1)
             return
         elif 6.01 > height > 5.00:
             if self.height_indexes[1] > self.height_value or self.height_value >= self.height_indexes[2]:
-                self.height_value = randint(self.height_indexes[0]+1, self.height_indexes[1])
+                self.height_value = randint(self.height_indexes[0], self.height_indexes[1]-1)
             return
         elif 7.51 > height > 6.00:
             if self.height_indexes[2] > self.height_value or self.height_value >= self.height_indexes[3]:
-                self.height_value = randint(self.height_indexes[1]+1, self.height_indexes[2])
+                self.height_value = randint(self.height_indexes[1], self.height_indexes[2]-1)
             return
         elif 9 > height > 7.50:
             if self.height_indexes[3] > self.height_value or self.height_value >= self.height_indexes[4]:
-                self.height_value = randint(self.height_indexes[2]+1, self.height_indexes[3])
+                self.height_value = randint(self.height_indexes[2], self.height_indexes[3]-1)
             return
         elif 11.01 > height > 8.99:
             if self.height_indexes[4] > self.height_value or self.height_value >= self.height_indexes[5]:
-                self.height_value = randint(self.height_indexes[3]+1, self.height_indexes[4])
+                self.height_value = randint(self.height_indexes[3], self.height_indexes[4]-1)
             return
         elif 12.51 > height > 11.00:
             if self.height_indexes[5] > self.height_value or self.height_value >= self.height_indexes[6]:
-                self.height_value = randint(self.height_indexes[4]+1, self.height_indexes[5])
+                self.height_value = randint(self.height_indexes[4], self.height_indexes[5]-1)
             return
         elif 14.01 > height > 12.50:
             if self.height_indexes[6] > self.height_value or self.height_value >= self.height_indexes[7]:
-                self.height_value = randint(self.height_indexes[5]+1, self.height_indexes[6])
+                self.height_value = randint(self.height_indexes[5], self.height_indexes[6]-1)
             return
         elif 15.00 > height > 14.00:
             if self.height_indexes[7] > self.height_value or self.height_value >= self.height_indexes[8]:
-                self.height_value = randint(self.height_indexes[6]+1, self.height_indexes[7])
+                self.height_value = randint(self.height_indexes[6], self.height_indexes[7]-1)
             return
         elif 16.00 > height > 14.99:
             if self.height_indexes[8] > self.height_value or self.height_value >= self.height_indexes[9]:
-                self.height_value = randint(self.height_indexes[7]+1, self.height_indexes[8])
+                self.height_value = randint(self.height_indexes[7], self.height_indexes[8]-1)
             return
 
     def PolyEval(self):
@@ -1540,8 +1550,12 @@ class Genotype:
         body_types = ['snub-nosed', 'cobby', 'semi-cobby', 'intermediate', 'semi-oriental', 'oriental', 'wedge-faced']
         height_types = ['teacup', 'tiny', 'small', 'below average', 'average', 'above average', 'large', 'massive', 'giant', 'goliath']
 
-        index = next((n for n in range(7) if self.body_value <= self.body_indexes[n]))
-        self.body_label = body_types[index]
+        print(self.body_indexes)
+        if self.body_label != '':
+            self.VerifyBody(body_types)
+        else:
+            index = next((n for n in range(7) if self.body_value <= self.body_indexes[n]))
+            self.body_label = body_types[index]
 
         if self.shoulder_height > 0:
             self.VerifyHeight()
