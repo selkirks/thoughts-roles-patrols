@@ -3386,9 +3386,8 @@ def generate_sprite(
             if(genotype.white_pattern != 'No' and genotype.white_pattern):
                 for x in genotype.white_pattern:
                     if('break/' in x):
-                        whitesprite.blit(sprites.sprites[x + cat_sprite], (0, 0))
-            whitesprite.set_colorkey((0, 0, 255))
-            tintedwhitesprite.blit(whitesprite, (0, 0), special_flags=pygame.BLEND_RGBA_ADD)
+                        whitesprite.blit(sprites.sprites[x + cat_sprite], (0, 0), special_flags=pygame.BLEND_RGBA_SUB)
+            tintedwhitesprite.blit(whitesprite, (0, 0))
 
             nose.blit(sprites.sprites['pads' + cat_sprite], (0, 0))
             nose.blit(sprites.sprites['nose' + cat_sprite], (0, 0))
@@ -3401,6 +3400,16 @@ def generate_sprite(
                     if x in genotype.white_pattern:
                         nose2.blit(sprites.sprites[x + cat_sprite], (0, 0))
             nose2.blit(nose, (0, 0), special_flags=pygame.BLEND_RGBA_MIN)
+
+            if(genotype.vitiligo):
+                for x in vitiligo:
+                    if x in genotype.white_pattern:
+                        tintedwhitesprite.blit(sprites.sprites[x + cat_sprite], (0, 0))
+            if genotype.white_pattern:
+                if 'dorsal1' in genotype.white_pattern:
+                    tintedwhitesprite.blit(sprites.sprites['dorsal1' + cat_sprite], (0, 0))
+                elif 'dorsal2' in genotype.white_pattern:
+                    tintedwhitesprite.blit(sprites.sprites['dorsal2' + cat_sprite], (0, 0))
 
             
             if (
@@ -3418,16 +3427,6 @@ def generate_sprite(
                     )
                 )
                 tintedwhitesprite.blit(tint, (0, 0), special_flags=pygame.BLEND_RGB_MULT)
-
-            if(genotype.vitiligo):
-                for x in vitiligo:
-                    if x in genotype.white_pattern:
-                        tintedwhitesprite.blit(sprites.sprites[x + cat_sprite], (0, 0))
-            if genotype.white_pattern:
-                if 'dorsal1' in genotype.white_pattern:
-                    tintedwhitesprite.blit(sprites.sprites['dorsal1' + cat_sprite], (0, 0))
-                elif 'dorsal2' in genotype.white_pattern:
-                    tintedwhitesprite.blit(sprites.sprites['dorsal2' + cat_sprite], (0, 0))
             gensprite.blit(tintedwhitesprite, (0, 0))
 
 
@@ -3507,19 +3506,17 @@ def generate_sprite(
 
         # make sure colours are in the lines
         if('rexed' in cat.phenotype.furtype or 'wiry' in cat.phenotype.furtype):
-            gensprite.blit(sprites.sprites['rexbord'+ cat_sprite], (0, 0))
-            gensprite.blit(sprites.sprites['rexbord'+ cat_sprite], (0, 0))
+            gensprite.blit(sprites.sprites['rexbord'+ cat_sprite], (0, 0), special_flags=pygame.BLEND_RGBA_SUB)
+            gensprite.blit(sprites.sprites['rexbord'+ cat_sprite], (0, 0), special_flags=pygame.BLEND_RGBA_SUB)
         else:
-            gensprite.blit(sprites.sprites['normbord'+ cat_sprite], (0, 0))
-            gensprite.blit(sprites.sprites['normbord'+ cat_sprite], (0, 0))
+            gensprite.blit(sprites.sprites['normbord'+ cat_sprite], (0, 0), special_flags=pygame.BLEND_RGBA_SUB)
+            gensprite.blit(sprites.sprites['normbord'+ cat_sprite], (0, 0), special_flags=pygame.BLEND_RGBA_SUB)
         if(cat.genotype.fold[0] == 'Fd'):
-            gensprite.blit(sprites.sprites['foldbord'+ cat_sprite], (0, 0))
-            gensprite.blit(sprites.sprites['foldbord'+ cat_sprite], (0, 0))
+            gensprite.blit(sprites.sprites['foldbord'+ cat_sprite], (0, 0), special_flags=pygame.BLEND_RGBA_SUB)
+            gensprite.blit(sprites.sprites['foldbord'+ cat_sprite], (0, 0), special_flags=pygame.BLEND_RGBA_SUB)
         elif(cat.genotype.curl[0] == 'Cu'):
-            gensprite.blit(sprites.sprites['curlbord'+ cat_sprite], (0, 0))
-            gensprite.blit(sprites.sprites['curlbord'+ cat_sprite], (0, 0))
-        
-        gensprite.set_colorkey((0, 0, 255))
+            gensprite.blit(sprites.sprites['curlbord'+ cat_sprite], (0, 0), special_flags=pygame.BLEND_RGBA_SUB)
+            gensprite.blit(sprites.sprites['curlbord'+ cat_sprite], (0, 0), special_flags=pygame.BLEND_RGBA_SUB)
 
         new_sprite.blit(gensprite, (0, 0))
 
@@ -3558,8 +3555,7 @@ def generate_sprite(
             else:
                 earlines.blit(sprites.sprites['foldlineartdead' + cat_sprite], (0, 0))
 
-        earlines.blit(sprites.sprites['isolateears' + cat_sprite], (0, 0))
-        earlines.set_colorkey((0, 0, 255))
+        earlines.blit(sprites.sprites['isolateears' + cat_sprite], (0, 0), special_flags=pygame.BLEND_RGBA_SUB)
 
         lineart.blit(earlines, (0, 0))
         if('rexed' in phenotype.furtype or 'wiry' in phenotype.furtype):
@@ -3577,8 +3573,7 @@ def generate_sprite(
             else:
                 bodylines.blit(sprites.sprites['lineartdead' + cat_sprite], (0, 0))
             
-        bodylines.blit(sprites.sprites['noears' + cat_sprite], (0, 0))
-        bodylines.set_colorkey((0, 0, 255))
+        bodylines.blit(sprites.sprites['noears' + cat_sprite], (0, 0), special_flags=pygame.BLEND_RGBA_SUB)
         if cat_sprite != '20':
             lineart.blit(bodylines, (0, 0))
         new_sprite.blit(lineart, (0, 0))
