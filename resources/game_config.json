@@ -462,7 +462,10 @@
     "ringtail": 100,
     "munchkin": 100,
     "polydactyl": 25,
-    "DBE": 50
+    "DBE": 50,
+
+    "body_ranges" : [1, 4, 12, 60, 12, 4, 1],
+    "height_ranges" : [1, 4, 12, 60, 180, 60, 12, 2, 2, 1]
   },
   "tnr_mode": {
     "kittypet_neuter": 0.8,
