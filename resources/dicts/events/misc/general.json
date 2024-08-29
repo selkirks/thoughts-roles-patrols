@@ -3114,7 +3114,10 @@
     },
     "r_c": {
       "age": ["any"],
-      "status": ["any"]
+      "status": ["apprentice",
+          "warrior",
+          "deputy",
+          "leader"]
     }
   },
   {
