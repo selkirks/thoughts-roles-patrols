@@ -1550,7 +1550,6 @@ class Genotype:
         body_types = ['snub-nosed', 'cobby', 'semi-cobby', 'intermediate', 'semi-oriental', 'oriental', 'wedge-faced']
         height_types = ['teacup', 'tiny', 'small', 'below average', 'average', 'above average', 'large', 'massive', 'giant', 'goliath']
 
-        print(self.body_indexes)
         if self.body_label != '':
             self.VerifyBody(body_types)
         else:
