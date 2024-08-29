@@ -83,6 +83,8 @@ class Genotype:
         self.wbtype = ""
         self.wbsum = 0
 
+        self.saturation = 2 #choice([0, 1, 2, 2, 3, 3, 4, 4, 5, 6])
+
         self.rufousing = ""
         self.ruftype = ""
         self.rufsum = 0
@@ -218,6 +220,11 @@ class Genotype:
 
         self.wideband = jsonstring["wideband"]
 
+        try:
+            self.saturation = jsonstring["saturation"]
+        except:
+            pass
+
         self.rufousing = jsonstring["rufousing"]
 
         self.bengal = jsonstring["bengal"]
@@ -329,6 +336,7 @@ class Genotype:
             "pax3" : self.pax3,
 
             "wideband" : self.wideband,
+            "saturation" : self.saturation,
             "rufousing" : self.rufousing,
             "bengal" : self.bengal,
             "sokoke" : self.sokoke,
@@ -1267,6 +1275,12 @@ class Genotype:
         self.poly = [choice(par1.poly), choice(par2.poly)]
         self.pax3 = [choice(par1.pax3), choice(par2.pax3)]
 
+        if random() < 0.25:
+            self.saturation = par1.saturation
+        elif random() < 0.25:
+            self.saturation = par2.saturation
+        
+
         self.wideband = ""
         for i in range(8):
             tempwb = 0
@@ -1418,6 +1432,7 @@ class Genotype:
             else:
                 if self.body_label == body_types[i] and (self.body_value >= self.body_indexes[i] or self.body_value < self.body_indexes[i-1]):
                     self.body_value = randint(self.body_indexes[i-1], self.body_indexes[i]-1)
+    
     def VerifyHeight(self):
         height = self.shoulder_height
         if self.munch[0] == 'Mk':
@@ -1988,10 +2003,9 @@ class Genotype:
         self.Fur_Genes = [self.wirehair, self.laperm, self.cornish, self.urals, self.tenn, self.fleece, self.sedesp, self.ruhr, self.ruhrmod, self.lykoi]
         self.Other_Colour = [self.pinkdilute, self.dilutemd, self.ext, self.corin, self.karp, self.bleach, self.ghosting, self.satin, self.glitter]
         self.Body_Genes = [self.curl, self.fold, self.manx, self.kab, self.toybob, self.jbob, self.kub, self.ring, self.munch, self.poly, self.pax3]
-        self.Polygenes = ["Rufousing:", self.rufousing, self.ruftype, "Bengal:", self.bengal, self.bengtype, "Sokoke:", self.sokoke, self.soktype, "Spotted:", self.spotted, self.spottype, "Ticked:", self.tickgenes, self.ticktype]
-        self.Polygenes2 = ["Wideband:", self.wideband, self.wbtype, "Refraction:", self.refraction, "Pigmentation:", self.pigmentation]
+        self.Polygenes = [ "Saturation:", self.saturation, "Wideband:", self.wideband, self.wbtype, "Rufousing:", self.rufousing, self.ruftype,"Bengal:", self.bengal, self.bengtype, "Sokoke:", self.sokoke, self.soktype, "Spotted:", self.spotted, self.spottype, "Ticked:", self.tickgenes, self.ticktype, "Refraction:", self.refraction, "Pigmentation:", self.pigmentation]
 
-        return self.Cat_Genes, "Other Fur Genes: ", self.Fur_Genes, "Other Colour Genes: ", self.Other_Colour, "Body Mutations: ", self.Body_Genes, "Polygenes: ", self.Polygenes, self.Polygenes2
+        return self.Cat_Genes, "Other Fur Genes: ", self.Fur_Genes, "Other Colour Genes: ", self.Other_Colour, "Body Mutations: ", self.Body_Genes, "Polygenes: ", self.Polygenes
     
     def Mutate(self):
         print("MUTATION!")

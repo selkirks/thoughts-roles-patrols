@@ -2628,45 +2628,18 @@ def generate_sprite(
             phenotype = Phenotype(genotype)
             phenotype.PhenotypeOutput(genotype.gender)
 
-        solidcolours = {
-            'black' : 0,
-            'chocolate' : 1,
-            'cinnamon' : 2,
-            'lowred' : 3,
-            'mediumred' : 4,
-            'rufousedred' : 5,
-            'blue' : 6,
-            'lilac' : 7,
-            'fawn' : 8,
-            'lowcream' : 9,
-            'mediumcream' : 10,
-            'rufousedcream' : 11,
-            'dove' : 12,
-            'champagne' : 13,
-            'buff' : 14,
-            'lowhoney' : 15,
-            'mediumhoney' : 16,
-            'rufousedhoney' : 17,
-            'platinum' : 18,
-            'lavender' : 19,
-            'beige' : 20,
-            'lowivory' : 21,
-            'mediumivory' : 22,
-            'rufousedivory' : 23
-        }
-
         stripecolourdict = {
-                'rufousedapricot' : 'lowred',
-                'mediumapricot' : 'rufousedcream',
-                'lowapricot' : 'mediumcream',
+                'rufousedapricot0' : 'lowred0',
+                'mediumapricot0' : 'rufousedcream0',
+                'lowapricot0' : 'mediumcream0',
 
-                'rufousedhoney-apricot' : 'lowred',
-                'mediumhoney-apricot' : 'rufousedhoney',
-                'lowhoney-apricot' : 'mediumhoney',
+                'rufousedhoney-apricot0' : 'lowred0',
+                'mediumhoney-apricot0' : 'rufousedhoney0',
+                'lowhoney-apricot0' : 'mediumhoney0',
 
-                'rufousedivory-apricot' : 'lowhoney',
-                'mediumivory-apricot' : 'rufousedivory',
-                'lowivory-apricot' : 'mediumivory'
+                'rufousedivory-apricot0' : 'lowhoney0',
+                'mediumivory-apricot0' : 'rufousedivory0',
+                'lowivory-apricot0' : 'mediumivory0'
             }
         gensprite = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
                 
@@ -2709,7 +2682,7 @@ def generate_sprite(
                     stripebase.blit(sprites.sprites[stripecolour], (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
                 else:
                     surf = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
-                    surf.blit(sprites.sprites['basecolours'+ str(solidcolours.get(stripecolourdict.get(stripecolour, stripecolour)))], (0, 0))
+                    surf.blit(sprites.sprites[stripecolourdict.get(stripecolour, stripecolour)], (0, 0))
                     if phenotype.caramel == 'caramel' and not ('red' in stripecolour or 'cream' in stripecolour or 'honey' in stripecolour or 'ivory' in stripecolour or 'apricot' in stripecolour):    
                         surf.blit(sprites.sprites['caramel0'], (0, 0))
 
@@ -2732,10 +2705,7 @@ def generate_sprite(
                     stripebase.blit(middle, (0, 0))
 
                 if cat.genotype.furLength[0] == 'l':
-                    size = stripebase.get_size()
-                    scale_size = (int(size[0]*0.9), int(size[1]*0.9))
-                    stripebase = pygame.transform.smoothscale(stripebase, scale_size)
-                    stripebase = pygame.transform.smoothscale(stripebase, size)
+                    stripebase = pygame.transform.box_blur(stripebase, 1)
 
                 return stripebase
 
@@ -2756,10 +2726,21 @@ def generate_sprite(
                 unders.blit(sprites.sprites[cat_unders[0]], (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
                 unders.set_alpha(int(cat_unders[1] * 2.55))
                 whichmain.blit(unders, (0, 0))
-
+                if genotype.saturation < 3 and not ('red' in whichcolour or 'cream' in whichcolour or 'honey' in whichcolour or 'ivory' in whichcolour or 'apricot' in whichcolour):
+                    tint = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
+                    tint.blit(sprites.sprites['lightbasecolours0'], (0, 0))
+                    if genotype.saturation == 0:
+                        tint.set_alpha(50)
+                    elif genotype.saturation == 1:
+                        tint.set_alpha(37)
+                    elif genotype.saturation == 2:
+                        tint.set_alpha(25)
+                    whichmain.blit(tint, (0, 0))
+                    
+                
                 if phenotype.caramel == 'caramel' and not ('red' in whichcolour or 'cream' in whichcolour or 'honey' in whichcolour or 'ivory' in whichcolour or 'apricot' in whichcolour):    
                     whichmain.blit(sprites.sprites['caramel0'], (0, 0))
-
+                
                 return whichmain
         
             def AddStripes(whichmain, whichcolour, whichbase, coloursurface=None):
@@ -2780,13 +2761,14 @@ def generate_sprite(
                     stripebase.set_alpha(200)
                     whichmain.blit(stripebase, (0, 0))
                     stripebase = CreateStripes(whichcolour, whichbase, coloursurface=coloursurface, pattern='agouti')
-                elif('ec' in genotype.ext and 'Eg' not in genotype.ext):
+                elif('ec' in genotype.ext and 'Eg' not in genotype.ext and not ('red' in whichcolour or 'cream' in whichcolour or 'honey' in whichcolour or 'ivory' in whichcolour or 'apricot' in whichcolour)):
                     stripebase = CreateStripes(whichcolour, whichbase, coloursurface=coloursurface)
                     stripebase.set_alpha(200)
                     whichmain.blit(stripebase, (0, 0))
                     stripebase = CreateStripes(whichcolour, whichbase, coloursurface=coloursurface, pattern='agouti')
                 else:
                     stripebase.blit(CreateStripes(whichcolour, whichbase, coloursurface=coloursurface), (0, 0))
+                    pass
 
                 whichmain.blit(stripebase, (0, 0))
 
@@ -2841,7 +2823,7 @@ def generate_sprite(
                     else:
                         #create base
                         colourbase = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
-                        if(whichcolour == "black" and genotype.pointgene[0] == "cm"):
+                        if("black" in whichcolour and genotype.pointgene[0] == "cm"):
                             colourbase.blit(sprites.sprites[whichbase.replace("black", "cinnamon")], (0, 0))
                         else:
                             colourbase = TabbyBase(whichcolour, whichbase, cat_unders, special)
@@ -2860,19 +2842,19 @@ def generate_sprite(
 
                         #add base stripes
                         if("cm" in genotype.pointgene):
-                            if(whichcolour == "black" and genotype.pointgene[0] == "cm"):
+                            if("black" in whichcolour and genotype.pointgene[0] == "cm"):
                                 whichmain = AddStripes(whichmain, 'lightbasecolours2', whichbase)
                             else:
                                 if("cb" in genotype.pointgene or genotype.pointgene[0] == "cm"):
-                                    if(whichcolour == "black" and cat_sprite != "20"):
+                                    if("black" in whichcolour and cat_sprite != "20"):
                                         whichmain = AddStripes(whichmain, 'lightbasecolours2', whichbase)
-                                    elif((whichcolour == "chocolate" and cat_sprite != "20") or whichcolour == "black"):
+                                    elif(("chocolate" in whichcolour and cat_sprite != "20") or "black" in whichcolour):
                                         whichmain = AddStripes(whichmain, 'lightbasecolours1', whichbase)
-                                    elif(whichcolour == "cinnamon" or whichcolour == "chocolate"):
+                                    elif("cinnamon" in whichcolour or "chocolate" in whichcolour):
                                         whichmain = AddStripes(whichmain, 'lightbasecolours0', whichbase)
                                     else:
                                         pointbase = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
-                                        pointbase.blit(sprites.sprites['basecolours'+ str(solidcolours.get(stripecolourdict.get(whichcolour, whichcolour)))], (0, 0))
+                                        pointbase.blit(sprites.sprites[stripecolourdict.get(whichcolour, whichcolour)], (0, 0))
                                         if phenotype.caramel == 'caramel' and not ('red' in whichcolour or 'cream' in whichcolour or 'honey' in whichcolour or 'ivory' in whichcolour or 'apricot' in whichcolour):    
                                             pointbase.blit(sprites.sprites['caramel0'], (0, 0))
                                         pointbase.set_alpha(204)
@@ -2881,22 +2863,22 @@ def generate_sprite(
                                         pointbase2.blit(pointbase, (0, 0))
                                         whichmain = AddStripes(whichmain, whichcolour, whichbase, coloursurface=pointbase2)
                                 else:
-                                    if(whichcolour == "black" and cat_sprite != "20"):
+                                    if("black" in whichcolour and cat_sprite != "20"):
                                         whichmain = AddStripes(whichmain, 'lightbasecolours1', whichbase)
                                     else:
                                         whichmain = AddStripes(whichmain, 'lightbasecolours0', whichbase)
                         
                         else:
-                            if(whichcolour == "black" and genotype.pointgene == ["cb", "cb"] and cat_sprite != "20"):
+                            if("black" in whichcolour and genotype.pointgene == ["cb", "cb"] and cat_sprite != "20"):
                                 whichmain = AddStripes(whichmain, 'lightbasecolours3', whichbase)
-                            elif(((whichcolour == "chocolate" and genotype.pointgene == ["cb", "cb"]) or (whichcolour == "black" and "cb" in genotype.pointgene)) and cat_sprite != "20" or (whichcolour == "black" and genotype.pointgene == ["cb", "cb"])):
+                            elif((("chocolate" in whichcolour and genotype.pointgene == ["cb", "cb"]) or ("black" in whichcolour and "cb" in genotype.pointgene)) and cat_sprite != "20" or ("black" in whichcolour and genotype.pointgene == ["cb", "cb"])):
                                 whichmain = AddStripes(whichmain, 'lightbasecolours2', whichbase)
-                            elif(((whichcolour == "cinnamon" and genotype.pointgene == ["cb", "cb"]) or (whichcolour == "chocolate" and "cb" in genotype.pointgene) or (whichcolour == "black" and genotype.pointgene == ["cs", "cs"])) and cat_sprite != "20" or ((whichcolour == "chocolate" and genotype.pointgene == ["cb", "cb"]) or (whichcolour == "black" and "cb" in genotype.pointgene))):
+                            elif((("cinnamon" in whichcolour and genotype.pointgene == ["cb", "cb"]) or ("chocolate" in whichcolour and "cb" in genotype.pointgene) or ("black" in whichcolour and genotype.pointgene == ["cs", "cs"])) and cat_sprite != "20" or (("chocolate" in whichcolour and genotype.pointgene == ["cb", "cb"]) or ("black" in whichcolour and "cb" in genotype.pointgene))):
                                 whichmain = AddStripes(whichmain, 'lightbasecolours1', whichbase)
 
                             elif(genotype.pointgene == ["cb", "cb"]):
                                 pointbase = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
-                                pointbase.blit(sprites.sprites['basecolours'+ str(solidcolours.get(stripecolourdict.get(whichcolour, whichcolour)))], (0, 0))
+                                pointbase.blit(sprites.sprites[stripecolourdict.get(whichcolour, whichcolour)], (0, 0))
                                 if phenotype.caramel == 'caramel' and not ('red' in whichcolour or 'cream' in whichcolour or 'honey' in whichcolour or 'ivory' in whichcolour or 'apricot' in whichcolour):    
                                     pointbase.blit(sprites.sprites['caramel0'], (0, 0))
                                 pointbase.set_alpha(204)
@@ -2906,7 +2888,7 @@ def generate_sprite(
                                 whichmain = AddStripes(whichmain, whichcolour, whichbase, coloursurface=pointbase2)
                             elif("cb" in genotype.pointgene):
                                 pointbase = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
-                                pointbase.blit(sprites.sprites['basecolours'+ str(solidcolours.get(stripecolourdict.get(whichcolour, whichcolour)))], (0, 0))
+                                pointbase.blit(sprites.sprites[stripecolourdict.get(whichcolour, whichcolour)], (0, 0))
                                 if phenotype.caramel == 'caramel' and not ('red' in whichcolour or 'cream' in whichcolour or 'honey' in whichcolour or 'ivory' in whichcolour or 'apricot' in whichcolour):    
                                     pointbase.blit(sprites.sprites['caramel0'], (0, 0))
                                 if(genotype.eumelanin[0] == "bl"):
@@ -2922,7 +2904,7 @@ def generate_sprite(
 
                         #mask base
                         colourbase = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
-                        if(whichcolour == "black" and genotype.pointgene[0] == "cm"):
+                        if("black" in whichcolour and genotype.pointgene[0] == "cm"):
                             colourbase2 = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
                             colourbase.blit(sprites.sprites['lightbasecolours0'], (0, 0))
                             colourbase2.blit(sprites.sprites[whichbase.replace("black", "cinnamon")], (0, 0))
@@ -2934,7 +2916,7 @@ def generate_sprite(
                         pointbase2 = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
                         pointbase2.blit(sprites.sprites['lightbasecolours0'], (0, 0))
                         if("cm" in genotype.pointgene):
-                            if(whichcolour == "black" and genotype.pointgene[0] == "cm"):
+                            if("black" in whichcolour and genotype.pointgene[0] == "cm"):
                                 pointbase.blit(colourbase, (0, 0))
                             else:
                                 if((("cb" in genotype.pointgene or genotype.pointgene[0] == "cm") and cat_sprite != "20") or ((cat_sprite != "20" or ("cb" in genotype.pointgene or genotype.pointgene[0] == "cm")) and get_current_season() == "Leaf-bare")):
@@ -2991,8 +2973,8 @@ def generate_sprite(
                         stripebase = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
                         stripebase2 = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
 
-                        if(whichcolour == "black" and genotype.pointgene[0] == "cm"):
-                            colour = 'cinnamon'
+                        if("black" in whichcolour and genotype.pointgene[0] == "cm"):
+                            colour = whichcolour.replace("black", "cinnamon")
                         else:
                             colour = whichcolour
                 
@@ -3018,7 +3000,7 @@ def generate_sprite(
 
                 else:
                     if(genotype.pointgene[0] == "C"):
-                        whichmain.blit(sprites.sprites['basecolours'+ str(solidcolours.get(stripecolourdict.get(whichcolour, whichcolour)))], (0, 0))
+                        whichmain.blit(sprites.sprites[stripecolourdict.get(whichcolour, whichcolour)], (0, 0))
                         if phenotype.caramel == 'caramel' and not ('red' in whichcolour or 'cream' in whichcolour or 'honey' in whichcolour or 'ivory' in whichcolour or 'apricot' in whichcolour):    
                             whichmain.blit(sprites.sprites['caramel0'], (0, 0))
                             
@@ -3031,14 +3013,14 @@ def generate_sprite(
                     elif("cm" in genotype.pointgene):
                         colour = None
                         coloursurface = None
-                        if(whichcolour == "black" and genotype.pointgene[0] == "cm"):
+                        if("black" in whichcolour and genotype.pointgene[0] == "cm"):
                             whichmain.blit(sprites.sprites['lightbasecolours2'], (0, 0)) 
                             whichmain = ApplySmokeEffects(whichmain)
 
                             if phenotype.length != "longhaired":
                                 stripebase = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
                             
-                                stripebase.blit(CreateStripes('cinnamon', 'solid', pattern="fullbar"), (0, 0))
+                                stripebase.blit(CreateStripes(whichcolour.replace("black", "cinnamon"), 'solid', pattern="fullbar"), (0, 0))
                                 stripebase.set_alpha(150)
 
                                 whichmain.blit(stripebase, (0, 0))
@@ -3046,21 +3028,21 @@ def generate_sprite(
                             stripebase = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
                                 
                             if("cb" in genotype.pointgene or genotype.pointgene[0] == "cm"):
-                                if(whichcolour == "black" and cat_sprite != "20"):
+                                if("black" in whichcolour and cat_sprite != "20"):
                                     whichmain.blit(sprites.sprites['lightbasecolours2'], (0, 0))
                                     colour = 'lightbasecolours2'
                                     whichmain = ApplySmokeEffects(whichmain)
 
-                                elif((whichcolour == "chocolate" and cat_sprite != "20") or whichcolour == "black"):
+                                elif(("chocolate" in whichcolour and cat_sprite != "20") or "black" in whichcolour):
                                     whichmain.blit(sprites.sprites['lightbasecolours1'], (0, 0))
                                     colour = 'lightbasecolours1'
                                     whichmain = ApplySmokeEffects(whichmain)
-                                elif(whichcolour == "cinnamon" or whichcolour == "chocolate"):
+                                elif("chocolate" in whichcolour or "chocolate" in whichcolour):
                                     whichmain.blit(sprites.sprites['lightbasecolours0'], (0, 0))
                                     colour = 'lightbasecolours0'
                                 else:
                                     pointbase = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
-                                    pointbase.blit(sprites.sprites['basecolours'+ str(solidcolours.get(whichcolour))], (0, 0))
+                                    pointbase.blit(sprites.sprites[whichcolour], (0, 0))
                                     if phenotype.caramel == 'caramel' and not ('red' in whichcolour or 'cream' in whichcolour or 'honey' in whichcolour or 'ivory' in whichcolour or 'apricot' in whichcolour):    
                                         pointbase.blit(sprites.sprites['caramel0'], (0, 0))
                         
@@ -3073,7 +3055,7 @@ def generate_sprite(
                                     
                                     whichmain = ApplySmokeEffects(whichmain)
                             else:
-                                if(whichcolour == "black" and cat_sprite != "20"):
+                                if("black" in whichcolour and cat_sprite != "20"):
                                     whichmain.blit(sprites.sprites['lightbasecolours1'], (0, 0))
                                     colour = 'lightbasecolours1'
                                     whichmain = ApplySmokeEffects(whichmain)
@@ -3089,7 +3071,7 @@ def generate_sprite(
                             pointbase = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
                             pointbase2 = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
                             
-                            pointbase2.blit(sprites.sprites['basecolours'+ str(solidcolours.get(whichcolour))], (0, 0))
+                            pointbase2.blit(sprites.sprites[whichcolour], (0, 0))
                             if phenotype.caramel == 'caramel' and not ('red' in whichcolour or 'cream' in whichcolour or 'honey' in whichcolour or 'ivory' in whichcolour or 'apricot' in whichcolour):    
                                 pointbase2.blit(sprites.sprites['caramel0'], (0, 0))
                         
@@ -3121,21 +3103,21 @@ def generate_sprite(
                         colour = whichcolour
                         coloursurface = None
                         stripebase = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
-                        if(whichcolour == "black" and genotype.pointgene == ["cb", "cb"] and cat_sprite != "20"):
+                        if("black" in whichcolour and genotype.pointgene == ["cb", "cb"] and cat_sprite != "20"):
                             whichmain.blit(sprites.sprites['lightbasecolours3'], (0, 0)) 
                             colour = 'lightbasecolours3'
                             whichmain = ApplySmokeEffects(whichmain)
-                        elif(((whichcolour == "chocolate" and genotype.pointgene == ["cb", "cb"]) or (whichcolour == "black" and "cb" in genotype.pointgene)) and cat_sprite != "20" or (whichcolour == "black" and genotype.pointgene == ["cb", "cb"])):
+                        elif((("chocolate" in whichcolour and genotype.pointgene == ["cb", "cb"]) or ("black" in whichcolour and "cb" in genotype.pointgene)) and cat_sprite != "20" or ("black" in whichcolour and genotype.pointgene == ["cb", "cb"])):
                             whichmain.blit(sprites.sprites['lightbasecolours2'], (0, 0)) 
                             colour = 'lightbasecolours2'
                             whichmain = ApplySmokeEffects(whichmain)
-                        elif(((whichcolour == "cinnamon" and genotype.pointgene == ["cb", "cb"]) or (whichcolour == "chocolate" and "cb" in genotype.pointgene) or (whichcolour == "black" and genotype.pointgene == ["cs", "cs"])) and cat_sprite != "20" or ((whichcolour == "chocolate" and genotype.pointgene == ["cb", "cb"]) or (whichcolour == "black" and "cb" in genotype.pointgene))):
+                        elif((("chocolate" in whichcolour and genotype.pointgene == ["cb", "cb"]) or ("chocolate" in whichcolour and "cb" in genotype.pointgene) or ("black" in whichcolour and genotype.pointgene == ["cs", "cs"])) and cat_sprite != "20" or (("chocolate" in whichcolour and genotype.pointgene == ["cb", "cb"]) or ("black" in whichcolour and "cb" in genotype.pointgene))):
                             whichmain.blit(sprites.sprites['lightbasecolours1'], (0, 0))  
                             colour = 'lightbasecolours1'
                             whichmain = ApplySmokeEffects(whichmain)
                         elif(genotype.pointgene == ["cb", "cb"]):
                             pointbase = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
-                            pointbase.blit(sprites.sprites['basecolours'+ str(solidcolours.get(whichcolour))], (0, 0))
+                            pointbase.blit(sprites.sprites[whichcolour], (0, 0))
                             if phenotype.caramel == 'caramel' and not ('red' in whichcolour or 'cream' in whichcolour or 'honey' in whichcolour or 'ivory' in whichcolour or 'apricot' in whichcolour):    
                                 pointbase.blit(sprites.sprites['caramel0'], (0, 0))
                         
@@ -3147,7 +3129,7 @@ def generate_sprite(
                             whichmain = ApplySmokeEffects(whichmain)
                         elif("cb" in genotype.pointgene):
                             pointbase = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
-                            pointbase.blit(sprites.sprites['basecolours'+ str(solidcolours.get(whichcolour))], (0, 0))
+                            pointbase.blit(sprites.sprites[whichcolour], (0, 0))
                             if phenotype.caramel == 'caramel' and not ('red' in whichcolour or 'cream' in whichcolour or 'honey' in whichcolour or 'ivory' in whichcolour or 'apricot' in whichcolour):    
                                 pointbase.blit(sprites.sprites['caramel0'], (0, 0))
                         
@@ -3172,7 +3154,7 @@ def generate_sprite(
                         pointbase = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
                         pointbase2 = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
                             
-                        pointbase2.blit(sprites.sprites['basecolours'+ str(solidcolours.get(whichcolour))], (0, 0))
+                        pointbase2.blit(sprites.sprites[whichcolour], (0, 0))
                         if phenotype.caramel == 'caramel' and not ('red' in whichcolour or 'cream' in whichcolour or 'honey' in whichcolour or 'ivory' in whichcolour or 'apricot' in whichcolour):    
                                 pointbase2.blit(sprites.sprites['caramel0'], (0, 0))
                         pointbase2 = ApplySmokeEffects(pointbase2)
@@ -3219,7 +3201,7 @@ def generate_sprite(
 
                 pad_dict = {
                     'red' : 0,
-                    'white' : 1,
+                    'whit' : 1,
                     'tabby' : 2,
                     'black' : 3,
                     'chocolate' : 4,
@@ -3242,10 +3224,10 @@ def generate_sprite(
                 elif 'amber' in phenotype.colour:
                     phenotype.SpriteInfo(10)
                     whichcolour = phenotype.maincolour
-                    pads.blit(sprites.sprites['nosecolours' + str(pad_dict.get(whichcolour, 0))], (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
+                    pads.blit(sprites.sprites['nosecolours' + str(pad_dict.get(whichcolour[:-1], 0))], (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
                     phenotype.SpriteInfo(sprite_age)
                 else:
-                    pads.blit(sprites.sprites['nosecolours' + str(pad_dict.get(whichcolour))], (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
+                    pads.blit(sprites.sprites['nosecolours' + str(pad_dict.get(whichcolour[:-1]))], (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
 
                 whichmain.blit(pads, (0, 0))
                 
@@ -3367,12 +3349,12 @@ def generate_sprite(
                 nose.blit(sprites.sprites['nosecolours0'], (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
             elif 'amber' in phenotype.colour:
                 phenotype.SpriteInfo(10)
-                nose.blit(sprites.sprites['nosecolours' + str(nose_dict.get(phenotype.maincolour))], (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
+                nose.blit(sprites.sprites['nosecolours' + str(nose_dict.get(phenotype.maincolour[:-1]))], (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
                 phenotype.SpriteInfo(sprite_age)
             elif phenotype.maincolour != phenotype.spritecolour:
                 nose.blit(sprites.sprites['nosecolours2'], (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
             else:
-                nose.blit(sprites.sprites['nosecolours' + str(nose_dict.get(phenotype.maincolour))], (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
+                nose.blit(sprites.sprites['nosecolours' + str(nose_dict.get(phenotype.maincolour[:-1]))], (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
 
             gensprite.blit(nose, (0, 0))
 

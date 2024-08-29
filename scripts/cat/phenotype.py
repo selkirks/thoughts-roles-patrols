@@ -802,7 +802,7 @@ class Phenotype():
                         colour = "black"
                         self.caramel = ""
             
-            maincolour = colour
+            maincolour = colour + str(self.genotype.saturation)
 
             rufousing = ""
             banding = ""
@@ -831,7 +831,8 @@ class Phenotype():
                 
                 colour = colour + rufousing + banding + "0"
                 
-                    
+            else:
+                colour = maincolour        
 
 
             return [maincolour, colour, unders_colour, unders_opacity]
@@ -866,7 +867,7 @@ class Phenotype():
             else:
                 colour = "red"
         
-        maincolour += colour
+        maincolour += colour + '0'
         
         rufousing = ""
         banding = ""
@@ -931,13 +932,13 @@ class Phenotype():
             colour = colour.replace('ivory', 'lavender')
             if(genes.specialred == 'cinnamon'):
                 if('red' in maincolour):
-                    maincolour = 'cinnamon'
+                    maincolour = 'cinnamon3'
                 elif('cream' in maincolour or maincolour == 'apricot'):
-                    maincolour = 'fawn'
+                    maincolour = 'fawn3'
                 elif('honey' in maincolour):
-                    maincolour = 'buff'
+                    maincolour = 'buff3'
                 elif('ivory' in maincolour):
-                    maincolour = 'beige'
+                    maincolour = 'beige3'
                 
                 if('apricot' in maincolour):
                     self.caramel = 'caramel'

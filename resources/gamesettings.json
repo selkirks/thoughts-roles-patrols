@@ -39,7 +39,7 @@
       "tints": [
         "Enable Tints",
         "This will add a tint layer onto the cat sprites.",
-        true
+        false
       ],
       "gore": [
         "Allow mild gore and blood in patrol artwork",
