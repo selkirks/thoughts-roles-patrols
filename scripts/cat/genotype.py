@@ -83,7 +83,7 @@ class Genotype:
         self.wbtype = ""
         self.wbsum = 0
 
-        self.saturation = 2 #choice([0, 1, 2, 2, 3, 3, 4, 4, 5, 6])
+        self.saturation = choice([0, 1, 2, 2, 3, 3, 4, 4, 5, 6])
 
         self.rufousing = ""
         self.ruftype = ""
