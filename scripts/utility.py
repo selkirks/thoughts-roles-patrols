@@ -3388,7 +3388,7 @@ def generate_sprite(
                     if('break/' in x):
                         whitesprite.blit(sprites.sprites[x + cat_sprite], (0, 0))
             whitesprite.set_colorkey((0, 0, 255))
-            tintedwhitesprite.blit(whitesprite, (0, 0))
+            tintedwhitesprite.blit(whitesprite, (0, 0), special_flags=pygame.BLEND_RGBA_ADD)
 
             nose.blit(sprites.sprites['pads' + cat_sprite], (0, 0))
             nose.blit(sprites.sprites['nose' + cat_sprite], (0, 0))
