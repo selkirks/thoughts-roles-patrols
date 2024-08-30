@@ -2704,8 +2704,8 @@ def generate_sprite(
                     middle = CreateStripes(stripecolour, whichbase, coloursurface, pattern=phenotype.GetTabbySprite(special='redbar'))
                     stripebase.blit(middle, (0, 0))
 
-                if cat.genotype.furLength[0] == 'l':
-                    stripebase = pygame.transform.box_blur(stripebase, 1)
+                # if cat.genotype.furLength[0] == 'l':
+                #     stripebase = pygame.transform.box_blur(stripebase, 1)
 
                 return stripebase
 
@@ -2730,9 +2730,9 @@ def generate_sprite(
                     tint = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
                     tint.blit(sprites.sprites['lightbasecolours0'], (0, 0))
                     if genotype.saturation == 0:
-                        tint.set_alpha(50)
+                        tint.set_alpha(75)
                     elif genotype.saturation == 1:
-                        tint.set_alpha(37)
+                        tint.set_alpha(50)
                     elif genotype.saturation == 2:
                         tint.set_alpha(25)
                     whichmain.blit(tint, (0, 0))
