@@ -92,8 +92,6 @@ class Pelt:
     physical_trait_mane = ['MANESILKY', 'MANEFLUFFY', 'MANERUFF', 'MANEHORSE']
     physical_trait_fur_type = ['FURWAVY', 'FURCURLY', 'FURPATCHY', 'FURKINK']
     physical_trait_muzzle_type = ['MUZZLESHORT', 'MUZZLEBROAD', 'MUZZLELONG']
-    physical_trait_body_type = ['BODYBROAD', 'BODYWIRY', 'BODYLITHE', 'BODYSKINNY', 'BODYBUFF']
-    physical_trait_size = ['SIZETINY', 'SIZESMALL', 'SIZESHORT', 'SIZETALL', 'SIZELARGE', 'SIZEHUGE']
     physical_trait_tail = ['TAILCROOKED', 'TAILLONG', 'TAILFEATHER', 'TAILCURL', 'TAILTUFT']
     physical_trait_bodyfur = ['BACKFLUFF', 'BACKRIDGE', 'SHOULDERTUFT']
     physical_trait_misc = ['EARTUFTS', 'POLYDACTYL', 'LASHESUPPER', 'LASHESLOWER', 'WHISKERSLONG', 'CLAWSLONG', 'LEGTUFT']
