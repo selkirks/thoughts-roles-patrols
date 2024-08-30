@@ -1108,8 +1108,6 @@ class Pelt:
             Pelt.physical_trait_mane,
             Pelt.physical_trait_fur_type,
             Pelt.physical_trait_muzzle_type,
-            Pelt.physical_trait_body_type,
-            Pelt.physical_trait_size,
             Pelt.physical_trait_tail,
             Pelt.physical_trait_bodyfur,
             Pelt.physical_trait_misc
