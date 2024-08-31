@@ -83,7 +83,7 @@ class Genotype:
         self.wbtype = ""
         self.wbsum = 0
 
-        self.saturation = choice([0, 1, 2, 2, 3, 3, 4, 4, 5, 6])
+        self.saturation = choice(odds['saturation'])
 
         self.rufousing = ""
         self.ruftype = ""
@@ -187,10 +187,7 @@ class Genotype:
         self.pinkdilute = jsonstring["pinkdilute"]
         self.dilutemd = jsonstring["dilutemd"]
         self.ext = jsonstring["ext"]
-        try:
-            self.corin = jsonstring["corin"]
-        except:
-            self.corin = jsonstring["sunshine"]
+        self.corin = jsonstring["corin"]
         self.karp = jsonstring["karp"]
         self.bleach = jsonstring["bleach"]
         self.ghosting = jsonstring["ghosting"]
@@ -208,15 +205,7 @@ class Genotype:
         self.ring = jsonstring["ring"]
         self.munch = jsonstring["munch"]
         self.poly = jsonstring["poly"]
-        try:
-            self.pax3 = jsonstring["pax3"]
-        except:
-            self.pax3 = jsonstring['altai']
-            for i in range(2):
-                if self.pax3[i] == 'Al':
-                    self.pax3[i] = 'DBEalt'
-                else:
-                    self.pax3[i] = 'NoDBE'
+        self.pax3 = jsonstring["pax3"]
 
         self.wideband = jsonstring["wideband"]
 
@@ -247,23 +236,14 @@ class Genotype:
         self.extraeyetype = jsonstring["extraeyetype"]
         self.extraeyecolour = jsonstring["extraeyecolour"]
 
-        if len(str(self.refraction)) > 2:
-            self.EyeConvert()
-
         self.breeds = json.loads(jsonstring["breeds"])
         
-        try:
-            self.somatic = json.loads(jsonstring["somatic"])
-        except:
-            self.somatic = {}
+        self.somatic = json.loads(jsonstring["somatic"])
         
-        try:
-            self.body_value = jsonstring["body_type"]
-            self.body_label = jsonstring["body_type_label"]
-            self.height_value = jsonstring["height"]
-            self.shoulder_height = jsonstring["shoulder_height"]
-        except:
-            self.GenerateBody()
+        self.body_value = jsonstring["body_type"]
+        self.body_label = jsonstring["body_type_label"]
+        self.height_value = jsonstring["height"]
+        self.shoulder_height = jsonstring["shoulder_height"]
 
         self.GeneSort()
         self.PolyEval()
@@ -636,8 +616,6 @@ class Genotype:
         elif randint(1, self.odds["DBE"]) == 1 and not self.ban_genes:
             self.pax3[0] = choice(['DBEcel', 'DBEcel', 'DBEre', 'DBEalt', 'DBEalt'])
 
-        genes = ["2", "2", "1", "1", "1", "1", "1", "1", "0", "0"]
-
         self.wideband = ''
         self.rufousing = ''
         self.spotted = ''
@@ -646,33 +624,27 @@ class Genotype:
         self.sokoke = ''
         
         for i in range(0, 8):
-            self.wideband += choice(genes)
+            self.wideband += choice(self.odds["wideband"])
             self.wbsum += int(self.wideband[i])
 
         for i in range(0, 4):
-            self.rufousing += choice(genes)
+            self.rufousing += choice(self.odds["rufousing"])
             self.rufsum += int(self.rufousing[i])
 
-        genesspot = ["2", "1", "0"]
-
         for i in range(0, 4):
-            self.spotted += choice(genesspot)
+            self.spotted += choice(self.odds["spotted"])
             self.spotsum += int(self.spotted[i])
 
-        genesmild = ["2", "2", "1", "1", "1", "1", "1", "1", "0", "0", "0", "0", "0", "0", "0", "0"]
-
         for i in range(0, 4):
-            self.tickgenes += choice(genesmild)
+            self.tickgenes += choice(self.odds["tickmod"])
             self.ticksum += int(self.tickgenes[i])
 
         for i in range(0, 4):
-            self.bengal += choice(genesmild)
+            self.bengal += choice(self.odds["bengal"])
             self.bengsum += int(self.bengal[i])
 
-        sokgenes = ["2", "2", "1", "1", "1", "1", "0", "0", "0"]
-
         for i in range(0, 4):
-            self.sokoke += choice(sokgenes)
+            self.sokoke += choice(self.odds["sokoke"])
             self.soksum += int(self.sokoke[i])
 
         self.GeneSort()
@@ -966,37 +938,29 @@ class Genotype:
         self.tickgenes = ''
         self.bengal = ''
         self.sokoke = ''
-        
-        genes = ["2", "2", "1", "1", "1", "1", "0", "0"]
 
         for i in range(0, 8):
-            self.wideband += choice(genes)
+            self.wideband += choice(self.odds["wideband_kittypet"])
             self.wbsum += int(self.wideband[i])
 
         for i in range(0, 4):
-            self.rufousing += choice(genes)
+            self.rufousing += choice(self.odds["rufousing_kittypet"])
             self.rufsum += int(self.rufousing[i])
 
-        genesspot = ["2", "1", "0"]
-
         for i in range(0, 4):
-            self.spotted += choice(genesspot)
+            self.spotted += choice(self.odds["spotted_kittypet"])
             self.spotsum += int(self.spotted[i])
-        
-        genesmild = ["2", "2", "1", "1", "1", "1", "1", "0", "0", "0", "0", "0", "0"]
 
         for i in range(0, 4):
-            self.tickgenes += choice(genesmild)
+            self.tickgenes += choice(self.odds["tickmod_kittypet"])
             self.ticksum += int(self.tickgenes[i])
 
         for i in range(0, 4):
-            self.bengal += choice(genesmild)
+            self.bengal += choice(self.odds["bengal_kittypet"])
             self.bengsum += int(self.bengal[i])
 
-        sokgenes = ["2", "2", "1", "1", "1", "1", "0", "0", "0"]
-
         for i in range(0, 4):
-            self.sokoke += choice(sokgenes)
+            self.sokoke += choice(self.odds["sokoke_kittypet"])
             self.soksum += int(self.sokoke[i])
 
         self.GeneSort()

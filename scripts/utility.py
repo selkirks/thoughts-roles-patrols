@@ -2712,11 +2712,16 @@ def generate_sprite(
             def TabbyBase(whichcolour, whichbase, cat_unders, special = None):
                 is_red = ('red' in whichcolour or 'cream' in whichcolour or 'honey' in whichcolour or 'ivory' in whichcolour or 'apricot' in whichcolour)
                 whichmain = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
-                if not is_red:
+                if not is_red and 'silver' not in whichbase:
                     overlay = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
-                    overlay.blit(sprites.sprites[whichbase], (0, 0))
-                    overlay.set_alpha(191)
-                    whichmain.blit(sprites.sprites[whichcolour], (0, 0))
+                    if genotype.dilute[0] == 'D' and genotype.pinkdilute[0] == "Dp":
+                        overlay.blit(sprites.sprites[whichbase], (0, 0))
+                        overlay.set_alpha(191)
+                        whichmain.blit(sprites.sprites[whichcolour], (0, 0))
+                    else:
+                        overlay.blit(sprites.sprites[whichcolour], (0, 0))
+                        overlay.set_alpha(51)
+                        whichmain.blit(sprites.sprites[whichbase], (0, 0))
                     whichmain.blit(overlay, (0, 0))
                 else:
                     whichmain.blit(sprites.sprites[whichbase], (0, 0))
@@ -2734,16 +2739,6 @@ def generate_sprite(
                 unders.blit(sprites.sprites[cat_unders[0]], (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
                 unders.set_alpha(int(cat_unders[1] * 2.55))
                 whichmain.blit(unders, (0, 0))
-                if genotype.saturation < 3 and not is_red:
-                    tint = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
-                    tint.blit(sprites.sprites['lightbasecolours0'], (0, 0))
-                    if genotype.saturation == 0:
-                        tint.set_alpha(75)
-                    elif genotype.saturation == 1:
-                        tint.set_alpha(50)
-                    elif genotype.saturation == 2:
-                        tint.set_alpha(25)
-                    #whichmain.blit(tint, (0, 0))
                     
                 
                 if phenotype.caramel == 'caramel' and not is_red:    
