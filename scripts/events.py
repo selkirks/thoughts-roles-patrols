@@ -1148,13 +1148,13 @@ class Events:
                         kit.moons -= 1
 
         if len(fading_kits) > 0:
-            event_text = "In the past moon, "
+            event_text = ""
             event_text += ", ".join(fading_kit_names)
             if len(fading_kits) > 1:
-                event_text += " have"
+                event_text += " were"
             else:
-                event_text += " has"
-            event_text += " faded over the course of a week."
+                event_text += " was"
+            event_text += " lost this moon."
             game.cur_events_list.append(Single_Event(event_text, ['birth_death'], fading_kits))
         
         return fading_kits
