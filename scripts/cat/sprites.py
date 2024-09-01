@@ -201,7 +201,7 @@ class Sprites:
                                "lowcream", "mediumcream", "rufousedcream", 
                                "lowhoney", "mediumhoney", "rufousedhoney", 
                                "lowivory", "mediumivory", "rufousedivory"]):
-            self.make_group('base/pheomelanin', (0, 0), f'{x}', sprites_x=1, sprites_y=1)
+            self.make_group('base/pheomelanin', (int(i%3), int(i/3)), f'{x}', sprites_x=1, sprites_y=1)
         self.make_group('base/lightbases', (0, 0), 'lightbasecolours', sprites_x=4, sprites_y=1)
 
         # genemod tabby bases
