@@ -97,5 +97,9 @@
     "chimerism": [
         "The medicine cat carefully soothes over all of m_c's parent's worries. Being intersex is perfectly normal and m_c will do great!",
         "While checking in on the nursery, the medicine cat notices something slightly different about m_c. It seems that m_c is intersex."
+    ],
+    "wobbly cat syndrome": [
+        "It seems m_c constantly shakes. After being looked over by the medicine cat, {PRONOUN/m_c/subject} {VERB/m_c/are/is} diagnosed with wobbly cat syndrome.",
+        "r_c's verdict is clear- m_c will wobble {PRONOUN/m_c/poss} entire life. Despite this, r_c reassures the family that m_c will live a long and healthy life- just one a bit more wobbly than others."
     ]
 }
