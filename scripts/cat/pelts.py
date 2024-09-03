@@ -213,13 +213,13 @@ class Pelt:
                 self.length = 'medium'
             else:
                 self.length="short"
-            if self.cat_sprites['adult'] > 9:
+            if self.cat_sprites['adult'] > 8:
                 self.cat_sprites['adult'] -= 3
                 self.cat_sprites['young adult'] -= 3
                 self.cat_sprites['senior adult'] -= 3
         else:
             self.length="hairless"
-            if self.cat_sprites['adult'] > 9:
+            if self.cat_sprites['adult'] > 8:
                 self.cat_sprites['adult'] -= 3
                 self.cat_sprites['young adult'] -= 3
                 self.cat_sprites['senior adult'] -= 3

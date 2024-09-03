@@ -286,7 +286,7 @@ class Cat:
 
         #white patterns
         
-        def GenerateWhite(KIT, KITgrade, vit, white_pattern, pax3):
+        def GenerateWhite(KIT, albino, KITgrade, vit, white_pattern, pax3):
             def clean_white(white_pattern):
                 white_pattern = list(set(white_pattern))
                 while None in white_pattern:
@@ -524,15 +524,15 @@ class Cat:
                         if random() < 0.02:
                             white_pattern = ["full white", "break/inverse thai"]
             
-            if white_pattern == "No" or white_pattern == [] or white_pattern is None or (KIT == ["w", "w"] and not vit and pax3 == ['NoDBE', 'NoDBE']):
+            if white_pattern == "No" or white_pattern == [] or white_pattern is None or KIT[0] == "W" or albino[0] == "c" or (KIT == ["w", "w"] and not vit and pax3 == ['NoDBE', 'NoDBE']):
                 return "No"
             return clean_white(white_pattern)
 
-        self.genotype.white_pattern = GenerateWhite(self.genotype.white, self.genotype.whitegrade, self.genotype.vitiligo, white_pattern, self.genotype.pax3)
+        self.genotype.white_pattern = GenerateWhite(self.genotype.white, self.genotype.pointgene, self.genotype.whitegrade, self.genotype.vitiligo, white_pattern, self.genotype.pax3)
 
         white_pattern = chim_white
         if self.genotype.chimera:    
-            self.genotype.chimerageno.white_pattern = GenerateWhite(self.genotype.chimerageno.white, self.genotype.chimerageno.whitegrade, self.genotype.chimerageno.vitiligo, white_pattern, self.genotype.pax3)
+            self.genotype.chimerageno.white_pattern = GenerateWhite(self.genotype.chimerageno.white, self.genotype.chimerageno.pointgene, self.genotype.chimerageno.whitegrade, self.genotype.chimerageno.vitiligo, white_pattern, self.genotype.pax3)
         
         # Various behavior toggles
         self.no_kits = False
