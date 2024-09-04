@@ -692,6 +692,7 @@ class CatSkills:
         SkillPath.GHOST: SkillTypeFlag.SUPERNATURAL,
         SkillPath.DARK: SkillTypeFlag.SUPERNATURAL,
         SkillPath.GARDENER: SkillTypeFlag.SMART,
+        SkillPath.HIDER: SkillTypeFlag.OBSERVANT,
         SkillPath.UNKNOWN: SkillTypeFlag.SUPERNATURAL,
         SkillPath.WAKEFUL: SkillTypeFlag.STRONG | SkillTypeFlag.OBSERVANT,
         SkillPath.DELIVERER: SkillTypeFlag.SMART | SkillTypeFlag.SOCIAL,
