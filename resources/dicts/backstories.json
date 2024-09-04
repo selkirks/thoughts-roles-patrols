@@ -71,7 +71,7 @@
 
         "outsider1": "This cat was born outside of a Clan.",
         "outsider2": "This cat was born outside of a Clan, but at {PRONOUN/m_c/poss} birth one parent was a member of a Clan.",
-        "outsider3": "This cat was born outside of a Clan, while {PRONOUN/m_c/poss} parent was lost."
+        "outsider3": "This cat was born outside of a Clan, while {PRONOUN/m_c/poss} parent was lost.",
 
         "runaway_rogue1": "This cat used to be part of a large rogue group, but fled after a new cat took over, no longer feeling safe."
   },
