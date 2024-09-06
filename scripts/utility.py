@@ -3246,7 +3246,7 @@ def generate_sprite(
                 masked = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
                 masked = MakeCat(masked, phenotype.maincolour, phenotype.spritecolour, phenotype.mainunders, special="masked silver")
                 masked2 = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
-                masked2.blit(sprites.sprites["tortiemaskBLUE-TIPPED" + cat_sprite], (0, 0))
+                masked2.blit(sprites.sprites["BLUE-TIPPED" + cat_sprite], (0, 0))
                 masked2.blit(masked, (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
                 masked2.set_alpha(120)
                 gensprite.blit(masked2, (0, 0))
@@ -3286,7 +3286,7 @@ def generate_sprite(
                     masked = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
                     masked = MakeCat(masked, phenotype.patchmain, phenotype.patchcolour, phenotype.patchunders, special="masked silver")
                     masked2 = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
-                    masked2.blit(sprites.sprites["tortiemaskBLUE-TIPPED" + cat_sprite], (0, 0))
+                    masked2.blit(sprites.sprites["BLUE-TIPPED" + cat_sprite], (0, 0))
                     masked2.blit(masked, (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
                     masked2.set_alpha(120)
                     tortpatches.blit(masked2, (0, 0))
@@ -3297,7 +3297,7 @@ def generate_sprite(
                 tortpatches = ApplyPatchEffects(tortpatches)
                 
                 tortpatches2 = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
-                tortpatches2.blit(sprites.sprites['tortiemask' + phenotype.tortpattern.replace('rev', "") + cat_sprite], (0, 0))
+                tortpatches2.blit(sprites.sprites[phenotype.tortpattern.replace('rev', "") + cat_sprite], (0, 0))
                 tortpatches2.blit(tortpatches, (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
                 gensprite.blit(tortpatches2, (0, 0))    
 
@@ -3477,7 +3477,7 @@ def generate_sprite(
 
         if(cat.genotype.chimera):
             chimerapatches = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
-            chimerapatches.blit(sprites.sprites['tortiemask' + cat.genotype.chimerapattern + cat_sprite], (0, 0))
+            chimerapatches.blit(sprites.sprites[cat.genotype.chimerapattern + cat_sprite], (0, 0))
             chimerapatches.blit(GenSprite(genotype.chimerageno, cat.chimerapheno, age), (0, 0), special_flags=pygame.BLEND_RGB_MULT)
             gensprite.blit(chimerapatches, (0, 0))
 

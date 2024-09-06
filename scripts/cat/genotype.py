@@ -1977,7 +1977,10 @@ class Genotype:
                 if x[0] != x[1] or x[0] not in ['Dp', 'dm', 'E', 'N', 'k', 'Lb', 'gh', 'St', 'Gl']:
                     self.Other_Colour.append(x)
             for x in [self.curl, self.fold, self.manx, self.kab, self.toybob, self.jbob, self.kub, self.ring, self.munch, self.poly, self.pax3]:
-                if x[0] != x[1] or x[0] not in ['cu', 'fd', 'm', 'ab', 'Kab', 'tb', 'Jb', 'kub', 'Rt', 'mk', 'pd', 'NoDBE']:
+                if x == self.manx:
+                    if x[0] == 'M' or x[0] == 'Ab':
+                        self.Body_Genes.append(x)
+                elif x[0] != x[1] or x[0] not in ['cu', 'fd', 'm', 'ab', 'Kab', 'tb', 'Jb', 'kub', 'Rt', 'mk', 'pd', 'NoDBE']:
                     self.Body_Genes.append(x)
         else:
             self.Fur_Genes = [self.wirehair, self.laperm, self.cornish, self.urals, self.tenn, self.fleece, self.sedesp, self.ruhr, self.ruhrmod, self.lykoi]

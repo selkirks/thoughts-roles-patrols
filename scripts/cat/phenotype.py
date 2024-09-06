@@ -560,6 +560,26 @@ class Phenotype():
         tortie_high_patterns = ['THREE', 'FOUR', 'REDTAIL', 'HALF', 'STREAK', 'MASK', 'SWOOP', 'ARMTAIL', 'STREAMSTRIKE', 'DAUB',
                                 'ROSETAIL', 'DAPPLENIGHT', 'BLANKET']
         
+        if randint(1, 15) == 1:
+            tortie_low_patterns = ["BOWTIE", "BROKENBLAZE", "BUZZARDFANG", "COW2", "FADEBELLY", "FADESPOTS", "LOVEBUG", "MITAINE", 
+                                "PEBBLESHINE", "PIEBALD", "SAVANNAH",
+                                choice(["BACKSPOT", "BEARD", "BELLY", "BIB", "BLACKSTAR", "BLAZE", "BOOTS", "CHESTSPECK", "ESTRELLA",
+                                        "EYEBAGS", "HONEY", "LEFTEAR", "LITTLE", "PAWS", "REVERSEEYE", "REVERSEHEART", "RIGHTEAR", 
+                                        "SCOURGE", "SPARKLE", "TAILTIP", "TIP", "TOES", "TOESTAIL", "VEE"])]
+            tortie_mid_patterns = ["APPALOOSA", "BLOSSOMSTEP", "BOWTIE", "BROKEN", "BUB", "BULLSEYE", "BUSTER", "BUZZARDFANG",
+                                "COW", "COW2", "DAMIEN", "DAPPLEPAW", "DIVA", "FCTWO", "FINN", "FRECKLES", "GLASS", "HAWKBLAZE",
+                                "LOVEBUG", "MITAINE", "PAINTED", "PANTSTWO", "PEBBLE", "PIEBALD", "ROSINA", "SHOOTINGSTAR", "SPARROW",
+                                "WOODPECKER",
+                                choice(["BACKSPOT", "BEARD", "BELLY", "BIB", "BLACKSTAR", "BLAZE", "BOOTS", "CHESTSPECK", "ESTRELLA",
+                                        "EYEBAGS", "HONEY", "LEFTEAR", "LITTLE", "PAWS", "REVERSEEYE", "REVERSEHEART", "RIGHTEAR", 
+                                        "SCOURGE", "TAILTIP", "TIP", "TOESTAIL", "VEE"])]
+            tortie_high_patterns = ["ANY", "ANYTWO", "BLOSSOMSTEP", "BUB", "BUDDY", "BUSTER", "CAKE", "COW", "CURVED",
+                                "DAPPLEPAW", "FCTWO", "FAROFA", "GOATEE", "HALFFACE", "HAWKBLAZE", "LILTWO", "MISS", "MISTER", "OWL",
+                                "PANTS", "PRINCE", "REVERSEPANTS", "RINGTAIL", "SAMMY", "SKUNK", "SPARROW", "TOPCLOVER", "VEST", "WINGS",
+                                choice(["BEARD", "BELLY", "BIB", "BLACKSTAR", "BLAZE", "BOOTS", "CHESTSPECK", "ESTRELLA", "EYEBAGS", 
+                                        "HONEY", "LEFTEAR", "LITTLE", "PAWS", "REVERSEEYE", "REVERSEHEART", "RIGHTEAR", "SCOURGE", 
+                                        "TAILTIP", "TIP", "TOESTAIL", "VEE"])]
+
         chosen = ""
 
         if spec:

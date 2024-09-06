@@ -335,8 +335,8 @@ class Sprites:
 
         for row, masks in enumerate(tortiepatchesmasks):
             for col, mask in enumerate(masks):
-                self.make_group('tortiepatchesmasks', (col, row), f"tortiemask{mask}")
-        self.make_group('Other/blue-tipped', (0, 0), 'tortiemaskBLUE-TIPPED')
+                self.make_group('tortiepatchesmasks', (col, row), f"{mask}")
+        self.make_group('Other/blue-tipped', (0, 0), 'BLUE-TIPPED')
 
         self.load_scars()
         self.load_symbols()
