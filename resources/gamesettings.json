@@ -39,6 +39,11 @@
       "tints": [
         "Enable Tints",
         "This will add a tint layer onto the cat sprites.",
+        false
+      ],
+      "filter genes": [
+        "Filter Genotypes",
+        "Some rare wildtype genes will be hidden on the genotype section.",
         true
       ],
       "gore": [

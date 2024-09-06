@@ -23,7 +23,11 @@ class OutsiderEvents:
 
         # killing outside cats
         if cat.outside:
-            if random.getrandbits(6) == 1 and not cat.dead:
+            age_start = game.config["death_related"]["old_age_death_start"]
+            death_curve_setting = game.config["death_related"]["old_age_death_curve"]
+            death_curve_value = 0.001 * death_curve_setting
+            old_age_death_chance = ((1 + death_curve_value) ** (cat.moons - age_start)) - 1
+            if random.getrandbits(6) == 1 or random.random() <= old_age_death_chance and not cat.dead:
                 death_history = "m_c died outside of the Clan."
                 if cat.exiled:
                     text = f'Rumors reach your Clan that the exiled {cat.name} has died recently.'

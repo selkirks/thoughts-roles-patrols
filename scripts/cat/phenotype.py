@@ -560,6 +560,26 @@ class Phenotype():
         tortie_high_patterns = ['THREE', 'FOUR', 'REDTAIL', 'HALF', 'STREAK', 'MASK', 'SWOOP', 'ARMTAIL', 'STREAMSTRIKE', 'DAUB',
                                 'ROSETAIL', 'DAPPLENIGHT', 'BLANKET']
         
+        if randint(1, 15) == 1:
+            tortie_low_patterns = ["BOWTIE", "BROKENBLAZE", "BUZZARDFANG", "COW2", "FADEBELLY", "FADESPOTS", "LOVEBUG", "MITAINE", 
+                                "PEBBLESHINE", "PIEBALD", "SAVANNAH",
+                                choice(["BACKSPOT", "BEARD", "BELLY", "BIB", "BLACKSTAR", "BLAZE", "BOOTS", "CHESTSPECK", "ESTRELLA",
+                                        "EYEBAGS", "HONEY", "LEFTEAR", "LITTLE", "PAWS", "REVERSEEYE", "REVERSEHEART", "RIGHTEAR", 
+                                        "SCOURGE", "SPARKLE", "TAILTIP", "TIP", "TOES", "TOESTAIL", "VEE"])]
+            tortie_mid_patterns = ["APPALOOSA", "BLOSSOMSTEP", "BOWTIE", "BROKEN", "BUB", "BULLSEYE", "BUSTER", "BUZZARDFANG",
+                                "COW", "COW2", "DAMIEN", "DAPPLEPAW", "DIVA", "FCTWO", "FINN", "FRECKLES", "GLASS", "HAWKBLAZE",
+                                "LOVEBUG", "MITAINE", "PAINTED", "PANTSTWO", "PEBBLE", "PIEBALD", "ROSINA", "SHOOTINGSTAR", "SPARROW",
+                                "WOODPECKER",
+                                choice(["BACKSPOT", "BEARD", "BELLY", "BIB", "BLACKSTAR", "BLAZE", "BOOTS", "CHESTSPECK", "ESTRELLA",
+                                        "EYEBAGS", "HONEY", "LEFTEAR", "LITTLE", "PAWS", "REVERSEEYE", "REVERSEHEART", "RIGHTEAR", 
+                                        "SCOURGE", "TAILTIP", "TIP", "TOESTAIL", "VEE"])]
+            tortie_high_patterns = ["ANY", "ANYTWO", "BLOSSOMSTEP", "BUB", "BUDDY", "BUSTER", "CAKE", "COW", "CURVED",
+                                "DAPPLEPAW", "FCTWO", "FAROFA", "GOATEE", "HALFFACE", "HAWKBLAZE", "LILTWO", "MISS", "MISTER", "OWL",
+                                "PANTS", "PRINCE", "REVERSEPANTS", "RINGTAIL", "SAMMY", "SKUNK", "SPARROW", "TOPCLOVER", "VEST", "WINGS",
+                                choice(["BEARD", "BELLY", "BIB", "BLACKSTAR", "BLAZE", "BOOTS", "CHESTSPECK", "ESTRELLA", "EYEBAGS", 
+                                        "HONEY", "LEFTEAR", "LITTLE", "PAWS", "REVERSEEYE", "REVERSEHEART", "RIGHTEAR", "SCOURGE", 
+                                        "TAILTIP", "TIP", "TOESTAIL", "VEE"])]
+
         chosen = ""
 
         if spec:
@@ -621,7 +641,7 @@ class Phenotype():
         if self.genotype.pointgene[0] == "c":
             self.spritecolour = "albino"
             self.maincolour = self.spritecolour
-        elif self.genotype.white[0] == "W" or ('DBEalt' not in self.genotype.pax3 and 'NoDBE' not in self.genotype.pax3) or (self.genotype.brindledbi and (('o' not in self.genotype.sexgene) or (self.genotype.ext[0] == 'ea' and ((moons > 11 and self.genotype.agouti[0] != 'a') or (moons > 23))) or (self.genotype.ext[0] == 'er' and moons > 23 and 'O' not in self.genotype.sexgene) or (self.genotype.ext[0] == 'ec' and (self.genotype.agouti[0] != 'a' or moons > 5)))):
+        elif self.genotype.white[0] == "W" or ('DBEalt' not in self.genotype.pax3 and 'NoDBE' not in self.genotype.pax3) or (self.genotype.brindledbi and (('o' not in self.genotype.sexgene) or (self.genotype.ext[0] == 'ea' and ((moons > 11 and self.genotype.agouti[0] != 'a') or (moons > 23))) or (self.genotype.ext[0] == 'er' and moons > 23) or (self.genotype.ext[0] == 'ec' and (self.genotype.agouti[0] != 'a' or moons > 5)))):
             self.spritecolour = "white"
             self.maincolour = self.spritecolour
         elif('o' not in self.genotype.sexgene and self.genotype.silver[0] == 'I' and self.genotype.specialred == 'merle'):
@@ -802,7 +822,7 @@ class Phenotype():
                         colour = "black"
                         self.caramel = ""
             
-            maincolour = colour
+            maincolour = colour + str(self.genotype.saturation)
 
             rufousing = ""
             banding = ""
@@ -831,7 +851,8 @@ class Phenotype():
                 
                 colour = colour + rufousing + banding + "0"
                 
-                    
+            else:
+                colour = maincolour        
 
 
             return [maincolour, colour, unders_colour, unders_opacity]
@@ -866,7 +887,7 @@ class Phenotype():
             else:
                 colour = "red"
         
-        maincolour += colour
+        maincolour += colour + '0'
         
         rufousing = ""
         banding = ""
@@ -931,13 +952,13 @@ class Phenotype():
             colour = colour.replace('ivory', 'lavender')
             if(genes.specialred == 'cinnamon'):
                 if('red' in maincolour):
-                    maincolour = 'cinnamon'
+                    maincolour = 'cinnamon3'
                 elif('cream' in maincolour or maincolour == 'apricot'):
-                    maincolour = 'fawn'
+                    maincolour = 'fawn3'
                 elif('honey' in maincolour):
-                    maincolour = 'buff'
+                    maincolour = 'buff3'
                 elif('ivory' in maincolour):
-                    maincolour = 'beige'
+                    maincolour = 'beige3'
                 
                 if('apricot' in maincolour):
                     self.caramel = 'caramel'
