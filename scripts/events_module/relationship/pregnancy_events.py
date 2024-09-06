@@ -1067,7 +1067,7 @@ class Pregnancy_Events:
                                                 other_clan=cat_type == 'former Clancat',
                                                 status=cat_type,
                                                 gender='fem',
-                                                alive=False,
+                                                alive=choice([True, False]),
                                                 thought=thought,
                                                 age=parage,
                                                 outside=True,
@@ -1087,7 +1087,7 @@ class Pregnancy_Events:
                                                         other_clan=cat_type == 'former Clancat',
                                                         status=cat_type,
                                                         gender='masc',
-                                                        alive=False,
+                                                        alive=choice([True, False]),
                                                         thought=thought,
                                                         age=parage if parage > 14 else 15,
                                                         outside=True,
@@ -1120,7 +1120,8 @@ class Pregnancy_Events:
             #kit.adoptive_parents = all_adoptive_parents  # Add the adoptive parents. 
             # Prevent duplicate prefixes in Clan
             tries = 0
-            while tries < 20 and kit.name.prefix in [kitty.name.prefix for kitty in Cat.all_cats.values() if not kitty.dead and not kitty.outside and kitty.ID != kit.ID]:
+            extant = [kitty.name.prefix for kitty in Cat.all_cats.values() if not kitty.dead and not kitty.outside and kitty.ID != kit.ID]
+            while tries < 20 and kit.name.prefix in extant:
                 kit.name = Name("newborn")
                 tries += 1
 

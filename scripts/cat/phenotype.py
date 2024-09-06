@@ -621,7 +621,7 @@ class Phenotype():
         if self.genotype.pointgene[0] == "c":
             self.spritecolour = "albino"
             self.maincolour = self.spritecolour
-        elif self.genotype.white[0] == "W" or ('DBEalt' not in self.genotype.pax3 and 'NoDBE' not in self.genotype.pax3) or (self.genotype.brindledbi and (('o' not in self.genotype.sexgene) or (self.genotype.ext[0] == 'ea' and ((moons > 11 and self.genotype.agouti[0] != 'a') or (moons > 23))) or (self.genotype.ext[0] == 'er' and moons > 23 and 'O' not in self.genotype.sexgene) or (self.genotype.ext[0] == 'ec' and (self.genotype.agouti[0] != 'a' or moons > 5)))):
+        elif self.genotype.white[0] == "W" or ('DBEalt' not in self.genotype.pax3 and 'NoDBE' not in self.genotype.pax3) or (self.genotype.brindledbi and (('o' not in self.genotype.sexgene) or (self.genotype.ext[0] == 'ea' and ((moons > 11 and self.genotype.agouti[0] != 'a') or (moons > 23))) or (self.genotype.ext[0] == 'er' and moons > 23) or (self.genotype.ext[0] == 'ec' and (self.genotype.agouti[0] != 'a' or moons > 5)))):
             self.spritecolour = "white"
             self.maincolour = self.spritecolour
         elif('o' not in self.genotype.sexgene and self.genotype.silver[0] == 'I' and self.genotype.specialred == 'merle'):
@@ -659,7 +659,7 @@ class Phenotype():
             self.patchunders = [main[2], main[3]]
 
             self.genotype.tortiepattern = self.tortpattern
-        elif ('o' not in self.genotype.sexgene) or (self.genotype.ext[0] == 'ea' and ((moons > 11 and self.genotype.agouti[0] != 'a') or (moons > 23))) or (self.genotype.ext[0] == 'er' and moons > 23 and 'O' not in self.genotype.sexgene) or (self.genotype.ext[0] == 'ec' and moons > 0 and (self.genotype.agouti[0] != 'a' or moons > 5)):
+        elif ('o' not in self.genotype.sexgene) or (self.genotype.ext[0] == 'ea' and ((moons > 11 and self.genotype.agouti[0] != 'a') or (moons > 23))) or (self.genotype.ext[0] == 'er' and moons > 23) or (self.genotype.ext[0] == 'ec' and moons > 0 and (self.genotype.agouti[0] != 'a' or moons > 5)):
             main = self.FindRed(self.genotype, moons, special=self.genotype.ext[0])
             self.maincolour = main[0]
             self.spritecolour = main[1]

@@ -1960,14 +1960,30 @@ class Genotype:
         self.refraction = refgrade
         self.pigmentation = piggrade
 
-    def ShowGenes(self):
+    def ShowGenes(self, filter=True):
         self.PolyEval()
         self.Cat_Genes = [self.furLength, self.eumelanin, self.sexgene, self.dilute, self.white, self.pointgene, self.silver,
                      self.agouti, self.mack, self.ticked]
-        self.Fur_Genes = [self.wirehair, self.laperm, self.cornish, self.urals, self.tenn, self.fleece, self.sedesp, self.ruhr, self.ruhrmod, self.lykoi]
-        self.Other_Colour = [self.pinkdilute, self.dilutemd, self.ext, self.corin, self.karp, self.bleach, self.ghosting, self.satin, self.glitter]
-        self.Body_Genes = [self.curl, self.fold, self.manx, self.kab, self.toybob, self.jbob, self.kub, self.ring, self.munch, self.poly, self.pax3]
-        self.Polygenes = [ "Saturation:", self.saturation, "Wideband:", self.wideband, self.wbtype, "Rufousing:", self.rufousing, self.ruftype,"Bengal:", self.bengal, self.bengtype, "Sokoke:", self.sokoke, self.soktype, "Spotted:", self.spotted, self.spottype, "Ticked:", self.tickgenes, self.ticktype, "Refraction:", self.refraction, "Pigmentation:", self.pigmentation]
+        if filter:
+            self.Fur_Genes = []
+            self.Other_Colour = []
+            self.Body_Genes = []
+            for x in [self.wirehair, self.laperm, self.cornish, self.urals, self.tenn, self.fleece, self.sedesp, self.ruhr, self.ruhrmod, self.lykoi]:
+                if x == self.ruhrmod:
+                    self.Fur_Genes.append(x)
+                elif x[0] != x[1] or x[0] not in ['wh', 'lp', 'R', 'Ru', 'Tr', 'Fc', 'Hr', 'hrbd', 'Ly']:
+                    self.Fur_Genes.append(x)
+            for x in [self.pinkdilute, self.dilutemd, self.ext, self.corin, self.karp, self.bleach, self.ghosting, self.satin, self.glitter]:
+                if x[0] != x[1] or x[0] not in ['Dp', 'dm', 'E', 'N', 'k', 'Lb', 'gh', 'St', 'Gl']:
+                    self.Other_Colour.append(x)
+            for x in [self.curl, self.fold, self.manx, self.kab, self.toybob, self.jbob, self.kub, self.ring, self.munch, self.poly, self.pax3]:
+                if x[0] != x[1] or x[0] not in ['cu', 'fd', 'm', 'ab', 'Kab', 'tb', 'Jb', 'kub', 'Rt', 'mk', 'pd', 'NoDBE']:
+                    self.Body_Genes.append(x)
+        else:
+            self.Fur_Genes = [self.wirehair, self.laperm, self.cornish, self.urals, self.tenn, self.fleece, self.sedesp, self.ruhr, self.ruhrmod, self.lykoi]
+            self.Other_Colour = [self.pinkdilute, self.dilutemd, self.ext, self.corin, self.karp, self.bleach, self.ghosting, self.satin, self.glitter]
+            self.Body_Genes = [self.curl, self.fold, self.manx, self.kab, self.toybob, self.jbob, self.kub, self.ring, self.munch, self.poly, self.pax3]
+        self.Polygenes = ["Wideband:", self.wideband, self.wbtype, "Rufousing:", self.rufousing, self.ruftype, "Saturation:", self.saturation, "Bengal:", self.bengal, self.bengtype, "Sokoke:", self.sokoke, self.soktype, "Spotted:", self.spotted, self.spottype, "Ticked:", self.tickgenes, self.ticktype, "Refraction:", self.refraction, "Pigmentation:", self.pigmentation]
 
         return self.Cat_Genes, "Other Fur Genes: ", self.Fur_Genes, "Other Colour Genes: ", self.Other_Colour, "Body Mutations: ", self.Body_Genes, "Polygenes: ", self.Polygenes
     

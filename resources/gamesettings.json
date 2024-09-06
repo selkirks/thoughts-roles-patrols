@@ -41,6 +41,11 @@
         "This will add a tint layer onto the cat sprites.",
         false
       ],
+      "filter genes": [
+        "Filter Genotypes",
+        "Some rare wildtype genes will be hidden on the genotype section.",
+        true
+      ],
       "gore": [
         "Allow mild gore and blood in patrol artwork",
         "Mild gore and blood will be allowed in the artwork displayed alongside patrols.",
