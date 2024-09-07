@@ -560,7 +560,7 @@ class Phenotype():
         tortie_high_patterns = ['THREE', 'FOUR', 'REDTAIL', 'HALF', 'STREAK', 'MASK', 'SWOOP', 'ARMTAIL', 'STREAMSTRIKE', 'DAUB',
                                 'ROSETAIL', 'DAPPLENIGHT', 'BLANKET']
         
-        if randint(1, 15) == 1:
+        if randint(1, 15) == 1 and not spec:
             tortie_low_patterns = ["BOWTIE", "BROKENBLAZE", "BUZZARDFANG", "COW2", "FADEBELLY", "FADESPOTS", "LOVEBUG", "MITAINE", 
                                 "PEBBLESHINE", "PIEBALD", "SAVANNAH",
                                 choice(["BACKSPOT", "BEARD", "BELLY", "BIB", "BLACKSTAR", "BLAZE", "BOOTS", "CHESTSPECK", "ESTRELLA",
@@ -967,3 +967,4 @@ class Phenotype():
                 unders_opacity = 33
         
         return [maincolour, colour, unders_colour, unders_opacity]
+    

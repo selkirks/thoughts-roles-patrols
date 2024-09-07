@@ -187,7 +187,10 @@ class Genotype:
         self.pinkdilute = jsonstring["pinkdilute"]
         self.dilutemd = jsonstring["dilutemd"]
         self.ext = jsonstring["ext"]
-        self.corin = jsonstring["corin"]
+        try:
+            self.corin = jsonstring["corin"]
+        except:
+            self.corin = jsonstring["sunshine"]
         self.karp = jsonstring["karp"]
         self.bleach = jsonstring["bleach"]
         self.ghosting = jsonstring["ghosting"]
@@ -205,7 +208,16 @@ class Genotype:
         self.ring = jsonstring["ring"]
         self.munch = jsonstring["munch"]
         self.poly = jsonstring["poly"]
-        self.pax3 = jsonstring["pax3"]
+
+        try:
+            self.pax3 = jsonstring["pax3"]
+        except:
+            self.pax3 = jsonstring['altai']
+            for i in range(2):
+                if self.pax3[i] == 'Al':
+                    self.pax3[i] = 'DBEalt'
+                else:
+                    self.pax3[i] = 'NoDBE'
 
         self.wideband = jsonstring["wideband"]
 
@@ -238,8 +250,11 @@ class Genotype:
 
         self.breeds = json.loads(jsonstring["breeds"])
         
-        self.somatic = json.loads(jsonstring["somatic"])
-        
+        try:
+            self.somatic = json.loads(jsonstring["somatic"])
+        except:
+            self.somatic = {}
+
         self.body_value = jsonstring["body_type"]
         self.body_label = jsonstring["body_type_label"]
         self.height_value = jsonstring["height"]
