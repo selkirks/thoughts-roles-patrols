@@ -86,7 +86,8 @@
     },
     {  
         "id":"insecure_deputy",
-        "thoughts": [
+        "thoughts":[
+            "Keeps confirming with the leader that the patrols {PRONOUN/m_c/subject}{VERB/m_c/'s/'re} organizing sound right",
             "Hopes {PRONOUN/m_c/subject}'ll make a decent leader someday",
             "Wonders how {PRONOUN/m_c/subject} became deputy in the first place",
             "Feels a pang of self-doubt when a patrol returns late",
@@ -307,6 +308,9 @@
     {
       "id": "story_deputy_to_apprentice",
         "thoughts": [
+            "Is recalling an old story that might inspire the Clan in tough times",
+            "Feels inspired to craft a new legend based on recent events",
+            "Uses the stories of old to help guide their decisions",
             "Is sharing tales of the Clan's legacy with wide-eyed apprentices"
         ],
         "main_skill_constraint": [

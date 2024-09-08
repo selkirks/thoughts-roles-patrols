@@ -92,6 +92,15 @@
         ]
     },
     {
+        "id": "altruistic_mediator",
+        "thoughts": [
+            "Wonders why everyone can't just get along"
+        ],
+        "main_trait_constraint": [
+            "altruistic"
+        ]
+    },
+    {
         "id": "bloodthirsty_mediator",
         "thoughts": [
             "Is wondering if {PRONOUN/m_c/subject} should sabotage a relationship that is going a bit too well",

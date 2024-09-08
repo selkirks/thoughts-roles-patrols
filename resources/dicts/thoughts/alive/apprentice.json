@@ -19,6 +19,18 @@
             "Practices {PRONOUN/m_c/poss} highest jump",
             "Practices {PRONOUN/m_c/poss} farthest leap",
             "Feels proud of {PRONOUN/m_c/self} for doing so well in training today",
+            "Is gossiping",
+            "Is acting angsty",
+            "Is dreading {PRONOUN/m_c/poss} apprentice duties",
+            "Fell into the nearby creek yesterday and is still feeling damp",
+            "Is having a hard time keeping up with {PRONOUN/m_c/poss} training",
+            "Was tasked with lining nests with fresh moss today",
+            "Is dreaming of someday making {PRONOUN/m_c/poss} Clan proud",
+            "Is thinking about the time {PRONOUN/m_c/subject} caught a huge rabbit",
+            "Practices some battle moves",
+            "Is helping to reinforce the camp wall with brambles",
+            "Is daydreaming about having a mate and kits someday",
+            "Had quite the adventure today",
             "Is thinking about how cool it will be when {PRONOUN/m_c/subject} {VERB/m_c/are/is} a warrior",
             "Wants to become a fierce warrior someday",
             "Wants to learn as many fighting techniques as {PRONOUN/m_c/subject} can",
@@ -340,8 +352,13 @@
     {
         "id": "calm_warrior_apprentice",
         "thoughts": [
+            "Is busy mastering a fighting technique",
+            "Spent all morning mastering and practicing the hunting crouch",
+            "Wants to train until {PRONOUN/m_c/subject} {VERB/m_c/have/has} learned everything",
+            "Doesn't stop practicing a move until it's done perfectly",
             "Likes to catch prey",
             "Is taking extra time to finish {PRONOUN/m_c/poss} task for today",
+            "Is settling for nothing less than perfect",
             "Is calm and focused"
         ],
         "main_trait_constraint": [
@@ -509,14 +526,22 @@
     {
         "id": "insecure_warrior_apprentice",
         "thoughts": [
+            "Is wondering if {PRONOUN/m_c/subject} {VERB/m_c/are/is} good enough to be a warrior...",
+            "Is reluctant to spar with {PRONOUN/m_c/poss} mentor today",
             "Doesn't think {PRONOUN/m_c/poss} hauls on hunting patrols have been substantial enough",
+            "Wishes {PRONOUN/m_c/subject} could do better",
             "Is sure {PRONOUN/m_c/subject} will fail {PRONOUN/m_c/poss} assessment",
             "Thinks that {PRONOUN/m_c/subject}'ll mess up on a border patrol",
+            "Hopes {PRONOUN/m_c/subject} {VERB/m_c/are/is} not assigned to a border patrol",
+            "Is worried about being an apprentice forever",
             "Isn't sure if anyone would trust {PRONOUN/m_c/object} to do a good job",
+            "Is fighting back tears after missing a catch",
+            "Is worried to lose in a real fight",
             "Is worrying about something",
             "Says sorry more often than {PRONOUN/m_c/subject} need to",
             "Is hiding after receiving a compliment",
-            "Has had a good day today, and actually feels confident in {PRONOUN/m_c/self}"
+            "Has had a good day today, and actually feels confident in {PRONOUN/m_c/self}",
+            "Is avoiding everyone today"
         ],
         "main_trait_constraint": [
             "insecure"

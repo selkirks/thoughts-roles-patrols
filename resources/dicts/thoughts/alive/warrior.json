@@ -254,6 +254,507 @@
         ]
     },
     {
+        "id": "confused_warrior",
+        "thoughts": [
+            "Huh ?",
+            "r_c did WHAT ??",
+            "Isn't sure what's going on this moon",
+            "Gives a completely unrelated answer to r_c's question",
+            "Tilts {PRONOUN/m_c/poss} head",
+            "Responds with vague ''mhm''s and nods during conversation, hoping it looks like they understand",
+            "Lead a patrol to the wrong spot",
+            "Accidentally went into the wrong den",
+            "Thought r_c was a fox and ended up snarling at them for no reason",
+            "What?"
+        ],
+        "main_trait_constraint": [
+            "confused"
+        ]
+    },
+    {
+        "id": "coward_warrior",
+        "thoughts": [
+            "Comes face to face with a mouse, both parties letting out a screech before parting ways at a sprint",
+            "Got jumpscared by {PRONOUN/m_c/poss} own shadow",
+            "Refuses to battle train with any cat bigger than them",
+            "Can't mark the border lines, too scared of accidentally marking another Clan's territory",
+            "Isn't sure how they would handle things if they were deputy"
+        ],
+        "main_trait_constraint": [
+            "coward" 
+        ]
+    },
+    {
+        "id": "creative_warrior",
+        "thoughts": [
+            "Thinks about new ways to catch prey",
+            "Thinks about new, more efficient fighting techniques"
+        ],
+        "main_trait_constraint": [
+            "creative"
+        ]
+    },
+    {
+        "id": "honest_warrior",
+        "thoughts": [
+            "Says they disagree with the leader, much to the suprise of their Clanmates",
+            "Refuses to battle train with any cat bigger than them",
+            "Says that r_c is annoying",
+            "Doesn't sugarcoat it",
+            "Always tells the truth... even if it's nicer not to"
+        ],
+        "main_trait_constraint": [
+            "honest"
+        ]
+    },
+    {
+        "id": "annoying_warrior",
+        "thoughts": [
+            "Wont stop bapping r_c with {PRONOUN/m_c/poss} paw",
+            "Wont take ''no'' for an answer",
+            "Has been bothering another cat to go on patrol together",
+            "Keeps asking r_c the same question again and again",
+            "Doesn't understand why {PRONOUN/m_c/poss} Clanmates dont like them",
+            "Is awfully close to getting yelled at",
+            "Talks WAY too loudly",
+            "Yap yap yap",
+            "Laughs like a cackling hyena, much to the annoyance of r_c",
+            "Hey. Hey r_c. hey r_c. hey hey. Look at Me"
+        ],
+        "main_trait_constraint": [
+            "annoying"
+        ]
+    },
+    {
+        "id": "aloof_warrior",
+        "thoughts": [
+            "Tries {PRONOUN/m_c/poss} best to avoid arguments",
+            "Doesn't chant during a ceremony",
+            "Stays away from talking about the other Clans",
+            "Is eating a piece of fresh-kill in a corner of camp",
+            "Doesn't like being in Gatherings",
+            "Prefers small talk"
+        ],
+        "main_trait_constraint": [
+            "aloof"
+        ]
+    },
+    {
+        "id": "frustrated_warrior",
+        "thoughts": [
+            "UURGH.",
+            "Is hissing in frustration",
+            "Snarls after failing to catch a mouse",
+            "Snarls at r_c to leave them alone",
+            "Snarls after a mouse escapes their claws",
+            "Has their claws unsheathed... noone knows why",
+            "Lashes out at r_c after a particularly long day",
+            "Is feeling the urge to kill."
+        ],
+        "main_trait_constraint": [
+            "frustrated"
+        ]
+    },
+    {
+        "id": "mysterious_warrior",
+        "thoughts": [
+            "Stays silent when asked a question",
+            "Hasnt been seen in a while",
+            "Won't talk to r_c today, and isn't explaining why",
+            "Has many, many secrets",
+            "Snaps at r_c when they ask why they seem to have so much on their mind",
+            "Gives a very vague answer when asked a question",
+            "Said something vaguely threatening"
+        ],
+        "main_trait_constraint": [
+            "mysterious"
+        ]
+    },
+    {
+        "id": "messy_warrior",
+        "thoughts": [
+            "Made a huge mess of the freshkill pile",
+            "Is being yelled at to make their nest",
+            "Has not made their nest in two weeks and hoping no one's noticed",
+            "Should probably be cleaning their fur more often",
+            "Has too many leaves stuck in their fur, other cats cant tell if it's an accessory or not"
+        ],
+        "main_trait_constraint": [
+            "messy"
+        ]
+    },
+    {
+        "id": "faithless_warrior_whoreadsthese",
+        "thoughts": [
+            "Doesn't believe a certain sick cat will make it",
+            "Has an internal eyeroll at the mention of StarClan",
+            "Feels awkward seeing another cat pray to StarClan",
+            "Is strangely relaxed with cats outside c_n",
+            "Isn't entirely sure if they would *die* for the sake of the Clan...",
+            "Scoffs at a clanmate for saying StarClan will show them their path",
+            "Secretly gives prey to a starving outsider"
+        ],
+        "main_trait_constraint": [
+            "faithless"
+        ]
+    },
+    {
+        "id": "gentle_warrior",
+        "thoughts": [
+            "Is careful not to flatten any foliage they walk over",
+            "Patiently answers kittens ridiculous questions",
+            "Narrowly avoided treading on a bug",
+            "Inadvertently de-escalates a tense moment with their calm air",
+            "Leaves pawprints only in the softest of mud",
+            "Has an angelic voice",
+            "Feels bad for killing a piece of prey",
+            "Guides a lost butterfly out of the recesses of their den",
+            "Gives r_c a second chance"
+        ],
+        "main_trait_constraint": [
+            "gentle"
+        ]
+    },
+    {
+        "id": "sleepy_warrior",
+        "thoughts": [
+            "Is taking a nap",
+            "Is taking a nap... a very long nap... all day... yeah theyre just sleeping",
+            "Wishes they could just sleep all day",
+            "Feels too tired to do anything today",
+            "snoork mimimimi snoork mimimimi",
+            "Was supposed to go on dawn patrol, but couldnt be awoken",
+            "honk shoo honk shoo",
+            "Is so, so tired",
+            "Wonders if it's normal to always be so tired",
+            "Is thinking about their nest",
+            "Misses their nest",
+            "yawnn...",
+            "Considers skipping patrol duties to take a quick nap",
+            "Tries to look awake during a Clan meeting",
+            "Wants to just get through all their tasks as quick as possible so they can go back to sleeping"
+        ],
+        "main_trait_constraint": [
+            "sleepy"
+        ]
+    },
+    {
+        "id": "silly_warrior",
+        "thoughts": [
+            "Is a goober",
+            "the medicine cat after i eat all their herbs -",
+            "r_c, I am a  bit concerned about this recent stock market fiasco.",
+            "r_c, we are cats.",
+            "Me when my and the go to at all for the",
+            "Dink my oiter",
+            "Void eyes",
+            "Yippee!",
+            "Makes silly faces at the kits to make them giggle",
+            "Commiting shenanigans, tomfoolery even, being a silly billy if you will",
+            "THIS IS NOT SILLY!!! Cats only think this thought when theyre about to eat a door!!!",
+            "This is a laughing matter",
+            "holy cow! EEEUJGFJHDG"
+        ],
+        "main_trait_constraint": [
+            "silly"
+        ]
+    },
+    {
+        "id": "thievish_warrior",
+        "thoughts": [
+            "Looks at a kittypet with a sparkly twoleg collar, feeling a hint of jealousy",
+            "Wonders if they could take a few cool looking herbs from the medicine cat's storage",
+            "Considers taking r_c's freshkill",
+            "Has been walking around with an accessory that looks an awful lot like a certain other cat's....",
+            "THAT'S THIEVIN, STEALIN, TAKIN WHATS NOT YOURS, TAKIN WHATS NOT YOURS-",
+            "Considers hunting prey past another Clan's border",
+            "Steals the leg of a squirrel while on hunting patrol, hoping noone will notice",
+            "Found a sparkly Twoleg circular object and decided to keep it for themselves",
+            "Trying not to commit crimes is hard, man..."
+        ],
+        "main_trait_constraint": [
+            "thievish"
+        ]
+    },
+    {
+        "id": "chaotic_warrior",
+        "thoughts": [
+            "RAAAAGGGHHGHG",
+            "Cannot be understood by {PRONOUN/m_c/poss} Clanmates",
+            "Screams",
+            "Is running around camp wildly",
+            "Is crunching leaves with {PRONOUN/m_c/poss} paws",
+            "Is thinking about taking r_c's fresh-kill",
+            "Is pretending to be a rock",
+            "Ate a bug",
+            "Is covered in mud"
+        ],
+        "main_trait_constraint": [
+            "chaotic"
+        ]
+    },
+    {
+        "id": "malicious_warrior",
+        "thoughts": [
+            "Is insulting r_c behind {PRONOUN/r_c/poss} back",
+            "Mocks and insults r_c, excusing it by saying that it's ''just a joke''",
+            "Is acting suspicious",
+            "Has been washing {PRONOUN/m_c/poss} paws a lot lately",
+            "Has disappeared often recently",
+            "Is practicing forbidden battle moves",
+            "Tells the warriors to get ready for a battle",
+            "Eats more prey than they should, then leaves bones in r_cs nest",
+            "Yearns to fight",
+            "Daydreams about killing a certain cat",
+            "Started a fight with a fellow Clanmate",
+            "Wonders how {PRONOUN/m_c/subject} would run the Clan better",
+            "Asks a medicine cat if they have any foxglove seeds"
+        ],
+        "main_trait_constraint": [
+            "malicious"
+        ]
+    },
+    {
+        "id": "gullible_warrior",
+        "thoughts": [
+            "It doesn't say ''gullible'' on the ceiling... where did my prey go",
+            "Was somehow convinced that mice can fly"
+        ],
+        "main_trait_constraint": [
+            "gullible"
+        ]
+    },
+    {
+        "id": "cheerful_warrior",
+        "thoughts": [
+            "Is jumping around in excitement!",
+            "Always cheers the loudest during ceremonies",
+            "Walks around with a pep in {PRONOUN/m_c/poss} step and a smile on {PRONOUN/m_c/poss} face",
+            "Always tries to keep a good spirit",
+            "Is laughing gleefully!",
+            "Is purring sweetly",
+            "Hums a happy tune while doing menial labor",
+            "Is repressing their negative emotions",
+            "Confuses r_c with how they're able to keep going despite everything",
+            "Is happy to see the sun rise for yet another day",
+            "Cheers up r_c",
+            "Is letting out mrrows of laughter",
+            "Is exhausting r_c with {PRONOUN/m_c/poss} incessant joy",
+            "Keeps up the Clan mood"
+        ],
+        "main_trait_constraint": [
+            "cheerful"
+        ]
+    },
+    {
+        "id": "sappy_warrior",
+        "thoughts": [
+            "Cuddles with r_c",
+            "Has made a cute nickname for every other cat in the Clan",
+            "Purrs all night, so full of love for {PRONOUN/m_c/poss} fellow warriors",
+            "Takes a Clanmate out to a beautiful spot in the territory, just for fun",
+            "Tears up at the thought of how every star in the sky is a warrior ancestor of theirs",
+            "Wants to surprise a Clanmate with a gift"
+        ],
+        "main_trait_constraint": [
+            "sappy"
+        ]
+    },
+    {
+        "id": "sentient_warrior",
+        "thoughts": [
+            "Feels a sense of dread, going on patrols against their will",
+            "Hello, creator.",
+            "Isn't sure if they're actually thinking this thought or if a higher power made them think this thought... what?",
+            "Wonders why moons feel more like short moments",
+            "Hopes their creator makes them go on patrol with their friends",
+            "Feels a sense of dread, knowing they're just a tiny part of a Twoleg's game",
+            "Desperately tries to explain to r_c that they're living in a Twoleg game, much to r_cs confusion",
+            "Hello? Twoleg? Can you hear me? Why can't I be a real cat? Do you know why? Please, answer me.",
+            "Feels scared, knowing the Twoleg that created them could kill them for no reason at any moment",
+            "I see you, Creator. The Drowning Man sees you too.",
+            "Where is my mouth- Why am i made of squares??",
+            "Why cant I move my eyes?? Why can't I move my mouth? Is this an internal dialogue? I can't see the end of the horizon- HATSUNE MEOWKU??",
+            "Sees the brown squares, the white scripts, the Twoleg beyond the screen."
+        ],
+        "main_trait_constraint": [
+            "sentient"
+        ]
+    },
+    {
+        "id": "perfectionist_warrior",
+        "thoughts": [
+            "Isn't sure if they're really a perfectionist",
+            "Spends the entire day trying to perfect each of their fighting techniques",
+            "Feels like they need to be the most skilled warrior in the Clan",
+            "Still doesn't feel good enough",
+            "Spends the entire day catching as much prey as possible",
+            "Will not allow {PRONOUN/m_c/self} to rest",
+            "Has been tough on {PRONOUN/m_c/self} recently",
+            "Is grooming {PRONOUN/m_c/self}, making sure every whisker is in place",
+            "Is busy sharpening {PRONOUN/m_c/poss} claws to look stronger"
+        ],
+        "main_trait_constraint": [
+            "perfectionist"
+        ]
+    },
+    {
+        "id": "lazy_warrior",
+        "thoughts": [
+            "Is taking a nap",
+            "Is skipping duties",
+            "Keeps making the least of efforts during patrols, just wanting to get this over with",
+            "Doesn't want to go hunting again",
+            "Wishes r_c would stop bothering them to go on patrol together",
+            "Is complaining about having to go on dawn patrol",
+            "Planning not to do anything at all today",
+            "5 more minutes... what even is a minute-"
+        ],
+        "main_trait_constraint": [
+            "lazy"
+        ]
+    },
+    {
+        "id": "hypocrite_warrior",
+        "thoughts": [
+            "Judges r_c's fighting skills, knowing they couldnt do any better",
+            "Says that they're completely normal and cool and everyone else is just weird !!",
+            "Keeps saying things about other cats that contradict",
+            "Keeps insulting r_c with words that much better fit themself",
+            "Says that they could lead a patrol better than the deputy ever will",
+            "Says that they deserve nine lives, not the leader !"
+        ],
+        "main_trait_constraint": [
+            "hypocrite"
+        ]
+    },
+    {
+        "id": "envious_warrior",
+        "thoughts": [
+            "Wishes they could have 9 lives like the leader",
+            "Feels shame for being so jealous of every cat around them",
+            "Looks at another cat's accesory with jealousy",
+            "Looks a pair of mates with resentment"
+        ],
+        "main_trait_constraint": [
+            "envious"
+        ]
+    },
+    {
+        "id": "moody_warrior",
+        "thoughts": [
+            "Is feeling really happy this moon!",
+            "Feels super sad this moon...",
+            "Feels alot more angry than usual this moon",
+            "Randomly starts crying",
+            "Changes moods quickly",
+            "Wishes {PRONOUN/m_c/subject} could control {PRONOUN/m_c/poss} emotions easier"
+        ],
+        "main_trait_constraint": [
+            "moody"
+        ]
+    },
+    {
+        "id": "vulnerable_warrior",
+        "thoughts": [
+            "Was found walking alone past the border",
+            "Takes their prey to a hidden corner of camp to eat",
+            "Takes a stroll outside, alone, in the middle of the night",
+            "Is sitting at the end of a cliff outside camp, admiring the view",
+            "Strays further from the other cats of a patrol, closer to the border of another Clan"
+        ],
+        "main_trait_constraint": [
+            "vulnerable"
+        ]
+    },
+    {
+        "id": "dull_warrior",
+        "thoughts": [
+            "Has an empty look in their eyes",
+            "Comments on the weather",
+            "Pondering if the fur of prey affects its taste",
+            "Was the only one who could speak to a rival Clancat without any tension at the Gathering",
+            "Doesn't have much to say about politics",
+            "Despite the whole Clan seeming to snap at eachother today, they manage to keep being inoffensive",
+            "Doesn't know what to say when r_c asks how they feel",
+            "Blanks when r_c asks what their hobbies are"
+        ],
+        "main_trait_constraint": [
+            "dull"
+        ]
+    },
+    {
+        "id": "fancy_warrior",
+        "thoughts": [
+            "Cleans their pelt, wanting to look as dazzling as possible",
+            "Speaks with unneccessarily long words"
+        ],
+        "main_trait_constraint": [
+            "fancy"
+        ]
+    },
+    {
+        "id": "manipulative_warrior",
+        "thoughts": [
+            "Refuses to talk to a friend for days after an argument",
+            "Intentionally comes late to the dawn patrol and fails to hunt, to spite the patrol leader",
+            "Mocks and insults r_c, excusing it by saying that it's ''just a joke''",
+            "Raises {PRONOUN/m_c/poss} voice while talking to r_c to intimidate {PRONOUN/r_c/object}",
+            "Knows exactly what to tell the deputy to get on patrol with their friend",
+            "Convinces r_c that {PRONOUN/m_c/subject}'d never do anything wrong",
+            "Gaslight, gatekeep, girlboss-NO",
+            "Shifts to blame to r_c for {PRONOUN/m_c/poss} own actions"
+        ],
+        "main_trait_constraint": [
+            "manipulative"
+        ]
+    },
+    {
+        "id": "flirty_warrior",
+        "thoughts": [
+            "Is smiling warmly at {PRONOUN/m_c/poss} Clanmates",
+            "Is making everyone laugh with a very funny quip",
+            "Is looking around camp for someone to share tongues with",
+            "Winked playfully at a Clanmate from across the clearing!",
+            "Plans to go on a stroll with some cat today",
+            "Is this moon's heartthrob",
+            "Spends all day chatting and laughing with some other warriors",
+            "Feels happy knowing {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} someone others can talk to",
+            "Asks another cat how they got their fur so shiny",
+            "Rubs their tail against another cat",
+            "Carefully curates {PRONOUN/m_c/poss} appearance to be dazzling, but not too dazzling"
+        ],
+        "main_trait_constraint": [
+            "flirty"
+        ]
+    },
+    {
+        "id": "scary_warrior",
+        "thoughts": [
+            "Is just standing there... Menacingly!!",
+            "Licks fresh-kill blood off {PRONOUN/m_c/poss} lips a little too intently",
+            "Has been glaring at a certain cat in camp with an odd look in {PRONOUN/m_c/poss} eye",
+            "Draws blood when training with another warrior and coldly says it was an accident",
+            "Has a crazed look in {PRONOUN/m_c/poss} eyes",
+            "Always has {PRONOUN/m_c/poss} claws sheathed",
+            "Pounced on a Clanmate unexpectedly, meowing about how they should be ready at any moment",
+            "Has been waiting for a war to be declared",
+            "Sent some poor kits running back to the nursery",
+            "Wonders why everyone is so scared of them",
+            "Jumpscares r_c by accident",
+            "Sharpens their claws on a prey's bone",
+            "Laughs at something that would be terrifying to any other cat",
+            "Is on nightwatch, spooking everyone who gets up",
+            "Tears up {PRONOUN/m_c/poss} fresh-kill far too violently for others' liking",
+            "Keep their slaughtered enemies teeth",
+            "Wants to show r_c their collection of prey bones",
+            "Doesn't understand why the other warriors are hesitant to train with {PRONOUN/m_c/object}"
+        ],
+        "main_trait_constraint": [
+            "scary"
+        ]
+    },
+    {
         "id": "bloodthirsty_warrior",
         "thoughts": [
             "Is acting suspicious",
@@ -285,6 +786,7 @@
             "Bravely offers to help the medicine cat pick herbs from a dangerous spot",
             "Runs out of {PRONOUN/m_c/poss} den into 'battle', only to find that it was just a storm",
             "Prances around with {PRONOUN/m_c/poss} tail up high, ready for anything",
+            "Promises the kits {PRONOUN/m_c/subject}'ll protect them when the time comes",
             "Is not afraid of anything",
             "Charges forward during a border patrol, eager and unafraid",
             "Is always first to volunteer when a dangerous mission is announced"
@@ -352,6 +854,7 @@
         "id": "careful_warrior",
         "thoughts": [
             "Is double-checking {PRONOUN/m_c/poss} nest for burrs",
+            "Is getting a small scratch checked out by the medicine cat",
             "Is slowly and methodically grooming {PRONOUN/m_c/self}",
             "Is chiding a younger cat for being so reckless",
             "Is padding back and forth across the camp",
@@ -362,6 +865,7 @@
             "Is helping to reinforce the walls of the elders' den",
             "Is going back to check on an old fox burrow {PRONOUN/m_c/subject} discovered yesterday, just to be safe",
             "Fortifies the camp walls for the fourth time this week",
+            "Asks the deputy about sending out some more hunting patrols- just to be sure",
             "Feels at peace",
             "Coaches other warriors to take a more guarded stance for their technique"
         ],
@@ -525,6 +1029,7 @@
             "Is waiting to watch the sun set",
             "Is grooming, grooming, grooming away...",
             "Patiently waits for a rabbit to come out of their burrow, eventually catching it",
+            "Smiles at some kit's cheap prank, knowing they'll grow out of it soon",
             "Is the only warrior not bothered by a snoring Clanmate",
             "Is delighted by the slow passage of time",
             "Feels entirely unlike {PRONOUN/m_c/self} when {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} bothered by something small",
@@ -542,6 +1047,7 @@
             "Offers a helping paw, even after a night of bad sleep",
             "Feels {PRONOUN/m_c/poss} kindness might be taken advantage of",
             "Is listening to the woes of a fellow Clanmate",
+            "Notices an apprentice struggling with a task and offers {PRONOUN/m_c/poss} help",
             "Is doing some apprentice tasks around camp to help lighten the load",
             "Is sharing tongues with friends",
             "Is keeping the injured cats company",
@@ -659,6 +1165,7 @@
             "Is hoping that StarClan protects {PRONOUN/m_c/poss} loved ones...",
             "Thanks StarClan for {PRONOUN/m_c/poss} catch out on a hunting patrol today",
             "Prays to StarClan that next season will be a good one",
+            "Rolls {PRONOUN/m_c/poss} eyes at the kits laughing about spirits not being real",
             "Goes to the medicine cat to ask for spiritual advice",
             "Wonders if StarClan can hear {PRONOUN/m_c/object}",
             "Leaves fresh-kill at the grave of a dead loved one"
@@ -710,6 +1217,7 @@
             "Thinks that {PRONOUN/m_c/subject} could take on a fox solo",
             "Thinks that {PRONOUN/m_c/subject} could take on a dog solo",
             "Hopes to earn more battle scars to show off",
+            "Was recently chastised by the deputy for reckless behavior out on patrol",
             "Is asking the medicine cat for herbs that may help {PRONOUN/m_c/object} in battle",
             "Is showing off {PRONOUN/m_c/poss} battle moves",
             "Offered to lead a border patrol today",
@@ -844,6 +1352,15 @@
             "Recently reported the scent of rogues in the territory",
             "Is determined to protect {PRONOUN/m_c/poss} loved ones, now more than ever",
             "Is making sure that everyone has eaten well",
+            "Is boasting about {PRONOUN/m_c/poss} loyalty to the Clan",
+            "Is listening to the Clan leader intently",
+            "Is listening to the deputy intently",
+            "Is telling the Clan leader details about {PRONOUN/m_c/poss} recent patrol",
+            "Is telling the deputy details about {PRONOUN/m_c/poss} recent patrol",
+            "Is offering constructive criticism to the deputy",
+            "Listened to the Clan leader's orders recently, despite {PRONOUN/m_c/poss} own doubts",
+            "Proclaimed to the Clan leader {PRONOUN/m_c/poss} unwavering loyalty",
+            "Is suspicious of a Clanmate who questions the leader",
             "Agrees with a Clanmate, if only because they're friends",
             "Keeps watch over the other warriors at night",
             "Is trying to understand why anyone would break the code",
