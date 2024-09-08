@@ -500,7 +500,7 @@ class HandleShortEvents:
                 self.dead_cats.append(
                     self.main_cat
                 )  # got to include the cat that rolled for death in the first place
-
+            taken_cats = []
             for kitty in self.dead_cats:
                 if "lost" in self.chosen_event.tags:
                     kitty.gone()
