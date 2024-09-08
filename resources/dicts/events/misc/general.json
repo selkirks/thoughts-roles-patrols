@@ -4810,6 +4810,47 @@
     ]
   },
   {
+    "event_id": "gen_misc_kittypetacc1",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["accessory"],
+    "weight": 5,
+    "event_text": "m_c was last seen in the morning when {PRONOUN/m_c/subject} went hunting. {PRONOUN/m_c/subject/CAP} didn't come back for a long time. Clan members went to looking for {PRONOUN/m_c/object}, them m_c came back to camp wearing a acc_singular .",
+    "new_accessory": ["BANDANA","BOWS"],
+    "m_c":{
+      "age": ["adolescent", "young adult", "adult", "senior adult"],
+      "status": ["any"]
+    }
+  },
+  {
+    "event_id": "gen_misc_harnesses1",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["accessory"],
+    "weight": 10,
+    "event_text": "Several days passed, but m_c did not return. Finally the patrol found {PRONOUN/m_c/object} near twolegs territory. m_c had a strange thing on {PRONOUN/m_c/poss} back.",
+    "new_accessory": ["HARNESS"],
+    "m_c":{
+      "age": ["adolescent", "young adult", "adult", "senior adult"],
+      "status": ["any"]
+    }
+  
+  },
+  {
+    "event_id": "gen_misc_dogteethcollar1",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["accessory"],
+    "weight": 15,
+    "event_text": "m_c returned to camp after a few days. {PRONOUN/m_c/poss/CAP} fur was dirty and {PRONOUN/m_c/subject} looked fierce. Especially with the collar m_c wearing now.",
+    "new_accessory": ["TEETHDOGCOLLARS"],
+    "m_c":{
+      "age": ["adolescent", "young adult", "adult", "senior adult"],
+      "status": ["any"]
+    }
+
+  },
+  {
     "event_id": "gen_misc_ceremony_sibling_sibling_acc2",
     "location": ["any"],
     "season": ["any"],
