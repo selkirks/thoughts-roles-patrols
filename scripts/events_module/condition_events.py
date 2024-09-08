@@ -433,7 +433,7 @@ class Condition_Events:
             "constantly dizzy",
             "recurring shock",
             "lasting grief",
-            "wobbly cat syndrome",
+            "wobbly cat syndrome", "cleft palate",
             "persistent headaches", "testosterone deficiency", "excess testosterone", "aneuploidy", "mosaicism", "chimerism"
         ]
 

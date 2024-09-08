@@ -18,6 +18,11 @@
     "plural": "blue berries",
     "singular": "blue berry"
   },
+  "BLUEBERRY": {
+    "default": "blue berries",
+    "plural": "blue berries",
+    "singular": "blue berry"
+  },
   "FORGET ME NOTS": {
     "default": "forget-me-not flowers",
     "plural": "forget-me-not flowers",
@@ -1253,5 +1258,305 @@
     "plural": "mud and dirt",
     "singular": "mud and dirt"
 
+  },
+  "CRIMSONBANDANA": {
+    "default": "crimson bandana",
+    "plural": "crimson bandanas",
+    "singular": "crimson bandana"
+  },
+  "BLUEBANDANA": {
+    "default": "blue bandana",
+    "plural": "blue bandanas",
+    "singular": "blue bandana"
+  },
+  "CYANBANDANA": {
+    "default": "cyan bandana",
+    "plural": "cyan bandanas",
+    "singular": "cyan bandana"
+  },
+  "YELLOWANDANA": {
+    "default": "yellow bandana",
+    "plural": "yellow bandans",
+    "singular": "yellow bandana"
+  },
+  "LIMEBANDANA": {
+    "default": "lime bandana",
+    "plural": "lime bandanas",
+    "singular": "lime bandana"
+  },
+  "GREENBANDANA": {
+    "default": "green bandana",
+    "plural": "green bandanas",
+    "singular": "green bandana"
+  },
+  "REDBANDANA": {
+    "default": "orange bandana",
+    "plural": "oragne bandanas",
+    "singular": "orange bandana"
+  },
+  "RAINBOWBANDANA": {
+    "default": "rainbow bandana",
+    "plural": "rainbow bandanas",
+    "singular": "rainbow bandana"
+  },
+  "BLACKBANDANA": {
+    "default": "black bandana",
+    "plural": "black bandanas",
+    "singular": "black bandana"
+  },
+  "SPIKESBANDANA": {
+    "default": "blue and gold bandana",
+    "plural": "blue and gold bandanas",
+    "singular": "blue and gold bandana"
+  },
+  "WHITEBANDANA": {
+    "default": "white bandana",
+    "plural": "white bandanas",
+    "singular": "white bandana"
+  },
+  "PINKBANDANA": {
+    "default": "pink bandana",
+    "plural": "pink bandanas",
+    "singular": "pink bandana"
+  },
+  "PURPLEBANDANA": {
+    "default": "purple bandana",
+    "plural": "purple bandanas",
+    "singular": "purple bandana"
+  },
+  "MULTIBANDANA": {
+    "default": "pastel pink bandana",
+    "plural": "pastel pink bandanas",
+    "singular": "pastel pink bandana"
+  },
+  "INDIGOBANDANA": {
+    "default": "indigo bandana",
+    "plural": "indigo bandanas",
+    "singular": "indigo bandana"
+  },
+  "CRIMSONH": {
+    "default": "crimson harness",
+    "plural": "crimson harnesses",
+    "singular": "crimson harness"
+  },
+  "BLUEH": {
+    "default": "blue harness",
+    "plural": "blue harnesses",
+    "singular": "blue harness"
+  },
+  "CYANH": {
+    "default": "cyan harness",
+    "plural": "cyan harnesses",
+    "singular": "cyan harness"
+  },
+  "YELLOWH": {
+    "default": "yellow harness",
+    "plural": "yellow harnesses",
+    "singular": "yellow harness"
+  },
+  "LIMEH": {
+    "default": "lime harness",
+    "plural": "lime harnesses",
+    "singular": "lime harness"
+  },
+  "GREENH": {
+    "default": "green harness",
+    "plural": "green harnesses",
+    "singular": "green harness"
+  },
+  "REDH": {
+    "default": "orange harness",
+    "plural": "oragne harnesses",
+    "singular": "orange harness"
+  },
+  "RAINBOWH": {
+    "default": "rainbow harness",
+    "plural": "rainbow harnesses",
+    "singular": "rainbow harness"
+  },
+  "BLACKH": {
+    "default": "black harness",
+    "plural": "black harnesses",
+    "singular": "black harness"
+  },
+  "SPIKESH": {
+    "default": "blue and gold harness",
+    "plural": "blue and gold harnesses",
+    "singular": "blue and gold harness"
+  },
+  "WHITEH": {
+    "default": "white harness",
+    "plural": "white harnesses",
+    "singular": "white harness"
+  },
+  "PINKH": {
+    "default": "pink harness",
+    "plural": "pink harnesses",
+    "singular": "pink harness"
+  },
+  "PURPLEH": {
+    "default": "purple harness",
+    "plural": "purple harnesses",
+    "singular": "purple harness"
+  },
+  "MULTIH": {
+    "default": "pastel pink harness",
+    "plural": "pastel pink harnesses",
+    "singular": "pastel pink harness"
+  },
+  "INDIGOH": {
+    "default": "indigo harness",
+    "plural": "indigo harnesses",
+    "singular": "indigo harness"
+  },
+  "CRIMSONBOWS": {
+    "default": "crimson bows",
+    "plural": "crimson bows",
+    "singular": "crimson bows"
+  },
+  "BLUEBOWS": {
+    "default": "blue bows",
+    "plural": "blue bows",
+    "singular": "blue bows"
+  },
+  "CYANBOWS": {
+    "default": "cyan bows",
+    "plural": "cyan bows",
+    "singular": "cyan bows"
+  },
+  "YELLOWBOWS": {
+    "default": "yellow bows",
+    "plural": "yellow bows",
+    "singular": "yellow bows"
+  },
+  "LIMEBOWS": {
+    "default": "lime bows",
+    "plural": "lime bows",
+    "singular": "lime bows"
+  },
+  "GREENBOWS": {
+    "default": "green bows",
+    "plural": "green bows",
+    "singular": "green bows"
+  },
+  "REDBOWS": {
+    "default": "orange bows",
+    "plural": "oragne bows",
+    "singular": "orange bows"
+  },
+  "RAINBOWBOWS": {
+    "default": "rainbow bows",
+    "plural": "rainbow bows",
+    "singular": "rainbow bows"
+  },
+  "BLACKBOWS": {
+    "default": "black bows",
+    "plural": "black bows",
+    "singular": "black bows"
+  },
+  "SPIKESBOWS": {
+    "default": "blue and gold bows",
+    "plural": "blue and gold bows",
+    "singular": "blue and gold bows"
+  },
+  "WHITEBOWS": {
+    "default": "white bows",
+    "plural": "white bows",
+    "singular": "white bows"
+  },
+  "PINKBOWS": {
+    "default": "pink bows",
+    "plural": "pink bows",
+    "singular": "pink bows"
+  },
+  "PURPLEBOWS": {
+    "default": "purple bows",
+    "plural": "purple bows",
+    "singular": "purple bows"
+  },
+  "MULTIBOWS": {
+    "default": "pastel pink bows",
+    "plural": "pastel pink bows",
+    "singular": "pastel pink bows"
+  },
+  "INDIGOBOWS": {
+    "default": "indigo bows",
+    "plural": "indigo bows",
+    "singular": "indigo bows"
+  },
+  "CRIMSONTEETHCOLLAR": {
+    "default": "crimson dog teeth collar",
+    "plural": "crimson dog teeth collars",
+    "singular": "crimson dog teeth collar"
+  },
+  "BLUETEETHCOLLAR": {
+    "default": "blue dog teeth collar",
+    "plural": "blue dog teeth collars",
+    "singular": "blue dog teeth collar"
+  },
+  "CYANTEETHCOLLAR": {
+    "default": "cyan dog teeth collar",
+    "plural": "cyan dog teeth collars",
+    "singular": "cyan dog teeth collar"
+  },
+  "YELLOWTEETHCOLLAR": {
+    "default": "yellow dog teeth collar",
+    "plural": "yellow dog teeth collars",
+    "singular": "yellow dog teeth collar"
+  },
+  "LIMETEETHCOLLAR": {
+    "default": "lime dog teeth collar",
+    "plural": "lime dog teeth collars",
+    "singular": "lime dog teeth collar"
+  },
+  "GREENTEETHCOLLAR": {
+    "default": "green dog teeth collar",
+    "plural": "green dog teeth collars",
+    "singular": "green dog teeth collar"
+  },
+  "REDTEETHCOLLAR": {
+    "default": "red dog teeth collar",
+    "plural": "red dog teeth collars",
+    "singular": "red dog teeth collar"
+  },
+  "RAINBOWTEETHCOLLAR": {
+    "default": "rainbow dog teeth collar",
+    "plural": "rainbow dog teeth collars",
+    "singular": "rainbow dog teeth collar"
+  },
+  "BLACKTEETHCOLLAR": {
+    "default": "black dog teeth collar",
+    "plural": "black dog teeth collars",
+    "singular": "black dog teeth collar"
+  },
+  "SPIKESTEETHCOLLAR": {
+    "default": "blue and gold dog teeth collar",
+    "plural": "blue and gold dog teeth collars",
+    "singular": "blue and gold dog teeth collar"
+  },
+  "WHITETEETHCOLLAR": {
+    "default": "white dog teeth collar",
+    "plural": "white dog teeth collars",
+    "singular": "white dog teeth collar"
+  },
+  "PINKTEETHCOLLAR": {
+    "default": "pink dog teeth collar",
+    "plural": "pink dog teeth collars",
+    "singular": "pink dog teeth collar"
+  },
+  "PURPLETEETHCOLLAR": {
+    "default": "purple dog teeth collar",
+    "plural": "purple dog teeth collars",
+    "singular": "purple dog teeth collar"
+  },
+  "MULTITEETHCOLLAR": {
+    "default": "lilac dog teeth collar",
+    "plural": "lilac dog teeth collars",
+    "singular": "lilac dog teeth collar"
+  },
+  "INDIGOTEETHCOLLAR": {
+    "default": "indigo dog teeth collar",
+    "plural": "indigo dog teeth collars",
+    "singular": "indigo dog teeth collar"
   }
 }

@@ -823,7 +823,7 @@
     "season": ["any"],
     "sub_type": ["accessory"],
     "weight": 20,
-    "event_text": "m_c  was gone for a few days. When {PRONOUN/m_c/subject} finally returned m_c had a very specific smell and a strange object. m_c never explained where {PRONOUN/m_c/subject} been.",
+    "event_text": "m_c was gone for a few days. When {PRONOUN/m_c/subject} finally returned m_c had a very specific smell and a strange object. m_c never explained where {PRONOUN/m_c/subject} been.",
     "new_accessory": ["OLD SILVER WATCH", "OLD GOLD WATCH", "GOLDEN KEY"],
     "m_c":{
       "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],

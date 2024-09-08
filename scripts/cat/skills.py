@@ -741,7 +741,8 @@ class CatSkills:
         SkillPath.AURAVIBES: SkillTypeFlag.SOCIAL,
         SkillPath.ANIMALTAKER: SkillTypeFlag.SOCIAL,
         SkillPath.VET: SkillTypeFlag.OBSERVANT | SkillTypeFlag.SOCIAL,
-        SkillPath.ANIMALMAGNET: SkillTypeFlag.SOCIAL
+        SkillPath.ANIMALMAGNET: SkillTypeFlag.SOCIAL,
+        SkillPath.IMMUNE: SkillTypeFlag.OBSERVANT,
     }
 
     # pylint: enable=unsupported-binary-operation
