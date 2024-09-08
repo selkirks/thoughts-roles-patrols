@@ -300,9 +300,9 @@ class Cat:
                     if len(hasVitiligo) == 0:
                         white_pattern.append(choice(vitiligo))
             
-            if white_pattern is None and ((KIT[0] != "W" and KIT[0] != "w" and KIT[0] != 'wsal') or 'NoDBE' not in pax3 or 'DBEre' in pax3):
+            if (white_pattern is None and KIT[0] != 'wsal') or (KIT[0] == 'wg' or 'NoDBE' not in pax3 or KIT[1] in ["ws", "wt"]):
                 white_pattern = []
-                if KIT[0] == 'wt' or KIT[1] == 'wt':
+                if 'wt' in KIT:
                     if KIT[1] not in ['ws', 'wt'] and KITgrade < 3:
                         white_pattern.append("dorsal1")
                     elif KIT[1] not in ['ws', 'wt'] and KITgrade < 5:
@@ -311,7 +311,7 @@ class Cat:
                         white_pattern.append("dorsal2")
                     white_pattern.append("thai tail")
                 
-                if KIT[0] == "wg" and 'NoDBE' in pax3:
+                if KIT[0] == "wg":
                     for mark in ["left front mitten", "left back mitten", "right front mitten", "right back mitten"]:
                         white_pattern.append(mark)
                 elif (KIT[0] in ["ws", "wt"] or pax3[0] != 'NoDBE') and KIT[1] not in ["ws", "wt"] and 'NoDBE' in pax3:

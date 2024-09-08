@@ -2453,7 +2453,7 @@ class Genotype:
             "sedesp" : ['Se'],
 
             'pinkdilute' : ['dp'],
-            "ext" : ['Eg', 'ec', 'er', 'ea'],
+            "ext" : ['ec', 'er', 'ea'],
             "corin" : ['sh', 'sg', 'fg'],
             "karp" : ['K'],
             "bleach" : ['lb'],
@@ -2465,7 +2465,7 @@ class Genotype:
             "white" : ['W', 'wsal'],
             "pointgene" : ['cb', 'cs', 'cm', 'c'],
             "silver" : ['I'],
-            "agouti" : ['Apb', 'a']
+            "agouti" : ['a']
         }
 
         self.somatic["allele"] = choice(alleles[self.somatic['gene']])
