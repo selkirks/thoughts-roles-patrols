@@ -574,7 +574,7 @@ class Phenotype():
                                 "EYEBAGS", "HONEY", "LEFTEAR", "LITTLE", "PAWS", "REVERSEEYE", "REVERSEHEART", "RIGHTEAR", 
                                 "SCOURGE", "SPARKLE", "TAILTIP", "TIP", "TOES", "TOESTAIL", "VEE"]
 
-                if randint(1, 15) == 1 or (i > 0 and randint(1, 7) == 1):
+                if randint(1, 15) == 1 or (i > 0 and randint(1, 10) == 1):
                     tortie_low_patterns = ["BOWTIE", "BROKENBLAZE", "BUZZARDFANG", "COW2", "FADEBELLY", "FADESPOTS", "LOVEBUG", "MITAINE", 
                                         "PEBBLESHINE", "PIEBALD", "SAVANNAH",
                                         choice(["BACKSPOT", "BEARD", "BELLY", "BIB", "BLACKSTAR", "BLAZE", "BOOTS", "CHESTSPECK", "ESTRELLA",
