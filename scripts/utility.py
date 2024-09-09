@@ -3313,9 +3313,22 @@ def generate_sprite(
             if genotype.satin[0] == "st" or genotype.tenn[0] == 'tr':
                 gensprite.blit(sprites.sprites['satin0'], (0, 0))
 
-            if (genotype.bleach[0] == "lb" and sprite_age > 3) or 'masked' in phenotype.silvergold:
+            if (genotype.fevercoat and sprite_age < 5):
+                fevercoat = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
+                fevercoat.blit(sprites.sprites['bleach' + cat_sprite], (0, 0))
+                fevercoat.blit(sprites.sprites['bleach' + cat_sprite], (0, 0))
+                fevercoat.blit(sprites.sprites['bleach' + cat_sprite], (0, 0))
+                fevercoat.blit(sprites.sprites['bleach' + cat_sprite], (0, 0))
+                fevercoat.blit(sprites.sprites['bleach' + cat_sprite], (0, 0))
+                fevercoat.blit(sprites.sprites['lightbasecolours0'], (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
+                if (sprite_age > 2):
+                    fevercoat.set_alpha(150)
+                gensprite.blit(fevercoat, (0, 0))
+            
+            elif (genotype.bleach[0] == "lb" and sprite_age > 3) or 'masked' in phenotype.silvergold:
                 gensprite.blit(sprites.sprites['bleach' + cat_sprite], (0, 0))
 
+            
             if (
                 game.settings['tints']
                 and cat.pelt.tint != "none" 
@@ -3477,7 +3490,7 @@ def generate_sprite(
         if int(cat_sprite) == 20 and cat.moons > 0:
             age = 0
         elif int(cat_sprite) < 3 and cat.moons > 6:
-            age = 5
+            age = 4
         elif int(cat_sprite) < 6 and cat.moons > 12:
             age = 11
         elif (int(cat_sprite == 19) or int(cat_sprite) == 17) and cat.moons > 12:

@@ -23,6 +23,8 @@ class Genotype:
             self.chimerageno = Genotype(self.odds, self.ban_genes, 'chimera')
         else:
             self.chimerageno = None
+
+        self.fevercoat = False
         
         self.furLength = ["", ""]
         self.longtype = choice(['long', 'long', 'long', 'medium'])
@@ -144,6 +146,10 @@ class Genotype:
         return getattr(self, name)
     
     def fromJSON(self, jsonstring):
+        try:
+            self.fevercoat = jsonstring["fevercoat"]
+        except:
+            pass
         self.furLength = jsonstring["furLength"]
         self.eumelanin = jsonstring["eumelanin"]
         self.sexgene = jsonstring["sexgene"]
@@ -278,6 +284,7 @@ class Genotype:
             chimgen = self.chimerageno.toJSON()
 
         return {
+            "fevercoat" : self.fevercoat,
             "furLength": self.furLength,
             "longtype": self.longtype,
             "eumelanin": self.eumelanin,

@@ -144,16 +144,10 @@ class Phenotype():
     
     def WhiteFinder(self):
         if self.genotype.white[1] in ["ws", 'wt'] or 'NoDBE' not in self.genotype.pax3:
-            if(self.tortie != "" and self.tortie != 'brindled bicolour '):
-                self.tortie = "calico "
-            elif (self.tortie == "" or self.genotype.whitegrade > 1):
-                self.highwhite = "white and "
+            self.highwhite = "white and "
         
         elif(self.genotype.white[0] in ['ws', 'wt'] and self.genotype.whitegrade > 1):
-            if(self.tortie != "" and self.tortie != 'brindled bicolour ' and self.genotype.whitegrade > 4):
-                self.tortie = "calico "
-            else:
-                self.lowwhite = "and white "
+            self.lowwhite = "and white "
             
         
         if(self.genotype.white[0] == "wg"):
@@ -335,10 +329,7 @@ class Phenotype():
             FindPattern()
         
         if(self.tortie != '' and self.tabby != '' and self.tortie != "brindled bicolour "):
-            if(self.tortie == 'calico '):
-                self.tortie = ' caliby '
-            else:
-                self.tortie = ' torbie '
+            self.tortie = ' torbie '
         elif(self.tabby != '' and self.point not in ['point ', 'mink ', 'siamocha ']):
             self.tabby += ' tabby '
         elif(self.tabby != ''  and self.point in ['point ', 'mink ', 'siamocha ']):

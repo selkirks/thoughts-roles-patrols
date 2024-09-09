@@ -373,11 +373,20 @@ class Pregnancy_Events:
                     if x.ID not in pregnant_cat.mate:
                         affair_partner.append(x.ID) 
             
+            fever = False
+            if len(pregnant_cat.illnesses) > 0:
+                for illness in pregnant_cat.illnesses:
+                    if illness in ["greencough", "redcough", "yellowcough", "whitecough", 
+                    "an infected wound", "a festering wound", "ear infection",
+                    "carrionplace disease", "heat stroke", "heat exhaustion"] and random.random() < 0.25:
+                        fever = True
+
             clan.pregnancy_data[pregnant_cat.ID] = {
                 "second_parent": ids if second_parent else None,
                 "affair_partner" : affair_partner if affair_partner else None,
                 "moons": 0,
                 "amount": 0,
+                "fever_coat": fever
             }
 
             text = choice(Pregnancy_Events.PREGNANT_STRINGS["announcement"])
@@ -406,6 +415,15 @@ class Pregnancy_Events:
 
         # add the amount to the pregnancy dict
         clan.pregnancy_data[cat.ID]["amount"] = amount
+
+        fever = clan.pregnancy_data[cat.ID].get('fever_coat', False)
+
+        if len(cat.illnesses) > 0 and not fever:
+            for illness in cat.illnesses:
+                if illness in ["greencough", "redcough", "yellowcough", "whitecough", 
+                "an infected wound", "a festering wound", "ear infection",
+                "carrionplace disease", "heat stroke", "heat exhaustion"] and random.random() < 0.33:
+                    clan.pregnancy_data[cat.ID]["fever_coat"] = True
 
         # if the cat is outside of the clan, they won't guess how many kits they will have
         if cat.outside:
@@ -579,8 +597,9 @@ class Pregnancy_Events:
 
         kits = Pregnancy_Events.get_kits(kits_amount, cat, other_cat, clan, backkit=backkit)
         kits_amount = len(kits)
-
         for kit in kits:
+            if clan.pregnancy_data[cat.ID]["fever_coat"]:
+                kit.genotype.fevercoat = True
             if random.random() < stillborn_chance or kit.genotype.manx[1] == "Ab" or kit.genotype.manx[1] == "M" or kit.genotype.fold[1] == "Fd" or kit.genotype.munch[1] == "Mk" or ('NoDBE' not in kit.genotype.pax3 and 'DBEalt' not in kit.genotype.pax3):
                 kit.dead = True
                 History.add_death(kit, str(kit.name) + " was stillborn.")
