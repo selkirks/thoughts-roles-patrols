@@ -524,7 +524,7 @@ class Cat:
                         if random() < 0.02:
                             white_pattern = ["full white", "break/inverse thai"]
             
-            if white_pattern == "No" or white_pattern == [] or white_pattern is None or KIT[0] == "W" or albino[0] == "c" or (KIT == ["w", "w"] and not vit and pax3 == ['NoDBE', 'NoDBE']):
+            if white_pattern == "No" or white_pattern == [] or white_pattern is None or KIT[0] == "W" or albino[0] == "c" or (KIT[0] == "w" and not vit and pax3 == ['NoDBE', 'NoDBE']):
                 return "No"
             return clean_white(white_pattern)
 
