@@ -553,77 +553,88 @@ class Phenotype():
         return pattern
       
     def ChooseTortiePattern(self, spec = None):
-        tortie_low_patterns = ['DELILAH', 'MOTTLED', 'EYEDOT', 'BANDANA', 'SMUDGED', 'EMBER', 'BRINDLE', 'SAFI', 'BELOVED', 'BODY', 
-                               'SHILOH', 'FRECKLED']
-        tortie_mid_patterns = ['ONE', 'TWO', 'SMOKE', 'MINIMALONE', 'MINIMALTWO', 'MINIMALTHREE', 'MINIMALFOUR', 'OREO', 'CHIMERA',
-                                'CHEST', 'GRUMPYFACE', 'SIDEMASK', 'PACMAN', 'BRIE' ,'ORIOLE', 'ROBIN', 'PAIGE', 'HEARTBEAT']
-        tortie_high_patterns = ['THREE', 'FOUR', 'REDTAIL', 'HALF', 'STREAK', 'MASK', 'SWOOP', 'ARMTAIL', 'STREAMSTRIKE', 'DAUB',
-                                'ROSETAIL', 'DAPPLENIGHT', 'BLANKET']
-        
-        if randint(1, 15) == 1 and not spec:
-            tortie_low_patterns = ["BOWTIE", "BROKENBLAZE", "BUZZARDFANG", "COW2", "FADEBELLY", "FADESPOTS", "LOVEBUG", "MITAINE", 
-                                "PEBBLESHINE", "PIEBALD", "SAVANNAH",
-                                choice(["BACKSPOT", "BEARD", "BELLY", "BIB", "BLACKSTAR", "BLAZE", "BOOTS", "CHESTSPECK", "ESTRELLA",
-                                        "EYEBAGS", "HONEY", "LEFTEAR", "LITTLE", "PAWS", "REVERSEEYE", "REVERSEHEART", "RIGHTEAR", 
-                                        "SCOURGE", "SPARKLE", "TAILTIP", "TIP", "TOES", "TOESTAIL", "VEE"])]
-            tortie_mid_patterns = ["APPALOOSA", "BLOSSOMSTEP", "BOWTIE", "BROKEN", "BUB", "BULLSEYE", "BUSTER", "BUZZARDFANG",
-                                "COW", "COW2", "DAMIEN", "DAPPLEPAW", "DIVA", "FCTWO", "FINN", "FRECKLES", "GLASS", "HAWKBLAZE",
-                                "LOVEBUG", "MITAINE", "PAINTED", "PANTSTWO", "PEBBLE", "PIEBALD", "ROSINA", "SHOOTINGSTAR", "SPARROW",
-                                "WOODPECKER",
-                                choice(["BACKSPOT", "BEARD", "BELLY", "BIB", "BLACKSTAR", "BLAZE", "BOOTS", "CHESTSPECK", "ESTRELLA",
-                                        "EYEBAGS", "HONEY", "LEFTEAR", "LITTLE", "PAWS", "REVERSEEYE", "REVERSEHEART", "RIGHTEAR", 
-                                        "SCOURGE", "TAILTIP", "TIP", "TOESTAIL", "VEE"])]
-            tortie_high_patterns = ["ANY", "ANYTWO", "BLOSSOMSTEP", "BUB", "BUDDY", "BUSTER", "CAKE", "COW", "CURVED",
-                                "DAPPLEPAW", "FCTWO", "FAROFA", "GOATEE", "HALFFACE", "HAWKBLAZE", "LILTWO", "MISS", "MISTER", "OWL",
-                                "PANTS", "PRINCE", "REVERSEPANTS", "RINGTAIL", "SAMMY", "SKUNK", "SPARROW", "TOPCLOVER", "VEST", "WINGS",
-                                choice(["BEARD", "BELLY", "BIB", "BLACKSTAR", "BLAZE", "BOOTS", "CHESTSPECK", "ESTRELLA", "EYEBAGS", 
-                                        "HONEY", "LEFTEAR", "LITTLE", "PAWS", "REVERSEEYE", "REVERSEHEART", "RIGHTEAR", "SCOURGE", 
-                                        "TAILTIP", "TIP", "TOESTAIL", "VEE"])]
-
-        chosen = ""
+        chosen = []
 
         if spec:
-            chosen = choice([choice(tortie_high_patterns), choice(tortie_high_patterns), choice(tortie_mid_patterns), choice(tortie_mid_patterns), choice(tortie_low_patterns)])
+            chosen.append(choice([choice(tortie_high_patterns), choice(tortie_high_patterns), choice(tortie_mid_patterns), choice(tortie_mid_patterns), choice(tortie_low_patterns)]))
 
         elif randint(1, self.genotype.odds['cryptic_tortie']) == 1:
-            chosen = 'CRYPTIC'
-        elif(self.genotype.white[1] == "ws" or self.genotype.white[1] == "wt"):
-            if self.genotype.whitegrade > 2:
-                if(randint(1, 10) == 1):
-                    chosen = choice(tortie_low_patterns)
-                elif(randint(1, 5) == 1):
-                    chosen = choice(tortie_mid_patterns)
-                else:
-                    chosen = choice(tortie_high_patterns)
-            else:
-                if(randint(1, 7) == 1):
-                    chosen = choice(tortie_low_patterns)
-                elif(randint(1, 3) == 1):
-                    chosen = choice(tortie_mid_patterns)
-                else:
-                    chosen = choice(tortie_high_patterns)
-        elif(self.genotype.white[0] == 'ws' or self.genotype.white[0] == 'wt'):
-            if self.genotype.whitegrade > 3:
-                if(randint(1, 7) == 1):
-                    chosen = choice(tortie_high_patterns)
-                elif(randint(1, 3) == 1):
-                    chosen = choice(tortie_mid_patterns)
-                else:
-                    chosen = choice(tortie_low_patterns)
-            else:
-                if(randint(1, 10) == 1):
-                    chosen = choice(tortie_high_patterns)
-                elif(randint(1, 5) == 1):
-                    chosen = choice(tortie_mid_patterns)
-                else:
-                    chosen = choice(tortie_low_patterns)
+            chosen.append('CRYPTIC')
+            
         else:
-            if(randint(1, 15) == 1):
-                chosen = choice(tortie_high_patterns)
-            elif(randint(1, 7) == 1):
-                chosen = choice(tortie_mid_patterns)
-            else:
-                chosen = choice(tortie_low_patterns)
+            for i in range(choice([1, 1, 1, 1, 1, 2, 2, 3])):
+                tortie_low_patterns = ['DELILAH', 'MOTTLED', 'EYEDOT', 'BANDANA', 'SMUDGED', 'EMBER', 'BRINDLE', 'SAFI', 'BELOVED', 'BODY', 
+                                    'SHILOH', 'FRECKLED']
+                tortie_mid_patterns = ['ONE', 'TWO', 'SMOKE', 'MINIMALONE', 'MINIMALTWO', 'MINIMALTHREE', 'MINIMALFOUR', 'OREO', 'CHIMERA',
+                                        'CHEST', 'GRUMPYFACE', 'SIDEMASK', 'PACMAN', 'BRIE' ,'ORIOLE', 'ROBIN', 'PAIGE', 'HEARTBEAT']
+                tortie_high_patterns = ['THREE', 'FOUR', 'REDTAIL', 'HALF', 'STREAK', 'MASK', 'SWOOP', 'ARMTAIL', 'STREAMSTRIKE', 'DAUB',
+                                        'ROSETAIL', 'DAPPLENIGHT', 'BLANKET']
+                
+                tiny_patches = ["BACKSPOT", "BEARD", "BELLY", "BIB", "BLACKSTAR", "BLAZE", "BOOTS", "CHESTSPECK", "ESTRELLA",
+                                "EYEBAGS", "HONEY", "LEFTEAR", "LITTLE", "PAWS", "REVERSEEYE", "REVERSEHEART", "RIGHTEAR", 
+                                "SCOURGE", "SPARKLE", "TAILTIP", "TIP", "TOES", "TOESTAIL", "VEE"]
+
+                if randint(1, 15) == 1 or (i > 0 and randint(1, 7) == 1):
+                    tortie_low_patterns = ["BOWTIE", "BROKENBLAZE", "BUZZARDFANG", "COW2", "FADEBELLY", "FADESPOTS", "LOVEBUG", "MITAINE", 
+                                        "PEBBLESHINE", "PIEBALD", "SAVANNAH",
+                                        choice(["BACKSPOT", "BEARD", "BELLY", "BIB", "BLACKSTAR", "BLAZE", "BOOTS", "CHESTSPECK", "ESTRELLA",
+                                                "EYEBAGS", "HONEY", "LEFTEAR", "LITTLE", "PAWS", "REVERSEEYE", "REVERSEHEART", "RIGHTEAR", 
+                                                "SCOURGE", "SPARKLE", "TAILTIP", "TIP", "TOES", "TOESTAIL", "VEE"])]
+                    tortie_mid_patterns = ["APPALOOSA", "BLOSSOMSTEP", "BOWTIE", "BROKEN", "BUB", "BULLSEYE", "BUSTER", "BUZZARDFANG",
+                                        "COW", "COWTWO", "DAMIEN", "DAPPLEPAW", "DIVA", "FCTWO", "FINN", "FRECKLES", "GLASS", "HAWKBLAZE",
+                                        "LOVEBUG", "MITAINE", "PAINTED", "PANTSTWO", "PEBBLE", "PIEBALD", "ROSINA", "SHOOTINGSTAR", "SPARROW",
+                                        "WOODPECKER",
+                                        choice(["BACKSPOT", "BEARD", "BELLY", "BIB", "BLACKSTAR", "BLAZE", "BOOTS", "CHESTSPECK", "ESTRELLA",
+                                                "EYEBAGS", "HONEY", "LEFTEAR", "LITTLE", "PAWS", "REVERSEEYE", "REVERSEHEART", "RIGHTEAR", 
+                                                "SCOURGE", "TAILTIP", "TIP", "TOESTAIL", "VEE"])]
+                    tortie_high_patterns = ["ANY", "ANYTWO", "BLOSSOMSTEP", "BUB", "BUDDY", "BUSTER", "CAKE", "COW", "CURVED",
+                                        "DAPPLEPAW", "FCTWO", "FAROFA", "GOATEE", "HALFFACE", "HAWKBLAZE", "LILTWO", "MISS", "MISTER", "OWL",
+                                        "PANTS", "PRINCE", "REVERSEPANTS", "RINGTAIL", "SAMMY", "SKUNK", "SPARROW", "TOPCLOVER", "VEST", "WINGS",
+                                        choice(["BEARD", "BELLY", "BIB", "BLACKSTAR", "BLAZE", "BOOTS", "CHESTSPECK", "ESTRELLA", "EYEBAGS", 
+                                                "HONEY", "LEFTEAR", "LITTLE", "PAWS", "REVERSEEYE", "REVERSEHEART", "RIGHTEAR", "SCOURGE", 
+                                                "TAILTIP", "TIP", "TOESTAIL", "VEE"])]
+                elif i > 0 and randint(1, 5) == 1:
+                    tortie_low_patterns = tiny_patches
+                    tortie_mid_patterns = tiny_patches
+                    tortie_high_patterns = tiny_patches
+
+                if(self.genotype.white[1] == "ws" or self.genotype.white[1] == "wt"):
+                    if self.genotype.whitegrade > 2:
+                        if(randint(1, 10) == 1):
+                            chosen.append(choice(tortie_low_patterns))
+                        elif(randint(1, 5) == 1):
+                            chosen.append(choice(tortie_mid_patterns))
+                        else:
+                            chosen.append(choice(tortie_high_patterns))
+                    else:
+                        if(randint(1, 7) == 1):
+                            chosen.append(choice(tortie_low_patterns))
+                        elif(randint(1, 3) == 1):
+                            chosen.append(choice(tortie_mid_patterns))
+                        else:
+                            chosen.append(choice(tortie_high_patterns))
+                elif(self.genotype.white[0] == 'ws' or self.genotype.white[0] == 'wt'):
+                    if self.genotype.whitegrade > 3:
+                        if(randint(1, 7) == 1):
+                            chosen.append(choice(tortie_high_patterns))
+                        elif(randint(1, 3) == 1):
+                            chosen.append(choice(tortie_mid_patterns))
+                        else:
+                            chosen.append(choice(tortie_low_patterns))
+                    else:
+                        if(randint(1, 10) == 1):
+                            chosen.append(choice(tortie_high_patterns))
+                        elif(randint(1, 5) == 1):
+                            chosen.append(choice(tortie_mid_patterns))
+                        else:
+                            chosen.append(choice(tortie_low_patterns))
+                else:
+                    if(randint(1, 15) == 1):
+                        chosen.append(choice(tortie_high_patterns))
+                    elif(randint(1, 7) == 1):
+                        chosen.append(choice(tortie_mid_patterns))
+                    else:
+                        chosen.append(choice(tortie_low_patterns))
 
         return chosen        
 
@@ -668,7 +679,7 @@ class Phenotype():
 
                 self.genotype.tortiepattern = self.tortpattern
         elif('o' not in self.genotype.sexgene and self.genotype.specialred == 'blue-tipped'):
-            self.tortpattern = 'BLUE-TIPPED'
+            self.tortpattern = ['BLUE-TIPPED']
             main = self.FindRed(self.genotype, moons)
             self.maincolour = main[0]
             self.spritecolour = main[1]
@@ -694,37 +705,24 @@ class Phenotype():
                 self.tortpattern = self.genotype.tortiepattern
             else:
                 self.tortpattern = self.ChooseTortiePattern()
-                if randint(1, 10) == 1:
-                    self.tortpattern = 'rev'+self.tortpattern
+                for i in range(len(self.tortpattern)):
+                    if randint(1, 10) == 1:
+                        self.tortpattern[i] = 'rev'+self.tortpattern[i]
 
                 self.genotype.tortiepattern = self.tortpattern
             
-            if 'rev' in self.tortpattern:
-                if(self.genotype.brindledbi):
-                    self.maincolour = "white"
-                    self.spritecolour = "white"
-                else:
-                    main = self.FindRed(self.genotype, moons)
-                    self.maincolour = main[0]
-                    self.spritecolour = main[1]
-                    self.mainunders = [main[2], main[3]]
-                main = self.FindBlack(self.genotype, moons, self.genotype.ext[0])
+            main = self.FindBlack(self.genotype, moons)
+            self.maincolour = main[0]
+            self.spritecolour = main[1]
+            self.mainunders = [main[2], main[3]]
+            if(self.genotype.brindledbi):
+                self.patchmain = "white"
+                self.patchcolour = "white"
+            else:
+                main = self.FindRed(self.genotype, moons)
                 self.patchmain = main[0]
                 self.patchcolour = main[1]
                 self.patchunders = [main[2], main[3]]
-            else:
-                main = self.FindBlack(self.genotype, moons)
-                self.maincolour = main[0]
-                self.spritecolour = main[1]
-                self.mainunders = [main[2], main[3]]
-                if(self.genotype.brindledbi):
-                    self.patchmain = "white"
-                    self.patchcolour = "white"
-                else:
-                    main = self.FindRed(self.genotype, moons)
-                    self.patchmain = main[0]
-                    self.patchcolour = main[1]
-                    self.patchunders = [main[2], main[3]]
 
     def FindEumUnders(self, genes, wideband, rufousing):
         if(genes.dilute[0] == "d"):

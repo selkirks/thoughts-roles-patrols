@@ -148,11 +148,15 @@ class Genotype:
         self.eumelanin = jsonstring["eumelanin"]
         self.sexgene = jsonstring["sexgene"]
         self.tortiepattern = jsonstring["tortiepattern"]
+        if self.tortiepattern and not isinstance(self.tortiepattern, list):
+            self.tortiepattern = [self.tortiepattern]
         self.brindledbi = jsonstring["brindledbi"]
 
         self.specialred = jsonstring['specialred']
         self.chimera = jsonstring['chimera']
         self.chimerapattern = jsonstring['chimerapattern']
+        if self.chimerapattern and not isinstance(self.chimerapattern, list):
+            self.chimerapattern = [self.chimerapattern]
         if(jsonstring["chimerageno"]):
             self.chimerageno = Genotype(self.odds, self.ban_genes, 'chimera')
             self.chimerageno.fromJSON(jsonstring["chimerageno"])
