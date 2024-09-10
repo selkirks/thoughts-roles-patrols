@@ -598,7 +598,7 @@ class Pregnancy_Events:
         kits = Pregnancy_Events.get_kits(kits_amount, cat, other_cat, clan, backkit=backkit)
         kits_amount = len(kits)
         for kit in kits:
-            if clan.pregnancy_data[cat.ID]["fever_coat"]:
+            if clan.pregnancy_data[cat.ID].get("fever_coat", False):
                 kit.genotype.fevercoat = True
             if random.random() < stillborn_chance or kit.genotype.manx[1] == "Ab" or kit.genotype.manx[1] == "M" or kit.genotype.fold[1] == "Fd" or kit.genotype.munch[1] == "Mk" or ('NoDBE' not in kit.genotype.pax3 and 'DBEalt' not in kit.genotype.pax3):
                 kit.dead = True
