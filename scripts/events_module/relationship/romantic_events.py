@@ -203,8 +203,11 @@ class Romantic_Events:
             in_de_crease, chosen_interaction.intensity, rel_type
         )
 
-        # give cats injuries
-        if len(chosen_interaction.get_injuries) > 0:
+        # give cats injuries if the game mode is not classic
+        if (
+            len(chosen_interaction.get_injuries) > 0
+            and game.clan.game_mode != "classic"
+        ):
             for abbreviations, injury_dict in chosen_interaction.get_injuries.items():
                 if "injury_names" not in injury_dict:
                     print(

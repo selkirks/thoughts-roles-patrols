@@ -610,6 +610,7 @@ class Cat:
         # if game.clan and game.clan.game_mode != 'classic' and not (self.outside or self.exiled) and body is not None:
         if (
             game.clan
+            and game.clan.game_mode != "classic"
             and not self.outside
             and not self.exiled
         ):
@@ -737,9 +738,11 @@ class Cat:
                 text += " " + choice(MINOR_MAJOR_REACTION["major"])
                 text = event_text_adjust(Cat, text=text, main_cat=self, random_cat=cat)
 
-                cat.get_ill(
-                    "grief stricken", event_triggered=True, severity="major"
-                )
+                # grief the cat
+                if game.clan.game_mode != "classic":
+                    cat.get_ill(
+                        "grief stricken", event_triggered=True, severity="major"
+                    )
 
             # If major grief fails, but there are still very_high or high values,
             # it can fail to to minor grief. If they have a family relation, bypass the roll.
@@ -1632,6 +1635,8 @@ class Cat:
         relevant_relationship = self.relationships[chosen_cat.ID]
         relevant_relationship.start_interaction()
 
+        if game.game_mode == "classic":
+            return
         # handle contact with ill cat if
         if self.is_ill():
             relevant_relationship.cat_to.contact_with_ill_cat(self)
@@ -1853,6 +1858,9 @@ class Cat:
         :param lethal: Allow lethality, default `True` (bool)
         :param severity: Override severity, default `'default'` (str, accepted values `'minor'`, `'major'`, `'severe'`)
         """
+        if game.clan.game_mode == "classic":
+            return
+
         if name not in ILLNESSES:
             print(f"WARNING: {name} is not in the illnesses collection.")
             return
@@ -1926,6 +1934,9 @@ class Cat:
         :param severity: _description_, defaults to 'default'
         :type severity: str, optional
         """
+        if game.clan and game.clan.game_mode == "classic":
+            return
+
         if name not in INJURIES:
             if name not in INJURIES:
                 print(f"WARNING: {name} is not in the injuries collection.")
