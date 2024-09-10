@@ -959,7 +959,9 @@ class ChooseMateScreen(Screens):
                                                                    )
         
         
-        if not game.clan.clan_settings["same sex birth"] and not xor('Y' in self.the_cat.genotype.sexgene, 'Y' in self.selected_cat.genotype.sexgene) and 'infertility' not in self.the_cat.permanent_condition and 'infertility' not in self.selected_cat.permanent_condition and ('Y' not in self.the_cat.genotype.sexgene or self.the_cat.genotype.gender != 'molly'):
+        if not game.clan.clan_settings["same sex birth"] and not xor('Y' in self.the_cat.genotype.sexgene, 'Y' in self.selected_cat.genotype.sexgene) and 
+            'infertility' not in self.the_cat.permanent_condition and 'infertility' not in self.selected_cat.permanent_condition and 
+            ('Y' not in self.the_cat.genotype.sexgene or self.the_cat.genotype.gender != 'molly'):
             self.selected_cat_elements["no kit warning"] = pygame_gui.elements.UITextBox(
                 f"<font pixel_size={int(22 / 1400 * screen_y)}> This pair can't have biological kittens </font>", 
                 scale(pygame.Rect((550, 250), (498, 50))),
@@ -1154,7 +1156,9 @@ class ChooseMateScreen(Screens):
                        and i.ID not in self.the_cat.mate
                        and (not self.single_only or not i.mate)
                        and (not self.have_kits_only 
-                            or ('infertility' not in i.permanent_condition and 'infertility' not in self.the_cat.permanent_condition and ('Y' not in self.the_cat.genotype.sexgene or self.the_cat.genotype.gender != 'molly')))
+                            or ('infertility' not in i.permanent_condition and 
+                            'infertility' not in self.the_cat.permanent_condition and 
+                            ('Y' not in self.the_cat.genotype.sexgene or self.the_cat.genotype.gender != 'molly')))
                        and (not self.have_kits_only 
                             or game.clan.clan_settings["same sex birth"]
                             or xor('Y' in i.genotype.sexgene, 'Y' in self.the_cat.genotype.sexgene))]

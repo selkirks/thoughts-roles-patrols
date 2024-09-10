@@ -36,6 +36,7 @@ from scripts.utility import (
     change_clan_relations,
     change_clan_reputation,
     get_alive_status_cats,
+    get_living_clan_cat_count,
     get_random_moon_cat,
     ceremony_text_adjust,
     get_current_season,
@@ -183,13 +184,11 @@ class Events:
                 ghost_names.append(str(ghost.name))
             insert = adjust_list_text(ghost_names)
 
-            if len(Cat.dead_cats) > 1 and game.clan.game_mode != "classic":
-                event = (
-                    f"The past moon, {insert} have taken their place in StarClan. {game.clan.name}Clan mourns their "
-                    f"loss, and their Clanmates will miss where they had been in their lives. Moments of their "
-                    f"lives are shared in stories around the circle of mourners as those that were closest to them "
-                    f"take them to their final resting place."
-                )
+            if len(Cat.dead_cats) > 1:
+                event = f"The past moon, {insert} have taken their place in StarClan. {game.clan.name}Clan mourns their " \
+                        f"loss, and their Clanmates will miss where they had been in their lives. Moments of their " \
+                        f"lives are shared in stories around the circle of mourners as those that were closest to them " \
+                        f"take them to their final resting place."
 
                 if len(ghost_names)-len(faded_kits) > 2:
                     alive_cats = list(
@@ -591,15 +590,16 @@ class Events:
         TODO: DOCS
         """
         if game.clan.game_mode == "classic":
-            herbs = game.clan.herbs.copy()
-            for herb in herbs:
-                adjust_by = random.choices([-2, -1, 0, 1, 2], [1, 2, 3, 2, 1], k=1)
-                game.clan.herbs[herb] += adjust_by[0]
-                if game.clan.herbs[herb] <= 0:
-                    game.clan.herbs.pop(herb)
-            if not int(random.random() * 5):
-                new_herb = random.choice(HERBS)
-                game.clan.herbs.update({new_herb: 1})
+            # in classic, you have a random amount of herbs.
+            # the actual herb doesn't matter; it's just the count.
+            herb_owned = random.choice(HERBS)
+            # values that will change the text that is displayed to say how many herbs you have
+            required_herbs = get_living_clan_cat_count(Cat) * 4
+            adjustment_factor = random.choices([0.25, 0.5, 1, 2, 3], weights=[1, 2, 3, 2, 1], k=1)[0]
+            herb_amount = int(required_herbs * adjustment_factor)
+            game.clan.herbs = {
+                herb_owned: herb_amount
+            }
         else:
             event_list = []
             meds_available = get_alive_status_cats(Cat, ["healer", "healer apprentice"], working=True,
@@ -2417,7 +2417,6 @@ class Events:
         """
         This function will handle:
             - expanded mode: getting a new illness (extra function in own class)
-            - classic mode illness related deaths is already handled in the general death function
         Returns:
             - boolean if a death event occurred or not
         """
@@ -2426,10 +2425,9 @@ class Events:
         # ---------------------------------------------------------------------------- #
         # if triggered_death is True then the cat will die
         triggered_death = False
-        if game.clan.game_mode in ["expanded", "cruel season"]:
-            triggered_death = Condition_Events.handle_illnesses(
-                cat, game.clan.current_season
-            )
+        triggered_death = Condition_Events.handle_illnesses(
+            cat, game.clan.current_season
+        )
         return triggered_death
 
     def handle_twoleg_capture(self, cat):
@@ -2445,9 +2443,9 @@ class Events:
 
     def handle_outbreaks(self, cat):
         """Try to infect some cats."""
-        # check if the cat is ill, if game mode is classic,
-        # or if Clan has sufficient med cats in expanded mode
-        if not cat.is_ill() or game.clan.game_mode == "classic":
+        # check if the cat is ill,
+        # or if Clan has sufficient med cats
+        if not cat.is_ill():
             return
 
         # check how many kitties are already ill
