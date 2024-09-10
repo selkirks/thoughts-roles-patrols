@@ -300,7 +300,7 @@ class Cat:
                     if len(hasVitiligo) == 0:
                         white_pattern.append(choice(vitiligo))
             
-            if (white_pattern is None and KIT[0] != 'wsal') or (white_pattern = "No" and (KIT[0] == 'wg' or 'NoDBE' not in pax3 or KIT[1] in ["ws", "wt"])):
+            if (white_pattern is None and KIT[0] != 'wsal') or (white_pattern == "No" and (KIT[0] == 'wg' or 'NoDBE' not in pax3 or KIT[1] in ["ws", "wt"])):
                 white_pattern = []
                 if 'wt' in KIT:
                     if KIT[1] not in ['ws', 'wt'] and KITgrade < 3:
