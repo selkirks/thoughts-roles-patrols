@@ -811,7 +811,7 @@ class Cat:
         if not skill_dict:
             self.skills = CatSkills.generate_new_catskills(self.status, self.moons)
         
-        if game.clan and game.clan.game_mode != "classic":
+        if game.clan:
             self.genetic_conditions()
 
     def __repr__(self):
