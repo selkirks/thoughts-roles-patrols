@@ -1433,43 +1433,43 @@ class Genotype:
         height = round(height, 2)
 
         if height == 5.00:
-            if self.height_value > self.height_indexes[0]:
+            if self.height_value >= self.height_indexes[0]:
                 self.height_value = randint(0, self.height_indexes[0]-1)
             return
         elif height == 16.00:
-            if self.height_value < self.height_indexes[9]:
+            if self.height_value < self.height_indexes[8]:
                 self.height_value = randint(self.height_indexes[8], self.height_indexes[9]-1)
             return
         elif 6.01 > height > 5.00:
-            if self.height_indexes[1] > self.height_value or self.height_value >= self.height_indexes[2]:
+            if self.height_indexes[0] > self.height_value or self.height_value >= self.height_indexes[1]:
                 self.height_value = randint(self.height_indexes[0], self.height_indexes[1]-1)
             return
         elif 7.51 > height > 6.00:
-            if self.height_indexes[2] > self.height_value or self.height_value >= self.height_indexes[3]:
+            if self.height_indexes[1] > self.height_value or self.height_value >= self.height_indexes[2]:
                 self.height_value = randint(self.height_indexes[1], self.height_indexes[2]-1)
             return
         elif 9 > height > 7.50:
-            if self.height_indexes[3] > self.height_value or self.height_value >= self.height_indexes[4]:
+            if self.height_indexes[2] > self.height_value or self.height_value >= self.height_indexes[3]:
                 self.height_value = randint(self.height_indexes[2], self.height_indexes[3]-1)
             return
         elif 11.01 > height > 8.99:
-            if self.height_indexes[4] > self.height_value or self.height_value >= self.height_indexes[5]:
+            if self.height_indexes[3] > self.height_value or self.height_value >= self.height_indexes[4]:
                 self.height_value = randint(self.height_indexes[3], self.height_indexes[4]-1)
             return
         elif 12.51 > height > 11.00:
-            if self.height_indexes[5] > self.height_value or self.height_value >= self.height_indexes[6]:
+            if self.height_indexes[4] > self.height_value or self.height_value >= self.height_indexes[5]:
                 self.height_value = randint(self.height_indexes[4], self.height_indexes[5]-1)
             return
         elif 14.01 > height > 12.50:
-            if self.height_indexes[6] > self.height_value or self.height_value >= self.height_indexes[7]:
+            if self.height_indexes[5] > self.height_value or self.height_value >= self.height_indexes[6]:
                 self.height_value = randint(self.height_indexes[5], self.height_indexes[6]-1)
             return
         elif 15.00 > height > 14.00:
-            if self.height_indexes[7] > self.height_value or self.height_value >= self.height_indexes[8]:
+            if self.height_indexes[6] > self.height_value or self.height_value >= self.height_indexes[7]:
                 self.height_value = randint(self.height_indexes[6], self.height_indexes[7]-1)
             return
         elif 16.00 > height > 14.99:
-            if self.height_indexes[8] > self.height_value or self.height_value >= self.height_indexes[9]:
+            if self.height_indexes[7] > self.height_value or self.height_value >= self.height_indexes[8]:
                 self.height_value = randint(self.height_indexes[7], self.height_indexes[8]-1)
             return
 
