@@ -1,6 +1,7 @@
 # clangen (now with 100% more cat genetics)
 
 ### [Discord Server](https://discord.gg/rnFQqyPZ7K) || [Itch.io Page](https://sablesteel.itch.io/clan-gen-fan-edit)
+### [Genemod Server](https://discord.gg/t6XqgQ46Jx)
 
 A mod of the Clan-gen fan edit featuring cat genetics that get passed down from cat to cat, among a few little bonuses here and there!
 
