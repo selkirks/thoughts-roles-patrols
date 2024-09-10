@@ -976,29 +976,29 @@ def create_new_cat(
                     continue
                 possible_conditions.append(condition)
 
-        if possible_conditions:
-            chosen_condition = choice(possible_conditions)
-            born_with = False
-            if PERMANENT[chosen_condition]["congenital"] in [
-                "always",
-                "sometimes",
-            ]:
-                born_with = True
+            if possible_conditions:
+                chosen_condition = choice(possible_conditions)
+                born_with = False
+                if PERMANENT[chosen_condition]["congenital"] in [
+                    "always",
+                    "sometimes",
+                ]:
+                    born_with = True
 
-            new_cat.get_permanent_condition(chosen_condition, born_with)
-            if (
-                    new_cat.permanent_condition[chosen_condition]["moons_until"]
-                    == 0
-            ):
-                new_cat.permanent_condition[chosen_condition][
-                    "moons_until"
-                ] = -2
+                new_cat.get_permanent_condition(chosen_condition, born_with)
+                if (
+                        new_cat.permanent_condition[chosen_condition]["moons_until"]
+                        == 0
+                ):
+                    new_cat.permanent_condition[chosen_condition][
+                        "moons_until"
+                    ] = -2
 
-            # assign scars
-            if chosen_condition in ["lost a leg", "born without a leg"]:
-                new_cat.pelt.scars.append("NOPAW")
-            elif chosen_condition in ["lost their tail", "born without a tail"]:
-                new_cat.pelt.scars.append("NOTAIL")
+                # assign scars
+                if chosen_condition in ["lost a leg", "born without a leg"]:
+                    new_cat.pelt.scars.append("NOPAW")
+                elif chosen_condition in ["lost their tail", "born without a tail"]:
+                    new_cat.pelt.scars.append("NOTAIL")
 
         if outside:
             new_cat.outside = True
