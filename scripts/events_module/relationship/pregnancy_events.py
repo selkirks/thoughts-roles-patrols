@@ -19,7 +19,7 @@ from scripts.utility import (
     get_personality_compatibility,
     BACKSTORIES,
     change_relationship_values,
-    get_alive_status_cats
+    get_alive_status_cats,
 )
 
 
@@ -256,7 +256,7 @@ class Pregnancy_Events:
             severity = random.choices(["minor", "major"], [3, 1], k=1)
             cat.get_injured("pregnant", severity=severity[0])
             text += choice(Pregnancy_Events.PREGNANT_STRINGS[f"{severity[0]}_severity"])
-            text = event_text_adjust(Cat, text, cat, clan=clan)
+            text = event_text_adjust(Cat, text, main_cat=cat, clan=clan)
             game.cur_events_list.append(Single_Event(text, "birth_death", cat.ID))
         else:
             if not other_cat and 'Y' in cat.genotype.sexgene:
@@ -392,8 +392,9 @@ class Pregnancy_Events:
             pregnant_cat.get_injured("pregnant", severity=severity[0])
             text += choice(Pregnancy_Events.PREGNANT_STRINGS[f"{severity[0]}_severity"])
             text = event_text_adjust(Cat, text, main_cat=pregnant_cat, clan=clan)
-            game.cur_events_list.append(Single_Event(text, "birth_death", pregnant_cat.ID))
-
+            game.cur_events_list.append(
+                Single_Event(text, "birth_death", pregnant_cat.ID)
+            )
 
     @staticmethod
     def handle_one_moon_pregnant(cat: Cat, clan=game.clan):
@@ -729,8 +730,8 @@ class Pregnancy_Events:
                             possible_events.remove(event)
 
                 event_list.append(choice(possible_events))
-        if not cat.dead: 
-            #If they are dead in childbirth above, all condition are cleared anyway. 
+        if not cat.dead:
+            # If they are dead in childbirth above, all condition are cleared anyway.
             try:
                 cat.injuries.pop("pregnant")
             except:
@@ -1145,12 +1146,9 @@ class Pregnancy_Events:
 
             # try to give them a permanent condition. 1/90 chance
             # don't delete the game.clan condition, this is needed for a test
-            if (
-                game.clan
-                and not int(
-                    random.random()
-                    * game.config["cat_generation"]["base_permanent_condition"]
-                )
+            if game.clan and not int(
+                random.random()
+                * game.config["cat_generation"]["base_permanent_condition"]
             ):
                 kit.congenital_condition(kit)
                 for condition in kit.permanent_condition:
