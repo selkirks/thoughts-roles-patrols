@@ -265,13 +265,16 @@ class Genotype:
         except:
             self.somatic = {}
 
-        self.body_value = jsonstring["body_type"]
+        try:
+            self.body_value = jsonstring["body_type"]
+            self.height_value = jsonstring["height"]
+            self.shoulder_height = jsonstring["shoulder_height"]
+        except:
+            self.GenerateBody()
         try:
             self.body_label = jsonstring["body_type_label"]
         except:
             pass
-        self.height_value = jsonstring["height"]
-        self.shoulder_height = jsonstring["shoulder_height"]
 
         self.GeneSort()
         self.PolyEval()
