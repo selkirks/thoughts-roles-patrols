@@ -544,12 +544,16 @@ class Phenotype():
         return pattern
       
     def ChooseTortiePattern(self, spec = None):
-        tortie_low_patterns = ['DELILAH', 'MOTTLED', 'EYEDOT', 'BANDANA', 'SMUDGED', 'EMBER', 'BRINDLE', 'SAFI', 'BELOVED', 'BODY', 
+        def_tortie_low_patterns = ['DELILAH', 'MOTTLED', 'EYEDOT', 'BANDANA', 'SMUDGED', 'EMBER', 'BRINDLE', 'SAFI', 'BELOVED', 'BODY', 
                                     'SHILOH', 'FRECKLED']
-        tortie_mid_patterns = ['ONE', 'TWO', 'SMOKE', 'MINIMALONE', 'MINIMALTWO', 'MINIMALTHREE', 'MINIMALFOUR', 'OREO', 'CHIMERA',
+        def_tortie_mid_patterns = ['ONE', 'TWO', 'SMOKE', 'MINIMALONE', 'MINIMALTWO', 'MINIMALTHREE', 'MINIMALFOUR', 'OREO', 'CHIMERA',
                                 'CHEST', 'GRUMPYFACE', 'SIDEMASK', 'PACMAN', 'BRIE' ,'ORIOLE', 'ROBIN', 'PAIGE', 'HEARTBEAT']
-        tortie_high_patterns = ['THREE', 'FOUR', 'REDTAIL', 'HALF', 'STREAK', 'MASK', 'SWOOP', 'ARMTAIL', 'STREAMSTRIKE', 'DAUB',
+        def_tortie_high_patterns = ['THREE', 'FOUR', 'REDTAIL', 'HALF', 'STREAK', 'MASK', 'SWOOP', 'ARMTAIL', 'STREAMSTRIKE', 'DAUB',
                                 'ROSETAIL', 'DAPPLENIGHT', 'BLANKET']
+        tortie_low_patterns = def_tortie_low_patterns
+        tortie_mid_patterns = def_tortie_mid_patterns
+        tortie_high_patterns = def_tortie_high_patterns
+        
                 
         chosen = []
 
@@ -561,37 +565,28 @@ class Phenotype():
             
         else:
             for i in range(choice([1, 1, 1, 1, 1, 2, 2, 3])):
-                tortie_low_patterns = ['DELILAH', 'MOTTLED', 'EYEDOT', 'BANDANA', 'SMUDGED', 'EMBER', 'BRINDLE', 'SAFI', 'BELOVED', 'BODY', 
-                                    'SHILOH', 'FRECKLED']
-                tortie_mid_patterns = ['ONE', 'TWO', 'SMOKE', 'MINIMALONE', 'MINIMALTWO', 'MINIMALTHREE', 'MINIMALFOUR', 'OREO', 'CHIMERA',
-                                        'CHEST', 'GRUMPYFACE', 'SIDEMASK', 'PACMAN', 'BRIE' ,'ORIOLE', 'ROBIN', 'PAIGE', 'HEARTBEAT']
-                tortie_high_patterns = ['THREE', 'FOUR', 'REDTAIL', 'HALF', 'STREAK', 'MASK', 'SWOOP', 'ARMTAIL', 'STREAMSTRIKE', 'DAUB',
-                                        'ROSETAIL', 'DAPPLENIGHT', 'BLANKET']
+                tortie_low_patterns = def_tortie_low_patterns
+                tortie_mid_patterns = def_tortie_mid_patterns
+                tortie_high_patterns = def_tortie_high_patterns
                 
-                tiny_patches = ["BACKSPOT", "BEARD", "BELLY", "BIB", "BLACKSTAR", "BLAZE", "BOOTS", "CHESTSPECK", "ESTRELLA",
-                                "EYEBAGS", "HONEY", "LEFTEAR", "LITTLE", "PAWS", "REVERSEEYE", "REVERSEHEART", "RIGHTEAR", 
-                                "SCOURGE", "SPARKLE", "TAILTIP", "TIP", "TOES", "TOESTAIL", "VEE"]
+                tiny_patches = ["BACKSPOT", "BEARD", "BELLY", "BIB", "revBLACKSTAR", "BLAZE", "BLAZEMASK", "revBOOTS", "CHESTSPECK", "ESTRELLA",
+                                "EYEBAGS", "revEYESPOT", "revHEART", "HONEY", "LEFTEAR", "LITTLE", "PAWS", "REVERSEEYE", "REVERSEHEART", "RIGHTEAR", 
+                                "SCOURGE", "SPARKLE", "revTAIL", 'revTAILTWO', "TAILTIP", "TEARS", "TIP", "TOES", "TOESTAIL", "VEE"]
 
                 if randint(1, 15) == 1 or (i > 0 and randint(1, 10) == 1):
-                    tortie_low_patterns = ["BOWTIE", "BROKENBLAZE", "BUZZARDFANG", "COWTWO", "FADEBELLY", "FADESPOTS", "LOVEBUG", "MITAINE", 
-                                        "PEBBLESHINE", "PIEBALD", "SAVANNAH",
-                                        choice(["BACKSPOT", "BEARD", "BELLY", "BIB", "BLACKSTAR", "BLAZE", "BOOTS", "CHESTSPECK", "ESTRELLA",
-                                                "EYEBAGS", "HONEY", "LEFTEAR", "LITTLE", "PAWS", "REVERSEEYE", "REVERSEHEART", "RIGHTEAR", 
-                                                "SCOURGE", "SPARKLE", "TAILTIP", "TIP", "TOES", "TOESTAIL", "VEE"])]
-                    tortie_mid_patterns = ["APPALOOSA", "BLOSSOMSTEP", "BOWTIE", "BROKEN", "BUB", "BULLSEYE", "BUSTER", "BUZZARDFANG",
-                                        "COW", "COWTWO", "DAMIEN", "DAPPLEPAW", "DIVA", "FCTWO", "FINN", "FRECKLES", "GLASS", "HAWKBLAZE",
-                                        "LOVEBUG", "MITAINE", "PAINTED", "PANTSTWO", "PEBBLE", "PIEBALD", "ROSINA", "SHOOTINGSTAR", "SPARROW",
+                    tortie_low_patterns = ["BOWTIE", "BROKENBLAZE", "BUZZARDFANG", "revCOWTWO", "FADEBELLY", "FADESPOTS", "revLOVEBUG", "MITAINE", 
+                                        "revPEBBLESHINE", "revPIEBALD", "SAVANNAH",
+                                        choice(tiny_patches)]
+                    tortie_mid_patterns = ["revAPPALOOSA", "BLOSSOMSTEP", "BOWTIE", "revBROKEN", "revBUB", "BULLSEYE", "revBUSTER", "BUZZARDFANG",
+                                        "revCOW", "revCOWTWO", "DAMIEN", "DAPPLEPAW", "DIVA", "FCTWO", "revFINN", "FRECKLES", "revGLASS", "HAWKBLAZE",
+                                        "revLOVEBUG", "MITAINE", "PAINTED", "PANTSTWO", "revPEBBLE", "revPIEBALD", "ROSINA", "revSHOOTINGSTAR", "SPARROW",
                                         "WOODPECKER",
-                                        choice(["BACKSPOT", "BEARD", "BELLY", "BIB", "BLACKSTAR", "BLAZE", "BOOTS", "CHESTSPECK", "ESTRELLA",
-                                                "EYEBAGS", "HONEY", "LEFTEAR", "LITTLE", "PAWS", "REVERSEEYE", "REVERSEHEART", "RIGHTEAR", 
-                                                "SCOURGE", "TAILTIP", "TIP", "TOESTAIL", "VEE"])]
-                    tortie_high_patterns = ["ANY", "ANYTWO", "BLOSSOMSTEP", "BUB", "BUDDY", "BUSTER", "CAKE", "COW", "CURVED",
-                                        "DAPPLEPAW", "FCTWO", "FAROFA", "GOATEE", "HALFFACE", "HAWKBLAZE", "LILTWO", "MISS", "MISTER", "OWL",
-                                        "PANTS", "PRINCE", "REVERSEPANTS", "RINGTAIL", "SAMMY", "SKUNK", "SPARROW", "TOPCLOVER", "VEST", "WINGS",
-                                        choice(["BEARD", "BELLY", "BIB", "BLACKSTAR", "BLAZE", "BOOTS", "CHESTSPECK", "ESTRELLA", "EYEBAGS", 
-                                                "HONEY", "LEFTEAR", "LITTLE", "PAWS", "REVERSEEYE", "REVERSEHEART", "RIGHTEAR", "SCOURGE", 
-                                                "TAILTIP", "TIP", "TOESTAIL", "VEE"])]
-                elif i > 0 and randint(1, 5) == 1:
+                                        choice(tiny_patches)]
+                    tortie_high_patterns = ["revANY", "revANYTWO", "BLOSSOMSTEP", "revBUB", "revBUDDY", "revBUSTER", "revCAKE", "revCOW", "revCURVED",
+                                        "DAPPLEPAW", "FCTWO", "FAROFA", "revGOATEE", "revHALFFACE", "HAWKBLAZE", "LILTWO", "MISS", "MISTER", "revMOORISH", 
+                                        "OWL", "PANTS", "revPRINCE", "REVERSEPANTS", "RINGTAIL", "SAMMY", "SKUNK", "SPARROW", "TOPCLOVER", "VEST", "WINGS",
+                                        choice(tiny_patches)]
+                elif i > 0 and randint(1, 3) == 1:
                     tortie_low_patterns = tiny_patches
                     tortie_mid_patterns = tiny_patches
                     tortie_high_patterns = tiny_patches
@@ -705,7 +700,10 @@ class Phenotype():
                 self.tortpattern = self.ChooseTortiePattern()
                 for i in range(len(self.tortpattern)):
                     if randint(1, 10) == 1:
-                        self.tortpattern[i] = 'rev'+self.tortpattern[i]
+                        if 'rev' in self.tortpattern[i]:
+                            self.tortpattern[i] = self.tortpattern[i].replace('rev', '')
+                        else:
+                            self.tortpattern[i] = 'rev' + self.tortpattern[i]
 
                 self.genotype.tortiepattern = self.tortpattern
             
