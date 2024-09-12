@@ -7,6 +7,7 @@ TODO: Docs
 """
 
 import random
+from random import choice
 # pylint: enable=line-too-long
 import traceback
 from collections import Counter
@@ -2460,6 +2461,8 @@ class Events:
             if transing_chance:
                 # transing_chance != 0, no trans kitties today...    L
                 return
+            
+            nonbiney_list = ["nonbinary", "genderfluid", "demigirl", "demiboy", "genderfae", "genderfaun", "bigender", "genderqueer", "agender", "???"]
 
             if random.getrandbits(1):  # 50/50
                 if cat.gender == "male":
@@ -2469,11 +2472,13 @@ class Events:
                     cat.genderalign = "trans male"
                     cat.pronouns = [cat.default_pronouns[2].copy()]
             else:
-                cat.genderalign = "nonbinary"
+                cat.genderalign = cat.genderalign = choice(nonbiney_list)
                 cat.pronouns = [cat.default_pronouns[0].copy()]
 
             if cat.gender == "male":
                 gender = "tom"
+            elif cat.gender == 'intersex':
+                gender = 'what clanmates call them'
             else:
                 gender = "she-cat"
             text = f"{cat.name} has realized that {gender} doesn't describe how they feel anymore."

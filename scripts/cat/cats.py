@@ -310,7 +310,7 @@ class Cat:
         else:
             self.backstory = self.backstory
 
-        nonbiney_list = ["nonbinary", "genderfluid", "demigirl", "demiboy", "genderfae", "genderfaun", "bigender", "genderqueer", "agender", "???"]
+        
 
         # sex!?!??!?!?!??!?!?!?!??
         if self.gender is None:
@@ -435,22 +435,37 @@ class Cat:
         :return: None
         """
         # trans cat chances
+        nonbiney_list = ["nonbinary", "genderfluid", "demigirl", "demiboy", "genderfae", "genderfaun", "bigender", "genderqueer", "agender", "???"]
         theythemdefault = game.settings["they them default"]
-        self.genderalign = self.gender
         trans_chance = randint(0, 50)
         nb_chance = randint(0, 75)
-
-        # GENDER IDENTITY
-        if self.age in ["kitten", "newborn"]:
-            # newborns can't be trans, sorry babies
-            pass
-        elif nb_chance == 1:
-            self.genderalign = "nonbinary"
-        elif trans_chance == 1:
-            if self.gender == "female":
+        if self.gender == "female" and not self.status in ['newborn', 'kitten']:
+            if trans_chance == 1:
                 self.genderalign = "trans male"
+            elif nb_chance == 1:
+                self.genderalign = choice(nonbiney_list)
             else:
+                self.genderalign = self.gender
+        elif self.gender == "male" and not self.status in ['newborn', 'kitten']:
+            if trans_chance == 1:
                 self.genderalign = "trans female"
+            elif nb_chance == 1:
+                self.genderalign = choice(nonbiney_list)
+            else:
+                self.genderalign = self.gender
+        elif self.gender == "intersex" and not self.status in ['newborn', 'kitten']:
+            if trans_chance == 1:
+                self.genderalign = choice(["trans male", "trans female"])
+            elif nb_chance == 1:
+                intergenderchance = randint(1,2)
+                if intergenderchance == 1:
+                    self.genderalign = "intergender"
+                else:
+                    self.genderalign = choice(nonbiney_list)
+            else:
+                self.genderalign = self.gender
+        else:
+            self.genderalign = self.gender
 
         # PRONOUNS
         if theythemdefault is True:
