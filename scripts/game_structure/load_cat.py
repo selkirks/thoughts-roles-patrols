@@ -77,6 +77,12 @@ def json_load():
                 elif cat["eye_colour"] == "BLUEGREEN":
                     cat["eye_colour2"] = "GREEN"
                 cat["eye_colour"] = "BLUE"
+            if cat["eye_colour"] == "VIOLET2":
+                cat["eye_colour"] = "BLACKBERRY"
+            if cat["eye_colour"] == "TURQUOISE2":
+                cat["eye_colour"] = "DARK TURQUOISE"
+            if cat["eye_colour"] == "ROSE2":
+                cat["eye_colour"] = "DARK ROSE"
             if "eye_colour2" in cat:
                 if cat["eye_colour2"] == "BLUE2":
                     cat["eye_colour2"] = "COBALT"

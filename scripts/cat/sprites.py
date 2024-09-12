@@ -174,8 +174,8 @@ class Sprites:
         
         # Define era eye colors
         era_eye_colors = [
-            ['DARK HAZEL', 'ROSE GOLD', 'ROSE2', 'REVERSE SUNLITICE', 'ICY', 'SUNSET', 'LAVENDER', 'ECLIPSE', 'BLACK',
-             'MUDDY', 'TURQUOISE2', 'VIOLET2'],
+            ['DARK HAZEL', 'ROSE GOLD', 'DARK ROSE', 'REVERSE SUNLITICE', 'ICY', 'SUNSET', 'LAVENDER', 'ECLIPSE', 'BLACK',
+             'MUDDY', 'DARK TURQUOISE', 'BLACKBERRY'],
             ['RUSTY', 'PASTEL', 'AVOCADO', 'PASTEL LAVENDER', 'ALBINO', 'WINTER ROSE', 'PINK', 'MORNING', 'DARK BROWN', 'BAY',
              'NEON GREEN', 'SEA'],
             ['DISCORD']

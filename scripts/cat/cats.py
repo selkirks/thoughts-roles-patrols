@@ -1020,6 +1020,12 @@ class Cat:
             colour = "sunlit ice"
         elif colour == "greenyellow":
             colour = "green-yellow"
+        elif colour == "violet2":
+            colour = "blackberry"
+        elif colour == "turquoise2":
+            colour = "dark turquoise"
+        elif colour == "rose2":
+            colour = "dark rose"
         if self.pelt.eye_colour2:
             if colour2 == "palegreen":
                 colour2 = "pale green"
