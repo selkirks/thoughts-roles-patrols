@@ -1056,7 +1056,7 @@ def check_relationship_value(cat_from, cat_to, rel_value=None):
     if cat_to.ID in cat_from.relationships:
         relationship = cat_from.relationships[cat_to.ID]
     else:
-        relationship = cat_from.create_one_relationship(cat_to)
+        relationship = Relationship(cat_from, cat_to)
 
     if rel_value == "romantic":
         return relationship.romantic_love
@@ -1124,9 +1124,6 @@ def get_cats_of_romantic_interest(cat):
             continue
 
         if inter_cat.ID not in cat.relationships:
-            cat.create_one_relationship(inter_cat)
-            if cat.ID not in inter_cat.relationships:
-                inter_cat.create_one_relationship(cat)
             continue
 
         # Extra check to ensure they are potential mates

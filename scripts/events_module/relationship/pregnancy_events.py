@@ -894,7 +894,7 @@ class Pregnancy_Events:
                 if x.ID in cat.relationships:
                     rel = cat.relationships[x.ID]
                 else:
-                    rel = cat.create_one_relationship(x)
+                    continue
 
                 if not mate_relation:
                     mate_relation = rel
@@ -1187,9 +1187,6 @@ class Pregnancy_Events:
                     start_relation.admiration = kit_to_parent["admiration"] + y
                     start_relation.trust = kit_to_parent["trust"] + y
                     kit.relationships[the_cat.ID] = start_relation
-                else:
-                    the_cat.relationships[kit.ID] = Relationship(the_cat, kit)
-                    kit.relationships[the_cat.ID] = Relationship(kit, the_cat)
 
             #### REMOVE ACCESSORY ######
             kit.pelt.accessory = None

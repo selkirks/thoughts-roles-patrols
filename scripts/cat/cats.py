@@ -235,6 +235,7 @@ class Cat:
         self.apprentice = []
         self.former_apprentices = []
         self.relationships = {}
+        self.blank_relations = []
         self.mate = []
         self.previous_mates = []
         self.pronouns = [self.default_pronouns[0].copy()]
@@ -1014,7 +1015,7 @@ class Cat:
             if cat.dead or cat.outside or cat.moons < 1:
                 continue
 
-            to_self = cat.relationships.get(self.ID)
+            to_self = cat.relationships.get(self.ID, None)
             if not isinstance(to_self, Relationship):
                 continue
 
@@ -1854,7 +1855,7 @@ class Cat:
                 other_cat == self.ID
                 and len(all_cats) > 1
                 or (all_cats.get(other_cat).dead and dead_chance != 1)
-                or (other_cat not in self.relationships)
+                or (all_cats.get(other_cat).outside and other_cat not in self.relationships)
             ):
                 other_cat = choice(list(all_cats.keys()))
                 i += 1
@@ -1875,7 +1876,7 @@ class Cat:
             while (
                 other_cat == self.ID
                 and len(all_cats) > 1
-                or (other_cat not in self.relationships)
+                or (not all_cats.get(other_cat).outside and other_cat not in self.relationships)
             ):
                 # or (self.status in ['kittypet', 'loner'] and not all_cats.get(other_cat).outside):
                 other_cat = choice(list(all_cats.keys()))
@@ -2920,11 +2921,12 @@ class Cat:
                 and inter_cat.outside
             ):
                 continue
-            inter_cat.relationships[self.ID] = Relationship(inter_cat, self)
-            self.relationships[inter_cat.ID] = Relationship(self, inter_cat)
+            inter_cat.blank_relations.append(self.ID)
+            self.blank_relations.append(inter_cat.ID)
 
     def init_all_relationships(self):
         """Create Relationships to all current Clancats."""
+        blanks = []
         for ID in self.all_cats:
             the_cat = self.all_cats.get(ID)
             if the_cat.ID is not self.ID:
@@ -3019,7 +3021,13 @@ class Cat:
                     jealousy=jealousy,
                     trust=trust,
                 )
-                self.relationships[the_cat.ID] = rel
+                if not (not mates and not related and romantic_love == 0 and like == 0 and dislike == 0 and admiration == 0
+                and comfortable == 0 and jealousy == 0 and trust == 0):
+                    self.relationships[the_cat.ID] = rel
+                else:
+                    blanks.append(the_cat.ID)
+        
+        self.blank_relations = blanks
 
     def save_relationship_of_cat(self, relationship_dir):
         # save relationships for each cat
@@ -3027,20 +3035,22 @@ class Cat:
         rel = []
         for r in self.relationships.values():
             r_data = {
-                "cat_from_id": r.cat_from.ID,
-                "cat_to_id": r.cat_to.ID,
-                "mates": r.mates,
-                "family": r.family,
-                "romantic_love": r.romantic_love,
-                "platonic_like": r.platonic_like,
-                "dislike": r.dislike,
-                "admiration": r.admiration,
-                "comfortable": r.comfortable,
-                "jealousy": r.jealousy,
-                "trust": r.trust,
-                "log": r.log,
+            "cat_from_id": r.cat_from.ID,
+            "cat_to_id": r.cat_to.ID,
+            "mates": r.mates,
+            "family": r.family,
+            "romantic_love": r.romantic_love,
+            "platonic_like": r.platonic_like,
+            "dislike": r.dislike,
+            "admiration": r.admiration,
+            "comfortable": r.comfortable,
+            "jealousy": r.jealousy,
+            "trust": r.trust,
+            "log": r.log,
             }
             rel.append(r_data)
+        filtered_blanks = [x for x in self.blank_relations if x not in self.relationships]
+        rel.append({'blanks' : self.blank_relations})
 
         game.safe_save(f"{relationship_dir}/{self.ID}_relations.json", rel)
 
@@ -3057,13 +3067,14 @@ class Cat:
         if os.path.exists(relation_directory):
             if not os.path.exists(relation_cat_directory):
                 self.init_all_relationships()
-                for cat in Cat.all_cats.values():
-                    cat.create_one_relationship(self)
                 return
             try:
                 with open(relation_cat_directory, "r", encoding="utf-8") as read_file:
                     rel_data = ujson.loads(read_file.read())
                     for rel in rel_data:
+                        if rel.get('blanks', False):
+                            self.blank_relations = rel['blanks']
+                            continue
                         cat_to = self.all_cats.get(rel["cat_to_id"])
                         if cat_to is None or rel["cat_to_id"] == self.ID:
                             continue
@@ -3085,7 +3096,12 @@ class Cat:
                             trust=rel["trust"] if rel["trust"] else 0,
                             log=rel["log"],
                         )
-                        self.relationships[rel["cat_to_id"]] = new_rel
+                        if not (not new_rel.mates and not new_rel.family and new_rel.romantic_love == 0 and new_rel.platonic_like == 0 
+                        and new_rel.dislike == 0 and new_rel.admiration == 0 and new_rel.comfortable == 0 and new_rel.jealousy == 0 
+                        and new_rel.trust == 0 and  len(new_rel.log) == 0):
+                            self.relationships[rel["cat_to_id"]] = new_rel
+                        else:
+                            self.blank_relations.append(rel["cat_to_id"])
             except:
                 print(
                     f"WARNING: There was an error reading the relationship file of cat #{self}."

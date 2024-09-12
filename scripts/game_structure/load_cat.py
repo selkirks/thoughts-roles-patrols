@@ -236,8 +236,6 @@ def json_load():
         try:
             if not cat.dead:
                 cat.load_relationship_of_cat()
-                if cat.relationships is not None and len(cat.relationships) < 1:
-                    cat.init_all_relationships()
             else:
                 cat.relationships = {}
         except Exception as e:
