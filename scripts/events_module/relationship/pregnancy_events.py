@@ -335,6 +335,7 @@ class Pregnancy_Events:
                 for kit in kits:
                     if random.random() < stillborn_chance or kit.genotype.manx[1] == "Ab" or kit.genotype.manx[1] == "M" or kit.genotype.fold[1] == "Fd" or kit.genotype.munch[1] == "Mk" or ('NoDBE' not in kit.genotype.pax3 and 'DBEalt' not in kit.genotype.pax3):
                         kit.dead = True
+                        kit.moons = 0
                         History.add_death(kit, str(kit.name) + " was stillborn.")
                         kits.remove(kit)
 
@@ -598,6 +599,7 @@ class Pregnancy_Events:
             if clan.pregnancy_data[cat.ID].get("fever_coat", False):
                 kit.genotype.fevercoat = True
             if random.random() < stillborn_chance or kit.genotype.manx[1] == "Ab" or kit.genotype.manx[1] == "M" or kit.genotype.fold[1] == "Fd" or kit.genotype.munch[1] == "Mk" or ('NoDBE' not in kit.genotype.pax3 and 'DBEalt' not in kit.genotype.pax3):
+                kit.moons = 0
                 kit.dead = True
                 History.add_death(kit, str(kit.name) + " was stillborn.")
         Pregnancy_Events.set_biggest_family()
@@ -1054,7 +1056,53 @@ class Pregnancy_Events:
         for _m in adoptive_parents:
             if _m not in all_adoptive_parents:
                 all_adoptive_parents.append(_m)
+        if not cat:
+            litter_age = choice([0, 0, 0, 1, 1, 1, 1, 1, 2, 2, 3, 3, 4, 4, 5])
+            
+            initial_amount = kits_amount
+            kits_amount = 1
+            if initial_amount < 3:
+                stillborn_chance = game.config['pregnancy']['stillborn_chances']['small']
+            elif initial_amount == 3:
+                stillborn_chance = game.config['pregnancy']['stillborn_chances']['three']
+            elif initial_amount < 6:
+                stillborn_chance = game.config['pregnancy']['stillborn_chances']['mid']
+            elif initial_amount < 9:
+                stillborn_chance = game.config['pregnancy']['stillborn_chances']['big']
+            else:
+                stillborn_chance = game.config['pregnancy']['stillborn_chances']['large']
 
+            if not (clan.clan_settings['modded_kits']):
+                stillborn_chance = 0
+
+            death_chances = game.config['death_related']['kit_death_chances']
+            for i in range(initial_amount):
+                if random() < stillborn_chance:
+                   continue
+                elif litter_age == 0 or not (clan.clan_settings['modded_kits']):
+                    kits_amount += 1
+                elif random() < death_chances['0']:
+                    continue
+                elif litter_age == 1:
+                    kits_amount += 1
+                elif random() < death_chances['1']:
+                    continue
+                elif litter_age == 2:
+                    kits_amount += 1
+                elif random() < death_chances['2']:
+                    continue
+                elif litter_age == 3:
+                    kits_amount += 1
+                elif random() < death_chances['3']:
+                    continue
+                elif litter_age == 4:
+                    kits_amount += 1
+                elif random() < death_chances['4']:
+                    continue
+                else:
+                    kits_amount += 1
+
+                
         #############################
 
         #### GENERATE THE KITS ######
@@ -1111,7 +1159,7 @@ class Pregnancy_Events:
 
                     blood_parent.thought = thought
                 
-                kit = Cat(parent1=blood_parent.ID, parent2=choice(blood_parent2).ID,moons=0, backstory=backstory, status='newborn')
+                kit = Cat(parent1=blood_parent.ID, parent2=choice(blood_parent2).ID,moons=litter_age, backstory=backstory, status='newborn' if litter_age == 0 else 'kitten')
             else:
                 # Two parents provided
                 second_blood = None
