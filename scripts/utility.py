@@ -3333,9 +3333,6 @@ def generate_sprite(
                 and cat.pelt.tint != "none" 
                 and cat.pelt.tint in sprites.cat_tints["tint_colours"]
             ):
-                # Multiply with alpha does not work as you would expect - it just lowers the alpha of the
-                # entire surface. To get around this, we first blit the tint onto a white background to dull it,
-                # then blit the surface onto the sprite with pygame.BLEND_RGB_MULT
                 tint = pygame.Surface((sprites.size, sprites.size)).convert_alpha()
                 tint.fill(tuple(sprites.cat_tints["tint_colours"][cat.pelt.tint]))
                 gensprite.blit(tint, (0, 0), special_flags=pygame.BLEND_RGB_MULT)
