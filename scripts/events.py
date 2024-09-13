@@ -964,7 +964,7 @@ class Events:
         cat_IDs = []
         for cat in Cat.all_cats.values():
             TNRed = True if ('infertility' in cat.permanent_condition and 'TNR' in cat.pelt.scars and 
-            game.clan.age - cat.permanent_condition['infertility'].moon_start) else False
+            game.clan.age - cat.permanent_condition['infertility']['moon_start']) else False
             if (cat.outside
             and cat.status
             not in [
@@ -983,7 +983,7 @@ class Events:
                     cat_IDs.append(cat.ID)
         
 
-        names = [x.name for x in eligible_cats[:-1]].join(', ') + ' and ' + eligible_cats[-1].name if len(eligible_cats > 1) else eligible_cats[0].name
+        names = [x.name for x in eligible_cats[:-1]].join(', ') + ' and ' + eligible_cats[-1].name if len(eligible_cats) > 1 else eligible_cats[0].name
 
         if len(eligible_cats) > 1:
             text = 'To the shock of everyone, ' + names + ' have found their way home with reports of the Twolegs releasing them nearby.'
