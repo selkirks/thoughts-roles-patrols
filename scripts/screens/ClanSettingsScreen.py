@@ -90,7 +90,6 @@ class ClanSettingsScreen(Screens):
                 return
             self.handle_checkbox_events(event)
             self.menu_button_pressed(event)
-            self.mute_button_pressed(event)
 
     def handle_checkbox_events(self, event):
         """
@@ -135,7 +134,6 @@ class ClanSettingsScreen(Screens):
         """
         self.settings_changed = False
         self.show_menu_buttons()
-        self.show_mute_buttons()
         self.set_disabled_menu_buttons(["stats"])
 
         self.general_settings_button = UIImageButton(
