@@ -313,7 +313,8 @@
     }
   },
   "lost_cat": {
-    "rejoin_chance": 20
+    "rejoin_chance": 20,
+    "rejoin_tnr_chance": 5
   },
   "cat_ages": {
     "newborn": [0, 0],

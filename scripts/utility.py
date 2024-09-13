@@ -3017,6 +3017,10 @@ def generate_sprite(
                         coloursurface = None
                         if("black" in whichcolour and genotype.pointgene[0] == "cm"):
                             whichmain.blit(sprites.sprites['lightbasecolours2'], (0, 0)) 
+                            overlay = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
+                            overlay.blit(sprites.sprites['cinnamon3'], (0, 0)) 
+                            overlay.set_alpha(150)
+                            whichmain.blit(overlay, (0, 0))
                             whichmain = ApplySmokeEffects(whichmain)
 
                             if phenotype.length != "longhaired":

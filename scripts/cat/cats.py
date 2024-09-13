@@ -533,7 +533,7 @@ class Cat:
 
         white_pattern = chim_white
         if self.genotype.chimera:    
-            self.genotype.chimerageno.white_pattern = GenerateWhite(self.genotype.chimerageno.white, self.genotype.chimerageno.pointgene, self.genotype.chimerageno.whitegrade, self.genotype.chimerageno.vitiligo, white_pattern, self.genotype.pax3)
+            self.genotype.chimerageno.white_pattern = GenerateWhite(self.genotype.chimerageno.white, self.genotype.chimerageno.pointgene, self.genotype.chimerageno.whitegrade, self.genotype.chimerageno.vitiligo, white_pattern, self.genotype.chimerageno.pax3)
         
         # Various behavior toggles
         self.no_kits = False
@@ -3048,7 +3048,12 @@ class Cat:
             "trust": r.trust,
             "log": r.log,
             }
-            rel.append(r_data)
+            if not (not r.mates and not r.family and r.romantic_love == 0 and r.platonic_like == 0 
+                and r.dislike == 0 and r.admiration == 0 and r.comfortable == 0 and r.jealousy == 0 
+                and r.trust == 0 and len(r.log) == 0):
+                rel.append(r_data)
+            else:
+                self.blank_relations.append(r.cat_to.ID)
         filtered_blanks = [x for x in self.blank_relations if x not in self.relationships]
         rel.append({'blanks' : self.blank_relations})
 
@@ -3072,10 +3077,10 @@ class Cat:
                 with open(relation_cat_directory, "r", encoding="utf-8") as read_file:
                     rel_data = ujson.loads(read_file.read())
                     for rel in rel_data:
-                        if rel.get('blanks', False):
+                        if isinstance(rel.get('blanks', False), list):
                             self.blank_relations = rel['blanks']
                             continue
-                        cat_to = self.all_cats.get(rel["cat_to_id"])
+                        cat_to = self.fetch_cat(rel["cat_to_id"])
                         if cat_to is None or rel["cat_to_id"] == self.ID:
                             continue
                         new_rel = Relationship(
@@ -3102,7 +3107,8 @@ class Cat:
                             self.relationships[rel["cat_to_id"]] = new_rel
                         else:
                             self.blank_relations.append(rel["cat_to_id"])
-            except:
+            except Exception as e:
+                print(e)
                 print(
                     f"WARNING: There was an error reading the relationship file of cat #{self}."
                 )

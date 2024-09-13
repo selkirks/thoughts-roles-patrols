@@ -488,11 +488,16 @@ class HandleShortEvents:
             taken_cats = []
             for kitty in self.dead_cats:
                 if "lost" in self.chosen_event.tags:
-                    kitty.gone()
+                    if not tnr or 'TNR' not in kitty.pelt.scars:
+                        kitty.gone()
+                        taken_cats.append(kitty)
                     if tnr and 'TNR' not in kitty.pelt.scars:
-                        kitty.pelt.scars.append("TNR")
-                        kitty.get_permanent_condition("infertility", False)
-                    taken_cats.append(kitty)
+                        if kitty.moons > 3:
+                            kitty.pelt.scars.append("TNR")
+                            kitty.get_permanent_condition("infertility", False)
+                        if kitty.moons < 4:
+                            kitty.status = 'kittypet'
+                            kitty.get_permanent_condition("infertility", False, event_triggered=True, custom_reveal=randint(4, 6))
                 self.multi_cat.append(kitty)
                 if kitty.ID not in self.involved_cats:
                     self.involved_cats.append(kitty.ID)

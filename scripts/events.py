@@ -126,6 +126,8 @@ class Events:
         rejoin_upperbound = game.config["lost_cat"]["rejoin_chance"]
         if random.randint(1, rejoin_upperbound) == 1:
             self.handle_lost_cats_return()
+        
+        self.handle_tnr_return()
 
         #Kill kits as needed
         faded_kits = []
@@ -956,6 +958,44 @@ class Events:
 
         if focus_text:
             game.cur_events_list.insert(0, Single_Event(focus_text, "misc"))
+
+    def handle_tnr_return(self):
+        eligible_cats = []
+        cat_IDs = []
+        for cat in Cat.all_cats.values():
+            TNRed = True if ('infertility' in cat.permanent_conditions and 'TNR' in cat.pelt.scars and 
+            game.clan.age - cat.permanent_conditions['infertility'].moon_start) else False
+            if (cat.outside
+            and cat.status
+            not in [
+                "kittypet",
+                "loner",
+                "rogue",
+                "former Clancat",
+                "driven off",
+            ]
+            and not cat.exiled
+            and not cat.dead
+            and TNRed):
+                rejoin_upperbound = game.config["lost_cat"]["rejoin_tnr_chance"]
+                if random.randint(1, rejoin_upperbound) == 1:
+                    eligible_cats.append(cat)
+                    cat_IDs.append(cat.ID)
+        
+
+        names = [x.name for x in eligible_cats[:-1]].join(', ') + ' and ' + eligible_cats[-1].name if len(eligible_cats > 1) else eligible_cats[0].name
+
+        if len(eligible_cats) > 1:
+            text = 'To the shock of everyone, ' + names + ' have found their way home with reports of the Twolegs releasing them nearby.'
+        else:
+            text = 'To the shock of everyone, ' + names + ' has found {PRONOUN/m_c/poss} way home with reports of the Twolegs releasing {PRONOUN/m_c/object} nearby.'
+            text = event_text_adjust(Cat, text, main_cat=eligible_cats[0], clan=game.clan)
+        for cat in eligible_cats:
+            cat.outside = False
+            cat.add_to_clan()
+            game.cur_events_list.append(Single_Event(text, "misc", cat_IDs))
+        
+        self.handle_lost_cats_return(cat_IDs)
 
     def handle_lost_cats_return(self, predetermined_cat_IDs: list = None):
         """
