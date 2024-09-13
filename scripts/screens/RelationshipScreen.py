@@ -2,9 +2,7 @@ import pygame.transform
 import pygame_gui.elements
 
 from scripts.cat.cats import Cat
-from scripts.cat_relations.relationship import (
-    Relationship
-)
+from scripts.cat_relations.relationship import Relationship
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import (
     game,

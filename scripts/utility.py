@@ -1056,7 +1056,7 @@ def check_relationship_value(cat_from, cat_to, rel_value=None):
     if cat_to.ID in cat_from.relationships:
         relationship = cat_from.relationships[cat_to.ID]
     else:
-        relationship = Relationship(cat_from, cat_to)
+        return 0
 
     if rel_value == "romantic":
         return relationship.romantic_love
