@@ -964,7 +964,7 @@ class Events:
         cat_IDs = []
         for cat in Cat.all_cats.values():
             TNRed = True if ('infertility' in cat.permanent_condition and 'TNR' in cat.pelt.scars and 
-            game.clan.age - cat.permanent_condition['infertility']['moon_start']) else False
+            game.clan.age - cat.permanent_condition['infertility']['moon_start'] == 1) else False
             if (cat.outside
             and cat.status
             not in [
@@ -982,17 +982,19 @@ class Events:
                     eligible_cats.append(cat)
                     cat_IDs.append(cat.ID)
         
+        if len(eligible_cats) == 0:
+            return
 
         names = ', '.join([str(x.name) for x in eligible_cats[:-1]]) + ' and ' + str(eligible_cats[-1].name) if len(eligible_cats) > 1 else eligible_cats[0].name
 
         if len(eligible_cats) > 1:
             text = 'To the shock of everyone, ' + names + ' have found their way home with reports of the Twolegs releasing them nearby.'
         else:
-            text = 'To the shock of everyone, m_c has found {PRONOUN/m_c/poss} way home with reports of the Twolegs releasing {PRONOUN/m_c/object} nearby.'
-            text = event_text_adjust(Cat, text, main_cat=eligible_cats[0], clan=game.clan)
+            text = 'To the shock of everyone, m_c has found {PRONOUN/m_c/poss} way home with reports of the Twolegs releasing {PRONOUN/m_c/object} nearby.'   
         for cat in eligible_cats:
             cat.outside = False
             cat.add_to_clan()
+            text = event_text_adjust(Cat, text, main_cat=eligible_cats[0], clan=game.clan)
             game.cur_events_list.append(Single_Event(text, "misc", cat_IDs))
         
         self.handle_lost_cats_return(cat_IDs)
