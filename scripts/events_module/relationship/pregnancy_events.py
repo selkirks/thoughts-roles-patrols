@@ -1,6 +1,6 @@
 import random
 from operator import xor
-from random import choice, random, randint
+from random import choice, randint
 
 import ujson
 
@@ -1077,27 +1077,27 @@ class Pregnancy_Events:
 
             death_chances = game.config['death_related']['kit_death_chances']
             for i in range(initial_amount):
-                if random() < stillborn_chance:
+                if random.random() < stillborn_chance:
                    continue
                 elif litter_age == 0 or not (clan.clan_settings['modded_kits']):
                     kits_amount += 1
-                elif random() < death_chances['0']:
+                elif random.random() < death_chances['0']:
                     continue
                 elif litter_age == 1:
                     kits_amount += 1
-                elif random() < death_chances['1']:
+                elif random.random() < death_chances['1']:
                     continue
                 elif litter_age == 2:
                     kits_amount += 1
-                elif random() < death_chances['2']:
+                elif random.random() < death_chances['2']:
                     continue
                 elif litter_age == 3:
                     kits_amount += 1
-                elif random() < death_chances['3']:
+                elif random.random() < death_chances['3']:
                     continue
                 elif litter_age == 4:
                     kits_amount += 1
-                elif random() < death_chances['4']:
+                elif random.random() < death_chances['4']:
                     continue
                 else:
                     kits_amount += 1

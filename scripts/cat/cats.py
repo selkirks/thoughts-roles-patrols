@@ -2720,17 +2720,16 @@ class Cat:
         if self.ID == other_cat.ID:
             return False
 
+        # check exiled, outside, and dead cats
+        if (self.dead != other_cat.dead) or (self.outside and not outsider) or other_cat.outside:
+            return False
+
         # No Mates Check
         if not ignore_no_mates and (self.no_mates or other_cat.no_mates):
             return False
 
         # Inheritance check
         if self.is_related(other_cat, first_cousin_mates):
-            return False
-
-
-        # check exiled, outside, and dead cats
-        if (self.dead != other_cat.dead) or (self.outside and not outsider) or other_cat.outside:
             return False
 
         # check for age
@@ -3080,7 +3079,7 @@ class Cat:
                         if isinstance(rel.get('blanks', False), list):
                             self.blank_relations = rel['blanks']
                             continue
-                        cat_to = self.fetch_cat(rel["cat_to_id"])
+                        cat_to = self.all_cats.get(rel["cat_to_id"])
                         if cat_to is None or rel["cat_to_id"] == self.ID:
                             continue
                         new_rel = Relationship(
