@@ -995,7 +995,7 @@ class Events:
             cat.outside = False
             cat.add_to_clan()
             text = event_text_adjust(Cat, text, main_cat=eligible_cats[0], clan=game.clan)
-            game.cur_events_list.append(Single_Event(text, "misc", cat_IDs))
+        game.cur_events_list.append(Single_Event(text, "misc", cat_IDs))
         
         self.handle_lost_cats_return(cat_IDs)
 
