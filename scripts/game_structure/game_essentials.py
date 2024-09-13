@@ -157,9 +157,7 @@ class Game:
     }
 
     # Init Settings
-    for x in os.listdir("."):
-        print(x)
-    with open("resources/gamesettings.json", "r") as read_file:
+    with open("_internal/resources/gamesettings.json", "r") as read_file:
         _settings = ujson.loads(read_file.read())
 
     for setting, values in _settings["__other"].items():
