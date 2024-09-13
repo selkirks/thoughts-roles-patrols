@@ -1,6 +1,6 @@
 import random
 from operator import xor
-from random import choice, randint
+from random import choice, random, randint
 
 import ujson
 
