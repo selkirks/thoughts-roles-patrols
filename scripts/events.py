@@ -963,8 +963,8 @@ class Events:
         eligible_cats = []
         cat_IDs = []
         for cat in Cat.all_cats.values():
-            TNRed = True if ('infertility' in cat.permanent_conditions and 'TNR' in cat.pelt.scars and 
-            game.clan.age - cat.permanent_conditions['infertility'].moon_start) else False
+            TNRed = True if ('infertility' in cat.permanent_condition and 'TNR' in cat.pelt.scars and 
+            game.clan.age - cat.permanent_condition['infertility'].moon_start) else False
             if (cat.outside
             and cat.status
             not in [

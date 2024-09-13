@@ -1,5 +1,6 @@
 import random
 from typing import List
+from random import randint
 
 from scripts.cat.cats import Cat
 from scripts.cat.history import History
