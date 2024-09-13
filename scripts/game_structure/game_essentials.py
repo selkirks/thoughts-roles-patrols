@@ -137,7 +137,6 @@ class Game:
         "fps": 30,
         "war_rel_change_type": "neutral",
         "disallowed_symbol_tags": [],
-        "audio_mute": False,
         "saved_scroll_positions": {},
     }
     all_screens = {}
@@ -157,9 +156,7 @@ class Game:
     }
 
     # Init Settings
-    for x in os.listdir("_internal"):
-        print(x)
-    with open("_internal/resources/gamesettings.json", "r") as read_file:
+    with open("resources/gamesettings.json", "r") as read_file:
         _settings = ujson.loads(read_file.read())
 
     for setting, values in _settings["__other"].items():
@@ -211,8 +208,6 @@ class Game:
             self.switch_screens = True
         self.clicked = False
         self.keyspressed = []
-
-
 
     @staticmethod
     def safe_save(path: str, write_data, check_integrity=False, max_attempts: int = 15):
@@ -680,7 +675,6 @@ def load_manager(res: tuple):
         )
         manager.get_theme().load_theme("resources/theme/window_base_small.json")
         manager.get_theme().load_theme("resources/theme/tool_tips_small.json")
-        manager.get_theme().load_theme("resources/theme/horizontal_slider.json")
 
         manager.preload_fonts(
             [
