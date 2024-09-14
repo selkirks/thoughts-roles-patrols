@@ -212,7 +212,7 @@ class Phenotype():
         elif(self.genotype.ghosting[0] == "Gh"):
             self.fade = "faded "
     def SolidWhite(self, pattern=None):
-        if(self.genotype.white[0] == "W" or self.genotype.pointgene[0] == "c" or (self.genotype.brindledbi and 'o' not in self.genotype.sexgene)) or ('DBEalt' not in self.genotype.pax3 and 'NoDBE' not in self.genotype.pax3):
+        if(self.genotype.white[0] == "W" or pattern == ['full white'] or self.genotype.pointgene[0] == "c" or (self.genotype.brindledbi and 'o' not in self.genotype.sexgene)) or ('DBEalt' not in self.genotype.pax3 and 'NoDBE' not in self.genotype.pax3):
             self.highwhite = ""
             self.fade = ""
             if(self.genotype.pointgene[0] == "c"):
@@ -470,6 +470,7 @@ class Phenotype():
             outputs = outputs.replace("  ", " ")
 
         return outputs
+    
     def GetTabbySprite(self, special = None):
         pattern = ""
 
@@ -617,8 +618,7 @@ class Phenotype():
                     else:
                         chosen.append(choice(tortie_low_patterns))
 
-        return chosen        
-    
+        return chosen            
     def SpriteInfo(self, moons):
         self.maincolour = ""
         self.mainunders = []

@@ -162,7 +162,7 @@ class Skill:
         SkillPath.RUNNER: "running",
         SkillPath.CLIMBER: "climbing",
         SkillPath.SWIMMER: "swimming",
-        SkillPath.DIGGER: "digging",
+        SkillPath.DIGGER: "tunneling",
         SkillPath.SPEAKER: "speaking",
         SkillPath.MEDIATOR: "mediating",
         SkillPath.CLEVER: "clever",
