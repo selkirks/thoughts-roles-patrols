@@ -501,7 +501,7 @@ class PatrolOutcome:
             if tnr and 'TNR' not in _cat.pelt.scars:
                 if not tnr2:
                     _cat.pelt.scars.append("TNR")
-                _cat.get_permanent_condition("infertility", False)
+                _cat.get_permanent_condition("infertility", False, custom_reveal=2 if 'pregnant' in _cat.injuries else None)
 
         return " ".join(results)
 

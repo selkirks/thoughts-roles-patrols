@@ -979,6 +979,7 @@ class Events:
             and TNRed):
                 rejoin_upperbound = game.config["lost_cat"]["rejoin_tnr_chance"]
                 if random.randint(1, rejoin_upperbound) == 1:
+                    Cat.outside_cats.update({cat.ID: cat})
                     eligible_cats.append(cat)
                     cat_IDs.append(cat.ID)
         
@@ -993,7 +994,11 @@ class Events:
             text = 'To the shock of everyone, m_c has found {PRONOUN/m_c/poss} way home with reports of the Twolegs releasing {PRONOUN/m_c/object} nearby.'   
         for cat in eligible_cats:
             cat.outside = False
-            cat.add_to_clan()
+            additional = cat.add_to_clan()
+            for x in additional:
+                if x in Cat.all_cats:
+                    Cat.all_cats[x].status = 'kittypet'
+                    Cat.all_cats[x].name.suffix = ''
             text = event_text_adjust(Cat, text, main_cat=eligible_cats[0], clan=game.clan)
         game.cur_events_list.append(Single_Event(text, "misc", cat_IDs))
         

@@ -1255,7 +1255,7 @@ class Pregnancy_Events:
                     kitten.relationships[second_kitten.ID].comfortable += 10 + y
                     kitten.relationships[second_kitten.ID].trust += 10 + y
                 except:
-                    start_relation = Relationship(second_kitten, kitten, False, True)
+                    start_relation = Relationship(kitten, second_kitten, False, True)
                     kitten.relationships[second_kitten.ID] = start_relation
                     kitten.relationships[second_kitten.ID].platonic_like = 20 + y
                     kitten.relationships[second_kitten.ID].comfortable = 10 + y
