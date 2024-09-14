@@ -685,18 +685,6 @@
         ]
     },
     {
-        "id": "nosy_kit",
-        "thoughts": [
-            "MEOWWWWWWW"
-        ],
-        "main_trait_constraint": [
-            "nosy"
-        ],
-        "random_living_status": [
-            "living"
-        ]
-    },
-    {
         "id": "troublesome_kit",
         "thoughts": [
             "Thinks about mischief",
