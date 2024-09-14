@@ -418,8 +418,9 @@ class RelationshipScreen(Screens):
 
         self.current_page = 1
         self.inspect_cat = None
+        self.the_cat.blank_relations = list(set(self.the_cat.blank_relations))
         blank_relations = [Relationship(self.the_cat, Cat.fetch_cat(x)) for x in self.the_cat.blank_relations]
-
+        
         # Keep a list of all the relations
         if game.config["sorting"]["sort_by_rel_total"]:
             self.all_relations = sorted(

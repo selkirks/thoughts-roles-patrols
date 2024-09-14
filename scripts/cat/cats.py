@@ -2910,7 +2910,7 @@ class Cat:
             if inter_cat.ID == self.ID:
                 continue
             # if the cat already has (somehow) a relationship with the inter cat
-            if inter_cat.ID in self.relationships:
+            if inter_cat.ID in self.relationships or inter_cat.ID in self.blank_relations:
                 continue
             # if they dead (dead cats have no relationships)
             if self.dead or inter_cat.dead:
@@ -3029,7 +3029,7 @@ class Cat:
                 else:
                     blanks.append(the_cat.ID)
         
-        self.blank_relations = blanks
+        self.blank_relations = list(set(blanks))
 
     def save_relationship_of_cat(self, relationship_dir):
         # save relationships for each cat
@@ -3057,7 +3057,7 @@ class Cat:
             else:
                 self.blank_relations.append(r.cat_to.ID)
         filtered_blanks = [x for x in self.blank_relations if x not in self.relationships and x != self.ID]
-        rel.append({'blanks' : self.blank_relations})
+        rel.append({'blanks' : list(set(self.blank_relations))})
 
         game.safe_save(f"{relationship_dir}/{self.ID}_relations.json", rel)
 
