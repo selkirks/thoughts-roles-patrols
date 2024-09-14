@@ -78,7 +78,8 @@
             "bullying",
             "daring",
             "noisy",
-            "troublesome"
+            "troublesome",
+            "mature"
         ]
     },
     {
@@ -134,6 +135,12 @@
             "Can't wait to be a warrior",
             "Pricked {PRONOUN/m_c/self} on the brambles protecting camp",
             "Pounces on a shred of moss"
+        ],
+        "main_status_constraint": [
+            "kitten"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
