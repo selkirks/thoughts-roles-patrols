@@ -136,6 +136,7 @@ class MakeClanScreen(Screens):
         self.menu_warning = None
 
     def screen_switches(self):
+        self.show_mute_buttons()
         # Reset variables
         self.game_mode = "classic"
         self.clan_name = ""
@@ -175,6 +176,9 @@ class MakeClanScreen(Screens):
             return
 
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            self.menu_button_pressed(event)
+            self.mute_button_pressed(event)
+
             if event.ui_element == self.main_menu:
                 self.change_screen("start screen")
             if self.sub_screen == "game mode":
@@ -1340,6 +1344,7 @@ class MakeClanScreen(Screens):
             "",
             object_id="#random_dice_button",
             manager=MANAGER,
+            sound_id="dice_roll",
         )
 
         self.elements["error"] = pygame_gui.elements.UITextBox(
@@ -1418,6 +1423,7 @@ class MakeClanScreen(Screens):
             "",
             object_id="#random_dice_button",
             manager=MANAGER,
+            sound_id="dice_roll",
         )
         y_pos += 80
         self.elements["roll2"] = UIImageButton(
@@ -1425,6 +1431,7 @@ class MakeClanScreen(Screens):
             "",
             object_id="#random_dice_button",
             manager=MANAGER,
+            sound_id="dice_roll",
         )
         y_pos += 80
         self.elements["roll3"] = UIImageButton(
@@ -1432,6 +1439,7 @@ class MakeClanScreen(Screens):
             "",
             object_id="#random_dice_button",
             manager=MANAGER,
+            sound_id="dice_roll",
         )
 
         _tmp = 160
@@ -1442,6 +1450,7 @@ class MakeClanScreen(Screens):
             "",
             object_id="#random_dice_button",
             manager=MANAGER,
+            sound_id="dice_roll",
         )
         del _tmp
         self.elements["reroll_count"] = pygame_gui.elements.UILabel(
@@ -2008,6 +2017,7 @@ class MakeClanScreen(Screens):
             scale(pygame.Rect((692, 500), (204, 60))),
             "",
             object_id="#continue_button_small",
+            sound_id="save",
         )
         self.elements["save_confirm"] = pygame_gui.elements.UITextBox(
             "Your Clan has been created and saved!",
