@@ -83,6 +83,15 @@
         ]
     },
     {
+        "id": "skittish_kit",
+        "thoughts": [
+            "Hides behind the den"
+        ],
+        "main_trait_constraint": [
+            "skittish"
+        ]
+    },
+    {
         "id": "gen_kit",
         "thoughts": [
             "Plays moss ball by {PRONOUN/m_c/self}",
