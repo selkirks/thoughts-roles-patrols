@@ -292,15 +292,11 @@ class Cat:
                 while None in white_pattern:
                     white_pattern.remove(None)
                 return white_pattern
-            if vit:
-                if white_pattern is None:
-                    white_pattern = [choice(vitiligo)]
-                else:
-                    hasVitiligo = [p for p in white_pattern if p in vitiligo]
-                    if len(hasVitiligo) == 0:
-                        white_pattern.append(choice(vitiligo))
-            
-            if (white_pattern is None and KIT[0] != 'wsal') or (white_pattern == "No" and (KIT[0] == 'wg' or 'NoDBE' not in pax3 or KIT[1] in ["ws", "wt"])):
+            has_vitiligo = []
+            if (white_pattern is not None and white_pattern != "No"):
+                has_vitiligo = [p for p in white_pattern if p in vitiligo]
+
+            if (white_pattern is None and KIT[0] != 'wsal') or ((white_pattern == "No" or (len(white_pattern) == len(has_vitiligo) and len(has_vitiligo) > 0)) and (KIT[0] == 'wg' or 'NoDBE' not in pax3 or KIT[1] in ["ws", "wt"])):
                 white_pattern = []
                 if 'wt' in KIT:
                     if KIT[1] not in ['ws', 'wt'] and KITgrade < 3:
@@ -523,6 +519,13 @@ class Cat:
 
                         if random() < 0.02:
                             white_pattern = ["full white", "break/inverse thai"]
+            
+            if vit:
+                if white_pattern is None:
+                    white_pattern = [choice(vitiligo)]
+                else:
+                    if len(has_vitiligo) == 0:
+                        white_pattern.append(choice(vitiligo))
             
             if white_pattern == "No" or white_pattern == [] or white_pattern is None or KIT[0] == "W" or albino[0] == "c" or (KIT[0] == "w" and not vit and pax3 == ['NoDBE', 'NoDBE']):
                 return "No"
