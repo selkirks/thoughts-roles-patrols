@@ -1732,12 +1732,6 @@
             "aggression": [8, 16],
             "stability": [0, 6]
         },
-        "clumsy": {
-            "lawfulness": [8, 12],
-            "sociability": [0, 8],
-            "aggression": [0, 8],
-            "stability": [0, 6]
-        },
         "morbid": {
             "lawfulness": [6, 16],
             "sociability": [0, 8],
