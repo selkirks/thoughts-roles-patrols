@@ -761,6 +761,11 @@
     "plural": "flowers",
     "singular": "flower"
 },
+"PLANT2": {
+    "default": "plant",
+    "plural": "plants",
+    "singular": "plant"
+},
 "DEADINSECT": {
     "default": "dead insect",
     "plural": "dead insects",
