@@ -3961,7 +3961,7 @@
       "sub_type": ["accessory"],
       "weight": 20,
       "event_text": "m_c, inbetween playfighting with r_c, collects scraps of daisies that sometimes get stuck in r_c's pelt. After quite a while, m_c {VERB/m_c/crafts/craft} a daisy corsage for {PRONOUN/m_c/poss} tail!",
-      "new_accessory": ["WILD", "PLANT", "FLOWER", "PLANT2", "DEADINSECT"],
+      "new_accessory": ["DAISY CORSAGE"],
       "m_c": {
           "age": ["kitten"]
       },
