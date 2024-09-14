@@ -10,7 +10,6 @@ This file is the main file for the game.
 It also contains the main pygame loop
 It first sets up logging, then loads the version hash from version.ini (if it exists), then loads the cats and clan.
 It then loads the settings, and then loads the start screen.
-w
 
 
 
