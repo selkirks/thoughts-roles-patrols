@@ -56,6 +56,7 @@ def json_load():
                         status=cat["status"],
                         parent1=cat["parent1"],
                         parent2=cat["parent2"],
+                        parent3=cat.get("parent3"),
                         moons=cat["moons"],
                         genotype=cat["genotype"],
                         white_patterns=cat["white_pattern"],
@@ -69,7 +70,7 @@ def json_load():
                         gender=cat["gender"],
                         status=cat["status"],
                         parent1=cat["parent1"],
-                        parent2=cat["parent2"],
+                        parent3=cat.get("parent3"),
                         moons=cat["moons"],
                         loading_cat=True)
             new_cat.pelt = Pelt(

@@ -542,11 +542,17 @@ class Phenotype():
         tortie_low_patterns = def_tortie_low_patterns
         tortie_mid_patterns = def_tortie_mid_patterns
         tortie_high_patterns = def_tortie_high_patterns
+        tiny_patches = ["BACKSPOT", "BEARD", "BELLY", "BIB", "revBLACKSTAR", "BLAZE", "BLAZEMASK", "revBOOTS", "CHESTSPECK", "ESTRELLA",
+                        "EYEBAGS", "revEYESPOT", "revHEART", "HONEY", "LEFTEAR", "LITTLE", "PAWS", "REVERSEEYE", "REVERSEHEART", "RIGHTEAR", 
+                        "SCOURGE", "SPARKLE", "revTAIL", 'revTAILTWO', "TAILTIP", "TEARS", "TIP", "TOES", "TOESTAIL", "VEE"]
         
                 
         chosen = []
 
-        if spec:
+        if spec == 'merle':
+            chosen.append(choice([choice(tortie_low_patterns), choice(tortie_low_patterns), choice(tortie_mid_patterns), choice(tortie_mid_patterns), choice(tiny_patches)]))
+
+        elif spec:
             chosen.append(choice([choice(tortie_high_patterns), choice(tortie_high_patterns), choice(tortie_mid_patterns), choice(tortie_mid_patterns), choice(tortie_low_patterns)]))
 
         elif randint(1, self.genotype.odds['cryptic_tortie']) == 1:
@@ -557,10 +563,6 @@ class Phenotype():
                 tortie_low_patterns = def_tortie_low_patterns
                 tortie_mid_patterns = def_tortie_mid_patterns
                 tortie_high_patterns = def_tortie_high_patterns
-                
-                tiny_patches = ["BACKSPOT", "BEARD", "BELLY", "BIB", "revBLACKSTAR", "BLAZE", "BLAZEMASK", "revBOOTS", "CHESTSPECK", "ESTRELLA",
-                                "EYEBAGS", "revEYESPOT", "revHEART", "HONEY", "LEFTEAR", "LITTLE", "PAWS", "REVERSEEYE", "REVERSEHEART", "RIGHTEAR", 
-                                "SCOURGE", "SPARKLE", "revTAIL", 'revTAILTWO', "TAILTIP", "TEARS", "TIP", "TOES", "TOESTAIL", "VEE"]
 
                 if randint(1, 15) == 1 or (i > 0 and randint(1, 10) == 1):
                     tortie_low_patterns = ["BOWTIE", "BROKENBLAZE", "BUZZARDFANG", "revCOWTWO", "FADEBELLY", "FADESPOTS", "revLOVEBUG", "MITAINE", 
@@ -625,9 +627,17 @@ class Phenotype():
         self.spritecolour = ""
         self.caramel = ""
         self.tortpattern = ""
+        self.merlepattern = ""
         self.patchmain = ""
         self.patchunders = []
         self.patchcolour = ""
+
+        if(self.genotype.silver[0] == 'I' and self.genotype.specialred == 'merle'):
+            if self.genotype.merlepattern is not None:
+                self.merlepattern = self.genotype.merlepattern
+            else:
+                self.merlepattern = self.ChooseTortiePattern(spec = 'merle')
+                self.genotype.merlepattern = self.merlepattern
 
         if self.genotype.pointgene[0] == "c":
             self.spritecolour = "albino"
@@ -635,29 +645,6 @@ class Phenotype():
         elif self.genotype.white[0] == "W" or ('DBEalt' not in self.genotype.pax3 and 'NoDBE' not in self.genotype.pax3) or (self.genotype.brindledbi and (('o' not in self.genotype.sexgene) or (self.genotype.ext[0] == 'ea' and ((moons > 11 and self.genotype.agouti[0] != 'a') or (moons > 23))) or (self.genotype.ext[0] == 'er' and moons > 23) or (self.genotype.ext[0] == 'ec' and (self.genotype.agouti[0] != 'a' or moons > 5)))):
             self.spritecolour = "white"
             self.maincolour = self.spritecolour
-        elif('o' not in self.genotype.sexgene and self.genotype.silver[0] == 'I' and self.genotype.specialred == 'merle'):
-            if self.genotype.tortiepattern is not None:
-                self.tortpattern = self.genotype.tortiepattern
-                main = self.FindRed(self.genotype, moons, 'merle')
-                self.maincolour = main[0]
-                self.spritecolour = main[1]
-                self.mainunders = [main[2], main[3]]
-                main = self.FindRed(self.genotype, moons)
-                self.patchmain = main[0]
-                self.patchcolour = main[1]
-                self.patchunders = [main[2], main[3]]
-            else:
-                self.tortpattern = self.ChooseTortiePattern()
-                main = self.FindRed(self.genotype, moons, 'merle')
-                self.maincolour = main[0]
-                self.spritecolour = main[1]
-                self.mainunders = [main[2], main[3]]
-                main = self.FindRed(self.genotype, moons)
-                self.patchmain = main[0]
-                self.patchcolour = main[1]
-                self.patchunders = [main[2], main[3]]
-
-                self.genotype.tortiepattern = self.tortpattern
         elif('o' not in self.genotype.sexgene and self.genotype.specialred == 'blue-tipped'):
             self.tortpattern = ['BLUE-TIPPED']
             main = self.FindRed(self.genotype, moons)
@@ -807,7 +794,7 @@ class Phenotype():
             banding = ""
             
             if ('masked' in self.silvergold and genes.wbsum > 15) or (genes.agouti[0] != "a" and genes.ext[0] != "Eg") or (genes.ext[0] not in ['Eg', 'E']):
-                if genes.silver[0] == "I" or genes.brindledbi or (moons < 3 and genes.karp[0] == "K"):
+                if (genes.silver[0] == "I" and not special == 'merle') or genes.brindledbi or (moons < 3 and genes.karp[0] == "K"):
                     rufousing = "silver"
                 elif genes.pointgene[0] != "C" or genes.agouti[0] == "Apb":
                     rufousing = "low"
@@ -846,14 +833,14 @@ class Phenotype():
                 maincolour = 'medium'
             else:
                 maincolour = 'low'
-        if(genes.dilute[0] == "d" or (genes.specialred == 'cameo' and genes.silver[0] == 'I') or special == 'merle'):
+        if(genes.dilute[0] == "d" or (genes.specialred == 'cameo' and genes.silver[0] == 'I') or self.merlepattern):
             if(genes.pinkdilute[0] == "dp"):
                 if genes.dilutemd[0] == "Dm":
                     colour = "ivory-apricot"
                 else:
                     colour = "ivory"
             else:
-                if genes.dilutemd[0] == "Dm" and not(genes.specialred == 'cameo' or special == 'merle'):
+                if genes.dilutemd[0] == "Dm" and not(genes.specialred == 'cameo' or self.merlepattern):
                     colour = "apricot"
                 else:
                     colour = "cream"

@@ -1158,16 +1158,20 @@ class Pregnancy_Events:
                         blood_parent2.append(blood_par2)
 
                     blood_parent.thought = thought
-                
-                kit = Cat(parent1=blood_parent.ID, parent2=choice(blood_parent2).ID,moons=litter_age, backstory=backstory, status='newborn' if litter_age == 0 else 'kitten')
+                sire = choice(blood_parent2)
+                chimera_sire = choice(blood_parent2)
+                kit = Cat(parent1=blood_parent.ID, parent2=sire.ID, extrapar=chimera_sire if sire.ID != chimera_sire.ID else None,moons=litter_age, backstory=backstory, status='newborn' if litter_age == 0 else 'kitten')
             else:
                 # Two parents provided
                 second_blood = None
                 if other_cat:
                     second_blood = choice(other_cat)
+                    chimera_sire = choice(other_cat)
+                    if second_blood.ID == chimera_sire.ID:
+                        chimera_sire = None
 
                 if backkit:    
-                    kit = Cat(parent1=cat.ID, parent2=second_blood.ID if second_blood else None, moons=0, backstory=backstory, status='newborn', extrapar = par2geno)
+                    kit = Cat(parent1=cat.ID, parent2=second_blood.ID if second_blood else None, moons=0, backstory=backstory, status='newborn', extrapar = par2geno if not second_blood else chimera_sire)
                 else:
                     kit = Cat(parent1=cat.ID, parent2=second_blood.ID, moons=0, status='newborn')
                 
@@ -1275,11 +1279,11 @@ class Pregnancy_Events:
             kit.adoptive_parents = final_adoptive_parents.copy()
             if blood_parent2:
                 for birth_p in blood_parent2:
-                    if birth_p.ID not in [kit.parent2, kit.parent1] and birth_p.ID not in kit.adoptive_parents:
+                    if birth_p.ID not in [kit.parent3, kit.parent2, kit.parent1] and birth_p.ID not in kit.adoptive_parents:
                         kit.adoptive_parents.append(birth_p.ID)
             if other_cat:
                 for birth_p in other_cat:
-                    if birth_p.ID not in [kit.parent2, kit.parent1] and birth_p.ID not in kit.adoptive_parents:
+                    if birth_p.ID not in [kit.parent3, kit.parent2, kit.parent1] and birth_p.ID not in kit.adoptive_parents:
                         kit.adoptive_parents.append(birth_p.ID)
             kit.inheritance.update_inheritance()
             kit.inheritance.update_all_related_inheritance()
@@ -1317,11 +1321,13 @@ class Pregnancy_Events:
 
         if blood_parent:
             blood_parent.outside = True
-            clan.unknown_cats.append(blood_parent.ID)
+            if blood_parent.dead:
+                clan.unknown_cats.append(blood_parent.ID)
         if blood_parent2:
             for x in blood_parent2:
                 x.outside = True
-                clan.unknown_cats.append(x.ID)
+                if x.dead:
+                    clan.unknown_cats.append(x.ID)
 
         return all_kitten
 

@@ -1827,7 +1827,7 @@ class Events:
             possible_ceremonies = temp
 
             # Gather for parents ---------------------------------------------------------
-            for p in [cat.parent1, cat.parent2]:
+            for p in [cat.parent1, cat.parent2, cat.parent3]:
                 if Cat.fetch_cat(p):
                     if Cat.fetch_cat(p).dead:
                         dead_parents.append(Cat.fetch_cat(p))

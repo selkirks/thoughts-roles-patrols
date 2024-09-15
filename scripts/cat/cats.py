@@ -8,7 +8,9 @@ import bisect
 import itertools
 import os.path
 import sys
+import traceback
 from random import choice, randint, sample, random, choices, getrandbits, randrange, shuffle
+from operator import xor
 from typing import Dict, List, Any
 
 import ujson  # type: ignore
@@ -189,6 +191,7 @@ class Cat:
         )
         self.parent1 = parent1
         self.parent2 = parent2
+        self.parent3 = None
 
         self.adoptive_parents = []
         self.genotype = Genotype(game.config['genetics_config'], game.settings["ban problem genes"])
@@ -200,27 +203,20 @@ class Cat:
                 self.genotype.KitGenerator(Cat.all_cats[parent2].genotype, extrapar)
             else:
                 try:    
-                    self.genotype.KitGenerator(Cat.all_cats[parent1].genotype, Cat.all_cats.get(parent2, extrapar))
-                except Exception as e:
-                    print(e)
+                    threepars = self.genotype.KitGenerator(Cat.all_cats[parent1].genotype, Cat.all_cats.get(parent2, extrapar), extrapar)
+                    if threepars and isinstance(extrapar, Cat):
+                        self.parent3 = extrapar.ID
+                except:
+                    traceback.print_exc()
                     self.genotype.Generator()
-
-            if(randint(1, game.config['genetics_config']['intersex']) == 1):
-                self.genotype.gender = "intersex"
-                if(randint(1, 25) == 1 and 'Y' in self.genotype.sexgene):
-                    self.genotype.gender = 'molly'
         elif kittypet or status == 'kittypet':
             self.genotype.AltGenerator(special=self.gender)
-            if(randint(1, game.config['genetics_config']['intersex']) == 1):
-                self.genotype.gender = "intersex"
-                if(randint(1, 25) == 1 and 'Y' in self.genotype.sexgene):
-                    self.genotype.gender = 'molly'
         else:
             self.genotype.Generator(special=self.gender)
-            if(randint(1, game.config['genetics_config']['intersex']) == 1):
-                self.genotype.gender = "intersex"
-                if(randint(1, 25) == 1 and 'Y' in self.genotype.sexgene):
-                    self.genotype.gender = 'molly'
+        if(randint(1, game.config['genetics_config']['intersex']) == 1) or (self.genotype.chimera and xor('Y' in self.genotype.sexgene, 'Y' in self.genotype.chimerageno.sexgene) and randint(1, round(game.config['genetics_config']['intersex']/4)) == 1):
+            self.genotype.gender = "intersex"
+            if(randint(1, 25) == 1 and 'Y' in self.genotype.sexgene):
+                self.genotype.gender = 'molly'
 
         self.phenotype = Phenotype(self.genotype)
         self.phenotype.PhenotypeOutput(self.genotype.gender)
@@ -685,6 +681,7 @@ class Cat:
         self.name = Name(status, prefix=prefix, suffix=suffix)
         self.parent1 = None
         self.parent2 = None
+        self.parent3 = None
         self.adoptive_parents = []
         self.mate = []
         self.status = status
@@ -846,7 +843,7 @@ class Cat:
         if self.genotype.manx[0] == 'M' and (self.genotype.manxtype in ['rumpy', 'riser']):
             self.get_permanent_condition('born without a tail', born_with=True, genetic=True)
         
-        if len(self.genotype.sexgene) > 2 and 'Y' in self.genotype.sexgene or (self.gender == 'intersex' and random() < 0.2) or (self.gender == 'molly' and 'Y' in self.genotype.sexgene):
+        if (len(self.genotype.sexgene) > 2 and 'Y' in self.genotype.sexgene) or (self.gender == 'intersex' and random() < 0.2) or (self.gender == 'molly' and 'Y' in self.genotype.sexgene):
             self.get_permanent_condition('infertility', born_with=True, genetic=True)
         
         if self.genotype.fold[0] == 'Fd' or ('manx syndrome' in self.permanent_condition and 'M' in self.genotype.manx and self.phenotype.bobtailnr < 4 and self.phenotype.bobtailnr > 1 and random() < 0.05):
@@ -1858,7 +1855,7 @@ class Cat:
                 other_cat == self.ID
                 and len(all_cats) > 1
                 or (all_cats.get(other_cat).dead and dead_chance != 1)
-                or (all_cats.get(other_cat).outside and other_cat not in self.relationships)
+                or (other_cat not in self.blank_relations and other_cat not in self.relationships)
             ):
                 other_cat = choice(list(all_cats.keys()))
                 i += 1
@@ -1879,7 +1876,7 @@ class Cat:
             while (
                 other_cat == self.ID
                 and len(all_cats) > 1
-                or (not all_cats.get(other_cat).outside and other_cat not in self.relationships)
+                or (other_cat not in self.blank_relations and other_cat not in self.relationships)
             ):
                 # or (self.status in ['kittypet', 'loner'] and not all_cats.get(other_cat).outside):
                 other_cat = choice(list(all_cats.keys()))
@@ -3517,6 +3514,8 @@ class Cat:
             cat_ob.parent1 = cat_info["parent1"]
         if cat_info["parent2"]:
             cat_ob.parent2 = cat_info["parent2"]
+        if cat_info.get("parent3"):
+            cat_ob.parent3 = cat_info["parent3"]
         cat_ob.faded_offspring = cat_info["faded_offspring"]
         cat_ob.adoptive_parents = (
             cat_info["adoptive_parents"] if "adoptive_parents" in cat_info else []
@@ -3691,6 +3690,7 @@ class Cat:
                 "dead_for": self.dead_for,
                 "parent1": self.parent1,
                 "parent2": self.parent2,
+                "parent3": self.parent3 if self.parent3 else None,
                 "adoptive_parents": self.adoptive_parents,
                 "df": self.df,
                 "faded_offspring": self.faded_offspring,
@@ -3712,6 +3712,7 @@ class Cat:
                 "facets": self.personality.get_facet_string(),
                 "parent1": self.parent1,
                 "parent2": self.parent2,
+                "parent3": self.parent3 if self.parent3 else None,
                 "adoptive_parents": self.adoptive_parents,
                 "mentor": self.mentor if self.mentor else None,
                 "former_mentor": (

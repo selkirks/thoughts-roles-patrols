@@ -213,6 +213,9 @@ def get_random_moon_cat(
             if main_cat.parent2:
                 if Cat.fetch_cat(main_cat.parent2) in possible_r_c:
                     possible_parents.append(main_cat.parent2)
+            if main_cat.parent3:
+                if Cat.fetch_cat(main_cat.parent3) in possible_r_c:
+                    possible_parents.append(main_cat.parent3)
             if main_cat.adoptive_parents:
                 for parent in main_cat.adoptive_parents:
                     if Cat.fetch_cat(parent) in possible_r_c:
@@ -376,7 +379,7 @@ def create_bio_parents(Cat, cat_type, flip=False, second_parent=True):
 
 def create_new_cat_block(
     Cat, Relationship, event, in_event_cats: dict, i: int, attribute_list: List[str]
-) -> list:
+    ) -> list:
     """
     Creates a single new_cat block and then generates and returns the cats within the block
     :param Cat Cat: always pass Cat class
@@ -2639,9 +2642,14 @@ def generate_sprite(
             }
         gensprite = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
                 
-        def GenSprite(genotype, phenotype, sprite_age):
+        def GenSprite(genotype, phenotype, sprite_age, merle=False):
             phenotype.SpriteInfo(sprite_age)
-
+            if(phenotype.merlepattern != "" and not merle and 'rev' in phenotype.merlepattern[0]):
+                old_silver = genotype.silver
+                phenotype.genotype.silver = ['i', 'i']
+                phenotype.SpriteInfo(sprite_age)
+                phenotype.genotype.silver = old_silver
+                
             def CreateStripes(stripecolour, whichbase, coloursurface=None, pattern=None, special = None):
                 stripebase = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
                 
@@ -3308,7 +3316,25 @@ def generate_sprite(
                     tortpatches2 = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
                     tortpatches2.blit(sprites.sprites[pattern.replace('rev', "") + cat_sprite], (0, 0))
                     tortpatches2.blit(tortpatches, (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
-                    gensprite.blit(tortpatches2, (0, 0))    
+                    gensprite.blit(tortpatches2, (0, 0))
+
+            if(phenotype.merlepattern != "" and not merle):
+                for pattern in phenotype.merlepattern:
+                    merlepatches = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
+                    if 'rev' in pattern:
+                        phenotype.SpriteInfo(sprite_age)
+                        merlepatches = GenSprite(genotype, phenotype, sprite_age, merle=True)
+                    else:
+                        old_silver = genotype.silver
+                        phenotype.genotype.silver = ['i', 'i']
+                        phenotype.SpriteInfo(sprite_age)
+                        merlepatches = GenSprite(genotype, phenotype, sprite_age, merle=True)
+                        phenotype.genotype.silver = old_silver
+                    
+                    merlepatches2 = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
+                    merlepatches2.blit(sprites.sprites[pattern.replace('rev', "") + cat_sprite], (0, 0))
+                    merlepatches2.blit(merlepatches, (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
+                    gensprite.blit(merlepatches2, (0, 0))
 
             if genotype.satin[0] == "st" or genotype.tenn[0] == 'tr':
                 gensprite.blit(sprites.sprites['satin0'], (0, 0))
