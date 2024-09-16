@@ -1057,7 +1057,7 @@ class Pregnancy_Events:
             if _m not in all_adoptive_parents:
                 all_adoptive_parents.append(_m)
         if not cat:
-            litter_age = choice([0, 0, 0, 1, 1, 1, 1, 1, 2, 2, 3, 3, 4, 4, 5])
+            litter_age = choice([0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 2, 2, 3, 3, 4, 4, 5])
             
             initial_amount = kits_amount
             kits_amount = 1
