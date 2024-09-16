@@ -2513,7 +2513,41 @@ class Genotype:
         if not self.somatic.get('gene', False):
             return ""
 
-        return self.somatic['gene'] + ' mutated to \'' + self.somatic['allele'] + "\' on " + body[self.somatic['base']]
+        alleles = {
+            "wirehair" : "Wirehair",
+            "laperm" : "LaPerm",
+            "cornish" : "Cornish rex",
+            "urals" : "Urals rex",
+            "tenn" : "Tennessee rex",
+            "fleece" : "Fleecy cloud rexing",
+            "sedesp" : "Selkirk rexing",
+
+            'pinkdilute' : "Pink-eyed dilute",
+            "ext" : {
+                'ec': 'Carnelian', 
+                'er' : 'Russet', 
+                'ea' : 'Amber'
+            },
+            "corin" : {
+                'sh' : 'Sunshine', 
+                'sg' : 'Extreme sunshine', 
+                'fg' : 'Flaxen gold'},
+            "karp" : 'Karpati',
+            "bleach" : 'Bleaching',
+            "ghosting" : 'Ghosting',
+
+            'eumelanin' : {'b' : 'Chocolate', 'bl' : 'Cinnamon'},
+            'sexgene' : 'Red',
+            "dilute" : 'Dilute',
+            "white" : {'W' : 'Dominant white', 'wsal' : 'Salmiak'},
+            "pointgene" : {'cb' : 'Sepia', 'cs' : 'Colourpoint', 'cm' : 'Mocha', 'c' : 'Albino'},
+            "silver" : "Silver",
+            "agouti" : "Solid"
+        }
+        try:
+            return "Mutated " + alleles[self.somatic['gene']].get(self.somatic['allele']) + " on " + body[self.somatic['base']]
+        except:
+            return "Mutated " + alleles[self.somatic['gene']] + " on " + body[self.somatic['base']]
 
 
 

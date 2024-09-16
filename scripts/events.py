@@ -999,6 +999,7 @@ class Events:
                 if x in Cat.all_cats:
                     Cat.all_cats[x].status = 'kittypet'
                     Cat.all_cats[x].name.suffix = ''
+                    Cat.all_cats[x].get_permanent_condition("infertility", False, custom_reveal=4-Cat.all_cats[x].moons)
             text = event_text_adjust(Cat, text, main_cat=eligible_cats[0], clan=game.clan)
         game.cur_events_list.append(Single_Event(text, "misc", cat_IDs))
         
