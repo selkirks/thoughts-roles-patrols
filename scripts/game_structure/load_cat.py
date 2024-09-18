@@ -1,5 +1,6 @@
 import logging
 import os
+import traceback
 from math import floor
 from random import choice
 
@@ -63,6 +64,8 @@ def json_load():
                         chim_white=cat["chim_white"] if 'chim_white' in cat else None,
                         loading_cat=True)
             except:
+                if cat["genotype"]:
+                    traceback.print_exc()
                 new_cat = Cat(ID=cat["ID"],
                         prefix=cat["name_prefix"],
                         suffix=cat["name_suffix"],
@@ -73,6 +76,7 @@ def json_load():
                         parent3=cat.get("parent3"),
                         moons=cat["moons"],
                         loading_cat=True)
+                
             new_cat.pelt = Pelt(
                 new_cat.genotype,
                 new_cat.phenotype,
