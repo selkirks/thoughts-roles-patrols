@@ -1187,7 +1187,7 @@ class Pregnancy_Events:
             tries = 0
             extant = [kitty.name.prefix for kitty in Cat.all_cats.values() if not kitty.dead and not kitty.outside and kitty.ID != kit.ID]
             while tries < 20 and kit.name.prefix in extant:
-                kit.name = Name("newborn")
+                kit.name = Name("newborn", kit.genotype, kit.phenotype, 0)
                 tries += 1
 
             all_kitten.append(kit)

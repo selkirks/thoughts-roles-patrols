@@ -642,6 +642,9 @@ class Cat:
         if self.pelt is not None:
             self.name = Name(
                 status,
+                self.genotype,
+                self.phenotype,
+                self.moons,
                 prefix,
                 suffix,
                 self.pelt.colour,
@@ -653,7 +656,7 @@ class Cat:
                 load_existing_name=loading_cat,
             )
         else:
-            self.name = Name(status, prefix, suffix, eyes=self.pelt.eye_colour, specsuffix_hidden=self.specsuffix_hidden,
+            self.name = Name(status, self.genotype, self.phenotype, self.moons, prefix, suffix, eyes=self.pelt.eye_colour, specsuffix_hidden=self.specsuffix_hidden,
                              load_existing_name = loading_cat)
         
         # Private Sprite

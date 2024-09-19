@@ -445,6 +445,9 @@ class Events:
                                     if not invited_cat.name.suffix:
                                         invited_cat.name = Name(
                                             invited_cat.status,
+                                            invited_cat.genotype,
+                                            invited_cat.phenotype,
+                                            invited_cat.moons,
                                             invited_cat.name.prefix,
                                             invited_cat.name.suffix,
                                             invited_cat.pelt.colour,

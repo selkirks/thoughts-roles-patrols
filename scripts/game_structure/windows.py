@@ -614,6 +614,9 @@ class ChangeCatName(UIWindow):
                 self.prefix_entry_box.set_text(
                     Name(
                         self.the_cat.status,
+                        self.the_cat.genotype,
+                        self.the_cat.phenotype,
+                        self.the_cat.moons,
                         None,
                         use_suffix,
                         self.the_cat.pelt.colour,
@@ -630,6 +633,9 @@ class ChangeCatName(UIWindow):
                 self.suffix_entry_box.set_text(
                     Name(
                         self.the_cat.status,
+                        self.the_cat.genotype,
+                        self.the_cat.phenotype,
+                        self.the_cat.moons,
                         use_prefix,
                         None,
                         self.the_cat.pelt.colour,

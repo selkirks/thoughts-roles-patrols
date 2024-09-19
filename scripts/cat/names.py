@@ -8,6 +8,7 @@ import ujson
 
 from scripts.game_structure.game_essentials import game
 from scripts.housekeeping.datadir import get_save_dir
+from .alt_namer import Namer
 
 
 class Name:
@@ -62,6 +63,9 @@ class Name:
 
     def __init__(self,
                  status="warrior",
+                 genotype=None,
+                 phenotype=None,
+                 moons=0,
                  prefix=None,
                  suffix=None,
                  colour=None,
@@ -73,6 +77,9 @@ class Name:
                  load_existing_name=False
                  ):
         self.status = status
+        self.moons = moons
+        self.genotype = genotype
+        self.phenotype = phenotype
         self.prefix = prefix
         self.suffix = suffix
         self.specsuffix_hidden = specsuffix_hidden
@@ -130,6 +137,10 @@ class Name:
 
     # Generate possible prefix
     def give_prefix(self, eyes, colour, biome):
+        
+        namer = Namer([])
+        namer.start(self.genotype, self.phenotype, self.moons)
+
         # decided in game config: cat_name_controls
         if game.config["cat_name_controls"]["always_name_after_appearance"]:
             named_after_appearance = True
