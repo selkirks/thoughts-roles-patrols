@@ -781,12 +781,12 @@ class Cat:
                             "Does {PRONOUN/m_c/poss} best to console {PRONOUN/m_c/poss} clanmates about r_c's death",
                             "Takes a part of r_c's nest to put with {PRONOUN/m_c/poss} own, clinging to the fading scent",
                             "Sleeps in r_c's nest tonight",
-                            "Defensively states that {PRONOUN/m_c/subject} {VERB/s_c/don't/doesn't} need any comfort about r_c's death",
+                            "Defensively states that {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} need any comfort about r_c's death",
                             "Wonders why StarClan had to take r_c so soon",
                             "Still needs r_c even though they're gone",
                             "Doesn't think {PRONOUN/m_c/subject} will ever be the same without r_c",
                             "Was seen crying in {PRONOUN/m_c/poss} nest after r_c's vigil",
-                            "Is hiding {PRONOUN/m_c/poss} tears as {PRONOUN/m_c/subject} {VERB/s_c/comfort/comforts} the others about r_c's passing"
+                            "Is hiding {PRONOUN/m_c/poss} tears as {PRONOUN/m_c/subject} {VERB/m_c/comfort/comforts} the others about r_c's passing"
                         )
                 
                 if body: 
