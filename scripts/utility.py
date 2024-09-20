@@ -687,6 +687,8 @@ def create_new_cat_block(
         # add mates
         # THIS DOES NOT ADD RELATIONS TO CATS IN THE EVENT, those are added within the relationships block of the event
 
+        fevercoat = random() < 0.01:
+
         for n_c in new_cats:
 
             if n_c.genotype.manx[1] == "Ab" or n_c.genotype.manx[1] == "M" or n_c.genotype.fold[1] == "Fd" or n_c.genotype.munch[1] == "Mk" or ('NoDBE' not in n_c.genotype.pax3 and 'DBEalt' not in n_c.genotype.pax3):
@@ -696,6 +698,11 @@ def create_new_cat_block(
                 History.add_death(n_c, str(n_c.name) + " was stillborn.")
                 new_cats.remove(n_c)
                 continue
+
+            if fevercoat:
+                n_c.genotype.fevercoat = True
+                if n_c.genotype.chimera:
+                    n_c.genotype.chimerageno.fevercoat = True
 
             # SET MATES
             for inter_cat in give_mates:
