@@ -687,7 +687,9 @@ def create_new_cat_block(
         # add mates
         # THIS DOES NOT ADD RELATIONS TO CATS IN THE EVENT, those are added within the relationships block of the event
 
-        fevercoat = random() < 0.01:
+        fevercoat = False
+        if random() < 0.01:
+            fevercoat = True
 
         for n_c in new_cats:
 
