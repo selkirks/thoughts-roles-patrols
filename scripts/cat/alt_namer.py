@@ -2,23 +2,34 @@ from .genotype import *
 from .phenotype import *
 from random import choice, random
 from operator import xor
+from copy import deepcopy
+import numpy as np
 
 class Namer():
     def __init__ (self, used_prefixes=[]):
         self.used_prefixes = used_prefixes
+        if os.path.exists('resources/dicts/names/alt_prefixes.json'):
+            with open('resources/dicts/names/alt_prefixes.json') as read_file:
+                self.all_prefixes = ujson.loads(read_file.read())
 
     def start(self, genotype: Genotype, phenotype: Phenotype, chimera_pheno = None, moons=0):
         self.genotype = genotype
         self.phenotype = phenotype
+        self.chimera_pheno = chimera_pheno
         self.moons = moons
 
         if genotype:
             params = self.parse_chimera() if genotype.chimera else self.get_categories(genotype, phenotype)
 
-            print(params)
-            print(genotype.ShowGenes())
-            print(genotype.tortiepattern)
-            print(genotype.specialred)
+            # print(params)
+            # print(genotype.ShowGenes())
+            # print(genotype.tortiepattern)
+            # print(genotype.specialred)
+
+            if params[0] in ['white', 'silver shaded'] or (params[3] == 'high' and random() < 0.2):
+                return self.white(params[0])
+            elif params[0] == 'black':
+                return self.black(params)
 
     def parse_chimera(self):
 
@@ -41,7 +52,7 @@ class Namer():
             base = 'white'
             return [base, tortie, tabby, white, point]
         
-        if set_one[1] or set_two[1] or xor(set_one[0] in ['red', 'cream'], set_two[0] in ['red', 'cream']):
+        if set_one[1] or set_two[1] or xor(set_one[0] in ['ginger', 'cream'], set_two[0] in ['ginger', 'cream']):
             tortie = True
 
         if set_one[3] == 'high' or (self.moons == 0 and set_one[4] == 'colourpoint'):
@@ -52,7 +63,7 @@ class Namer():
             white = 'low'
 
         #mixing solid + tabby or different base-colours changes tabby pattern to blotched
-        if set_one[0] != set_two[0] and set_one[0] not in ['red', 'cream'] and set_two[0] not in ['red', 'cream']:
+        if set_one[0] != set_two[0] and set_one[0] not in ['ginger', 'cream'] and set_two[0] not in ['ginger', 'cream']:
             tabby['pattern'] = 'blotched'
         
         #mixing different bases
@@ -141,11 +152,11 @@ class Namer():
         elif ('silver' in phenotype.silvergold and ('shaded' in phenotype.tabby or 'chinchilla' in phenotype.tabby)):
             base = 'silver shaded'
             return [base, tortie, tabby, white, point]
-        elif (('o' not in genotype.sexgene or genotype.tortiepattern == ['revCRYPTIC']) or (genotype.ext[0] == 'ea' and ((moons > 11 and genotype.agouti[0] != 'a') or (moons > 23))) or (genotype.ext[0] == 'er' and moons > 23) or (genotype.ext[0] == 'ec' and moons > 0 and (genotype.agouti[0] != 'a' or moons > 5))) and not (genotype.silver[0] == 'I' and genotype.specialred in ['blue-red', 'cinnamon']):
+        elif (('o' not in genotype.sexgene or genotype.tortiepattern == ['revCRYPTIC']) or (genotype.ext[0] == 'ea' and ((self.moons > 11 and genotype.agouti[0] != 'a') or (self.moons > 23))) or (genotype.ext[0] == 'er' and self.moons > 23) or (genotype.ext[0] == 'ec' and self.moons > 0 and (genotype.agouti[0] != 'a' or self.moons > 5))) and not (genotype.silver[0] == 'I' and genotype.specialred in ['blue-red', 'cinnamon']):
             if genotype.dilute[0] == 'd' or genotype.pinkdilute[0] == 'dp' or (genotype.silver[0] == 'I' and genotype.specialred in ['cameo', 'merle']):
                 base = 'cream'
             else:
-                base = 'red'
+                base = 'ginger'
         else:
             if ('O' in genotype.sexgene and not genotype.brindledbi and 'CRYPTIC' not in genotype.tortiepattern[0]) or 'bimetal' in phenotype.silvergold or (genotype.silver[0] == 'I' and genotype.specialred == 'merle'):
                 tortie = True
@@ -168,9 +179,9 @@ class Namer():
                 else:
                     base = 'black'
             
-        if base in ['red', 'cream'] or (genotype.agouti[0] != "a" and genotype.ext[0] != "Eg") or (genotype.ext[0] not in ['Eg', 'E']) or 'light smoke' in phenotype.silvergold:
+        if base in ['ginger', 'cream'] or (genotype.agouti[0] != "a" and genotype.ext[0] != "Eg") or (genotype.ext[0] not in ['Eg', 'E']) or 'light smoke' in phenotype.silvergold:
             sprite = phenotype.GetTabbySprite()
-            if 'bar' in sprite or 'ghost' in sprite:
+            if 'bar' in sprite or 'ghost' in sprite or 'chinchilla' in phenotype.tabby:
                 tabby['pattern'] = 'ticked'
             elif sprite in ['marbled', 'classic']:
                 tabby['pattern'] = 'blotched'
@@ -186,18 +197,18 @@ class Namer():
             elif phenotype.silvergold:
                 tabby['type'] = 'golden'
         
-        if genotype.white[1] in ['ws', 'wt'] and genotype.whitegrade > 7:
+        if (genotype.white[1] in ['ws', 'wt'] and genotype.whitegrade > 7) or (self.moons < 6 and genotype.karp[0] == 'K'):
             white = 'high'
-        elif genotype.white[1] in ['ws', 'wt'] or (genotype.white[0] in ['ws', 'wt'] and genotype.whitegrade > 4) or genotype.white[0] == 'wsal':
+        elif genotype.white[1] in ['ws', 'wt'] or (genotype.white[0] in ['ws', 'wt'] and genotype.whitegrade > 4) or genotype.white[0] == 'wsal' or (self.moons > 12 and genotype.vitiligo) or genotype.karp[0] == 'K':
             white = 'mid'
-        elif white != 'mid' and ((genotype.white[0] in ['ws', 'wt'] and genotype.whitegrade > 1) or genotype.white[0] == 'wg') and genotype.white_pattern != "No":
+        elif white != 'mid' and ((genotype.white[0] in ['ws', 'wt'] and genotype.whitegrade > 1) or genotype.white[0] == 'wg' or (genotype.vitiligo and self.moons > 5)) and genotype.white_pattern != "No":
             white = 'low'
 
-        if genotype.pointgene[0] == 'cs' or 'masked' in phenotype.silvergold:
+        if genotype.pointgene[0] == 'cs' or 'masked' in phenotype.silvergold or (self.moons < 4 and genotype.fevercoat) or (self.moons > 3 and genotype.bleach[0] == 'lb'):
             point = 'colourpoint'
         elif genotype.pointgene == ['cb', 'cb'] or (genotype.pointgene == ['cm', 'cm'] and phenotype.colour != 'sable'):
             point = 'sepia'
-            if base in ['red', 'cream']:
+            if base in ['ginger', 'cream']:
                 point = 'none'
             elif base in ['fawn', 'cinnamon']:
                 point = 'colourpoint'
@@ -208,27 +219,139 @@ class Namer():
 
         return [base, tortie, tabby, white, point]
 
-    def solid(self):
+    def solid(self, base, tortie, tabby, white):
+        possible_prefixes = self.all_prefixes[base]['tortie' if tortie else 'plain']['solid'][white + '_white']
+
+        possible_prefixes += self.all_prefixes['general']['any']
+        try:
+            possible_prefixes += self.all_prefixes['general'][self.phenotype.length.replace('haired', 'hair')]
+        except:
+            pass
+        if white in ['mid', 'high']:
+            possible_prefixes += self.all_prefixes['general']['white_patches']
+        if tortie:
+            possible_prefixes += self.all_prefixes['general']['tortie']
+        if tabby:
+            possible_prefixes += self.all_prefixes['general'][tabby]
+        filtered = deepcopy(possible_prefixes)
+        filtered = np.setdiff1d(filtered, self.used_prefixes, True)
+        try:
+            filtered = np.setdiff1d(filtered, self.all_prefixes['filter_for'], True)
+
+        if len(filtered) > 0:
+            return choice(filtered)
+        else:
+            return choice(possible_prefixes)
+    def tabby(self, base, tortie, tabby, white):
+        possible_prefixes = self.all_prefixes[base]['tortie' if tortie else 'plain']['tabby'][tabby['pattern']]
+        try:
+            possible_prefixes = possible_prefixes[tabby['type']]
+        except:
+            possible_prefixes = possible_prefixes[tabby['regular']]
+
+        if tabby['type'] != 'silver':
+            possible_prefixes = possible_prefixes[white + '_white']
+
+        possible_prefixes += self.all_prefixes[base]['tortie' if tortie else 'plain']['tabby']['general']
+        try:
+            possible_prefixes = possible_prefixes[tabby['type']]
+        except:
+            possible_prefixes = possible_prefixes[tabby['regular']]
+
+        if tabby['type'] != 'silver':
+            possible_prefixes = possible_prefixes[white + '_white']
+        
+        possible_prefixes += self.all_prefixes['general']['any']
+        try:
+            possible_prefixes += self.all_prefixes['general'][self.phenotype.length.replace('haired', 'hair')]
+        except:
+            pass
+        if white in ['mid', 'high']:
+            possible_prefixes += self.all_prefixes['general']['white_patches']
+        if tortie:
+            possible_prefixes += self.all_prefixes['general']['tortie']
+        if tabby['pattern']:
+            possible_prefixes += self.all_prefixes['general'][tabby['pattern']]
+        filtered = deepcopy(possible_prefixes)
+        filtered = np.setdiff1d(filtered, self.used_prefixes, True)
+        try:
+            filtered = np.setdiff1d(filtered, self.all_prefixes['filter_for'], True)
+
+        if len(filtered) > 0:
+            return choice(filtered)
+        else:
+            return choice(possible_prefixes)
+    def point(self, base, tortie, point, white):
+        possible_prefixes = self.all_prefixes[base]['tortie' if tortie else 'plain']['point']
+        
+        try:
+            possible_prefixes = possible_prefixes[point]
+        except:
+            possible_prefixes = possible_prefixes['colourpoint']
+
+        try:
+            possible_prefixes = possible_prefixes[white + '_white']
+        except:
+            try:
+                possible_prefixes = possible_prefixes['with_white']
+            except:
+                pass
+        
+        possible_prefixes += self.all_prefixes['general']['any']
+        try:
+            possible_prefixes += self.all_prefixes['general'][self.phenotype.length.replace('haired', 'hair')]
+        except:
+            pass
+        if white in ['mid', 'high']:
+            possible_prefixes += self.all_prefixes['general']['white_patches']
+        if tortie:
+            possible_prefixes += self.all_prefixes['general']['tortie']
+        
+        filtered = deepcopy(possible_prefixes)
+        filtered = np.setdiff1d(filtered, self.used_prefixes, True)
+        try:
+            filtered = np.setdiff1d(filtered, self.all_prefixes['filter_for'], True)
+
+        if len(filtered) > 0:
+            return choice(filtered)
+        else:
+            return choice(possible_prefixes)
+
+    def black(self, params):
+        if params[4] != 'none':
+        
+        if params[2]['type'] == 'golden' and params[2]['pattern'] == 'ticked':
+            return self.golden('golden shaded')
+
         pass
-    def tabby(self):
+    def blue(self, params):
         pass
-    def point(self):
+    def chocolate(self, params):
         pass
-    def black(self):
+    def lilac(self, params):
         pass
-    def blue(self):
+    def cinnamon(self, params):
         pass
-    def chocolate(self):
+    def fawn(self, params):
         pass
-    def lilac(self):
+    def red(self, params):
         pass
-    def cinnamon(self):
+    def golden(self, pattern):
+        
+    def cream(self, params):
         pass
-    def fawn(self):
-        pass
-    def red(self):
-        pass
-    def cream(self):
-        pass
-    def white(self):
-        pass
+    def white(self, base):
+        if base == 'silver shaded' and random() > 0.33:
+            possible_prefixes = self.all_prefixes['silver shaded']
+        else:
+            possible_prefixes = self.all_prefixes['white']
+        
+        filtered = deepcopy(possible_prefixes)
+        filtered = np.setdiff1d(filtered, self.used_prefixes, True)
+        try:
+            filtered = np.setdiff1d(filtered, self.all_prefixes['filter_for'], True)
+
+        if len(filtered) > 0:
+            return choice(filtered)
+        else:
+            return choice(possible_prefixes)
