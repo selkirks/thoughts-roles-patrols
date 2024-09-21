@@ -2851,7 +2851,7 @@ def generate_sprite(
                                 colourbase.set_alpha(100)
                             elif((("cb" in genotype.pointgene or genotype.pointgene[0] == "cm") and cat_sprite != "20") or genotype.pointgene == ["cb", "cb"] or ((cat_sprite != "20" or ("cb" in genotype.pointgene or genotype.pointgene[0] == "cm")) and get_current_season() == 'Leaf-bare')):
                                 colourbase.set_alpha(50)
-                            elif(cat_sprite != "20" or ("cb" in genotype.pointgene or genotype.pointgene[0] == "cm")):
+                            elif(("cb" in genotype.pointgene or genotype.pointgene[0] == "cm")):
                                 colourbase.set_alpha(15)
                             else:
                                 colourbase.set_alpha(0)
@@ -2876,14 +2876,17 @@ def generate_sprite(
                                         pointbase.blit(sprites.sprites[stripecolourdict.get(whichcolour, whichcolour)], (0, 0))
                                         if phenotype.caramel == 'caramel' and not is_red:    
                                             pointbase.blit(sprites.sprites['caramel0'], (0, 0))
-                                        pointbase.set_alpha(204)
+                                        pointbase.set_alpha(102)
                                         pointbase2 = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
                                         pointbase2.blit(sprites.sprites['lightbasecolours0'], (0, 0))
                                         pointbase2.blit(pointbase, (0, 0))
                                         whichmain = AddStripes(whichmain, whichcolour, whichbase, coloursurface=pointbase2)
                                 else:
                                     if("black" in whichcolour and cat_sprite != "20"):
-                                        whichmain = AddStripes(whichmain, 'lightbasecolours1', whichbase)
+                                        stripecolour = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
+                                        stripecolour = AddStripes(stripecolour, 'lightbasecolours1', whichbase)
+                                        stripecolour.set_alpha(102)
+                                        whichmain.blit(stripecolour, (0, 0))
                                     else:
                                         whichmain = AddStripes(whichmain, 'lightbasecolours0', whichbase)
                         
@@ -2939,9 +2942,9 @@ def generate_sprite(
                                 pointbase.blit(colourbase, (0, 0))
                             else:
                                 if((("cb" in genotype.pointgene or genotype.pointgene[0] == "cm") and cat_sprite != "20") or ((cat_sprite != "20" or ("cb" in genotype.pointgene or genotype.pointgene[0] == "cm")) and get_current_season() == "Leaf-bare")):
-                                    colourbase.set_alpha(204)
+                                    colourbase.set_alpha(180)
                                 elif(cat_sprite != "20" or ("cb" in genotype.pointgene or genotype.pointgene[0] == "cm")):
-                                    colourbase.set_alpha(125)
+                                    colourbase.set_alpha(50)
                                 else:
                                     colourbase.set_alpha(0)
 
