@@ -642,7 +642,6 @@
                 "fierce",
                 "loyal",
                 "loving",
-                
                 "responsible",
                 "righteous",
                 "vengeful"
@@ -2705,7 +2704,6 @@
                 "fierce",
                 "loyal",
                 "loving",
-                
                 "responsible",
                 "righteous",
                 "vengeful"
@@ -2894,8 +2892,8 @@
                 "kitten"
             ],
             "trait": [
-                "troublesome",
-                "daring",
+                "unruly",
+                "fearless",
                 "impulsive",
                 "attention-seeker"
             ],
@@ -2923,7 +2921,7 @@
                 "kitten"
             ],
             "trait": [
-                "troublesome",
+                "unruly",
                 "impulsive",
                 "attention-seeker"
                 
@@ -3165,8 +3163,8 @@
                 "kitten"
             ],
             "trait": [
-                "daring",
-                "troublesome",
+                "fearless",
+                "unruly",
                 "attention-seeker",
                 "impulsive"
                 
@@ -5505,10 +5503,10 @@
                 "kitten"
             ],
             "trait": [
-                "daring",
+                "fearless",
                 "impulsive",
                 "attention-seeker",
-                "troublesome"
+                "unruly"
             ],
             "dies": true
         },
@@ -5533,7 +5531,7 @@
                 "kitten"
             ],
             "trait": [
-                "daring",
+                "fearless",
                 "attention-seeker",
                 "impulsive"
             ],
@@ -5872,7 +5870,7 @@
     "sub_type": ["war", "murder"],
     "tags": [],
     "weight": 20,
-    "event_text": "Within the haze of battle and blood-lust it can be far too easy to mistake friend for foe.  Or, at least, that's what r_c tells the Clan after {PRONOUN/m_c/subject} {VERB/m_c/kill/kills} m_c during a fight with o_c_n.",
+    "event_text": "Within the haze of battle and blood-lust it can be far too easy to mistake friend for foe.  Or, at least, that's what r_c tells the Clan after {PRONOUN/r_c/subject} {VERB/r_c/kill/kills} m_c during a fight with o_c_n.",
     "m_c": {
         "status": ["warrior", "deputy", "leader"],
         "not_skill": ["FIGHTER,2"],
