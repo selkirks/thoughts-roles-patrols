@@ -7,6 +7,7 @@ import ujson
 from scripts.cat.cats import Cat
 from scripts.cat.history import History
 from scripts.cat_relations.relationship import (
+    Relationship,
     INTERACTION_MASTER_DICT,
     rel_fulfill_rel_constraints,
     cats_fulfill_single_interaction_constraints,
@@ -140,6 +141,8 @@ class Romantic_Events:
             relevant_dict = deepcopy(Romantic_Events.MATE_INTERACTIONS)
 
         # check if it should be a positive or negative interaction
+        if cat_to.ID not in cat_from.relationships:
+            cat_to.create_one_relationship(cat_to)
         relationship = cat_from.relationships[cat_to.ID]
         positive = Romantic_Events.check_if_positive_interaction(relationship)
 
@@ -311,7 +314,7 @@ class Romantic_Events:
             return
         subset = [
             Cat.fetch_cat(x)
-            for x in cat.relationships
+            for x in Cat.all_cats
             if isinstance(Cat.fetch_cat(x), Cat)
             and not (Cat.fetch_cat(x).dead or Cat.fetch_cat(x).outside)
         ]
@@ -321,7 +324,6 @@ class Romantic_Events:
         subset = random.sample(subset, max(int(len(subset) / 3), 1))
 
         for other_cat in subset:
-            relationship = cat.relationships.get(other_cat.ID)
             flag = Romantic_Events.handle_new_mates(cat, other_cat)
             if flag:
                 return
@@ -578,12 +580,12 @@ class Romantic_Events:
         if cat_to.ID in cat_from.relationships:
             relationship_from = cat_from.relationships[cat_to.ID]
         else:
-            relationship_from = cat_from.create_one_relationship(cat_to)
+            relationship_from = Relationship(cat_from, cat_to)
 
         if cat_from.ID in cat_to.relationships:
             relationship_to = cat_to.relationships[cat_from.ID]
         else:
-            relationship_to = cat_to.create_one_relationship(cat_from)
+            relationship_to = Relationship(cat_to, cat_from)
 
         mate_string = None
         mate_chance = game.config["mates"]["chance_fulfilled_condition"]
@@ -924,12 +926,12 @@ class Romantic_Events:
         if cat_to.ID in cat_from.relationships:
             relationship_from = cat_from.relationships[cat_to.ID]
         else:
-            relationship_from = cat_from.create_one_relationship(cat_to)
+            relationship_from = Relationship(cat_from, cat_to)
 
         if cat_from.ID in cat_to.relationships:
             relationship_to = cat_to.relationships[cat_from.ID]
         else:
-            relationship_to = cat_to.create_one_relationship(cat_from)
+            relationship_to = Relationship(cat_to, cat_from)
 
         # No breakup chance if the cat is a good deal above the make-confession requirments.
         condition = game.config["mates"]["confession"]["make_confession"].copy()

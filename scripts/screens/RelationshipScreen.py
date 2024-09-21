@@ -2,6 +2,7 @@ import pygame.transform
 import pygame_gui.elements
 
 from scripts.cat.cats import Cat
+from scripts.cat_relations.relationship import Relationship
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import (
     game,
@@ -417,7 +418,9 @@ class RelationshipScreen(Screens):
 
         self.current_page = 1
         self.inspect_cat = None
-
+        self.the_cat.blank_relations = list(set(self.the_cat.blank_relations))
+        blank_relations = [Relationship(self.the_cat, Cat.fetch_cat(x)) for x in self.the_cat.blank_relations]
+        
         # Keep a list of all the relations
         if game.config["sorting"]["sort_by_rel_total"]:
             self.all_relations = sorted(
@@ -438,8 +441,9 @@ class RelationshipScreen(Screens):
                 ),
                 reverse=True,
             )
+            self.all_relations = self.all_relations + blank_relations
         else:
-            self.all_relations = list(self.the_cat.relationships.values()).copy()
+            self.all_relations = (list(self.the_cat.relationships.values()).copy() + blank_relations).sorted(key=lambda x: x.cat_to)
 
         self.focus_cat_elements["header"] = pygame_gui.elements.UITextBox(
             str(self.the_cat.name) + " Relationships",
@@ -523,14 +527,14 @@ class RelationshipScreen(Screens):
                     )
 
             # Gender
-            if self.inspect_cat.genderalign == 'molly':
-                gender_icon = image_cache.load_image("resources/images/female_big.png").convert_alpha()
-            elif self.inspect_cat.genderalign == 'tom':
-                gender_icon = image_cache.load_image("resources/images/male_big.png").convert_alpha()
-            elif self.inspect_cat.genderalign == 'trans molly':
+            if 'trans molly' in self.inspect_cat.genderalign:
                 gender_icon = image_cache.load_image("resources/images/transfem_big.png").convert_alpha()
-            elif self.inspect_cat.genderalign == 'trans tom':
+            elif 'trans tom' in self.inspect_cat.genderalign:
                 gender_icon = image_cache.load_image("resources/images/transmasc_big.png").convert_alpha()
+            elif 'molly' in self.inspect_cat.genderalign:
+                gender_icon = image_cache.load_image("resources/images/female_big.png").convert_alpha()
+            elif 'tom' in self.inspect_cat.genderalign:
+                gender_icon = image_cache.load_image("resources/images/male_big.png").convert_alpha()
             else:
                 # Everyone else gets the nonbinary icon
                 gender_icon = image_cache.load_image(

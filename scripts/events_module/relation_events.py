@@ -92,9 +92,9 @@ class Relation_Events:
         cat_to_choose_from = []
         for inter_cat in possible_cats:
             if inter_cat.ID not in cat.relationships:
-                cat.create_one_relationship(inter_cat)
+                continue
             if cat.ID not in inter_cat.relationships:
-                inter_cat.create_one_relationship(cat)
+                continue
 
             cat_to_inter = (
                 cat.relationships[inter_cat.ID].platonic_like > 10
@@ -286,9 +286,6 @@ class Relation_Events:
             if inter_cat.ID == main_cat.ID:
                 continue
             if cat_to.ID not in cat_from.relationships:
-                cat_from.create_one_relationship(cat_to)
-                if cat_from.ID not in cat_to.relationships:
-                    cat_to.create_one_relationship(cat_from)
                 continue
 
             relationship = cat_from.relationships[cat_to.ID]

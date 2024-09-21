@@ -632,6 +632,8 @@ class Inheritance:
             relevant_cat = cat
         if relevant_cat.parent1:
             if relevant_cat.parent2:
+                if relevant_cat.parent3:
+                    return [relevant_cat.parent1, relevant_cat.parent2, relevant_cat.parent3]
                 return [relevant_cat.parent1, relevant_cat.parent2]
             return [relevant_cat.parent1]
         return []

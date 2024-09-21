@@ -335,6 +335,7 @@ class Pregnancy_Events:
                 for kit in kits:
                     if random.random() < stillborn_chance or kit.genotype.manx[1] == "Ab" or kit.genotype.manx[1] == "M" or kit.genotype.fold[1] == "Fd" or kit.genotype.munch[1] == "Mk" or ('NoDBE' not in kit.genotype.pax3 and 'DBEalt' not in kit.genotype.pax3):
                         kit.dead = True
+                        kit.moons = 0
                         History.add_death(kit, str(kit.name) + " was stillborn.")
                         kits.remove(kit)
 
@@ -597,7 +598,10 @@ class Pregnancy_Events:
         for kit in kits:
             if clan.pregnancy_data[cat.ID].get("fever_coat", False):
                 kit.genotype.fevercoat = True
+                if kit.genotype.chimera:
+                    kit.genotype.chimerageno.fevercoat = True
             if random.random() < stillborn_chance or kit.genotype.manx[1] == "Ab" or kit.genotype.manx[1] == "M" or kit.genotype.fold[1] == "Fd" or kit.genotype.munch[1] == "Mk" or ('NoDBE' not in kit.genotype.pax3 and 'DBEalt' not in kit.genotype.pax3):
+                kit.moons = 0
                 kit.dead = True
                 History.add_death(kit, str(kit.name) + " was stillborn.")
         Pregnancy_Events.set_biggest_family()
@@ -894,7 +898,7 @@ class Pregnancy_Events:
                 if x.ID in cat.relationships:
                     rel = cat.relationships[x.ID]
                 else:
-                    rel = cat.create_one_relationship(x)
+                    continue
 
                 if not mate_relation:
                     mate_relation = rel
@@ -1054,7 +1058,53 @@ class Pregnancy_Events:
         for _m in adoptive_parents:
             if _m not in all_adoptive_parents:
                 all_adoptive_parents.append(_m)
+        if not cat:
+            litter_age = choice([0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 2, 2, 3, 3, 4, 4, 5])
+            
+            initial_amount = kits_amount
+            kits_amount = 1
+            if initial_amount < 3:
+                stillborn_chance = game.config['pregnancy']['stillborn_chances']['small']
+            elif initial_amount == 3:
+                stillborn_chance = game.config['pregnancy']['stillborn_chances']['three']
+            elif initial_amount < 6:
+                stillborn_chance = game.config['pregnancy']['stillborn_chances']['mid']
+            elif initial_amount < 9:
+                stillborn_chance = game.config['pregnancy']['stillborn_chances']['big']
+            else:
+                stillborn_chance = game.config['pregnancy']['stillborn_chances']['large']
 
+            if not (clan.clan_settings['modded_kits']):
+                stillborn_chance = 0
+
+            death_chances = game.config['death_related']['kit_death_chances']
+            for i in range(initial_amount):
+                if random.random() < stillborn_chance:
+                   continue
+                elif litter_age == 0 or not (clan.clan_settings['modded_kits']):
+                    kits_amount += 1
+                elif random.random() < death_chances['0']:
+                    continue
+                elif litter_age == 1:
+                    kits_amount += 1
+                elif random.random() < death_chances['1']:
+                    continue
+                elif litter_age == 2:
+                    kits_amount += 1
+                elif random.random() < death_chances['2']:
+                    continue
+                elif litter_age == 3:
+                    kits_amount += 1
+                elif random.random() < death_chances['3']:
+                    continue
+                elif litter_age == 4:
+                    kits_amount += 1
+                elif random.random() < death_chances['4']:
+                    continue
+                else:
+                    kits_amount += 1
+
+                
         #############################
 
         #### GENERATE THE KITS ######
@@ -1110,16 +1160,20 @@ class Pregnancy_Events:
                         blood_parent2.append(blood_par2)
 
                     blood_parent.thought = thought
-                
-                kit = Cat(parent1=blood_parent.ID, parent2=choice(blood_parent2).ID,moons=0, backstory=backstory, status='newborn')
+                sire = choice(blood_parent2)
+                chimera_sire = choice(blood_parent2)
+                kit = Cat(parent1=blood_parent.ID, parent2=sire.ID, extrapar=chimera_sire if sire.ID != chimera_sire.ID else None,moons=litter_age, backstory=backstory, status='newborn' if litter_age == 0 else 'kitten')
             else:
                 # Two parents provided
                 second_blood = None
                 if other_cat:
                     second_blood = choice(other_cat)
+                    chimera_sire = choice(other_cat)
+                    if second_blood.ID == chimera_sire.ID:
+                        chimera_sire = None
 
                 if backkit:    
-                    kit = Cat(parent1=cat.ID, parent2=second_blood.ID if second_blood else None, moons=0, backstory=backstory, status='newborn', extrapar = par2geno)
+                    kit = Cat(parent1=cat.ID, parent2=second_blood.ID if second_blood else None, moons=0, backstory=backstory, status='newborn', extrapar = par2geno if not second_blood else chimera_sire)
                 else:
                     kit = Cat(parent1=cat.ID, parent2=second_blood.ID, moons=0, status='newborn')
                 
@@ -1187,9 +1241,6 @@ class Pregnancy_Events:
                     start_relation.admiration = kit_to_parent["admiration"] + y
                     start_relation.trust = kit_to_parent["trust"] + y
                     kit.relationships[the_cat.ID] = start_relation
-                else:
-                    the_cat.relationships[kit.ID] = Relationship(the_cat, kit)
-                    kit.relationships[the_cat.ID] = Relationship(kit, the_cat)
 
             #### REMOVE ACCESSORY ######
             kit.pelt.accessory = None
@@ -1210,7 +1261,7 @@ class Pregnancy_Events:
                     kitten.relationships[second_kitten.ID].comfortable += 10 + y
                     kitten.relationships[second_kitten.ID].trust += 10 + y
                 except:
-                    start_relation = Relationship(second_kitten, kitten, False, True)
+                    start_relation = Relationship(kitten, second_kitten, False, True)
                     kitten.relationships[second_kitten.ID] = start_relation
                     kitten.relationships[second_kitten.ID].platonic_like = 20 + y
                     kitten.relationships[second_kitten.ID].comfortable = 10 + y
@@ -1230,11 +1281,11 @@ class Pregnancy_Events:
             kit.adoptive_parents = final_adoptive_parents.copy()
             if blood_parent2:
                 for birth_p in blood_parent2:
-                    if birth_p.ID not in [kit.parent2, kit.parent1] and birth_p.ID not in kit.adoptive_parents:
+                    if birth_p.ID not in [kit.parent3, kit.parent2, kit.parent1] and birth_p.ID not in kit.adoptive_parents:
                         kit.adoptive_parents.append(birth_p.ID)
             if other_cat:
                 for birth_p in other_cat:
-                    if birth_p.ID not in [kit.parent2, kit.parent1] and birth_p.ID not in kit.adoptive_parents:
+                    if birth_p.ID not in [kit.parent3, kit.parent2, kit.parent1] and birth_p.ID not in kit.adoptive_parents:
                         kit.adoptive_parents.append(birth_p.ID)
             kit.inheritance.update_inheritance()
             kit.inheritance.update_all_related_inheritance()
@@ -1272,11 +1323,13 @@ class Pregnancy_Events:
 
         if blood_parent:
             blood_parent.outside = True
-            clan.unknown_cats.append(blood_parent.ID)
+            if blood_parent.dead:
+                clan.unknown_cats.append(blood_parent.ID)
         if blood_parent2:
             for x in blood_parent2:
                 x.outside = True
-                clan.unknown_cats.append(x.ID)
+                if x.dead:
+                    clan.unknown_cats.append(x.ID)
 
         return all_kitten
 

@@ -328,7 +328,7 @@ class ChooseAdoptiveParentScreen(Screens):
 
         birth_parents = [
             Cat.fetch_cat(i)
-            for i in [self.the_cat.parent1, self.the_cat.parent2]
+            for i in [self.the_cat.parent1, self.the_cat.parent2, self.the_cat.parent3]
             if isinstance(Cat.fetch_cat(i), Cat)
         ]
 
@@ -704,7 +704,7 @@ class ChooseAdoptiveParentScreen(Screens):
             button_x += 320
 
         birth_parents_shown = False
-        if self.the_cat.parent1 or self.the_cat.parent2:
+        if self.the_cat.parent1 or self.the_cat.parent2 or self.the_cat.parent3:
             self.tab_buttons["birth"] = UIImageButton(
                 scale(pygame.Rect((button_x, 722), (306, 78))),
                 "",

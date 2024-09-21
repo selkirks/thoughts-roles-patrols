@@ -126,6 +126,8 @@ class Events:
         rejoin_upperbound = game.config["lost_cat"]["rejoin_chance"]
         if random.randint(1, rejoin_upperbound) == 1:
             self.handle_lost_cats_return()
+        
+        self.handle_tnr_return()
 
         #Kill kits as needed
         faded_kits = []
@@ -957,6 +959,52 @@ class Events:
         if focus_text:
             game.cur_events_list.insert(0, Single_Event(focus_text, "misc"))
 
+    def handle_tnr_return(self):
+        eligible_cats = []
+        cat_IDs = []
+        for cat in Cat.all_cats.values():
+            TNRed = True if ('infertility' in cat.permanent_condition and 'TNR' in cat.pelt.scars and 
+            game.clan.age - cat.permanent_condition['infertility']['moon_start'] == 1) else False
+            if (cat.outside
+            and cat.status
+            not in [
+                "kittypet",
+                "loner",
+                "rogue",
+                "former Clancat",
+                "driven off",
+            ]
+            and not cat.exiled
+            and not cat.dead
+            and TNRed):
+                rejoin_upperbound = game.config["lost_cat"]["rejoin_tnr_chance"]
+                if random.randint(1, rejoin_upperbound) == 1:
+                    Cat.outside_cats.update({cat.ID: cat})
+                    eligible_cats.append(cat)
+                    cat_IDs.append(cat.ID)
+        
+        if len(eligible_cats) == 0:
+            return
+
+        names = ', '.join([str(x.name) for x in eligible_cats[:-1]]) + ' and ' + str(eligible_cats[-1].name) if len(eligible_cats) > 1 else eligible_cats[0].name
+
+        if len(eligible_cats) > 1:
+            text = 'To the shock of everyone, ' + names + ' have found their way home with reports of the Twolegs releasing them nearby.'
+        else:
+            text = 'To the shock of everyone, m_c has found {PRONOUN/m_c/poss} way home with reports of the Twolegs releasing {PRONOUN/m_c/object} nearby.'   
+        for cat in eligible_cats:
+            cat.outside = False
+            additional = cat.add_to_clan()
+            for x in additional:
+                if x in Cat.all_cats:
+                    Cat.all_cats[x].status = 'kittypet'
+                    Cat.all_cats[x].name.suffix = ''
+                    Cat.all_cats[x].get_permanent_condition("infertility", False, custom_reveal=4-Cat.all_cats[x].moons)
+            text = event_text_adjust(Cat, text, main_cat=eligible_cats[0], clan=game.clan)
+        game.cur_events_list.append(Single_Event(text, "misc", cat_IDs))
+        
+        self.handle_lost_cats_return(cat_IDs)
+
     def handle_lost_cats_return(self, predetermined_cat_IDs: list = None):
         """
         TODO: DOCS
@@ -1780,7 +1828,7 @@ class Events:
             possible_ceremonies = temp
 
             # Gather for parents ---------------------------------------------------------
-            for p in [cat.parent1, cat.parent2]:
+            for p in [cat.parent1, cat.parent2, cat.parent3]:
                 if Cat.fetch_cat(p):
                     if Cat.fetch_cat(p).dead:
                         dead_parents.append(Cat.fetch_cat(p))
