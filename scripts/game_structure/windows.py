@@ -13,6 +13,7 @@ import pygame_gui
 from pygame_gui.elements import UIWindow
 
 from scripts.cat.history import History
+from scripts.cat.cats import Cat
 from scripts.cat.names import Name
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import game, MANAGER
@@ -613,6 +614,7 @@ class ChangeCatName(UIWindow):
                     use_suffix = self.the_cat.name.suffix
                 self.prefix_entry_box.set_text(
                     Name(
+                        Cat, 
                         self.the_cat.status,
                         self.the_cat.genotype,
                         self.the_cat.phenotype,
@@ -632,6 +634,7 @@ class ChangeCatName(UIWindow):
                     use_prefix = self.the_cat.name.prefix
                 self.suffix_entry_box.set_text(
                     Name(
+                        Cat,
                         self.the_cat.status,
                         self.the_cat.genotype,
                         self.the_cat.phenotype,

@@ -15,6 +15,10 @@ class Name:
     """
     Stores & handles name generation.
     """
+
+    if os.path.exists('resources/dicts/names/alt_prefixes.json'):
+        with open('resources/dicts/names/alt_prefixes.json') as read_file:
+            mod_prefixes = ujson.loads(read_file.read())
     if os.path.exists('resources/dicts/names/names.json'):
         with open('resources/dicts/names/names.json') as read_file:
             names_dict = ujson.loads(read_file.read())
@@ -62,6 +66,7 @@ class Name:
                             names_dict["special_suffixes"][_tmp[0]] = _tmp[1]
 
     def __init__(self,
+                 Cat=None,
                  status="warrior",
                  genotype=None,
                  phenotype=None,
@@ -87,7 +92,7 @@ class Name:
         name_fixpref = False
         # Set prefix
         if prefix is None:
-            self.give_prefix(eyes, colour, biome)
+            self.give_prefix(Cat, eyes, colour, biome)
             # needed for random dice when we're changing the Prefix
             name_fixpref = True
 
@@ -121,7 +126,7 @@ class Name:
 
                 # check if random die was for prefix
                 if name_fixpref:
-                    self.give_prefix(eyes, colour, biome)
+                    self.give_prefix(Cat, eyes, colour, biome)
                 else:
                     self.give_suffix(pelt, biome, tortiepattern)
 
@@ -136,10 +141,12 @@ class Name:
                 i += 1
 
     # Generate possible prefix
-    def give_prefix(self, eyes, colour, biome):
-        
-        namer = Namer([])
-        namer.start(self.genotype, self.phenotype, self.moons)
+    def give_prefix(self, Cat, eyes, colour, biome):
+        if Cat:
+            used_prefixes = [cat.name.prefix for cat in Cat.all_cats.values() if not cat.dead and not cat.status in ['kittypet', 'loner', 'rogue', 'former Clancat']]
+            namer = Namer(used_prefixes, self.mod_prefixes)
+            print(namer.start(self.genotype, self.phenotype, self.moons))
+            
 
         # decided in game config: cat_name_controls
         if game.config["cat_name_controls"]["always_name_after_appearance"]:

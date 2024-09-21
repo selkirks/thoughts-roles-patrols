@@ -3,14 +3,11 @@ from .phenotype import *
 from random import choice, random
 from operator import xor
 from copy import deepcopy
-import numpy as np
 
 class Namer():
-    def __init__ (self, used_prefixes=[]):
+    def __init__ (self, used_prefixes=[], mod_prefixes=[]):
         self.used_prefixes = used_prefixes
-        if os.path.exists('resources/dicts/names/alt_prefixes.json'):
-            with open('resources/dicts/names/alt_prefixes.json') as read_file:
-                self.all_prefixes = ujson.loads(read_file.read())
+        self.all_prefixes = mod_prefixes
 
     def start(self, genotype: Genotype, phenotype: Phenotype, chimera_pheno = None, moons=0):
         self.genotype = genotype
@@ -21,7 +18,7 @@ class Namer():
         if genotype:
             params = self.parse_chimera() if genotype.chimera else self.get_categories(genotype, phenotype)
 
-            # print(params)
+            print(params)
             # print(genotype.ShowGenes())
             # print(genotype.tortiepattern)
             # print(genotype.specialred)
@@ -39,7 +36,7 @@ class Namer():
             'pattern' : '',
             'type' : 'regular'
         }
-        white = 'none'
+        white = 'no'
         point = 'none'
 
         #compare different chimera halves here
@@ -129,9 +126,10 @@ class Namer():
         tortie = False
         tabby = {
             'pattern' : '',
-            'type' : 'regular'
+            'type' : 'regular',
+            'tortie_red' : ''
         }
-        white = 'none'
+        white = 'no'
         point = 'none'
 
         try:
@@ -179,7 +177,7 @@ class Namer():
                 else:
                     base = 'black'
             
-        if base in ['ginger', 'cream'] or (genotype.agouti[0] != "a" and genotype.ext[0] != "Eg") or (genotype.ext[0] not in ['Eg', 'E']) or 'light smoke' in phenotype.silvergold:
+        if base in ['ginger', 'cream'] or (genotype.agouti[0] != "a") or (genotype.ext[0] not in ['Eg', 'E']) or 'light smoke' in phenotype.silvergold:
             sprite = phenotype.GetTabbySprite()
             if 'bar' in sprite or 'ghost' in sprite or 'chinchilla' in phenotype.tabby:
                 tabby['pattern'] = 'ticked'
@@ -190,13 +188,28 @@ class Namer():
             else:
                 tabby['pattern'] = 'spotted'
 
-            if 'smoke' in phenotype.silvergold or 'masked' in phenotype.silvergold or (('charcoal' in phenotype.tabtype or genotype.ruftype == 'low') and genotype.wbtype in ['low', 'medium']):
+            if base not in ['ginger', 'cream'] and ('smoke' in phenotype.silvergold or 'masked' in phenotype.silvergold or genotype.ext[0] == "Eg" or (('charcoal' in phenotype.tabtype or genotype.ruftype == 'low') and genotype.wbtype in ['low', 'medium'])):
                 tabby['type'] = 'dark'
             elif 'silver' in phenotype.silvergold or 'cameo' in phenotype.silvergold or 'bimetal' in phenotype.silvergold or genotype.brindledbi:
                 tabby['type'] = 'silver'
             elif phenotype.silvergold:
                 tabby['type'] = 'golden'
-        
+
+            if tortie:
+                tabby['tortie_red'] = tabby['pattern']
+        elif tortie:
+            sprite = phenotype.GetTabbySprite()
+            if 'bar' in sprite or 'ghost' in sprite or 'chinchilla' in phenotype.tabby:
+                tabby['tortie_red'] = 'ticked'
+            elif sprite in ['marbled', 'classic']:
+                tabby['tortie_red'] = 'blotched'
+            elif 'braid' in sprite or 'mack' in sprite or 'pins' in sprite:
+                tabby['tortie_red'] = 'mackerel'
+            else:
+                tabby['tortie_red'] = 'spotted'
+
+            
+
         if (genotype.white[1] in ['ws', 'wt'] and genotype.whitegrade > 7) or (self.moons < 6 and genotype.karp[0] == 'K'):
             white = 'high'
         elif genotype.white[1] in ['ws', 'wt'] or (genotype.white[0] in ['ws', 'wt'] and genotype.whitegrade > 4) or genotype.white[0] == 'wsal' or (self.moons > 12 and genotype.vitiligo) or genotype.karp[0] == 'K':
@@ -219,6 +232,9 @@ class Namer():
 
         return [base, tortie, tabby, white, point]
 
+    def filter(self, all, used, filter_out):
+        return [x for x in all if x not in used and x not in filter_out]
+
     def solid(self, base, tortie, tabby, white):
         possible_prefixes = self.all_prefixes[base]['tortie' if tortie else 'plain']['solid'][white + '_white']
 
@@ -234,16 +250,21 @@ class Namer():
         if tabby:
             possible_prefixes += self.all_prefixes['general'][tabby]
         filtered = deepcopy(possible_prefixes)
-        filtered = np.setdiff1d(filtered, self.used_prefixes, True)
         try:
-            filtered = np.setdiff1d(filtered, self.all_prefixes['filter_for'], True)
+            filtered = self.filter(filtered, self.used_prefixes, self.all_prefixes['filter_for'])
+        except:
+            filtered = self.filter(filtered, self.used_prefixes, [])
 
         if len(filtered) > 0:
             return choice(filtered)
         else:
             return choice(possible_prefixes)
     def tabby(self, base, tortie, tabby, white):
-        possible_prefixes = self.all_prefixes[base]['tortie' if tortie else 'plain']['tabby'][tabby['pattern']]
+        try:
+            possible_prefixes = self.all_prefixes[base]['tortie' if tortie else 'plain']['tabby'][tabby['pattern']]
+        except:
+            possible_prefixes = self.all_prefixes[base]['tabby'][tabby['pattern']]
+
         try:
             possible_prefixes = possible_prefixes[tabby['type']]
         except:
@@ -251,8 +272,12 @@ class Namer():
 
         if tabby['type'] != 'silver':
             possible_prefixes = possible_prefixes[white + '_white']
+        
+        try:
+            possible_prefixes += self.all_prefixes[base]['tortie' if tortie else 'plain']['tabby']['general']
+        except:
+            possible_prefixes += self.all_prefixes[base]['general']
 
-        possible_prefixes += self.all_prefixes[base]['tortie' if tortie else 'plain']['tabby']['general']
         try:
             possible_prefixes = possible_prefixes[tabby['type']]
         except:
@@ -273,9 +298,10 @@ class Namer():
         if tabby['pattern']:
             possible_prefixes += self.all_prefixes['general'][tabby['pattern']]
         filtered = deepcopy(possible_prefixes)
-        filtered = np.setdiff1d(filtered, self.used_prefixes, True)
         try:
-            filtered = np.setdiff1d(filtered, self.all_prefixes['filter_for'], True)
+            filtered = self.filter(filtered, self.used_prefixes, self.all_prefixes['filter_for'])
+        except:
+            filtered = self.filter(filtered, self.used_prefixes, [])
 
         if len(filtered) > 0:
             return choice(filtered)
@@ -308,9 +334,10 @@ class Namer():
             possible_prefixes += self.all_prefixes['general']['tortie']
         
         filtered = deepcopy(possible_prefixes)
-        filtered = np.setdiff1d(filtered, self.used_prefixes, True)
         try:
-            filtered = np.setdiff1d(filtered, self.all_prefixes['filter_for'], True)
+            filtered = self.filter(filtered, self.used_prefixes, self.all_prefixes['filter_for'])
+        except:
+            filtered = self.filter(filtered, self.used_prefixes, [])
 
         if len(filtered) > 0:
             return choice(filtered)
@@ -319,11 +346,64 @@ class Namer():
 
     def black(self, params):
         if params[4] != 'none':
-        
+            #babies don't have points
+            if self.moons == 0 and self.genotype.pointgene[0] == 'cs':
+                return self.white('white')
+            elif self.moons == 0 and params[4] == 'mink':
+                return self.fawn(params)
+            elif self.moons == 0 and params[4] == 'sepia':
+                return self.cinnamon(params)
+
+            #naming for body colour
+            if (params[2]['pattern'] != '' and params[2]['type'] != 'dark') or random() < 0.25:
+                if params[2]['pattern'] != '' and params[2]['type'] != 'dark':
+                    params[2]['type'] = 'silver'
+                if params[4] == 'colourpoint' and (self.genotype.pointgene in ['cm', 'c'] or 'masked' in self.phenotype.silvergold or (self.moons < 4 and self.genotype.fevercoat) or (self.moons > 3 and self.genotype.bleach[0] == 'lb')):
+                    if params[2]['pattern'] != '' and params[2]['type'] != 'dark':
+                        return self.white('silver shaded')
+                    else:
+                        return self.white('white')
+                elif params[4] == 'colourpoint':
+                    return self.fawn(params)
+                elif params[4] == 'mink':
+                    return self.cinnamon(params)
+                else:
+                    return self.chocolate(params)
+
+            #naming for point colour
+
+            if random() < 0.1:
+                if self.genotype.tortiepattern and (random() < 0.25 or (len(self.genotype.tortiepattern) > 2 and 'rev' not in self.genotype.tortiepattern[0])):
+                    return self.tabby('ginger', params[1], {'pattern' : params[2]['tortie_red'], 'type' : 'silver'}, params[3])
+                elif self.genotype.tortiepattern and (random() < 0.33 or (len(self.genotype.tortiepattern) > 2 and 'rev' in self.genotype.tortiepattern[0])):
+                    return self.solid(params[0], False, params[2]['pattern'], params[3])
+                else:
+                    return self.solid(params[0], params[1], params[2]['pattern'], params[3])
+
+            #overall colourpoint names
+            if self.genotype.tortiepattern and (random() < 0.25 or (len(self.genotype.tortiepattern) > 2 and 'rev' not in self.genotype.tortiepattern[0])):
+                return self.point('ginger', False, 'none' if params[4] == 'sepia' else 'colourpoint', params[3])
+            elif self.genotype.tortiepattern and (random() < 0.33 or (len(self.genotype.tortiepattern) > 2 and 'rev' in self.genotype.tortiepattern[0])):
+                return self.point(params[0], False, params[4], params[3])
+            else:
+                return self.point(params[0], params[1], params[4], params[3])
+
         if params[2]['type'] == 'golden' and params[2]['pattern'] == 'ticked':
             return self.golden('golden shaded')
-
-        pass
+        
+        if self.genotype.tortiepattern and (random() < 0.25 or (len(self.genotype.tortiepattern) > 2 and 'rev' not in self.genotype.tortiepattern[0])):
+            return self.tabby('ginger', params[1], {'pattern' : params[2]['tortie_red'], 'type' : 'silver' if self.genotype.silver[0] == 'I' else 'regular'}, params[3])
+            
+        if params[2]['type'] == 'dark' or params[2]['pattern'] == '':
+            if self.genotype.tortiepattern and (random() < 0.33 or (len(self.genotype.tortiepattern) > 2 and 'rev' in self.genotype.tortiepattern[0])):
+                return self.solid(params[0], False, params[2]['pattern'], params[3])
+            else:
+                return self.solid(params[0], params[1], params[2]['pattern'], params[3])
+        if self.genotype.tortiepattern and (random() < 0.33 or (len(self.genotype.tortiepattern) > 2 and 'rev' in self.genotype.tortiepattern[0])):
+            return self.tabby(params[0], False, params[2], params[3])
+        else:
+            return self.tabby(params[0], params[1], params[2], params[3])
+        
     def blue(self, params):
         pass
     def chocolate(self, params):
@@ -337,7 +417,7 @@ class Namer():
     def red(self, params):
         pass
     def golden(self, pattern):
-        
+        pass
     def cream(self, params):
         pass
     def white(self, base):
@@ -347,9 +427,10 @@ class Namer():
             possible_prefixes = self.all_prefixes['white']
         
         filtered = deepcopy(possible_prefixes)
-        filtered = np.setdiff1d(filtered, self.used_prefixes, True)
         try:
-            filtered = np.setdiff1d(filtered, self.all_prefixes['filter_for'], True)
+            filtered = self.filter(filtered, self.used_prefixes, self.all_prefixes['filter_for'])
+        except:
+            filtered = self.filter(filtered, self.used_prefixes, [])
 
         if len(filtered) > 0:
             return choice(filtered)
