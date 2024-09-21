@@ -638,6 +638,7 @@ def create_new_cat_block(
                     )
                 else:  # completely new name
                     chosen_cat.name.give_prefix(
+                        Cat, 
                         eyes=chosen_cat.pelt.eye_colour,
                         colour=chosen_cat.pelt.colour,
                         biome=game.clan.biome,
@@ -2838,7 +2839,7 @@ def generate_sprite(
                         else:
                             colourbase = TabbyBase(whichcolour, whichbase, cat_unders, special)
 
-                            if((genotype.pointgene == ["cb", "cb"] and cat_sprite != "20") or (((("cb" in genotype.pointgene or genotype.pointgene[0] == "cm") and cat_sprite != "20") or genotype.pointgene == ["cb", "cb"]) and get_current_season() == 'Leaf-bare')):
+                            if((genotype.pointgene == ["cb", "cb"] and 'cinnamon' not in whichcolour and cat_sprite != "20") or (((("cb" in genotype.pointgene or genotype.pointgene[0] == "cm") and cat_sprite != "20") or genotype.pointgene == ["cb", "cb"]) and get_current_season() == 'Leaf-bare')):
                                 colourbase.set_alpha(100)
                             elif((("cb" in genotype.pointgene or genotype.pointgene[0] == "cm") and cat_sprite != "20") or genotype.pointgene == ["cb", "cb"] or ((cat_sprite != "20" or ("cb" in genotype.pointgene or genotype.pointgene[0] == "cm")) and get_current_season() == 'Leaf-bare')):
                                 colourbase.set_alpha(50)
@@ -2858,7 +2859,7 @@ def generate_sprite(
                                 if("cb" in genotype.pointgene or genotype.pointgene[0] == "cm"):
                                     if("black" in whichcolour and cat_sprite != "20"):
                                         whichmain = AddStripes(whichmain, 'lightbasecolours2', whichbase)
-                                    elif(("chocolate" in whichcolour and cat_sprite != "20") or "black" in whichcolour):
+                                    elif((("chocolate" in whichcolour or "cinnamon" in whichcolour) and cat_sprite != "20") or "black" in whichcolour):
                                         whichmain = AddStripes(whichmain, 'lightbasecolours1', whichbase)
                                     elif("cinnamon" in whichcolour or "chocolate" in whichcolour):
                                         whichmain = AddStripes(whichmain, 'lightbasecolours0', whichbase)
@@ -3051,7 +3052,7 @@ def generate_sprite(
                                     whichmain.blit(sprites.sprites['lightbasecolours1'], (0, 0))
                                     colour = 'lightbasecolours1'
                                     whichmain = ApplySmokeEffects(whichmain)
-                                elif("chocolate" in whichcolour or "chocolate" in whichcolour):
+                                elif("cinnamon" in whichcolour or "chocolate" in whichcolour):
                                     whichmain.blit(sprites.sprites['lightbasecolours0'], (0, 0))
                                     colour = 'lightbasecolours0'
                                 else:
@@ -3060,7 +3061,9 @@ def generate_sprite(
                                     if phenotype.caramel == 'caramel' and not is_red:    
                                         pointbase.blit(sprites.sprites['caramel0'], (0, 0))
                         
-                                    pointbase.set_alpha(204)
+                                    pointbase.set_alpha(102)
+                                    if 'fawn' in whichcolour:
+                                        pointbase.set_alpha(0)
                                     whichmain.blit(sprites.sprites['lightbasecolours0'], (0, 0))
                                     whichmain.blit(pointbase, (0, 0))
                                     pointbase.blit(whichmain, (0, 0))
@@ -3136,6 +3139,10 @@ def generate_sprite(
                                 pointbase.blit(sprites.sprites['caramel0'], (0, 0))
                         
                             pointbase.set_alpha(204)
+                            if 'lilac' in whichcolour:
+                                pointbase.set_alpha(140)
+                            if 'fawn' in whichcolour:
+                                pointbase.set_alpha(50)
                             whichmain.blit(sprites.sprites['lightbasecolours0'], (0, 0))
                             whichmain.blit(pointbase, (0, 0))
                             pointbase.blit(whichmain, (0, 0)) 

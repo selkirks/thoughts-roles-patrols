@@ -142,11 +142,11 @@ class Name:
 
     # Generate possible prefix
     def give_prefix(self, Cat, eyes, colour, biome):
-        if Cat:
+        if Cat and (not game.clan or game.clan.clan_settings['new prefixes']):
             used_prefixes = [cat.name.prefix for cat in Cat.all_cats.values() if not cat.dead and not cat.status in ['kittypet', 'loner', 'rogue', 'former Clancat']]
             namer = Namer(used_prefixes, self.mod_prefixes)
-            print(namer.start(self.genotype, self.phenotype, self.moons))
-            
+            self.prefix = namer.start(self.genotype, self.phenotype, self.moons)
+            print(self.prefix)
 
         # decided in game config: cat_name_controls
         if game.config["cat_name_controls"]["always_name_after_appearance"]:
