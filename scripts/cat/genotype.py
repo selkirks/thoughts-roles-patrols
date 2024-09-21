@@ -168,7 +168,6 @@ class Genotype:
             self.chimerageno.fromJSON(jsonstring["chimerageno"])
         else:
             self.chimerageno = None    
-        self.deaf = jsonstring['deaf']
         self.longtype = jsonstring["longtype"]
 
         self.gender = jsonstring["gender"]
@@ -305,7 +304,6 @@ class Genotype:
             "white" : self.white,
             "whitegrade" : self.whitegrade,
             "vitiligo" : self.vitiligo,
-            "deaf" : self.deaf,
             "pointgene" : self.pointgene,
             "silver" : self.silver,
             "agouti" : self.agouti,
