@@ -104,7 +104,7 @@ class PatrolScreen(Screens):
             if len(self.current_patrol) < 6:
                 if not game.clan.clan_settings['random med cat']:
                     able_no_med = [cat for cat in self.able_cats if
-                                cat.status not in ['healer', 'healer apprentice']]
+                        cat.status not in ['healer', 'healer apprentice']]
                     if len(able_no_med) == 0:
                         able_no_med = self.able_cats
                     self.selected_cat = choice(able_no_med)
@@ -118,7 +118,7 @@ class PatrolScreen(Screens):
             if len(self.current_patrol) <= 3:
                 if not game.clan.clan_settings['random med cat']:
                     able_no_med = [cat for cat in self.able_cats if
-                                cat.status not in ['healer', 'healer apprentice']]
+                        cat.status not in ['healer', 'healer apprentice']]
                     if len(able_no_med) < 3:
                         able_no_med = self.able_cats
                     self.current_patrol += sample(able_no_med, k=3)
@@ -130,7 +130,7 @@ class PatrolScreen(Screens):
             if len(self.current_patrol) == 0:
                 if not game.clan.clan_settings['random med cat']:
                     able_no_med = [cat for cat in self.able_cats if
-                                cat.status not in ['healer', 'healer apprentice']]
+                        cat.status not in ['healer', 'healer apprentice']]
                     if len(able_no_med) < 6:
                         able_no_med = self.able_cats
                     self.current_patrol += sample(able_no_med, k=6)
