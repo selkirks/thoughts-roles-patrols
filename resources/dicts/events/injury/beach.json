@@ -176,7 +176,7 @@
         "location": ["beach:camp1_camp2"],
         "season": ["any"],
         "weight": 30,
-        "event_text": "m_c was grabbed by a seagull, but luckily r_c saves {PRONOUN/m_c/object}! The kit is still left injured from the ordeal.",
+        "event_text": "m_c was grabbed by a seagull, but luckily r_c saved {PRONOUN/m_c/object}! The kit is still left injured from the ordeal.",
         "m_c": {
             "status": ["kitten"]
         },
@@ -218,7 +218,7 @@
         "location": ["beach:camp1_camp2"],
         "season": ["any"],
         "weight": 30,
-        "event_text": "m_c was grabbed by a pelican, but luckily r_c saves {PRONOUN/m_c/object}! The kit is still left injured from the ordeal.",
+        "event_text": "m_c was grabbed by a pelican, but luckily r_c saved {PRONOUN/m_c/object}! The kit is still left injured from the ordeal.",
         "m_c": {
             "status": ["kitten"]
         },
@@ -264,11 +264,11 @@
         "event_text": "r_c dares m_c to try and swim out of camp and m_c can't possibly refuse the challenge. {PRONOUN/m_c/subject/CAP} {VERB/m_c/do/does}n't make it far, however, before {PRONOUN/m_c/poss} meager swimming skills fail {PRONOUN/m_c/object} and {PRONOUN/m_c/subject} nearly {VERB/m_c/drown/drowns} before an adult spots {PRONOUN/m_c/object} and comes to the rescue.",
         "m_c": {
             "status": ["kitten"],
-            "trait": ["daring", "impulsive", "attention-seeker"]
+            "trait": ["fearless", "impulsive", "attention-seeker"]
         },
         "r_c": {
             "status": ["kitten"],
-            "trait": ["troublesome", "bossy", "bullying", "daring", "impulsive"]
+            "trait": ["unruly", "bossy", "bullying", "fearless", "impulsive"]
         },
         "injury": [
             {
@@ -300,11 +300,11 @@
         "event_text": "r_c dares m_c to try and swim out of camp. m_c can't possibly refuse the challenge, but the water is freezing when {PRONOUN/m_c/subject} jump in. Though an adult quickly notices and scoops {PRONOUN/m_c/object} out, m_c is still shivering violently from the cold.",
         "m_c": {
             "status": ["kitten"],
-            "trait": ["daring", "impulsive", "attention-seeker"]
+            "trait": ["fearless", "impulsive", "attention-seeker"]
         },
         "r_c": {
             "status": ["kitten"],
-            "trait": ["troublesome", "bossy", "bullying", "daring", "impulsive"]
+            "trait": ["unruly", "bossy", "bullying", "fearless", "impulsive"]
         },
         "injury": [
             {
@@ -352,7 +352,7 @@
         "event_text": "m_c is playing around on the iced-over tide pools, slipping and sliding every which way, when {PRONOUN/m_c/subject} {VERB/m_c/slip/slips} a little too much and take a tumble.",
         "m_c": {
             "status": ["kitten"],
-            "trait": ["bouncy", "daring", "impulsive", "noisy", "troublesome", "attention-seeker"]
+            "trait": ["bouncy", "fearless", "impulsive", "noisy", "unruly", "attention-seeker"]
         },
         "injury": [
             {
@@ -369,7 +369,7 @@
         "event_text": "m_c is jumping around on the rocks when {PRONOUN/m_c/subject} {VERB/m_c/slip/slips} and {VERB/m_c/fall/falls}. The soft sand of the cave floor softens {PRONOUN/m_c/poss} landing, but {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} still sporting some new bruises.",
         "m_c": {
             "status": ["kitten"],
-            "trait": ["bouncy", "daring", "impulsive", "noisy", "troublesome", "attention-seeker"]
+            "trait": ["bouncy", "fearless", "impulsive", "noisy", "unruly", "attention-seeker"]
         },
         "injury": [
             {
@@ -386,7 +386,7 @@
         "event_text": "m_c found a hole in the rocks and, curious as all kits are, stuck {PRONOUN/m_c/poss} paw inside. The whole camp comes running when {PRONOUN/m_c/subject} {VERB/m_c/screech/screeches} in pain. It seems a snake was living in that hole.",
         "m_c": {
             "status": ["kitten"],
-            "trait": ["daring", "impulsive", "noisy", "troublesome", "attention-seeker"]
+            "trait": ["fearless", "impulsive", "noisy", "unruly", "attention-seeker"]
         },
         "injury": [
             {
