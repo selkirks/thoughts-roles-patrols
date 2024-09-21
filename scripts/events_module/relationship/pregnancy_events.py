@@ -180,7 +180,7 @@ class Pregnancy_Events:
             insert = "a single kitten"
             insert2 = "it"
         if amount > 1:
-            insert = f"a litter of {amount} kits"
+            insert = f"a litter of {len(kits)} kits"
             insert2 = "them"
 
         print_event = f"{cat.name} found {insert} and decides to adopt {insert2}."
