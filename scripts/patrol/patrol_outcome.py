@@ -495,13 +495,13 @@ class PatrolOutcome:
 
         results = []
         for _cat in cats_to_lose:
-            results.append(f"{_cat.name} has been lost.")
-            _cat.gone()
+            if not tnr or 'TNR' not in _cat.pelt.scars or tnr2:
+                results.append(f"{_cat.name} has been lost.")
+                _cat.gone()
             if tnr and 'TNR' not in _cat.pelt.scars:
                 if not tnr2:
                     _cat.pelt.scars.append("TNR")
-                _cat.get_permanent_condition("infertility", False)
-            # _cat.greif(body=False)
+                _cat.get_permanent_condition("infertility", False, custom_reveal=2 if 'pregnant' in _cat.injuries else None)
 
         return " ".join(results)
 

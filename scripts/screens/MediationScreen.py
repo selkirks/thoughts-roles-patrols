@@ -12,6 +12,9 @@ from scripts.game_structure.ui_elements import (
     UISpriteButton,
     UIRelationStatusBar,
 )
+from scripts.cat_relations.relationship import (
+    Relationship
+)
 from scripts.utility import get_text_box_theme, scale, shorten_text_to_fit
 from .Screens import Screens
 
@@ -600,7 +603,7 @@ class MediationScreen(Screens):
             if other_cat.ID in cat.relationships:
                 the_relationship = cat.relationships[other_cat.ID]
             else:
-                the_relationship = cat.create_one_relationship(other_cat)
+                the_relationship = Relationship(cat, other_cat)
 
             barbar = 42
             bar_count = 0

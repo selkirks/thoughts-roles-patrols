@@ -456,9 +456,6 @@ class GroupEvents:
             cat_to = Cat.all_cats[cat_to_id]
 
             if cat_to_id not in cat_from.relationships:
-                cat_from.create_one_relationship(cat_to)
-                if cat_from.ID not in cat_to.relationships:
-                    cat_to.create_one_relationship(cat_from)
                 continue
 
             relationship = cat_from.relationships[cat_to_id]

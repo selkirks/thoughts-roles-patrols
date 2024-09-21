@@ -162,7 +162,7 @@ class Skill:
         SkillPath.RUNNER: "running",
         SkillPath.CLIMBER: "climbing",
         SkillPath.SWIMMER: "swimming",
-        SkillPath.DIGGER: "digging",
+        SkillPath.DIGGER: "tunneling",
         SkillPath.SPEAKER: "speaking",
         SkillPath.MEDIATOR: "mediating",
         SkillPath.CLEVER: "clever",
@@ -497,7 +497,7 @@ class CatSkills:
         if not self.primary:
             parents = [
                 the_cat.fetch_cat(i)
-                for i in [the_cat.parent1, the_cat.parent2] + the_cat.adoptive_parents
+                for i in [the_cat.parent1, the_cat.parent2, the_cat.parent3] + the_cat.adoptive_parents
                 if type(the_cat) == type(the_cat.fetch_cat(i))
             ]
             parental_paths = [

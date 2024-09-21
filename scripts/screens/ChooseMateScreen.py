@@ -10,6 +10,9 @@ from scripts.game_structure.game_essentials import (
     screen_y,
     MANAGER,
 )
+from scripts.cat_relations.relationship import (
+    Relationship
+)
 from scripts.game_structure.ui_elements import UIImageButton, UISpriteButton
 from scripts.utility import (
     get_personality_compatibility,
@@ -1029,7 +1032,7 @@ class ChooseMateScreen(Screens):
             if self.selected_cat.ID in self.the_cat.relationships:
                 relation = self.the_cat.relationships[self.selected_cat.ID]
             else:
-                relation = self.the_cat.create_one_relationship(self.selected_cat)
+                relation = Relationship(self.the_cat, self.selected_cat)
             romantic_love = relation.romantic_love
 
         if 10 <= romantic_love <= 30:
@@ -1061,7 +1064,7 @@ class ChooseMateScreen(Screens):
             if self.the_cat.ID in self.selected_cat.relationships:
                 relation = self.selected_cat.relationships[self.the_cat.ID]
             else:
-                relation = self.selected_cat.create_one_relationship(self.the_cat)
+                relation = Relationship(self.selected_cat, self.the_cat)
             romantic_love = relation.romantic_love
 
         if 10 <= romantic_love <= 30:

@@ -33,7 +33,6 @@ class AllegiancesScreen(Screens):
                 self.menu_button_pressed(event)
                 self.mute_button_pressed(event)
 
-
     def on_use(self):
         pass
 

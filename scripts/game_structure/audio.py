@@ -76,8 +76,7 @@ class MusicManager:
             and screen not in creation_screens
             and self.current_playlist != self.biome_playlist
         ):
-            # print("biome screen")
-            self.fade_out_music()
+            self.fade_music()
             self.play_playlist(self.biome_playlist)
 
     def play_playlist(self, playlist):

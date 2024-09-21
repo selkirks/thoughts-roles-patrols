@@ -8,7 +8,9 @@ import bisect
 import itertools
 import os.path
 import sys
+import traceback
 from random import choice, randint, sample, random, choices, getrandbits, randrange, shuffle
+from operator import xor
 from typing import Dict, List, Any
 
 import ujson  # type: ignore
@@ -189,6 +191,7 @@ class Cat:
         )
         self.parent1 = parent1
         self.parent2 = parent2
+        self.parent3 = None
 
         self.adoptive_parents = []
         self.genotype = Genotype(game.config['genetics_config'], game.settings["ban problem genes"])
@@ -200,27 +203,20 @@ class Cat:
                 self.genotype.KitGenerator(Cat.all_cats[parent2].genotype, extrapar)
             else:
                 try:    
-                    self.genotype.KitGenerator(Cat.all_cats[parent1].genotype, Cat.all_cats.get(parent2, extrapar))
-                except Exception as e:
-                    print(e)
+                    threepars = self.genotype.KitGenerator(Cat.all_cats[parent1].genotype, Cat.all_cats.get(parent2, extrapar), extrapar)
+                    if threepars and isinstance(extrapar, Cat):
+                        self.parent3 = extrapar.ID
+                except:
+                    traceback.print_exc()
                     self.genotype.Generator()
-
-            if(randint(1, game.config['genetics_config']['intersex']) == 1):
-                self.genotype.gender = "intersex"
-                if(randint(1, 25) == 1 and 'Y' in self.genotype.sexgene):
-                    self.genotype.gender = 'molly'
         elif kittypet or status == 'kittypet':
             self.genotype.AltGenerator(special=self.gender)
-            if(randint(1, game.config['genetics_config']['intersex']) == 1):
-                self.genotype.gender = "intersex"
-                if(randint(1, 25) == 1 and 'Y' in self.genotype.sexgene):
-                    self.genotype.gender = 'molly'
         else:
             self.genotype.Generator(special=self.gender)
-            if(randint(1, game.config['genetics_config']['intersex']) == 1):
-                self.genotype.gender = "intersex"
-                if(randint(1, 25) == 1 and 'Y' in self.genotype.sexgene):
-                    self.genotype.gender = 'molly'
+        if(randint(1, game.config['genetics_config']['intersex']) == 1) or (self.genotype.chimera and xor('Y' in self.genotype.sexgene, 'Y' in self.genotype.chimerageno.sexgene) and randint(1, round(game.config['genetics_config']['intersex']/4)) == 1):
+            self.genotype.gender = "intersex"
+            if(randint(1, 25) == 1 and 'Y' in self.genotype.sexgene):
+                self.genotype.gender = 'molly'
 
         self.phenotype = Phenotype(self.genotype)
         self.phenotype.PhenotypeOutput(self.genotype.gender)
@@ -235,6 +231,7 @@ class Cat:
         self.apprentice = []
         self.former_apprentices = []
         self.relationships = {}
+        self.blank_relations = []
         self.mate = []
         self.previous_mates = []
         self.pronouns = [self.default_pronouns[0].copy()]
@@ -295,7 +292,6 @@ class Cat:
             has_vitiligo = []
             if (white_pattern is not None and white_pattern != "No"):
                 has_vitiligo = [p for p in white_pattern if p in vitiligo]
-
             if (white_pattern is None and KIT[0] != 'wsal') or ((white_pattern is not None and white_pattern == "No" or (len(white_pattern) == len(has_vitiligo) and len(has_vitiligo) > 0)) and (KIT[0] == 'wg' or 'NoDBE' not in pax3 or KIT[1] in ["ws", "wt"])):
                 white_pattern = []
                 if 'wt' in KIT:
@@ -535,7 +531,7 @@ class Cat:
 
         white_pattern = chim_white
         if self.genotype.chimera:    
-            self.genotype.chimerageno.white_pattern = GenerateWhite(self.genotype.chimerageno.white, self.genotype.chimerageno.pointgene, self.genotype.chimerageno.whitegrade, self.genotype.chimerageno.vitiligo, white_pattern, self.genotype.pax3)
+            self.genotype.chimerageno.white_pattern = GenerateWhite(self.genotype.chimerageno.white, self.genotype.chimerageno.pointgene, self.genotype.chimerageno.whitegrade, self.genotype.chimerageno.vitiligo, white_pattern, self.genotype.chimerageno.pax3)
         
         # Various behavior toggles
         self.no_kits = False
@@ -684,6 +680,7 @@ class Cat:
         self.name = Name(status, prefix=prefix, suffix=suffix)
         self.parent1 = None
         self.parent2 = None
+        self.parent3 = None
         self.adoptive_parents = []
         self.mate = []
         self.status = status
@@ -845,7 +842,7 @@ class Cat:
         if self.genotype.manx[0] == 'M' and (self.genotype.manxtype in ['rumpy', 'riser']):
             self.get_permanent_condition('born without a tail', born_with=True, genetic=True)
         
-        if len(self.genotype.sexgene) > 2 and 'Y' in self.genotype.sexgene or (self.gender == 'intersex' and random() < 0.2) or (self.gender == 'molly' and 'Y' in self.genotype.sexgene):
+        if (len(self.genotype.sexgene) > 2 and 'Y' in self.genotype.sexgene) or (self.gender == 'intersex' and random() < 0.2) or (self.gender == 'molly' and 'Y' in self.genotype.sexgene):
             self.get_permanent_condition('infertility', born_with=True, genetic=True)
         
         if self.genotype.fold[0] == 'Fd' or ('manx syndrome' in self.permanent_condition and 'M' in self.genotype.manx and self.phenotype.bobtailnr < 4 and self.phenotype.bobtailnr > 1 and random() < 0.05):
@@ -1017,7 +1014,7 @@ class Cat:
             if cat.dead or cat.outside or cat.moons < 1:
                 continue
 
-            to_self = cat.relationships.get(self.ID)
+            to_self = cat.relationships.get(self.ID, None)
             if not isinstance(to_self, Relationship):
                 continue
 
@@ -1857,7 +1854,7 @@ class Cat:
                 other_cat == self.ID
                 and len(all_cats) > 1
                 or (all_cats.get(other_cat).dead and dead_chance != 1)
-                or (other_cat not in self.relationships)
+                or (other_cat not in self.blank_relations and other_cat not in self.relationships)
             ):
                 other_cat = choice(list(all_cats.keys()))
                 i += 1
@@ -1878,7 +1875,7 @@ class Cat:
             while (
                 other_cat == self.ID
                 and len(all_cats) > 1
-                or (other_cat not in self.relationships)
+                or (other_cat not in self.blank_relations and other_cat not in self.relationships)
             ):
                 # or (self.status in ['kittypet', 'loner'] and not all_cats.get(other_cat).outside):
                 other_cat = choice(list(all_cats.keys()))
@@ -2722,17 +2719,16 @@ class Cat:
         if self.ID == other_cat.ID:
             return False
 
+        # check exiled, outside, and dead cats
+        if (self.dead != other_cat.dead) or (self.outside and not outsider) or other_cat.outside:
+            return False
+
         # No Mates Check
         if not ignore_no_mates and (self.no_mates or other_cat.no_mates):
             return False
 
         # Inheritance check
         if self.is_related(other_cat, first_cousin_mates):
-            return False
-
-
-        # check exiled, outside, and dead cats
-        if (self.dead != other_cat.dead) or (self.outside and not outsider) or other_cat.outside:
             return False
 
         # check for age
@@ -2910,7 +2906,7 @@ class Cat:
             if inter_cat.ID == self.ID:
                 continue
             # if the cat already has (somehow) a relationship with the inter cat
-            if inter_cat.ID in self.relationships:
+            if inter_cat.ID in self.relationships or inter_cat.ID in self.blank_relations:
                 continue
             # if they dead (dead cats have no relationships)
             if self.dead or inter_cat.dead:
@@ -2923,11 +2919,12 @@ class Cat:
                 and inter_cat.outside
             ):
                 continue
-            inter_cat.relationships[self.ID] = Relationship(inter_cat, self)
-            self.relationships[inter_cat.ID] = Relationship(self, inter_cat)
+            inter_cat.blank_relations.append(self.ID)
+            self.blank_relations.append(inter_cat.ID)
 
     def init_all_relationships(self):
         """Create Relationships to all current Clancats."""
+        blanks = []
         for ID in self.all_cats:
             the_cat = self.all_cats.get(ID)
             if the_cat.ID is not self.ID:
@@ -3022,7 +3019,13 @@ class Cat:
                     jealousy=jealousy,
                     trust=trust,
                 )
-                self.relationships[the_cat.ID] = rel
+                if not (not mates and not related and romantic_love == 0 and like == 0 and dislike == 0 and admiration == 0
+                and comfortable == 0 and jealousy == 0 and trust == 0):
+                    self.relationships[the_cat.ID] = rel
+                else:
+                    blanks.append(the_cat.ID)
+        
+        self.blank_relations = list(set(blanks))
 
     def save_relationship_of_cat(self, relationship_dir):
         # save relationships for each cat
@@ -3030,20 +3033,27 @@ class Cat:
         rel = []
         for r in self.relationships.values():
             r_data = {
-                "cat_from_id": r.cat_from.ID,
-                "cat_to_id": r.cat_to.ID,
-                "mates": r.mates,
-                "family": r.family,
-                "romantic_love": r.romantic_love,
-                "platonic_like": r.platonic_like,
-                "dislike": r.dislike,
-                "admiration": r.admiration,
-                "comfortable": r.comfortable,
-                "jealousy": r.jealousy,
-                "trust": r.trust,
-                "log": r.log,
+            "cat_from_id": r.cat_from.ID,
+            "cat_to_id": r.cat_to.ID,
+            "mates": r.mates,
+            "family": r.family,
+            "romantic_love": r.romantic_love,
+            "platonic_like": r.platonic_like,
+            "dislike": r.dislike,
+            "admiration": r.admiration,
+            "comfortable": r.comfortable,
+            "jealousy": r.jealousy,
+            "trust": r.trust,
+            "log": r.log,
             }
-            rel.append(r_data)
+            if not (not r.mates and not r.family and r.romantic_love == 0 and r.platonic_like == 0 
+                and r.dislike == 0 and r.admiration == 0 and r.comfortable == 0 and r.jealousy == 0 
+                and r.trust == 0 and len(r.log) == 0):
+                rel.append(r_data)
+            else:
+                self.blank_relations.append(r.cat_to.ID)
+        filtered_blanks = [x for x in self.blank_relations if x not in self.relationships and x != self.ID]
+        rel.append({'blanks' : list(set(self.blank_relations))})
 
         game.safe_save(f"{relationship_dir}/{self.ID}_relations.json", rel)
 
@@ -3060,13 +3070,14 @@ class Cat:
         if os.path.exists(relation_directory):
             if not os.path.exists(relation_cat_directory):
                 self.init_all_relationships()
-                for cat in Cat.all_cats.values():
-                    cat.create_one_relationship(self)
                 return
             try:
                 with open(relation_cat_directory, "r", encoding="utf-8") as read_file:
                     rel_data = ujson.loads(read_file.read())
                     for rel in rel_data:
+                        if isinstance(rel.get('blanks', False), list):
+                            self.blank_relations = rel['blanks']
+                            continue
                         cat_to = self.all_cats.get(rel["cat_to_id"])
                         if cat_to is None or rel["cat_to_id"] == self.ID:
                             continue
@@ -3088,8 +3099,14 @@ class Cat:
                             trust=rel["trust"] if rel["trust"] else 0,
                             log=rel["log"],
                         )
-                        self.relationships[rel["cat_to_id"]] = new_rel
-            except:
+                        if not (not new_rel.mates and not new_rel.family and new_rel.romantic_love == 0 and new_rel.platonic_like == 0 
+                        and new_rel.dislike == 0 and new_rel.admiration == 0 and new_rel.comfortable == 0 and new_rel.jealousy == 0 
+                        and new_rel.trust == 0 and  len(new_rel.log) == 0):
+                            self.relationships[rel["cat_to_id"]] = new_rel
+                        else:
+                            self.blank_relations.append(rel["cat_to_id"])
+            except Exception as e:
+                print(e)
                 print(
                     f"WARNING: There was an error reading the relationship file of cat #{self}."
                 )
@@ -3496,6 +3513,8 @@ class Cat:
             cat_ob.parent1 = cat_info["parent1"]
         if cat_info["parent2"]:
             cat_ob.parent2 = cat_info["parent2"]
+        if cat_info.get("parent3"):
+            cat_ob.parent3 = cat_info["parent3"]
         cat_ob.faded_offspring = cat_info["faded_offspring"]
         cat_ob.adoptive_parents = (
             cat_info["adoptive_parents"] if "adoptive_parents" in cat_info else []
@@ -3670,6 +3689,7 @@ class Cat:
                 "dead_for": self.dead_for,
                 "parent1": self.parent1,
                 "parent2": self.parent2,
+                "parent3": self.parent3 if self.parent3 else None,
                 "adoptive_parents": self.adoptive_parents,
                 "df": self.df,
                 "faded_offspring": self.faded_offspring,
@@ -3691,6 +3711,7 @@ class Cat:
                 "facets": self.personality.get_facet_string(),
                 "parent1": self.parent1,
                 "parent2": self.parent2,
+                "parent3": self.parent3 if self.parent3 else None,
                 "adoptive_parents": self.adoptive_parents,
                 "mentor": self.mentor if self.mentor else None,
                 "former_mentor": (

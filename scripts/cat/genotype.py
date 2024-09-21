@@ -32,6 +32,7 @@ class Genotype:
         self.sexgene = ["", ""]
         self.specialred = None
         self.tortiepattern = None
+        self.merlepattern = None
         self.brindledbi = False
         self.gender = ["", ""]
         self.dilute = ["", ""]
@@ -159,6 +160,7 @@ class Genotype:
         self.brindledbi = jsonstring["brindledbi"]
 
         self.specialred = jsonstring['specialred']
+        self.merlepattern = jsonstring.get('merlepattern', None)
         self.chimera = jsonstring['chimera']
         self.chimerapattern = jsonstring['chimerapattern']
         if self.chimerapattern and not isinstance(self.chimerapattern, list):
@@ -295,6 +297,7 @@ class Genotype:
             "tortiepattern" : self.tortiepattern,
             "brindledbi" : self.brindledbi,
 
+            "merlepattern" : self.merlepattern,
             "chimera" : self.chimera,
             "chimerapattern" : self.chimerapattern,
             "chimerageno" : chimgen,
@@ -1069,11 +1072,20 @@ class Genotype:
         self.PolyEval()
         self.EyeColourFinder()
 
-    def KitGenerator(self, par1, par2=None):
+    def KitGenerator(self, par1, par2=None, par3=None):
         try:
             par2 = par2.genotype
         except:
             par2 = par2
+
+        threepars = False
+        try:
+            par3 = par3.genotype
+        except:
+            par3 = par3
+            if par2 == par3:
+                par3 = None
+        
         
         for breed in par1.breeds:
             if par1.breeds[breed] >= 0.1:
@@ -1088,7 +1100,11 @@ class Genotype:
         self.KitEyes(par1, par2)
 
         if self.chimera:
-            self.chimerageno.KitGenerator(par1, par2)
+            if isinstance(par3, Genotype) and random() < 0.33:
+                self.chimerageno.KitGenerator(par1, par3)
+                threepars = True
+            else:
+                self.chimerageno.KitGenerator(par1, par2)
     
         if randint(1, 5) == 1:
             self.whitegrade = par1.whitegrade
@@ -1369,6 +1385,8 @@ class Genotype:
         
         self.PolyEval()
         self.EyeColourFinder()
+
+        return threepars
 
     def KitEyes(self, par1, par2):
         multipliers = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
@@ -2496,7 +2514,41 @@ class Genotype:
         if not self.somatic.get('gene', False):
             return ""
 
-        return self.somatic['gene'] + ' mutated to \'' + self.somatic['allele'] + "\' on " + body[self.somatic['base']]
+        alleles = {
+            "wirehair" : "Wirehair",
+            "laperm" : "LaPerm",
+            "cornish" : "Cornish rex",
+            "urals" : "Urals rex",
+            "tenn" : "Tennessee rex",
+            "fleece" : "Fleecy cloud rexing",
+            "sedesp" : "Selkirk rexing",
+
+            'pinkdilute' : "Pink-eyed dilute",
+            "ext" : {
+                'ec': 'Carnelian', 
+                'er' : 'Russet', 
+                'ea' : 'Amber'
+            },
+            "corin" : {
+                'sh' : 'Sunshine', 
+                'sg' : 'Extreme sunshine', 
+                'fg' : 'Flaxen gold'},
+            "karp" : 'Karpati',
+            "bleach" : 'Bleaching',
+            "ghosting" : 'Ghosting',
+
+            'eumelanin' : {'b' : 'Chocolate', 'bl' : 'Cinnamon'},
+            'sexgene' : 'Red',
+            "dilute" : 'Dilute',
+            "white" : {'W' : 'Dominant white', 'wsal' : 'Salmiak'},
+            "pointgene" : {'cb' : 'Sepia', 'cs' : 'Colourpoint', 'cm' : 'Mocha', 'c' : 'Albino'},
+            "silver" : "Silver",
+            "agouti" : "Solid"
+        }
+        try:
+            return "Mutated " + alleles[self.somatic['gene']].get(self.somatic['allele']) + " on " + body[self.somatic['base']]
+        except:
+            return "Mutated " + alleles[self.somatic['gene']] + " on " + body[self.somatic['base']]
 
 
 

@@ -436,6 +436,7 @@ class Condition_Events:
             "recurring shock",
             "lasting grief",
             "persistent headaches",
+            "bad back"
         ]
 
         got_condition = False
