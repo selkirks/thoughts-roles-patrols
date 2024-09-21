@@ -1534,23 +1534,17 @@
             "aggression": [0, 8],
             "stability": [0, 8]
         },
-        "charming": {
+        "daydreamer": {
             "lawfulness": [0, 8],
             "sociability": [8, 16],
             "aggression": [0, 8],
             "stability": [8, 16]
         },
-        "daring": {
+        "charming": {
             "lawfulness": [0, 8],
             "sociability": [8, 16],
             "aggression": [8, 16],
             "stability": [0, 8]
-        },
-        "noisy": {
-            "lawfulness": [0, 8],
-            "sociability": [8, 16],
-            "aggression": [8, 16],
-            "stability": [8, 16]
         },
         "nervous": {
             "lawfulness": [8, 16],
@@ -1569,12 +1563,6 @@
             "sociability": [0, 8],
             "aggression": [8, 16],
             "stability": [0, 8]
-        },
-        "daydreamer": {
-            "lawfulness": [8, 16],
-            "sociability": [0, 8],
-            "aggression": [8, 16],
-            "stability": [8, 16]
         },
         "sweet": {
             "lawfulness": [8, 16],
