@@ -1062,7 +1062,7 @@ class Pregnancy_Events:
             litter_age = choice([0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 2, 2, 3, 3, 4, 4, 5])
             
             initial_amount = kits_amount
-            kits_amount = 1
+            kits_amount = 0
             if initial_amount < 3:
                 stillborn_chance = game.config['pregnancy']['stillborn_chances']['small']
             elif initial_amount == 3:
@@ -1103,7 +1103,8 @@ class Pregnancy_Events:
                     continue
                 else:
                     kits_amount += 1
-
+            if kits_amount == 0:
+                kits_amount = 1
                 
         #############################
 
