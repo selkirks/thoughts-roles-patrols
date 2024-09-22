@@ -1292,6 +1292,7 @@ class Genotype:
         
 
         self.wideband = ""
+
         for i in range(8):
             tempwb = 0
             if par1.wideband[i] == "2" or (par1.wideband[i] == "1" and randint(1, 2) == 1):
@@ -1503,6 +1504,25 @@ class Genotype:
         self.spotsum = 0
         self.ticksum = 0
         
+        if len(self.wideband) < 8:
+            while len(self.wideband) < 8:
+                self.wideband += '1'
+        if len(self.rufousing) < 4:
+            while len(self.rufousing) < 4:
+                self.rufousing += '1'
+        if len(self.bengal) < 4:
+            while len(self.bengal) < 4:
+                self.bengal += '1'
+        if len(self.sokoke) < 4:
+            while len(self.sokoke) < 4:
+                self.sokoke += '1'
+        if len(self.spotted) < 4:
+            while len(self.spotted) < 4:
+                self.spotted += '1'
+        if len(self.tickgenes) < 4:
+            while len(self.tickgenes) < 4:
+                self.tickgenes += '1'
+
         for i in self.wideband:
             self.wbsum += int(i)
         for i in self.rufousing:
