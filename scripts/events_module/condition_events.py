@@ -918,7 +918,7 @@ class Condition_Events:
                     if cat.age == "adolescent":
                         event = (
                             f"{cat.name} decides they'd rather spend their time helping around camp and entertaining the "
-                            f"kits, they're warmly welcomed into the elder's den."
+                            f"kits, they're warmly welcomed into the elders' den."
                         )
                     elif game.clan.leader is not None:
                         if (
