@@ -252,7 +252,14 @@ class Namer():
         return [x for x in all if x not in used and x not in filter_out]
 
     def solid(self, base, tortie, tabby, white):
-        possible_prefixes = self.all_prefixes[base]['tortie' if tortie else 'plain']['solid'][white + '_white']
+        try:
+            possible_prefixes = self.all_prefixes[base]['tortie' if tortie else 'plain']['solid'][white + '_white']
+        except:
+            if tabby == 'shaded' and base == 'yellow':
+                possible_prefixes = self.all_prefixes[base]['shaded'][white + '_white']
+            else:
+                possible_prefixes = self.all_prefixes[base]['solid'][white + '_white']
+
 
         possible_prefixes += self.all_prefixes['general']['any']
         try:
@@ -326,7 +333,10 @@ class Namer():
         else:
             return choice(possible_prefixes)
     def point(self, base, tortie, point, white):
-        possible_prefixes = self.all_prefixes[base]['tortie' if tortie else 'plain']['point']
+        try:
+            possible_prefixes = self.all_prefixes[base]['tortie' if tortie else 'plain']['point']
+        except:
+            possible_prefixes = self.all_prefixes[base]['point']
         
         try:
             possible_prefixes = possible_prefixes[point]
@@ -410,7 +420,8 @@ class Namer():
                 return self.point(params[0], params[1], params[4], params[3])
 
         if params[2]['type'] == 'golden' and params[2]['pattern'] == 'ticked':
-            return self.golden('golden shaded')
+            params[0] = 'golden shaded'
+            return self.golden(params)
         
         if self.genotype.tortiepattern and (random() < 0.25 or (len(self.genotype.tortiepattern) > 2 and 'rev' not in self.genotype.tortiepattern[0])):
             return self.tabby('ginger', params[1], {'pattern' : params[2]['tortie_red'], 'type' : 'silver' if self.genotype.silver[0] == 'I' else 'regular'}, params[3])
@@ -524,7 +535,8 @@ class Namer():
                 return self.point(params[0], params[1], params[4], params[3])
 
         if params[2]['type'] == 'golden' and params[2]['pattern'] == 'ticked':
-            return self.golden('golden shaded')
+            return params[0] = 'golden shaded'
+            return self.golden(params)
         
         if self.genotype.tortiepattern and (random() < 0.25 or (len(self.genotype.tortiepattern) > 2 and 'rev' not in self.genotype.tortiepattern[0])):
             return self.tabby('ginger', params[1], {'pattern' : params[2]['tortie_red'], 'type' : 'silver' if self.genotype.silver[0] == 'I' else 'regular'}, params[3])
@@ -640,7 +652,8 @@ class Namer():
                 return self.point(params[0], params[1], params[4], params[3])
 
         if params[2]['type'] == 'golden' and params[2]['pattern'] == 'ticked':
-            return self.golden('golden shaded')
+            return params[0] = 'golden shaded'
+            return self.golden(params)
         
         if self.genotype.tortiepattern and (random() < 0.25 or (len(self.genotype.tortiepattern) > 2 and 'rev' not in self.genotype.tortiepattern[0])):
             return self.tabby('ginger', params[1], {'pattern' : params[2]['tortie_red'], 'type' : 'silver' if self.genotype.silver[0] == 'I' else 'regular'}, params[3])
@@ -708,17 +721,40 @@ class Namer():
             return self.tabby(params[0], params[1], params[2], params[3])
         
     def red(self, params):
-        pass
+        if params[4]:
+            if random() > 0.9:
+                return self.point('red', False, params[4], params[3])
+        
+        self.solid('red', False, params[2]['pattern'], params[3])
+
     def ginger(self, params):
         pass
     def golden(self, pattern):
-        pass
+        if params[4]:
+            if random() > 0.9:
+                return self.point('yellow', False, params[4], params[3])
+        
+        if params[0] == 'golden shaded':
+            return self.solid('yellow', False, 'shaded', params[3])
+
+        self.solid('yellow', False, params[2]['pattern'], params[3])
+
     def cream(self, params):
         pass
     def purple(self, params):
-        pass
+        if params[4]:
+            if random() > 0.9:
+                return self.point('purple', False, params[4], params[3])
+        
+        self.solid('purple', False, params[2]['pattern'], params[3])
+
     def pink(self, params):
-        pass
+        if params[4]:
+            if random() > 0.9:
+                return self.point('pink', False, params[4], params[3])
+        
+        self.solid('pink', False, params[2]['pattern'], params[3])
+
     def white(self, base):
         if base == 'silver shaded' and random() > 0.33:
             possible_prefixes = self.all_prefixes['silver shaded']
