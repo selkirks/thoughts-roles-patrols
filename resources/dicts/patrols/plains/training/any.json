@@ -1056,7 +1056,7 @@
                 }
             },
             {
-                "text": "r_c eventually manages to pull {PRONOUN/r_c/self} free, but {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} wheezing and injured. It's all {PRONOUN/r_c/subject} can do to find some tall grass to shelter in through the night out on the plains until a patrol finds {PRONOUN/r_c/object} the next morning and helps {PRONOUN/r_c/object} to the healer,
+                "text": "r_c eventually manages to pull {PRONOUN/r_c/self} free, but {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} wheezing and injured. It's all {PRONOUN/r_c/subject} can do to find some tall grass to shelter in through the night out on the plains until a patrol finds {PRONOUN/r_c/object} the next morning and helps {PRONOUN/r_c/object} to the healer den",
                 "exp": 0,
                 "weight": 10,
                 "injury": [

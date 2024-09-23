@@ -29,7 +29,7 @@
                 ]
             },
             {
-                "text": "After careful consideration and consulting with the other cats, r_c recognizes them as raspberries and brings the rare berries back to the healer,
+                "text": "After careful consideration and consulting with the other cats, r_c recognizes them as raspberries and brings the rare berries back to the healer den",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["raspberry"],
@@ -185,7 +185,7 @@
                 "weight": 20
             },
             {
-                "text": "After careful consideration, r_c recognizes them as raspberries and brings the rare berries back to the healer,
+                "text": "After careful consideration, r_c recognizes them as raspberries and brings the rare berries back to the healer den",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["raspberry"]
