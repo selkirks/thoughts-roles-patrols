@@ -722,15 +722,46 @@ class Namer():
         
     def red(self, params):
         if params[4]:
+            #babies don't have points
+            if self.moons == 0 and 'C' not in self.genotype.pointgene:
+                return self.white('white')
+            
             if random() > 0.9:
                 return self.point('red', False, params[4], params[3])
         
         self.solid('red', False, params[2]['pattern'], params[3])
 
     def ginger(self, params):
-        pass
+        if self.genotype.ruftype == 'rufoused' and random() < 0.2:
+            self.red(params)
+        if self.genotype.ruftype == 'low' and random() < 0.2:
+            self.golden(params)
+
+        if params[4]:
+            #babies don't have points
+            if self.moons == 0 and 'C' not in self.genotype.pointgene:
+                return self.white('white')
+            #naming for body colour
+            if random() < 0.25:
+                return self.white('white')
+
+            #naming for point colour
+
+            if random() < 0.1:
+                return self.tabby(params[0], params[1], params[2], params[3])
+
+            #overall colourpoint names
+            else:
+                return self.point(params[0], params[1], params[4], params[3])
+            
+        return self.tabby(params[0], params[1], params[2], params[3])
+
     def golden(self, pattern):
         if params[4]:
+            #babies don't have points
+            if self.moons == 0 and 'C' not in self.genotype.pointgene:
+                return self.white('white')
+
             if random() > 0.9:
                 return self.point('yellow', False, params[4], params[3])
         
@@ -740,9 +771,36 @@ class Namer():
         self.solid('yellow', False, params[2]['pattern'], params[3])
 
     def cream(self, params):
-        pass
+        if self.genotype.ruftype == 'rufoused' and random() < 0.2:
+            self.golden(params)
+        if self.genotype.ruftype != 'rufoused' and random() < 0.1:
+            self.pink(params)
+
+        if params[4]:
+            #babies don't have points
+            if self.moons == 0 and 'C' not in self.genotype.pointgene:
+                return self.white('white')
+            
+            #naming for body colour
+            if random() < 0.25:
+                return self.white('white')
+
+            #naming for point colour
+            if random() < 0.1:
+                return self.tabby(params[0], params[1], params[2], params[3])
+
+            #overall colourpoint names
+            else:
+                return self.point(params[0], params[1], params[4], params[3])
+            
+        return self.tabby(params[0], params[1], params[2], params[3])
+
     def purple(self, params):
         if params[4]:
+            #babies don't have points
+            if self.moons == 0 and 'C' not in self.genotype.pointgene:
+                return self.white('white')
+
             if random() > 0.9:
                 return self.point('purple', False, params[4], params[3])
         
@@ -750,6 +808,10 @@ class Namer():
 
     def pink(self, params):
         if params[4]:
+            #babies don't have points
+            if self.moons == 0 and 'C' not in self.genotype.pointgene:
+                return self.white('white')
+                
             if random() > 0.9:
                 return self.point('pink', False, params[4], params[3])
         

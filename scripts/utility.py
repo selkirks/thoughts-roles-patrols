@@ -870,6 +870,7 @@ def create_new_cat(
                 new_cat.adoptive_parents = [adoptive_parent]
         else:
             # grab starting names and accs for loners/kittypets
+            overwrite_prefix = False
             if kittypet:
                 name = choice(names.names_dict["loner_names"])
                 if choice([1, 2]) == 1:
@@ -882,6 +883,8 @@ def create_new_cat(
                 name = choice(
                     names.names_dict["normal_prefixes"]
                 )  # otherwise give name from prefix list (more nature-y names)
+                if game.clan.clan_settings['new prefixes'] and random() < 0.9:
+                    overwrite_prefix = True
 
             # now we make the cats
             if new_name:  # these cats get new names
@@ -901,6 +904,8 @@ def create_new_cat(
                                   parent1=parent1,
                                   parent2=parent2,
                                   kittypet=kittypet)
+                    if overwrite_prefix:
+                        new_cat.name.give_prefix(Cat, new_cat.pelt.eye_colour, new_cat.pelt.colour, game.clan.biome)
                 else:  # completely new name
                     new_cat = Cat(moons=age,
                                   status=status,
@@ -920,6 +925,9 @@ def create_new_cat(
                               parent1=parent1,
                               parent2=parent2,
                               kittypet=kittypet)
+                if overwrite_prefix:
+                    new_cat.name.give_prefix(Cat, new_cat.pelt.eye_colour, new_cat.pelt.colour, game.clan.biome, no_suffix=True)
+            
 
         # give em a collar if they got one
         if accessory:

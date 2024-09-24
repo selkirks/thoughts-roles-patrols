@@ -615,7 +615,11 @@ class Pregnancy_Events:
                 if cat.exiled:
                     kit.status = "loner"
                     name = choice(names.names_dict["normal_prefixes"])
-                    kit.name = Name(Cat, 'loner', prefix=name, suffix="")
+
+                    game.clan.clan_settings['new prefixes']:
+                        kit.name = Name(Cat, 'loner', suffix="")
+                    else:
+                        kit.name = Name(Cat, 'loner', prefix=name, suffix="")
                 if other_cat and not other_cat[0].outside:
                     kit.backstory = "outsider2"
                 if cat.outside and not cat.exiled:

@@ -92,7 +92,7 @@ class Name:
         name_fixpref = False
         # Set prefix
         if prefix is None:
-            self.give_prefix(Cat, eyes, colour, biome)
+            self.give_prefix(Cat, eyes, colour, biome, no_suffix=True if suffix == "" else False)
             # needed for random dice when we're changing the Prefix
             name_fixpref = True
 
@@ -141,12 +141,17 @@ class Name:
                 i += 1
 
     # Generate possible prefix
-    def give_prefix(self, Cat, eyes, colour, biome):
+    def give_prefix(self, Cat, eyes, colour, biome, no_suffix=False):
         if Cat and (not game.clan or game.clan.clan_settings['new prefixes']):
             used_prefixes = [cat.name.prefix for cat in Cat.all_cats.values() if not cat.dead and not cat.status in ['kittypet', 'loner', 'rogue', 'former Clancat']]
             namer = Namer(used_prefixes, self.mod_prefixes)
             self.prefix = namer.start(self.genotype, self.phenotype, self.moons)
             print(self.prefix)
+            if no_suffix:
+                if self.prefix == "Striped":
+                    self.prefix = "Stripe"
+                elif self.prefix == "Spotted":
+                    self.prefix = "Spot"
 
         # decided in game config: cat_name_controls
         if game.config["cat_name_controls"]["always_name_after_appearance"]:
