@@ -70,6 +70,7 @@ class Name:
                  status="warrior",
                  genotype=None,
                  phenotype=None,
+                 chimpheno=None,
                  moons=0,
                  prefix=None,
                  suffix=None,
@@ -85,6 +86,7 @@ class Name:
         self.moons = moons
         self.genotype = genotype
         self.phenotype = phenotype
+        self.chimpheno = chimpheno
         self.prefix = prefix
         self.suffix = suffix
         self.specsuffix_hidden = specsuffix_hidden
@@ -140,18 +142,26 @@ class Name:
                     double_animal = False
                 i += 1
 
+    def filter(self, all, used):
+        return [x for x in all if x not in used]
+
     # Generate possible prefix
     def give_prefix(self, Cat, eyes, colour, biome, no_suffix=False):
-        if Cat and (not game.clan or game.clan.clan_settings['new prefixes']):
-            used_prefixes = [cat.name.prefix for cat in Cat.all_cats.values() if not cat.dead and not cat.status in ['kittypet', 'loner', 'rogue', 'former Clancat']]
-            namer = Namer(used_prefixes, self.mod_prefixes)
-            self.prefix = namer.start(self.genotype, self.phenotype, self.moons)
+        if not game.clan or game.clan.clan_settings['new prefixes']:
+            self.prefix = namer.start(self.genotype, self.phenotype, self.chimpheno)
             print(self.prefix)
             if no_suffix:
                 if self.prefix == "Striped":
                     self.prefix = "Stripe"
                 elif self.prefix == "Spotted":
                     self.prefix = "Spot"
+        try:
+            used_prefixes = [cat.name.prefix for cat in Cat.all_cats.values() if not cat.dead and not cat.status in ['kittypet', 'loner', 'rogue', 'former Clancat']]
+        except:
+            used_prefixes = []
+
+        namer = Namer(used_prefixes, self.mod_prefixes, self.moons)
+            
 
         # decided in game config: cat_name_controls
         if game.config["cat_name_controls"]["always_name_after_appearance"]:
@@ -161,13 +171,44 @@ class Name:
 
         named_after_biome_ = not random.getrandbits(3)  # chance for True is 1/8
 
+        colour_mappings = {
+            "black" : ["BLACK"],
+            "blue" : ["GREY", "DARKGREY"],
+            "chocolate" : ["BROWN", "GOLDEN-BROWN", "DARKBROWN", "CHOCOLATE"],
+            "lilac" : ["PALEGREY", "SILVER", "LILAC"],
+            "cinnamon" : ["SIENNA", "DARKGINGER", "GOLDEN-BROWN"],
+            "fawn" : ["LIGHTBROWN"],
+            "red" : ["GINGER", "DARKGINGER"],
+            "cream" : ["CREAM", "PALEGINGER"],
+            "white" : ["WHITE"],
+            "silver shaded" : ["WHITE"]
+        }
+        
+        params = namer.parse_chimera() if self.genotype.chimera else namer.get_categories(self.genotype, self.phenotype)
+
+        colours = colour_mappings[params[0]]
+        if params[2]['type'] == 'silver' and params[0] not in ['ginger', 'cream']:
+            colours.append('PALEGREY')
+            colours.append('SILVER')
+        if params[2]['type'] == 'dark' and params[0] == "black":
+            colours.append('GHOST')
+        if params[2]['type'] == 'golden' and params[0] not in ['ginger', 'cream']:
+            colours.append('GOLDEN')
+        if self.genotype.ruftype == 'rufoused' and params[0] == 'ginger':
+            colours.append('DARKGINGER')
+        if self.genotype.ruftype == 'low' and params[0] == 'ginger':
+            colours.append('PALEGINGER')
+        if params[2]['pattern'] != '' and params[2]['type'] == 'regular' and params[0] == "black":
+            colours.append('BROWN')
+            colours.append('DARKBROWN')
+
         # Add possible prefix categories to list.
         possible_prefix_categories = []
         if game.config["cat_name_controls"]["allow_eye_names"]:  # game config: cat_name_controls
             if eyes in self.names_dict["eye_prefixes"]:
                 possible_prefix_categories.append(self.names_dict["eye_prefixes"][eyes])
         if colour in self.names_dict["colour_prefixes"]:
-            possible_prefix_categories.append(self.names_dict["colour_prefixes"][colour])
+            possible_prefix_categories.append(self.names_dict["colour_prefixes"][choice(colours)])
         if biome is not None and biome in self.names_dict["biome_prefixes"]:
             possible_prefix_categories.append(self.names_dict["biome_prefixes"][biome])
 

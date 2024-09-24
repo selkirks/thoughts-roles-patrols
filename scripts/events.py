@@ -448,6 +448,7 @@ class Events:
                                             invited_cat.status,
                                             invited_cat.genotype,
                                             invited_cat.phenotype,
+                                            invited_cat.chimerapheno if invited_cat.genotype.chimera else None,
                                             invited_cat.moons,
                                             invited_cat.name.prefix,
                                             invited_cat.name.suffix,

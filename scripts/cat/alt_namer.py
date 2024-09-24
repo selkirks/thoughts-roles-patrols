@@ -5,15 +5,15 @@ from operator import xor
 from copy import deepcopy
 
 class Namer():
-    def __init__ (self, used_prefixes=[], mod_prefixes=[]):
+    def __init__ (self, used_prefixes=[], mod_prefixes=[], moons=0):
         self.used_prefixes = used_prefixes
         self.all_prefixes = mod_prefixes
+        self.moons = moons
 
-    def start(self, genotype: Genotype, phenotype: Phenotype, chimera_pheno = None, moons=0):
+    def start(self, genotype: Genotype, phenotype: Phenotype, chimera_pheno = None):
         self.genotype = genotype
         self.phenotype = phenotype
         self.chimera_pheno = chimera_pheno
-        self.moons = moons
 
         if genotype:
             params = self.parse_chimera() if genotype.chimera else self.get_categories(genotype, phenotype)
