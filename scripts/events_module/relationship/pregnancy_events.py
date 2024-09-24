@@ -352,9 +352,7 @@ class Pregnancy_Events:
                     game.cur_events_list.append(Single_Event(print_event, "birth_death", cats_involved))
                 return
 
-            
-
-            # if the other cat is a molly and the current cat is a tom, make the molly cat pregnant
+            # if the other cat is afab and the current cat is amab, make the afab cat pregnant
             pregnant_cat = cat
             second_parent = other_cat
             affair_partner = []

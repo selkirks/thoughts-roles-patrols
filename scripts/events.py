@@ -1607,9 +1607,9 @@ class Events:
                         chance = int(chance * 2.22)
 
                     if cat.personality.trait in [
-                        "altruistic",
+                        "careful",
                         "compassionate",
-                        "empathetic",
+                        "loving",
                         "wise",
                         "faithful",
                     ]:
@@ -1645,7 +1645,7 @@ class Events:
                         chance = game.config["roles"]["mediator_app_chance"]
                         if cat.personality.trait in [
                             "charismatic",
-                            "empathetic",
+                            "loving",
                             "responsible",
                             "wise",
                             "thoughtful",
