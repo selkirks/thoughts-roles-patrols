@@ -204,9 +204,6 @@ class Name:
 
         # Add possible prefix categories to list.
         possible_prefix_categories = []
-        if game.config["cat_name_controls"]["allow_eye_names"]:  # game config: cat_name_controls
-            if eyes in self.names_dict["eye_prefixes"]:
-                possible_prefix_categories.append(self.names_dict["eye_prefixes"][eyes])
         if colour in self.names_dict["colour_prefixes"]:
             possible_prefix_categories.append(self.names_dict["colour_prefixes"][choice(colours)])
         if biome is not None and biome in self.names_dict["biome_prefixes"]:
