@@ -535,7 +535,7 @@ class Namer():
                 return self.point(params[0], params[1], params[4], params[3])
 
         if params[2]['type'] == 'golden' and params[2]['pattern'] == 'ticked':
-            return params[0] = 'golden shaded'
+            params[0] = 'golden shaded'
             return self.golden(params)
         
         if self.genotype.tortiepattern and (random() < 0.25 or (len(self.genotype.tortiepattern) > 2 and 'rev' not in self.genotype.tortiepattern[0])):
@@ -652,7 +652,7 @@ class Namer():
                 return self.point(params[0], params[1], params[4], params[3])
 
         if params[2]['type'] == 'golden' and params[2]['pattern'] == 'ticked':
-            return params[0] = 'golden shaded'
+            params[0] = 'golden shaded'
             return self.golden(params)
         
         if self.genotype.tortiepattern and (random() < 0.25 or (len(self.genotype.tortiepattern) > 2 and 'rev' not in self.genotype.tortiepattern[0])):
