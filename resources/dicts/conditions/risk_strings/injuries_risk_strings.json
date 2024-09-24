@@ -217,7 +217,7 @@
     "itchy skin" : {
         "an infected wound" : [
             "Despite r_c's warnings not to, m_c can't help but scratch at {PRONOUN/m_c/poss} itching skin. Now they've got to deal with a fresh infection festering where the skin broke.",
-            "m_c can't help but scratch at the itchy spots of skin. {PRONOUN/r_c/subject} barely {VERB/m_c/notice/notices} the small wounds until one grows infected"
+            "m_c can't help but scratch at the itchy spots of skin. {PRONOUN/r_c/subject/CAP} barely {VERB/m_c/notice/notices} the small wounds until one grows infected"
         ]
     },
     "cyst" : {
