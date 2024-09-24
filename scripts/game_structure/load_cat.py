@@ -53,7 +53,6 @@ def json_load():
                         prefix=cat["name_prefix"],
                         suffix=cat["name_suffix"],
                         specsuffix_hidden=(cat["specsuffix_hidden"] if 'specsuffix_hidden' in cat else False),
-                        gender=cat["gender"],
                         status=cat["status"],
                         parent1=cat["parent1"],
                         parent2=cat["parent2"],
@@ -64,13 +63,14 @@ def json_load():
                         chim_white=cat["chim_white"] if 'chim_white' in cat else None,
                         loading_cat=True)
             except:
-                if cat["genotype"]:
+                if cat.get("genotype", False):
                     traceback.print_exc()
+                    cat['gender'] = cat['genotype']['gender']
                 new_cat = Cat(ID=cat["ID"],
                         prefix=cat["name_prefix"],
                         suffix=cat["name_suffix"],
                         specsuffix_hidden=(cat["specsuffix_hidden"] if 'specsuffix_hidden' in cat else False),
-                        gender=cat["gender"],
+                        gender=cat['gender'],
                         status=cat["status"],
                         parent1=cat["parent1"],
                         parent3=cat.get("parent3"),
