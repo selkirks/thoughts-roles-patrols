@@ -3510,10 +3510,27 @@ def generate_sprite(
                 gensprite.blit(lefteye, (0, 0))
                 gensprite.blit(righteye, (0, 0))
 
+
+                if sprite_age == 1:
+                    lefteye.blit(sprites.sprites['left' + cat_sprite], (0, 0))
+                    righteye.blit(sprites.sprites['right' + cat_sprite], (0, 0))
+                    lefteye.blit(sprites.sprites[genotype.lefteyetype.split(' ; ')[0] + ' ; blue' + "/" + cat_sprite], (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
+                    righteye.blit(sprites.sprites[genotype.righteyetype.split(' ; ')[0] + ' ; blue' + "/" + cat_sprite], (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
+                    lefteye.set_alpha(150)
+                    righteye.set_alpha(150)
+                    gensprite.blit(lefteye, (0, 0))
+                    gensprite.blit(righteye, (0, 0))
+
+
                 if(genotype.extraeye):
                     special.blit(sprites.sprites[genotype.extraeye + cat_sprite], (0, 0))
                     special.blit(sprites.sprites[genotype.extraeyetype + "/" + cat_sprite], (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
                     gensprite.blit(special, (0, 0))
+                    if sprite_age == 1:
+                        special.blit(sprites.sprites[genotype.extraeye + cat_sprite], (0, 0))
+                        special.blit(sprites.sprites[genotype.extraeyetype.split(' ; ')[0] + ' ; blue' + "/" + cat_sprite], (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
+                        special.set_alpha(150)
+                        gensprite.blit(special, (0, 0))
 
                 if(genotype.pinkdilute[0] == 'dp'):
                     gensprite.blit(sprites.sprites['redpupils' + cat_sprite], (0, 0))
@@ -3523,9 +3540,9 @@ def generate_sprite(
         age = cat.moons
 
         if int(cat_sprite) == 20 and cat.moons > 0:
-            age = 0
-        elif int(cat_sprite) < 3 and cat.moons > 6:
             age = 4
+        elif int(cat_sprite) < 3 and cat.moons > 6:
+            age = 1
         elif int(cat_sprite) < 6 and cat.moons > 12:
             age = 11
         elif (int(cat_sprite == 19) or int(cat_sprite) == 17) and cat.moons > 12:
