@@ -74,8 +74,6 @@ class Name:
                  moons=0,
                  prefix=None,
                  suffix=None,
-                 colour=None,
-                 eyes=None,
                  pelt=None,
                  tortiepattern=None,
                  biome=None,
@@ -94,7 +92,7 @@ class Name:
         name_fixpref = False
         # Set prefix
         if prefix is None:
-            self.give_prefix(Cat, eyes, colour, biome, no_suffix=True if suffix == "" else False)
+            self.give_prefix(Cat, biome, no_suffix=True if suffix == "" else False)
             # needed for random dice when we're changing the Prefix
             name_fixpref = True
 
@@ -128,7 +126,7 @@ class Name:
 
                 # check if random die was for prefix
                 if name_fixpref:
-                    self.give_prefix(Cat, eyes, colour, biome)
+                    self.give_prefix(Cat, biome)
                 else:
                     self.give_suffix(pelt, biome, tortiepattern)
 
@@ -146,7 +144,7 @@ class Name:
         return [x for x in all if x not in used]
 
     # Generate possible prefix
-    def give_prefix(self, Cat, eyes, colour, biome, no_suffix=False):
+    def give_prefix(self, Cat, biome, no_suffix=False):
         if not game.clan or game.clan.clan_settings['new prefixes']:
             self.prefix = namer.start(self.genotype, self.phenotype, self.chimpheno)
             print(self.prefix)

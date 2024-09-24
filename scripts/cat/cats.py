@@ -649,8 +649,6 @@ class Cat:
                 self.moons,
                 prefix,
                 suffix,
-                self.pelt.colour,
-                self.pelt.eye_colour,
                 self.pelt.name,
                 self.pelt.tortiepattern,
                 biome=biome,
@@ -665,7 +663,6 @@ class Cat:
             self.moons, 
             prefix, 
             suffix, 
-            eyes=self.pelt.eye_colour, 
             specsuffix_hidden=self.specsuffix_hidden,
             load_existing_name = loading_cat)
         
