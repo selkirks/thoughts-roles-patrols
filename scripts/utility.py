@@ -639,9 +639,7 @@ def create_new_cat_block(
                 else:  # completely new name
                     chosen_cat.name.give_prefix(
                         Cat, 
-                        eyes=chosen_cat.pelt.eye_colour,
-                        colour=chosen_cat.pelt.colour,
-                        biome=game.clan.biome,
+                        biome=game.clan.biome
                     )
                     chosen_cat.name.give_suffix(
                         pelt=chosen_cat.pelt.colour,
@@ -905,7 +903,7 @@ def create_new_cat(
                                   parent2=parent2,
                                   kittypet=kittypet)
                     if overwrite_prefix:
-                        new_cat.name.give_prefix(Cat, new_cat.pelt.eye_colour, new_cat.pelt.colour, game.clan.biome)
+                        new_cat.name.give_prefix(Cat, game.clan.biome)
                 else:  # completely new name
                     new_cat = Cat(moons=age,
                                   status=status,
@@ -926,7 +924,7 @@ def create_new_cat(
                               parent2=parent2,
                               kittypet=kittypet)
                 if overwrite_prefix:
-                    new_cat.name.give_prefix(Cat, new_cat.pelt.eye_colour, new_cat.pelt.colour, game.clan.biome, no_suffix=True)
+                    new_cat.name.give_prefix(Cat, game.clan.biome, no_suffix=True)
             
 
         # give em a collar if they got one

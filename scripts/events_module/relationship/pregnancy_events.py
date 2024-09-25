@@ -618,10 +618,10 @@ class Pregnancy_Events:
 
                     game.clan.clan_settings['new prefixes']:
                         kit.name = Name(Cat, 'loner', kit.genotype, kit.phenotype, 
-                                        kit.chimerapheno if kit.genotype.chimera else None, suffix="")
+                                        chimpheno = kit.chimerapheno if kit.genotype.chimera else None, suffix="")
                     else:
                         kit.name = Name(Cat, 'loner', kit.genotype, kit.phenotype, 
-                                        kit.chimerapheno if kit.genotype.chimera else None, prefix=name, suffix="")
+                                        chimpheno = kit.chimerapheno if kit.genotype.chimera else None, prefix=name, suffix="")
                 if other_cat and not other_cat[0].outside:
                     kit.backstory = "outsider2"
                 if cat.outside and not cat.exiled:
