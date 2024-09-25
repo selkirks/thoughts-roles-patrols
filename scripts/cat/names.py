@@ -145,6 +145,12 @@ class Name:
 
     # Generate possible prefix
     def give_prefix(self, Cat, biome, no_suffix=False):
+        try:
+            used_prefixes = [cat.name.prefix for cat in Cat.all_cats.values() if not cat.dead and not cat.status in ['kittypet', 'loner', 'rogue', 'former Clancat']]
+        except:
+            used_prefixes = []
+
+        namer = Namer(used_prefixes, self.mod_prefixes, self.moons)
         if not game.clan or game.clan.clan_settings['new prefixes']:
             self.prefix = namer.start(self.genotype, self.phenotype, self.chimpheno)
             print(self.prefix)
@@ -153,12 +159,7 @@ class Name:
                     self.prefix = "Stripe"
                 elif self.prefix == "Spotted":
                     self.prefix = "Spot"
-        try:
-            used_prefixes = [cat.name.prefix for cat in Cat.all_cats.values() if not cat.dead and not cat.status in ['kittypet', 'loner', 'rogue', 'former Clancat']]
-        except:
-            used_prefixes = []
-
-        namer = Namer(used_prefixes, self.mod_prefixes, self.moons)
+            return
             
 
         # decided in game config: cat_name_controls
