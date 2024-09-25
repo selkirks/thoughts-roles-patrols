@@ -111,7 +111,6 @@ class ChooseMateScreen(Screens):
                 self.selected_mate_index = 0
                 self.change_screen("profile screen")
             elif event.ui_element == self.toggle_mate:
-
                 self.work_thread = self.loading_screen_start_work(self.change_mate)
 
             elif event.ui_element == self.previous_cat_button:
@@ -227,7 +226,10 @@ class ChooseMateScreen(Screens):
             sound_id="page_flip",
         )
         self.next_cat_button = UIImageButton(
-            scale(pygame.Rect((1244, 50), (306, 60))), "", object_id="#next_cat_button", sound_id="page_flip",
+            scale(pygame.Rect((1244, 50), (306, 60))),
+            "",
+            object_id="#next_cat_button",
+            sound_id="page_flip",
         )
         self.back_button = UIImageButton(
             scale(pygame.Rect((50, 1290), (210, 60))), "", object_id="#back_button"
@@ -375,7 +377,6 @@ class ChooseMateScreen(Screens):
 
         # Different layout for a single mate - they are just big in the center
         if len(self.all_mates) == 1 and len(self.all_mates[0]) == 1:
-
             # TODO disable both next and previous page buttons
             self.mates_page = 0
             self.mates_last_page.disable()
@@ -746,7 +747,13 @@ class ChooseMateScreen(Screens):
         self.the_cat = Cat.all_cats[game.switches["cat"]]
         if not self.the_cat.inheritance:
             self.the_cat.create_inheritance_new_cat()
-        self.get_previous_next_cat()
+
+        (
+            self.next_cat,
+            self.previous_cat,
+        ) = self.the_cat.determine_next_and_previous_cats()
+        self.next_cat_button.disable() if self.next_cat == 0 else self.next_cat_button.enable()
+        self.previous_cat_button.disable() if self.previous_cat == 0 else self.previous_cat_button.enable()
 
         for ele in self.current_cat_elements:
             self.current_cat_elements[ele].kill()
@@ -855,7 +862,6 @@ class ChooseMateScreen(Screens):
         self.switch_tab()
 
     def switch_tab(self):
-
         if self.open_tab == "mates":
             self.mates_container.show()
             self.offspring_container.hide()
@@ -1088,62 +1094,6 @@ class ChooseMateScreen(Screens):
                 ),
             )
             x_pos -= 54
-
-    def get_previous_next_cat(self):
-        is_instructor = False
-        if self.the_cat.dead and game.clan.instructor.ID == self.the_cat.ID:
-            is_instructor = True
-
-        self.previous_cat = 0
-        self.next_cat = 0
-        if self.the_cat.dead and not is_instructor and not self.the_cat.df:
-            self.previous_cat = game.clan.instructor.ID
-
-        if is_instructor:
-            self.next_cat = 1
-
-        for check_cat in Cat.all_cats_list:
-            if check_cat.ID == self.the_cat.ID:
-                self.next_cat = 1
-            if (
-                self.next_cat == 0
-                and check_cat.ID != self.the_cat.ID
-                and check_cat.dead == self.the_cat.dead
-                and check_cat.ID != game.clan.instructor.ID
-                and not check_cat.exiled
-                and not check_cat.outside
-                and check_cat.age not in ["adolescent", "kitten", "newborn"]
-                and check_cat.df == self.the_cat.df
-            ):
-                self.previous_cat = check_cat.ID
-
-            elif (
-                self.next_cat == 1
-                and check_cat.ID != self.the_cat.ID
-                and check_cat.dead == self.the_cat.dead
-                and check_cat.ID != game.clan.instructor.ID
-                and not check_cat.exiled
-                and not check_cat.outside
-                and check_cat.age not in ["adolescent", "kitten", "newborn"]
-                and check_cat.df == self.the_cat.df
-            ):
-                self.next_cat = check_cat.ID
-
-            elif int(self.next_cat) > 1:
-                break
-
-        if self.next_cat == 1:
-            self.next_cat = 0
-
-        if self.next_cat == 0:
-            self.next_cat_button.disable()
-        else:
-            self.next_cat_button.enable()
-
-        if self.previous_cat == 0:
-            self.previous_cat_button.disable()
-        else:
-            self.previous_cat_button.enable()
 
     def on_use(self):
         # Due to a bug in pygame, any image with buttons over it must be blited

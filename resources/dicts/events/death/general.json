@@ -642,7 +642,6 @@
                 "fierce",
                 "loyal",
                 "loving",
-                
                 "responsible",
                 "righteous",
                 "vengeful"
@@ -676,7 +675,7 @@
         "history": [{
             "cats": ["m_c"],
             "reg_death": "m_c went missing and was found dead.",
-            "lead_death": "went missing and was found dead"
+            "lead_death": "went missing and {VERB/m_c/were/was} found dead"
         }]
     },
     {
@@ -2162,7 +2161,6 @@
                 "charismatic",
                 "confident",
                 "daring",
-                
                 "compassionate",
                 "loving",
                 "responsible",
@@ -2246,7 +2244,6 @@
                 "charismatic",
                 "confident",
                 "daring",
-                
                 "compassionate",
                 "loving",
                 "responsible",
@@ -2329,7 +2326,6 @@
                 "charismatic",
                 "confident",
                 "daring",
-                
                 "compassionate",
                 "loving",
                 "responsible",
@@ -2387,7 +2383,7 @@
         "history": [{
             "cats": ["m_c", "r_c"],
             "reg_death": "This cat died in a border skirmish against o_c_n.",
-            "lead_death": "was killed in a border skirmish against o_c_n."
+            "lead_death": "{VERB/m_c/were/was} killed in a border skirmish against o_c_n."
         }],
         "other_clan": {
             "current_rep": [
@@ -2659,7 +2655,7 @@
         ],
         "tags": ["no_body"],
         "weight": 20,
-        "event_text": "r_c, guarding camp, yowls a warning as {PRONOUN/r_c/subject} {VERB/r_c/spot/spots} a circling shadow, right above m_c. r_c starts sprinting to m_c's position but couldn't get there in time, not before m_c was carried high into the sky.",
+        "event_text": "r_c, guarding camp, yowls a warning as {PRONOUN/r_c/subject} {VERB/r_c/spot/spots} a circling shadow, right above m_c. r_c starts sprinting to m_c's position but can't get there in time, not before m_c is carried high into the sky.",
         "m_c": {
             "age": [ "kitten", "adolescent"],
             "status": [ "any" ],
@@ -3353,7 +3349,6 @@
                 "ambitious",
                 "daring",
                 "fierce",
-                
                 "loving",
                 "loyal",
                 "responsible",
@@ -3413,7 +3408,6 @@
                 "bold",
                 "ambitious",
                 "fierce",
-                
                 "loving",
                 "loyal",
                 "responsible",
@@ -3859,7 +3853,6 @@
                 "fierce",
                 "loyal",
                 "loving",
-                
                 "responsible",
                 "righteous",
                 "vengeful"
@@ -4081,7 +4074,6 @@
                 "fierce",
                 "loyal",
                 "loving",
-                
                 "responsible"
             ],
             "dies": true
@@ -4151,7 +4143,6 @@
                 "fierce",
                 "loyal",
                 "loving",
-                
                 "responsible"
             ],
             "dies": true
@@ -4221,7 +4212,6 @@
                 "fierce",
                 "loyal",
                 "loving",
-                
                 "responsible",
                 "righteous",
                 "vengeful"
@@ -4300,7 +4290,6 @@
                 "fierce",
                 "loyal",
                 "loving",
-                
                 "responsible",
                 "righteous",
                 "vengeful"
@@ -4350,7 +4339,6 @@
                 "fierce",
                 "loyal",
                 "loving",
-                
                 "responsible",
                 "righteous",
                 "vengeful"
@@ -4462,7 +4450,6 @@
                 "compassionate",
                 "confident",
                 "daring",
-                
                 "fierce",
                 "loving",
                 "responsible",
@@ -4607,7 +4594,6 @@
                 "fierce",
                 "loyal",
                 "loving",
-                
                 "responsible"
             ],
             "dies": true
@@ -5660,7 +5646,7 @@
             "no_body"
         ],
         "weight": 20,
-        "event_text": "m_c can be heard boasting that {PRONOUN/m_c/subject}'{VERB/m_c/re/s} ready to be made an apprentice <i>right now</i>, and that {PRONOUN/m_c/subject}'{VERB/m_c/re/s} already one of the best hunters in the Clan. That evening, to prove {PRONOUN/m_c/poss} point, {PRONOUN/m_c/subject} sneak out of camp, intending to catch something for the fresh-kill pile. A frantic search party follows {PRONOUN/m_c/poss} trail, only to find blood and the foul stench of a shrew at the end.",
+        "event_text": "m_c can be heard boasting that {PRONOUN/m_c/subject}'{VERB/m_c/re/s} ready to be made an apprentice <i>right now</i>, and that {PRONOUN/m_c/subject}'{VERB/m_c/re/s} already one of the best hunters in the Clan. That evening, to prove {PRONOUN/m_c/poss} point, {PRONOUN/m_c/subject} {VERB/m_c/sneak/sneaks} out of camp, intending to catch something for the fresh-kill pile. A frantic search party follows {PRONOUN/m_c/poss} trail, only to find blood and the foul stench of a shrew at the end.",
         "m_c": {
             "status": [
                 "kitten"
@@ -6015,8 +6001,8 @@
       "history": [
       {
       "cats": ["m_c"],
-      "reg_death": "m_c died when r_c lured {PRONOUN/m_c/object} into a Twoleg trap.",
-      "lead_death": "{VERB/m_c/were/was} lured by r_c into a Twoleg trap"
+      "reg_death": "m_c was murdered by r_c.",
+      "lead_death": "{VERB/m_c/were/was} murdered by r_c"
       }
     ]
   },
@@ -6040,11 +6026,11 @@
       "history": [
         {
             "cats": ["m_c"],
-            "lead_death": "{VERB/m_c/were/was} lured by r_c into a Twoleg trap"
+            "lead_death": "{VERB/m_c/were/was} murdered by r_c"
         },
         {
             "cats": ["r_c"],
-            "reg_death": "r_c died when {PRONOUN/r_c/subject} tried to kill m_c and failed."
+            "reg_death": "r_c died after launching a failed assassination attempt on the Clan's leader."
         }
     ]
   }
