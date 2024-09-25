@@ -3770,6 +3770,9 @@ class Cat:
                 for check_cat in sorted_specific_list
                 if check_cat.status in status
             ]
+        
+        if self not in sorted_specific_list:
+            sorted_specific_list.append(self)
 
         idx = sorted_specific_list.index(self)
 
