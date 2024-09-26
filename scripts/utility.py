@@ -3077,7 +3077,9 @@ def generate_sprite(
                                     if phenotype.caramel == 'caramel' and not is_red:    
                                         pointbase.blit(sprites.sprites['caramel0'], (0, 0))
                         
-                                    pointbase.set_alpha(204)
+                                    pointbase.set_alpha(102)
+                                    if 'fawn' in whichcolour:
+                                        pointbase.set_alpha(0)
                                     whichmain.blit(sprites.sprites['lightbasecolours0'], (0, 0))
                                     whichmain.blit(pointbase, (0, 0))
                                     pointbase.blit(whichmain, (0, 0))
@@ -3153,6 +3155,10 @@ def generate_sprite(
                                 pointbase.blit(sprites.sprites['caramel0'], (0, 0))
                         
                             pointbase.set_alpha(204)
+                            if 'lilac' in whichcolour:
+                                pointbase.set_alpha(140)
+                            if 'fawn' in whichcolour:
+                                pointbase.set_alpha(50)
                             whichmain.blit(sprites.sprites['lightbasecolours0'], (0, 0))
                             whichmain.blit(pointbase, (0, 0))
                             pointbase.blit(whichmain, (0, 0)) 
