@@ -355,15 +355,14 @@ class Breed_generator:
     
     @staticmethod
     def AmSH(genoclass, special):
+        genoclass = Breed_generator.AllColours(genoclass, special)
+
         # FUR LENGTH
         
         genoclass.furLength = ["L", "L"]
 
         if(random() < 0.5):
             genoclass.wirehair = ["Wh", "Wh"]
-
-
-        genoclass = Breed_generator.AllColours(genoclass, special)
         # EUMELANIN
 
         for i in range(2):
@@ -789,11 +788,11 @@ class Breed_generator:
     
     @staticmethod
     def AusMist(genoclass, special):
+        genoclass = Breed_generator.AllColours(genoclass, special)
+
         # FUR LENGTH
         
         genoclass.furLength = ["L", "L"]
-
-        genoclass = Breed_generator.AllColours(genoclass, special)
 
         # EUMELANIN
 
@@ -878,6 +877,7 @@ class Breed_generator:
     
     @staticmethod
     def Bengal(genoclass, special):
+        genoclass = Breed_generator.AllColours(genoclass, special)
         # FUR LENGTH
         
         a = randint(1, 10)
@@ -888,8 +888,6 @@ class Breed_generator:
             genoclass.furLength = ["l", "l"]
         else:
             genoclass.furLength = ["L", "l"]
-
-        genoclass = Breed_generator.AllColours(genoclass, special)
 
         # EUMELANIN
 
@@ -1025,6 +1023,7 @@ class Breed_generator:
     
     @staticmethod
     def Birman(genoclass, special):
+        genoclass = Breed_generator.AllColours(genoclass, special)
         # FUR LENGTH
         
         genoclass.longtype = 'long'
@@ -1032,8 +1031,6 @@ class Breed_generator:
             genoclass.furLength = ["L", choice(["L", "l"])]
         else:
             genoclass.furLength = ["l", "l"]
-
-        genoclass = Breed_generator.AllColours(genoclass, special)
 
         # WHITE
 
@@ -1059,11 +1056,11 @@ class Breed_generator:
     
     @staticmethod
     def Brazil(genoclass, special):
+        genoclass = Breed_generator.AllColours(genoclass, special)
         # FUR LENGTH
         
         genoclass.furLength = ["L", "L"]
 
-        genoclass = Breed_generator.AllColours(genoclass, special)
 
         # ALBINO
 
@@ -1578,6 +1575,7 @@ class Breed_generator:
     
     @staticmethod
     def Cornish(genoclass, special):
+        genoclass = Breed_generator.AllColours(genoclass, special)
         # FUR LENGTH
         
         if random() < 0.95:
@@ -1585,7 +1583,6 @@ class Breed_generator:
         else:
             genoclass.furLength = ["l", "l"]
 
-        genoclass = Breed_generator.AllColours(genoclass, special)
 
         # YORK, WIREHAIR, LAPERM, CORNISH, URAL, TENN, FLEECE
 
@@ -1607,6 +1604,7 @@ class Breed_generator:
     
     @staticmethod
     def Devon(genoclass, special):
+        genoclass = Breed_generator.AllColours(genoclass, special)
         # FUR LENGTH
         
         if random() < 0.95:
@@ -1615,7 +1613,6 @@ class Breed_generator:
             genoclass.furLength = ["l", "l"]
 
         
-        genoclass = Breed_generator.AllColours(genoclass, special)
 
         # YORK, WIREHAIR, LAPERM, CORNISH, URAL, TENN, FLEECE
 
@@ -1637,11 +1634,11 @@ class Breed_generator:
     
     @staticmethod
     def Donskoy(genoclass, special):
+
+        genoclass = Breed_generator.AllColours(genoclass, special)
         # FUR LENGTH
         
         genoclass.furLength = ["L", "L"]
-
-        genoclass = Breed_generator.AllColours(genoclass, special)
 
         #ruhr + ruhrmod + lykoi
 
@@ -1799,10 +1796,10 @@ class Breed_generator:
     @staticmethod
     def European(genoclass, special):
         # FUR LENGTH
-        
-        genoclass.furLength = ["L", "L"]
 
         genoclass = Breed_generator.AllColours(genoclass, special)
+        
+        genoclass.furLength = ["L", "L"]
 
         # EUMELANIN
 
@@ -1820,10 +1817,9 @@ class Breed_generator:
     @staticmethod
     def GermanLH(genoclass, special):
         # FUR LENGTH
-        
-        genoclass.furLength = ["l", "l"]
-
         genoclass = Breed_generator.AllColours(genoclass, special)
+
+        genoclass.furLength = ["l", "l"]
         
         if random() < 0.95:
             genoclass.karp = ["K", "K"]
@@ -2041,11 +2037,10 @@ class Breed_generator:
     
     @staticmethod
     def Kanaani(genoclass, special):
+        genoclass = Breed_generator.AllColours(genoclass, special)
         # FUR LENGTH
         
         genoclass.furLength = ["L", "L"]
-
-        genoclass = Breed_generator.AllColours(genoclass, special)
 
         # RED GENE
 
@@ -2566,11 +2561,10 @@ class Breed_generator:
     
     @staticmethod
     def Mandalay(genoclass, special):
+        genoclass = Breed_generator.AllColours(genoclass, special)
         # FUR LENGTH
         
         genoclass.furLength = ["L", "L"]
-
-        genoclass = Breed_generator.AllColours(genoclass, special)
 
         genoclass.white = ['w', 'w']
 
@@ -2622,11 +2616,11 @@ class Breed_generator:
     
     @staticmethod
     def Maine(genoclass, special):
+        genoclass = Breed_generator.AllColours(genoclass, special)
         # FUR LENGTH
         
         genoclass.furLength = ["l", "l"]
 
-        genoclass = Breed_generator.AllColours(genoclass, special)
 
         # EUMELANIN
 
@@ -2686,11 +2680,11 @@ class Breed_generator:
     
     @staticmethod
     def Mekong(genoclass, special):
+        genoclass = Breed_generator.AllColours(genoclass, special)
         # FUR LENGTH
         
         genoclass.furLength = ["L", "L"]
 
-        genoclass = Breed_generator.AllColours(genoclass, special)
 
         # WHITE
 
@@ -2749,12 +2743,12 @@ class Breed_generator:
     
     @staticmethod
     def NFC(genoclass, special):
+        genoclass = Breed_generator.AllColours(genoclass, special)
         # FUR LENGTH
         
         genoclass.furLength = ["l", "l"]
         genoclass.longtype = "long"
 
-        genoclass = Breed_generator.AllColours(genoclass, special)
 
         # EUMELANIN
 
@@ -2784,11 +2778,11 @@ class Breed_generator:
     
     @staticmethod
     def Ocicat(genoclass, special):
+        genoclass = Breed_generator.AllColours(genoclass, special)
         # FUR LENGTH
         
         genoclass.furLength = ["L", "L"]
 
-        genoclass = Breed_generator.AllColours(genoclass, special)
 
         # RED GENE
 
@@ -2886,6 +2880,7 @@ class Breed_generator:
     
     @staticmethod
     def Persian(genoclass, special):
+        genoclass = Breed_generator.AllColours(genoclass, special)
         # FUR LENGTH
 
         genoclass.longtype = "long"
@@ -2895,7 +2890,6 @@ class Breed_generator:
         else:
             genoclass.furLength = ["l", "l"]
 
-        genoclass = Breed_generator.AllColours(genoclass, special)
 
         # EUMELANIN
 
@@ -3077,12 +3071,12 @@ class Breed_generator:
     
     @staticmethod
     def Ragamuffin(genoclass, special):
+        genoclass = Breed_generator.AllColours(genoclass, special)
         # FUR LENGTH
         
         genoclass.furLength = ["l", "l"]
         genoclass.longtype = "long"
 
-        genoclass = Breed_generator.AllColours(genoclass, special)
 
         genoclass.body_value = randint(genoclass.body_indexes[1]+1, genoclass.body_indexes[2])
         
@@ -3091,12 +3085,12 @@ class Breed_generator:
     
     @staticmethod
     def Ragdoll(genoclass, special):
+        genoclass = Breed_generator.AllColours(genoclass, special)
         # FUR LENGTH
         
         genoclass.furLength = ["l", "l"]
         genoclass.longtype = "long"
 
-        genoclass = Breed_generator.AllColours(genoclass, special)
 
         # EUMELANIN
 
@@ -3308,13 +3302,13 @@ class Breed_generator:
     
     @staticmethod
     def Siberian(genoclass, special):
+        genoclass = Breed_generator.AllColours(genoclass, special)
         # FUR LENGTH
         
         genoclass.furLength = ["l", "l"]
         genoclass.longtype = "long"
 
         
-        genoclass = Breed_generator.AllColours(genoclass, special)
 
         # EUMELANIN
 
@@ -3486,11 +3480,11 @@ class Breed_generator:
     
     @staticmethod
     def Snowshoe(genoclass, special):
+        genoclass = Breed_generator.AllColours(genoclass, special)
         # FUR LENGTH
         
         genoclass.furLength = ["L", "L"]
         
-        genoclass = Breed_generator.AllColours(genoclass, special)
 
         # WHITE
 
@@ -3641,12 +3635,12 @@ class Breed_generator:
     
     @staticmethod
     def Sphynx(genoclass, special):
+        genoclass = Breed_generator.AllColours(genoclass, special)
         # FUR LENGTH
         
         genoclass.furLength = ["L", "L"]
 
 
-        genoclass = Breed_generator.AllColours(genoclass, special)
 
         #SELKIRK/DEVON/HAIRLESS
     
@@ -3681,10 +3675,10 @@ class Breed_generator:
     
     @staticmethod
     def Thai(genoclass, special):
+        genoclass = Breed_generator.AllColours(genoclass, special)
         # FUR LENGTH
         
         genoclass.furLength = ["L", "L"]
-        genoclass = Breed_generator.AllColours(genoclass, special)
 
         # EUMELANIN
 
@@ -3721,10 +3715,10 @@ class Breed_generator:
     
     @staticmethod
     def Tonk(genoclass, special):
+        genoclass = Breed_generator.AllColours(genoclass, special)
         # FUR LENGTH
         
         genoclass.furLength = ["L", "L"]
-        genoclass = Breed_generator.AllColours(genoclass, special)
 
         # WHITE
 
@@ -3912,6 +3906,7 @@ class Breed_generator:
     
     @staticmethod
     def Turkish(genoclass, special):
+        genoclass = Breed_generator.AllColours(genoclass, special)
         # FUR LENGTH
         
         if random() < 0.125:
@@ -3919,7 +3914,6 @@ class Breed_generator:
         else:
             genoclass.furLength = ["l", "l"]
 
-        genoclass = Breed_generator.AllColours(genoclass, special)
         # EUMELANIN
 
         genoclass.eumelanin = ["B", "B"]
@@ -3968,11 +3962,11 @@ class Breed_generator:
     
     @staticmethod
     def Bambino(genoclass, special):
+        genoclass = Breed_generator.AllColours(genoclass, special)
         # FUR LENGTH
         
         genoclass.furLength = ["L", "L"]
 
-        genoclass = Breed_generator.AllColours(genoclass, special)
 
         #SELKIRK/DEVON/HAIRLESS
     
@@ -4406,11 +4400,11 @@ class Breed_generator:
     
     @staticmethod
     def Peterbald(genoclass, special):
+        genoclass = Breed_generator.AllColours(genoclass, special)
         # FUR LENGTH
         
         genoclass.furLength = ["L", "L"]
 
-        genoclass = Breed_generator.AllColours(genoclass, special)
 
         #ruhr + ruhrmod + lykoi
 
