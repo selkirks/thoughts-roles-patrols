@@ -2438,54 +2438,59 @@ class Genotype:
         "other" : ["pinkdilute", "ext", "corin", "karp"],
         "main" : ["eumelanin", "sexgene", "dilute", "white", "pointgene", "silver", "agouti"]
         }
+        filtered_mutes = {
+        "furtype" : ["wirehair", "laperm", "cornish", "urals", "tenn", "fleece", "sedesp"],
+        "other" : ["pinkdilute", "ext", "corin", "karp"],
+        "main" : ["eumelanin", "sexgene", "dilute", "white", "pointgene", "silver", "agouti"]
+        }
 
         for gene in possible_mutes["furtype"]:
             if gene in ['wirehair', 'laperm', 'sedesp']:
                 if self[gene][0] in ['Wh', 'Lp', 'Se', 'hr', 're']:
-                    possible_mutes["furtype"].remove(gene)
+                    filtered_mutes["furtype"].remove(gene)
             try:
                 if self[gene][0] in ['r', 'ru', 'tr', 'fc']:
-                    possible_mutes["furtype"].remove(gene)
+                    filtered_mutes["furtype"].remove(gene)
                 elif self[gene][1] in ['R', 'Ru', 'Tr', 'Fc']:
-                    possible_mutes["furtype"].remove(gene)
+                    filtered_mutes["furtype"].remove(gene)
             except:
                 continue
         for gene in possible_mutes["other"]:
             if gene == 'corin' and (self.agouti[0] == 'a' or self.ext[0] == 'Eg'):
-                possible_mutes["other"].remove(gene)
+                filtered_mutes["other"].remove(gene)
                 continue
             elif gene in ['ext', 'karp', 'ghosting']:
                 if self[gene][0] in ['Eg', 'K', 'Gh']:
-                    possible_mutes["other"].remove(gene)
+                    filtered_mutes["other"].remove(gene)
                     continue
             if self[gene][0] in ['dp', 'ec', 'ea', 'er', 'sh', 'sg', 'fg', 'lb', 'st', 'gl']:
-                possible_mutes["other"].remove(gene)
+                filtered_mutes["other"].remove(gene)
             elif self[gene][1] in ['Dp', 'E', 'N', 'Lb', 'St', 'Gl']:
-                possible_mutes["other"].remove(gene)
+                filtered_mutes["other"].remove(gene)
         for gene in possible_mutes["main"]:
             if gene in ['mack', 'ticked', 'silver'] and (self.agouti[0] == 'a' or self.ext[0] == 'Eg'):
-                possible_mutes["main"].remove(gene)
+                filtered_mutes["main"].remove(gene)
                 continue
             elif gene == 'agouti' and self.ext[0] == 'Eg':
-                possible_mutes["main"].remove(gene)
+                filtered_mutes["main"].remove(gene)
                 continue
             elif gene in ['sexgene', 'white']:
                 if self[gene][0] in ['O', 'W', 'ws', 'wt']:
-                    possible_mutes["main"].remove(gene)
+                    filtered_mutes["main"].remove(gene)
                     continue
             if self[gene][0] in ['b', 'bl', 'd', 'wg', 'wsal', 'cs', 'cb', 'cm', 'c', 'Apb', 'a']:
-                possible_mutes["main"].remove(gene)
+                filtered_mutes["main"].remove(gene)
             elif self[gene][1] in ['B', 'D', 'w', 'C', 'A']:
-                possible_mutes["main"].remove(gene)
+                filtered_mutes["main"].remove(gene)
         
         whichgene = ['furtype', 'other', 'main', 'other', 'main', 'main']
         if self.white[0] == 'W' or (self.white[1] in ['ws', 'wt'] and self.whitegrade == 5):
             whichgene = ['furtype']
         for cate in whichgene:
-            if len(possible_mutes[cate]) == 0:
+            if len(filtered_mutes[cate]) == 0:
                 whichgene.remove(cate);
         if len(whichgene) > 0:
-            self.somatic["gene"] = choice(possible_mutes[choice(whichgene)])
+            self.somatic["gene"] = choice(filtered_mutes[choice(whichgene)])
 
         
         if self.white[1] in ['ws', 'wt'] and self.somatic["base"] not in ['Somatic/leftface', 'Somatic/rightface', 'Somatic/tail']:
