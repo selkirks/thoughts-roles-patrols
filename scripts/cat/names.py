@@ -145,6 +145,10 @@ class Name:
 
     # Generate possible prefix
     def give_prefix(self, Cat, biome, no_suffix=False):
+        if not self.genotype:
+            self.prefix = random.choice(self.names_dict["normal_prefixes"])
+            return
+
         try:
             used_prefixes = [cat.name.prefix for cat in Cat.all_cats.values() if not cat.dead and not cat.status in ['kittypet', 'loner', 'rogue', 'former Clancat']]
         except:
@@ -159,7 +163,8 @@ class Name:
                     self.prefix = "Stripe"
                 elif self.prefix == "Spotted":
                     self.prefix = "Spot"
-            return
+            if self.prefix:
+                return
             
 
         # decided in game config: cat_name_controls

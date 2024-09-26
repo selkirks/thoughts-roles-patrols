@@ -616,7 +616,7 @@ class Pregnancy_Events:
                     kit.status = "loner"
                     name = choice(names.names_dict["normal_prefixes"])
 
-                    game.clan.clan_settings['new prefixes']:
+                    if game.clan.clan_settings['new prefixes']:
                         kit.name = Name(Cat, 'loner', kit.genotype, kit.phenotype, 
                                         chimpheno = kit.chimerapheno if kit.genotype.chimera else None, suffix="")
                     else:

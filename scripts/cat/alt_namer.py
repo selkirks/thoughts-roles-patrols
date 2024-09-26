@@ -290,7 +290,7 @@ class Namer():
 
         try:
             possible_prefixes = possible_prefixes[tabby['type']]
-            if base in ['ginger', 'cream'] and tabby['type'] == 'silver':
+            if base in ['ginger', 'cream', 'blue', 'lilac', 'fawn'] and tabby['type'] == 'silver':
                 possible_prefixes += possible_prefixes['regular'][white + '_white']
         except:
             possible_prefixes = possible_prefixes[tabby['regular']]
@@ -299,18 +299,22 @@ class Namer():
             possible_prefixes = possible_prefixes[white + '_white']
         
         try:
-            possible_prefixes += self.all_prefixes[base]['tortie' if tortie else 'plain']['tabby']['general']
+            extra_prefixes = self.all_prefixes[base]['tortie' if tortie else 'plain']['tabby']['general']
         except:
-            possible_prefixes += self.all_prefixes[base]['general']
+            extra_prefixes = self.all_prefixes[base]['general']
 
         try:
-            possible_prefixes = possible_prefixes[tabby['type']]
+            extra_prefixes = extra_prefixes[tabby['type']]
         except:
-            possible_prefixes = possible_prefixes[tabby['regular']]
+            try:
+                extra_prefixes = extra_prefixes['regular']
+            except:
+                pass
 
         if tabby['type'] != 'silver':
-            possible_prefixes = possible_prefixes[white + '_white']
+            extra_prefixes = extra_prefixes[white + '_white']
         
+        possible_prefixes += extra_prefixes
         possible_prefixes += self.all_prefixes['general']['any']
         try:
             possible_prefixes += self.all_prefixes['general'][self.phenotype.length.replace('haired', 'hair')]
@@ -491,7 +495,7 @@ class Namer():
             return self.tabby(params[0], params[1], params[2], params[3])
         
     def chocolate(self, params):
-        if self.saturation > 4 and random() < 0.2 and params[0] not in ['black', 'cinnamon']:
+        if self.genotype.saturation > 4 and random() < 0.2 and params[0] not in ['black', 'cinnamon']:
             params[4] = params[4].replace('sepia', 'mink')
             return self.black(params)
 
@@ -555,7 +559,7 @@ class Namer():
         if random() < 0.1:
             self.purple(params)
 
-        if self.saturation > 4 and random() < 0.2 and params[0] not in ['blue', 'fawn']:
+        if self.genotype.saturation > 4 and random() < 0.2 and params[0] not in ['blue', 'fawn']:
             params[4] = params[4].replace('sepia', 'mink')
             return self.blue(params)
 
@@ -611,7 +615,7 @@ class Namer():
             return self.tabby(params[0], params[1], params[2], params[3])
         
     def cinnamon(self, params):
-        if self.saturation > 4 and random() < 0.2 and params[0] not in ['black', 'chocolate']:
+        if self.genotype.saturation > 4 and random() < 0.2 and params[0] not in ['black', 'chocolate']:
             return self.chocolate(params)
         if random() < 0.1:
             return self.red(params)
@@ -669,7 +673,7 @@ class Namer():
             return self.tabby(params[0], params[1], params[2], params[3])
         
     def fawn(self, params):
-        if self.saturation > 4 and random() < 0.2 and params[0] not in ['black', 'chocolate', 'cinnamon', 'blue', 'lilac']:
+        if self.genotype.saturation > 4 and random() < 0.2 and params[0] not in ['black', 'chocolate', 'cinnamon', 'blue', 'lilac']:
             return self.lilac(params)
         if random() < 0.1:
             return self.pink(params)
@@ -819,9 +823,9 @@ class Namer():
 
     def white(self, base):
         if base == 'silver shaded' and random() > 0.33:
-            possible_prefixes = self.all_prefixes['silver shaded']
+            possible_prefixes = self.all_prefixes['white']['shaded']
         else:
-            possible_prefixes = self.all_prefixes['white']
+            possible_prefixes = self.all_prefixes['white']['solid']
         
         filtered = deepcopy(possible_prefixes)
         try:
