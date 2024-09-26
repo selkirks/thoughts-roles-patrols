@@ -71,7 +71,44 @@
         "In the middle of playing, m_c sneezes so hard {PRONOUN/m_c/subject} {VERB/m_c/fall/falls} over. Again. This is really becoming a pattern."
     ],
     "persistent headaches": [
-        "r_c notices with some concern that any time m_c opens {PRONOUN/m_c/poss} eyes, {PRONOUN/m_c/subject} {VERB/m_c/mewl/mewls} incessantly and {VERB/m_c/try/tries} to wriggle into the darkest corners of the healer den. r_c suspects {PRONOUN/m_c/subject} may have chronic headaches.",
-        "Rather than go outside in the bright sunlight to play with {PRONOUN/m_c/poss} littermates, m_c prefers to huddle by {PRONOUN/m_c/self} in the dark and quiet of the healer den, {PRONOUN/m_c/poss} head hurting too much to move."
+      "r_c notices with some concern that any time m_c opens {PRONOUN/m_c/poss} eyes, {PRONOUN/m_c/subject} {VERB/m_c/mewl/mewls} incessantly and {VERB/m_c/try/tries} to wriggle into the darkest corners of the healer den. r_c suspects {PRONOUN/m_c/subject} may have chronic headaches.",
+      "Rather than go outside in the bright sunlight to play with {PRONOUN/m_c/poss} littermates, m_c prefers to huddle by {PRONOUN/m_c/self} in the dark and quiet of the healer den, {PRONOUN/m_c/poss} head hurting too much to move."
+    ],
+    "rabbit gait": [
+        "m_c has been hopping with a rabbit-like gait. It was cute at first, but by now it's clear that it's not going away.",
+        "m_c has been hopping with a rabbit-like gait. It was cute at first, but by now it's clear that it's not going away."
+    ],
+    "incontinence": [
+        "It's normal for young kittens to have trouble going to the Dirtplace on their own, but m_c is not growing out of it.",
+        "It's normal for young kittens to have trouble going to the Dirtplace on their own, but m_c is not growing out of it."
+    ],
+    "albinism": [
+        "m_c's eyes are rather unique. Even in fairly normal light {PRONOUN/m_c/poss} pupils look reddish.",
+        "m_c has always been squinting, complaining about the light. Upon inspections, {PRONOUN/m_c/poss} eyes are rather odd.",
+        "Some cats have been whispering amongst themselves, telling old stories of white cats with red eyes after seeing m_c."
+    ],
+    "ocular albinism": [
+        "m_c's eyes are rather unique. Even in fairly normal light {PRONOUN/m_c/poss} pupils look reddish.",
+        "m_c has always been squinting, complaining about the light. Upon inspections, {PRONOUN/m_c/poss} eyes are rather odd."
+    ],
+    "fully hairless": [
+        "Where most kittens are balls of fuzz, m_c looks to lack almost any trace of fur.",
+        "m_c lacks most any kitten fuzz."
+    ],
+    "partially hairless": [
+        "m_c is a rather odd case - fur in some places, no fur in others.",
+        "m_c is a rather odd case - fur in some places, no fur in others."
+    ],
+    "bad back": [
+        "m_c's back looks unusually curved. r_c warns this will likely cause trouble.",
+        "m_c's back looks unusually curved."
+    ],
+    "narrowed chest": [
+        "It doesn't take long for cats to notice - m_c has more trouble breathing than most kittens. r_c frets about the risk of coughs.",
+        "It doesn't take long for cats to notice - m_c has more trouble breathing than most kittens."
+    ],
+    "bumpy skin": [
+        "r_c examines m_c with concern when {PRONOUN/m_c/subject} show {PRONOUN/r_c/object} the many bumps on {PRONOUN/m_c/poss} skin.",
+        "m_c has come to notice a concerning number of bumps on {PRONOUN/m_c/poss} skin while grooming recently."
     ]
 }
