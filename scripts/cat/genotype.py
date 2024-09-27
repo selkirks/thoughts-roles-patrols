@@ -170,7 +170,6 @@ class Genotype:
             self.chimerageno.fromJSON(jsonstring["chimerageno"])
         else:
             self.chimerageno = None    
-        self.deaf = jsonstring['deaf']
         self.longtype = jsonstring["longtype"]
 
         self.gender = jsonstring["gender"]
@@ -267,13 +266,16 @@ class Genotype:
         except:
             self.somatic = {}
 
-        self.body_value = jsonstring["body_type"]
+        try:
+            self.body_value = jsonstring["body_type"]
+            self.height_value = jsonstring["height"]
+            self.shoulder_height = jsonstring["shoulder_height"]
+        except:
+            self.GenerateBody()
         try:
             self.body_label = jsonstring["body_type_label"]
         except:
             pass
-        self.height_value = jsonstring["height"]
-        self.shoulder_height = jsonstring["shoulder_height"]
 
         self.GeneSort()
         self.PolyEval()
@@ -305,7 +307,6 @@ class Genotype:
             "white" : self.white,
             "whitegrade" : self.whitegrade,
             "vitiligo" : self.vitiligo,
-            "deaf" : self.deaf,
             "pointgene" : self.pointgene,
             "silver" : self.silver,
             "agouti" : self.agouti,
@@ -1291,6 +1292,7 @@ class Genotype:
         
 
         self.wideband = ""
+
         for i in range(8):
             tempwb = 0
             if par1.wideband[i] == "2" or (par1.wideband[i] == "1" and randint(1, 2) == 1):
@@ -1502,6 +1504,25 @@ class Genotype:
         self.spotsum = 0
         self.ticksum = 0
         
+        if len(self.wideband) < 8:
+            while len(self.wideband) < 8:
+                self.wideband += '1'
+        if len(self.rufousing) < 4:
+            while len(self.rufousing) < 4:
+                self.rufousing += '1'
+        if len(self.bengal) < 4:
+            while len(self.bengal) < 4:
+                self.bengal += '1'
+        if len(self.sokoke) < 4:
+            while len(self.sokoke) < 4:
+                self.sokoke += '1'
+        if len(self.spotted) < 4:
+            while len(self.spotted) < 4:
+                self.spotted += '1'
+        if len(self.tickgenes) < 4:
+            while len(self.tickgenes) < 4:
+                self.tickgenes += '1'
+
         for i in self.wideband:
             self.wbsum += int(i)
         for i in self.rufousing:
@@ -2417,54 +2438,59 @@ class Genotype:
         "other" : ["pinkdilute", "ext", "corin", "karp"],
         "main" : ["eumelanin", "sexgene", "dilute", "white", "pointgene", "silver", "agouti"]
         }
+        filtered_mutes = {
+        "furtype" : ["wirehair", "laperm", "cornish", "urals", "tenn", "fleece", "sedesp"],
+        "other" : ["pinkdilute", "ext", "corin", "karp"],
+        "main" : ["eumelanin", "sexgene", "dilute", "white", "pointgene", "silver", "agouti"]
+        }
 
         for gene in possible_mutes["furtype"]:
             if gene in ['wirehair', 'laperm', 'sedesp']:
                 if self[gene][0] in ['Wh', 'Lp', 'Se', 'hr', 're']:
-                    possible_mutes["furtype"].remove(gene)
+                    filtered_mutes["furtype"].remove(gene)
             try:
                 if self[gene][0] in ['r', 'ru', 'tr', 'fc']:
-                    possible_mutes["furtype"].remove(gene)
+                    filtered_mutes["furtype"].remove(gene)
                 elif self[gene][1] in ['R', 'Ru', 'Tr', 'Fc']:
-                    possible_mutes["furtype"].remove(gene)
+                    filtered_mutes["furtype"].remove(gene)
             except:
                 continue
         for gene in possible_mutes["other"]:
             if gene == 'corin' and (self.agouti[0] == 'a' or self.ext[0] == 'Eg'):
-                possible_mutes["other"].remove(gene)
+                filtered_mutes["other"].remove(gene)
                 continue
             elif gene in ['ext', 'karp', 'ghosting']:
                 if self[gene][0] in ['Eg', 'K', 'Gh']:
-                    possible_mutes["other"].remove(gene)
+                    filtered_mutes["other"].remove(gene)
                     continue
             if self[gene][0] in ['dp', 'ec', 'ea', 'er', 'sh', 'sg', 'fg', 'lb', 'st', 'gl']:
-                possible_mutes["other"].remove(gene)
+                filtered_mutes["other"].remove(gene)
             elif self[gene][1] in ['Dp', 'E', 'N', 'Lb', 'St', 'Gl']:
-                possible_mutes["other"].remove(gene)
+                filtered_mutes["other"].remove(gene)
         for gene in possible_mutes["main"]:
             if gene in ['mack', 'ticked', 'silver'] and (self.agouti[0] == 'a' or self.ext[0] == 'Eg'):
-                possible_mutes["main"].remove(gene)
+                filtered_mutes["main"].remove(gene)
                 continue
             elif gene == 'agouti' and self.ext[0] == 'Eg':
-                possible_mutes["main"].remove(gene)
+                filtered_mutes["main"].remove(gene)
                 continue
             elif gene in ['sexgene', 'white']:
                 if self[gene][0] in ['O', 'W', 'ws', 'wt']:
-                    possible_mutes["main"].remove(gene)
+                    filtered_mutes["main"].remove(gene)
                     continue
             if self[gene][0] in ['b', 'bl', 'd', 'wg', 'wsal', 'cs', 'cb', 'cm', 'c', 'Apb', 'a']:
-                possible_mutes["main"].remove(gene)
+                filtered_mutes["main"].remove(gene)
             elif self[gene][1] in ['B', 'D', 'w', 'C', 'A']:
-                possible_mutes["main"].remove(gene)
+                filtered_mutes["main"].remove(gene)
         
         whichgene = ['furtype', 'other', 'main', 'other', 'main', 'main']
         if self.white[0] == 'W' or (self.white[1] in ['ws', 'wt'] and self.whitegrade == 5):
             whichgene = ['furtype']
         for cate in whichgene:
-            if len(possible_mutes[cate]) == 0:
+            if len(filtered_mutes[cate]) == 0:
                 whichgene.remove(cate);
         if len(whichgene) > 0:
-            self.somatic["gene"] = choice(possible_mutes[choice(whichgene)])
+            self.somatic["gene"] = choice(filtered_mutes[choice(whichgene)])
 
         
         if self.white[1] in ['ws', 'wt'] and self.somatic["base"] not in ['Somatic/leftface', 'Somatic/rightface', 'Somatic/tail']:

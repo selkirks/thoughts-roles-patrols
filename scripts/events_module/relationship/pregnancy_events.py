@@ -180,7 +180,7 @@ class Pregnancy_Events:
             insert = "a single kitten"
             insert2 = "it"
         if amount > 1:
-            insert = f"a litter of {amount} kits"
+            insert = f"a litter of {len(kits)} kits"
             insert2 = "them"
 
         print_event = f"{cat.name} found {insert} and decides to adopt {insert2}."
@@ -352,9 +352,7 @@ class Pregnancy_Events:
                     game.cur_events_list.append(Single_Event(print_event, "birth_death", cats_involved))
                 return
 
-            
-
-            # if the other cat is a molly and the current cat is a tom, make the molly cat pregnant
+            # if the other cat is afab and the current cat is amab, make the afab cat pregnant
             pregnant_cat = cat
             second_parent = other_cat
             affair_partner = []
@@ -598,6 +596,8 @@ class Pregnancy_Events:
         for kit in kits:
             if clan.pregnancy_data[cat.ID].get("fever_coat", False):
                 kit.genotype.fevercoat = True
+                if kit.genotype.chimera:
+                    kit.genotype.chimerageno.fevercoat = True
             if random.random() < stillborn_chance or kit.genotype.manx[1] == "Ab" or kit.genotype.manx[1] == "M" or kit.genotype.fold[1] == "Fd" or kit.genotype.munch[1] == "Mk" or ('NoDBE' not in kit.genotype.pax3 and 'DBEalt' not in kit.genotype.pax3):
                 kit.moons = 0
                 kit.dead = True
@@ -1066,7 +1066,7 @@ class Pregnancy_Events:
             litter_age = choice([0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 2, 2, 3, 3, 4, 4, 5])
             
             initial_amount = kits_amount
-            kits_amount = 1
+            kits_amount = 0
             if initial_amount < 3:
                 stillborn_chance = game.config['pregnancy']['stillborn_chances']['small']
             elif initial_amount == 3:
@@ -1107,7 +1107,8 @@ class Pregnancy_Events:
                     continue
                 else:
                     kits_amount += 1
-
+            if kits_amount == 0:
+                kits_amount = 1
                 
         #############################
 

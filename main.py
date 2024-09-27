@@ -15,6 +15,9 @@ It then loads the settings, and then loads the start screen.
 
 
 """  # pylint: enable=line-too-long
+# DO NOT ADD YOUR IMPORTS HERE.
+# Scroll down to the "Load game" comment and add them there.
+# Side effects of imports WILL BREAK crucial setup logic for logging and init
 import os
 import shutil
 import sys
