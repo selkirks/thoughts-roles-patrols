@@ -3777,7 +3777,7 @@ class Cat:
                 "favourite": self.favourite,
             }
 
-    def determine_next_and_previous_cats(self, status: List[str] = None):
+    def determine_next_and_previous_cats(self, status: List[str] = None, min_age=0):
         """Determines where the next and previous buttons point to, relative to this cat.
 
         :param status: Allows you to constrain the list by status
@@ -3789,6 +3789,7 @@ class Cat:
             and check_cat.outside == self.outside
             and check_cat.df == self.df
             and not check_cat.faded
+            and not check_cat.moons < min_age
         ]
 
         if status is not None:
