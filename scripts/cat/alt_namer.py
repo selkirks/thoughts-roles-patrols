@@ -48,9 +48,11 @@ class Namer():
 
         base = ""
         tortie = False
+        tortie_mimic = False
         tabby = {
             'pattern' : '',
-            'type' : 'regular'
+            'type' : 'regular',
+            'tortie_red' : ''
         }
         white = 'no'
         point = 'none'
@@ -67,6 +69,8 @@ class Namer():
         
         if set_one[1] or set_two[1] or xor(set_one[0] in ['ginger', 'cream'], set_two[0] in ['ginger', 'cream']):
             tortie = True
+            tortie_mimic = True
+            tabby['tortie_red'] = set_one[2]['pattern'] if set_one[0] in ['ginger', 'cream'] else set_two[2]['pattern']
 
         if set_one[3] == 'high' or (self.moons == 0 and set_one[4] == 'colourpoint'):
             white = 'high'
@@ -134,6 +138,8 @@ class Namer():
         #mixing different types of point
 
         point = set_one[4]
+
+        return [base, tortie, tabby, white, point, tortie_mimic]
 
     def get_categories(self, genotype, phenotype):
         
@@ -337,6 +343,12 @@ class Namer():
         else:
             return choice(possible_prefixes)
     def point(self, base, tortie, point, white):
+        if white in ['mid', 'high']:
+            if white == 'high' and random() < 0.75:
+                return self.solid(base, tortie, '', 'high')
+            elif random() < 0.5:
+                return self.solid(base, tortie, '', 'high')
+
         try:
             possible_prefixes = self.all_prefixes[base]['tortie' if tortie else 'plain']['point']
         except:
@@ -405,7 +417,7 @@ class Namer():
             #naming for point colour
 
             if random() < 0.1:
-                if self.genotype.tortiepattern and (random() < 0.25 or (len(self.genotype.tortiepattern) > 2 and 'rev' not in self.genotype.tortiepattern[0])):
+                if (self.genotype.tortiepattern or params[5]) and (random() < 0.25 or (len(self.genotype.tortiepattern) > 2 and 'rev' not in self.genotype.tortiepattern[0])):
                     return self.tabby('ginger', params[1], {'pattern' : params[2]['tortie_red'], 'type' : 'silver'}, params[3])
                 elif self.genotype.tortiepattern and random() < 0.33:
                     return self.solid(params[0], False, params[2]['pattern'], params[3])
@@ -460,7 +472,7 @@ class Namer():
             #naming for point colour
 
             elif random() < 0.1:
-                if self.genotype.tortiepattern and (random() < 0.25 or (len(self.genotype.tortiepattern) > 2 and 'rev' not in self.genotype.tortiepattern[0])):
+                if (self.genotype.tortiepattern or params[5]) and (random() < 0.25 or (len(self.genotype.tortiepattern) > 2 and 'rev' not in self.genotype.tortiepattern[0])):
                     return self.tabby('cream', params[1], {'pattern' : params[2]['tortie_red'], 'type' : 'regular'}, params[3])
                 elif self.genotype.tortiepattern and random() < 0.33:
                     return self.solid(params[0], False, params[2]['pattern'], params[3])
@@ -520,7 +532,7 @@ class Namer():
             #naming for point colour
 
             if random() < 0.1:
-                if self.genotype.tortiepattern and (random() < 0.25 or (len(self.genotype.tortiepattern) > 2 and 'rev' not in self.genotype.tortiepattern[0])):
+                if (self.genotype.tortiepattern or params[5]) and (random() < 0.25 or (len(self.genotype.tortiepattern) > 2 and 'rev' not in self.genotype.tortiepattern[0])):
                     return self.tabby('ginger', params[1], {'pattern' : params[2]['tortie_red'], 'type' : 'silver'}, params[3])
                 elif self.genotype.tortiepattern and random() < 0.33:
                     return self.solid(params[0], False, params[2]['pattern'], params[3])
@@ -580,7 +592,7 @@ class Namer():
             #naming for point colour
 
             elif random() < 0.1:
-                if self.genotype.tortiepattern and (random() < 0.25 or (len(self.genotype.tortiepattern) > 2 and 'rev' not in self.genotype.tortiepattern[0])):
+                if (self.genotype.tortiepattern or params[5]) and (random() < 0.25 or (len(self.genotype.tortiepattern) > 2 and 'rev' not in self.genotype.tortiepattern[0])):
                     return self.tabby('cream', params[1], {'pattern' : params[2]['tortie_red'], 'type' : 'regular'}, params[3])
                 elif self.genotype.tortiepattern and random() < 0.33:
                     return self.solid(params[0], False, params[2]['pattern'], params[3])
@@ -637,7 +649,7 @@ class Namer():
             #naming for point colour
 
             if random() < 0.1:
-                if self.genotype.tortiepattern and (random() < 0.25 or (len(self.genotype.tortiepattern) > 2 and 'rev' not in self.genotype.tortiepattern[0])):
+                if (self.genotype.tortiepattern or params[5]) and (random() < 0.25 or (len(self.genotype.tortiepattern) > 2 and 'rev' not in self.genotype.tortiepattern[0])):
                     return self.tabby('ginger', params[1], {'pattern' : params[2]['tortie_red'], 'type' : 'silver'}, params[3])
                 elif self.genotype.tortiepattern and random() < 0.33:
                     return self.solid(params[0], False, params[2]['pattern'], params[3])
@@ -690,7 +702,7 @@ class Namer():
             #naming for point colour
 
             if random() < 0.1:
-                if self.genotype.tortiepattern and (random() < 0.25 or (len(self.genotype.tortiepattern) > 2 and 'rev' not in self.genotype.tortiepattern[0])):
+                if (self.genotype.tortiepattern or params[5]) and (random() < 0.25 or (len(self.genotype.tortiepattern) > 2 and 'rev' not in self.genotype.tortiepattern[0])):
                     return self.tabby('cream', params[1], {'pattern' : params[2]['tortie_red'], 'type' : 'regular'}, params[3])
                 elif self.genotype.tortiepattern and random() < 0.33:
                     return self.solid(params[0], False, params[2]['pattern'], params[3])
