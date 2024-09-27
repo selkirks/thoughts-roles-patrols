@@ -3551,9 +3551,9 @@ def generate_sprite(
         age = cat.moons
 
         if int(cat_sprite) == 20 and cat.moons > 0:
-            age = 4
+            age = 0
         elif int(cat_sprite) < 3 and cat.moons > 6:
-            age = 1
+            age = 4
         elif int(cat_sprite) < 6 and cat.moons > 12:
             age = 11
         elif (int(cat_sprite == 19) or int(cat_sprite) == 17) and cat.moons > 12:
