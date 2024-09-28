@@ -379,6 +379,12 @@ class Pregnancy_Events:
                     
                     pregnant_cat = outside_parent[0]
                     fever = False
+                    ids = [cat.ID]
+                    if clan.clan_settings['multisire']:
+                        for c in cat.mate:
+                            mate = Cat.all_cats.get(c)
+                            if Pregnancy_Events.check_if_can_have_kits(mate, True, True) and 'infertility' not in mate.permanent_condition:
+                                ids.append(mate.ID)
                     if len(pregnant_cat.illnesses) > 0:
                         for illness in pregnant_cat.illnesses:
                             if illness in ["greencough", "redcough", "yellowcough", "whitecough", 
@@ -387,7 +393,7 @@ class Pregnancy_Events:
                                 fever = True
 
                     clan.pregnancy_data[pregnant_cat.ID] = {
-                        "second_parent": [cat.ID],
+                        "second_parent": ids,
                         "affair_partner" : None,
                         "surrogate" : pregnant_cat.ID,
                         "moons": 0,
@@ -601,8 +607,6 @@ class Pregnancy_Events:
         if surrogate_id:
             if surrogate_id[0] == cat.ID:
                 cat = other_cat[0]
-            for id in cat.mate:
-                other_cat.append(Cat.all_cats.get(id))
             surrogate.append(Cat.all_cats.get(surrogate_id[0]))
 
         if affair_partner_id:
