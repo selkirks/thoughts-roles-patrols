@@ -10,7 +10,7 @@ class Namer():
         self.all_prefixes = mod_prefixes
         self.moons = moons
 
-    def start(self, genotype: Genotype, phenotype: Phenotype, chimera_pheno = None):
+    def start(self, genotype, phenotype, chimera_pheno = None):
         self.genotype = genotype
         self.phenotype = phenotype
         self.chimera_pheno = chimera_pheno
@@ -280,7 +280,7 @@ class Namer():
             possible_prefixes += self.all_prefixes['general'][tabby]
         filtered = deepcopy(possible_prefixes)
         try:
-            filtered = self.filter(filtered, self.used_prefixes, self.all_prefixes['filter_for'])
+            filtered = self.filter(filtered, self.used_prefixes, self.all_prefixes['filter_out'])
         except:
             filtered = self.filter(filtered, self.used_prefixes, [])
 
@@ -334,7 +334,7 @@ class Namer():
             possible_prefixes += self.all_prefixes['general'][tabby['pattern']]
         filtered = deepcopy(possible_prefixes)
         try:
-            filtered = self.filter(filtered, self.used_prefixes, self.all_prefixes['filter_for'])
+            filtered = self.filter(filtered, self.used_prefixes, self.all_prefixes['filter_out'])
         except:
             filtered = self.filter(filtered, self.used_prefixes, [])
 
@@ -379,7 +379,7 @@ class Namer():
         
         filtered = deepcopy(possible_prefixes)
         try:
-            filtered = self.filter(filtered, self.used_prefixes, self.all_prefixes['filter_for'])
+            filtered = self.filter(filtered, self.used_prefixes, self.all_prefixes['filter_out'])
         except:
             filtered = self.filter(filtered, self.used_prefixes, [])
 
@@ -772,7 +772,7 @@ class Namer():
             
         return self.tabby(params[0], params[1], params[2], params[3])
 
-    def golden(self, pattern):
+    def golden(self, params):
         if params[4]:
             #babies don't have points
             if self.moons == 0 and 'C' not in self.genotype.pointgene:
@@ -841,7 +841,7 @@ class Namer():
         
         filtered = deepcopy(possible_prefixes)
         try:
-            filtered = self.filter(filtered, self.used_prefixes, self.all_prefixes['filter_for'])
+            filtered = self.filter(filtered, self.used_prefixes, self.all_prefixes['filter_out'])
         except:
             filtered = self.filter(filtered, self.used_prefixes, [])
 

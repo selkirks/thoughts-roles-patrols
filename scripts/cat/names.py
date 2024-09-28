@@ -249,8 +249,7 @@ class Name:
 
         # Add possible prefix categories to list.
         possible_prefix_categories = []
-        if colour in self.names_dict["colour_prefixes"]:
-            possible_prefix_categories.append(self.names_dict["colour_prefixes"][choice(colours)])
+        possible_prefix_categories.append(self.names_dict["colour_prefixes"][random.choice(colours)])
         if biome is not None and biome in self.names_dict["biome_prefixes"]:
             possible_prefix_categories.append(self.names_dict["biome_prefixes"][biome])
 
