@@ -279,9 +279,9 @@ class Pregnancy_Events:
                         fever = True
 
             clan.pregnancy_data[cat.ID] = {
-                "second_parent": ids if second_parent and not surrogate else None,
+                "second_parent": ids if other_cat and not surrogate else None,
                 "affair_partner" : affair_partner if affair_partner else None,
-                "surrogate" : ids if second_parent and surrogate else None,
+                "surrogate" : ids if other_cat and surrogate else None,
                 "moons": 0,
                 "amount": 0,
                 "fever_coat": fever
