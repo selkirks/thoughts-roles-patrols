@@ -428,7 +428,8 @@ class Pregnancy_Events:
                             outside_parent[0].get_injured("recovering from birth", event_triggered=True)
                     cats_involved = [cat.ID]
                     for par in outside_parent:
-                        cats_involved.append(par.ID)
+                        if par:
+                            cats_involved.append(par.ID)
                     for kit in kits:
                         cats_involved.append(kit.ID)
                     game.cur_events_list.append(Single_Event(print_event, "birth_death", cats_involved))
