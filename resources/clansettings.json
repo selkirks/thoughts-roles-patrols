@@ -88,7 +88,7 @@
       ],
       "new prefixes": [
         "Use new prefixes",
-        "New prefixes will be generated from a new pelt-based lists",
+        "New prefixes will be generated from a new pelt-based list",
         true,
         ["modded names", true]
       ],
