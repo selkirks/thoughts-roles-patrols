@@ -913,7 +913,7 @@ class Pregnancy_Events:
         allow_affair: bool,
         same_sex_birth: bool,
         same_sex_adoption: bool,
-        surrogates: bool,
+        surrogates: bool=False,
     ):
         """
         This checks to see if the chosen second parent and CAT can have kits. It assumes CAT can have kits.
