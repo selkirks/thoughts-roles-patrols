@@ -371,13 +371,17 @@ class Pregnancy_Events:
                     backkit = 'outsider_roots2'
 
                 if surrogate and not outside_parent[0].outside:
-                    print_event = f"{cat.name} thanks {outside_parent[0].name} for being a surrogate to a litter."
                     cats_involved = [cat.ID]
                     for par in outside_parent:
                         cats_involved.append(par.ID)
-                    game.cur_events_list.append(Single_Event(print_event, "birth_death", cats_involved))
                     
                     pregnant_cat = outside_parent[0]
+                    text = choice(Pregnancy_Events.PREGNANT_STRINGS["announcement"])
+                    text += choice(Pregnancy_Events.PREGNANT_STRINGS[f"{severity[0]}_severity"])
+                    text = event_text_adjust(Cat, text, main_cat=pregnant_cat, clan=clan)
+                    text += f" {cat.name} thanks {outside_parent[0].name} for being a surrogate."
+                    game.cur_events_list.append(Single_Event(text, "birth_death", cats_involved))
+                    
                     fever = False
                     ids = [cat.ID]
                     if clan.clan_settings['multisire']:
