@@ -161,6 +161,7 @@ class Namer():
 
         if (phenotype.colour in ['white', 'albino'] or 
             (phenotype.maincolour == 'white' and not phenotype.patchmain) or
+            (genotype.white[1] in ['ws', 'wt'] and genotype.whitegrade == 5) or
             (genotype.tortiepattern == ['revCRYPTIC'] and genotype.brindledbi) or 
             (genotype.dilute[0] == 'd' and genotype.pinkdilute[0] == 'dp' and 
                 (('dove' in phenotype.colour and genotype.saturation < 2) or 
@@ -232,7 +233,7 @@ class Namer():
 
             
 
-        if (genotype.white[1] in ['ws', 'wt'] and genotype.whitegrade > 7) or (self.moons < 6 and genotype.karp[0] == 'K'):
+        if (genotype.white[1] in ['ws', 'wt'] and genotype.whitegrade > 2) or (self.moons < 6 and genotype.karp[0] == 'K'):
             white = 'high'
         elif genotype.white[1] in ['ws', 'wt'] or (genotype.white[0] in ['ws', 'wt'] and genotype.whitegrade > 4) or genotype.white[0] == 'wsal' or (self.moons > 12 and genotype.vitiligo) or genotype.karp[0] == 'K':
             white = 'mid'
