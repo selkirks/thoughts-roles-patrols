@@ -3512,7 +3512,7 @@ class Cat:
 
         sorted_specific_list = [
             check_cat
-            for check_cat in Cat.ordered_cat_list
+            for check_cat in Cat.all_cats_list
             if check_cat.dead == self.dead
             and check_cat.outside == self.outside
             and check_cat.df == self.df
