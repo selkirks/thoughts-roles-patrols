@@ -12,13 +12,24 @@
     "blotched": ["Mottle", "Ripple", "Smudge", "Whorl"],
     "spotted": ["Dapple", "Freckle", "Mottle", "Speckle", "Spotted"],
     "ticked": ["Dust"],
-    "tortie": ["Mottle", "Dapple", "Speckle", "Freckle", "Patch", "Splash", "Smudge", "Spotted"],
+    "tortie": [
+      "Mottle",
+      "Dapple",
+      "Speckle",
+      "Freckle",
+      "Patch",
+      "Splash",
+      "Smudge",
+      "Spotted"
+    ],
     "white_patches": ["Mottle", "Patch", "Smudge", "Splash", "Frost"],
-    "hairless" : [],
-    "shorthair" : [],
-    "mediumhair" : [],
-    "longhair" : [],
-    "any": ["Little", "Small", "Tiny", "Large", "Big", "Giant"]
+    "hairless": [],
+    "shorthair": [],
+    "mediumhair": [],
+    "longhair": [],
+    "small": ["Little", "Small", "Tiny"],
+    "big": ["Large", "Big", "Giant"],
+    "any": []
   },
   "black": {
     "plain": {

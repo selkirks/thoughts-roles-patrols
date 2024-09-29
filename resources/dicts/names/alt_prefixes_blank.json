@@ -8,8 +8,10 @@
     "white_patches": [],
     "hairless": [],
     "longhair": [],
-    "mediumhair" : [],
+    "mediumhair": [],
     "shorthair": [],
+    "small": [],
+    "big": [],
     "any": []
   },
   "black": {

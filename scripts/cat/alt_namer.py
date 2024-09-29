@@ -268,6 +268,16 @@ class Namer():
 
 
         possible_prefixes += self.all_prefixes['general']['any']
+        if self.moons < 6:
+            possible_prefixes += self.all_prefixes['general']['big']
+            possible_prefixes += self.all_prefixes['general']['small']
+            possible_prefixes += self.all_prefixes['general']['small']
+        else:
+            if self.genotype.shoulder_height > 11:
+                possible_prefixes += self.all_prefixes['general']['big']
+            elif self.genotype.shoulder_height < 9:
+                possible_prefixes += self.all_prefixes['general']['small']
+
         try:
             possible_prefixes += self.all_prefixes['general'][self.phenotype.length.replace('haired', 'hair')]
         except:
@@ -277,7 +287,7 @@ class Namer():
         if tortie:
             possible_prefixes += self.all_prefixes['general']['tortie']
         if tabby:
-            possible_prefixes += self.all_prefixes['general'][tabby]
+            possible_prefixes += self.all_prefixes['general'][tabby.replace('shaded', 'ticked')]
         filtered = deepcopy(possible_prefixes)
         try:
             filtered = self.filter(filtered, self.used_prefixes, self.all_prefixes['filter_out'])
@@ -304,7 +314,7 @@ class Namer():
         except:
             possible_prefixes = possible_prefixes['regular']
 
-        if tabby['type'] != 'silver':
+        if isinstance(possible_prefixes, dict):
             possible_prefixes = possible_prefixes[white + '_white']
         
         try:
@@ -325,6 +335,16 @@ class Namer():
         
         possible_prefixes += extra_prefixes
         possible_prefixes += self.all_prefixes['general']['any']
+        if self.moons < 6:
+            possible_prefixes += self.all_prefixes['general']['big']
+            possible_prefixes += self.all_prefixes['general']['small']
+            possible_prefixes += self.all_prefixes['general']['small']
+        else:
+            if self.genotype.shoulder_height > 11:
+                possible_prefixes += self.all_prefixes['general']['big']
+            elif self.genotype.shoulder_height < 9:
+                possible_prefixes += self.all_prefixes['general']['small']
+
         try:
             possible_prefixes += self.all_prefixes['general'][self.phenotype.length.replace('haired', 'hair')]
         except:
@@ -371,6 +391,16 @@ class Namer():
                 pass
         
         possible_prefixes += self.all_prefixes['general']['any']
+        if self.moons < 6:
+            possible_prefixes += self.all_prefixes['general']['big']
+            possible_prefixes += self.all_prefixes['general']['small']
+            possible_prefixes += self.all_prefixes['general']['small']
+        else:
+            if self.genotype.shoulder_height > 11:
+                possible_prefixes += self.all_prefixes['general']['big']
+            elif self.genotype.shoulder_height < 9:
+                possible_prefixes += self.all_prefixes['general']['small']
+
         try:
             possible_prefixes += self.all_prefixes['general'][self.phenotype.length.replace('haired', 'hair')]
         except:
