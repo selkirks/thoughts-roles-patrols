@@ -368,9 +368,15 @@ class Namer():
     def point(self, base, tortie, point, white):
         if white in ['mid', 'high']:
             if white == 'high' and random() < 0.75:
-                return self.solid(base, tortie, '', 'high')
+                if base in ['ginger', 'cream']:
+                    return self.tabby(base, tortie, {pattern: 'general', type: 'silver'}, 'high')
+                else:
+                    return self.solid(base, tortie, '', 'high')
             elif random() < 0.5:
-                return self.solid(base, tortie, '', 'high')
+                if base in ['ginger', 'cream']:
+                    return self.tabby(base, tortie, {pattern: 'general', type: 'silver'}, 'high')
+                else:
+                    return self.solid(base, tortie, '', 'high')
 
         try:
             possible_prefixes = self.all_prefixes[base]['tortie' if tortie else 'plain']['point']
