@@ -77,7 +77,7 @@
     "season": ["greenleaf","leaf-fall"],
     "sub_type": ["accessory"],
     "weight": 20,
-    "event_text": "m_c plucks a few marigolds from a nearby flower patch. {PRONOUN/m_c/subject} {VERB/m_c/wears/wear} it with poise.",
+    "event_text": "m_c plucks a few marigolds from a nearby flower patch. {PRONOUN/m_c/subject/CAP} {VERB/m_c/wears/wear} it with poise.",
     "new_accessory": ["MARIGOLD"],
     "m_c": {
       "status": ["any"],
@@ -184,7 +184,7 @@
     "season": ["newleaf","leaf-fall"],
     "sub_type": ["accessory"],
     "weight": 20,
-    "event_text": "m_c plucks a few pristine white flowers from the camp's nearby frangipani bush. {PRONOUN/m_c/subject} {VERB/m_c/wears/wear} it with geniune joy, brighter than the beachy sun.",
+    "event_text": "m_c plucks a few pristine white flowers from the camp's nearby frangipani bush. {PRONOUN/m_c/subject/CAP} {VERB/m_c/wears/wear} it with genuine joy, brighter than the beachy sun.",
     "new_accessory": ["FRANGIPANI"],
     "m_c": {
       "status": ["any"],

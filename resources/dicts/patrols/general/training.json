@@ -11770,7 +11770,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The patrol doesn't see the cracks, and r_c falls through. {PRONOUN/r_c/subject} manage to survive but have water in {PRONOUN/r_c/poss} lungs.",
+                "text": "The patrol doesn't see the cracks, and r_c falls through. {PRONOUN/r_c/subject/CAP} {VERB/r_c/manage/manages} to survive but have water in {PRONOUN/r_c/poss} lungs.",
                 "exp": 0,
                 "weight": 20,
                 "injury": [

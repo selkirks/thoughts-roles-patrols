@@ -4440,7 +4440,7 @@
                 "herbs": ["random_herbs"]
             },
             {
-                "text": "s_c's tail lashes in anger, hating that {PRONOUN/p_l/subject} are so distrubed by a dream. {PRONOUN/p_l/subject} might be a simple medcat, but {PRONOUN/p_l/subject} still want to unleash {PRONOUN/p_l/poss} anger, so {PRONOUN/p_l/subject} steal herbs from o_c_n's territory.",
+                "text": "s_c's tail lashes in anger, hating that {PRONOUN/s_c/subject} {VERB/s_c/are/is} so distrubed by a dream. {PRONOUN/s_c/subject/CAP} might be a simple medcat, but {PRONOUN/s_c/subject} still {VERB/s_c/want/wants} to unleash {PRONOUN/s_c/poss} anger, so {PRONOUN/s_c/subject} {VERB/s_c/steal/steals} herbs from o_c_n's territory.",
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": ["bloodthirsty"],
@@ -4490,7 +4490,7 @@
                 ]
             },
             {
-                "text": "s_c's tail lashes in anger, hating that {PRONOUN/p_l/subject} are so distrubed by a dream. {PRONOUN/p_l/subject} might be a simple medcat, but {PRONOUN/p_l/subject} still want to unleash {PRONOUN/p_l/poss} anger, so {PRONOUN/p_l/subject} steal herbs from o_c_n's territory, however {PRONOUN/p_l/subject} {VERB/p_l/are/is} caught by o_c_n and chased out.",
+                "text": "s_c's tail lashes in anger, hating that {PRONOUN/s_c/subject} {VERB/s_c/are/is} so distrubed by a dream. {PRONOUN/s_c/subject/CAP} might be a simple medcat, but {PRONOUN/s_c/subject} still {VERB/s_c/want/wants} to unleash {PRONOUN/s_c/poss} anger, so {PRONOUN/s_c/subject} {VERB/s_c/steal/steals} herbs from o_c_n's territory. However {PRONOUN/s_c/subject} {VERB/s_c/are/is} caught by o_c_n and chased out.",
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": ["bloodthirsty"],

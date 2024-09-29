@@ -3826,7 +3826,7 @@
     "season": ["any"],
     "sub_type": ["accessory"],
     "weight": 20,
-    "event_text": "m_c waltzes onto camp with a squirrel following suit! {PRONOUN/m_c/subject} snap at any cat who attempts to snap at the poor thing, and m_c proudly states that it's {PRONOUN/m_c/poss} new pet.",
+    "event_text": "m_c waltzes onto camp with a squirrel following suit! {PRONOUN/m_c/subject/CAP} {VERB/m_c/growl/growls} at any cat who attempts to snap at the poor thing, and m_c proudly states that it's {PRONOUN/m_c/poss} new pet.",
     "new_accessory": ["GRAY SQUIRREL", "RED SQUIRREL", "INDIAN GIANT SQUIRREL"],
     "m_c": {
       "age": ["any"],

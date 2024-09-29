@@ -516,7 +516,7 @@
     "sub_type": ["accessory"],
     "season": ["any"],
     "weight": 20,
-    "event_text": "r_c's eyes dilate as {PRONOUN/r_c/subject} {VERB/r_c/hunches/hunch} down to watch acc_singular nibble at a fat seed! m_c stops r_c before {PRONOUN/r_c/subject} pounce, and manages to.. befriend the acc_singular! r_c rolls {PRONOUN/r_c/poss} eyes, grumbling about wasted food.",
+    "event_text": "r_c's eyes dilate as {PRONOUN/r_c/subject} {VERB/r_c/hunch/hunches} down to watch acc_singular nibble at a fat seed! m_c stops r_c before {PRONOUN/r_c/subject} {VERB/r_c/pounce/pounces}, and manages to... befriend the acc_singular! r_c rolls {PRONOUN/r_c/poss} eyes, grumbling about wasted food.",
     "new_accessory": ["WHITE MOUSE", "BLACK MOUSE", "GRAY MOUSE", "BROWN MOUSE", "RAT"],
     "m_c": {
       "age": ["any"],

@@ -157,7 +157,7 @@
     "season": ["greenleaf","leaf-fall"],
     "sub_type": ["accessory"],
     "weight": 20,
-    "event_text": "m_c plucks a few marigolds from a nearby flower patch. {PRONOUN/m_c/subject} {VERB/m_c/wears/wear} it with poise.",
+    "event_text": "m_c plucks a few marigolds from a nearby flower patch. {PRONOUN/m_c/subject/CAP} {VERB/m_c/wears/wear} it with poise.",
     "new_accessory": ["MARIGOLD"],
     "m_c": {
       "age": ["any"],
@@ -329,7 +329,7 @@
     "season": ["any"],
     "sub_type": ["accessory"],
     "weight": 20,
-    "event_text": "r_c's eyes dilate as {PRONOUN/r_c/subject} {VERB/r_c/hunches/hunch} down to watch a mouse nibble at a fat seed! m_c stops r_c before {PRONOUN/r_c/subject} pounce, and manages to.. befriend the mouse! r_c rolls {PRONOUN/r_c/poss} eyes, grumbling about wasted food.",
+    "event_text": "r_c's eyes dilate as {PRONOUN/r_c/subject} {VERB/r_c/hunch/hunches} down to watch a mouse nibble at a fat seed! m_c stops r_c before {PRONOUN/r_c/subject} {VERB/r_c/pounce/pounces}, and manages to... befriend the mouse! r_c rolls {PRONOUN/r_c/poss} eyes, grumbling about wasted food.",
     "new_accessory": ["WHITE MOUSE", "BLACK MOUSE", "GRAY MOUSE", "BROWN MOUSE"],
     "m_c": {
       "age": ["any"],

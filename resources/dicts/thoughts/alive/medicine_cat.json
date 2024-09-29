@@ -127,10 +127,10 @@
         "id": "silly_medicine_cat",
         "thoughts": [
             "Is a goofy goober",
-            "i have hired r_c to stare at you.",
-            "Politely steals r_cs organs",
-            "Its time to eat rocks!! they're healthy, r_c trust me, trust me r_c EAT THE ROCK NOW",
-            "Just interpreted an omen in the stupidest way ever. thyere trying their best dont make fun of th"
+            "I have hired r_c to stare at you.",
+            "Politely steals r_c's organs",
+            "Its time to eat rocks!! They're healthy, r_c trust me, trust me r_c, EAT THE ROCK NOW",
+            "Just interpreted an omen in the stupidest way ever. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} trying {PRONOUN/m_c/poss} best dont make fun of {PRONOUN/m_c/subject}"
         ],
         "main_trait_constraint": [
             "silly"
@@ -247,7 +247,7 @@
         {
             "id": "annoying_medicine_cat",
             "thoughts": [
-                "HEY r_c GUESS WHAT I GOT A PROPHECY I GOT  APROPHECY GUESS WHAT IT IS haahaa!! i was just joking!! I did not get a prophecy HEEHEE"
+                "HEY r_c GUESS WHAT I GOT A PROPHECY I GOT A PROPHECY GUESS WHAT IT IS haahaa!! I was just joking!! I did not get a prophecy HEEHEE"
             ],
             "main_trait_constraint": [
                 "annoying"
