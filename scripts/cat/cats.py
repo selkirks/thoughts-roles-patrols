@@ -3507,9 +3507,6 @@ class Cat:
 
         :param status: Allows you to constrain the list by status
         """
-        if len(Cat.ordered_cat_list) == 0:
-            Cat.ordered_cat_list = Cat.all_cats_list
-
         sorted_specific_list = [
             check_cat
             for check_cat in Cat.all_cats_list
