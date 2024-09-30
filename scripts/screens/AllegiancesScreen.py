@@ -2,27 +2,27 @@ import pygame
 import pygame_gui
 
 from scripts.cat.cats import Cat
-from scripts.game_structure.game_essentials import game, screen_x, screen_y, MANAGER
-from scripts.game_structure.ui_elements import (
-    UISpriteButton,
-    UIImageButton,
-    UITextBoxTweaked, 
-    AllegiancesCat
-)
+from scripts.game_structure.game_essentials import game
+from scripts.game_structure.ui_elements import AllegiancesCat
+from scripts.game_structure.screen_settings import MANAGER
 from scripts.utility import (
-    get_text_box_theme, 
-    get_button_theme,
-    scale,
-    get_alive_status_cats,
-    shorten_text_to_fit,
+    get_text_box_theme,
+    ui_scale,
     get_alive_clan_queens,
+    ui_scale_offset,
 )
 from .Screens import Screens
-from ..conditions import get_amount_cat_for_one_medic, medical_cats_condition_fulfilled
 
 
 class AllegiancesScreen(Screens):
     allegiance_list = []
+
+    def __init__(self, name=None):
+        super().__init__(name)
+        self.names_boxes = None
+        self.ranks_boxes = None
+        self.scroll_container = None
+        self.heading = None
 
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
@@ -34,15 +34,17 @@ class AllegiancesScreen(Screens):
                 self.mute_button_pressed(event)
 
     def on_use(self):
-        pass
+        super().on_use()
 
     def screen_switches(self):
+        super().screen_switches()
         # Heading
         self.heading = pygame_gui.elements.UITextBox(
-            f"{game.clan.name}Clan Allegiances",
-            scale(pygame.Rect((390, 230), (800, 80))),
-            object_id=get_text_box_theme("#text_box_34_horizcenter"),
+            f"<b>{game.clan.name}Clan Allegiances</b>",
+            ui_scale(pygame.Rect((0, 115), (400, 40))),
+            object_id=get_text_box_theme("#text_box_34_horizcenter_vertcenter"),
             manager=MANAGER,
+            anchors={"centerx": "centerx"},
         )
 
         # Set Menu Buttons.
@@ -53,7 +55,7 @@ class AllegiancesScreen(Screens):
         allegiance_list = self.get_allegiances_text()
 
         self.scroll_container = pygame_gui.elements.UIScrollingContainer(
-            scale(pygame.Rect((100, 330), (1430, 1000))),
+            ui_scale(pygame.Rect((50, 165), (715, 470))),
             allow_scroll_x=False,
             manager=MANAGER,
         )
@@ -63,36 +65,53 @@ class AllegiancesScreen(Screens):
         self.names_buttons = []
         y_pos = 0
         for x in allegiance_list:
-            #print(x)
-            if(x[0] != ""):
-                self.ranks_boxes.append(pygame_gui.elements.UITextBox(x[0],
-                                   scale(pygame.Rect((0, y_pos), (300, -1))),
-                                   object_id=get_text_box_theme("#text_box_30_horizleft"),
-                                   container=self.scroll_container, manager=MANAGER))
-                self.ranks_boxes[-1].disable()
-            offset = 10
-            x_pos = 290
-            if game.settings["fullscreen"]:
-                offset = screen_y / 225
-                x_pos = 293
-            self.names_buttons.append(AllegiancesCat(scale(pygame.Rect((x_pos, y_pos+offset), (1060, -1))),
+            self.ranks_boxes.append(
+                pygame_gui.elements.UITextBox(
+                    x[0],
+                    ui_scale(pygame.Rect((0, 0), (150, -1))),
+                    object_id=get_text_box_theme("#text_box_30_horizleft"),
+                    container=self.scroll_container,
+                    manager=MANAGER,
+                    anchors={"top_target": self.names_boxes[-1]}
+                    if len(self.names_boxes) > 0
+                    else None,
+                )
+            )
+            self.ranks_boxes[-1].disable()
+            offset = 7
+            self.names_buttons.append(AllegiancesCat(
+                                    pygame.Rect(
+                                    (offset, -self.ranks_boxes[-1].get_relative_rect()[3]+offset),
+                                    ui_scale_offset((565, -1))),
                                     x[1],
-                                    object_id=get_button_theme(),
-                                    container=self.scroll_container, manager=MANAGER))
+                                    object_id=get_text_box_theme("#allegiance"),
+                                    container=self.scroll_container, manager=MANAGER,
+                                    anchors={
+                                        "top_target": self.ranks_boxes[-1],
+                                        "left_target": self.ranks_boxes[-1],
+                                        "left": "left",
+                                        "right": "right",
+                                    }))
             self.names_buttons[-1].set_cat_id(x[2])
-            self.names_boxes.append(pygame_gui.elements.UITextBox(x[3],
-                                scale(pygame.Rect((300, y_pos), (1060, -1))),
-                                object_id=get_text_box_theme("#text_box_30_horizleft"),
-                                container=self.scroll_container, manager=MANAGER))
+            self.names_boxes.append(
+                pygame_gui.elements.UITextBox(
+                    x[3],
+                    pygame.Rect(
+                        (0, -self.ranks_boxes[-1].get_relative_rect()[3]),
+                        ui_scale_offset((565, -1)),
+                    ),
+                    object_id=get_text_box_theme("#text_box_30_horizleft"),
+                    container=self.scroll_container,
+                    manager=MANAGER,
+                    anchors={
+                        "top_target": self.ranks_boxes[-1],
+                        "left_target": self.ranks_boxes[-1],
+                        "left": "left",
+                        "right": "right",
+                    },
+                )
+            )
             self.names_boxes[-1].disable()
-            
-            #self.names_boxes[-1].process_event(pygame_gui.UI_ELEMENT_PRESSED)
-            
-            y_pos += 1400 * self.names_boxes[-1].get_relative_rect()[3] / screen_y
-
-        self.scroll_container.set_scrollable_area_dimensions(
-            (1360 / 1600 * screen_x, y_pos / 1400 * screen_y)
-        )
 
     def exit_screen(self):
         for x in self.ranks_boxes:
@@ -108,16 +127,19 @@ class AllegiancesScreen(Screens):
         del self.scroll_container
         self.heading.kill()
         del self.heading
-            
-    def generate_one_entry(self, cat, extra_details=""):
-        """Extra Details will be placed after the cat description, but before the apprentice (if they have one. )"""
+
+    @staticmethod
+    def generate_one_entry(cat, extra_details=""):
+        """Extra Details will be placed after the cat description, but before the apprentice (if they have one)."""
         output = f"{str(cat.name).upper()} - {cat.describe_cat()} {extra_details}"
 
         if len(cat.apprentice) > 0:
-            if len(cat.apprentice) == 1:
-                output += "\n      APPRENTICE: "
-            else:
-                output += "\n      APPRENTICES: "
+
+            output += (
+                "\n      APPRENTICE: "
+                if len(cat.apprentice) == 1
+                else "\n      APPRENTICES: "
+            )
             output += ", ".join(
                 [
                     str(Cat.fetch_cat(i).name).upper()
