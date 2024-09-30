@@ -83,7 +83,7 @@ class Pregnancy(unittest.TestCase):
 
         # when
         check_if_can_have_kits.return_value = True
-        Pregnancy_Events.handle_zero_moon_pregnant(cat, None, clan)
+        Pregnancy_Events.handle_zero_moon_pregnant(cat, None, False, clan)
 
         # then
         self.assertIn(cat.ID, clan.pregnancy_data.keys())
@@ -100,7 +100,7 @@ class Pregnancy(unittest.TestCase):
         cat2 = [cat2]
         # when
         check_if_can_have_kits.return_value = True
-        Pregnancy_Events.handle_zero_moon_pregnant(cat1, cat2, clan)
+        Pregnancy_Events.handle_zero_moon_pregnant(cat1, cat2, False, clan)
 
         # then
         self.assertIn(cat1.ID, clan.pregnancy_data.keys())

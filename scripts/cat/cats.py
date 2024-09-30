@@ -4105,8 +4105,8 @@ class Personality:
 
 
 # Creates a random cat
-def create_cat(status, moons=None, biome=None):
-    new_cat = Cat(status=status, biome=biome)
+def create_cat(status, moons=None, biome=None, kittypet=False):
+    new_cat = Cat(status=status, biome=biome, kittypet=kittypet)
 
     if moons is not None:
         new_cat.moons = moons
@@ -4143,13 +4143,12 @@ def create_example_cats():
 
     for cat_index in range(12):
         if cat_index in warrior_indices:
-            game.choose_cats[cat_index] = create_cat(status="warrior")
+            game.choose_cats[cat_index] = create_cat(status="warrior", kittypet=True)
         else:
             random_status = choice(
                 ["kitten", "apprentice", "warrior", "warrior", "elder"]
             )
-            game.choose_cats[cat_index] = create_cat(status=random_status)
-        game.choose_cats[cat_index].genetic_conditions()
+            game.choose_cats[cat_index] = create_cat(status=random_status, kittypet=True)
 
 
 # CAT CLASS ITEMS

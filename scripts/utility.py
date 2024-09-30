@@ -1791,7 +1791,7 @@ def pronoun_repl(m, cat_pronouns_dict, raise_exception=False):
     exception, and will use a simple replacement "error" """
 
     # Add protection about the "insert" sometimes used
-    if m.group(0) == "{insert}":
+    if m.group(0) in ["{insert}", "{surrogate}"]:
         return m.group(0)
 
     inner_details = m.group(1).split("/")
@@ -3613,10 +3613,10 @@ def generate_sprite(
 
         if int(cat_sprite) == 20 and cat.moons > 0:
             age = 0
-        elif int(cat_sprite) < 3 and cat.moons > 6:
+        elif int(cat_sprite) < 3 and cat.moons > 5:
             age = 4
-        elif int(cat_sprite) < 6 and cat.moons > 12:
-            age = 11
+        elif int(cat_sprite) < 6 and cat.moons > 11:
+            age = 10
         elif (int(cat_sprite == 19) or int(cat_sprite) == 17) and cat.moons > 12:
             age = 6
         gensprite.blit(GenSprite(genotype, phenotype, age), (0, 0))
