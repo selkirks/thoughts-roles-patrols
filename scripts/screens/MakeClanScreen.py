@@ -1352,7 +1352,7 @@ class MakeClanScreen(Screens):
                                                                             , manager=MANAGER)
         self.elements['permi_warning'] = pygame_gui.elements.UITextBox(
             "Your Clan count is permanent and cannot be changed after Clan creation.",
-            scale(pygame.Rect((200, 1162), (1200, 80))),
+            ui_scale(pygame.Rect((200, 1162), (1200, 80))),
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
             manager=MANAGER
         )
