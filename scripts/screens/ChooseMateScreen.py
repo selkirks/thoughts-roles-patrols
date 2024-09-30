@@ -1197,7 +1197,7 @@ class ChooseMateScreen(Screens):
                        and (not self.have_kits_only 
                             or ('infertility' not in i.permanent_condition and 
                             'infertility' not in self.the_cat.permanent_condition and 
-                            ('Y' not in self.the_cat.genotype.sexgene or self.the_cat.genotype.gender != 'molly')))
+                            ('Y' not in self.the_cat.genotype.sexgene or self.the_cat.genotype.sex != 'molly')))
                        and (not self.have_kits_only 
                             or game.clan.clan_settings["same sex birth"]
                             or xor('Y' in i.genotype.sexgene, 'Y' in self.the_cat.genotype.sexgene))]

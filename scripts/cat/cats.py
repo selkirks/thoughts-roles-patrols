@@ -215,15 +215,15 @@ class Cat:
         else:
             self.genotype.Generator(special=self.gender)
         if(randint(1, game.config['genetics_config']['intersex']) == 1) or (self.genotype.chimera and xor('Y' in self.genotype.sexgene, 'Y' in self.genotype.chimerageno.sexgene) and randint(1, round(game.config['genetics_config']['intersex']/4)) == 1):
-            self.genotype.gender = "intersex"
+            self.genotype.sex = "intersex"
             if(randint(1, 25) == 1 and 'Y' in self.genotype.sexgene):
-                self.genotype.gender = 'molly'
+                self.genotype.sex = 'molly'
 
         self.phenotype = Phenotype(self.genotype)
-        self.phenotype.PhenotypeOutput(self.genotype.gender)
+        self.phenotype.PhenotypeOutput(self.genotype.sex)
         if self.genotype.chimerageno:
             self.chimerapheno = Phenotype(self.genotype.chimerageno)
-            self.chimerapheno.PhenotypeOutput(self.genotype.chimerageno.gender)
+            self.chimerapheno.PhenotypeOutput(self.genotype.chimerageno.sex)
 
         self.pelt = pelt if pelt else Pelt(self.genotype, self.phenotype)
 
@@ -618,7 +618,7 @@ class Cat:
 
         # sex!?!??!?!?!??!?!?!?!??
 
-        self.gender = self.genotype.gender
+        self.gender = self.genotype.sex
         self.g_tag = self.gender_tags[self.gender]
 
         """if self.genderalign == "":
