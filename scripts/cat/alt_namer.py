@@ -18,11 +18,6 @@ class Namer():
         if genotype:
             params = self.parse_chimera() if genotype.chimera else self.get_categories(genotype, phenotype)
 
-            print(params)
-            # print(genotype.ShowGenes())
-            # print(genotype.tortiepattern)
-            # print(genotype.specialred)
-
             if params[0] in ['white', 'silver shaded'] or (params[3] == 'high' and random() < 0.2):
                 return self.white(params[0])
             elif params[0] == 'black':
@@ -370,12 +365,12 @@ class Namer():
         if white in ['mid', 'high']:
             if white == 'high' and random() < 0.75:
                 if base in ['ginger', 'cream']:
-                    return self.tabby(base, tortie, {pattern: 'general', type: 'silver'}, 'high')
+                    return self.tabby(base, tortie, {'pattern': 'general', 'type': 'silver'}, 'high')
                 else:
                     return self.solid(base, tortie, '', 'high')
             elif random() < 0.5:
                 if base in ['ginger', 'cream']:
-                    return self.tabby(base, tortie, {pattern: 'general', type: 'silver'}, 'high')
+                    return self.tabby(base, tortie, {'pattern': 'general', 'type': 'silver'}, 'high')
                 else:
                     return self.solid(base, tortie, '', 'high')
 
