@@ -61,8 +61,8 @@ def get_alive_clan_queens(living_cats):
         if (
             len(parents) == 1
             or len(parents) > 2
-            or all(i.sex == "tom" for i in parents)
-            or parents[0].sex == "molly"
+            or all(i.gender == "tom" for i in parents)
+            or parents[0].gender == "molly"
         ):
             if parents[0].ID in queen_dict:
                 queen_dict[parents[0].ID].append(cat)
