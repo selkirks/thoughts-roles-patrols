@@ -1347,7 +1347,7 @@ class MakeClanScreen(Screens):
         text_box = image_cache.load_image(
             'resources/images/game_mode_text_box.png').convert_alpha()
 
-        self.elements['game_mode_background'] = pygame_gui.elements.UIImage(scale(pygame.Rect((650, 260), (798, 922))),
+        self.elements['game_mode_background'] = pygame_gui.elements.UIImage(ui_scale(pygame.Rect((650, 260), (798, 922))),
                                                                             pygame.transform.scale(text_box, (798, 922))
                                                                             , manager=MANAGER)
         self.elements['permi_warning'] = pygame_gui.elements.UITextBox(
@@ -1358,22 +1358,22 @@ class MakeClanScreen(Screens):
         )
 
         # Create all the elements.
-        self.elements['classic_mode_button'] = UIImageButton(scale(pygame.Rect((218, 480), (264, 60))), "",
+        self.elements['classic_mode_button'] = UIImageButton(ui_scale(pygame.Rect((218, 480), (264, 60))), "",
                                                              object_id="#classic_mode_button",
                                                              manager=MANAGER)
-        self.elements['expanded_mode_button'] = UIImageButton(scale(pygame.Rect((188, 640), (324, 68))), "",
+        self.elements['expanded_mode_button'] = UIImageButton(ui_scale(pygame.Rect((188, 640), (324, 68))), "",
                                                               object_id="#expanded_mode_button",
                                                               manager=MANAGER)
-        self.elements['previous_step'] = UIImageButton(scale(pygame.Rect((506, 1240), (294, 60))), "",
+        self.elements['previous_step'] = UIImageButton(ui_scale(pygame.Rect((506, 1240), (294, 60))), "",
                                                        object_id="#previous_step_button",
                                                        manager=MANAGER)
-        self.elements['next_step'] = UIImageButton(scale(pygame.Rect((800, 1240), (294, 60))), "",
+        self.elements['next_step'] = UIImageButton(ui_scale(pygame.Rect((800, 1240), (294, 60))), "",
                                                    object_id="#next_step_button",
                                                    manager=MANAGER)
-        self.elements['mode_details'] = pygame_gui.elements.UITextBox("", scale(pygame.Rect((650, 320), (810, 922))),
+        self.elements['mode_details'] = pygame_gui.elements.UITextBox("", ui_scale(pygame.Rect((650, 320), (810, 922))),
                                                                       object_id="#text_box_30_horizleft_pad_40_40",
                                                                       manager=MANAGER)
-        self.elements['mode_name'] = pygame_gui.elements.UITextBox("", scale(pygame.Rect((850, 270), (400, 55))),
+        self.elements['mode_name'] = pygame_gui.elements.UITextBox("", ui_scale(pygame.Rect((850, 270), (400, 55))),
                                                                    object_id="#text_box_30_horizcenter_light",
                                                                    manager=MANAGER)
 

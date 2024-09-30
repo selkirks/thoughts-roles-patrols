@@ -52,7 +52,7 @@ class Screens:
         game.last_screen_forupdate = self.name
 
         # This keeps track of the last list-like screen for the back button on cat profiles
-        if self.name in ["camp screen", "list screen", "events screen"]:
+        if self.name in ["camp screen", "list screen", "events screen", "allegiances screen"]:
             game.last_screen_forProfile = self.name
 
         elif self.name not in [
