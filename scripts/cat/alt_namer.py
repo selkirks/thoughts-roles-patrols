@@ -255,12 +255,12 @@ class Namer():
 
     def solid(self, base, tortie, tabby, white):
         try:
-            possible_prefixes = self.all_prefixes[base]['tortie' if tortie else 'plain']['solid'][white + '_white']
+            possible_prefixes = deepcopy(self.all_prefixes[base]['tortie' if tortie else 'plain']['solid'][white + '_white'])
         except:
             if tabby == 'shaded' and base == 'yellow':
-                possible_prefixes = self.all_prefixes[base]['shaded'][white + '_white']
+                possible_prefixes = deepcopy(self.all_prefixes[base]['shaded'][white + '_white'])
             else:
-                possible_prefixes = self.all_prefixes[base]['solid'][white + '_white']
+                possible_prefixes = deepcopy(self.all_prefixes[base]['solid'][white + '_white'])
 
 
         possible_prefixes += self.all_prefixes['general']['any']
@@ -282,7 +282,7 @@ class Namer():
             possible_prefixes += self.all_prefixes['general']['white_patches']
         if tortie:
             possible_prefixes += self.all_prefixes['general']['tortie']
-        if tabby:
+        if tabby and white != 'high':
             possible_prefixes += self.all_prefixes['general'][tabby.replace('shaded', 'ticked')]
         filtered = deepcopy(possible_prefixes)
         try:
@@ -296,9 +296,9 @@ class Namer():
             return choice(possible_prefixes)
     def tabby(self, base, tortie, tabby, white):
         try:
-            possible_prefixes = self.all_prefixes[base]['tortie' if tortie else 'plain']['tabby'][tabby['pattern']]
+            possible_prefixes = deepcopy(self.all_prefixes[base]['tortie' if tortie else 'plain']['tabby'][tabby['pattern']])
         except:
-            possible_prefixes = self.all_prefixes[base]['tabby'][tabby['pattern']]
+            possible_prefixes = deepcopy(self.all_prefixes[base]['tabby'][tabby['pattern']])
 
         try:
             possible_prefixes = possible_prefixes[tabby['type']]
@@ -314,19 +314,24 @@ class Namer():
             possible_prefixes = possible_prefixes[white + '_white']
         
         try:
-            extra_prefixes = self.all_prefixes[base]['tortie' if tortie else 'plain']['tabby']['general']
+            extra_prefixes = deepcopy(self.all_prefixes[base]['tortie' if tortie else 'plain']['tabby']['general'])
         except:
-            extra_prefixes = self.all_prefixes[base]['general']
+            extra_prefixes = deepcopy(self.all_prefixes[base]['general'])
 
         try:
             extra_prefixes = extra_prefixes[tabby['type']]
+            if base in ['ginger', 'cream', 'blue', 'lilac', 'fawn'] and tabby['type'] == 'silver':
+                try:
+                    extra_prefixes += self.all_prefixes[base]['tortie' if tortie else 'plain']['tabby'][tabby['pattern']]['regular'][white + '_white']
+                except:
+                    extra_prefixes += self.all_prefixes[base]['tabby'][tabby['pattern']]['regular'][white + '_white']
         except:
             try:
                 extra_prefixes = extra_prefixes['regular']
             except:
                 pass
 
-        if tabby['type'] != 'silver':
+        if isinstance(extra_prefixes, dict):
             extra_prefixes = extra_prefixes[white + '_white']
         
         possible_prefixes += extra_prefixes
@@ -349,7 +354,7 @@ class Namer():
             possible_prefixes += self.all_prefixes['general']['white_patches']
         if tortie:
             possible_prefixes += self.all_prefixes['general']['tortie']
-        if tabby['pattern']:
+        if tabby['pattern'] and white != 'high':
             possible_prefixes += self.all_prefixes['general'][tabby['pattern']]
         filtered = deepcopy(possible_prefixes)
         try:
@@ -365,19 +370,19 @@ class Namer():
         if white in ['mid', 'high']:
             if white == 'high' and random() < 0.75:
                 if base in ['ginger', 'cream']:
-                    return self.tabby(base, tortie, {'pattern': 'general', 'type': 'silver'}, 'high')
+                    return self.tabby(base, tortie, {'pattern': 'ticked', 'type': 'silver'}, 'high')
                 else:
                     return self.solid(base, tortie, '', 'high')
             elif random() < 0.5:
                 if base in ['ginger', 'cream']:
-                    return self.tabby(base, tortie, {'pattern': 'general', 'type': 'silver'}, 'high')
+                    return self.tabby(base, tortie, {'pattern': 'ticked', 'type': 'silver'}, 'high')
                 else:
                     return self.solid(base, tortie, '', 'high')
 
         try:
-            possible_prefixes = self.all_prefixes[base]['tortie' if tortie else 'plain']['point']
+            possible_prefixes = deepcopy(self.all_prefixes[base]['tortie' if tortie else 'plain']['point'])
         except:
-            possible_prefixes = self.all_prefixes[base]['point']
+            possible_prefixes = deepcopy(self.all_prefixes[base]['point'])
         
         try:
             possible_prefixes = possible_prefixes[point]
