@@ -615,7 +615,8 @@ class Pregnancy_Events:
             surrogate.append(Cat.all_cats.get(surrogate_id[0]))
 
         if affair_partner_id:
-            other_cat = []
+            if not other_cat:
+                other_cat = []
             for id in affair_partner_id:
                 other_cat.append(Cat.all_cats.get(id))
                 affair_partners.append(Cat.all_cats.get(id))
