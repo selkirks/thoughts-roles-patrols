@@ -3624,7 +3624,10 @@ def generate_sprite(
                         gensprite.blit(special, (0, 0))
 
                 if(genotype.pinkdilute[0] == 'dp'):
-                    gensprite.blit(sprites.sprites['redpupils' + cat_sprite], (0, 0))
+                    pupils = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
+                    pupils.blit(sprites.sprites['redpupils' + cat_sprite], (0, 0))
+                    pupils.set_alpha(100)
+                    gensprite.blit(pupils, (0, 0))
             
             return gensprite
 

@@ -2426,7 +2426,7 @@ class ProfileScreen(Screens):
                 self.genelist = str(self.the_cat.phenotype.PhenotypeOutput()) + "\n" + str(self.the_cat.genotype.ShowGenes()) + "\n" + self.the_cat.genotype.FormatSomatic()
                 if(self.the_cat.genotype.chimera):
                     chimpheno = Phenotype(self.the_cat.genotype.chimerageno)
-                    self.genelist += "\n\n" + str(chimpheno.PhenotypeOutput(self.the_cat.genotype.chimerageno.gender)) + "\n" + str(self.the_cat.genotype.chimerageno.ShowGenes())
+                    self.genelist += "\n\n" + str(chimpheno.PhenotypeOutput(self.the_cat.genotype.chimerageno.sex)) + "\n" + str(self.the_cat.genotype.chimerageno.ShowGenes())
 
                 self.genetic_text_box = UITextBoxTweaked(
                         self.genelist,
