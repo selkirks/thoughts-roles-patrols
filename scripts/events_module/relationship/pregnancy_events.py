@@ -258,17 +258,18 @@ class Pregnancy_Events:
             # same sex birth enables all cats to get pregnant,
             # therefore the main cat will be used, regarding of gender
             ids = []
+            affair_partner = []
+            surrogates = []
             if other_cat:
                 for x in other_cat:
-                    ids.append(x.ID)
-            
-            affair_partner = []
-            if other_cat and not surrogate:
-                ids = []
-                for x in other_cat:
-                    ids.append(x.ID)
-                    if x.ID not in cat.mate:
+                    if surrogate:
+                        surrogates.append(x.ID)
+                    elif x.ID not in cat.mate:
                         affair_partner.append(x.ID) 
+                    else:
+                        ids.append(x.ID)
+            if surrogate:
+                ids = cat.mate
             
             fever = False
             if len(cat.illnesses) > 0:
@@ -279,9 +280,9 @@ class Pregnancy_Events:
                         fever = True
 
             clan.pregnancy_data[cat.ID] = {
-                "second_parent": ids if other_cat and not surrogate else None,
+                "second_parent": ids if other_cat else None,
                 "affair_partner" : affair_partner if affair_partner else None,
-                "surrogate" : ids if other_cat and surrogate else None,
+                "surrogate" : surrogates if surrogate else None,
                 "moons": 0,
                 "amount": 0,
                 "fever_coat": fever
@@ -443,6 +444,7 @@ class Pregnancy_Events:
             pregnant_cat = cat
             second_parent = other_cat
             affair_partner = []
+            surrogates = []
             if second_parent:
                 for x in second_parent:
                     if 'Y' in cat.genotype.sexgene and 'Y' not in x.genotype.sexgene:
@@ -453,10 +455,15 @@ class Pregnancy_Events:
 
                 ids = []
                 for x in second_parent:
-                    ids.append(x.ID)
-                    if x.ID not in pregnant_cat.mate:
-                        affair_partner.append(x.ID) 
-            
+                    if surrogate:
+                        surrogates.append(x.ID)
+                    else:
+                        ids.append(x.ID)
+                        if x.ID not in pregnant_cat.mate:
+                            affair_partner.append(x.ID) 
+                if surrogate:
+                    ids = cat.mate
+
             fever = False
             if len(pregnant_cat.illnesses) > 0:
                 for illness in pregnant_cat.illnesses:
@@ -466,9 +473,9 @@ class Pregnancy_Events:
                         fever = True
 
             clan.pregnancy_data[pregnant_cat.ID] = {
-                "second_parent": ids if second_parent and not surrogate else None,
+                "second_parent": ids if second_parent else None,
                 "affair_partner" : affair_partner if affair_partner else None,
-                "surrogate" : ids if second_parent and surrogate else None,
+                "surrogate" : surrogates if surrogate else None,
                 "moons": 0,
                 "amount": 0,
                 "fever_coat": fever
