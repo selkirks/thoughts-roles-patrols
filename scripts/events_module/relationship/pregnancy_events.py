@@ -263,7 +263,7 @@ class Pregnancy_Events:
                     ids.append(x.ID)
             
             affair_partner = []
-            if other_cat:
+            if other_cat and not surrogate:
                 ids = []
                 for x in other_cat:
                     ids.append(x.ID)
@@ -699,7 +699,7 @@ class Pregnancy_Events:
                 
 
 
-        kits = Pregnancy_Events.get_kits(kits_amount, pregnant_cat, other_cat if not surrogate or cat in other_cat else surrogate[0], clan, backkit=backkit)
+        kits = Pregnancy_Events.get_kits(kits_amount, pregnant_cat, other_cat if not surrogate or cat in other_cat else surrogate, clan, backkit=backkit)
         kits_amount = len(kits)
         for kit in kits:
             if FeverCoat:
