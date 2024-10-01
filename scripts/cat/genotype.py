@@ -1401,7 +1401,7 @@ class Genotype:
     def VerifyHeight(self):
         height = self.shoulder_height
         if self.munch[0] == 'Mk':
-            height *= 1.75
+            height *= 1.5
         height = round(height, 2)
 
         if height == 5.00:
@@ -1601,7 +1601,7 @@ class Genotype:
             self.shoulder_height = 16.00
         
         if self.munch[0] == 'Mk':
-            self.shoulder_height /= 1.75
+            self.shoulder_height /= 1.5
         self.shoulder_height = round(self.shoulder_height, 2)
     
     def GeneSort(self):
