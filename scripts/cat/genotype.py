@@ -1404,11 +1404,13 @@ class Genotype:
             height *= 1.5
         height = round(height, 2)
 
-        if height == 5.00:
+        if height <= 5.00:
+            height = 0
             if self.height_value >= self.height_indexes[0]:
                 self.height_value = randint(0, self.height_indexes[0]-1)
             return
-        elif height == 16.00:
+        elif height >= 16.00:
+            height = 0
             if self.height_value < self.height_indexes[8]:
                 self.height_value = randint(self.height_indexes[8], self.height_indexes[9]-1)
             return
