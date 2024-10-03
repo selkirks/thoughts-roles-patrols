@@ -3481,7 +3481,7 @@ def generate_sprite(
 
             nose_dict = {
                 'red' : 0,
-                'white' : 1,
+                'whit' : 1,
                 'tabby' : 2,
                 'black' : 3,
                 'chocolate' : 4,
@@ -3497,7 +3497,7 @@ def generate_sprite(
                 'beige' : 14
             }
 
-            if genotype.white[0] == 'W' or genotype.pointgene[0] == 'c':
+            if phenotype.maincolour == "white":
                 nose.blit(sprites.sprites['nosecolours1'], (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
             elif ('amber' not in phenotype.colour or genotype.agouti[0] != 'a') and ('red' in phenotype.maincolour or 'cream' in phenotype.maincolour or 'honey' in phenotype.maincolour or 'ivory' in phenotype.maincolour or 'apricot' in phenotype.maincolour):
                 nose.blit(sprites.sprites['nosecolours0'], (0, 0), special_flags=pygame.BLEND_RGBA_MULT)

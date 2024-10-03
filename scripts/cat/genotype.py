@@ -1028,6 +1028,8 @@ class Genotype:
             par2 = par2.genotype
         except:
             par2 = par2
+        if not par2:
+            par2 = Genotype(self.odds, self.ban_genes, 'chimera')
 
         threepars = False
         try:
