@@ -203,10 +203,10 @@ jobs:
       update_api_push_token: ${{ secrets.UPDATE_API_DEPLOY_KEY }}
     steps:
       - uses: actions/checkout@v4
-      - name: Setup Python 3.8 x86
+      - name: Setup Python 3.9 x86
         uses: actions/setup-python@v5
         with:
-          python-version: "3.8" # 3.8 to support older versions of Windows
+          python-version: "3.9" # 3.9 to support older versions of Windows
           architecture: "x86"
       - name: Install poetry
         uses: abatilo/actions-poetry@v3
@@ -325,10 +325,10 @@ jobs:
         uses: abatilo/actions-poetry@v3
         with:
           poetry-version: 1.4.1
-      - name: Setup Python 3.8 x64
+      - name: Setup Python 3.9 x64
         uses: actions/setup-python@v5
         with:
-          python-version: "3.8" # 3.8 to support older versions of Windows
+          python-version: "3.9" # 3.9 to support older versions of Windows
           architecture: "x64"
           cache: "poetry"
       - name: Set up cargo cache
