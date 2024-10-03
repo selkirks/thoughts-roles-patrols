@@ -758,7 +758,7 @@ class Pregnancy_Events:
 
         if other_cat:
             RandomChoice = choice(other_cat)
-            while RandomChoice == cat:
+            while RandomChoice.ID == cat.ID:
                 RandomChoice = choice(other_cat)
             for x in other_cat:
                 if x.dead:
@@ -972,7 +972,7 @@ class Pregnancy_Events:
             
             second_parent = second_parent_copy
             if len(second_parent) < 1:
-                return False, False
+                return False, False, second_parent
 
             second_parent_copy = []
 
