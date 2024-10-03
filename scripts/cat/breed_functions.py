@@ -347,6 +347,7 @@ class Breed_generator:
     
     @staticmethod
     def AmBurm(genoclass, special):
+        genoclass = Breed_generator.AllColours(genoclass, special)
         # FUR LENGTH
         
         genoclass.furLength = ["L", "L"]
@@ -364,17 +365,6 @@ class Breed_generator:
         for i in range(len(genoclass.sexgene)):
             if genoclass.sexgene[i] == 'O':
                 genoclass.sexgene[i] = 'o'
-        
-        # DILUTE
-
-        a = randint(1, 4)
-
-        if a == 1:
-            genoclass.dilute = ["D", "D"]
-        elif a == 4:
-            genoclass.dilute = ["d", "d"]
-        else:
-            genoclass.dilute = ["D", "d"]
 
         # WHITE
 
@@ -383,6 +373,10 @@ class Breed_generator:
         # ALBINO
 
         genoclass.pointgene = ["cb", "cb"]
+        if random() < 0.2:
+            genoclass.pointgene = ["C", "C"]
+            genoclass.dilute = ["D", "D"]
+            genoclass.eumelanin = ["B", "B"]
 
         # SILVER
 
@@ -392,56 +386,15 @@ class Breed_generator:
 
         genoclass.agouti = ["a", "a"]
 
-        # MACKEREL
-
-        a = randint(1, 4)
-
-        if a == 1:
-            genoclass.mack = ["Mc", "Mc"]
-        elif a == 4:
-            genoclass.mack = ["mc", "mc"]
-        else:
-            genoclass.mack = ["Mc", "mc"]
-
         # TICKED
 
         genoclass.ticked = ["Ta", "Ta"]
 
-        #ruhr + ruhrmod + lykoi
-
-        a = randint(1, 4)
-
-        if a == 1:
-            genoclass.ruhrmod = ["hi", "hi"]
-        elif a == 4:
-            genoclass.ruhrmod = ["ha", "ha"]
-        else:
-            genoclass.ruhrmod = ["hi", "ha"]
-
         genes = ["2", "2", "1", "1", "1", "1", "1", "1", "0", "0"]
 
-        genoclass.wideband = ''
-        genoclass.rufousing = ''
-        genoclass.spotted = ''
         genoclass.tickgenes = ''
         genoclass.bengal = ''
         genoclass.sokoke = ''
-        genoclass.refraction = ''
-        genoclass.pigmentation = ''
-        
-        for i in range(0, 8):
-            genoclass.wideband += choice(genes)
-            genoclass.wbsum += int(genoclass.wideband[i])
-
-        for i in range(0, 4):
-            genoclass.rufousing += choice(genes)
-            genoclass.rufsum += int(genoclass.rufousing[i])
-
-        genesspot = ["2", "1", "0"]
-
-        for i in range(0, 4):
-            genoclass.spotted += choice(genesspot)
-            genoclass.spotsum += int(genoclass.spotted[i])
         
         genesmild = ["2", "2", "1", "1", "1", "1", "1", "0", "0", "0", "0", "0", "0"]
 
@@ -451,17 +404,13 @@ class Breed_generator:
 
         for i in range(0, 4):
             genoclass.bengal += '0'
-            genoclass.bengsum += int(genoclass.bengal[i])
-
-        eyegenes = ["2", "2", "1", "1", "1", "1", "0", "0", "0"]
 
         for i in range(0, 4):
             genoclass.sokoke += '0'
-            genoclass.soksum += int(genoclass.sokoke[i])
 
         genoclass.body_value = randint(genoclass.body_indexes[0]+1, genoclass.body_indexes[1])
         
-        genoclass.breeds["American Burmese"] = 100
+        genoclass.breeds["American Burmese/Bombay"] = 100
         return genoclass
     
     @staticmethod
@@ -836,9 +785,7 @@ class Breed_generator:
         #sunshine
 
         for i in range(2):
-            c = randint(1, 40)
-
-            if c == 1:
+            if randint(1, 40) == 1:
                 genoclass.corin[i] = "fg" #Flaxen Gold
             else:
                 genoclass.corin[i] = "N" #No
@@ -1720,9 +1667,15 @@ class Breed_generator:
     @staticmethod
     def Mandalay(genoclass, special):
         genoclass = Breed_generator.AllColours(genoclass, special)
-        # FUR LENGTH
         
-        genoclass.furLength = ["L", "L"]
+        a = randint(1, 10)
+
+        if a < 7:
+            genoclass.furLength = ["L", "L"]
+        elif a == 10:
+            genoclass.furLength = ["l", "l"]
+        else:
+            genoclass.furLength = ["L", "l"]
 
         genoclass.white = ['w', 'w']
 
@@ -1796,9 +1749,9 @@ class Breed_generator:
 
         # munch + poly + altai
 
-        if random() < 0.125:
+        if random() < 0.0625:
             genoclass.poly = ["Pd", "Pd"]
-        elif random() < 0.125:
+        elif random() < 0.0625:
             genoclass.poly[0] = "Pd"
 
         genoclass.height_value = randint(genoclass.height_indexes[3]+1, genoclass.height_indexes[9])
@@ -2048,6 +2001,12 @@ class Breed_generator:
         
         if random() < 0.33:
             genoclass.pointgene = ["cs", "cs"]
+            
+        if genoclass.pointgene == ["cs", "cs"]:
+            if random() < 0.0625:
+                genoclass.poly = ["Pd", "Pd"]
+            elif random() < 0.0625:
+                genoclass.poly[0] = "Pd"
 
         # TICKED
 
@@ -2246,6 +2205,7 @@ class Breed_generator:
             genoclass.dilute = ["D", "D"]
         else:
             genoclass.dilute = ["d", "d"]
+            genoclass.saturation = randint(0, 2)
 
         # WHITE
 
@@ -2311,6 +2271,14 @@ class Breed_generator:
             genoclass.dilutemd = ["Dm", "Dm"]
         elif a <= 51:
             genoclass.dilutemd[0] = "Dm"
+
+        #sunshine
+
+        for i in range(2):
+            if randint(1, 40) == 1:
+                genoclass.corin[i] = "fg" #Flaxen Gold
+            else:
+                genoclass.corin[i] = "N" #No
 
         genoclass.body_value = randint(genoclass.body_indexes[0]+1, genoclass.body_indexes[1])
         
@@ -3379,9 +3347,14 @@ class Breed_checker:
         if genotype.dilutemd[0] != "dm" or genotype.pinkdilute[0] == "dp":
             return False
 
-        if genotype.white[0] != "w" or genotype.pointgene != ["cb", "cb"] or genotype.agouti[0] != "a" or genotype.eumelanin[0] == "bl":
+        if genotype.white[0] != "w" or genotype.agouti[0] != "a" or genotype.eumelanin[0] == "bl":
             return False
         if genotype.silver[0] == "I" or genotype.furLength[0] == "l" or 'O' in genotype.sexgene:
+            return False
+
+        if genotype.pointgene != ["cb", "cb"]:
+            if genotype.pointgene[0] == "C" and genotype.dilute[0] == "D" and genotype.eumelanin[0] == "B":
+                return "American Bombay"
             return False
     
         return "American Burmese"
@@ -4070,7 +4043,7 @@ class Breed_checker:
 
     @staticmethod
     def Mandalay(genotype, phenotype):
-        if phenotype.length != "shorthaired" or phenotype.furtype != [""]:
+        if phenotype.furtype != [""]:
             return False
         if phenotype.eartype != "" or phenotype.tailtype != "" or phenotype.pawtype != "":
             return False
@@ -4089,6 +4062,8 @@ class Breed_checker:
         if genotype.agouti[0] == "Apb":
             return False
         
+        if genotype.furLength[0] == 'l':
+            return "Tiffany"
         if genotype.pointgene[0] == "cb":
             return "Burmese"
         return "Mandalay"
@@ -4316,7 +4291,7 @@ class Breed_checker:
     def Persian(genotype, phenotype):
         if phenotype.length == "hairless" or phenotype.furtype != [""]:
             return False
-        if phenotype.eartype != "" or phenotype.tailtype != "" or phenotype.pawtype != "":
+        if phenotype.eartype != "" or phenotype.tailtype != "" or genotype.munchkin[0] == "Mk":
             return False
         
         if phenotype.fade != "" or genotype.karp[0] == "K":
@@ -4337,7 +4312,11 @@ class Breed_checker:
 
         if genotype.furLength[0] == "l":
             if genotype.pointgene[0] == "cs":
+                if genotype.poly[0] == "Pd":
+                    return "Nepalayan"
                 return "Himalayan"
+            if genotype.poly[0] == "Pd":
+                return False
             return "Persian"
         return "Exotic"
 
@@ -4735,6 +4714,8 @@ class Breed_checker:
         
         if genotype.furLength[0] == "L":
             return "Anatoli"
+        if genotype.white_pattern == ["full white"]:
+            return "Turkish Vankedisi"
         if genotype.white == ["ws", "ws"] and genotype.whitegrade == 4:
             return "Turkish Van"
         return "Turkish Angora"
@@ -4866,7 +4847,7 @@ breed_functions = {
         "American Bobtail" : Breed_generator.AmBob,
         "American Curl" : Breed_generator.AmCurl,
         "American Shorthair" : Breed_generator.AmSH,
-        "American Burmese" : Breed_generator.AmBurm,
+        "American Burmese/Bombay" : Breed_generator.AmBurm,
         "Aphrodite" : Breed_generator.Aphrodite,
         "Arabian Mau" : Breed_generator.Arab,
         "Asian/Burmese" : Breed_generator.Asian,
@@ -4941,7 +4922,7 @@ breed_functions = {
         "American Bobtail" : Breed_checker.AmBob,
         "American Curl" : Breed_checker.AmCurl,
         "American Shorthair" : Breed_checker.AmSH,
-        "American Burmese" : Breed_checker.AmBurm,
+        "American Burmese/Bombay" : Breed_checker.AmBurm,
         "Aphrodite" : Breed_checker.Aphrodite,
         "Arabian Mau" : Breed_checker.Arab,
         "Asian/Burmese" : Breed_checker.Asian,

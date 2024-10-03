@@ -961,7 +961,7 @@ class Genotype:
             self.chimerageno.Generator()
         
         breedlist = [
-            "Abyssinian", "American Bobtail", "American Curl", "American Shorthair", "American Burmese", "Aphrodite", 
+            "Abyssinian", "American Bobtail", "American Curl", "American Shorthair", "American Burmese/Bombay", "Aphrodite", 
                 "Arabian Mau", "Asian/Burmese", "Australian Mist",
             "Bambino", "Bengal", "Birman", "Brazilian Shorthair", "British", 
             "Cheetoh", "Ceylon", "Chartreux", "Chausie", "Clippercat", "Cornish Rex",
@@ -983,7 +983,7 @@ class Genotype:
             "Ural Rex"
         ]
         editedlist = [
-            "Abyssinian", "American Bobtail", "American Curl", "American Shorthair", "American Burmese", "Aphrodite", 
+            "Abyssinian", "American Bobtail", "American Curl", "American Shorthair", "American Burmese/Bombay", "Aphrodite", 
                 "Arabian Mau", "Asian/Burmese", "Australian Mist",
             "Bengal", "Birman", "Brazilian Shorthair", "British", 
             "Cheetoh", "Ceylon", "Chartreux", "Chausie", "Clippercat", "Cornish Rex",
