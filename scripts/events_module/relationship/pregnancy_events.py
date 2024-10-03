@@ -138,11 +138,10 @@ class Pregnancy_Events:
             else:
                 surrogate = False
                 if second_parent and second_parent[0] == "Surrogate":
-                    second_parent = [Pregnancy_Events.handle_surrogate(cat, clan)]
+                    second_parent[0] = Pregnancy_Events.handle_surrogate(cat, clan)
                     if not second_parent[0]:
                         second_parent = None
-                        if not game.clan.clan_settings["single parentage"]:
-                            return
+                        return
                     else:
                         surrogate = True
                 Pregnancy_Events.handle_zero_moon_pregnant(cat, second_parent, surrogate, clan)
@@ -234,12 +233,14 @@ class Pregnancy_Events:
     def handle_zero_moon_pregnant(cat: Cat, other_cat=None, surrogate=False, clan=game.clan):
         """Handles if the cat is zero moons pregnant."""
 
+        other_cat_copy = []
         if other_cat:
             for x in other_cat:
-                if x.dead or (x.outside and x.status not in ['kittypet', 'loner', 'rogue']) or x.birth_cooldown > 0 or x.no_kits:
-                    other_cat.remove(x)
+                if not(x.dead or (x.outside and x.status not in ['kittypet', 'loner', 'rogue']) or x.birth_cooldown > 0 or x.no_kits):
+                    other_cat_copy.append(x)
+        other_cat = other_cat_copy
         
-        if other_cat and len(other_cat) < 1:
+        if other_cat != None and len(other_cat) < 1:
             return
 
         if cat.ID in clan.pregnancy_data:
@@ -261,15 +262,15 @@ class Pregnancy_Events:
             affair_partner = []
             surrogates = []
             if other_cat:
+                if surrogate:
+                    surrogates.append(other_cat[0].ID)
                 for x in other_cat:
-                    if surrogate:
-                        surrogates.append(x.ID)
-                    elif x.ID not in cat.mate:
+                    if x.ID not in cat.mate:
                         affair_partner.append(x.ID) 
                     else:
                         ids.append(x.ID)
             if surrogate:
-                ids = cat.mate
+                affair_partner = []
             
             fever = False
             if len(cat.illnesses) > 0:
@@ -378,6 +379,7 @@ class Pregnancy_Events:
                     
                     pregnant_cat = outside_parent[0]
                     text = choice(Pregnancy_Events.PREGNANT_STRINGS["announcement"])
+                    severity = random.choices(["minor", "major"], [3, 1], k=1)
                     text += choice(Pregnancy_Events.PREGNANT_STRINGS[f"{severity[0]}_severity"])
                     text = event_text_adjust(Cat, text, main_cat=pregnant_cat, clan=clan)
                     text += f" {cat.name} thanks {outside_parent[0].name} for being a surrogate."
@@ -386,10 +388,8 @@ class Pregnancy_Events:
                     fever = False
                     ids = [cat.ID]
                     if clan.clan_settings['multisire']:
-                        for c in cat.mate:
-                            mate = Cat.all_cats.get(c)
-                            if Pregnancy_Events.check_if_can_have_kits(mate, True, True) and 'infertility' not in mate.permanent_condition:
-                                ids.append(mate.ID)
+                        for c in other_cat:
+                            ids.append(c.ID)
                     if len(pregnant_cat.illnesses) > 0:
                         for illness in pregnant_cat.illnesses:
                             if illness in ["greencough", "redcough", "yellowcough", "whitecough", 
@@ -458,15 +458,15 @@ class Pregnancy_Events:
                         break
 
                 ids = []
+                if surrogate:
+                    surrogates.append(second_parent[0].ID)
                 for x in second_parent:
-                    if surrogate:
-                        surrogates.append(x.ID)
+                    if x.ID not in pregnant_cat.mate:
+                        affair_partner.append(x.ID) 
                     else:
                         ids.append(x.ID)
-                        if x.ID not in pregnant_cat.mate:
-                            affair_partner.append(x.ID) 
                 if surrogate:
-                    ids = cat.mate
+                    affair_partner = []
 
             fever = False
             if len(pregnant_cat.illnesses) > 0:
@@ -730,7 +730,7 @@ class Pregnancy_Events:
                 kit.outside = True
                 game.clan.add_to_outside(kit)
                 kit.backstory = "outsider1"
-                if cat.exiled:
+                if pregnant_cat.exiled:
                     kit.status = "loner"
                     name = choice(names.names_dict["normal_prefixes"])
                     kit.name = Name('loner', prefix=name, suffix="")
@@ -777,6 +777,8 @@ class Pregnancy_Events:
 
 
         if surrogate and cat in other_cat:
+            involved_cats.append(cat.ID)
+            involved_cats.append(RandomChoice.ID)
             cat = pregnant_cat
             if random.random() < 0.5:
                 event_list.append(choice(events["birth"]["surrogate_birth"]))
@@ -872,9 +874,7 @@ class Pregnancy_Events:
                 )
         if SurrogateBirth:
             cat = other_cat[0]
-            for c in other_cat:
-                involved_cats.append(c.ID)
-            event_list[0] = event_list[0].replace("{surrogate}", pregnant_cat.name)
+            event_list[0] = event_list[0].replace("{surrogate}", f"{pregnant_cat.name}")
             if len(event_list) > 1:
                 event_list[0] = event_text_adjust(Cat, event_list[0], main_cat=cat, random_cat=RandomChoice, clan=game.clan)
                 cat = pregnant_cat
@@ -965,10 +965,12 @@ class Pregnancy_Events:
                     
             return True, False, second_parent
         else:
+            second_parent_copy = []
             for x in second_parent:
-                if not Pregnancy_Events.check_if_can_have_kits(x, single_parentage, allow_affair) or x == None:
-                    second_parent.remove(x)
+                if Pregnancy_Events.check_if_can_have_kits(x, single_parentage, allow_affair) or x == None:
+                    second_parent_copy.append(x)
             
+            second_parent = second_parent_copy
             if len(second_parent) < 1:
                 return False, False
 

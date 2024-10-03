@@ -3140,12 +3140,12 @@ class Cat:
         # Gather some important info
 
         # Gathering the relationships.
-        if cat1.ID in cat2.relationships:
+        if cat2.ID in cat1.relationships:
             rel1 = cat1.relationships[cat2.ID]
         else:
             rel1 = cat1.create_one_relationship(cat2)
 
-        if cat2.ID in cat1.relationships:
+        if cat1.ID in cat2.relationships:
             rel2 = cat2.relationships[cat1.ID]
         else:
             rel2 = cat2.create_one_relationship(cat1)
