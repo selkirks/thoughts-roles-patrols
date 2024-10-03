@@ -518,7 +518,7 @@ class Cat:
                             white_pattern = ["full white", "break/inverse thai"]
             
             if vit:
-                if white_pattern is None:
+                if white_pattern is None or white_pattern == "No":
                     white_pattern = [choice(vitiligo)]
                 else:
                     if len(has_vitiligo) == 0:
