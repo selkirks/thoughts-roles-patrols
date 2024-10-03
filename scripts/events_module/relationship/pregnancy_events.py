@@ -233,12 +233,12 @@ class Pregnancy_Events:
     def handle_zero_moon_pregnant(cat: Cat, other_cat=None, surrogate=False, clan=game.clan):
         """Handles if the cat is zero moons pregnant."""
 
-        other_cat_copy = []
         if other_cat:
+            other_cat_copy = []
             for x in other_cat:
                 if not(x.dead or (x.outside and x.status not in ['kittypet', 'loner', 'rogue']) or x.birth_cooldown > 0 or x.no_kits):
                     other_cat_copy.append(x)
-        other_cat = other_cat_copy
+            other_cat = other_cat_copy
         
         if other_cat != None and len(other_cat) < 1:
             return
