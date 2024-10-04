@@ -624,8 +624,6 @@ class Pregnancy_Events:
             if surrogate_id[0] == cat.ID:
                 cat = other_cat[0]
             surrogate.append(Cat.all_cats.get(surrogate_id[0]))
-            for p in other_cat:
-                p.birth_cooldown = game.config["pregnancy"]["birth_cooldown"]
 
         if affair_partner_id:
             if not other_cat:
@@ -748,6 +746,12 @@ class Pregnancy_Events:
 
         # Since cat has given birth, apply the birth cooldown.
         cat.birth_cooldown = game.config["pregnancy"]["birth_cooldown"]
+        if other_cat:
+            for c in other_cat:
+                c.birth_cooldown = game.config["pregnancy"]["birth_cooldown"]
+        if surrogate:
+            for c in surrogate:
+                c.birth_cooldown = game.config["pregnancy"]["birth_cooldown"]
 
         Dead_Mate = False
         WhoDied = 0
