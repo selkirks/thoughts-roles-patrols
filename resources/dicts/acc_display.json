@@ -924,6 +924,11 @@
     "plural": "black white-spotted rabbits",
     "singular": "black white-spotted rabbit"
 },
+"WHITE AND FAWN RABBIT": {
+    "default": "white and fawn rabbit",
+    "plural": "white and fawn rabbits",
+    "singular": "white and fawn rabbit"
+},
 "BROWN VITILIGO RABBIT": {
     "default": "brown vitiligo rabbit",
     "plural": "brown white-spotted rabbits",
