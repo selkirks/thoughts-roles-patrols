@@ -1753,6 +1753,17 @@ class Events:
 
         involved_cats = [cat.ID]  # Clearly, the cat the ceremony is about is involved.
 
+        # Changing prefix if needed
+        if game.clan.clan_settings['dynamic prefixes']:
+            cer_type = 'apprentice-warrior'
+            if 'apprentice' in promoted_to:
+                cer_type = 'kit-apprentice'
+            elif promoted_to == 'elder':
+                cer_type = 'warrior-elder'
+            
+            cat.name.change_prefix(Cat, cat.moons, game.clan.biome, cer_type)
+            
+
         # Time to gather ceremonies. First, lets gather all the ceremony ID's.
         possible_ceremonies = set()
         dead_mentor = None

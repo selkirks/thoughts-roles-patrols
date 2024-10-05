@@ -234,6 +234,8 @@ class Namer():
             white = 'mid'
         elif white != 'mid' and ((genotype.white[0] in ['ws', 'wt'] and genotype.whitegrade > 1) or genotype.white[0] == 'wg' or (genotype.vitiligo and self.moons > 5)) and genotype.white_pattern != "No":
             white = 'low'
+        elif white != 'mid' and self.moons > 11 and genotype.vitiligo:
+            white = 'low'
 
         if genotype.pointgene[0] == 'cs' or 'masked' in phenotype.silvergold or (self.moons < 4 and genotype.fevercoat) or (self.moons > 3 and genotype.bleach[0] == 'lb'):
             point = 'colourpoint'

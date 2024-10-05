@@ -182,6 +182,45 @@ class Name:
     def filter(self, all, used):
         return [x for x in all if x not in used]
 
+    def change_prefix(self, Cat, moons, biome, change):
+        self.moons = moons
+
+        colour_changed = False
+
+        if (self.phenotype.colour in ['white', 'albino'] or 
+            (self.phenotype.maincolour == 'white' and not self.phenotype.patchmain) or
+            (self.genotype.white[1] in ['ws', 'wt'] and self.genotype.whitegrade == 5) or
+            (self.genotype.tortiepattern == ['revCRYPTIC'] and self.genotype.brindledbi) or 
+            (self.genotype.dilute[0] == 'd' and self.genotype.pinkdilute[0] == 'dp' and 
+                (('dove' in self.phenotype.colour and self.genotype.saturation < 2) or 
+                ('platinum' in self.phenotype.colour and self.genotype.saturation < 3) or
+                ('dove' not in self.phenotype.colour and 'platinum' not in self.phenotype.colour))) or
+            ('silver' in self.phenotype.silvergold and ('shaded' in self.phenotype.tabby or 'chinchilla' in self.phenotype.tabby))
+            ):
+            colour_changed = False
+        elif self.moons > 1 and self.genotype.pointgene[0] in ['cb', 'cs']:
+            colour_changed = True
+        elif self.moons > 3 and (self.genotype.fevercoat or self.genotype.bleach[0] == 'lb'):
+            colour_changed = True
+        elif self.moons > 5 and self.genotype.karp[0] == 'K':
+            colour_changed = True
+        elif self.genotype.ext[0] == 'ec' and self.moons > 0 and (self.genotype.agouti[0] != 'a' or self.moons > 5):
+            colour_changed = True
+        elif self.genotype.ext[0] == 'er' or self.moons > 23:
+            colour_changed = True
+        elif self.genotype.ext[0] == 'ea' and ((self.moons > 11 and self.genotype.agouti[0] != 'a') or (self.moons > 23)):
+            colour_changed = True
+        elif self.moons > 11 and self.genotype.vitiligo:
+            colour_changed = True
+            
+        chance = game.config["cat_name_controls"]["prefix_change_chance"][change]
+        if colour_changed:
+            chance /= game.config["cat_name_controls"]["prefix_change_chance"]["pelt-change-modifier"]
+
+        if random.random() < (1/chance):
+            self.give_prefix(Cat, biome)
+
+
     # Generate possible prefix
     def give_prefix(self, Cat, biome, no_suffix=False):
         if not self.genotype:
@@ -205,13 +244,9 @@ class Name:
                 return
             
 
-        # decided in game config: cat_name_controls
-        if game.config["cat_name_controls"]["always_name_after_appearance"]:
-            named_after_appearance = True
-        else:
-            named_after_appearance = not random.getrandbits(
-                2
-            )  # Chance for True is '1/4'
+        named_after_appearance = not random.getrandbits(
+            2
+        )  # Chance for True is '1/4'
 
         named_after_biome_ = not random.getrandbits(3)  # chance for True is 1/8
 

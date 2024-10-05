@@ -280,11 +280,16 @@
     "random_point_chance": 5
   },
   "cat_name_controls": {
-    "always_name_after_appearance": false,
+    "prefix_change_chance" : {
+      "kit-apprentice" : 75,
+      "apprentice-warrior" : 75,
+      "warrior-elder" : 75,
+      "pelt-change-modifier" : 15
+    },
     "comment": [
-      "Set always_name_after_appearance to true if you always want cats named after the color of their pelt.",
-      "This overrides the chances of it otherwise. If cats can't find a pelt color, they will choose from normal_prefixes",
-      "So as not to cause an error - false by default"
+      "If prefix changing is allowed: how often should a prefix swap happen.",
+      "Pelt change modifier defines how much more often it should happen when a cat's pelt is one that changes over time - such as ", 
+      "with colourpoints darkening, amber cats turning orange, etc. This'll only effect it once"
     ]
   },
   "accessory_generation": {
