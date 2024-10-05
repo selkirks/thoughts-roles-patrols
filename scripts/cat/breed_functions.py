@@ -145,6 +145,7 @@ class Breed_generator:
     
     @staticmethod
     def Aby(genoclass, special):
+        genoclass = Breed_generator.AllColours(genoclass, special)
         # FUR LENGTH
 
         genoclass.longtype = 'long'
@@ -183,17 +184,6 @@ class Breed_generator:
             genoclass.sex = "tom"
         else:
             genoclass.sex = "molly"
-        
-        # DILUTE
-
-        a = randint(1, 4)
-
-        if a == 1:
-            genoclass.dilute = ["D", "D"]
-        elif a == 4:
-            genoclass.dilute = ["d", "d"]
-        else:
-            genoclass.dilute = ["D", "d"]
 
         # WHITE
 
@@ -226,27 +216,12 @@ class Breed_generator:
 
         genoclass.ticked = ["Ta", "Ta"]
 
-        #ruhr + ruhrmod + lykoi
-
-        a = randint(1, 10000)
-
-        if a == 1:
-            genoclass.ruhrmod = ["hi", "hi"]
-        elif a == 4:
-            genoclass.ruhrmod = ["ha", "ha"]
-        else:
-            genoclass.ruhrmod = ["hi", "ha"]
-
         genes = ["2", "2", "1", "1", "1", "1", "1", "1", "0", "0"]
 
-        genoclass.wideband = ''
         genoclass.rufousing = ''
-        genoclass.spotted = ''
         genoclass.tickgenes = ''
         genoclass.bengal = ''
         genoclass.sokoke = ''
-        genoclass.refraction = ''
-        genoclass.pigmentation = ''
         
         while genoclass.wbsum > 11 or genoclass.wbsum < 6:
             genoclass.wideband = ""
@@ -257,25 +232,15 @@ class Breed_generator:
 
         for i in range(0, 4):
             genoclass.rufousing += '2'
-            genoclass.rufsum += int(genoclass.rufousing[i])
-
-        genesspot = ["2", "1", "2"]
-
-        for i in range(0, 4):
-            genoclass.spotted += choice(genesspot)
-            genoclass.spotsum += int(genoclass.spotted[i])
 
         for i in range(0, 4):
             genoclass.tickgenes += '2'
-            genoclass.ticksum += int(genoclass.tickgenes[i])
 
         for i in range(0, 4):
             genoclass.bengal += '0'
-            genoclass.bengsum += int(genoclass.bengal[i])
 
         for i in range(0, 4):
             genoclass.sokoke += '0'
-            genoclass.soksum += int(genoclass.sokoke[i])
 
         genoclass.body_value = randint(genoclass.body_indexes[3]+1, genoclass.body_indexes[4])
 
@@ -300,17 +265,11 @@ class Breed_generator:
 
         genoclass = Breed_generator.AllColours(genoclass, special)
 
-        # pinkdilute + dilutemd
-
-        a = randint(1, 2500)
-
-        if a == 1:
-            genoclass.dilutemd = ["Dm", "Dm"]
-        elif a <= 51:
-            genoclass.dilutemd[0] = "Dm"
+        for i in range(2):
+            if randint(1, 50) == 1:
+                genoclass.dilutemd[i] = "Dm"
 
         # curl + fold
-
         genoclass.curl = ["Cu", "Cu"]
         
         genoclass.breeds["American Curl"] = 100
@@ -488,9 +447,11 @@ class Breed_generator:
 
         genoclass = Breed_generator.AllColours(genoclass, special)
 
-        # WHITE
-
         genoclass.white = ["w", "w"]
+
+        for i in range(2):
+            if randint(1, 50) == 1:
+                genoclass.dilutemd[i] = "Dm"
 
         # ALBINO
 
@@ -559,11 +520,7 @@ class Breed_generator:
 
         # ALBINO
 
-        for i in range(2):
-            if random() < 0.95:
-                genoclass.pointgene[i] = "cb"
-            else:
-                genoclass.pointgene[i] = "cs"
+        genoclass.pointgene = ["cb", "cb"]
 
         # SILVER
 
@@ -575,14 +532,9 @@ class Breed_generator:
 
         genoclass.ticked = ["ta", "ta"]
 
-        # pinkdilute + dilutemd
-
-        a = randint(1, 2500)
-
-        if a == 1:
-            genoclass.dilutemd = ["Dm", "Dm"]
-        elif a <= 51:
-            genoclass.dilutemd[0] = "Dm"
+        for i in range(2):
+            if randint(1, 50) == 1:
+                genoclass.dilutemd[i] = "Dm"
 
         genes = ["2", "2", "1", "1", "1", "1", "1", "1", "0", "0"]
         
@@ -594,7 +546,6 @@ class Breed_generator:
         genoclass.spotted = ''
         for i in range(0, 4):
             genoclass.spotted += '2'
-            genoclass.spotsum += int(genoclass.spotted[i])
         
         genoclass.breeds["Australian Mist"] = 100
         return genoclass
@@ -616,9 +567,9 @@ class Breed_generator:
         # EUMELANIN
 
         for i in range(2):
-            if randint(1, 20) == 1:
+            if randint(1, 30) == 1:
                 genoclass.eumelanin[i] = "bl"
-            elif randint(1, 15) == 1:
+            elif randint(1, 25) == 1:
                 genoclass.eumelanin[i] = "b"
             else:
                 genoclass.eumelanin[i] = "B"
@@ -742,15 +693,10 @@ class Breed_generator:
         for i in range(2):
             genoclass.pointgene[i] = "cs"
 
-        # pinkdilute + dilutemd
+        for i in range(2):
+            if randint(1, 50) == 1:
+                genoclass.dilutemd[i] = "Dm"
 
-        a = randint(1, 2500)
-
-        if a == 1:
-            genoclass.dilutemd = ["Dm", "Dm"]
-        elif a <= 51:
-            genoclass.dilutemd[0] = "Dm"
-        
         genoclass.breeds["Birman"] = 100
         return genoclass
     
@@ -773,14 +719,9 @@ class Breed_generator:
 
         genoclass = Breed_generator.AllColours(genoclass, special)
 
-        # pinkdilute + dilutemd
-
-        a = randint(1, 2500)
-
-        if a == 1:
-            genoclass.dilutemd = ["Dm", "Dm"]
-        elif a <= 51:
-            genoclass.dilutemd[0] = "Dm"
+        for i in range(2):
+            if randint(1, 50) == 1:
+                genoclass.dilutemd[i] = "Dm"
 
         #sunshine
 
@@ -792,10 +733,13 @@ class Breed_generator:
 
         # curl + fold
 
-        a = randint(1, 5)
-
-        if a == 1 and not genoclass.ban_genes:
+        if random() < 0.2 and not genoclass.ban_genes:
             genoclass.fold[0] = "Fd"
+
+        if genoclass.fold[0] == 'fd' and random() < 0.1:
+            genoclass.pax3[0] = 'DBEcel'
+            genoclass.pointgene = ['C', 'C']
+            genoclass.white = ['w', 'w']
 
         genoclass.body_value = randint(genoclass.body_indexes[0]+1, genoclass.body_indexes[1])
         genoclass.height_value = randint(genoclass.height_indexes[3]+1, genoclass.height_indexes[6])
@@ -819,12 +763,10 @@ class Breed_generator:
 
         # WHITE
 
-        for i in range(2):
             genoclass.white[i] = "w"
 
         # ALBINO
 
-        for i in range(2):
             genoclass.pointgene[i] = "C"
 
         # SILVER
@@ -918,6 +860,8 @@ class Breed_generator:
             genoclass.soksum += int(genoclass.sokoke[i])
         
         genoclass.breeds[choice(["Korat", "Chartreux"])] = 100
+        if genoclass.breeds.get("Korat", False):
+            genoclass.body_value = randint(genoclass.body_indexes[3]+1, genoclass.body_indexes[4])
         return genoclass
     
     @staticmethod
@@ -1040,28 +984,20 @@ class Breed_generator:
         genoclass = Breed_generator.AllColours(genoclass, special)
         # FUR LENGTH
         
-        if random() < 0.95:
-            genoclass.furLength = ["L", "L"]
-        else:
-            genoclass.furLength = ["l", "l"]
+        genoclass.furLength = ["L", "L"]
 
 
         # YORK, WIREHAIR, LAPERM, CORNISH, URAL, TENN, FLEECE
 
         genoclass.cornish = ["r", "r"]
 
-        # pinkdilute + dilutemd
-
-        a = randint(1, 2500)
-
-        if a == 1:
-            genoclass.dilutemd = ["Dm", "Dm"]
-        elif a <= 51:
-            genoclass.dilutemd[0] = "Dm"
-
-        genoclass.body_value = randint(genoclass.body_indexes[3]+1, genoclass.body_indexes[4])
-        
         genoclass.breeds[choice(["Cornish Rex", "German Rex"])] = 100
+        
+        if genoclass.breeds.get("Cornish Rex", False):
+            for i in range(2):
+                if randint(1, 50) == 1:
+                    genoclass.dilutemd[i] = "Dm"
+            genoclass.body_value = randint(genoclass.body_indexes[3]+1, genoclass.body_indexes[4])
         return genoclass
     
     @staticmethod
@@ -1078,14 +1014,9 @@ class Breed_generator:
 
         genoclass.sedesp = ["re", "re"]
 
-        # pinkdilute + dilutemd
-
-        a = randint(1, 2500)
-
-        if a == 1:
-            genoclass.dilutemd = ["Dm", "Dm"]
-        elif a <= 51:
-            genoclass.dilutemd[0] = "Dm"
+        for i in range(2):
+            if randint(1, 50) == 1:
+                genoclass.dilutemd[i] = "Dm"
 
         genoclass.body_value = randint(genoclass.body_indexes[1]+1, genoclass.body_indexes[2])
         
@@ -1323,16 +1254,6 @@ class Breed_generator:
 
         genoclass = Breed_generator.AllColours(genoclass, special)
 
-        # EUMELANIN
-
-        for i in range(2):
-            if randint(1, 20) == 1:
-                genoclass.eumelanin[i] = "bl"
-            elif randint(1, 15) == 1:
-                genoclass.eumelanin[i] = "b"
-            else:
-                genoclass.eumelanin[i] = "B"
-
         # curl + fold
 
         genoclass.curl = ["Cu", "Cu"]
@@ -1356,16 +1277,6 @@ class Breed_generator:
     def JapBob(genoclass, special):
 
         genoclass = Breed_generator.AllColours(genoclass, special)
-
-        # EUMELANIN
-
-        for i in range(2):
-            if randint(1, 20) == 1:
-                genoclass.eumelanin[i] = "bl"
-            elif randint(1, 15) == 1:
-                genoclass.eumelanin[i] = "b"
-            else:
-                genoclass.eumelanin[i] = "B"
 
         # ALBINO
 
@@ -1507,6 +1418,8 @@ class Breed_generator:
         for i in range(0, 4):
             genoclass.sokoke += '0'
         
+        genoclass.body_value = randint(genoclass.body_indexes[3]+1, genoclass.body_indexes[4])
+        
         genoclass.breeds["Khao Manee"] = 100
         return genoclass
     
@@ -1528,9 +1441,7 @@ class Breed_generator:
         # ext
 
         for i in range(2):
-            b = randint(1, 15)
-
-            if b == 1:
+            if randint(1, 15) == 1:
                 genoclass.ext[i] = "ec"
 
         #  manx + kab + toybob + jbob + kub + ring
@@ -1546,15 +1457,10 @@ class Breed_generator:
         genoclass = Breed_generator.AllColours(genoclass, special)
 
         genoclass.laperm = ["Lp", "Lp"]
-
-        # pinkdilute + dilutemd
-
-        a = randint(1, 2500)
-
-        if a == 1:
-            genoclass.dilutemd = ["Dm", "Dm"]
-        elif a <= 51:
-            genoclass.dilutemd[0] = "Dm"
+        
+        for i in range(2):
+            if randint(1, 50) == 1:
+                genoclass.dilutemd[i] = "Dm"
 
         # karp + bleach + ghosting + satin + glitter
 
@@ -1699,14 +1605,9 @@ class Breed_generator:
 
         genoclass.ticked = ["Ta", "Ta"]
 
-        # pinkdilute + dilutemd
-
-        a = randint(1, 2500)
-
-        if a == 1:
-            genoclass.dilutemd = ["Dm", "Dm"]
-        elif a <= 51:
-            genoclass.dilutemd[0] = "Dm"
+        for i in range(2):
+            if randint(1, 50) == 1:
+                genoclass.dilutemd[i] = "Dm"
 
         # ext
 
@@ -1747,8 +1648,6 @@ class Breed_generator:
         for i in range(2):
             genoclass.pointgene[i] = "C"
 
-        # munch + poly + altai
-
         if random() < 0.0625:
             genoclass.poly = ["Pd", "Pd"]
         elif random() < 0.0625:
@@ -1768,12 +1667,10 @@ class Breed_generator:
         if random() < 0.125:
             genoclass.cornish = ["r", "r"]
             
-        a = randint(1, 2500)
+        for i in range(2):
+            if randint(1, 50) == 1:
+                genoclass.dilutemd[i] = "Dm"
 
-        if a == 1:
-            genoclass.dilutemd = ["Dm", "Dm"]
-        elif a <= 51:
-            genoclass.dilutemd[0] = "Dm"
 
         #  manx + kab + toybob + jbob + kub + ring
 
@@ -3419,7 +3316,7 @@ class Breed_checker:
             return False
         if genotype.ext[0] != "E" or genotype.corin[0] != "N":
             return False
-        if genotype.dilutemd[0] != "dm" or genotype.pinkdilute[0] == "dp":
+        if genotype.pinkdilute[0] == "dp":
             return False
         if genotype.agouti[0] == "Apb":
             return False
@@ -3554,6 +3451,10 @@ class Breed_checker:
     
         if genotype.fold[0] == "Fd":
             return "Scottish Fold"
+        if genotype.white[0] == 'w' and genotype.pointgene[0] == 'C' and genotype.pax3[0] == 'DBEcel':
+            if genotype.furLength[0] == "l":
+                return "Celestial Longhair"
+            return "Celestial Shorthair"
         if genotype.furLength[0] == "l":
             return "British Longhair"
         return "British Shorthair"
