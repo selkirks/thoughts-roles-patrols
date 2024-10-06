@@ -82,6 +82,8 @@ class EventsScreen(Screens):
         self.first_opened = False
 
     def handle_event(self, event):
+        if self.events_thread and self.events_thread.is_alive():
+            return
         # ON HOVER
         if event.type == pygame_gui.UI_BUTTON_ON_HOVERED:
             element = event.ui_element
