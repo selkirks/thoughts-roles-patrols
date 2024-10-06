@@ -198,19 +198,19 @@ class Name:
             ('silver' in self.phenotype.silvergold and ('shaded' in self.phenotype.tabby or 'chinchilla' in self.phenotype.tabby))
             ):
             colour_changed = False
-        elif self.moons > 1 and self.genotype.pointgene[0] in ['cb', 'cs']:
+        elif change == "kit-apprentice" and self.genotype.pointgene[0] in ['cb', 'cs']:
             colour_changed = True
-        elif self.moons > 3 and (self.genotype.fevercoat or self.genotype.bleach[0] == 'lb'):
+        elif change == "kit-apprentice" and (self.genotype.fevercoat or self.genotype.bleach[0] == 'lb'):
             colour_changed = True
-        elif self.moons > 5 and self.genotype.karp[0] == 'K':
+        elif change == "kit-apprentice" and self.genotype.karp[0] == 'K':
             colour_changed = True
-        elif self.genotype.ext[0] == 'ec' and self.moons > 0 and (self.genotype.agouti[0] != 'a' or self.moons > 5):
+        elif self.genotype.ext[0] == 'ec' and change == "kit-apprentice":
             colour_changed = True
-        elif self.genotype.ext[0] == 'er' or self.moons > 23:
+        elif self.genotype.ext[0] == 'er' and (self.moons > 23 and change == "apprentice-warrior"):
             colour_changed = True
-        elif self.genotype.ext[0] == 'ea' and ((self.moons > 11 and self.genotype.agouti[0] != 'a') or (self.moons > 23)):
+        elif self.genotype.ext[0] == 'ea' and ((change == "apprentice-warrior" and self.genotype.agouti[0] != 'a') or (self.moons > 23 and change == "apprentice-warrior")):
             colour_changed = True
-        elif self.moons > 11 and self.genotype.vitiligo:
+        elif change == "apprentice-warrior" and self.genotype.vitiligo:
             colour_changed = True
             
         chance = game.config["cat_name_controls"]["prefix_change_chance"][change]
