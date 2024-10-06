@@ -623,6 +623,11 @@ def create_new_cat_block(
 
             if new_name:
                 name = f"{chosen_cat.name.prefix}"
+
+                if chosen_cat.history:
+                    chosen_cat.history.prev_names.append(str(chosen_cat.name))
+                else:
+                    chosen_cat.history = History(prev_names=[str(chosen_cat.name)])
                 spaces = name.count(" ")
                 if choice([1, 2]) == 1 and spaces > 0:  # adding suffix to OG name
                     # make a list of the words within the name, then add the OG name back in the list

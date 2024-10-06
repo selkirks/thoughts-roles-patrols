@@ -1183,7 +1183,7 @@ class ProfileScreen(Screens):
         self.update_disabled_buttons_and_text()
 
     def toggle_genetics_tab(self):
-        """Opens the User Notes portion of the History Tab"""
+        """Opens the Genetics portion of the History Tab"""
         self.genelist = str(self.the_cat.genotype.ShowGenes())
         if(self.the_cat.genotype.chimera):
             self.genelist += "\n\n" + str(self.the_cat.genotype.chimerageno.ShowGenes())
@@ -1258,6 +1258,9 @@ class ProfileScreen(Screens):
             # start our history with the backstory, since all cats get one
             life_history = [str(self.get_backstory_text())]
 
+            if self.the_cat.history and len(self.the_cat.history.prev_names):
+                life_history.append(self.get_previous_names())
+
             # now get apprenticeship history and add that if any exists
             app_history = self.get_apprenticeship_text()
             if app_history:
@@ -1288,6 +1291,9 @@ class ProfileScreen(Screens):
             output = "\n\n".join(life_history)
         return output
 
+    def get_previous_names(self):
+        return "Previous names: " + ', '.join(self.the_cat.history.prev_names)
+    
     def get_backstory_text(self):
         """
         returns the backstory blurb

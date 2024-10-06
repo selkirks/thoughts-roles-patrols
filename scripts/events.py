@@ -2062,6 +2062,12 @@ class Events:
         # remove duplicates
         involved_cats = list(set(involved_cats))
 
+        if str(cat.name) != old_name:
+            if cat.history:
+                cat.history.prev_names.append(old_name)
+            else:
+                cat.history = History(prev_names=[old_name])
+
         game.cur_events_list.append(
             Single_Event(f"{ceremony_text}", "ceremony", involved_cats)
         )

@@ -214,6 +214,10 @@ class Name:
             colour_changed = True
         elif change == "apprentice-warrior" and self.genotype.vitiligo:
             colour_changed = True
+        elif self.prefix in self.mod_prefixes['general']['small'] and self.genotype.height_label in ['goliath', 'giant', 'large', 'above average']:
+            colour_changed = True
+        elif self.prefix in self.mod_prefixes['general']['big'] and self.genotype.height_label in ['teacup', 'tiny', 'small', 'below average']:
+            colour_changed = True
             
         chance = game.config["cat_name_controls"]["prefix_change_chance"][change]
         if colour_changed:
