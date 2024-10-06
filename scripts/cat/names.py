@@ -187,6 +187,8 @@ class Name:
 
         colour_changed = False
 
+        self.phenotype.SpriteInfo(moons)
+
         if (self.phenotype.colour in ['white', 'albino'] or 
             (self.phenotype.maincolour == 'white' and not self.phenotype.patchmain) or
             (self.genotype.white[1] in ['ws', 'wt'] and self.genotype.whitegrade == 5) or
