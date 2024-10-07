@@ -17,6 +17,7 @@ from scripts.utility import (
     ui_scale,
     shorten_text_to_fit,
     ui_scale_dimensions,
+    ui_scale_offset,
 )
 from .Screens import Screens
 from ..game_structure import image_cache
