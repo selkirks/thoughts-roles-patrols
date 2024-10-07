@@ -197,10 +197,10 @@ class Sprites:
                                "dove", "champagne", "buff", 
                                "platinum", "lavender", "beige"]):
             self.make_group('base/eumelanin', (0, i), f'{x}', sprites_x=7, sprites_y=1)
-        for i, x in enumerate(["lowred", "mediumred", "rufousedred", 
-                               "lowcream", "mediumcream", "rufousedcream", 
-                               "lowhoney", "mediumhoney", "rufousedhoney", 
-                               "lowivory", "mediumivory", "rufousedivory"]):
+        for i, x in enumerate(["rufousedred", "mediumred", "lowred", 
+                               "rufousedcream", "mediumcream", "lowcream", 
+                               "rufousedhoney", "mediumhoney", "lowhoney", 
+                               "rufousedivory", "mediumivory", "lowivory"]):
             self.make_group('base/pheomelanin', (0, i), f'{x}', sprites_x=7, sprites_y=1)
         self.make_group('base/lightbases', (0, 0), 'lightbasecolours', sprites_x=4, sprites_y=1)
 
