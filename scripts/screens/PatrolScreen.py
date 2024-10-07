@@ -1311,10 +1311,10 @@ class PatrolScreen(Screens):
         super().on_use()
 
         self.loading_screen_on_use(
-            self.start_patrol_thread, self.open_patrol_event_screen, (700, 500)
+            self.start_patrol_thread, self.open_patrol_event_screen, ui_scale_offset((400, 300))
         )
         self.loading_screen_on_use(
-            self.proceed_patrol_thread, self.open_patrol_complete_screen, (350, 500)
+            self.proceed_patrol_thread, self.open_patrol_complete_screen, ui_scale_offset((400, 300))
         )
 
     @staticmethod
