@@ -210,7 +210,7 @@ def json_load():
             elif "skill" in cat:
                 if new_cat.backstory is None:
                     if "skill" == "formerly a loner":
-                        backstory = choice(["loner1", "loner2", "rogue1", "rogue2"])
+                        backstory = choice(["loner1", "loner2", "rogue1", "rogue2", "rogue3", "rogue4", "loner3", "loner4", "loner5", "loner6", "loner7"])
                         new_cat.backstory = backstory
                     elif "skill" == "formerly a kittypet":
                         backstory = choice(["kittypet1", "kittypet2"])
