@@ -2747,7 +2747,7 @@
     "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c wanders out on {PRONOUN/m_c/poss} own on a odd day, and comes back with a fruity smelling acc_singular! m_c flaunts their new acc_singular with grace.",
-    "new_accessory": ["FRUIT", "BLUE BERRIES", "BLUEBERRY"],
+    "new_accessory": ["FRUIT", "BLUE BERRIES"],
     "m_c": {
       "status":["any"],
       "age": ["any"]
@@ -3504,7 +3504,7 @@
     "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "r_c and m_c decide to go for a short walk together! r_c blinks in surprise, before pointing out a cool acc_singular bush {PRONOUN/r_c/subject} managed to spot! m_c tells r_c {PRONOUN/r_c/subject} {VERB/r_c/have/has} a good eye, and decides to take and wear the acc_singular! r_c compliments {PRONOUN/r_c/object}, and m_c grins, flustered. ",
-    "new_accessory": ["RASPBERRY", "BLUE BERRIES", "BLUEBERRY", "BLACKBERRY", "GOLDEN RASPBERRY"],
+    "new_accessory": ["RASPBERRY", "BLUE BERRIES", "BLACKBERRY", "GOLDEN RASPBERRY"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
