@@ -1848,14 +1848,9 @@ class Breed_generator:
         if random() < 0.5:
             genoclass.pointgene = ["cs", "cs"]
 
-        # pinkdilute + dilutemd
-
-        a = randint(1, 2500)
-
-        if a == 1:
-            genoclass.dilutemd = ["Dm", "Dm"]
-        elif a <= 51:
-            genoclass.dilutemd[0] = "Dm"
+        for i in range(2):
+            if randint(1, 50) == 1:
+                genoclass.dilutemd[i] = "Dm"
 
         genoclass.body_value = randint(genoclass.body_indexes[4]+1, genoclass.body_indexes[6])
         
@@ -1888,10 +1883,7 @@ class Breed_generator:
         # ALBINO
 
         for i in range(2):
-            c = randint(1, 10)
-            d = randint(1, 5)
-
-            if d == 1:
+            if randint(1, 5) == 1:
                 genoclass.pointgene[i] = "cs"
             else:
                 genoclass.pointgene[i] = "C"
@@ -1909,14 +1901,9 @@ class Breed_generator:
 
         genoclass.ticked = ["ta", "ta"]
 
-        # pinkdilute + dilutemd
-
-        a = randint(1, 2500)
-
-        if a == 1:
-            genoclass.dilutemd = ["Dm", "Dm"]
-        elif a <= 51:
-            genoclass.dilutemd[0] = "Dm"
+        for i in range(2):
+            if randint(1, 50) == 1:
+                genoclass.dilutemd[i] = "Dm"
 
         genoclass.body_value = randint(genoclass.body_indexes[0], genoclass.body_indexes[1])
         
@@ -2061,14 +2048,9 @@ class Breed_generator:
         for i in range(2):
             genoclass.pointgene[i] = "cs"
 
-        # pinkdilute + dilutemd
-
-        a = randint(1, 2500)
-
-        if a == 1:
-            genoclass.dilutemd = ["Dm", "Dm"]
-        elif a <= 51:
-            genoclass.dilutemd[0] = "Dm"
+        for i in range(2):
+            if randint(1, 50) == 1:
+                genoclass.dilutemd[i] = "Dm"
 
         genoclass.body_value = randint(genoclass.body_indexes[1]+1, genoclass.body_indexes[2])
         
@@ -2160,14 +2142,9 @@ class Breed_generator:
             if random() > 0.25:
                 genoclass.sedesp[i] = "Se"
 
-        # pinkdilute + dilutemd
-
-        a = randint(1, 2500)
-
-        if a == 1:
-            genoclass.dilutemd = ["Dm", "Dm"]
-        elif a <= 51:
-            genoclass.dilutemd[0] = "Dm"
+        for i in range(2):
+            if randint(1, 50) == 1:
+                genoclass.dilutemd[i] = "Dm"
 
         #sunshine
 
@@ -2321,14 +2298,9 @@ class Breed_generator:
         for i in range(2):
             genoclass.pointgene[i] = "cs"
 
-        # pinkdilute + dilutemd
-
-        a = randint(1, 2500)
-
-        if a == 1:
-            genoclass.dilutemd = ["Dm", "Dm"]
-        elif a <= 51:
-            genoclass.dilutemd[0] = "Dm"
+        for i in range(2):
+            if randint(1, 50) == 1:
+                genoclass.dilutemd[i] = "Dm"
         
         genoclass.breeds["Snowshoe"] = 100
         return genoclass
@@ -2434,7 +2406,7 @@ class Breed_generator:
 
         if random() < 0.125:
             genoclass.curl = ["Cu", "Cu"]
-        elif random() < 0.25:
+        elif random() < 0.125:
             genoclass.curl[0] = "Cu"
             
         genoclass.body_value = randint(genoclass.body_indexes[3]+1, genoclass.body_indexes[4])
@@ -2446,11 +2418,7 @@ class Breed_generator:
     def Tenn(genoclass, special):
         genoclass = Breed_generator.AllColours(genoclass, special)
 
-        # YORK, WIREHAIR, LAPERM, CORNISH, URAL, TENN, FLEECE
-
         genoclass.tenn = ["tr", "tr"]
-            
-        genoclass.body_value = randint(genoclass.body_indexes[1]+1, genoclass.body_indexes[3])
             
         genoclass.breeds["Tennessee Rex"] = 100
         return genoclass
@@ -2522,14 +2490,9 @@ class Breed_generator:
             else:
                 genoclass.agouti[i] = "a"
 
-        # pinkdilute + dilutemd
-
-        a = randint(1, 2500)
-
-        if a == 1:
-            genoclass.dilutemd = ["Dm", "Dm"]
-        elif a <= 51:
-            genoclass.dilutemd[0] = "Dm"
+        for i in range(2):
+            if randint(1, 50) == 1:
+                genoclass.dilutemd[i] = "Dm"
 
         genes = ["2", "2", "1", "1", "1", "1", "1", "1", "0", "0"]
 
@@ -2552,11 +2515,9 @@ class Breed_generator:
 
         genoclass = Breed_generator.AllColours(genoclass, special)
 
-        #  manx + kab + toybob + jbob + kub + ring
-
         genoclass.toybob = ["Tb", "Tb"]
 
-        genoclass.height_value = randint(genoclass.height_indexes[0], genoclass.height_indexes[1])
+        genoclass.height_value = randint(0, genoclass.height_indexes[1])
         
         genoclass.breeds["Toybob"] = 100
         return genoclass
@@ -2592,7 +2553,12 @@ class Breed_generator:
         # ALBINO
 
         for i in range(2):
-            genoclass.pointgene[i] = "C"
+            if randint(1, 25):
+                genoclass.pointgene[i] = "cb"
+            elif randint(1, 15):
+                genoclass.pointgene[i] = "cs"
+            else:
+                genoclass.pointgene[i] = "C"
 
         # SILVER
 
@@ -2695,7 +2661,7 @@ class Breed_generator:
 
         genoclass.urals = ["ru", "ru"]
             
-        genoclass.body_value = randint(genoclass.body_indexes[1]+1, genoclass.body_indexes[2])
+        genoclass.body_value = randint(genoclass.body_indexes[3]+1, genoclass.body_indexes[4])
         
         genoclass.breeds["Ural Rex"] = 100
         return genoclass
@@ -2963,15 +2929,10 @@ class Breed_generator:
         elif random() < 0.75:
             genoclass.ruhr = ["Hrbd", "hrbd"]
 
-        # pinkdilute + dilutemd
-        
-        a = randint(1, 2500)
+        for i in range(2):
+            if randint(1, 50) == 1:
+                genoclass.dilutemd[i] = "Dm"
 
-        if a == 1:
-            genoclass.dilutemd = ["Dm", "Dm"]
-        elif a <= 51:
-            genoclass.dilutemd[0] = "Dm"
-            
         genoclass.body_value = randint(genoclass.body_indexes[4]+1, genoclass.body_indexes[5])
         
         genoclass.breeds["Oriental/Siamese"] = 75

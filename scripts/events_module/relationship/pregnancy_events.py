@@ -1443,7 +1443,7 @@ class Pregnancy_Events:
             #kit.adoptive_parents = all_adoptive_parents  # Add the adoptive parents. 
             # Prevent duplicate prefixes in Clan
             tries = 0
-            extant = [kitty.name.prefix for kitty in Cat.all_cats.values() if not kitty.dead and not kitty.outside and kitty.ID != kit.ID]
+            extant = [kitty.name.prefix for kitty in all_kitten if kitty.ID != kit.ID]
             while tries < 20 and kit.name.prefix in extant:
                 kit.name = Name("newborn")
                 tries += 1
