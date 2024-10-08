@@ -31,6 +31,7 @@
         "rogue1": "m_c joined the Clan by choice after living life as a rogue.",
         "rogue2": "m_c used to live in a Twolegplace, scrounging for what {PRONOUN/m_c/subject} could find. {PRONOUN/m_c/subject/CAP} thought the Clan might offer {PRONOUN/m_c/object} more security.",
         "rogue3": "m_c used to live alone in {PRONOUN/m_c/poss} own territory, but was chased out by something and eventually found the Clan.",
+        "rogue4": "m_c was once a rogue, living on the outskirts of other cats' territories. {PRONOUN/m_c/subject/CAP} preferred the freedom of {PRONOUN/m_c/poss} solitary lifestyle but couldn't ignore the allure of Clan life. Intrigued by the way of the Clans, {PRONOUN/m_c/subject} decided to leave {PRONOUN/m_c/poss} rogue days behind and join the Clan, seeking a new purpose.",
 
         "abandoned1": "m_c was found by the Clan as a kit and has been living with them ever since.",
         "abandoned2": "m_c was born outside of the Clan, but was brought to the Clan as a kit and has lived here ever since.",
