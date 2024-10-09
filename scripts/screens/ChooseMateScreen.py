@@ -499,6 +499,8 @@ class ChooseMateScreen(Screens):
     def update_offspring_container(self):
         """Updates everything in the mates container, including the list of current mates, checkboxes
         and the page"""
+        if not self.the_cat.inheritance:
+            self.the_cat.create_inheritance_new_cat()
         self.all_offspring = [
             Cat.fetch_cat(i)
             for i in list(self.the_cat.inheritance.kits)
@@ -576,6 +578,8 @@ class ChooseMateScreen(Screens):
         pos_x = 15
         pos_y = 0
         i = 0
+        if not self.the_cat.inheritance:
+            self.the_cat.create_inheritance_new_cat()
         for _off in display_cats:
             info_text = f"{str(_off.name)}"
             additional_info = self.the_cat.inheritance.get_cat_info(_off.ID)
@@ -1180,7 +1184,7 @@ class ChooseMateScreen(Screens):
         super().on_use()
 
         self.loading_screen_on_use(
-            self.work_thread, self.update_both, ui_scale_offset((400, 300))
+            self.work_thread, self.update_both
         )
 
     def get_valid_mates(self):

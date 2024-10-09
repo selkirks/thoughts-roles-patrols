@@ -114,6 +114,8 @@ class EventsScreen(Screens):
                     if val == element:
                         self.handle_tab_switch(ele)
                         break
+                    
+            self.mute_button_pressed(event)
 
         # ON FULL BUTTON PRESS
         elif (
@@ -707,7 +709,7 @@ class EventsScreen(Screens):
 
     def on_use(self):
         super().on_use()
-        self.loading_screen_on_use(self.events_thread, self.timeskip_done, ui_scale_offset((400, 300)))
+        self.loading_screen_on_use(self.events_thread, self.timeskip_done)
         pass
 
     def timeskip_done(self):

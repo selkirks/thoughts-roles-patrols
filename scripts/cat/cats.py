@@ -3673,7 +3673,9 @@ class Cat:
         self._moons = value
 
         updated_age = False
-        for key_age in self.age_moons.keys():
+        for key_age in self.age_moons.keys():            
+            if key_age == "senior" and value > self.age_moons[key_age][1] + 1:
+                self.age = "senior"
             if self._moons in range(
                 self.age_moons[key_age][0], self.age_moons[key_age][1] + 1
             ):

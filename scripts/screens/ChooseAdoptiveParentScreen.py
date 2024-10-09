@@ -907,7 +907,7 @@ class ChooseAdoptiveParentScreen(Screens):
         super().on_use()
 
         self.loading_screen_on_use(
-            self.work_thread, self.update_after_change, ui_scale_offset((400, 300))
+            self.work_thread, self.update_after_change
         )
 
     def get_valid_adoptive_parents(self):
