@@ -940,7 +940,7 @@
     "season": ["any"],
     "sub_type": ["accessory"],
     "weight": 20,
-    "event_text": "m_c noticed the leftovers on freshkill pile. {PRONOUN/m_c/subject/CAP} saw a acc_singular and out of curiosity put it on {PRONOUN/m_c/poss} fur.Then {PRONOUN/m_c/subject} looked at the surface of the puddle and decided that it suited {PRONOUN/m_c/object} perfectly.",
+    "event_text": "m_c noticed the leftovers on fresh-kill pile. {PRONOUN/m_c/subject/CAP} saw a acc_singular and out of curiosity put it on {PRONOUN/m_c/poss} fur. Then {PRONOUN/m_c/subject} looked at the surface of the puddle and decided that it suited {PRONOUN/m_c/object} perfectly.",
     "new_accessory": ["RAT SKULL","FISH BONES","SNAKE","RIBS"],
     "m_c":{
       "age": ["any"],
