@@ -3074,7 +3074,7 @@
     "season": ["any"],
     "sub_type": ["accessory"],
     "weight": 20,
-    "event_text": "r_c finds a patch of odd red orchids. {PRONOUN/r_c/subject/CAP} {VERB/r_c/decide/decides} to take a pair of it's prettiest blooms for a gift to give to m_c! m_c decorates {PRONOUN/m_c/self} with the pretty flowers, cooing softly at how pretty {PRONOUN/m_c/subject} feel with them on.",
+    "event_text": "r_c finds a patch of odd red orchids. {PRONOUN/r_c/subject/CAP} {VERB/r_c/decide/decides} to take a pair of its prettiest blooms for a gift to give to m_c! m_c decorates {PRONOUN/m_c/self} with the pretty flowers, cooing softly at how pretty {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} with them on.",
     "new_accessory": ["LACELEAF"],
     "m_c": {
       "status":["any"],
