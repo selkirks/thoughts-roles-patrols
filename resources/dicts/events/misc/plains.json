@@ -157,7 +157,7 @@
     "season": ["greenleaf","leaf-fall"],
     "sub_type": ["accessory"],
     "weight": 20,
-    "event_text": "m_c plucks a few marigolds from a nearby flower patch. {PRONOUN/m_c/subject/CAP} {VERB/m_c/wears/wear} it with poise.",
+    "event_text": "m_c plucks a few marigolds from a nearby flower patch. {PRONOUN/m_c/subject/CAP} {VERB/m_c/wear/wears} it with poise.",
     "new_accessory": ["MARIGOLD"],
     "m_c": {
       "age": ["any"],

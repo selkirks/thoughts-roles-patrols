@@ -966,7 +966,7 @@
     "season": ["any"],
     "sub_type": ["accessory"],
     "weight": 20,
-    "event_text": "m_c was on {PRONOUN/m_c/poss} morning patrol. As {PRONOUN/m_c/subject} {VERB/m_c/are/is} about to return to camp, {PRONOUN/m_c/subject} noticed something in the bushes. It was a large acc_singular ! m_c liked it so much that {PRONOUN/m_c/subject} wanted to decorate {PRONOUN/m_c/poss} den with it. r_c helped {PRONOUN/m_c/object} carry it to camp.",
+    "event_text": "m_c was on {PRONOUN/m_c/poss} morning patrol. As {PRONOUN/m_c/subject} {VERB/m_c/are/is} about to return to camp, {PRONOUN/m_c/subject} noticed something in the bushes. It was a large acc_singular! m_c liked it so much that {PRONOUN/m_c/subject} wanted to decorate {PRONOUN/m_c/poss} den with it. r_c helped {PRONOUN/m_c/object} carry it to camp.",
     "new_accessory": ["DEER ANTLERS","OX SKULL","ROE SKULL","CANIDAE SKULL"],
     "m_c":{
       "age": ["adolescent", "young adult", "adult", "senior adult"],
@@ -1005,7 +1005,7 @@
     "season": ["any"],
     "sub_type": ["accessory"],
     "weight": 20,
-    "event_text": "m_c returned to camp very late. {PRONOUN/m_c/poss/CAP} clanmates smelled the awful scent and moved away from {PRONOUN/m_c/object} . On top of that, m_c fur was all dirty and {PRONOUN/m_c/subject} carrying something. All m_c said was that {PRONOUN/m_c/subject} fallen into some black hole.",
+    "event_text": "m_c returned to camp very late. {PRONOUN/m_c/poss/CAP} clanmates smelled the awful scent and moved away from {PRONOUN/m_c/object} . On top of that, m_c's fur was all dirty and {PRONOUN/m_c/subject} {VERB/m_c/were/was} carrying something. All m_c said was that {PRONOUN/m_c/subject} fallen into some black hole.",
     "new_accessory": ["OLD PENCIL", "OLD BRUSH", "BANANA PEEL", "BROKEN VHS TAPE", "OLD NEWSPAPER", "MUD AND DIRT", "BAUBLES"],
     "m_c":{
       "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
