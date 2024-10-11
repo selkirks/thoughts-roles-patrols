@@ -162,7 +162,7 @@
   },
   {
     "interaction_type": "offend",
-    "event_text": "o_c_n's medicine cats present a new prophecy at the Gathering. m_c offends o_c_n by interrupting to offer {PRONOUN/m_c/poss} interpretation before the medicine cats can say anything else.",
+    "event_text": "o_c_n's healers present a new prophecy at the Gathering. m_c offends o_c_n by interrupting to offer {PRONOUN/m_c/poss} interpretation before the healers can say anything else.",
     "rel_change": -6,
     "m_c": {
       "trait": ["fierce", "bold", "daring", "shameless", "arrogant"],
@@ -195,7 +195,7 @@
   },
   {
     "interaction_type": "offend",
-    "event_text": "At the Gathering, o_c_n's leader reports that one of their cats' broken bones has finally healed. m_c scoffs and addresses the o_c_n medicine cats, telling them that they should have re-broken the bone and set it better.",
+    "event_text": "At the Gathering, o_c_n's leader reports that one of their cats' broken bones has finally healed. m_c scoffs and addresses the o_c_n healers, telling them that they should have re-broken the bone and set it better.",
     "rel_change": -6,
     "m_c": {
       "trait": ["fierce"],
@@ -302,7 +302,7 @@
   },
   {
     "interaction_type": "praise",
-    "event_text": "At the Gathering, o_c_n's leader speaks at length about the perseverance of one of their medicine cats in caring for a seriously injured Clanmate. m_c feels it would be too awkward to congratulate o_c_n directly, but nevertheless nods to the medicine cat in question.",
+    "event_text": "At the Gathering, o_c_n's leader speaks at length about the perseverance of one of their healers in caring for a seriously injured Clanmate. m_c feels it would be too awkward to congratulate o_c_n directly, but nevertheless nods to the healer in question.",
     "rel_change": 4,
     "m_c": {
       "skill": ["HEALER,1"],
@@ -1681,7 +1681,7 @@
   },
   {
     "interaction_type": "appease",
-    "event_text": "At the Gathering, m_c remarks on the many different types of herbs that will be useful to o_c_n warriors recovering from recent scraps. o_c_n's leader scoffs, but o_c_n's medicine cats are listening.",
+    "event_text": "At the Gathering, m_c remarks on the many different types of herbs that will be useful to o_c_n warriors recovering from recent scraps. o_c_n's leader scoffs, but o_c_n's healers are listening.",
     "rel_change": 5,
     "m_c": {
       "skill": [ "HEALER,1" ],
