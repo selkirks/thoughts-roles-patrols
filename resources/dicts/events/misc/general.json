@@ -5165,7 +5165,7 @@
     "location": ["any"],
     "season": ["any"],
     "sub_type": ["accessory"],
-    "weight": 15,
+    "weight": 30,
     "event_text": "m_c returned to camp after a few days. {PRONOUN/m_c/poss/CAP} fur was dirty and {PRONOUN/m_c/subject} looked fierce. Especially with the collar m_c wearing now.",
     "new_accessory": ["TEETHDOGCOLLARS"],
     "m_c":{
