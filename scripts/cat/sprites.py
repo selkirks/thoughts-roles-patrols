@@ -136,8 +136,21 @@ class Sprites:
             'fademask', 'fadestarclan', 'fadedarkforest','bandanas', 
             'symbols', 'plant2_accessories', 'flower_accessories', 'snake_accessories', 'eragonatorite', 'eragonawp', 'eragonaeyes', 'eragonaeyes2',
             'brindlecolours', 'wildcatcolours', 'wolfcolours', 'spotscolours', 'smokepointcolours',
-            'lynx2colours', 'finleappatchescolours', 'eragonatorite2', 'harnesses', 'bows', 'teethcollars', 'smallAnimal_accessories', 'aliveInsect_accessories',
-    'deadInsect_accessories', 'fruit_accessories', 'crafted_accessories', 'tail2_accessories', 'bonesacc', 'butterflymothacc', 'twolegstuff'
+            'dalmatiancolours', 'finleappatchescolours', 'eragonatorite2', 'harnesses', 'bows', 'teethcollars', 'smallAnimal_accessories', 'aliveInsect_accessories',
+    'deadInsect_accessories', 'fruit_accessories', 'crafted_accessories', 'tail2_accessories', 'bonesacc', 'butterflymothacc', 'twolegstuff', 'steragouticolours', 'sillyagouticolours', 'danceagouticolours', 'mimiagouticolours', 
+            'sterbengalcolours', 'sillybengalcolours', 'dancebengalcolours', 'mimibengalcolours',
+            'sterclassiccolours', 'sillyclassiccolours', 'danceclassiccolours', 'mimiclassiccolours',
+            'stermackerelcolours', 'sillymackerelcolours', 'dancemackerelcolours', 'mimimackerelcolours',
+            'stermarbledcolours', 'sillymarbledcolours', 'dancemarbledcolours', 'mimimarbledcolours',
+            'stermaskedcolours', 'sillymaskedcolours', 'dancemaskedcolours', 'mimimaskedcolours',
+            'sterrosettecolours', 'sillyrosettecolours', 'dancerosettecolours', 'mimirosettecolours',
+            'stersinglecolours', 'sillysinglecolours', 'dancesinglecolours', 'mimisinglecolours',
+            'sterstripecolours', 'sillystripecolours', 'dancestripecolours', 'mimistripecolours',
+            'stersmokecolours', 'sillysmokecolours', 'dancesmokecolours', 'mimismokecolours',
+            'stersokokecolours', 'sillysokokecolours', 'dancesokokecolours', 'mimisokokecolours',
+            'sterspeckledcolours', 'sillyspeckledcolours', 'dancespeckledcolours', 'mimispeckledcolours',
+            'stertabbycolours', 'sillytabbycolours', 'dancetabbycolours', 'mimitabbycolours',
+            'stertickedcolours', 'sillytickedcolours', 'dancetickedcolours', 'mimitickedcolours'
         ]:
             if 'lineart' in x and game.config['fun']['april_fools']:
                 self.spritesheet(f"sprites/aprilfools{x}.png", x)
@@ -311,7 +324,21 @@ class Sprites:
             'singlestripecolours', 'maskedcolours', 'manedcolours', 'ocelotcolours',
             'lynxcolours', 'royalcolours', 'bobcatcolours', 'cheetahcolours', 'brindlecolours', 'wildcatcolours',
             'wolfcolours', 'spotscolours', 'smokepointcolours',
-            'lynx2colours', 'finleappatchescolours'
+            'dalmatiancolours', 'finleappatchescolours', 'finleappatchescolours',
+            'steragouticolours', 'sillyagouticolours', 'danceagouticolours', 'mimiagouticolours',
+            'sterbengalcolours', 'sillybengalcolours', 'dancebengalcolours', 'mimibengalcolours',
+            'sterclassiccolours', 'sillyclassiccolours', 'danceclassiccolours', 'mimiclassiccolours',
+            'stermackerelcolours', 'sillymackerelcolours', 'dancemackerelcolours', 'mimimackerelcolours',
+            'stermarbledcolours', 'sillymarbledcolours', 'dancemarbledcolours', 'mimimarbledcolours',
+            'stermaskedcolours', 'sillymaskedcolours', 'dancemaskedcolours', 'mimimaskedcolours',
+            'sterrosettecolours', 'sillyrosettecolours', 'dancerosettecolours', 'mimirosettecolours',
+            'stersinglecolours', 'sillysinglecolours', 'dancesinglecolours', 'mimisinglecolours',
+            'sterstripecolours', 'sillystripecolours', 'dancestripecolours', 'mimistripecolours',
+            'stersmokecolours', 'sillysmokecolours', 'dancesmokecolours', 'mimismokecolours',
+            'stersokokecolours', 'sillysokokecolours', 'dancesokokecolours', 'mimisokokecolours',
+            'sterspeckledcolours', 'sillyspeckledcolours', 'dancespeckledcolours', 'mimispeckledcolours',
+            'stertabbycolours', 'sillytabbycolours', 'dancetabbycolours', 'mimitabbycolours',
+            'stertickedcolours', 'sillytickedcolours', 'dancetickedcolours', 'mimitickedcolours'
         ]
 
         for row, colors in enumerate(color_categories):

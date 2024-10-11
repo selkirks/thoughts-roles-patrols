@@ -9,32 +9,88 @@ from scripts.game_structure.game_essentials import game
 class Pelt:
     sprites_names = {
         "SingleColour": 'single',
+        'SterSingle': 'stersingle',
+        'SillySingle': 'sillysingle',
+        'DanceSingle': 'dancesingle',
+        'MimiSingle': 'mimisingle',
         'TwoColour': 'single',
         'Tabby': 'tabby',
+        'Stertabby': 'stertabby',
+        'Sillytabby': 'sillytabby',
+        'Dancetabby': 'dancetabby',
+        'Mimitabby': 'mimitabby',
         'Marbled': 'marbled',
+        'Stermarbled': 'stermarbled',
+        'Sillymarbled': 'sillymarbled',
+        'Dancemarbled': 'dancemarbled',
+        'Mimimarbled': 'mimimarbled',
         'Rosette': 'rosette',
+        'Sterrosette': 'sterrosette',
+        'Sillyrosette': 'sillyrosette',
+        'Dancerosette': 'dancerosette',
+        'Mimirosette': 'mimirosette',
         'Smoke': 'smoke',
+        'Stersmoke': 'stersmoke',
+        'Sillysmoke': 'sillysmoke',
+        'Dancesmoke': 'dancesmoke',
+        'Mimismoke': 'mimismoke',
         'Ticked': 'ticked',
+        'Sterticked': 'sterticked',
+        'Sillyticked': 'sillyticked',
+        'Danceticked': 'danceticked',
+        'Mimiticked': 'mimiticked',
         'Speckled': 'speckled',
+        'Sterspeckled': 'sterspeckled',
+        'Sillyspeckled': 'sillyspeckled',
+        'Dancespeckled': 'dancespeckled',
+        'Mimispeckled': 'mimispeckled',
         'Bengal': 'bengal',
+        'Sterbengal': 'sterbengal',
+        'Sillybengal': 'sillybengal',
+        'Dancebengal': 'dancebengal',
+        'Mimibengal': 'mimibengal',
         'Mackerel': 'mackerel',
+        'Stermackerel': 'stermackerel',
+        'Sillymackerel': 'sillymackerel',
+        'Dancemackerel': 'dancemackerel',
+        'Mimimackerel': 'mimimackerel',
         'Classic': 'classic',
+        'Sterclassic': 'sterclassic',
+        'Sillyclassic': 'sillyclassic',
+        'Danceclassic': 'danceclassic',
+        'Mimiclassic': 'mimiclassic',
         'Sokoke': 'sokoke',
+        'Stersokoke': 'stersokoke',
+        'Sillysokoke': 'sillysokoke',
+        'Dancesokoke': 'dancesokoke',
+        'Mimisokoke': 'mimisokoke',
         'Agouti': 'agouti',
         'Singlestripe': 'singlestripe',
+        'Sterstripe': 'sterstripe',
+        'Sillystripe': 'sillystripe',
+        'Dancestripe': 'sillystripe',
+        'Mimistripe': 'mimistripe',
         'Masked': 'masked',
+        'Stermasked': 'stermasked',
+        'Sillymasked': 'sillymasked',
+        'Dancemasked': 'dancemasked',
+        'Mimimasked': 'mimimasked',
         'Brindle': 'brindle',
         'Wolf': 'wolf',
         'Wildcat': 'wildcat',
         'Spots': 'spots',
         'Smokepoint': 'smokepoint',
-        'Lynx2': 'lynx',
+        'Steragouti': 'steragouti',
+        'Sillyagouti': 'sillyagouti',
+        'Danceagouti': 'danceagouti',
+        'Mimiagouti': 'mimiagouti',
         'Finleappatches': 'finleappatches',
         'Tortie': None,
         'Calico': None,
         'Maned': 'maned',
         'Ocelot': 'ocelot',
         'Lynx': 'lynx',
+        'Dalmatian': 'dalmatian',
         'Royal': 'royal',
         'Bobcat': 'bobcat',
         'Cheetah': 'cheetah',
@@ -84,9 +140,23 @@ class Pelt:
                       'CRESCENT', 'ETERNAL', 'WINGTWO', 'STARBORN',  'SPIDERLEGS', 'APPEL', 'RUG', 'LUCKY']
     tortiebases = ['single', 'tabby', 'bengal', 'marbled', 'ticked', 'smoke', 'rosette', 'speckled', 'mackerel',
                    'classic', 'sokoke', 'agouti', 'singlestripe', 'masked','maned', 'ocelot', 'lynx', 'royal',
-                   'bobcat', 'cheetah',
+                   'bobcat', 'cheetah', 'dalmatian',
                    'wolf', 'brindle', 'spots', 'smokepoint',
-                   'finleappatches', 'wildcat']
+                   'finleappatches', 'wildcat',
+                   'steragouti', 'sillyagouti', 'danceagouti', 'mimiagouti', 
+                   'sterbengal', 'sillybengal', 'dancebengal', 'mimibengal',
+                   'sterclassic', 'sillyclassic', 'danceclassic', 'mimiclassic',
+                   'stermackerel', 'sillymackerel', 'dancemackerel', 'mimimackerel',
+                   'stermarbled', 'sillymarbled', 'dancemarbled', 'mimimarbled',
+                   'stermasked', 'sillymasked', 'dancemasked', 'mimimasked',
+                   'sterrosette', 'sillyrosette', 'dancerosette', 'mimirosette',
+                   'stersingle', 'sillysingle', 'dancesingle', 'mimisingle',
+                   'sterstripe', 'sillystripe', 'dancestripe', 'mimistripe',
+                   'stersmoke', 'sillysmoke', 'dancesmoke', 'mimismoke',
+                   'stersokoke', 'sillysokoke', 'dancesokoke', 'mimisokoke',
+                   'sterspeckled', 'sillyspeckled', 'dancespeckled', 'mimispeckled',
+                   'stertabby', 'sillytabby', 'dancetabby', 'mimitabby',
+                   'sterticked', 'sillyticked', 'danceticked', 'mimiticked']
 
     pelt_length = ["short", "medium", "long"]
     eye_colours = ['YELLOW', 'AMBER', 'HAZEL', 'PALEGREEN', 'GREEN', 'BLUE', 'DARKBLUE', 'GREY', 'CYAN', 'EMERALD', 'PALEBLUE', 
@@ -102,7 +172,7 @@ class Pelt:
             'LICHEN', 'SPRING', 'TREE', 'LEAVES', 'EMERALD ORE', 'HAZELNUT', 'BLUE SKY', 'OCEAN', 'OVERCAST', 'AQUA', 'IRIS', 'ROBIN', 'GREY SILVER', 'SAND', 'MUSTARD', 'BRONZE ORE', 'TIMBER', 'COPPER ORE',
             'FERN', 'APPLE', 'MOSS', 'THICKET', 'PEACOCK', 'OLIVE','STORMY BLUE', 'DEPTHS', 'STORMY', 'TEAL', 'INDIGO', 'STEEL', 'PEACH', 'DAFFODIL', 'MARIGOLD', 'BRASS', 'DARKAMBER', 'DAWN SKIES','MINT',
              'CHARTREUSE', 'MEADOW', 'LEAF', 'LIGHT TURQUOISE', 'SAP', 'ALBINISTIC', 'COBALT ORE', 'RAIN', 'CYAN DYE', 'PERIWINKLE PURPLE', 'ICY CRACK', 'PINK', 'MORNING', 'DARK BROWN' , 'BAY', 'NEON GREEN', 'SEA', 'DISCORD']
-    yellow_eyes = ['BULLET', 'GREY SILVER', 'PEACH', 'LIGHT YELLOW', 'SAND', 'DAFFODIL', 'SUNSHINE', 'MUSTARD', 'MARIGOLD', 'GOLD ORE', 'BRONZE ORE', 'BRASS', 'FOSSILIZED AMBER', 'TIMBER', 'DARKAMBER', 'DUSKY', 'COPPER ORE', 'DAWN','YELLOW', 'AMBER', 'PALEYELLOW', 'GOLD', 'COPPER', 'GREENYELLOW', 'BRONZE', 'SILVER', 'ROSE', 'LIGHT FLAME', 'RED',
+    yellow_eyes = ['BULLET', 'GREY SILVER', 'PEACH', 'LIGHT YELLOW', 'SAND', 'DAFFODIL', 'SUNSHINE', 'MUSTARD', 'MARIGOLD', 'GOLD ORE', 'BRONZE ORE', 'BRASS', 'FOSSILIZED AMBER', 'TIMBER', 'DARKAMBER', 'DUSKY', 'COPPER ORE', 'DAWN SKY','YELLOW', 'AMBER', 'PALEYELLOW', 'GOLD', 'COPPER', 'GREENYELLOW', 'BRONZE', 'SILVER', 'ROSE', 'LIGHT FLAME', 'RED',
                    'PUMPKIN', 'BROWN', 'CEDAR', 'DARK PINE', 'FALL', 'GOLD MOON', 'OXIDIZED', 'BERRY BANANA', 'WORMY', 'THUNDERBOLT',
                    'VOLCANO', 'SEASHELL', 'PARADOX', 'BLESSING', 'VALENTINE', 'PALE BROWN', 'CRIMSON', 'MORNING',
                    'BLACK', 'ROSE GOLD', 'DARK ROSE','DARK BROWN', 'MUDDY', 'RUSTY', 'ECLIPSE', 'BAY', 'DISCORD']
@@ -220,10 +290,19 @@ class Pelt:
     tail2_accessories = ["SEAWEED", "DAISY CORSAGE"
                     ]
 
-    tabbies = ["Tabby", "Ticked", "Mackerel", "Classic", "Sokoke", "Agouti", "Royal", "Brindle"]
-    spotted = ["Speckled", "Rosette", "Lynx", "Bobcat", "Spots"]
-    plain = ["SingleColour", "TwoColour", "Smoke", "Singlestripe", "Smokepoint"]
-    exotic = ["Bengal", "Marbled", "Masked", "Maned", "Ocelot", "Cheetah","Lynx2", "Wildcat", "Wolf", "Finleappatches"]
+    tabbies = ["Tabby", "Ticked", "Mackerel", "Stermackerel", "Sillymackerel", "Dancemackerel", "Mimimackerel", 
+               "Classic", "Sterclassic", "Sillyclassic", "Danceclassic", "Mimiclassic",
+               "Sokoke", "Stersokoke", "Sillysokoke", "Dancesokoke", "Mimisokoke",
+               "Agouti", "Steragouti", "Sillyagouti", "Danceagouti", "Mimiagouti", "Royal", "Brindle"]
+    spotted = ["Speckled", "Sterspeckled", "Sillyspeckled", "Dancespeckled", "Mimispeckled", 
+               "Rosette", "Sterrosette", "Sillyrosette", "Dancerosette", "Mimirosette", 
+               "Lynx", "Bobcat", "Spots"]
+    plain = ["SingleColour", "SterSingle", "SillySingle", "DanceSingle", "MimiSingle",
+             "TwoColour", "Smoke", "Stersmoke", "Sillysmoke", "Dancesmoke", "Mimismoke",
+             "Singlestripe", "Sterstripe", "Dancestripe", "Sillystripe", "Mimistripe", "Smokepoint"]
+    exotic = ["Bengal", "Sterbengal", "Sillybengal", "Dancebengal", "Mimibengal", 
+              "Marbled", "Stermarbled", "Sillymarbled", "Dancemarbled", "Mimimarbled",
+              "Masked", "Stermasked", "Sillymasked", "Dancemasked", "Mimimasked", "Maned", "Ocelot", "Cheetah", "Wildcat", "Wolf", "Finleappatches", "Dalmatian"]
     torties = ["Tortie", "Calico"]
     pelt_categories = [tabbies, spotted, plain, exotic, torties]
 
@@ -592,7 +671,7 @@ class Pelt:
         if torbie:
             # If it is tortie, the chosen pelt above becomes the base pelt.
             chosen_tortie_base = chosen_pelt
-            if chosen_tortie_base in ["TwoColour", "SingleColour"]:
+            if chosen_tortie_base in ["TwoColour", "SingleColour", "SterSingle", "SillySingle", "DanceSingle", "MimiSingle"]:
                 chosen_tortie_base = "Single"
             chosen_tortie_base = chosen_tortie_base.lower()
             chosen_pelt = random.choice(Pelt.torties)
@@ -875,9 +954,14 @@ class Pelt:
 
                 else:
                     # Normal generation
-                    if self.tortiebase in ["singlestripe", "smoke", "single", "smokepoint"]:
-                        self.tortiepattern = choice(['tabby', 'mackerel', 'classic', 'single', 'smoke', 'agouti',
-                                                     'ticked', 'brindle', 'spots'])
+                    if self.tortiebase in ["singlestripe", "sterstripe", "sillystripe", "dancestripe", "mimistripe", 
+                                           "smoke","stersmoke", "sillysmoke", "dancesmoke", "mimismoke", "single", "smokepoint"]:
+                        self.tortiepattern = choice(['tabby', 'stertabby', 'sillytabby', 'dancetabby', 'mimitabby',
+                                                     'mackerel', 'stermackerel', 'sillymackerel', 'dancemackerel', 'mimimackerel',  
+                                                     'classic', 'sterclassic', 'sillyclassic', 'danceclassic', 'mimiclassic', 'single', 'smoke',
+                                                     'stersmoke', 'sillysmoke', 'dancesmoke', 'mimismoke','agouti', 'steragouti', 'sillyagouti', 'danceagouti', 'mimiagouti',
+                                                     'ticked', 'sterticked', 'sillyticked', 'danceticked', 'mimiticked',
+                                                     'brindle', 'spots'])
                     else:
                         self.tortiepattern = random.choices([self.tortiebase, 'single'], weights=[97, 3], k=1)[0]
 
@@ -1352,20 +1436,65 @@ class Pelt:
         pattern_des = {
             "Tabby": "c_n tabby",
             "Speckled": "speckled c_n",
+            "Sterspeckled": "speckled c_n",
+            "Sillyspeckled": "speckled c_n",
+            "Dancespeckled": "speckled c_n",
+            "Mimispeckled": "speckled c_n",
             "Bengal": "unusually dappled c_n",
+            "Sterbengal": "unusually dapple c_n",
+            "Sillybengal": "unusually dapple c_n",
+            "Dancebengal": "unusually dapple c_n",
+            "Mimibengal": "unusually dapple c_n",
             "Marbled": "c_n tabby",
+            "Stermarbled": "c_n tabby",
+            "Sillymarbled": "c_n tabby",
+            "Dancemarbled": "c_n tabby",
+            "Mimimarbled": "c_n tabby",
             "Ticked": "c_n ticked",
             "Smoke": "c_n smoke",
+            "Stersmoke": "c_n smoke",
+            "Sillysmoke": "c_n smoke",
+            "Dancesmoke": "c_n smoke",
+            "Mimismoke": "c_n smoke",
             "Mackerel": "c_n tabby",
+            "Stermackerel": "c_n tabby",
+            "Sillymackerel": "c_n tabby",
+            "Dancemackerel": "c_n tabby",
+            "Mimimackerel": "c_n tabby",
             "Classic": "c_n tabby",
+            "Sterclassic": "c_n tabby",
+            "Sillyclassic": "c_n tabby",
+            "Danceclassic": "c_n tabby",
+            "Mimiclassic": "c_n tabby",
             "Agouti": "c_n tabby",
+            "Steragouti": "c_n tabby",
+            "Sillyagouti": "c_n tabby",
+            "Danceagouti": "c_n tabby",
+            "Mimiagouti": "c_n tabby",
             "Singlestripe": "dorsal-striped c_n",
+            "Sterstripe": "dorsal-striped c_n",
+            "Sillystripe": "dorsal-striped c_n",
+            "Dancestripe": "dorsal-striped c_n",
+            "Mimistripe": "dorsal-striped c_n",
             "Rosette": "unusually spotted c_n",
+            "Sterrosette": "unusually spotted c_n",
+            "Sillyrosette": "unusually spotted c_n",
+            "Dancerosette": "unusually spotted c_n",
+            "Mimirosette": "unusually spotted c_n",
             "Sokoke": "c_n tabby",
+            "Stersokoke": "c_n tabby",
+            "Sillysokoke": "c_n tabby",
+            "Dancesokoke": "c_n tabby",
+            "Mimisokoke": "c_n tabby",
             "Masked": "masked c_n tabby",
+            "Stermasked": "masked c_n tabby",
+            "Sillymasked": "masked c_n tabby",
+            "Dancemasked": "masked c_n tabby",
+            "Mimimasked": "masked c_n tabby",
             "Maned": "oddly caped c_n",
             "Ocelot": "oddly dappled c_n",
             "Lynx": "flecked c_n",
+            "Dalmatian": "flecked c_n",
             "Royal": "dappled c_n",
             "Bobcat": "spotted c_n",
             "Cheetah": "unusually speckled c_n",
@@ -1374,7 +1503,6 @@ class Pelt:
             "Wolf": "resembling a wolf c_n",
             "Spots": "c_n spot",
             "Smokepoint": "c_n smoke",
-            "Lynx2": "unusually dappled c_n",
             "Finleappatches": "c_n ticked"
         }
 
@@ -1384,7 +1512,7 @@ class Pelt:
             color_name = renamed_colors[color_name]
 
         # Replace "white" with "pale" if the cat is white
-        if cat.pelt.name not in ["SingleColour", "TwoColour", "Tortie", "Calico"] and color_name == "white":
+        if cat.pelt.name not in ["SingleColour", "SterSingle", "TwoColour", "Tortie", "Calico"] and color_name == "white":
             color_name = "pale"
 
         # Time to describe the pattern and any additional colors
@@ -1402,7 +1530,8 @@ class Pelt:
                     color_name = cat.pelt.name.lower()
             else:
                 base = cat.pelt.tortiebase.lower()
-                if base in [tabby.lower() for tabby in Pelt.tabbies] + ['bengal', 'rosette', 'speckled']:
+                if base in [tabby.lower() for tabby in Pelt.tabbies] + ['bengal', 'rosette', 'sterrosette', 'sillyrosette', 'dancerosette', 'mimirosette', 
+                                                                        'speckled', 'sterspeckled', 'sillyspeckled', 'dancespeckled', 'mimispeckled']:
                     base = ' tabby'  # the extra space is intentional
                 else:
                     base = ''
