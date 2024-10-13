@@ -410,7 +410,7 @@ class Phenotype():
 
         if(self.genotype.chimera and not self.genotype.chimerapattern):
             self.genotype.chimerapattern = self.ChooseTortiePattern('chim')
-        if(self.genotype.tortiepattern == "CRYPTIC" and self.tortie != "brindled bicolour "):
+        if(self.genotype.tortiepattern == ["CRYPTIC"] and self.tortie != "brindled bicolour "):
             self.tortie = ""
             self.WhiteFinder()
             self.TabbyFinder()

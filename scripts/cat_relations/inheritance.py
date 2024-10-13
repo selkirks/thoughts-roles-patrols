@@ -367,7 +367,7 @@ class Inheritance:
             self.all_but_cousins.append(inter_id)
             if len(inter_blood_parents) > 1:
                 inter_blood_parents.remove(self.cat.ID)
-                other_id = inter_blood_parents.pop()
+                other_id = inter_blood_parents[0]
                 other_cat = self.cat.fetch_cat(other_id)
                 self.kits[inter_id]["additional"].append(
                     f"second parent: {str(other_cat.name)}"
