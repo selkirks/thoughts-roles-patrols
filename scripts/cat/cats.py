@@ -837,7 +837,12 @@ class Cat:
             elif 'blue' not in self.genotype.lefteyetype or 'blue' not in self.genotype.righteyetype:
                 self.get_permanent_condition(choice(['deaf in one ear', 'deaf in one ear', 'partial hearing loss in one ear']), born_with=True, genetic=True)
         if ('M' in self.genotype.manx and self.phenotype.bobtailnr):
-            if(random() > ((self.phenotype.bobtailnr + 1) * 0.2)):
+            manx_c = 0.95
+            if self.phenotype.bobtailnr > 3:
+                manx_c = 0.995
+            elif self.phenotype.bobtailnr > 1:
+                manx_c = 0.98
+            if(random() > manx_c):
                 self.get_permanent_condition('manx syndrome', born_with=True, genetic=True)
 
 
@@ -849,7 +854,7 @@ class Cat:
         
         if self.genotype.fold[0] == 'Fd' or ('manx syndrome' in self.permanent_condition and 'M' in self.genotype.manx and self.phenotype.bobtailnr < 4 and self.phenotype.bobtailnr > 1 and random() < 0.05):
             self.get_permanent_condition('constant joint pain', born_with=True, genetic=True)
-        if 'manx syndrome' in self.permanent_condition and ((self.phenotype.bobtailnr < 2 and random() > 0.25) or (self.phenotype.bobtailnr > 1 and random() > ((self.phenotype.bobtailnr) * 0.2))):
+        if 'manx syndrome' in self.permanent_condition and ((self.phenotype.bobtailnr < 2 and random() > 0.5) or (self.phenotype.bobtailnr > 1 and random() > ((self.phenotype.bobtailnr) * 0.24))):
             self.get_permanent_condition('incontinence', born_with=True, genetic=True)
         if 'manx syndrome' in self.permanent_condition and ((self.phenotype.bobtailnr < 2 and random() > 0.2) or (self.phenotype.bobtailnr > 1 and random() > ((self.phenotype.bobtailnr) * 0.3))):
             self.get_permanent_condition('rabbit gait', born_with=True, genetic=True)
