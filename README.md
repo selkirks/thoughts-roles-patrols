@@ -5,6 +5,10 @@
 
 A mod of the Clan-gen fan edit featuring cat genetics that get passed down from cat to cat, among a few little bonuses here and there!
 
+## Description
+Fan-edit of the warrior cat clangen game built using Python and Pygame.
+
+## Credits
 Original creator: just-some-cat.tumblr.com
 
 Fan-edit creator: SableSteel, and many others
@@ -44,3 +48,6 @@ Double click the `run.bat` script
 
 ## Bug Reporting
 We have migrated to GitHub Issues for bug reporting and tracking. We no longer review bug reports from the retired Google Form.
+
+## Contributing
+If you'd like to contribute to Clangen, please read our [Contributing guide](https://github.com/ClanGenOfficial/clangen/blob/development/CONTRIBUTING.md).
