@@ -900,9 +900,9 @@
     "singular": "gray and white rabbit"
 },
   "TAN AND WHITE RABBIT" : {
-    "default": "gray and white rabbit",
-    "plural": "gray and white rabbits",
-    "singular": "gray and white rabbit"
+    "default": "tan and white rabbit",
+    "plural": "tan and white rabbits",
+    "singular": "tan and white rabbit"
 },
 "BLACK VITILIGO RABBIT": {
     "default": "black vitiligo rabbit",
