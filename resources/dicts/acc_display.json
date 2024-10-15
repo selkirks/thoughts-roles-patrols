@@ -759,11 +759,6 @@
     "plural": "flowers",
     "singular": "flower"
 },
-"PLANT2": {
-    "default": "plant",
-    "plural": "plants",
-    "singular": "plant"
-},
 "DEADINSECT": {
     "default": "dead insect",
     "plural": "dead insects",
@@ -898,11 +893,6 @@
     "default": "black and white rabbit",
     "plural": "brown and white rabbits",
     "singular": "black and white rabbit"
-},
-"FAWN AND WHITE RABBIT": {
-    "default": "fawn and white rabbit",
-    "plural": "fawn and white rabbits",
-    "singular": "fawn and white rabbit"
 },
   "GRAY AND WHITE RABBIT" : {
     "default": "gray and white rabbit",

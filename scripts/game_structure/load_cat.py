@@ -87,6 +87,8 @@ def json_load():
             if "eye_colour2" in cat:
                 if cat["eye_colour2"] == "BLUE2":
                     cat["eye_colour2"] = "COBALT"
+            if cat["pelt_name"] == "Lynx2":
+                cat["pelt_name"] = "Dalmatian"
 
             new_cat.pelt = Pelt(
                 name=cat["pelt_name"],

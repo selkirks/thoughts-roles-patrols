@@ -198,7 +198,7 @@
     "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c gently guides a rabbit into camp. Seems like m_c has found a new friend?",
-    "new_accessory": ["FAWN RABBIT", "FAWN AND WHITE RABBIT", "FAWN VITILIGO RABBIT", "WHITE RABBIT", "BROWN RABBIT", "BROWN AND WHITE RABBIT", "BROWN VITILIGO RABBIT", "TAN RABBIT", "TAN VITILIGO RABBIT", "TAN AND WHITE RABBIT"],
+    "new_accessory": ["FAWN RABBIT", "WHITE AND FAWN RABBIT", "FAWN VITILIGO RABBIT", "WHITE RABBIT", "BROWN RABBIT", "BROWN AND WHITE RABBIT", "BROWN VITILIGO RABBIT", "TAN RABBIT", "TAN VITILIGO RABBIT", "TAN AND WHITE RABBIT"],
     "m_c": {
       "status": ["any"],
       "age": ["any"]

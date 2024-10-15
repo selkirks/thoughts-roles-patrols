@@ -509,6 +509,9 @@ class Pelt:
             elif self.eye_colour == "BLUEGREEN":
                 self.eye_colour2 = "GREEN"
             self.eye_colour = "BLUE"
+        
+        if self.colour == "Lynx2":
+            self.colour == "Dalmatian"
 
         if self.length == 'long':
             if self.cat_sprites['adult'] not in [9, 10, 11]:
