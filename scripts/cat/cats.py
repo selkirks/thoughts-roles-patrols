@@ -474,9 +474,9 @@ class Cat:
             self.pronouns = [self.default_pronouns[0].copy()]
         else:
             # Assigning pronouns based on gender
-            if self.genderalign in ["female", "trans female"]:
+            if self.genderalign in ["female", "trans female", "intersex"]:
                 self.pronouns = [self.default_pronouns[1].copy()]
-            elif self.genderalign in ["male", "trans male"]:
+            elif self.genderalign in ["male", "trans male", "intersex"]:
                 self.pronouns = [self.default_pronouns[2].copy()]
             else:
                 self.genderalign = "nonbinary"
