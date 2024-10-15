@@ -639,10 +639,7 @@ class Phenotype():
                 self.merlepattern = self.ChooseTortiePattern(spec = 'merle')
                 self.genotype.merlepattern = self.merlepattern
 
-        if self.genotype.pointgene[0] == "c":
-            self.spritecolour = "albino"
-            self.maincolour = self.spritecolour
-        elif self.genotype.white[0] == "W" or ('DBEalt' not in self.genotype.pax3 and 'NoDBE' not in self.genotype.pax3) or (self.genotype.brindledbi and (('o' not in self.genotype.sexgene) or (self.genotype.ext[0] == 'ea' and ((moons > 11 and self.genotype.agouti[0] != 'a') or (moons > 23))) or (self.genotype.ext[0] == 'er' and moons > 23) or (self.genotype.ext[0] == 'ec' and (self.genotype.agouti[0] != 'a' or moons > 5)))):
+        if self.genotype.white[0] == "W" or self.genotype.pointgene[0] == "c" or ('DBEalt' not in self.genotype.pax3 and 'NoDBE' not in self.genotype.pax3) or (self.genotype.brindledbi and (('o' not in self.genotype.sexgene) or (self.genotype.ext[0] == 'ea' and ((moons > 11 and self.genotype.agouti[0] != 'a') or (moons > 23))) or (self.genotype.ext[0] == 'er' and moons > 23) or (self.genotype.ext[0] == 'ec' and (self.genotype.agouti[0] != 'a' or moons > 5)))):
             self.spritecolour = "white"
             self.maincolour = self.spritecolour
         elif('o' not in self.genotype.sexgene and self.genotype.specialred == 'blue-tipped'):
