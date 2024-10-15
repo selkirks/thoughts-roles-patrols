@@ -12424,6 +12424,11 @@
                "weight": 20
            },
            {
+            "text": "This is for when you don't have a stat cat! Sorry. I'll write something here soon for the main game.",
+            "exp": 10,
+            "weight": 20
+        },
+           {
                "text": "s_c confesses {PRONOUN/s_c/poss} fear that one day, all of c_n will be in danger, and only {PRONOUN/s_c/subject} will be able to save them. p_l comforts s_c and assures {PRONOUN/s_c/object} that c_n will stand together against any threat. Feeling reassured, s_c asks if p_l will teach {PRONOUN/s_c/object} some moves anyway - for fun.",
                "exp": 10,
                "can_have_stat": ["app1"],
