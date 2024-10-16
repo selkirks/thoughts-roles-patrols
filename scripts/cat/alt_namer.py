@@ -266,7 +266,7 @@ class Namer():
 
 
         possible_prefixes += self.all_prefixes['general']['any']
-        if self.moons < 6:
+        if self.moons < 3:
             possible_prefixes += self.all_prefixes['general']['big']
             possible_prefixes += self.all_prefixes['general']['small']
             possible_prefixes += self.all_prefixes['general']['small']
@@ -338,7 +338,7 @@ class Namer():
         
         possible_prefixes += extra_prefixes
         possible_prefixes += self.all_prefixes['general']['any']
-        if self.moons < 6:
+        if self.moons < 3:
             possible_prefixes += self.all_prefixes['general']['big']
             possible_prefixes += self.all_prefixes['general']['small']
             possible_prefixes += self.all_prefixes['general']['small']
@@ -400,7 +400,7 @@ class Namer():
                 pass
         
         possible_prefixes += self.all_prefixes['general']['any']
-        if self.moons < 6:
+        if self.moons < 3:
             possible_prefixes += self.all_prefixes['general']['big']
             possible_prefixes += self.all_prefixes['general']['small']
             possible_prefixes += self.all_prefixes['general']['small']
