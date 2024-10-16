@@ -1182,7 +1182,7 @@ class Pregnancy_Events:
                 if check_cand.dead or (check_cand.outside and not only_clanmate and check_cand.status not in ['kittypet', 'loner', 'rogue', 'former Clancat']):
                     continue
                 if (x.romantic_love + x.platonic_like + x.admiration + x.trust + x.comfortable) > 20:
-                    if Pregnancy_Events.check_if_can_have_kits(check_cand, True, True) and not check_cand.mate and xor('Y' in check_cand.genotype.sexgene, 'Y' in cat.genotype.sexgene) and 'infertility' not in check_cat.permanent_condition:
+                    if Pregnancy_Events.check_if_can_have_kits(check_cand, True, True) and not check_cand.mate and xor('Y' in check_cand.genotype.sexgene, 'Y' in cat.genotype.sexgene) and 'infertility' not in check_cand.permanent_condition:
                         possible = True
                         for couple in all_cats:
                             if not couple.is_potential_mate(check_cand):
