@@ -247,7 +247,6 @@ class Personality:
         if possible_traits:
             self.trait = choice(possible_traits)
         else:
-            print("No possible traits! Using 'strange'")
             self.trait = "strange"
 
     def facet_wobble(self, facet_max=5):

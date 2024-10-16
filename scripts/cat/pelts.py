@@ -94,6 +94,15 @@ class Pelt:
         'Royal': 'royal',
         'Bobcat': 'bobcat',
         'Cheetah': 'cheetah',
+        'Abyssinian': 'abyssinian',
+        'Clouded': 'clouded',
+        'Doberman': 'doberman',
+        'GhostTabby': 'ghosttabby',
+        'Merle': 'merle',
+        'Monarch': 'monarch',
+        'Oceloid': 'oceloid',
+        'PinstripeTabby': 'pinstripetabby',
+        'Snowflake': 'snowflake'
     }
 
     # ATTRIBUTES, including non-pelt related
@@ -156,7 +165,8 @@ class Pelt:
                    'stersokoke', 'sillysokoke', 'dancesokoke', 'mimisokoke',
                    'sterspeckled', 'sillyspeckled', 'dancespeckled', 'mimispeckled',
                    'stertabby', 'sillytabby', 'dancetabby', 'mimitabby',
-                   'sterticked', 'sillyticked', 'danceticked', 'mimiticked']
+                   'sterticked', 'sillyticked', 'danceticked', 'mimiticked', 'abyssinian', 'clouded', 'doberman', 'ghosttabby', 'merle',
+                   'monarch', 'oceloid', 'pinstripetabby', 'snowflake']
 
     pelt_length = ["short", "medium", "long"]
     eye_colours = ['YELLOW', 'AMBER', 'HAZEL', 'PALEGREEN', 'GREEN', 'BLUE', 'DARKBLUE', 'GREY', 'CYAN', 'EMERALD', 'PALEBLUE', 
@@ -293,16 +303,16 @@ class Pelt:
     tabbies = ["Tabby", "Ticked", "Mackerel", "Stermackerel", "Sillymackerel", "Dancemackerel", "Mimimackerel", 
                "Classic", "Sterclassic", "Sillyclassic", "Danceclassic", "Mimiclassic",
                "Sokoke", "Stersokoke", "Sillysokoke", "Dancesokoke", "Mimisokoke",
-               "Agouti", "Steragouti", "Sillyagouti", "Danceagouti", "Mimiagouti", "Royal", "Brindle"]
+               "Agouti", "Steragouti", "Sillyagouti", "Danceagouti", "Mimiagouti", "Royal", "Brindle", "GhostTabby", "PinstripeTabby"]
     spotted = ["Speckled", "Sterspeckled", "Sillyspeckled", "Dancespeckled", "Mimispeckled", 
                "Rosette", "Sterrosette", "Sillyrosette", "Dancerosette", "Mimirosette", 
-               "Lynx", "Bobcat", "Spots"]
+               "Lynx", "Bobcat", "Spots", "Merle"]
     plain = ["SingleColour", "SterSingle", "SillySingle", "DanceSingle", "MimiSingle",
              "TwoColour", "Smoke", "Stersmoke", "Sillysmoke", "Dancesmoke", "Mimismoke",
-             "Singlestripe", "Sterstripe", "Dancestripe", "Sillystripe", "Mimistripe", "Smokepoint"]
+             "Singlestripe", "Sterstripe", "Dancestripe", "Sillystripe", "Mimistripe", "Smokepoint", "Doberman"]
     exotic = ["Bengal", "Sterbengal", "Sillybengal", "Dancebengal", "Mimibengal", 
               "Marbled", "Stermarbled", "Sillymarbled", "Dancemarbled", "Mimimarbled",
-              "Masked", "Stermasked", "Sillymasked", "Dancemasked", "Mimimasked", "Maned", "Ocelot", "Cheetah", "Wildcat", "Wolf", "Finleappatches", "Dalmatian"]
+              "Masked", "Stermasked", "Sillymasked", "Dancemasked", "Mimimasked", "Maned", "Ocelot", "Cheetah", "Wildcat", "Wolf", "Finleappatches", "Dalmatian", "Abyssinian", "Clouded", "Snowflake", "Oceloid", "Monarch"]
     torties = ["Tortie", "Calico"]
     pelt_categories = [tabbies, spotted, plain, exotic, torties]
 
@@ -1506,7 +1516,16 @@ class Pelt:
             "Wolf": "resembling a wolf c_n",
             "Spots": "c_n spot",
             "Smokepoint": "c_n smoke",
-            "Finleappatches": "c_n ticked"
+            "Finleappatches": "c_n ticked",
+            "Abyssinian": "c_n oddly ticked",
+            "Clouded": "oddly swirled c_n",
+            "Doberman": "c_n dog-like",
+            "GhostTabby": "softly-striped c_n",
+            "Merle": "colorfully splashed c_n",
+            "Monarch": "uniquely spotted c_n",
+            "Oceloid": "oddly spotted c_n",
+            "PinstripeTabby": "strangely striped c_n",
+            "Snowflake": "oddly dappled c_n"
         }
 
         # Start with determining the base color name
