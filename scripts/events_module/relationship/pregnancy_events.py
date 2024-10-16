@@ -409,7 +409,7 @@ class Pregnancy_Events:
                     pregnant_cat.get_injured("pregnant", severity=severity[0])
                     return
 
-                kits = Pregnancy_Events.get_kits(amount, cat, outside_parent, clan, backkit=backkit)
+                kits = Pregnancy_Events.get_kits(amount, cat, outside_parent if not surrogate else [outside_parent[0]], clan, backkit=backkit)
 
                 for kit in kits:
                     if random.random() < stillborn_chance or kit.genotype.manx[1] == "Ab" or kit.genotype.manx[1] == "M" or kit.genotype.fold[1] == "Fd" or kit.genotype.munch[1] == "Mk" or ('NoDBE' not in kit.genotype.pax3 and 'DBEalt' not in kit.genotype.pax3):
