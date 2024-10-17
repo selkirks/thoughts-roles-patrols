@@ -400,7 +400,7 @@ class Pregnancy_Events:
                     clan.pregnancy_data[pregnant_cat.ID] = {
                         "second_parent": ids,
                         "affair_partner" : None,
-                        "surrogate" : pregnant_cat.ID,
+                        "surrogate" : [pregnant_cat.ID],
                         "moons": 0,
                         "amount": 0,
                         "fever_coat": fever
