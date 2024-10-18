@@ -222,9 +222,11 @@ class Cat:
 
         self.phenotype = Phenotype(self.genotype)
         self.phenotype.PhenotypeOutput(self.genotype.sex)
+        self.phenotype.SpriteInfo(moons if moons else 0)
         if self.genotype.chimerageno:
             self.chimerapheno = Phenotype(self.genotype.chimerageno)
             self.chimerapheno.PhenotypeOutput(self.genotype.chimerageno.sex)
+            self.chimerapheno.SpriteInfo(moons if moons else 0)
 
         self.pelt = pelt if pelt else Pelt(self.genotype, self.phenotype)
 
@@ -530,11 +532,15 @@ class Cat:
             return clean_white(white_pattern)
 
         self.genotype.white_pattern = GenerateWhite(self.genotype.white, self.genotype.pointgene, self.genotype.whitegrade, self.genotype.vitiligo, white_pattern, self.genotype.pax3)
+        if self.phenotype.maincolour == 'white' and not self.phenotype.patchmain:
+            self.genotype.white_pattern = "No"
 
         white_pattern = chim_white
         if self.genotype.chimera:    
             self.genotype.chimerageno.white_pattern = GenerateWhite(self.genotype.chimerageno.white, self.genotype.chimerageno.pointgene, self.genotype.chimerageno.whitegrade, self.genotype.chimerageno.vitiligo, white_pattern, self.genotype.chimerageno.pax3)
-        
+            if self.chimerapheno.maincolour == 'white' and not self.chimerapheno.patchmain:
+                self.genotype.chimerageno.white_pattern = "No"
+
         # Various behavior toggles
         self.no_kits = False
         self.no_mates = False

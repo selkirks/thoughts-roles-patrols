@@ -1179,9 +1179,9 @@ class Pregnancy_Events:
         for check_cat in all_cats:
             for x in check_cat.relationships.values():
                 check_cand = Cat.fetch_cat(x.cat_to)
-                if check_cand.dead or (check_cand.outside and not only_clanmate and check_cand.status not in ['kittypet', 'loner', 'rogue', 'former Clancat']):
+                if check_cand in all_cats or check_cand.dead or (check_cand.outside and not only_clanmate and check_cand.status not in ['kittypet', 'loner', 'rogue', 'former Clancat']):
                     continue
-                if (x.romantic_love + x.platonic_like + x.admiration + x.trust + x.comfortable) > 20:
+                if (x.romantic_love + x.platonic_like + x.admiration + x.trust + x.comfortable - x.dislike - x.jealousy) > 20:
                     if Pregnancy_Events.check_if_can_have_kits(check_cand, True, True) and not check_cand.mate and xor('Y' in check_cand.genotype.sexgene, 'Y' in cat.genotype.sexgene) and 'infertility' not in check_cand.permanent_condition:
                         possible = True
                         for couple in all_cats:
