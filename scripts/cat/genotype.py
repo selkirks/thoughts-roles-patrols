@@ -27,6 +27,7 @@ class Genotype:
         self.sexgene = ["", ""]
         self.specialred = None
         self.tortiepattern = None
+        self.pseudomerle = False
         self.merlepattern = None
         self.brindledbi = False
         self.sex = "intersex"
@@ -155,7 +156,13 @@ class Genotype:
         self.brindledbi = jsonstring["brindledbi"]
 
         self.specialred = jsonstring['specialred']
+        
         self.merlepattern = jsonstring.get('merlepattern', None)
+        try:
+            self.pseudomerle = jsonstring['pseudomerle']
+        except:
+            pass
+        
         self.chimera = jsonstring['chimera']
         self.chimerapattern = jsonstring['chimerapattern']
         if self.chimerapattern and not isinstance(self.chimerapattern, list):
@@ -247,17 +254,10 @@ class Genotype:
 
         self.breeds = json.loads(jsonstring["breeds"])
         self.somatic = json.loads(jsonstring["somatic"])
-
-        try:
-            self.body_value = jsonstring["body_type"]
-            self.height_value = jsonstring["height"]
-            self.shoulder_height = jsonstring["shoulder_height"]
-        except:
-            self.GenerateBody()
-        try:
-            self.body_label = jsonstring["body_type_label"]
-        except:
-            pass
+        self.body_value = jsonstring["body_type"]
+        self.height_value = jsonstring["height"]
+        self.shoulder_height = jsonstring["shoulder_height"]
+        self.body_label = jsonstring["body_type_label"]
 
         self.GeneSort()
         self.PolyEval()
@@ -279,6 +279,7 @@ class Genotype:
             "tortiepattern" : self.tortiepattern,
             "brindledbi" : self.brindledbi,
 
+            "pseudomerle" : self.pseudomerle,
             "merlepattern" : self.merlepattern,
             "chimera" : self.chimera,
             "chimerapattern" : self.chimerapattern,
@@ -421,9 +422,11 @@ class Genotype:
 
         if self.odds['brindled_bicolour'] > 0 and randint(1, self.odds['brindled_bicolour'])==1:
             self.brindledbi = True 
+        if self.odds['pseudo_merle'] > 0 and randint(1, self.odds['pseudo_merle'])==1:
+            self.pseudomerle = True 
         
         if(random() < 0.05):
-            self.specialred = choice(['cameo', 'cameo', 'cameo', 'cameo', 'cameo', 'cameo', 'cameo', 'cameo', 'merle', 'merle', 'merle', 'merle', 'blue-red', 'blue-tipped', 'blue-tipped', 'blue-tipped', 'cinnamon'])
+            self.specialred = choice(['cameo', 'cameo', 'cameo', 'cameo', 'cameo', 'cameo', 'cameo', 'cameo', 'cameo', 'cameo', 'blue-red', 'blue-tipped', 'blue-tipped', 'blue-tipped', 'cinnamon'])
 
         # DILUTE
 
@@ -719,8 +722,11 @@ class Genotype:
         if self.odds['brindled_bicolour'] > 0 and randint(1, self.odds['brindled_bicolour'])==1:
             self.brindledbi = True 
         
+        if self.odds['pseudo_merle'] > 0 and randint(1, self.odds['pseudo_merle'])==1:
+            self.pseudomerle = True 
+        
         if(random() < 0.05):
-            self.specialred = choice(['cameo', 'cameo', 'cameo', 'cameo', 'cameo', 'cameo', 'cameo', 'cameo', 'merle', 'merle', 'merle', 'merle', 'blue-red', 'blue-tipped', 'blue-tipped', 'blue-tipped', 'cinnamon'])
+            self.specialred = choice(['cameo', 'cameo', 'cameo', 'cameo', 'cameo', 'cameo', 'cameo', 'cameo', 'cameo', 'cameo', 'blue-red', 'blue-tipped', 'blue-tipped', 'blue-tipped', 'cinnamon'])
 
         # DILUTE
 
@@ -1075,6 +1081,9 @@ class Genotype:
 
         if(a == 1):
             self.vitiligo = True    
+
+        if self.odds['pseudo_merle'] > 0 and randint(1, self.odds['pseudo_merle'])==1:
+            self.pseudomerle = True 
         
         
         self.furLength = [choice(par1.furLength), choice(par2.furLength)]
@@ -1185,7 +1194,7 @@ class Genotype:
         elif(par2.specialred and random() < 0.1):
             self.specialred = par2.specialred
         elif(random() < 0.05):
-            self.specialred = choice(['cameo', 'cameo', 'cameo', 'cameo', 'cameo', 'cameo', 'cameo', 'cameo', 'merle', 'merle', 'merle', 'merle', 'blue-red', 'blue-tipped', 'blue-tipped', 'blue-tipped', 'cinnamon'])
+            self.specialred = choice(['cameo', 'cameo', 'cameo', 'cameo', 'cameo', 'cameo', 'cameo', 'cameo', 'cameo', 'cameo', 'blue-red', 'blue-tipped', 'blue-tipped', 'blue-tipped', 'cinnamon'])
 
         self.dilute = [choice(par1.dilute), choice(par2.dilute)]
         self.white = [choice(par1.white), choice(par2.white)]
@@ -2303,14 +2312,14 @@ class Genotype:
                 else:
                     self.eumelanin[1] = 'bl'
         elif(which == 'red'):
-            if('o' not in self.sexgene):
-                self.Mutate()
-            elif(self.sexgene[0] == 'o'):
-                self.sexgene[0] = 'O'
-            elif(self.sexgene[1] == 'o'):
-                self.sexgene[1] = 'O'
+            i = 0
+            while self.sexgene[i] == 'Y':
+                randint(0, len(self.sexgene))
+
+            if(self.sexgene[i] == 'o'):
+                self.sexgene[i] = 'O'
             else:
-                self.sexgene[2] = 'O'
+                self.sexgene[i] = 'o'
         elif(which == 'dilute'):
             if(self.dilute[1] == 'D'):
                 self.dilute[1] = 'd'
@@ -2427,26 +2436,33 @@ class Genotype:
             if gene in ['mack', 'ticked', 'silver'] and (self.agouti[0] == 'a' or self.ext[0] == 'Eg'):
                 filtered_mutes["main"].remove(gene)
                 continue
-            elif gene == 'agouti' and self.ext[0] == 'Eg':
+            elif gene == 'agouti' and (self.ext[0] == 'Eg' or 'o' not in self.sexgene):
                 filtered_mutes["main"].remove(gene)
                 continue
-            elif gene in ['sexgene', 'white']:
-                if self[gene][0] in ['O', 'W', 'ws', 'wt']:
+            elif gene in ['white']:
+                if self[gene][0] in ['W', 'ws', 'wt']:
                     filtered_mutes["main"].remove(gene)
                     continue
-            if self[gene][0] in ['b', 'bl', 'd', 'wg', 'wsal', 'cs', 'cb', 'cm', 'c', 'Apb', 'a']:
+            if self[gene][0] in ['I', 'b', 'bl', 'd', 'wg', 'wsal', 'cs', 'cb', 'cm', 'c', 'Apb', 'a']:
                 filtered_mutes["main"].remove(gene)
             elif self[gene][1] in ['B', 'D', 'w', 'C', 'A']:
                 filtered_mutes["main"].remove(gene)
+            
+        if "eumelanin" in filtered_mutes["main"] and self.sexgene[0] != "o":
+            filtered_mutes["main"].remove("eumelanin")
         
         whichgene = ['furtype', 'other', 'main', 'other', 'main', 'main']
         if self.white[0] == 'W' or (self.white[1] in ['ws', 'wt'] and self.whitegrade == 5):
             whichgene = ['furtype']
-        for cate in whichgene:
+        for cate in ['furtype', 'other', 'main']:
             if len(filtered_mutes[cate]) == 0:
-                whichgene.remove(cate);
+                while cate in whichgene:
+                    whichgene.remove(cate)
         if len(whichgene) > 0:
             self.somatic["gene"] = choice(filtered_mutes[choice(whichgene)])
+        else:
+            self.somatic = {}
+            return
 
         
         if self.white[1] in ['ws', 'wt'] and self.somatic["base"] not in ['Somatic/leftface', 'Somatic/rightface', 'Somatic/tail']:
@@ -2480,6 +2496,8 @@ class Genotype:
         }
 
         self.somatic["allele"] = choice(alleles[self.somatic['gene']])
+        if self.somatic['gene'] == 'sexgene' and self.sexgene[0] == 'O':
+            self.somatic["allele"] = 'o'
 
     def FormatSomatic(self):
         body = {
@@ -2519,7 +2537,10 @@ class Genotype:
             "ghosting" : 'Ghosting',
 
             'eumelanin' : {'b' : 'Chocolate', 'bl' : 'Cinnamon'},
-            'sexgene' : 'Red',
+            'sexgene' : {
+                'O': 'Red',
+                'o' : 'Black'
+            },
             "dilute" : 'Dilute',
             "white" : {'W' : 'Dominant white', 'wsal' : 'Salmiak'},
             "pointgene" : {'cb' : 'Sepia', 'cs' : 'Colourpoint', 'cm' : 'Mocha', 'c' : 'Albino'},

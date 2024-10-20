@@ -542,7 +542,7 @@ class Phenotype():
         tortie_low_patterns = def_tortie_low_patterns
         tortie_mid_patterns = def_tortie_mid_patterns
         tortie_high_patterns = def_tortie_high_patterns
-        tiny_patches = ["BACKSPOT", "BEARD", "BELLY", "BIB", "revBLACKSTAR", "BLAZE", "BLAZEMASK", "revBOOTS", "CHESTSPECK", "ESTRELLA",
+        tiny_patches = ["BACKSPOT", "BEARD", "BELLY", "BIB", "revBLACKSTAR", "BLAZE", "BLAZEMASK", "revBOOTS", "revCHESTSPECK", "ESTRELLA",
                         "EYEBAGS", "revEYESPOT", "revHEART", "HONEY", "LEFTEAR", "LITTLE", "PAWS", "REVERSEEYE", "REVERSEHEART", "RIGHTEAR", 
                         "SCOURGE", "SPARKLE", "revTAIL", 'revTAILTWO', "TAILTIP", "TEARS", "TIP", "TOES", "TOESTAIL", "VEE"]
         
@@ -632,7 +632,7 @@ class Phenotype():
         self.patchunders = []
         self.patchcolour = ""
 
-        if(self.genotype.silver[0] == 'I' and self.genotype.specialred == 'merle'):
+        if(self.genotype.silver[0] == 'I' and self.genotype.pseudomerle):
             if self.genotype.merlepattern is not None:
                 self.merlepattern = self.genotype.merlepattern
             else:

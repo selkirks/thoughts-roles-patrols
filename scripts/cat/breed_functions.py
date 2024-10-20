@@ -41,7 +41,7 @@ class Breed_generator:
             genoclass.sex = "molly"
 
         if(random() < 0.05):
-            genoclass.specialred = choice(['cameo', 'cameo', 'cameo', 'cameo', 'cameo', 'cameo', 'cameo', 'cameo', 'merle', 'merle', 'merle', 'merle'])
+            genoclass.specialred = 'cameo'
 
         # DILUTE
 
