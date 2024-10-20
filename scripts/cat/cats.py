@@ -148,6 +148,7 @@ class Cat:
         parent2=None,
         extrapar=None,
         kittypet=False,
+        adoptive_parents=None,
         suffix=None,
         specsuffix_hidden=False,
         ID=None,
@@ -195,7 +196,7 @@ class Cat:
         self.parent2 = parent2
         self.parent3 = None
 
-        self.adoptive_parents = []
+        self.adoptive_parents = adoptive_parents if adoptive_parents else []
         self.genotype = Genotype(game.config['genetics_config'], game.settings["ban problem genes"])
         #print(genotype)
         if genotype:
@@ -3013,6 +3014,7 @@ class Cat:
                                 randint(1, 100 - like) == 1
                                 and self.moons > 11
                                 and the_cat.moons > 11
+                                and self.age == the_cat.age
                             ):
                                 romantic_love = randint(15, 30)
                                 comfortable = int(comfortable * 1.3)
@@ -3032,6 +3034,7 @@ class Cat:
                                 randint(1, 100 - like) == 1
                                 and self.moons > 11
                                 and the_cat.moons > 11
+                                and self.age == the_cat.age
                             ):
                                 romantic_love = randint(15, 30)
                                 comfortable = int(comfortable * 1.3)
