@@ -148,6 +148,7 @@ class Cat:
         backstory="clanborn",
         parent1=None,
         parent2=None,
+        adoptive_parents=None,
         suffix=None,
         specsuffix_hidden=False,
         ID=None,
@@ -205,7 +206,7 @@ class Cat:
         )
         self.parent1 = parent1
         self.parent2 = parent2
-        self.adoptive_parents = []
+        self.adoptive_parents = adoptive_parents if adoptive_parents else []
         self.pelt = pelt if pelt else Pelt()
         self.former_mentor = []
         self.patrol_with_mentor = 0
@@ -2729,6 +2730,7 @@ class Cat:
                                 randint(1, 100 - like) == 1
                                 and self.moons > 11
                                 and the_cat.moons > 11
+                                and self.age == the_cat.age
                             ):
                                 romantic_love = randint(15, 30)
                                 comfortable = int(comfortable * 1.3)
@@ -2748,6 +2750,7 @@ class Cat:
                                 randint(1, 100 - like) == 1
                                 and self.moons > 11
                                 and the_cat.moons > 11
+                                and self.age == the_cat.age
                             ):
                                 romantic_love = randint(15, 30)
                                 comfortable = int(comfortable * 1.3)
