@@ -148,7 +148,6 @@ class Cat:
         backstory="clanborn",
         parent1=None,
         parent2=None,
-        adoptive_parents=None,
         suffix=None,
         specsuffix_hidden=False,
         ID=None,
@@ -206,7 +205,7 @@ class Cat:
         )
         self.parent1 = parent1
         self.parent2 = parent2
-        self.adoptive_parents = adoptive_parents if adoptive_parents else []
+        self.adoptive_parents = []
         self.pelt = pelt if pelt else Pelt()
         self.former_mentor = []
         self.patrol_with_mentor = 0
@@ -2104,6 +2103,7 @@ class Cat:
             "DAISY1"
         ]:
             self.pelt.accessory = None
+        
         if "HALFTAIL" in self.pelt.scars and self.pelt.accessory in [
             "RED FEATHERS",
             "BLUE FEATHERS",
@@ -2119,6 +2119,9 @@ class Cat:
             "DAISY1"
         ]:
             self.pelt.accessory = None
+
+       
+           
         intersex_exclusive = ["excess testosterone", "aneuploidy", "testosterone deficiency", "chimerism", "mosaicism"]
         if self.gender != "intersex":
             if name in intersex_exclusive:
@@ -2730,7 +2733,6 @@ class Cat:
                                 randint(1, 100 - like) == 1
                                 and self.moons > 11
                                 and the_cat.moons > 11
-                                and self.age == the_cat.age
                             ):
                                 romantic_love = randint(15, 30)
                                 comfortable = int(comfortable * 1.3)
@@ -2750,7 +2752,6 @@ class Cat:
                                 randint(1, 100 - like) == 1
                                 and self.moons > 11
                                 and the_cat.moons > 11
-                                and self.age == the_cat.age
                             ):
                                 romantic_love = randint(15, 30)
                                 comfortable = int(comfortable * 1.3)
@@ -3504,7 +3505,8 @@ class Cat:
                 "favourite": self.favourite,
                 "fur_texture": self.pelt.fur_texture,
                 "height": self.pelt.height,
-                "build": self.pelt.build
+                "build": self.pelt.build,
+                "accessories": self.pelt.accessories if self.pelt.accessories else [],
             }
 
     def determine_next_and_previous_cats(self, status: List[str] = None):

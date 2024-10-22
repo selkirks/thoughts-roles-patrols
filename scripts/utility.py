@@ -316,19 +316,16 @@ def create_new_cat_block(
     thought = "Is looking around the camp with wonder"
     new_cats = None
 
-    # gather parents
+    # gather bio parents
     parent1 = None
     parent2 = None
-    adoptive_parents = []
     for tag in attribute_list:
-        parent_match = re.match(r"parent:([,0-9]+)", tag)
-        adoptive_match = re.match(r"adoptive:(.+)", tag)
-        if not parent_match and not adoptive_match:
+        match = re.match(r"parent:([,0-9]+)", tag)
+        if not match:
             continue
 
-        parent_indexes = parent_match.group(1).split(",") if parent_match else []
-        adoptive_indexes = adoptive_match.group(1).split(",") if adoptive_match else []
-        if not parent_indexes and not adoptive_indexes:
+        parent_indexes = match.group(1).split(",")
+        if not parent_indexes:
             continue
 
         parent_indexes = [int(index) for index in parent_indexes]
@@ -340,14 +337,7 @@ def create_new_cat_block(
                 parent1 = event.new_cats[index][0]
             else:
                 parent2 = event.new_cats[index][0]
-
-        adoptive_indexes = [int(index) if index.isdigit() else index for index in adoptive_indexes]
-        for index in adoptive_indexes:
-            if in_event_cats[index].ID not in adoptive_parents:
-                adoptive_parents.append(in_event_cats[index].ID)
-                adoptive_parents.extend(in_event_cats[index].mate)
-
-
+        break
 
     # gather mates
     give_mates = []
@@ -603,7 +593,6 @@ def create_new_cat_block(
             outside=outside,
             parent1=parent1.ID if parent1 else None,
             parent2=parent2.ID if parent2 else None,
-            adoptive_parents=adoptive_parents if adoptive_parents else None
         )
 
         # NEXT
@@ -656,29 +645,6 @@ def create_new_cat_block(
                 start_relation.trust = 10 + y
                 n_c.relationships[par.ID] = start_relation
 
-            # ADOPTIVE PARENTS
-            for par in adoptive_parents:
-                if not par:
-                    continue
-
-                par = Cat.fetch_cat(par)
-
-                y = randrange(0, 20)
-                start_relation = Relationship(par, n_c, False, True)
-                start_relation.platonic_like += 30 + y
-                start_relation.comfortable = 10 + y
-                start_relation.admiration = 15 + y
-                start_relation.trust = 10 + y
-                par.relationships[n_c.ID] = start_relation
-
-                y = randrange(0, 20)
-                start_relation = Relationship(n_c, par, False, True)
-                start_relation.platonic_like += 30 + y
-                start_relation.comfortable = 10 + y
-                start_relation.admiration = 15 + y
-                start_relation.trust = 10 + y
-                n_c.relationships[par.ID] = start_relation
-
             # UPDATE INHERITANCE
             n_c.create_inheritance_new_cat()
 
@@ -711,7 +677,6 @@ def create_new_cat(
     outside: bool = False,
     parent1: str = None,
     parent2: str = None,
-    adoptive_parents: list = None
 ) -> list:
     """
     This function creates new cats and then returns a list of those cats
@@ -731,8 +696,7 @@ def create_new_cat(
     :param bool alive: set this as False to generate the cat as already dead - default: True (alive)
     :param bool outside: set this as True to generate the cat as an outsider instead of as part of the Clan - default: False (Clan cat)
     :param str parent1: Cat ID to set as the biological parent1
-    :param str parent2: Cat ID to set as the biological parent2
-    :param list adoptive_parents: Cat IDs to set as adoptive parents
+    :param str parent2: Cat ID object to set as the biological parert2
     """
     # TODO: it would be nice to rewrite this to be less bool-centric
     accessory = None
@@ -798,7 +762,6 @@ def create_new_cat(
                 backstory=backstory,
                 parent1=parent1,
                 parent2=parent2,
-                adoptive_parents=adoptive_parents if adoptive_parents else []
             )
         else:
             # grab starting names and accs for loners/kittypets
@@ -839,7 +802,6 @@ def create_new_cat(
                         backstory=backstory,
                         parent1=parent1,
                         parent2=parent2,
-                        adoptive_parents=adoptive_parents if adoptive_parents else []
                     )
                 else:  # completely new name
                     new_cat = Cat(
@@ -849,7 +811,6 @@ def create_new_cat(
                         backstory=backstory,
                         parent1=parent1,
                         parent2=parent2,
-                        adoptive_parents=adoptive_parents if adoptive_parents else []
                     )
             # these cats keep their old names
             else:
@@ -862,13 +823,11 @@ def create_new_cat(
                     backstory=backstory,
                     parent1=parent1,
                     parent2=parent2,
-                    adoptive_parents=adoptive_parents if adoptive_parents else []
                 )
 
         # give em a collar if they got one
         if accessory:
             new_cat.pelt.accessory = accessory
-
         # give apprentice aged cat a mentor
         if new_cat.age == "adolescent":
             new_cat.update_mentor()
@@ -2074,7 +2033,11 @@ def event_text_adjust(
         text = text.replace(list_type, str(sign_list))
         if cat_tag:
             text = text.replace("cat_tag", cat_tag)
-
+   
+  
+    
+    
+    
     # main_cat
     if "m_c" in text:
         if main_cat:
@@ -2220,10 +2183,8 @@ def event_text_adjust(
 
     # prey lists
     text = adjust_prey_abbr(text)
-
-
-
-    # acc_plural (only works for main_cat's acc)
+    
+     # acc_plural (only works for main_cat's acc)
     if "acc_plural" in text:
         text = text.replace(
             "acc_plural", str(ACC_DISPLAY[main_cat.pelt.accessory]["plural"])
@@ -2234,7 +2195,10 @@ def event_text_adjust(
         text = text.replace(
             "acc_singular", str(ACC_DISPLAY[main_cat.pelt.accessory]["singular"])
         )
+    
 
+    
+    
     if "given_herb" in text:
         if "_" in chosen_herb:
             chosen_herb = chosen_herb.replace("_", " ")
@@ -2773,6 +2737,51 @@ def generate_sprite(
                     )
 
         # draw accessories
+        for i in cat.pelt.accessories:
+            if not acc_hidden:
+                try:
+                    if i in cat.pelt.plant_accessories:
+                        new_sprite.blit(sprites.sprites['acc_herbs' + i + cat_sprite], (0, 0))
+                    elif i in cat.pelt.wild_accessories:
+                        new_sprite.blit(sprites.sprites['acc_wild' + i + cat_sprite], (0, 0))
+                    elif i in cat.pelt.collars:
+                        new_sprite.blit(sprites.sprites['collars' + i + cat_sprite], (0, 0))
+                    elif i in cat.pelt.flower_accessories:
+                        new_sprite.blit(sprites.sprites['acc_flower' + i + cat_sprite], (0, 0))
+                    elif i in cat.pelt.plant2_accessories:
+                        new_sprite.blit(sprites.sprites['acc_plant2' + i + cat_sprite], (0, 0))
+                    elif i in cat.pelt.snake_accessories:
+                        new_sprite.blit(sprites.sprites['acc_snake' + i + cat_sprite], (0, 0))
+                    elif i in cat.pelt.smallAnimal_accessories:
+                        new_sprite.blit(sprites.sprites['acc_smallAnimal' + i + cat_sprite], (0, 0))
+                    elif i in cat.pelt.deadInsect_accessories:
+                        new_sprite.blit(sprites.sprites['acc_deadInsect' + i + cat_sprite], (0, 0))
+                    elif i in cat.pelt.aliveInsect_accessories:
+                        new_sprite.blit(sprites.sprites['acc_aliveInsect' + i + cat_sprite], (0, 0))
+                    elif i in cat.pelt.fruit_accessories:
+                        new_sprite.blit(sprites.sprites['acc_fruit' + i + cat_sprite], (0, 0))
+                    elif i in cat.pelt.crafted_accessories:
+                        new_sprite.blit(sprites.sprites['acc_crafted' + i + cat_sprite], (0, 0))
+                    elif i in cat.pelt.tail2_accessories:
+                        new_sprite.blit(sprites.sprites['acc_tail2' + i + cat_sprite], (0, 0))
+                    elif i in cat.pelt.bone_accessories:
+                        new_sprite.blit(sprites.sprites['acc_bones' + i + cat_sprite], (0, 0))
+                    elif i in cat.pelt.butterflies_accessories:
+                        new_sprite.blit(sprites.sprites['acc_butterflymoth' + i + cat_sprite], (0, 0))
+                    elif i in cat.pelt.stuff_accessories:
+                        new_sprite.blit(sprites.sprites['acc_twolegstuff' + i + cat_sprite], (0, 0))
+                    elif i in cat.pelt.bandana_collars:
+                        new_sprite.blit(sprites.sprites['bandanas' + i + cat_sprite], (0, 0))
+                    elif i in cat.pelt.harness_accessories:
+                        new_sprite.blit(sprites.sprites['harnesses' + i + cat_sprite], (0, 0))
+                    elif i in cat.pelt.bows_accessories:
+                        new_sprite.blit(sprites.sprites['bows' + i + cat_sprite], (0, 0))
+                    elif i in cat.pelt.dogteeth_collars:
+                        new_sprite.blit(sprites.sprites['teethcollars' + i + cat_sprite], (0, 0))
+                except:
+                    continue
+        
+    #-------------------------------------
         if not acc_hidden:
             if cat.pelt.accessory in cat.pelt.plant_accessories:
                 new_sprite.blit(sprites.sprites['acc_herbs' + cat.pelt.accessory + cat_sprite], (0, 0))
@@ -2831,8 +2840,7 @@ def generate_sprite(
                 new_sprite.blit(
                     sprites.sprites["teethcollars" + cat.pelt.accessory + cat_sprite], (0, 0),
                 )
-
-
+        
         # Apply fading fog
         if (
             cat.pelt.opacity <= 97
