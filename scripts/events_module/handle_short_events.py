@@ -409,7 +409,7 @@ class HandleShortEvents:
             acc_list.extend(pelts.tail2_accessories)
 
         for acc in possible_accs:
-            if acc not in ["WILD", "PLANT", "COLLAR", "FLOWER", "CRAFTED", "PLANT2" "SMALLANIMAL", "DEADINSECT",
+            if acc not in ["WILD", "PLANT", "COLLAR", "FLOWER", "CRAFTED", "PLANT2", "SMALLANIMAL", "DEADINSECT",
                            "ALIVEINSECT", "FRUIT", "SNAKE", "TAIL2","BONE", "BUTTERFLIES", "STUFF"]:
                 acc_list.append(acc)
 
