@@ -281,29 +281,6 @@
             		"sweet"
 		]
 	},
-	{
-		"id": "platonic_inc_med15",
-		"interactions": [
-            		"m_c and r_c played around during patrol and got in a bit of trouble, but still returned to camp smiling.",
-            		"m_c just barely missed a mouse, but r_c caught it right after, handing it off to {PRONOUN/m_c/object}.",
-            		"m_c and r_c got so into playing around that they got separated from the rest of the patrol, earning themselves an earful back at camp."
-		],
-		"main_status_constraint": [
-			"apprentice",
-			"deputy",
-			"leader",
-			"warrior"
-		],
-		"random_status_constraint": [
-			"apprentice",
-			"deputy",
-			"leader",
-			"warrior"
-		],
-		"also_influences": {
-			"romantic": "increase"
-            }
-	},
     {
 		"id": "platonic_inc_med16",
 		"interactions": [

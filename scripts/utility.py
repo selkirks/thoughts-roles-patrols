@@ -236,6 +236,11 @@ def get_random_moon_cat(
             elif main_cat.apprentice and not int(random() * 3):
                 random_cat = Cat.fetch_cat(choice(main_cat.apprentice))
 
+    if random_cat and random_cat.dead:
+        print("Idk why or how, but apparently it picked a dead cat for an event. Not supposed to happen")
+        print(random_cat.ID)
+        random_cat = choice(possible_r_c)
+
     if isinstance(random_cat, str):
         print(f"WARNING: random cat was {random_cat} instead of cat object")
         random_cat = Cat.fetch_cat(random_cat)
