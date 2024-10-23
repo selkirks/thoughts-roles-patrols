@@ -58,7 +58,6 @@
             "Asks r_c for some advice",
             "Asks r_c for hunting tips",
             "Asks r_c for advice on passing an assessment",
-            "Wonders if r_c was a good apprentice",
             "Is watching r_c train"
         ],
         "random_status_constraint": [
@@ -66,6 +65,24 @@
         ],
         "random_living_status": [
             "living"
+        ]
+    },
+        {
+        "id": "warrior_apprentice_to_clanborn_warrior",
+        "thoughts": [
+            "Wonders if r_c was a good apprentice"
+        ],
+        "backstory_constraint": {
+            "r_c": ["clan_founder_backstories", 
+                    "clanborn_backstories",
+                    "outsider_roots_backstories",
+                    "half_clan_backstories"]
+        },
+        "random_living_status": [
+            "living"
+        ],
+        "random_status_constraint": [
+            "warrior"
         ]
     },
     {

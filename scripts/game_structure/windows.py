@@ -65,8 +65,8 @@ class SymbolFilterWindow(UIWindow):
         self.set_blocking(True)
 
         self.possible_tags = {
-            "plant": ["flower", "tree"],
-            "animal": ["cat", "fish", "bird", "mammal", "bug", "other animals"],
+            "plant": ["flower", "tree", "leaf", "other plant", "fruit"],
+            "animal": ["cat", "fish", "bird", "mammal", "bug", "other animal"],
             "element": ["water", "fire", "earth", "air", "light"],
             "location": [],
             "descriptor": [],
