@@ -1,6 +1,7 @@
 import random
 from operator import xor
 from random import choice, randint
+from copy import deepcopy
 
 import ujson
 
@@ -188,6 +189,7 @@ class Pregnancy_Events:
         
         amount = Pregnancy_Events.get_amount_of_kits(cat, clan)
         kits = Pregnancy_Events.get_kits(amount, None, None, clan, adoptive_parents=adoptive_parents)
+        amount = len(kits)
         
         insert = 'this should not display'
         insert2 = 'this should not display'
@@ -1364,7 +1366,10 @@ class Pregnancy_Events:
         #############################
 
         #### GENERATE THE KITS ######
-        for kit in range(kits_amount):
+        identical = False
+        i = 0
+        while i < kits_amount:
+            i += 1
             if not cat:
                 # No parents provided, give a blood parent - this is an adoption.
                 if not blood_parent:
@@ -1438,6 +1443,44 @@ class Pregnancy_Events:
                     kit.thought = f"Snuggles up to the belly of {cat.name}"
                 else:
                     kit.thought = f"Snuggles up to the belly of {second_blood.name}"
+
+            if identical:
+                identical = False
+                ref_cat = deepcopy(all_kitten[-1])
+                kit.genotype = ref_cat.genotype    
+
+                kit.phenotype = ref_cat.phenotype   
+                kit.genotype.tortiepattern = None
+                kit.genotype.chimerapattern = None
+                kit.genotype.merlepattern = None
+                kit.genotype.white_pattern = kit.GenerateWhite(kit.genotype.white, kit.genotype.pointgene, kit.genotype.whitegrade, kit.genotype.vitiligo, None, kit.genotype.pax3)
+                kit.phenotype.PhenotypeOutput(kit.genotype.sex)
+                kit.phenotype.SpriteInfo(kit.moons)
+                
+                if kit.genotype.chimera:
+                    kit.chimerapheno = ref_cat.chimerapheno   
+                    kit.genotype.chimerageno.tortiepattern = None
+                    kit.genotype.chimerageno.chimerapattern = None
+                    kit.genotype.chimerageno.merlepattern = None
+                    kit.genotype.chimerageno.white_pattern = kit.GenerateWhite(kit.genotype.chimerageno.white, kit.genotype.chimerageno.pointgene, kit.genotype.chimerageno.whitegrade, kit.genotype.chimerageno.vitiligo, None, kit.genotype.chimerageno.pax3)
+                    kit.chimerapheno.PhenotypeOutput(kit.genotype.chimerageno.sex)
+                    kit.chimerapheno.SpriteInfo(kit.moons)
+
+                kit.parent1 = ref_cat.parent1    
+                kit.parent2 = ref_cat.parent2   
+                kit.parent3 = ref_cat.parent3  
+                kit.genderalign = ref_cat.genderalign
+
+            else:
+                if kit.genotype.chimera:
+                    kits_amount -= 1
+                    if i > kits_amount:
+                        kit.genotype.chimera = False
+                        kit.genotype.chimerageno = None
+                
+                if randint(1, game.config["genetics_config"]["identical_twins"]) == 1:
+                    kits_amount += 1
+                    identical = True
                 
             #kit.adoptive_parents = all_adoptive_parents  # Add the adoptive parents. 
             # Prevent duplicate prefixes in Clan

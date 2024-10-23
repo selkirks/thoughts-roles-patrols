@@ -398,6 +398,7 @@
     "other_breed": 1000,
 
     "chimera": 1000,
+    "identical_twins" : 333,
     "intersex": 100,
     "XXX/XXY": 1000,
     "brindled_bicolour": 750,
