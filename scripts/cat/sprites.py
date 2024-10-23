@@ -539,7 +539,7 @@ class Sprites:
         ]
 
         fruit_data = [
-            ["RASPBERRY", "BLACKBERRY", "GOLDEN RASPBERRY", "CHERRY", "YEW"]
+            ["OGRASPBERRY", "BLACKBERRY", "GOLDEN RASPBERRY", "CHERRY", "YEW"]
         ]
 
         smallAnimal_data = [
