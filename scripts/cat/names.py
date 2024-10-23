@@ -20,6 +20,9 @@ class Name:
     if os.path.exists('resources/dicts/names/alt_prefixes.json'):
         with open('resources/dicts/names/alt_prefixes.json') as read_file:
             mod_prefixes = ujson.loads(read_file.read())
+    if os.path.exists('resources/dicts/names/alt_suffixes.json'):
+        with open('resources/dicts/names/alt_suffixes.json') as read_file:
+            mod_suffixes = ujson.loads(read_file.read())
     if os.path.exists('resources/dicts/names/names.json'):
         with open('resources/dicts/names/names.json') as read_file:
             names_dict = ujson.loads(read_file.read())
@@ -78,11 +81,12 @@ class Name:
                  genotype=None,
                  phenotype=None,
                  chimpheno=None,
-                 moons=0,
+                 moons=None,
                  prefix=None,
                  suffix=None,
-                 pelt=None,
-                 tortiepattern=None,
+                 skills=None,
+                 personality=None,
+                 honour=None,
                  biome=None,
                  specsuffix_hidden=False,
                  load_existing_name=False
@@ -92,6 +96,8 @@ class Name:
         self.genotype = genotype
         self.phenotype = phenotype
         self.chimpheno = chimpheno
+        self.skills = skills
+        self.personality = personality
         self.prefix = prefix
         self.suffix = suffix
         self.specsuffix_hidden = specsuffix_hidden
@@ -105,7 +111,7 @@ class Name:
 
         # Set suffix
         if self.suffix is None:
-            self.give_suffix(pelt, biome, tortiepattern)
+            self.give_suffix(skills, personality, biome, honour)
             if name_fixpref and self.prefix is None:
                 # needed for random dice when we're changing the Prefix
                 name_fixpref = False
@@ -154,7 +160,7 @@ class Name:
                 if name_fixpref:
                     self.give_prefix(Cat, biome)
                 else:
-                    self.give_suffix(pelt, biome, tortiepattern)
+                    self.give_suffix(skills, personality, biome, honour)
 
                 nono_name = self.prefix + self.suffix
                 possible_three_letter = (
@@ -326,35 +332,113 @@ class Name:
             pass
 
     # Generate possible suffix
-    def give_suffix(self, pelt, biome, tortiepattern):
+    def give_suffix(self, skills, personality, biome, honour=None):
+        try:
+            if (not game.clan or game.clan.clan_settings['new suffixes']) and skills and personality:
+                options = []
+                for i in range(4):
+                    try:
+                        options.append(self.mod_suffixes['skill'][skills.primary.path.name])
+                    except:
+                        break
+
+                if skills.secondary:
+                    for i in range(2):
+                        options.append(self.mod_suffixes['skill'].get(skills.secondary.path.name, []))
+                
+                
+                for i in range(2):
+                    try:
+                        options.append(self.mod_suffixes['trait'][personality.trait]['general'])
+                    except:
+                        options.append(self.mod_suffixes['trait'].get(personality.trait, []))
+                    if honour:
+                        try:
+                            options.append(self.mod_suffixes['trait'][personality.trait].get(honour, []))
+                        except:
+                            pass
+                        options.append(self.mod_suffixes['honour'].get(honour, []))
+
+                for i in range(3):
+                    options.append(self.mod_suffixes['other']['special'])
+                for i in range(5):
+                    options.append(self.mod_suffixes['other']['common'])
+
+                if self.phenotype.tabby != "" and (self.genotype.white[1] not in ['ws', 'wt'] or self.genotype.whitegrade < 4):
+                    if self.genotype.ticked[0] == 'Ta' and (not self.genotype.breakthrough or self.genotype.mack[0] != 'mc'):
+                        options.append(self.mod_suffixes['other']['appearance']['ticked'])
+                    if 'spotted' in self.phenotype.tabby or 'servaline' in self.phenotype.tabby:
+                        options.append(self.mod_suffixes['other']['appearance']['spotted'])
+                    if 'classic' in self.phenotype.tabby or 'marbled' in self.phenotype.tabby:
+                        options.append(self.mod_suffixes['other']['appearance']['swirled'])
+                    if 'mackerel' in self.phenotype.tabby or 'braided' in self.phenotype.tabby or 'pinstripe' in self.phenotype.tabby:
+                        options.append(self.mod_suffixes['other']['appearance']['striped'])
+                    if 'rosette' in self.phenotype.tabby:
+                        options.append(self.mod_suffixes['other']['appearance']['patchy'])
+                if (self.phenotype.tortie and (self.genotype.white[1] not in ['ws', 'wt'] or self.genotype.whitegrade < 4)) or\
+                    (self.genotype.white[1] in ['ws', 'wt'] and self.genotype.whitegrade < 4) or\
+                    (self.genotype.white[0] in ['ws', 'wt'] and self.genotype.white[1] not in ['ws', 'wt'] and self.genotype.whitegrade > 2):
+                    options.append(self.mod_suffixes['other']['appearance']['patchy'])
+                if (self.phenotype.point and (self.genotype.white[1] not in ['ws', 'wt'] or self.genotype.whitegrade < 4)):
+                    options.append(self.mod_suffixes['other']['appearance']['pointed'])
+                self.suffix = None
+
+                while not self.suffix:
+                    try:
+                        self.suffix = random.choice(random.choice(options))
+                    except:
+                        continue
+
+                return
+        except:
+            pass
+
         """Generate possible suffix."""
-        if pelt is None or pelt == "SingleColour":
-            self.suffix = random.choice(self.names_dict["normal_suffixes"])
-        else:
-            named_after_pelt = not random.getrandbits(2)  # Chance for True is '1/8'.
-            named_after_biome = not random.getrandbits(3)  # 1/8
-            # Pelt name only gets used if there's an associated suffix.
-            if named_after_pelt:
-                if (
-                    pelt in ["Tortie", "Calico"]
-                    and tortiepattern in self.names_dict["tortie_pelt_suffixes"]
-                ):
-                    self.suffix = random.choice(
-                        self.names_dict["tortie_pelt_suffixes"][tortiepattern]
-                    )
-                elif pelt in self.names_dict["pelt_suffixes"]:
-                    self.suffix = random.choice(self.names_dict["pelt_suffixes"][pelt])
-                else:
-                    self.suffix = random.choice(self.names_dict["normal_suffixes"])
-            elif named_after_biome:
-                if biome in self.names_dict["biome_suffixes"]:
-                    self.suffix = random.choice(
-                        self.names_dict["biome_suffixes"][biome]
-                    )
-                else:
-                    self.suffix = random.choice(self.names_dict["normal_suffixes"])
+        named_after_pelt = not random.getrandbits(2)  # Chance for True is '1/8'.
+        named_after_biome = not random.getrandbits(3)  # 1/8
+        # Pelt name only gets used if there's an associated suffix.
+
+        pelt = []
+        if self.genotype:
+            if (self.genotype.white[1] not in ['ws', 'wt'] or self.genotype.whitegrade < 4):
+                if self.phenotype.tabby != "":
+                    if self.genotype.ticked[0] == 'Ta' and (not self.genotype.breakthrough or self.genotype.mack[0] != 'mc'):
+                        if self.genotype.ticktype == "agouti":
+                            pelt.append("Agouti")
+                        else:
+                            pelt.append("Ticked")
+                    if 'spotted' in self.phenotype.tabby or 'servaline' in self.phenotype.tabby:
+                        pelt.append("Spotted")
+                    if 'classic' in self.phenotype.tabby or 'marbled' in self.phenotype.tabby:
+                        pelt.append("Classic")
+                    if 'mackerel' in self.phenotype.tabby or 'braided' in self.phenotype.tabby or 'pinstripe' in self.phenotype.tabby:
+                        pelt.append("Mackerel")
+                    if 'rosette' in self.phenotype.tabby:
+                        pelt.append("Rosetted")
+                    if 'charcoal' in self.phenotype.tabtype:
+                        pelt.append("Masked")
+                if self.phenotype.tortie:
+                    if self.genotype.white[1] in ['ws', 'wt'] or self.genotype.whitegrade > 4:
+                        pelt.append("Calico")
+                    else:
+                        pelt.append("Tortie")
+                if 'smoke' in self.phenotype.silvergold:
+                    pelt.append("Smoke")
+            if (self.genotype.white[1] in ['ws', 'wt'] and self.genotype.whitegrade < 4) or\
+                (self.genotype.white[0] in ['ws', 'wt'] and self.genotype.white[1] not in ['ws', 'wt'] and self.genotype.whitegrade > 2):
+                options.append("TwoColour")
+
+        if named_after_pelt and len(pelt) > 0:
+            self.suffix = random.choice(self.names_dict["pelt_suffixes"][random.choice(pelt)])
+        elif named_after_biome:
+            if biome in self.names_dict["biome_suffixes"]:
+                self.suffix = random.choice(
+                    self.names_dict["biome_suffixes"][biome]
+                )
             else:
                 self.suffix = random.choice(self.names_dict["normal_suffixes"])
+        else:
+            self.suffix = random.choice(self.names_dict["normal_suffixes"])
 
     def __repr__(self):
         # Handles predefined suffixes (such as newborns being kit),

@@ -637,9 +637,9 @@ def create_new_cat_block(
                     name = new_prefix
                     chosen_cat.name.prefix = name
                     chosen_cat.name.give_suffix(
-                        pelt=chosen_cat.pelt,
-                        biome=game.clan.biome,
-                        tortiepattern=chosen_cat.pelt.tortiepattern,
+                        skills=chosen_cat.skills,
+                        personality=chosen_cat.personality,
+                        biome=game.clan.biome
                     )
                 else:  # completely new name
                     chosen_cat.name.give_prefix(
@@ -647,9 +647,9 @@ def create_new_cat_block(
                         biome=game.clan.biome
                     )
                     chosen_cat.name.give_suffix(
-                        pelt=chosen_cat.pelt.colour,
-                        biome=game.clan.biome,
-                        tortiepattern=chosen_cat.pelt.tortiepattern,
+                        skills=chosen_cat.skills,
+                        personality=chosen_cat.personality,
+                        biome=game.clan.biome
                     )
 
             new_cats = [chosen_cat]

@@ -638,7 +638,7 @@ class Cat:
             
         # NAME
         # load_existing_name is needed so existing cats don't get their names changed/fixed for no reason
-        if self.pelt is not None:
+        if biome:
             self.name = Name(
                 self,
                 status,
@@ -648,20 +648,23 @@ class Cat:
                 self.moons,
                 prefix,
                 suffix,
-                self.pelt.name,
-                self.pelt.tortiepattern,
+                self.skills,
+                self.personality,
                 biome=biome,
                 specsuffix_hidden=self.specsuffix_hidden,
                 load_existing_name=loading_cat,
             )
         else:
             self.name = Name(self, 
-            status, self.genotype, 
+            status, 
+            self.genotype, 
             self.phenotype, 
             self.chimerapheno if self.genotype.chimera else None,
             self.moons, 
             prefix, 
             suffix, 
+            self.skills,
+            self.personality,
             specsuffix_hidden=self.specsuffix_hidden,
             load_existing_name = loading_cat)
         

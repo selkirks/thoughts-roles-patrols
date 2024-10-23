@@ -622,8 +622,9 @@ class ChangeCatName(UIWindow):
                         self.the_cat.moons,
                         None,
                         use_suffix,
-                        self.the_cat.pelt.name,
-                        self.the_cat.pelt.tortiepattern,
+                        self.the_cat.skills,
+                        self.the_cat.personality,
+                        biome=game.clan.biome
                     ).prefix
                 )
             elif event.ui_element == self.random_suffix:
@@ -641,8 +642,10 @@ class ChangeCatName(UIWindow):
                         self.the_cat.moons,
                         use_prefix,
                         None,
-                        self.the_cat.pelt.name,
-                        self.the_cat.pelt.tortiepattern,
+                        self.the_cat.skills,
+                        self.the_cat.personality,
+                        self.the_cat.history.app_ceremony['honor'] if self.the_cat.history and self.the_cat.history.app_ceremony else None,
+                        game.clan.biome
                     ).suffix
                 )
             elif event.ui_element == self.toggle_spec_block_on:
