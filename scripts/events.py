@@ -2634,27 +2634,23 @@ class Events:
                 # transing_chance != 0, no trans kitties today...    L
                 return
 
+            new_align = "intersex " if cat.gender == "intersex" else ""
             if random.getrandbits(1):  # 50/50
-                if "tom" in cat.gender:
-                    if(cat.gender == 'intersex'):
-                        cat.genderalign = 'intersex trans molly'
-                    else:    
-                        cat.genderalign = "trans molly"
+                if "tom" in cat.genderalign:
+                    new_align += "trans molly"
                     cat.pronouns = [cat.default_pronouns[1].copy()]
                 else:
-                    if(cat.gender == 'intersex'):
-                        cat.genderalign = 'intersex trans tom'
-                    else:    
-                        cat.genderalign = "trans tom"
+                    new_align += "trans tom"
                     cat.pronouns = [cat.default_pronouns[2].copy()]
             else:
-                cat.genderalign = "sam"
+                new_align += "sam"
                 cat.pronouns = [cat.default_pronouns[0].copy()]
 
-            if "tom" in cat.gender:
+            if "tom" in cat.genderalign:
                 gender = 'tom'
             else:
                 gender = 'molly'
+            cat.genderalign = new_align
             text = f"{cat.name} has realized that {gender} doesn't describe how they feel anymore."
             game.cur_events_list.append(Single_Event(text, "misc", involved_cats))
             # game.misc_events_list.append(text)
