@@ -286,6 +286,7 @@
       "warrior-elder" : 75,
       "pelt-change-modifier" : 15
     },
+    "trans_prefix_change_chance": 25,
     "comment": [
       "If prefix changing is allowed: how often should a prefix swap happen.",
       "Pelt change modifier defines how much more often it should happen when a cat's pelt is one that changes over time - such as ", 

@@ -2622,6 +2622,17 @@ class Events:
             else:
                 gender = 'molly'
             text = f"{cat.name} has realized that {gender} doesn't describe how they feel anymore."
+            
+            if game.clan.clan_settings['dynamic prefixes']:
+                chance = game.config["cat_name_controls"]["trans_prefix_change_chance"]
+                if chance and random.randint(1, chance) == 1:
+                    if not cat.history:
+                        cat.history = History()
+                    cat.history.prev_names.append(str(cat.name))
+                    cat.name.moons = cat.moons
+                    cat.name.give_prefix(Cat, game.clan.biome)
+                    text += " After some thought, a new name seems in order too."
+            
             game.cur_events_list.append(Single_Event(text, "misc", involved_cats))
             # game.misc_events_list.append(text)
 
