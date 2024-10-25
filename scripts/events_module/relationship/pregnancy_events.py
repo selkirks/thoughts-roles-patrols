@@ -330,8 +330,7 @@ class Pregnancy_Events:
                                         and (clan.clan_settings['same sex birth'] or xor('Y' in i.genotype.sexgene, 'Y' in cat.genotype.sexgene)) 
                                         and len(i.mate) == 0 and not i.birth_cooldown]
                 if surrogate:
-                    outside_parent = other_cat
-                    outside_parent[0].birth_cooldown = game.config["pregnancy"]["birth_cooldown"]
+                    other_cat[0].birth_cooldown = game.config["pregnancy"]["birth_cooldown"]
                     backkit = None
                 elif(random.random() < 0.75 or len(possible_affair_partners) < 1):
                     if(randint(1, 4) > 1):
@@ -374,17 +373,17 @@ class Pregnancy_Events:
                     outside_parent = [choice(possible_affair_partners)]
                     backkit = 'outsider_roots2'
 
-                if surrogate and not outside_parent[0].outside:
+                if surrogate and not other_cat[0].outside:
                     cats_involved = [cat.ID]
-                    for par in outside_parent:
+                    for par in other_cat:
                         cats_involved.append(par.ID)
                     
-                    pregnant_cat = outside_parent[0]
+                    pregnant_cat = other_cat.pop(0)
                     text = choice(Pregnancy_Events.PREGNANT_STRINGS["announcement"])
                     severity = random.choices(["minor", "major"], [3, 1], k=1)
                     text += choice(Pregnancy_Events.PREGNANT_STRINGS[f"{severity[0]}_severity"])
                     text = event_text_adjust(Cat, text, main_cat=pregnant_cat, clan=clan)
-                    text += f" {cat.name} thanks {outside_parent[0].name} for being a surrogate."
+                    text += f" {cat.name} thanks {pregnant_cat.name} for being a surrogate."
                     game.cur_events_list.append(Single_Event(text, "birth_death", cats_involved))
                     
                     fever = False
