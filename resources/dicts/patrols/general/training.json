@@ -11802,6 +11802,19 @@
                "weight": 20
            },
            {
+            "text": "p_l agrees. There is not much harm to helping app1 develop {PRONOUN/app1/poss} skills, even if the sudden request was unexpected. The two train, and p_l is ecstatic about how quickly app1 caught onto the tough move.",
+            "exp": 10,
+            "relationships": [
+                {
+                    "cats_to": ["p_l"],
+                    "cats_from": ["app1"],
+                    "mutual": true,
+                    "values": ["platonic", "comfort", "trust", "respect"],
+                    "amount": 5
+                } ],
+            "weight": 20
+    },
+           {
                "text": "s_c confesses {PRONOUN/s_c/poss} fear that one day, all of c_n will be in danger, and only {PRONOUN/s_c/subject} will be able to save them. p_l comforts s_c and assures {PRONOUN/s_c/object} that c_n will stand together against any threat. Feeling reassured, s_c asks if p_l will teach {PRONOUN/s_c/object} some moves anyway - for fun.",
                "exp": 10,
                "can_have_stat": ["app1"],
