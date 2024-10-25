@@ -54,12 +54,6 @@ def json_load():
     for i, cat in enumerate(cat_data):
         try:
 
-             # moving clangen accs over to accessories + inventory
-            if cat["accessory"] is not None:
-                cat["accessories"].append(cat["accessory"])
-                cat["accessory"] = None
-            
-            
             new_cat = Cat(
                 ID=cat["ID"],
                 prefix=cat["name_prefix"],
@@ -95,8 +89,6 @@ def json_load():
                     cat["eye_colour2"] = "COBALT"
             if cat["pelt_name"] == "Lynx2":
                 cat["pelt_name"] = "Dalmatian"
-            if cat["accessory"] == "Raspberry":
-                cat["accessory"] = "OGRaspberry"
 
             new_cat.pelt = Pelt(
                 name=cat["pelt_name"],
@@ -153,12 +145,10 @@ def json_load():
                 physical_trait_hidden_4=cat["physical_trait_hidden_4"] if "physical_trait_hidden_4" in cat else None,
                 scars=cat["scars"] if "scars" in cat else [],
                 accessory=cat["accessory"],
-                accessories=cat["accessories"] if "accessories" in cat else [],
                 opacity=cat["opacity"] if "opacity" in cat else 100,
                 fur_texture=cat["fur_texture"] if "fur_texture" in cat else choice(["soft", "curly", "rough", "silky", "sleek", "wavy", "sparse", "tangled", "fuzzy", "spiky"]),
                 build = cat['build'] if "build" in cat else choice(["stocky", "slender", "lithe", "wiry", "muscular", "lanky", "delicate"]),
-                height=cat["height"] if "height" in cat else choice(["petite", "short", "average", "average", "tall", "towering"]),
-                
+                height=cat["height"] if "height" in cat else choice(["petite", "short", "average", "average", "tall", "towering"])
             )
 
             # Runs a bunch of apperence-related convertion of old stuff.

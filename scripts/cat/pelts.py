@@ -233,8 +233,8 @@ class Pelt:
                          "OLD NEWSPAPER", "SEA GLASS", "BAUBLES", "MUD AND DIRT"]
     plant_accessories = ["MAPLE LEAF", "HOLLY", "BLUE BERRIES", "FORGET ME NOTS", "RYE STALK", "CATTAIL", "POPPY", "ORANGE POPPY", "CYAN POPPY", "WHITE POPPY", "PINK POPPY",
                         "BLUEBELLS", "LILY OF THE VALLEY", "SNAPDRAGON", "HERBS", "PETALS", "NETTLE", "HEATHER", "GORSE", "JUNIPER", "RASPBERRY", "LAVENDER",
-                        "OAK LEAVES", "CATMINT", "MAPLE SEED", "LAUREL", "BULB WHITE", "BULB YELLOW", "BULB ORANGE", "BULB PINK", "BULB BLUE", "CLOVER1", "DAISY1",
-                        "LILY OF THE VALLEY", "HEATHER", "SNAPDRAGON", "GORSE",
+                        "OAK LEAVES", "CATMINT", "MAPLE SEED", "LAUREL", "BULB WHITE", "BULB YELLOW", "BULB ORANGE", "BULB PINK", "BULB BLUE", "CLOVER1", "DAISY",
+                        "CLOVER", "DAISY", "LILY OF THE VALLEY", "HEATHER", "SNAPDRAGON", "GORSE", "BULB WHITE", "BULB YELLOW",
                         "DRY HERBS", "DRY CATMINT", "DRY NETTLES", "DRY LAURELS"
                         ]
     wild_accessories = ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS", "GULL FEATHERS", "SPARROW FEATHERS", "MOTH WINGS", "ROSY MOTH WINGS", "MORPHO BUTTERFLY", "MONARCH BUTTERFLY1", "CICADA WINGS", "BLACK CICADA"]
@@ -411,8 +411,7 @@ class Pelt:
                  reverse: bool = False,
                  fur_texture:str=None,
                  build:str=None,
-                 height:str=None,
-                 accessories:list=None,
+                 height:str=None
                  ) -> None:
         self.name = name
         self.colour = colour
@@ -426,8 +425,8 @@ class Pelt:
         self.vitiligo = vitiligo
         self.length = length
         self.points = points
+        self.accessory = accessory
         self.paralyzed = paralyzed
-        self.accessories = accessories if accessories is not None else []
         self.opacity = opacity
         self.scars = scars if isinstance(scars, list) else []
         self.tint = tint
@@ -454,15 +453,13 @@ class Pelt:
 
         self.reverse = reverse
         self.skin = skin
-        self.accessory = accessory 
         self.fur_texture = fur_texture if fur_texture is not None else choice(["soft", "curly", "rough", "silky", "sleek", "wavy", "sparse", "tangled", "fuzzy", "spiky"])
         self.build = build if build is not None else choice(["stocky", "slender", "lithe", "wiry", "muscular", "lanky", "delicate"])
         self.height = height if height is not None else choice(["petite", "short", "average", "average", "tall", "towering"])
     @staticmethod
     def generate_new_pelt(gender: str, parents: tuple = (), age: str = "adult"):
         new_pelt = Pelt()
-        
-        
+
         pelt_white = new_pelt.init_pattern_color(parents, gender)
         new_pelt.init_white_patches(pelt_white, parents)
         new_pelt.init_sprite()
