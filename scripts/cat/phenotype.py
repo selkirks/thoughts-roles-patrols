@@ -390,7 +390,7 @@ class Phenotype():
 
         if(self.tailtype != ''):
             self.tailtype += "tail"
-    def PhenotypeOutput(self, gender=None, pattern=None):
+    def PhenotypeOutput(self, sex=None, pattern=None):
         self.FurtypeFinder()
         self.MainColourFinder()
         self.PointFinder()
@@ -448,23 +448,23 @@ class Phenotype():
 
         withword = " with " + withword + eyes.lower()
 
-        if not gender:
-            gendera = ''
-        elif 'tom' in gender:
-            gendera = "tom"
-        elif 'molly' in gender:
-            gendera = "molly"
+        if not sex:
+            sexstring = ''
+        elif 'tom' in sex or ('molly' in sex and 'Y' in self.genotype.sexgene):
+            sexstring = "male"
+        elif 'molly' in sex and 'Y' not in self.genotype.sexgene:
+            sexstring = "female"
         else:
-            gendera = "sam"
+            sexstring = "intersex"
 
         if self.genotype.chimera:
-            gendera = "chimera " + gendera
+            sexstring = "chimera " + sexstring
 
         breed = find_my_breed(self.genotype, self, self.genotype.odds)
         if breed:
             breed = " " + breed + " "
         
-        outputs = self.length + " " + self.highwhite + self.fade + self.colour + " " + self.silvergold + self.tabtype + self.tabby + self.tortie + self.point + self.lowwhite + self.karpati + breed + gendera + withword
+        outputs = self.length + " " + self.highwhite + self.fade + self.colour + " " + self.silvergold + self.tabtype + self.tabby + self.tortie + self.point + self.lowwhite + self.karpati + breed + sexstring + withword
         
         while "  " in outputs:
             outputs = outputs.replace("  ", " ")

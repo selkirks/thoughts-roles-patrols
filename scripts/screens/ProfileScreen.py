@@ -1184,10 +1184,8 @@ class ProfileScreen(Screens):
         self.update_disabled_buttons_and_text()
 
     def toggle_genetics_tab(self):
-        """Opens the User Notes portion of the History Tab"""
-        self.genelist = str(self.the_cat.genotype.ShowGenes(game.settings["filter genes"]))
-        if(self.the_cat.genotype.chimera):
-            self.genelist += "\n\n" + str(self.the_cat.genotype.chimerageno.ShowGenes(game.settings["filter genes"]))
+        """Opens the Genotype portion of the History Tab"""
+        self.genelist = ""
         
         self.genetic_text_box = UITextBoxTweaked(
                         self.genelist,
@@ -2445,12 +2443,12 @@ class ProfileScreen(Screens):
                     self.genelist += "\n\n" + str(chimpheno.PhenotypeOutput(self.the_cat.genotype.chimerageno.sex, self.the_cat.genotype.chimerageno.white_pattern)) + "\n" + str(self.the_cat.genotype.chimerageno.ShowGenes(game.settings["filter genes"]))
 
                 self.genetic_text_box = UITextBoxTweaked(
-                        self.genelist,
-                        ui_scale(pygame.Rect((100, 473), (600, 149))),
-                        object_id="#text_box_26_horizleft_pad_10_14",
-                        line_spacing=1,
-                        manager=MANAGER,
-                    )
+                    self.genelist,
+                    ui_scale(pygame.Rect((100, 473), (600, 149))),
+                    object_id="#text_box_26_horizleft_pad_10_14",
+                    line_spacing=1,
+                    manager=MANAGER,
+                )
 
         # Conditions Tab
         elif self.open_tab == "conditions":
