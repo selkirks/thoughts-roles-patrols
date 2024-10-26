@@ -517,7 +517,7 @@
                 "exp": 10,
                 "weight": 20,
                 "new_cat": [
-                    ["age:senior", "male", "backstory:refugee6"]
+                    ["age:senior", "male", "backstory:refugee6", "status:elder"]
                 ],
                 "relationships": [
                     {
@@ -543,7 +543,7 @@
                 "stat_skill": ["LORE,1", "STORY,1"],
                 "can_have_stat": ["any"],
                 "new_cat": [
-                    ["age:senior", "male", "backstory:refugee6"]
+                    ["age:senior", "male", "backstory:refugee6", "status:elder"]
                 ],
                 "relationships": [
                     {

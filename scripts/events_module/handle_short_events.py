@@ -653,67 +653,34 @@ class HandleShortEvents:
         for block in self.chosen_event.injury:
             cats_affected = block["cats"]
 
-            # classic mode only gains scars, not injuries
-            if game.clan.game_mode == "classic" and "scars" in block:
-                for abbr in cats_affected:
-                    # MAIN CAT
-                    if abbr == "m_c":
-                        if block["scars"] and len(self.main_cat.pelt.scars) < 4:
-                            # add a scar
-                            self.main_cat.pelt.scars.append(
-                                random.choice(block["scars"])
-                            )
-                            self.handle_injury_history(self.main_cat, "m_c")
+            # find all possible injuries
+            possible_injuries = []
+            for injury in block["injuries"]:
+                if injury in INJURY_GROUPS:
+                    possible_injuries.extend(INJURY_GROUPS[injury])
+                else:
+                    possible_injuries.append(injury)
 
-                    # RANDOM CAT
-                    elif abbr == "r_c":
-                        if block["scars"] and len(self.random_cat.pelt.scars) < 4:
-                            # add a scar
-                            self.random_cat.pelt.scars.append(
-                                random.choice(block["scars"])
-                            )
-                            self.handle_injury_history(self.random_cat, "r_c")
+            # give the injury
+            for abbr in cats_affected:
+                # MAIN CAT
+                if abbr == "m_c":
+                    injury = random.choice(possible_injuries)
+                    self.main_cat.get_injured(injury)
+                    self.handle_injury_history(self.main_cat, "m_c", injury)
 
-                    # NEW CATS
-                    elif "n_c" in abbr:
-                        for i, new_cats in enumerate(self.new_cats):
-                            if block["scars"] and len(new_cats[i].pelt.scars) < 4:
-                                # add a scar
-                                new_cats[i].pelt.scars.append(
-                                    random.choice(block["scars"])
-                                )
-                                self.handle_injury_history(new_cats[i], abbr)
+                # RANDOM CAT
+                elif abbr == "r_c":
+                    injury = random.choice(possible_injuries)
+                    self.random_cat.get_injured(injury)
+                    self.handle_injury_history(self.random_cat, "r_c", injury)
 
-            # now give injuries to other modes
-            else:
-                # find all possible injuries
-                possible_injuries = []
-                for injury in block["injuries"]:
-                    if injury in INJURY_GROUPS:
-                        possible_injuries.extend(INJURY_GROUPS[injury])
-                    else:
-                        possible_injuries.append(injury)
-
-                # give the injury
-                for abbr in cats_affected:
-                    # MAIN CAT
-                    if abbr == "m_c":
+                # NEW CATS
+                elif "n_c" in abbr:
+                    for i, new_cats in enumerate(self.new_cats):
                         injury = random.choice(possible_injuries)
-                        self.main_cat.get_injured(injury)
-                        self.handle_injury_history(self.main_cat, "m_c", injury)
-
-                    # RANDOM CAT
-                    elif abbr == "r_c":
-                        injury = random.choice(possible_injuries)
-                        self.random_cat.get_injured(injury)
-                        self.handle_injury_history(self.random_cat, "r_c", injury)
-
-                    # NEW CATS
-                    elif "n_c" in abbr:
-                        for i, new_cats in enumerate(self.new_cats):
-                            injury = random.choice(possible_injuries)
-                            new_cats[i].get_injured(injury)
-                            self.handle_injury_history(new_cats[i], abbr, injury)
+                        new_cats[i].get_injured(injury)
+                        self.handle_injury_history(new_cats[i], abbr, injury)
 
     def handle_injury_history(self, cat, cat_abbr, injury=None):
         """
