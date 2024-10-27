@@ -10,6 +10,11 @@ while mating and for the display of the family tree screen.
 
 from strenum import StrEnum  # pylint: disable=no-name-in-module
 
+import os
+import ujson
+from scripts.game_structure.game_essentials import game
+from scripts.housekeeping.datadir import get_save_dir
+
 
 class RelationType(StrEnum):
     """An enum representing the possible relationships of a cat"""
@@ -33,8 +38,8 @@ class Inheritance:
 
     def __init__(self, cat, born=False):
         self.need_update = False
-        self.mates = None
-        self.other_mates = None
+        self.mates = {}
+        self.other_mates = {}
         self.kits = {}
         self.kits_mates = {}
         self.siblings = {}
@@ -49,6 +54,12 @@ class Inheritance:
         self.all_but_cousins = []
 
         self.cat = cat
+
+        try:
+            self.load_inheritance()
+            return
+        except:
+            pass
         self.update_inheritance()
 
         # if the cat is newly born, update all the related cats
@@ -58,6 +69,83 @@ class Inheritance:
         # SAVE INHERITANCE INTO ALL_INHERITANCES DICTIONARY
         self.all_inheritances[cat.ID] = self
 
+    def __setitem__(self, key, value):
+        setattr(self, key, value)
+
+    def save_inheritance(self, fade=False):
+        # save inheritance
+        clanname = None
+        if game.switches["clan_name"] != "":
+            clanname = game.switches["clan_name"]
+        elif len(game.switches["clan_name"]) > 0:
+            clanname = game.switches["clan_list"][0]
+        elif game.clan is not None:
+            clanname = game.clan.name
+
+        family_directory = get_save_dir() + "/" + clanname + "/inheritance"
+        family_file_path = family_directory + "/" + self.cat.ID + "_inheritance.json"
+
+        if len(self.all_involved) == 0 or fade:
+            if os.path.exists(family_file_path):
+                os.remove(family_file_path)
+            return
+
+        family = {}
+
+        if self.mates:
+            family["mates"] = self.mates
+        if self.other_mates:
+            family["other_mates"] = self.other_mates
+
+        if self.kits:
+            family["kits"] = self.kits
+        if self.kits_mates:
+            family["kits_mates"] = self.kits_mates
+
+        if self.siblings:
+            family["siblings"] = self.siblings
+        if self.siblings_mates:
+            family["siblings_mates"] = self.siblings_mates
+        if self.siblings_kits:
+            family["siblings_kits"] = self.siblings_kits
+
+        if self.parents:
+            family["parents"] = self.parents
+        if self.parents_siblings:
+            family["parents_siblings"] = self.parents_siblings
+
+        if self.cousins:
+            family["cousins"] = self.cousins
+
+        if self.grand_parents:
+            family["grand_parents"] = self.grand_parents
+        if self.grand_kits:
+            family["grand_kits"] = self.grand_kits
+
+        if self.all_involved:
+            family["all_involved"] = self.all_involved
+        if self.all_but_cousins:
+            family["all_but_cousins"] = self.all_but_cousins
+
+        game.safe_save(family_file_path, family)
+
+    def load_inheritance(self):
+        if game.switches["clan_name"] != "":
+            clanname = game.switches["clan_name"]
+        else:
+            clanname = game.switches["clan_list"][0]
+
+        family_directory = get_save_dir() + "/" + clanname + "/inheritance/"
+        family_cat_directory = family_directory + self.cat.ID + "_inheritance.json"
+        if not os.path.exists(family_cat_directory):
+            return
+
+        with open(family_cat_directory, "r", encoding="utf-8") as read_file:
+            rel_data = ujson.loads(read_file.read())
+            for key in rel_data.keys():
+                self[key] = rel_data[key]
+        self.all_inheritances[self.cat.ID] = self
+    
     def update_inheritance(self):
         """Update inheritance of the given cat."""
         self.parents = {}

@@ -3720,6 +3720,8 @@ class Cat:
 
     def get_save_dict(self, faded=False):
         if faded:
+            if self.inheritance:
+                self.inheritance.save_inheritance(True)
             return {
                 "ID": self.ID,
                 "name_prefix": self.name.prefix,
@@ -3735,6 +3737,8 @@ class Cat:
                 "faded_offspring": self.faded_offspring,
             }
         else:
+            if self.inheritance:
+                self.inheritance.save_inheritance()
             return {
                 "ID": self.ID,
                 "name_prefix": self.name.prefix,

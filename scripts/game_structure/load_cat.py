@@ -257,7 +257,7 @@ def json_load():
             game.switches["traceback"] = e
             raise
 
-        #cat.inheritance = Inheritance(cat)
+        cat.inheritance = Inheritance(cat)
 
         try:
             # initialization of thoughts

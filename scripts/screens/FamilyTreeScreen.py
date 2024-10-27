@@ -554,9 +554,14 @@ class FamilyTreeScreen(Screens):
             info_text = f"{str(_kitty.name)}"
             additional_info = self.the_cat.inheritance.get_cat_info(kitty)
             if len(additional_info["type"]) > 0:  # types is always real
-                rel_types = [
-                    str(rel_type.value) for rel_type in additional_info["type"]
-                ]
+                try:
+                    rel_types = [
+                        str(rel_type.value) for rel_type in additional_info["type"]
+                    ]
+                except:
+                    rel_types = [
+                        rel_type for rel_type in additional_info["type"]
+                    ]
                 rel_types = set(rel_types)  # remove duplicates
                 if "" in rel_types:
                     rel_types.remove("")  # removes empty
