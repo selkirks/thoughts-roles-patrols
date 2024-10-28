@@ -137,8 +137,6 @@ class Inheritance:
 
         family_directory = get_save_dir() + "/" + clanname + "/inheritance/"
         family_cat_directory = family_directory + self.cat.ID + "_inheritance.json"
-        if not os.path.exists(family_cat_directory):
-            return
 
         with open(family_cat_directory, "r", encoding="utf-8") as read_file:
             rel_data = ujson.loads(read_file.read())
