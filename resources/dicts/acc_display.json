@@ -930,9 +930,9 @@
     "singular": "fawn white-spotted rabbit"
 },
 "TAN VITILIGO RABBIT": {
-    "default": "black vitiligo rabbit",
-    "plural": "black white-spotted rabbits",
-    "singular": "black white-spotted rabbit"
+    "default": "tan vitiligo rabbit",
+    "plural": "tan white-spotted rabbits",
+    "singular": "tan white-spotted rabbit"
 },
   "GRAY VITILIGO RABBIT" : {
   "default": "gray white-spotted rabbit",

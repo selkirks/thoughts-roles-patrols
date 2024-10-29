@@ -540,6 +540,7 @@ class ProfileScreen(Screens):
 
         self.set_cat_location_bg(self.the_cat)
 
+
     def clear_profile(self):
         """Clears all profile objects."""
         for ele in self.profile_elements:
@@ -789,7 +790,18 @@ class ProfileScreen(Screens):
         # NEWLINE ----------
 
         # ACCESSORY
-        if the_cat.pelt.accessory:
+        if the_cat.pelt.accessories:
+            if len(the_cat.pelt.accessories) > 0:
+                if the_cat.pelt.accessories[0]:
+                    try:
+                        output += "\n"
+                        output += 'accessories: ' + str(ACC_DISPLAY[the_cat.pelt.accessories[0]]["default"])
+                        if len(the_cat.pelt.accessories) > 1:
+                            output += ' and ' + str(len(the_cat.pelt.accessories) - 1) + ' more'
+                    except:
+                        print("error with column1")
+
+        elif the_cat.pelt.accessory and the_cat.pelt.accessory in the_cat.pelt.accessories:
             output += "\n"
             output += "accessory: " + str(
                 ACC_DISPLAY[the_cat.pelt.accessory]["default"]

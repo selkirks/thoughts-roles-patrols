@@ -3482,6 +3482,7 @@ class Cat:
                 "tortie_pattern": self.pelt.tortiepattern,
                 "skin": self.pelt.skin,
                 "tint": self.pelt.tint,
+                'accessories': self.pelt.accessories if self.pelt.accessories else [],
                 "skill_dict": self.skills.get_skill_dict(),
                 "physical_trait_1": self.pelt.physical_trait_1,
                 "physical_trait_2": self.pelt.physical_trait_2,
