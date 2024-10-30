@@ -437,7 +437,7 @@ class Cat:
         :return: None
         """
         # trans cat chances
-        nonbiney_list = ["nonbinary", "genderfluid", "demigirl", "demiboy", "genderfae", "genderfaun", "bigender", "genderqueer", "agender", "???"]
+        nonbiney_list = ["nonbinary", "genderfluid", "demigirl", "demiboy", "genderfae", "genderfaun", "bigender", "genderqueer", "agender", "???", "deminonbinary", "trigender", "genderflux", "polygender"]
         theythemdefault = game.settings["they them default"]
         trans_chance = randint(0, 50)
         nb_chance = randint(0, 75)

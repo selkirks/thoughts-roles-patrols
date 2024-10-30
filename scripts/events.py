@@ -2461,7 +2461,7 @@ class Events:
                 # transing_chance != 0, no trans kitties today...    L
                 return
             
-            nonbiney_list = ["nonbinary", "genderfluid", "demigirl", "demiboy", "genderfae", "genderfaun", "bigender", "genderqueer", "agender", "???"]
+            nonbiney_list = ["nonbinary", "genderfluid", "demigirl", "demiboy", "genderfae", "genderfaun", "bigender", "genderqueer", "agender", "???", "deminonbinary", "trigender", "genderflux", "polygender"]
 
             if random.getrandbits(1):  # 50/50
                 if cat.gender == "male":

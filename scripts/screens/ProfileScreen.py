@@ -296,7 +296,7 @@ class ProfileScreen(Screens):
                 self.change_screen("change gender screen")
             # when button is pressed...
             elif event.ui_element == self.cis_trans_button:
-                nonbiney_list = ['nonbinary', 'genderfluid', 'demigirl', 'demiboy', 'genderfae', 'genderfaun', 'bigender', 'genderqueer', 'agender', '???']
+                nonbiney_list = ['nonbinary', 'genderfluid', 'demigirl', 'demiboy', 'genderfae', 'genderfaun', 'bigender', 'genderqueer', 'agender', '???', "deminonbinary", "trigender", "genderflux", "polygender"]
                 #if the cat is anything besides m/f/transm/transf then turn them back to cis
                 if self.the_cat.genderalign not in ["female", "trans female", "male", "trans male", "intersex"]:
                     self.the_cat.genderalign = self.the_cat.gender
