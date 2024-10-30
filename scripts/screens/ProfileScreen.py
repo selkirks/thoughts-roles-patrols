@@ -7,11 +7,9 @@ from re import sub
 import pygame
 import pygame_gui
 import ujson
-import math
 
 from scripts.cat.cats import Cat, BACKSTORIES
 from scripts.cat.pelts import Pelt
-from scripts.cat.sprites import sprites
 from scripts.clan_resources.freshkill import FRESHKILL_ACTIVE
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import game
@@ -172,7 +170,6 @@ class ProfileScreen(Screens):
         self.placeholder_tab_2 = None
         self.backstory_tab_button = None
         self.dangerous_tab_button = None
-        self.accessories_tab_button = None
         self.personal_tab_button = None
         self.roles_tab_button = None
         self.relations_tab_button = None
@@ -787,8 +784,6 @@ class ProfileScreen(Screens):
         output += "\n"
         output += "build: " + the_cat.pelt.build
 
-        # NEWLINE ----------
-
         # ACCESSORY
         if the_cat.pelt.accessories:
             if len(the_cat.pelt.accessories) > 0:
@@ -805,9 +800,8 @@ class ProfileScreen(Screens):
             output += "\n"
             output += "accessory: " + str(
                 ACC_DISPLAY[the_cat.pelt.accessory]["default"]
-            )            
-                    
-                    # NEWLINE ----------
+            )
+            # NEWLINE ----------
 
         # PARENTS
         all_parents = [Cat.fetch_cat(i) for i in the_cat.get_parents()]
@@ -2098,8 +2092,6 @@ class ProfileScreen(Screens):
         text = "<br><br>".join(text_list)
         return text
 
-   
-   
     def toggle_relations_tab(self):
         """Opens relations tab"""
         # Save what is previously open, for toggle purposes.
