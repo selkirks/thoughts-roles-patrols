@@ -234,7 +234,7 @@
                 "text": "s_c takes the lead, confronting the gang with confidence. Eventually, the rogues admit that they've been struggling to find enough prey and were looking to steal richer territory from the Clan. Tensions are eased when s_c informs the rogues of a prey-rich forest outside of c_n territory.",
                 "exp": 30,
                 "weight": 20,
-                "stat_trait": ["bold", "confident", "charming"],
+                "stat_trait": ["bold", "confident"],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],

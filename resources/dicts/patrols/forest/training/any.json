@@ -289,7 +289,6 @@
                 "exp": 40,
                 "weight": 20,
                 "stat_trait": [
-                    "patient",
                     "responsible",
                     "thoughtful",
                     "wise",

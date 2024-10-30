@@ -75,7 +75,6 @@
                     "compassionate",
                     "faithful",
                     "loving",
-                    "patient",
                     "responsible",
                     "thoughtful",
                     "wise"
@@ -247,7 +246,7 @@
                     "shameless",
                     "arrogant",
                     "grumpy",
-                    "oblivous"
+                    "oblivious"
                 ],
                 "relationships": [
                     {
@@ -368,7 +367,7 @@
                     "sneaky",
                     "grumpy",
                     "cunning",
-                    "oblivous"
+                    "oblivious"
                 ]
             }
         ]
@@ -415,7 +414,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["patrol"],
                         "mutual": true,
-                        "values": ["jealousy"],
+                        "values": ["jealous"],
                         "amount": -5
                     }
                 ]
@@ -437,7 +436,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["patrol"],
                         "mutual": true,
-                        "values": ["jealousy"],
+                        "values": ["jealous"],
                         "amount": -5
                     }
                 ]
@@ -459,7 +458,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["patrol"],
                         "mutual": true,
-                        "values": ["jealousy"],
+                        "values": ["jealous"],
                         "amount": -5
                     }
                 ]
@@ -483,7 +482,7 @@
                         "cats_to": ["r_c"],
                         "cats_from": ["patrol"],
                         "mutual": true,
-                        "values": ["jealousy"],
+                        "values": ["jealous"],
                         "amount": -5
                     }
                 ]
@@ -549,7 +548,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["patrol"],
                         "mutual": true,
-                        "values": ["jealousy"],
+                        "values": ["jealous"],
                         "amount": 5
                     }
                 ]
@@ -627,7 +626,7 @@
                         "cats_to": ["r_c"],
                         "cats_from": ["s_c"],
                         "mutual": false,
-                        "values": ["jealousy"],
+                        "values": ["jealous"],
                         "amount": 15
                     }
                 ]
@@ -784,7 +783,7 @@
                     "nervous",
                     "insecure",
                     "gloomy",
-                    "oblivous"
+                    "oblivious"
                 ]
             },
             {
@@ -808,7 +807,7 @@
         "biome": ["any"],
         "season": ["any"],
         "types": ["herb_gathering"],
-        "tags": ["jealousy"],
+        "tags": ["jealous"],
         "patrol_art": "gen_med_vision",
         "min_cats": 2,
         "max_cats": 2,
@@ -848,7 +847,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": ["jealousy"],
+                        "values": ["jealous"],
                         "amount": -5
                     }
                 ]
@@ -871,7 +870,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["app1"],
                         "mutual": true,
-                        "values": ["jealousy"],
+                        "values": ["jealous"],
                         "amount": -5
                     }
                 ]
@@ -973,7 +972,7 @@
                         "cats_to": ["p_l"],
                         "cats_from": ["app1"],
                         "mutual": true,
-                        "values": ["jealousy"],
+                        "values": ["jealous"],
                         "amount": -5
                     }
                 ]
@@ -1081,7 +1080,7 @@
                         "cats_to": ["app1"],
                         "cats_from": ["s_c"],
                         "mutual": true,
-                        "values": ["jealousy"],
+                        "values": ["jealous"],
                         "amount": 5
                     }
                 ]
@@ -2609,7 +2608,7 @@
                 "text": "s_c sits down and motions for app1 to join {PRONOUN/s_c/object}, looking at {PRONOUN/app1/object} inquisitively. app1 tentatively explains that {PRONOUN/app1/subject}{VERB/app1/'re/'s} curious about herbs but {VERB/app1/are/is} worried that desire to learn is detrimental to {PRONOUN/app1/poss} progress as a warrior. s_c reassures {PRONOUN/app1/object} that nobody would think less of {PRONOUN/app1/object} for that, and it's good to know the basics. s_c promises to teach {PRONOUN/app1/object} when they get back to camp.",
                 "exp": 20,
                 "weight": 20,
-                "stat_trait": ["compassionate", "patient", "wise"],
+                "stat_trait": ["compassionate", "wise"],
                 "herbs": ["random_herbs"],
                 "relationships": [
                     {
@@ -3555,7 +3554,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["dislike", "jealousy"],
+                        "values": ["dislike", "jealous"],
                         "amount": -5
                     }
                 ]
@@ -3577,7 +3576,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["dislike", "jealousy"],
+                        "values": ["dislike", "jealous"],
                         "amount": -5
                     }
                 ]
@@ -3600,7 +3599,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["dislike", "jealousy"],
+                        "values": ["dislike", "jealous"],
                         "amount": -5
                     }
                 ]
@@ -3624,7 +3623,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["dislike", "jealousy"],
+                        "values": ["dislike", "jealous"],
                         "amount": 5
                     }
                 ]
@@ -3647,7 +3646,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["dislike", "jealousy"],
+                        "values": ["dislike", "jealous"],
                         "amount": 5
                     }
                 ]
@@ -4291,7 +4290,6 @@
                 "stat_trait": [
                     "compassionate",
                     "loving",
-                    "patient",
                     "thoughtful"
                 ],
                 "can_have_stat": ["r_c"],
@@ -4397,7 +4395,6 @@
                 "stat_trait": [
                     "compassionate",
                     "loving",
-                    "patient",
                     "thoughtful"
                 ],
                 "can_have_stat": ["r_c"],
@@ -4826,7 +4823,6 @@
                 "stat_trait": [
                     "compassionate",
                     "loving",
-                    "patient",
                     "thoughtful"
                 ],
                 "can_have_stat": ["p_l"],
@@ -4905,7 +4901,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": true,
-                        "values": ["dislike", "jealousy"],
+                        "values": ["dislike", "jealous"],
                         "amount": -10
                     }
                 ]
@@ -4942,7 +4938,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": true,
-                        "values": ["dislike", "jealousy"],
+                        "values": ["dislike", "jealous"],
                         "amount": -10
                     }
                 ]
@@ -4965,7 +4961,7 @@
 					"cats_to": ["patrol"],
 					"cats_from": ["patrol"],
 					"mutual": true,
-					"values": ["dislike", "jealousy"],
+					"values": ["dislike", "jealous"],
 					"amount": -10
 					}
 				]
@@ -4989,7 +4985,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": true,
-                        "values": ["dislike", "jealousy"],
+                        "values": ["dislike", "jealous"],
                         "amount": -10
                     }
                 ]
@@ -5013,7 +5009,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": true,
-                        "values": ["dislike", "jealousy"],
+                        "values": ["dislike", "jealous"],
                         "amount": -10
                     }
                 ]
@@ -5037,7 +5033,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": true,
-                        "values": ["dislike", "jealousy"],
+                        "values": ["dislike", "jealous"],
                         "amount": -10
                     }
                 ]
@@ -5061,7 +5057,7 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": true,
-                        "values": ["dislike", "jealousy"],
+                        "values": ["dislike", "jealous"],
                         "amount": -10
                     }
                 ]
@@ -5308,8 +5304,8 @@
                 "text": "s_c rolls {PRONOUN/s_c/poss} eyes. That kind of information is only for very <i>important</i> cats - which doesn't include app2, s_c is quick to inform {PRONOUN/app2/object}. Now run along and help gather herbs like a good little apprentice.",
                 "exp": 10,
                 "weight": 40,
-                "can_have_stat": "healer",
-                "stat_trait": "arrogant",
+                "can_have_stat": ["healer"],
+                "stat_trait": ["arrogant"],
                 "herbs": ["random_herbs"],
                 "relationship": [
                     {
@@ -5321,7 +5317,7 @@
                     {
                         "cat_to": [ "s_c" ],
                         "cat_from": [ "app2" ],
-                        "values": [ "dislike", "jealousy" ],
+                        "values": [ "dislike", "jealous" ],
                         "amount": 10
                     }
                 ],
@@ -5331,7 +5327,7 @@
                 "text": "No way, does app2 want to get them both in trouble? They're looking for <i>herbs</i>, not poison. s_c flatly refuses and the apprentices get on with their assignment.",
                 "exp": 10,
                 "weight": 40,
-                "can_have_stat": "healer",
+                "can_have_stat": ["healer"],
                 "stat_trait": [ "loyal", "strict", "responsible", "righteous" ],
                 "herbs": ["random_herbs"],
                 "relationship": [
@@ -5536,10 +5532,12 @@
                     }
                 ],
                 "injury":
-                    {
-                                "cats": [ "app2" ],
-                                "injuries": [ "poisoned" ]
-                    },
+                    [
+                        {
+                            "cats": [ "app2" ],
+                            "injuries": [ "poisoned" ]
+                        }
+                    ],
                 "history_text": {
                         "reg_death": "m_c died after tasting deathberries out of curiosity.",
                         "lead_death": "died after tasting deathberries"
