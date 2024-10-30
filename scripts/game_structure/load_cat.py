@@ -55,10 +55,12 @@ def json_load():
         try:
 
              # moving clangen accs over to accessories + inventory
+            if "accessories" not in cat:
+                cat["accessories"] = []
+
             if cat["accessory"] is not None:
                 cat["accessories"].append(cat["accessory"])
                 cat["accessory"] = None
-            
             
             new_cat = Cat(
                 ID=cat["ID"],
