@@ -2352,7 +2352,6 @@ class Cat:
         self.get_injured(injury, event_triggered=True)
 
     def congenital_condition(self, cat):
-        self.genetic_conditions()
         possible_conditions = []
 
         for condition in PERMANENT:
