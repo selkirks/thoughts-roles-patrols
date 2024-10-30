@@ -1683,10 +1683,12 @@
                 "text": "p_l and r_c had been bickering the entire morning. But when {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} the shadow of a rouge falling on r_c, {PRONOUN/p_l/subject} {VERB/p_l/react/reacts} without thought, leaping forward, claws ripping into the enemy's back and flipping them off r_c with a ferocious snarl. r_c is badly injured, but will live thanks to p_l dragging {PRONOUN/r_c/object} back to camp.",
                 "exp": 10,
                 "weight": 5,
-                "injury": {
-                    "cats": ["r_c"],
-                    "injuries": ["battle_injury", "battle_injury"]
-                },
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["battle_injury", "battle_injury"]
+                    }
+                ],
                 "relationships": [
                     {
                         "cats_to": ["p_l"],
@@ -1702,7 +1704,7 @@
                 "exp": 10,
                 "weight": 10,
                 "can_have_stat": ["p_l"],
-                "stat_trait": ["troublesome", "fierce", "bloodthirsty", "cold", "childish", "shameless", "vengeful", "arrogant", "competitive", "grumpy", "cunning", "oblivous", "rebellious"],
+                "stat_trait": ["troublesome", "fierce", "bloodthirsty", "cold", "childish", "shameless", "vengeful", "arrogant", "competitive", "grumpy", "cunning", "oblivious", "rebellious"],
                 "relationships": [
                     {
                         "cats_to": ["s_c"],
@@ -1740,10 +1742,12 @@
                 "text": "While they are bickering, r_c trips, and p_l snickers, earning r_c's ire.",
                 "exp": 0,
                 "weight": 20,
-                "injury": {
-                    "cats": ["r_c"],
-                    "injuries": ["minor_injury"]
-                },
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["minor_injury"]
+                    }
+                ],
                 "relationships": [
                     {
                         "cats_to": ["p_l"],
@@ -1765,7 +1769,7 @@
                 "exp": 0,
                 "weight": 10,
                 "can_have_stat": ["p_l"],
-                "stat_trait": ["troublesome", "fierce", "bloodthirsty", "cold", "childish", "shameless", "vengeful", "arrogant", "competitive", "grumpy", "cunning", "oblivous", "rebellious"],
+                "stat_trait": ["troublesome", "fierce", "bloodthirsty", "cold", "childish", "shameless", "vengeful", "arrogant", "competitive", "grumpy", "cunning", "oblivious", "rebellious"],
                 "relationships": [
                     {
                         "cats_to": ["s_c"],
@@ -1864,10 +1868,12 @@
                 "text": "p_l and r_c had been arguing the entire morning. But when {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} the shadow of a rouge falling on r_c, {PRONOUN/p_l/subject} {VERB/p_l/react/reacts} without thought, leaping forward, claws ripping into the enemy's back and flipping them off r_c with a ferocious snarl. r_c is badly injured, but will live thanks to p_l dragging {PRONOUN/r_c/object} back to camp.",
                 "exp": 10,
                 "weight": 15,
-                "injury": {
-                    "cats": ["r_c"],
-                    "injuries": ["battle_injury", "battle_injury"]
-                },
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["battle_injury", "battle_injury"]
+                    }
+                ],
                 "relationships": [
                     {
                         "cats_to": ["p_l"],
@@ -1883,7 +1889,7 @@
                 "exp": 10,
                 "weight": 10,
                 "can_have_stat": ["p_l"],
-                "stat_trait": ["troublesome", "fierce", "bloodthirsty", "cold", "childish", "shameless", "vengeful", "arrogant", "competitive", "grumpy", "cunning", "oblivous", "rebellious"],
+                "stat_trait": ["troublesome", "fierce", "bloodthirsty", "cold", "childish", "shameless", "vengeful", "arrogant", "competitive", "grumpy", "cunning", "oblivious", "rebellious"],
                 "relationships": [
                     {
                         "cats_to": ["s_c"],
@@ -1921,10 +1927,12 @@
                 "text": "In the midst of another argument, p_l swiftly swipes at r_c to shut {PRONOUN/r_c/object} up. r_c hisses, and slashes back. Fur flies as both cats trade blows. The chaotic brawl ends with both of them wounded and a tense silence in the air. When they return to camp, many eyes stare in judgement. The Clan is disappointed in their actions.",
                 "exp": 0,
                 "weight": 10,
-                "injury": {
-                    "cats": ["r_c", "p_l"],
-                    "injuries": ["minor_injury","minor_injury","battle_injury"]
-                },
+                "injury": [
+                    {
+                        "cats": ["r_c", "p_l"],
+                        "injuries": ["minor_injury","minor_injury","battle_injury"]
+                    }
+                ],
                 "relationships": [
                     {
                         "cats_to": ["p_l"],
@@ -1967,7 +1975,7 @@
                 "exp": 0,
                 "weight": 10,
                 "can_have_stat": ["p_l"],
-                "stat_trait": ["troublesome", "fierce", "bloodthirsty", "cold", "childish", "shameless", "vengeful", "arrogant", "competitive", "grumpy", "cunning", "oblivous", "rebellious"],
+                "stat_trait": ["troublesome", "fierce", "bloodthirsty", "cold", "childish", "shameless", "vengeful", "arrogant", "competitive", "grumpy", "cunning", "oblivious", "rebellious"],
                 "relationships": [
                     {
                         "cats_to": ["s_c"],
@@ -2686,7 +2694,7 @@
                 {
                     "cats_from": ["n_c:0", "n_c:1"],
                     "cats_to": ["patrol"],
-                    "mutual": "true",
+                    "mutual": true,
                     "values": ["platonic", "trust", "comfort"],
                     "amount": 10
                 }
@@ -2759,8 +2767,8 @@
                 }
             ],
             "new_cat": [
-                ["kittypet", "meeting", "existing"],
-                ["kittypet", "meeting", "existing"]
+                ["kittypet", "meeting", "exists"],
+                ["kittypet", "meeting", "exists"]
             ],
             "art": "gen_angry_cat_warrior",
             "outsider_rep": -1
@@ -2786,7 +2794,7 @@
                 }
             ],
             "new_cat": [
-                ["dead", "meeting", "existing", "kittypet"],
+                ["dead", "meeting", "exists", "kittypet"],
                 ["kittypet", "meeting"]
             ],
             "art": "gen_gen_newcat_hostile",
@@ -2860,7 +2868,7 @@
                 {
                     "cats_from": ["n_c:0", "n_c:1"],
                     "cats_to": ["patrol"],
-                    "mutual": "true",
+                    "mutual": true,
                     "values": ["platonic", "trust", "comfort"],
                     "amount": 10
                 }
@@ -2933,8 +2941,8 @@
                 }
             ],
             "new_cat": [
-                ["kittypet", "meeting", "existing"],
-                ["kittypet", "meeting", "existing"]
+                ["kittypet", "meeting", "exists"],
+                ["kittypet", "meeting", "exists"]
             ],
             "art": "gen_angry_cat_warrior",
             "outsider_rep": -1
@@ -2960,7 +2968,7 @@
                 }
             ],
             "new_cat": [
-                ["dead", "meeting", "existing", "kittypet"],
+                ["dead", "meeting", "exists", "kittypet"],
                 ["kittypet", "meeting"]
             ],
             "art": "gen_gen_newcat_hostile",

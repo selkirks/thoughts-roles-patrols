@@ -818,6 +818,8 @@ class Pregnancy_Events:
         else:
             event_list.append(choice(events["birth"]["unmated_parent"]))
 
+        involved_cats += [k.ID for k in kits]
+
         if clan.game_mode != "classic":
             try:
                 death_chance = cat.injuries["pregnant"]["mortality"]
@@ -885,9 +887,6 @@ class Pregnancy_Events:
                 cat = pregnant_cat
         print_event = " ".join(event_list)
         print_event = print_event.replace("{insert}", insert)
-
-        for kit in kits:
-            involved_cats.append(kit.ID)
 
         print_event = event_text_adjust(Cat, print_event, main_cat=cat, random_cat=RandomChoice, clan=game.clan)
 

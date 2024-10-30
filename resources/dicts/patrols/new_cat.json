@@ -1267,7 +1267,7 @@
                 "weight": 20,
                 "outsider_rep": -1,
                 "new_cat": [
-                    "meeting", "loner"
+                    ["meeting", "loner"]
                 ],
                 "relationships": [
                     {
@@ -1287,7 +1287,7 @@
                 "weight": 20,
                 "outsider_rep": -2,
                 "new_cat": [
-                    "meeting", "loner"
+                    ["meeting", "loner"]
                 ]
             }
         ]

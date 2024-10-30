@@ -280,6 +280,7 @@ class PatrolScreen(Screens):
         if (
             self.in_progress_data is not None
             and self.in_progress_data["current_moon"] == game.clan.age
+            and self.in_progress_data["clan_name"] == game.clan.name
         ):
             self.display_change_load(self.in_progress_data)
         else:
@@ -313,6 +314,7 @@ class PatrolScreen(Screens):
         variable_dict["outcome_art"] = self.outcome_art
 
         variable_dict["current_moon"] = game.clan.age
+        variable_dict["clan_name"] = game.clan.name
 
         return variable_dict
 

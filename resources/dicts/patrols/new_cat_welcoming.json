@@ -1346,7 +1346,7 @@
                 "text": "s_c takes the lead in checking the noise and finds that the bush is hiding a loner and {PRONOUN/n_c:0/poss} litter! The kits are freshly born, new to the world, and s_c is quick to sit and talk quietly with the new parent. After some coaxing, s_c convinces {PRONOUN/n_c:0/object} to come stay with the Clan for a while, maybe even to join permanently.",
                 "exp": 10,
                 "weight": 20,
-                "stat_trait": ["compassionate", "empathetic", "loving", "calm"],
+                "stat_trait": ["compassionate", "loving", "calm"],
                 "new_cat": [
                     ["age:has_kits", "loner", "can_birth"],
                     ["litter", "parent:0", "status:newborn", "backstory:outsider_roots2"]
