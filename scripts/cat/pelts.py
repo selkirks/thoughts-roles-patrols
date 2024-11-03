@@ -66,17 +66,13 @@ class Pelt:
 
     physical_trait_teeth = ['TEETHUPPER', 'TEETHSABRE', 'TEETHUNDERBITE']
     physical_trait_ear_type = ['EARSMALL', 'EARBIG', 'EARTALL', 'EARPANTHER']
-    physical_trait_ear_fold = ['FOLDBOTH', 'FOLDONE']
+    physical_trait_ear_fold = ['FOLDONE']
     physical_trait_headfur = ['HEADFORELOCK', 'HEADCOWLICK', 'HEADMOHAWK', 'HEADTUFT', 'HEADEMO']
     physical_trait_cheekfur = ['CHEEKLONG', 'CHEEKPOINTED', 'CHEEKFLUFF', 'CHEEKCURL']
     physical_trait_mane = ['MANESILKY', 'MANEFLUFFY', 'MANERUFF', 'MANEHORSE']
-    physical_trait_fur_type = ['FURWAVY', 'FURCURLY', 'FURPATCHY', 'FURKINK']
-    physical_trait_muzzle_type = ['MUZZLESHORT', 'MUZZLEBROAD', 'MUZZLELONG']
-    physical_trait_body_type = ['BODYBROAD', 'BODYWIRY', 'BODYLITHE', 'BODYSKINNY', 'BODYBUFF']
-    physical_trait_size = ['SIZETINY', 'SIZESMALL', 'SIZESHORT', 'SIZETALL', 'SIZELARGE', 'SIZEHUGE']
-    physical_trait_tail = ['TAILCROOKED', 'TAILLONG', 'TAILFEATHER', 'TAILCURL', 'TAILTUFT']
+    physical_trait_tail = ['TAILCROOKED', 'TAILLONG', 'TAILFEATHER', 'TAILTUFT']
     physical_trait_bodyfur = ['BACKFLUFF', 'BACKRIDGE', 'SHOULDERTUFT']
-    physical_trait_misc = ['EARTUFTS', 'POLYDACTYL', 'LASHESUPPER', 'LASHESLOWER', 'WHISKERSLONG', 'CLAWSLONG', 'LEGTUFT']
+    physical_trait_misc = ['EARTUFTS', 'LASHESUPPER', 'LASHESLOWER', 'WHISKERSLONG', 'CLAWSLONG', 'LEGTUFT']
     # bite scars by @wood pank on discord
 
     # scars from other cats, other animals
