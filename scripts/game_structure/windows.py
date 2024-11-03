@@ -1605,9 +1605,11 @@ class RelationshipLog(UIWindow):
         )
         self.closing_buttons = [self.exit_button, self.back_button, self.log_icon]
 
-        self.disable_button_list = disable_button_list
-        for button in self.disable_button_list:
-            button.disable()
+        self.disable_button_list = []
+        for button in disable_button_list:
+            if button.is_enabled:
+                self.disable_button_list.append(button)
+                button.disable()
 
         opposite_log_string = None
         if not relationship.opposite_relationship:
