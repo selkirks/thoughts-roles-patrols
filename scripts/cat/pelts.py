@@ -1009,7 +1009,6 @@ class Pelt:
             Pelt.physical_trait_headfur,
             Pelt.physical_trait_cheekfur,
             Pelt.physical_trait_mane,
-            Pelt.physical_trait_size,
             Pelt.physical_trait_tail,
             Pelt.physical_trait_bodyfur,
             Pelt.physical_trait_misc
