@@ -1022,6 +1022,64 @@ class MakeClanScreen(Screens):
     def refresh_selected_cat_info(self, selected=None):
         # SELECTED CAT INFO
         if selected is not None:
+            trait_descriptions = {
+            'TEETHUPPER': 'long upper fangs',
+            'TEETHSABRE': 'sabre teeth',
+            'TEETHUNDERBITE': 'underbite',
+            'EARSMALL': 'small ears',
+            'EARBIG': 'big ears',
+            'EARTALL': 'tall ears',
+            'EARPANTHER': 'rounded ears',
+            'FOLDBOTH': 'folded ears',
+            'FOLDONE': 'one folded ear',
+            'HEADFORELOCK': 'forelock',
+            'HEADCOWLICK': 'cowlick',
+            'HEADMOHAWK': 'mohawk',
+            'HEADTUFT': 'tufted head fur',
+            'HEADEMO': 'emo-style head fur',
+            'CHEEKLONG': 'long cheek fur',
+            'CHEEKPOINTED': 'pointed cheek fur',
+            'CHEEKFLUFF': 'fluffy cheeks',
+            'CHEEKCURL': 'curled cheek fur',
+            'MANESILKY': 'silky mane',
+            'MANEFLUFFY': 'fluffy mane',
+            'MANERUFF': 'ruff',
+            'MANEHORSE': 'horse-like mane',
+            'FURWAVY': 'wavy fur',
+            'FURCURLY': 'curly fur',
+            'FURPATCHY': 'patchy fur',
+            'FURKINK': 'kinked fur',
+            'MUZZLESHORT': 'short muzzle',
+            'MUZZLEBROAD': 'broad muzzle',
+            'MUZZLELONG': 'long muzzle',
+            'BODYBROAD': 'broad shoulders',
+            'BODYWIRY': 'wiry',
+            'BODYLITHE': 'lithe',
+            'BODYSKINNY': 'skinny',
+            'BODYBUFF': 'muscular',
+            'BODYCOMPACT': 'compact',
+            'SIZETINY': 'tiny',
+            'SIZESMALL': 'small',
+            'SIZESHORT': 'short',
+            'SIZETALL': 'tall',
+            'SIZELARGE': 'large',
+            'SIZEHUGE': 'huge',
+            'EARTUFTS': 'ear tufts',
+            'POLYDACTYL': 'polydactyl',
+            'LASHESUPPER': 'upper lashes',
+            'LASHESLOWER': 'lower lashes',
+            'WHISKERSLONG': 'long whiskers',
+            'TAILCROOKED': 'crooked tail',
+            'TAILLONG': 'long tail',
+            'TAILFEATHER': 'feathered tail',
+            'TAILCURL': 'curled tail',
+            'TAILTUFT': 'tufted tail',
+            'CLAWSLONG': 'unusually long claws',
+            'BACKFLUFF': 'fluffy back',
+            'BACKRIDGE': 'fur ridge on back',
+            'SHOULDERTUFT': 'tufted shoulders',
+            'LEGTUFT': 'tufted legs'
+            }
             if self.sub_screen == "choose leader":
                 self.elements["cat_name"].set_text(
                     str(selected.name) + " --> " + selected.name.prefix + "star"
@@ -1029,6 +1087,26 @@ class MakeClanScreen(Screens):
             else:
                 self.elements["cat_name"].set_text(str(selected.name))
             self.elements["cat_name"].show()
+
+            # Create the trait description string
+            trait_list = []
+            if selected.pelt.physical_trait_1:
+                trait_list.append(selected.pelt.physical_trait_1)
+            if selected.pelt.physical_trait_2:
+                trait_list.append(selected.pelt.physical_trait_2)
+            if selected.pelt.physical_trait_3:
+                trait_list.append(selected.pelt.physical_trait_3)
+            if selected.pelt.physical_trait_4:
+                trait_list.append(selected.pelt.physical_trait_4)
+
+            trait_string = ""
+            if trait_list:
+                for trait in trait_list:
+                    if trait in trait_descriptions:
+                        trait_string += trait_descriptions[trait] + ", "
+                    else:
+                        trait_string += trait + ", "
+                trait_string = trait_string.rstrip(", ")
             self.elements["cat_info"].set_text(
                 selected.genderalign
                 + "\n"
@@ -1037,8 +1115,10 @@ class MakeClanScreen(Screens):
                     + "\n"
                     + str(selected.personality.trait)
                     + "\n"
-                    + str(selected.skills.skill_string())
-                )
+                    + str(selected.skills.skill_string()
+                    + "\n"
+                    + trait_string
+                ))
             )
             self.elements["cat_info"].show()
         else:
@@ -1241,7 +1321,7 @@ class MakeClanScreen(Screens):
     def _get_cat_tooltip_string(self, cat: Cat):
         """Get tooltip for cat. Tooltip displays name, sex, age group, and trait."""
 
-        return f"<b>{cat.name}</b><br>{cat.genderalign}<br>{cat.age}<br>{cat.personality.trait}"
+        return f"<b>{cat.name}</b><br>{cat.genderalign}<br>{cat.age}<br>{cat.personality.trait}<br>{cat.pelt.physical_trait_1}<br>{cat.pelt.physical_trait_2}<br>{cat.pelt.physical_trait_3}<br>{cat.pelt.physical_trait_4}"
 
     def open_game_mode(self):
         # Clear previous screen
