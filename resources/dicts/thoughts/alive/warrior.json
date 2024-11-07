@@ -990,20 +990,6 @@
         ]
     },
     {
-        "id": "moody_warrior",
-        "thoughts": [
-            "Is feeling really happy this moon!",
-            "Feels super sad this moon...",
-            "Feels alot more angry than usual this moon",
-            "Randomly starts crying",
-            "Changes moods quickly",
-            "Wishes {PRONOUN/m_c/subject} could control {PRONOUN/m_c/poss} emotions easier"
-        ],
-        "main_trait_constraint": [
-            "moody"
-        ]
-    },
-    {
         "id": "vulnerable_warrior",
         "thoughts": [
             "Was found walking alone past the border",

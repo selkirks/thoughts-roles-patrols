@@ -770,12 +770,6 @@
             "aggression": [8, 16],
             "stability": [0, 8]
         },
-        "obsessive": {
-            "lawfulness": [4, 14],
-            "sociability": [8, 16],
-            "aggression": [4, 14],
-            "stability": [0, 6]
-        },
         "thoughtless": {
             "lawfulness": [0, 8],
             "sociability": [0, 8],
@@ -811,6 +805,12 @@
             "sociability": [0, 6],
             "aggression": [8, 16],
             "stability": [0, 8]
+        },
+        "reliable": {
+            "lawfulness": [0, 8],
+            "sociability": [10, 16],
+            "aggression": [0, 6],
+            "stability": [10, 16]
         },
         "unreliable": {
             "lawfulness": [0, 6],
@@ -887,6 +887,12 @@
         "cool": {
             "lawfulness": [4, 12],
             "sociability": [8, 16],
+            "aggression": [0, 8],
+            "stability": [8, 16]
+        },
+        "cooperative": {
+            "lawfulness": [8, 16],
+            "sociability": [10, 16],
             "aggression": [0, 8],
             "stability": [8, 16]
         },
@@ -1184,6 +1190,18 @@
             "aggression": [0, 1],
             "stability": [10, 16]
         },
+        "macabre": {
+            "lawfulness": [0, 8],
+            "sociability": [0, 8],
+            "aggression": [10, 16],
+            "stability": [8, 16]
+        },
+        "civil": {
+            "lawfulness": [0, 8],
+            "sociability": [0, 8],
+            "aggression": [8, 16],
+            "stability": [0, 8]
+        },
         "teacherly": {
             "lawfulness": [0, 20],
             "sociability": [0, 30],
@@ -1263,10 +1281,10 @@
             "stability": [0, 5]
         },
         "arguementative": {
-            "lawfulness": [0, 1],
-            "sociability": [0, 1],
-            "aggression": [0, 20],
-            "stability": [10, 16]
+            "lawfulness": [8, 16],
+            "sociability": [2, 10],
+            "aggression": [10, 16],
+            "stability": [0, 8]
         },
         "artifical": {
             "lawfulness": [0, 1],
