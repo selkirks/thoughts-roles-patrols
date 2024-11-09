@@ -781,8 +781,8 @@ def create_new_cat(
                 # loner acc
             if loner :
                 name = choice(names.names_dict["loner_names"])
-                if choice([1, 2]) == 1:
-                    accessory = choice(Pelt.dogteeth_collars)
+                if bool(getrandbits(1)):
+                    accessory = choice([ choice(Pelt.bone_accessories), choice(Pelt.butterflies_accessories), choice(Pelt.stuff_accessories), choice(Pelt.plant_accessories), choice(Pelt.wild_accessories), choice(Pelt.tail_accessories), choice(Pelt.flower_accessories), choice(Pelt.plant2_accessories), choice(Pelt.snake_accessories), choice(Pelt.smallAnimal_accessories), choice(Pelt.deadInsect_accessories), choice(Pelt.aliveInsect_accessories), choice(Pelt.fruit_accessories), choice(Pelt.crafted_accessories), choice(Pelt.tail2_accessories)])
 
             # now we make the cats
             if new_name:  # these cats get new names
