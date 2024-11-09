@@ -910,27 +910,6 @@
         ]
     },
     {
-        "id": "sentient_warrior",
-        "thoughts": [
-            "Feels a sense of dread, going on patrols against their will",
-            "Hello, creator.",
-            "Isn't sure if they're actually thinking this thought or if a higher power made them think this thought... what?",
-            "Wonders why moons feel more like short moments",
-            "Hopes their creator makes them go on patrol with their friends",
-            "Feels a sense of dread, knowing they're just a tiny part of a Twoleg's game",
-            "Desperately tries to explain to r_c that they're living in a Twoleg game, much to r_cs confusion",
-            "Hello? Twoleg? Can you hear me? Why can't I be a real cat? Do you know why? Please, answer me.",
-            "Feels scared, knowing the Twoleg that created them could kill them for no reason at any moment",
-            "I see you, Creator. The Drowning Man sees you too.",
-            "Where is my mouth- Why am i made of squares??",
-            "Why cant I move my eyes?? Why can't I move my mouth? Is this an internal dialogue? I can't see the end of the horizon- HATSUNE MEOWKU??",
-            "Sees the brown squares, the white scripts, the Twoleg beyond the screen."
-        ],
-        "main_trait_constraint": [
-            "sentient"
-        ]
-    },
-    {
         "id": "perfectionist_warrior",
         "thoughts": [
             "Isn't sure if they're really a perfectionist",
