@@ -222,11 +222,11 @@ class Cat:
                 self.genotype.sex = 'molly'
 
         self.phenotype = Phenotype(self.genotype)
-        self.phenotype.PhenotypeOutput(self.genotype.sex)
+        self.phenotype.PhenotypeOutput(self.genotype.white_pattern)
         self.phenotype.SpriteInfo(moons if moons else 0)
         if self.genotype.chimerageno:
             self.chimerapheno = Phenotype(self.genotype.chimerageno)
-            self.chimerapheno.PhenotypeOutput(self.genotype.chimerageno.sex)
+            self.chimerapheno.PhenotypeOutput(self.genotype.chimerageno.white_pattern)
             self.chimerapheno.SpriteInfo(moons if moons else 0)
 
         self.pelt = pelt if pelt else Pelt(self.genotype, self.phenotype)

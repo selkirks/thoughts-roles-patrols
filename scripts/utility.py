@@ -2761,7 +2761,7 @@ def generate_sprite(
             if genotype.somatic["gene"] == 'sexgene':
                 genotype.sexgene = ['O', 'Y']
             phenotype = Phenotype(genotype)
-            phenotype.PhenotypeOutput(genotype.sex)
+            phenotype.PhenotypeOutput(genotype.white_pattern)
 
         stripecolourdict = {
                 'rufousedapricot' : 'lowred',
