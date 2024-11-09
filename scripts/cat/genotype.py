@@ -965,54 +965,33 @@ class Genotype:
     def BreedGenerator(self, special=None):
         if self.chimera:
             self.chimerageno.Generator()
-        
-        breedlist = [
-            "Abyssinian", "American Bobtail", "American Curl", "American Shorthair", "American Burmese/Bombay", "Aphrodite", 
-                "Arabian Mau", "Asian/Burmese", "Australian Mist",
-            "Bambino", "Bengal", "Birman", "Brazilian Shorthair", "British", 
-            "Cheetoh", "Ceylon", "Chartreux", "Chausie", "Clippercat", "Cornish Rex",
-            "Devon Rex", "Donskoy", 
-            "Egyptian Mau", "European Shorthair", 
-            "Foldex", 
-            "Gaelic Fold", "German Longhair", "German Rex",
-            "Havana", "Highlander", 
-            "Japanese Bobtail", 
-            "Kanaani", "Karelian Bobtail", "Khao Manee", "Kinkalow", "Korat", "Kurilian Bobtail",
-            "Lambkin", "LaPerm", "Lin-Qing Lion cat", "Lykoi",
-            "Mandalay/Burmese", "Maine Coon", "Manx", "Mekong Bobtail", "Munchkin", 
-            "Napoleon", "New Zealand", "Norwegian Forest cat", 
-            "Ocicat", "Oriental/Siamese", 
-            "Persian/Exotic", "Peterbald", "Pixie-Bob", 
-            "Ragamuffin", "Ragdoll", "Russian",
-            "Savannah", "Selkirk Rex", "Serengeti", "Siberian", "Singapura", "Skookum", "Snowshoe", "Sokoke", "Sphynx",
-            "Tennessee Rex", "Thai", "Tonkinese", "Toybob", "Toyger", "Turkish", 
-            "Ural Rex"
+
+        common_breeds = [
+            "Abyssinian", "American Burmese/Bombay", "American Curl", "American Shorthair", "Asian/Burmese", 
+            "Bengal", "Birman", "British", "Chartreux", "Cornish Rex", "Devon Rex", "Egyptian Mau", 
+            "Havana", "Japanese Bobtail", "Korat", "LaPerm", "Lykoi", "Maine Coon", "Manx", "Norwegian Forest cat", 
+            "Ocicat", "Oriental/Siamese", "Persian/Exotic", "Ragdoll", "Russian", "Selkirk Rex", "Siberian", 
+            "Singapura", "Sphynx", "Tonkinese", "Turkish"
         ]
-        editedlist = [
-            "Abyssinian", "American Bobtail", "American Curl", "American Shorthair", "American Burmese/Bombay", "Aphrodite", 
-                "Arabian Mau", "Asian/Burmese", "Australian Mist",
-            "Bengal", "Birman", "Brazilian Shorthair", "British", 
-            "Cheetoh", "Ceylon", "Chartreux", "Chausie", "Clippercat", "Cornish Rex",
-            "Devon Rex", 
-            "Egyptian Mau", "European Shorthair", 
-            "German Longhair", "German Rex",
-            "Havana", "Highlander", 
-            "Japanese Bobtail", 
-            "Kanaani", "Karelian Bobtail", "Khao Manee", "Korat", "Kurilian Bobtail",
-            "LaPerm", "Lin-Qing Lion cat",
-            "Mandalay/Burmese", "Maine Coon", "Mekong Bobtail", 
-            "New Zealand", "Norwegian Forest cat", 
-            "Ocicat", "Oriental/Siamese", 
-            "Pixie-Bob", 
-            "Ragamuffin", "Ragdoll", "Russian",
-            "Savannah", "Selkirk Rex", "Serengeti", "Siberian", "Singapura", "Snowshoe", "Sokoke",
-            "Tennessee Rex", "Thai", "Tonkinese", "Toybob", "Toyger", "Turkish", 
-            "Ural Rex"
+        medium_breeds = [
+            "American Bobtail", "Australian Mist", "Bambino", "Chausie", "Donskoy", "European Shorthair", "German Rex",
+            "Highlander", "Khao Manee", "Kurilian Bobtail", "Mandalay/Burmese", "Munchkin", "Peterbald", "Pixie-Bob",
+            "Ragamuffin", "Savannah", "Snowshoe", "Sokoke", "Thai", "Toybob", "Toyger"
         ]
+        rare_breeds = [
+            "Aphrodite", "Arabian Mau", "Brazilian Shorthair", "Cheetoh", "Ceylon", "Clippercat", "Foldex", "Gaelic Fold", 
+            "German Longhair", "Kanaani", "Karelian Bobtail", "Kinkalow", "Lambkin", "Lin-Qing Lion cat", "Mekong Bobtail", 
+            "Napoleon", "New Zealand", "Serengeti", "Skookum", "Tennessee Rex", "Ural Rex"
+        ]
+
+        selected_breed = choice(choice([rare_breeds, medium_breeds, medium_breeds, medium_breeds, medium_breeds, common_breeds, common_breeds, common_breeds, common_breeds, common_breeds, common_breeds, common_breeds, common_breeds]))
+
         if self.ban_genes:
-            gen = breed_functions["generator"][choice(editedlist)]
-        else:    
-            gen = breed_functions["generator"][choice(breedlist)]
+            while selected_breed in ["Lykoi", "Manx", "Sphynx", "Bambino", "Donskoy", "Munchkin", "Peterbald", "Foldex", "Gaelic Fold",
+            "Kinkalow", "Lambkin", "Napoleon", "Skookum"]:
+                selected_breed = choice(choice([rare_breeds, medium_breeds, medium_breeds, medium_breeds, medium_breeds, common_breeds, common_breeds, common_breeds, common_breeds, common_breeds, common_breeds, common_breeds, common_breeds]))
+        
+        gen = breed_functions["generator"][selected_breed]
 
         self = gen(self, special)
 
