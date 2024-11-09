@@ -250,6 +250,8 @@ class Phenotype():
                     self.silvergold = 'cameo '
                 else:
                     self.silvergold = 'silver '
+                if self.genotype.pseudomerle:
+                    self.silvergold += "pseudo-merle "
             elif(self.genotype.corin[0] == 'sg' or self.genotype.wbsum > 11):
                 self.silvergold = 'golden '
             elif(self.genotype.corin[0] == 'sh'):
@@ -390,7 +392,7 @@ class Phenotype():
 
         if(self.tailtype != ''):
             self.tailtype += "tail"
-    def PhenotypeOutput(self, sex=None, pattern=None):
+    def PhenotypeOutput(self, pattern=None):
         self.FurtypeFinder()
         self.MainColourFinder()
         self.PointFinder()
@@ -448,14 +450,14 @@ class Phenotype():
 
         withword = " with " + withword + eyes.lower()
 
-        if not sex:
+        if not self.genotype.sex:
             sexstring = ''
-        elif 'tom' in sex or ('molly' in sex and 'Y' in self.genotype.sexgene):
+        elif 'tom' in self.genotype.sex or ('molly' in self.genotype.sex and 'Y' in self.genotype.sexgene):
             sexstring = "male"
-        elif 'molly' in sex and 'Y' not in self.genotype.sexgene:
+        elif 'molly' in self.genotype.sex and 'Y' not in self.genotype.sexgene:
             sexstring = "female"
         else:
-            sexstring = "intersex"
+            sexstring = self.genotype.sex
 
         if self.genotype.chimera:
             sexstring = "chimera " + sexstring
