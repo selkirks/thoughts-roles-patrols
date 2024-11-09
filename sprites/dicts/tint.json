@@ -23,11 +23,11 @@
   },
   "possible_tints": {
     "basic": ["pink", "gray", "red", "orange", "none"],
-    "warm": ["yellow", "purple", "blush", "rosy", "redwood", "maroon", "sandy", "beige", "coral", "tan", "cream", "yolk", "gold", "rust", "lightpurple", "darkpurple", "banana"],
-    "cool": ["blue", "purple", "black", "willow", "lilac", "plum", "cadet", "cobalt", "bluesky", "browngray", "grapefruit", "flower"],
+    "warm": ["yellow", "purple", "blush", "rosy", "redwood", "maroon", "sandy", "beige", "coral", "tan", "cream", "yolk", "gold", "rust", "lightpurple", "darkpurple", "bananaone", "bananatwo", "sunny", "peach", "salmon", "buttercup", "fall"],
+    "cool": ["blue", "purple", "black", "willow", "lilac", "plum", "cadet", "cobalt", "bluesky", "browngray", "grapefruit", "lightpink", "green", "flower"],
     "white": ["yellow", "tan", "cream", "bluesky", "browngray"],
-    "monochrome": ["blue", "black", "bluegray", "cadet", "flint", "storm", "darkpurple", "cobalt", "steel", "ebony", "sunrise", "lightorange"],
-    "brown": ["yellow", "purple", "black", "flint", "acacia", "bronze", "sooty", "plum", "lilac", "cadet", "cobalt", "bluegray", "darkpurple", "ebony", "sunrise", "pinkgray", "flower", "sunflower", "wood"]
+    "monochrome": ["blue", "black", "bluegray", "cadet", "flint", "storm", "darkpurple", "cobalt", "steel", "ebony", "sunrise", "lightorange", "periwinkle", "navy"],
+    "brown": ["yellow", "purple", "black", "flint", "acacia", "bronze", "sooty", "plum", "lilac", "cadet", "cobalt", "bluegray", "darkpurple", "ebony", "sunrise", "pinkgray", "flower", "sunflower", "wood", "dust"]
   },
   "tint_colours":
   {
@@ -65,6 +65,17 @@
     "ebony": [44, 44, 70],
     "sooty": [55, 53, 47],
     "sunrise": [218, 159, 130],
+    "lightpink": [253, 221, 246],
+    "peach": [255, 214, 172],
+    "salmon": [233, 173, 140],
+    "buttercup": [255, 237, 159],
+    "bananatwo": [255, 247, 122],
+    "periwinkle": [199, 216, 230],
+    "navy": [102, 126, 153],
+    "dust": [156, 129, 81],
+    "fall": [214, 128, 39],
+    "sunny": [235, 199, 110],
+    "green": [174, 191, 174],
     "yolk": [248, 217, 159],
     "bluesky": [216, 243, 255],
     "gold": [202, 162, 30],
@@ -77,7 +88,7 @@
     "lightpurple": [229, 186, 255],
     "sunflower": [246, 224, 171],
     "wood": [166, 120, 102],
-    "banana": [207, 151, 72],
+    "bananaone": [207, 151, 72],
     "none": null
   },
   "dilute_tint_colours":

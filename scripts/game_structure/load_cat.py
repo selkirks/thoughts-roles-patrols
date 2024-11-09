@@ -99,6 +99,8 @@ def json_load():
                 cat["pelt_name"] = "Dalmatian"
             if cat["accessory"] == "Raspberry":
                 cat["accessory"] = "OGRaspberry"
+            if cat["tint"] == "banana":
+                cat["tint"] = "bananaone"
 
             new_cat.pelt = Pelt(
                 name=cat["pelt_name"],
