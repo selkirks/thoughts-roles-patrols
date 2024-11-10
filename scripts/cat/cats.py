@@ -2099,8 +2099,8 @@ class Cat:
             "BAUBLES"
             "GULL FEATHERS",
             "SPARROW FEATHERS",
-            "CLOVER1",
-            "DAISY1"
+            "CLOVERTAIL",
+            "DAISYTAIL"
         ]:
             self.pelt.accessory = None
         
@@ -2115,8 +2115,8 @@ class Cat:
             "BAUBLES",
             "GULL FEATHERS",
             "SPARROW FEATHERS",
-            "CLOVER1",
-            "DAISY1"
+            "CLOVERTAIL",
+            "DAISYTAIL"
         ]:
             self.pelt.accessory = None
 

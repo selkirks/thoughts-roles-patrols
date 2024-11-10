@@ -157,12 +157,12 @@
     "plural": "pink poppies",
     "singular": "pink poppy"
   },
-  "CLOVER1": {
+  "CLOVERTAIL": {
     "default": "clover tail",
     "plural": "clovers",
     "singular": "bunch of clovers"
   },
-  "DAISY1": {
+  "DAISYTAIL": {
     "default": "daisy tail",
     "plural": "daisies",
     "singular": "bunch of daisies"
