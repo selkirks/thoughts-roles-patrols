@@ -987,7 +987,7 @@ class Pelt:
     @staticmethod
     def describe_appearance(cat, short=False):
         
-        color_name = cat.phenotype.PhenotypeOutput(pattern=cat.genotype.white_pattern)
+        color_name = cat.phenotype.PhenotypeOutput(pattern=cat.genotype.white_pattern, gender=cat.genderalign)
         
         if not short:
 

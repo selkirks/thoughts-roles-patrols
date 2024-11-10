@@ -392,7 +392,7 @@ class Phenotype():
 
         if(self.tailtype != ''):
             self.tailtype += "tail"
-    def PhenotypeOutput(self, pattern=None):
+    def PhenotypeOutput(self, pattern=None, gender=None):
         self.FurtypeFinder()
         self.MainColourFinder()
         self.PointFinder()
@@ -450,8 +450,8 @@ class Phenotype():
 
         withword = " with " + withword + eyes.lower()
 
-        if not self.genotype.sex:
-            sexstring = ''
+        if gender:
+            sexstring = gender
         elif 'tom' in self.genotype.sex or ('molly' in self.genotype.sex and 'Y' in self.genotype.sexgene):
             sexstring = "male"
         elif 'molly' in self.genotype.sex and 'Y' not in self.genotype.sexgene:
