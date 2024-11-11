@@ -496,7 +496,7 @@
                 ]
             },
             {
-                "text": "The patrol fights bravely, but you only need to be unlucky once. r_c gets taken out of the fight with one snap of the beast's huge jaws. The rest of the patrol rallies to defend {PRONOUN/r_c/object}, and r_c is safely helped back to camp, where the medicine cat den awaits.",
+                "text": "The patrol fights bravely, but you only need to be unlucky once. r_c gets taken out of the fight with one snap of the beast's huge jaws. The rest of the patrol rallies to defend {PRONOUN/r_c/object}, and r_c is safely helped back to camp, where the healer den awaits.",
                 "exp": 0,
                 "weight": 10,
                 "art": "gen_coyote_danger2_w2",
@@ -823,7 +823,7 @@
                 ]
             },
             {
-                "text": "The patrol follows the sound of the cries to a kittypet, curled up by the side of the road with the scent of sickness rising from {PRONOUN/n_c:0/poss} pelt. As p_l comforts {PRONOUN/n_c:0/object} and asks if {PRONOUN/n_c:0/subject} {VERB/n_c:0/need/needs} attention from a medicine cat, s_c quizzes {PRONOUN/n_c:0/object}. {VERB/n_c:0/Are/Is} {PRONOUN/n_c:0/subject} a spy for Twolegs? {VERB/n_c:0/Were/Was} {PRONOUN/n_c:0/subject} sent to collect information on c_n to facilitate a Twolegs takeover? Once the kittypet answers no to both, s_c nods seriously. {PRONOUN/n_c:0/subject/CAP} can be welcomed into the Clan.",
+                "text": "The patrol follows the sound of the cries to a kittypet, curled up by the side of the road with the scent of sickness rising from {PRONOUN/n_c:0/poss} pelt. As p_l comforts {PRONOUN/n_c:0/object} and asks if {PRONOUN/n_c:0/subject} {VERB/n_c:0/need/needs} attention from a healer, s_c quizzes {PRONOUN/n_c:0/object}. {VERB/n_c:0/Are/Is} {PRONOUN/n_c:0/subject} a spy for Twolegs? {VERB/n_c:0/Were/Was} {PRONOUN/n_c:0/subject} sent to collect information on c_n to facilitate a Twolegs takeover? Once the kittypet answers no to both, s_c nods seriously. {PRONOUN/n_c:0/subject/CAP} can be welcomed into the Clan.",
                 "exp": 15,
                 "weight": 5,
                 "art": "gen_bord_patrolwoundedlonerrescue",
@@ -2320,7 +2320,7 @@
                 ]
             },
             {
-                "text": "app1 raises {PRONOUN/app1/poss} hackles, staring down the other apprentice until they spit a challenge back. Tempers flare, and the patrols size each other up. It doesn't take much for the o_c_n patrol to decide c_n has put a paw wrong and leap across the border with claws unsheathed and teeth bared. s_c breaks up the skirmish, convincing {PRONOUN/s_c/poss} Clanmates not to waste all the medicine cat's herbs on a petty dispute.",
+                "text": "app1 raises {PRONOUN/app1/poss} hackles, staring down the other apprentice until they spit a challenge back. Tempers flare, and the patrols size each other up. It doesn't take much for the o_c_n patrol to decide c_n has put a paw wrong and leap across the border with claws unsheathed and teeth bared. s_c breaks up the skirmish, convincing {PRONOUN/s_c/poss} Clanmates not to waste all the healer's herbs on a petty dispute.",
                 "exp": 0,
                 "weight": 40,
                 "art": "gen_battle_app_other_clan",

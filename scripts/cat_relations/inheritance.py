@@ -142,6 +142,9 @@ class Inheritance:
             rel_data = ujson.loads(read_file.read())
             for key in rel_data.keys():
                 self[key] = rel_data[key]
+
+        # parents
+        self.init_parents()
         self.all_inheritances[self.cat.ID] = self
     
     def update_inheritance(self):
