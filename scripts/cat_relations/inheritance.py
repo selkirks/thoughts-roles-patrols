@@ -54,12 +54,12 @@ class Inheritance:
         self.all_but_cousins = []
 
         self.cat = cat
-
-        try:
-            self.load_inheritance()
-            return
-        except:
-            pass
+        if not born:
+            try:
+                self.load_inheritance()
+                return
+            except:
+                pass
         self.update_inheritance()
 
         # if the cat is newly born, update all the related cats
@@ -144,7 +144,6 @@ class Inheritance:
                 self[key] = rel_data[key]
 
         # parents
-        self.init_parents()
         self.all_inheritances[self.cat.ID] = self
     
     def update_inheritance(self):

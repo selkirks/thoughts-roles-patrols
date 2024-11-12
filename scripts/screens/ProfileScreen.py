@@ -139,6 +139,7 @@ class ProfileScreen(Screens):
 
     def __init__(self, name=None):
         super().__init__(name)
+        self.condition_data = {}
         self.show_moons = None
         self.no_moons = None
         self.help_button = None
@@ -1908,37 +1909,41 @@ class ProfileScreen(Screens):
             self.right_conditions_arrow.enable()
 
         x_pos = 13
+        for x in self.condition_data.values():
+            x.kill()
+        self.condition_data = {}
         for con in all_illness_injuries[self.conditions_page]:
             # Background Box
-            bg = pygame_gui.elements.UIPanel(
-                ui_scale(pygame.Rect((x_pos, 13), (142, 145))),
+            self.condition_data[f"bg_{con}"] = pygame_gui.elements.UIPanel(
+                ui_scale(pygame.Rect((x_pos, 13), (142, 142))),
                 manager=MANAGER,
                 container=self.condition_container,
                 object_id="#profile_condition_panel",
+                margins={"left": 0, "right": 0, "top": 0, "bottom": 0},
             )
 
-            name = UITextBoxTweaked(
+            self.condition_data[f"name_{con}"] = UITextBoxTweaked(
                 con[0],
-                ui_scale(pygame.Rect((0, 5), (138, -1))),
+                ui_scale(pygame.Rect((0, 0), (120, -1))),
                 line_spacing=0.90,
                 object_id="#text_box_30_horizcenter",
-                container=bg,
-                manager=MANAGER,
-                anchors={"left": "left", "right": "right"},
-            )
-
-            y_adjust = name.get_relative_rect().height
-            details_rect = ui_scale(pygame.Rect((0, 0), (138, -1)))
-            details_rect.y = y_adjust
-
-            UITextBoxTweaked(
-                con[1],
-                details_rect,
-                line_spacing=0.90,
-                object_id="#text_box_22_horizcenter_pad_20_20",
-                container=bg,
+                container=self.condition_data[f"bg_{con}"],
                 manager=MANAGER,
                 anchors={"centerx": "centerx"},
+            )
+
+            y_adjust = self.condition_data[f"name_{con}"].get_relative_rect().height
+            details_rect = ui_scale(pygame.Rect((0, 0), (142, 100)))
+            details_rect.bottomleft = (0, 0)
+
+            self.condition_data[f"desc_{con}"] = UITextBoxTweaked(
+                con[1],
+                details_rect,
+                line_spacing=0.75,
+                object_id="#text_box_22_horizcenter",
+                container=self.condition_data[f"bg_{con}"],
+                manager=MANAGER,
+                anchors={"bottom": "bottom", "centerx": "centerx"},
             )
 
             x_pos += 152
@@ -2508,6 +2513,9 @@ class ProfileScreen(Screens):
             self.right_conditions_arrow.kill()
             self.conditions_background.kill()
             self.condition_container.kill()
+            for data in self.condition_data.values():
+                data.kill()
+            self.condition_data = {}
 
         self.open_tab = None
 

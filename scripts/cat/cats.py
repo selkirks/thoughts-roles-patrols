@@ -2744,6 +2744,10 @@ class Cat:
         if self.is_related(other_cat, first_cousin_mates):
             return False
 
+        # check dead cats
+        if self.dead != other_cat.dead:
+            return False
+
         # check for age
         if age_restriction:
             if (self.moons < 14 or other_cat.moons < 14) and not for_love_interest:

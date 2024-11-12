@@ -1192,23 +1192,27 @@ class ChooseMateScreen(Screens):
 
     def get_valid_mates(self):
         """Get a list of valid mates for the current cat"""
-        
-        # Behold! The uglest list comprehension ever created! 
-        valid_mates = [i for i in Cat.all_cats_list if
-                       not i.faded
-                       and self.the_cat.is_potential_mate(
-                           i, for_love_interest=False,
-                           age_restriction=False, ignore_no_mates=True)
-                       and i.ID not in self.the_cat.mate
-                       and (not self.single_only or not i.mate)
-                       and (not self.have_kits_only 
-                            or ('infertility' not in i.permanent_condition and 
-                            'infertility' not in self.the_cat.permanent_condition and 
-                            ('Y' not in self.the_cat.genotype.sexgene or self.the_cat.genotype.sex != 'molly')))
-                       and (not self.have_kits_only 
-                            or game.clan.clan_settings["same sex birth"]
-                            or xor('Y' in i.genotype.sexgene, 'Y' in self.the_cat.genotype.sexgene))]
-        
+
+        # Behold! The uglest list comprehension ever created!
+        valid_mates = [
+            i
+            for i in Cat.all_cats_list
+            if not i.faded
+            and self.the_cat.is_potential_mate(
+                i, for_love_interest=False, age_restriction=False, ignore_no_mates=True
+            )
+            and i.outside == self.the_cat.outside
+            and i.ID not in self.the_cat.mate
+            and (not self.single_only or not i.mate)
+            and (
+                not self.have_kits_only
+                or game.clan.clan_settings["same sex birth"]
+                or xor('Y' in i.genotype.sexgene, 'Y' in self.the_cat.genotype.sexgene)
+                or 'infertility' in i.permanent_condition
+                or 'infertility' in self.the_cat.permanent_condition
+            )
+        ]
+
         return valid_mates
 
     def chunks(self, L, n):
