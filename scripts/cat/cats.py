@@ -847,7 +847,8 @@ class Cat:
                 manx_c = 0.98
             if(random() > manx_c):
                 self.get_permanent_condition('manx syndrome', born_with=True, genetic=True)
-
+        if self.genotype.body_label == "snub-nosed":
+            self.get_permanent_condition('flat nose', born_with=True, genetic=True)
 
         if self.genotype.manx[0] == 'M' and (self.genotype.manxtype in ['rumpy', 'riser']):
             self.get_permanent_condition('born without a tail', born_with=True, genetic=True)
@@ -2345,7 +2346,7 @@ class Cat:
 
         for condition in PERMANENT:
             possible = PERMANENT[condition]
-            if possible["congenital"] in ['always', 'sometimes'] and condition not in ['albinism', 'ocular albinism', 'manx syndrome', 'rabbit gait', "fully hairless", "partially hairless", "bad back", "narrowed chest", "bumpy skin"]:
+            if possible["congenital"] in ['always', 'sometimes'] and condition not in ['albinism', 'ocular albinism', "flat nose", 'manx syndrome', 'rabbit gait', "fully hairless", "partially hairless", "bad back", "narrowed chest", "bumpy skin"]:
                 possible_conditions.append(condition)
 
         new_condition = choice(possible_conditions)
@@ -2367,7 +2368,7 @@ class Cat:
             )
             return
         
-        if not genetic and name in ["manx syndrome", "rabbit gait", "albinism", "ocular albinism", 'fully hairless', 'partially hairless', "bad back", "narrowed chest", "bumpy skin"]:
+        if not genetic and name in ["manx syndrome", "flat nose", "rabbit gait", "albinism", "ocular albinism", 'fully hairless', 'partially hairless', "bad back", "narrowed chest", "bumpy skin"]:
             return
         if "blind" in self.permanent_condition and name == "failing eyesight":
             return
