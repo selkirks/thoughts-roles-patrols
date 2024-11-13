@@ -105,6 +105,30 @@ def json_load():
                 cat["accessories"] = ["CLOVERTAIL"]
             if cat["tint"] == "banana":
                 cat["tint"] = "bananaone"
+            if cat["backstory"] == "clan_founder1":
+                cat["backstory"] = "clan_founder"
+            if cat["backstory"] == "clan_founder2":
+                cat["backstory"] = "clan_founder"
+            if cat["backstory"] == "clan_founder3":
+                cat["backstory"] = "clan_founder"
+            if cat["backstory"] == "clanborn1":
+                cat["backstory"] = "clanborn"
+            if cat["backstory"] == "clanborn2":
+                cat["backstory"] = "clanborn"
+            if cat["backstory"] == "clanborn3":
+                cat["backstory"] = "clanborn"
+            if cat["backstory"] == "loner5":
+                cat["backstory"] = "loner1"
+            if cat["backstory"] == "loner6":
+                cat["backstory"] = "loner1"
+            if cat["backstory"] == "loner7":
+                cat["backstory"] = "loner1"
+            if cat["backstory"] == "kittypet5":
+                cat["backstory"] = "kittypet1"
+            if cat["backstory"] == "rogue4":
+                cat["backstory"] = "rogue1"
+            if cat["backstory"] == "otherclan5":
+                cat["backstory"] = "otherclan1"
 
             new_cat.pelt = Pelt(
                 name=cat["pelt_name"],

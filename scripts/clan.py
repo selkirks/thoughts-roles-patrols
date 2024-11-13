@@ -242,10 +242,9 @@ class Clan:
                 self.remove_cat(Cat.all_cats[i].ID)
 
         # give thoughts,actions and relationships to cats
-        backstory_options = ['clan_founder', 'clan_founder1', 'clan_founder2', 'clan_founder3']
         for cat_id in Cat.all_cats:
             Cat.all_cats.get(cat_id).init_all_relationships()
-            Cat.all_cats.get(cat_id).backstory = random.choice(backstory_options)
+            Cat.all_cats.get(cat_id).backstory = "clan_founder"
             if Cat.all_cats.get(cat_id).status == "apprentice":
                 Cat.all_cats.get(cat_id).status_change("apprentice")
             Cat.all_cats.get(cat_id).thoughts()
