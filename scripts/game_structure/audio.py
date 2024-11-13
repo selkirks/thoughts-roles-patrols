@@ -158,7 +158,6 @@ class MusicManager:
         pauses current music track
         """
         self.muted = True
-        game.switch_setting("audio_mute")
         pygame.mixer.music.pause()
 
     def unmute_music(self, screen):
@@ -167,7 +166,6 @@ class MusicManager:
         if necessary
         """
         self.muted = False
-        game.switch_setting("audio_mute")
         pygame.mixer.music.unpause()
         self.check_music(screen)
 
