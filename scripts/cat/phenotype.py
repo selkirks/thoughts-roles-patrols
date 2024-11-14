@@ -628,24 +628,19 @@ class Phenotype():
         self.mainunders = []
         self.spritecolour = ""
         self.caramel = ""
-        self.tortpattern = ""
-        self.merlepattern = ""
         self.patchmain = ""
         self.patchunders = []
         self.patchcolour = ""
 
         if(self.genotype.silver[0] == 'I' and self.genotype.pseudomerle):
-            if self.genotype.merlepattern is not None:
-                self.merlepattern = self.genotype.merlepattern
-            else:
-                self.merlepattern = self.ChooseTortiePattern(spec = 'merle')
-                self.genotype.merlepattern = self.merlepattern
+            if self.genotype.merlepattern is None:
+                self.genotype.merlepattern = self.ChooseTortiePattern(spec = 'merle')
 
         if self.genotype.white[0] == "W" or self.genotype.pointgene[0] == "c" or ('DBEalt' not in self.genotype.pax3 and 'NoDBE' not in self.genotype.pax3) or (self.genotype.brindledbi and (('o' not in self.genotype.sexgene) or (self.genotype.ext[0] == 'ea' and ((moons > 11 and self.genotype.agouti[0] != 'a') or (moons > 23))) or (self.genotype.ext[0] == 'er' and moons > 23) or (self.genotype.ext[0] == 'ec' and (self.genotype.agouti[0] != 'a' or moons > 5)))):
             self.spritecolour = "white"
             self.maincolour = self.spritecolour
         elif('o' not in self.genotype.sexgene and self.genotype.specialred == 'blue-tipped'):
-            self.tortpattern = ['BLUE-TIPPED']
+            genotype.tortiepattern = ['BLUE-TIPPED']
             main = self.FindRed(self.genotype, moons)
             self.maincolour = main[0]
             self.spritecolour = main[1]
@@ -654,8 +649,6 @@ class Phenotype():
             self.patchmain = main[0]
             self.patchcolour = main[1]
             self.patchunders = [main[2], main[3]]
-
-            self.genotype.tortiepattern = self.tortpattern
         elif ('o' not in self.genotype.sexgene) or (self.genotype.ext[0] == 'ea' and ((moons > 11 and self.genotype.agouti[0] != 'a') or (moons > 23))) or (self.genotype.ext[0] == 'er' and moons > 23) or (self.genotype.ext[0] == 'ec' and moons > 0 and (self.genotype.agouti[0] != 'a' or moons > 5)):
             main = self.FindRed(self.genotype, moons, special=self.genotype.ext[0])
             self.maincolour = main[0]
@@ -667,18 +660,14 @@ class Phenotype():
             self.spritecolour = main[1]
             self.mainunders = [main[2], main[3]]
         else:
-            if self.genotype.tortiepattern is not None:
-                self.tortpattern = self.genotype.tortiepattern
-            else:
-                self.tortpattern = self.ChooseTortiePattern()
-                for i in range(len(self.tortpattern)):
+            if self.genotype.tortiepattern is None:
+                self.genotype.tortiepattern = self.ChooseTortiePattern()
+                for i in range(len(self.genotype.tortiepattern)):
                     if randint(1, 10) == 1:
-                        if 'rev' in self.tortpattern[i]:
-                            self.tortpattern[i] = self.tortpattern[i].replace('rev', '')
+                        if 'rev' in self.genotype.tortiepattern[i]:
+                            self.genotype.tortiepattern[i] = self.genotype.tortiepattern[i].replace('rev', '')
                         else:
-                            self.tortpattern[i] = 'rev' + self.tortpattern[i]
-
-                self.genotype.tortiepattern = self.tortpattern
+                            self.genotype.tortiepattern[i] = 'rev' + self.genotype.tortiepattern[i]
             
             main = self.FindBlack(self.genotype, moons)
             self.maincolour = main[0]
@@ -832,14 +821,14 @@ class Phenotype():
                 maincolour = 'medium'
             else:
                 maincolour = 'low'
-        if(genes.dilute[0] == "d" or (genes.specialred == 'cameo' and genes.silver[0] == 'I') or self.merlepattern):
+        if(genes.dilute[0] == "d" or (genes.specialred == 'cameo' and genes.silver[0] == 'I') or self.genotype.merlepattern):
             if(genes.pinkdilute[0] == "dp"):
                 if genes.dilutemd[0] == "Dm":
                     colour = "ivory-apricot"
                 else:
                     colour = "ivory"
             else:
-                if genes.dilutemd[0] == "Dm" and not(genes.specialred == 'cameo' or self.merlepattern):
+                if genes.dilutemd[0] == "Dm" and not(genes.specialred == 'cameo' or self.genotype.merlepattern):
                     colour = "apricot"
                 else:
                     colour = "cream"
