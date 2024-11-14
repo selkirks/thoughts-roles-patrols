@@ -368,7 +368,7 @@ def create_bio_parents(Cat, cat_type, flip=False, second_parent=True):
         while 'infertility' in blood_parent2.permanent_condition:
             if blood_parent2 and Cat.all_cats[blood_parent2.ID]:
                 del Cat.all_cats[blood_parent2.ID]
-            blood_parent = create_new_cat(Cat,
+            blood_parent2 = create_new_cat(Cat,
                                     loner=cat_type in ["loner", "rogue"],
                                     kittypet=cat_type == "kittypet",
                                     other_clan=cat_type == 'former Clancat',
@@ -1024,7 +1024,7 @@ def create_new_cat(
                     "sometimes",
                 ]:
                     continue
-                if condition in ['manx syndrome', 'ocular albinism', 'albinism', 'rabbit gait', 'fully hairless', 'partially hairless', "bad back", "narrowed chest", "bumpy skin"]:
+                if condition in ['manx syndrome', "flat nose", 'ocular albinism', 'albinism', 'rabbit gait', 'fully hairless', 'partially hairless', "bad back", "narrowed chest", "bumpy skin"]:
                     continue
                 # next part ensures that a kit won't get a condition that takes too long to reveal
                 age = new_cat.moons
@@ -2761,7 +2761,7 @@ def generate_sprite(
             if genotype.somatic["gene"] == 'sexgene':
                 genotype.sexgene = ['O', 'Y']
             phenotype = Phenotype(genotype)
-            phenotype.PhenotypeOutput(genotype.sex)
+            phenotype.PhenotypeOutput(genotype.white_pattern)
 
         stripecolourdict = {
                 'rufousedapricot' : 'lowred',
@@ -2780,7 +2780,7 @@ def generate_sprite(
                 
         def GenSprite(genotype, phenotype, sprite_age, merle=False):
             phenotype.SpriteInfo(sprite_age)
-            if(phenotype.merlepattern != "" and not merle and 'rev' in phenotype.merlepattern[0]):
+            if(genotype.merlepattern != None and not merle and 'rev' in genotype.merlepattern[0]):
                 old_silver = genotype.silver
                 phenotype.genotype.silver = ['i', 'i']
                 phenotype.SpriteInfo(sprite_age)
@@ -3393,7 +3393,7 @@ def generate_sprite(
                 return whichmain
 
             gensprite = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
-            if(phenotype.patchmain != "" and 'rev' in phenotype.tortpattern[0]):
+            if(phenotype.patchmain != "" and 'rev' in genotype.tortiepattern[0]):
                 gensprite = MakeCat(gensprite, phenotype.patchmain, phenotype.patchcolour, phenotype.patchunders)
             else:
                 gensprite = MakeCat(gensprite, phenotype.maincolour, phenotype.spritecolour, phenotype.mainunders)
@@ -3435,7 +3435,7 @@ def generate_sprite(
             
 
             if(phenotype.patchmain != ""):
-                for pattern in phenotype.tortpattern:
+                for pattern in genotype.tortiepattern:
                     tortpatches = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
                     if 'rev' in pattern:
                         isred = not ('red' in phenotype.maincolour or 'cream' in phenotype.maincolour or 'honey' in phenotype.maincolour or 'ivory' in phenotype.maincolour or 'apricot' in phenotype.maincolour)
@@ -3462,9 +3462,8 @@ def generate_sprite(
                     tortpatches2.blit(tortpatches, (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
                     gensprite.blit(tortpatches2, (0, 0))
 
-            if(phenotype.merlepattern != "" and not merle):
-                for pattern in phenotype.merlepattern:
-                    merlepatches = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
+            if(genotype.merlepattern != None and not merle):
+                for pattern in genotype.merlepattern:
                     if 'rev' in pattern:
                         phenotype.SpriteInfo(sprite_age)
                         merlepatches = GenSprite(genotype, phenotype, sprite_age, merle=True)
@@ -3474,6 +3473,7 @@ def generate_sprite(
                         phenotype.SpriteInfo(sprite_age)
                         merlepatches = GenSprite(genotype, phenotype, sprite_age, merle=True)
                         phenotype.genotype.silver = old_silver
+                        phenotype.SpriteInfo(sprite_age)
                     
                     merlepatches2 = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
                     merlepatches2.blit(sprites.sprites[pattern.replace('rev', "") + cat_sprite], (0, 0))

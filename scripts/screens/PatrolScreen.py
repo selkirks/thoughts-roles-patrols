@@ -212,8 +212,8 @@ class PatrolScreen(Screens):
             self.elements["patrol_start"].disable()
             self.selected_cat = None
             if (
-                    self.start_patrol_thread is not None
-                    and self.start_patrol_thread.is_alive()
+                self.start_patrol_thread is not None
+                and self.start_patrol_thread.is_alive()
             ):
                 return
             self.start_patrol_thread = self.loading_screen_start_work(
@@ -752,11 +752,13 @@ class PatrolScreen(Screens):
         self.elements["intro_image"] = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((75, 150), (300, 300))),
             pygame.transform.scale(
-                self.patrol_obj.get_patrol_art(), ui_scale_dimensions((300, 300))
+                self.patrol_obj.get_patrol_art().premul_alpha(),
+                ui_scale_dimensions((300, 300)),
             )
             if game.settings["no sprite antialiasing"]
             else pygame.transform.smoothscale(
-                self.patrol_obj.get_patrol_art(), ui_scale_dimensions((300, 300))
+                self.patrol_obj.get_patrol_art().premul_alpha(),
+                ui_scale_dimensions((300, 300)),
             ),
         )
 

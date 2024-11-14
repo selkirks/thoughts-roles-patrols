@@ -131,11 +131,11 @@ class Breed_generator:
             genoclass.ticksum += int(genoclass.tickgenes[i])
 
         for i in range(0, 4):
-            genoclass.bengal += choice(genoclass.odds["bengal_kittypet"])
+            genoclass.bengal += '0'
             genoclass.bengsum += int(genoclass.bengal[i])
 
         for i in range(0, 4):
-            genoclass.sokoke += choice(genoclass.odds["sokoke_kittypet"])
+            genoclass.sokoke += '0'
             genoclass.soksum += int(genoclass.sokoke[i])
             
         genoclass.body_value = randint(genoclass.body_indexes[2]+1, genoclass.body_indexes[3])

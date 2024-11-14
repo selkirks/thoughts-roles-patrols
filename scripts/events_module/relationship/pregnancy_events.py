@@ -410,7 +410,7 @@ class Pregnancy_Events:
                     pregnant_cat.get_injured("pregnant", severity=severity[0])
                     return
 
-                kits = Pregnancy_Events.get_kits(amount, cat, outside_parent if not surrogate else [outside_parent[0]], clan, backkit=backkit)
+                kits = Pregnancy_Events.get_kits(amount, cat, outside_parent if not surrogate else [other_cat[0]], clan, backkit=backkit)
 
                 for kit in kits:
                     if random.random() < stillborn_chance or kit.genotype.manx[1] == "Ab" or kit.genotype.manx[1] == "M" or kit.genotype.fold[1] == "Fd" or kit.genotype.munch[1] == "Mk" or ('NoDBE' not in kit.genotype.pax3 and 'DBEalt' not in kit.genotype.pax3):
@@ -1452,7 +1452,7 @@ class Pregnancy_Events:
                 kit.genotype.chimerapattern = None
                 kit.genotype.merlepattern = None
                 kit.genotype.white_pattern = kit.GenerateWhite(kit.genotype.white, kit.genotype.pointgene, kit.genotype.whitegrade, kit.genotype.vitiligo, None, kit.genotype.pax3)
-                kit.phenotype.PhenotypeOutput(kit.genotype.sex)
+                kit.phenotype.PhenotypeOutput(kit.genotype.white_pattern)
                 kit.phenotype.SpriteInfo(kit.moons)
                 
                 if kit.genotype.chimera:
@@ -1461,7 +1461,7 @@ class Pregnancy_Events:
                     kit.genotype.chimerageno.chimerapattern = None
                     kit.genotype.chimerageno.merlepattern = None
                     kit.genotype.chimerageno.white_pattern = kit.GenerateWhite(kit.genotype.chimerageno.white, kit.genotype.chimerageno.pointgene, kit.genotype.chimerageno.whitegrade, kit.genotype.chimerageno.vitiligo, None, kit.genotype.chimerageno.pax3)
-                    kit.chimerapheno.PhenotypeOutput(kit.genotype.chimerageno.sex)
+                    kit.chimerapheno.PhenotypeOutput(kit.genotype.chimerageno.white_pattern)
                     kit.chimerapheno.SpriteInfo(kit.moons)
 
                 kit.parent1 = ref_cat.parent1    

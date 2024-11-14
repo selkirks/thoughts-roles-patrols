@@ -54,12 +54,12 @@ class Inheritance:
         self.all_but_cousins = []
 
         self.cat = cat
-
-        try:
-            self.load_inheritance()
-            return
-        except:
-            pass
+        if not born:
+            try:
+                self.load_inheritance()
+                return
+            except:
+                pass
         self.update_inheritance()
 
         # if the cat is newly born, update all the related cats
@@ -142,6 +142,8 @@ class Inheritance:
             rel_data = ujson.loads(read_file.read())
             for key in rel_data.keys():
                 self[key] = rel_data[key]
+
+        # parents
         self.all_inheritances[self.cat.ID] = self
     
     def update_inheritance(self):

@@ -113,13 +113,10 @@ class Name:
                 i == possible_three_letter[1][0] for i in possible_three_letter[1]
             ):
                 triple_letter = True
-            # Prevent double animal names (ex. Spiderfalcon)
-            double_animal = False
-            if (
+            double_animal = (
                 self.prefix in self.names_dict["animal_prefixes"]
                 and self.suffix in self.names_dict["animal_suffixes"]
-            ):
-                double_animal = True
+            )
             # Prevent the inappropriate names
             nono_name = self.prefix + self.suffix
             # Prevent double names (ex. Iceice)
@@ -151,20 +148,17 @@ class Name:
                     self.prefix[-2:] + self.suffix[0],
                     self.prefix[-1] + self.suffix[:2],
                 )
-                if not (
-                    all(
-                        i == possible_three_letter[0][0]
-                        for i in possible_three_letter[0]
-                    )
-                    or all(
-                        i == possible_three_letter[1][0]
-                        for i in possible_three_letter[1]
-                    )
+                if any(
+                    i != possible_three_letter[0][0]
+                    for i in possible_three_letter[0]
+                ) and any(
+                    i != possible_three_letter[1][0]
+                    for i in possible_three_letter[1]
                 ):
                     triple_letter = False
-                if not (
-                    self.prefix in self.names_dict["animal_prefixes"]
-                    and self.suffix in self.names_dict["animal_suffixes"]
+                if (
+                    self.prefix not in self.names_dict["animal_prefixes"]
+                    or self.suffix not in self.names_dict["animal_suffixes"]
                 ):
                     double_animal = False
                 i += 1
@@ -211,17 +205,17 @@ class Name:
             self.prefix = random.choice(self.names_dict["normal_prefixes"])
 
         # This thing prevents any prefix duplications from happening.
-        # Try statement stops this form running when initailizing.
+        # Try statement stops this form running when initializing.
         try:
             if self.prefix in names.prefix_history:
-                # do this recurively until a name that isn't on the history list is chosses.
+                # do this recursively until a name that isn't on the history list.
                 self.give_prefix(eyes, colour, biome)
                 # prevent infinite recursion
                 if len(names.prefix_history) > 0:
                     names.prefix_history.pop(0)
             else:
                 names.prefix_history.append(self.prefix)
-            # Set the maximun lenth to 8 just to be sure
+            # Set the maximin length to 8 just to be sure
             if len(names.prefix_history) > 8:
                 # removing at zero so the oldest gets removed
                 names.prefix_history.pop(0)
