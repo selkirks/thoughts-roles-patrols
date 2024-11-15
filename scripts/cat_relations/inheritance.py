@@ -143,8 +143,9 @@ class Inheritance:
             for key in rel_data.keys():
                 self[key] = rel_data[key]
 
-        # parents
         self.all_inheritances[self.cat.ID] = self
+        # parents
+        self.init_parents()
     
     def update_inheritance(self):
         """Update inheritance of the given cat."""
