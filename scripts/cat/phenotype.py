@@ -640,7 +640,7 @@ class Phenotype():
             self.spritecolour = "white"
             self.maincolour = self.spritecolour
         elif('o' not in self.genotype.sexgene and self.genotype.specialred == 'blue-tipped'):
-            genotype.tortiepattern = ['BLUE-TIPPED']
+            self.genotype.tortiepattern = ['BLUE-TIPPED']
             main = self.FindRed(self.genotype, moons)
             self.maincolour = main[0]
             self.spritecolour = main[1]
