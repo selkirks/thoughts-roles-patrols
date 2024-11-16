@@ -216,10 +216,11 @@ class Cat:
             self.genotype.AltGenerator(special=self.gender)
         else:
             self.genotype.Generator(special=self.gender)
-        if(randint(1, game.config['genetics_config']['intersex']) == 1) or (self.genotype.chimera and xor('Y' in self.genotype.sexgene, 'Y' in self.genotype.chimerageno.sexgene) and randint(1, round(game.config['genetics_config']['intersex']/4)) == 1):
-            self.genotype.sex = "intersex"
-            if(randint(1, 25) == 1 and 'Y' in self.genotype.sexgene):
-                self.genotype.sex = 'molly'
+        if not genotype:
+            if(randint(1, game.config['genetics_config']['intersex']) == 1) or (self.genotype.chimera and xor('Y' in self.genotype.sexgene, 'Y' in self.genotype.chimerageno.sexgene) and randint(1, round(game.config['genetics_config']['intersex']/4)) == 1):
+                self.genotype.sex = "intersex"
+                if(randint(1, 25) == 1 and 'Y' in self.genotype.sexgene):
+                    self.genotype.sex = 'molly'
 
         self.phenotype = Phenotype(self.genotype)
         self.phenotype.PhenotypeOutput(self.genotype.white_pattern)
@@ -3843,12 +3844,12 @@ def create_example_cats():
 
     for cat_index in range(12):
         if cat_index in warrior_indices:
-            game.choose_cats[cat_index] = create_cat(status="warrior", kittypet=True)
+            game.choose_cats[cat_index] = create_cat(status="warrior", kittypet=game.config["clan_creation"]["use_special_roller"])
         else:
             random_status = choice(
                 ["kitten", "apprentice", "warrior", "warrior", "elder"]
             )
-            game.choose_cats[cat_index] = create_cat(status=random_status, kittypet=True)
+            game.choose_cats[cat_index] = create_cat(status=random_status, kittypet=game.config["clan_creation"]["use_special_roller"])
 
 
 # CAT CLASS ITEMS

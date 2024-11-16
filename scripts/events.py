@@ -2634,7 +2634,7 @@ class Events:
                 # transing_chance != 0, no trans kitties today...    L
                 return
 
-            new_align = "intersex " if cat.gender == "intersex" else ""
+            new_align = "intersex " if cat.genotype.sex == "intersex" else ""
             if random.getrandbits(1):  # 50/50
                 if "tom" in cat.genderalign:
                     new_align += "trans molly"

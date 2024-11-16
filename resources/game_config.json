@@ -391,7 +391,8 @@
   },
   "clan_creation": {
     "rerolls": 3,
-    "comment": "Set this to -1 for it to be infinite"
+    "use_special_roller" : true,
+    "comment": "Set rerolls to -1 for it to be infinite. Special roller uses kittypet raised odds of special traits appearing."
   },
   "genetics_config": {
     "kittypet_breed": 75,

@@ -1207,14 +1207,14 @@ class MakeClanScreen(Screens):
             self.symbol_selected = f"symbol{self.clan_name.upper()}0"
         else:
             self.symbol_selected = choice(sprites.clan_symbols)
-        self.leader = create_cat(status="warrior", kittypet=True)
-        self.deputy = create_cat(status="warrior", kittypet=True)
-        self.med_cat = create_cat(status="warrior", kittypet=True)
+        self.leader = create_cat(status="warrior", kittypet=game.config["clan_creation"]["use_special_roller"])
+        self.deputy = create_cat(status="warrior", kittypet=game.config["clan_creation"]["use_special_roller"])
+        self.med_cat = create_cat(status="warrior", kittypet=game.config["clan_creation"]["use_special_roller"])
         for _ in range(randrange(4, 8)):
             random_status = choice(
                 ["kitten", "apprentice", "warrior", "warrior", "elder"]
             )
-            self.members.append(create_cat(status=random_status, kittypet=True))
+            self.members.append(create_cat(status=random_status, kittypet=game.config["clan_creation"]["use_special_roller"]))
 
     def random_clan_name(self):
         clan_names = (
