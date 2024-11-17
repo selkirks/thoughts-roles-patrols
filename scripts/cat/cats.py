@@ -2886,6 +2886,51 @@ class Cat:
             other_relationship.comfortable += 20
             other_relationship.trust += 10
             other_relationship.mate = True
+            
+    def unset_adoptive_parent(self, other_cat: Cat):
+        """Unset the adoptive parent from self"""
+        self.adoptive_parents.remove(other_cat.ID)
+        self.create_inheritance_new_cat()
+        other_cat.create_inheritance_new_cat()
+        if not self.dead:
+            if other_cat.ID not in self.relationships:
+                self.create_one_relationship(other_cat)
+            self_relationship = self.relationships[other_cat.ID]
+            self_relationship.platonic_like -= randint(10, 30)
+            self_relationship.comfortable -= randint(10, 30)
+            self_relationship.trust -= randint(5, 15)
+
+
+        if not other_cat.dead:
+            if self.ID not in other_cat.relationships:
+                other_cat.create_one_relationship(self)
+            other_relationship = other_cat.relationships[self.ID]
+            other_relationship.platonic_like -= 20
+            other_relationship.comfortable -= 20
+            other_relationship.trust -= 10
+            
+    def set_adoptive_parent(self, other_cat: Cat):
+        """Sets up a parent-child relationship between self and other_cat."""
+        self.adoptive_parents.append(other_cat.ID)
+        self.create_inheritance_new_cat()
+
+        # Set starting relationship values
+        if not self.dead:
+            if other_cat.ID not in self.relationships:
+                self.create_one_relationship(other_cat)
+            self_relationship = self.relationships[other_cat.ID]
+            self_relationship.platonic_like += 20
+            self_relationship.comfortable += 20
+            self_relationship.trust += 10
+
+
+        if not other_cat.dead:
+            if self.ID not in other_cat.relationships:
+                other_cat.create_one_relationship(self)               
+            other_relationship = other_cat.relationships[self.ID]
+            other_relationship.platonic_like += 20
+            other_relationship.comfortable += 20
+            other_relationship.trust += 10
 
     def create_inheritance_new_cat(self):
         """Creates the inheritance class for a new cat."""

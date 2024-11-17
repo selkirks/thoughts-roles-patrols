@@ -500,6 +500,38 @@
     }
   },
   {
+    "interaction_type": "invite",
+    "event_text": "c_n finds m_c and offers {PRONOUN/m_c/object} a position in c_n. m_c admits {PRONOUN/m_c/subject} {VERB/m_c/have/has} missed Clan life and agrees to join.",
+    "reputation": ["any"],
+    "rep_change": 1,
+    "m_c": {
+      "status": [ "former clancat" ],
+      "new_thought": "Readjusts to Clan life",
+      "kit_thought": "Is learning the truth behind all the stories"
+    }
+  },
+  {
+    "interaction_type": "drive",
+    "event_text": "c_n finds m_c and drives {PRONOUN/m_c/object} far beyond c_n's borders. For all m_c's training, {PRONOUN/m_c/subject} {VERB/m_c/do/does}n't stand a chance against a whole patrol.",
+    "reputation": ["any"],
+    "rep_change": -2,
+    "m_c": {
+      "status": [ "former clancat" ],
+      "kit_thought": "Wonders where m_c has gone"
+    }
+  },
+  {
+    "interaction_type": "hunt",
+    "event_text": "c_n finds m_c and leaps on {PRONOUN/m_c/object}. m_c puts up a good fight, drawing on all {PRONOUN/m_c/poss} training, but {PRONOUN/m_c/subject} {VERB/m_c/do/does}n't stand a chance against a whole patrol.",
+    "reputation": ["any"],
+    "rep_change": -3,
+    "m_c": {
+      "status": [ "former clancat" ],
+      "new_thought": "Thinks bitterly of {PRONOUN/m_c/poss} old Clan, wishing it had protected {PRONOUN/m_c/object}",
+      "kit_thought": "Wonders where m_c has gone"
+    }
+  },
+  {
     "interaction_type": "search",
     "event_text": "c_n turns the world upside down searching for their lost Clanmate. They cannot rest until m_c is safely home - and they don't. When they come upon {PRONOUN/m_c/object} at last, c_n is overjoyed to bring {PRONOUN/m_c/object} back to camp where {PRONOUN/m_c/subject} {VERB/m_c/belong/belongs}.",
     "reputation": ["any"],
