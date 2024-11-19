@@ -216,10 +216,11 @@ class Cat:
             self.genotype.AltGenerator(special=self.gender)
         else:
             self.genotype.Generator(special=self.gender)
-        if(randint(1, game.config['genetics_config']['intersex']) == 1) or (self.genotype.chimera and xor('Y' in self.genotype.sexgene, 'Y' in self.genotype.chimerageno.sexgene) and randint(1, round(game.config['genetics_config']['intersex']/4)) == 1):
-            self.genotype.sex = "intersex"
-            if(randint(1, 25) == 1 and 'Y' in self.genotype.sexgene):
-                self.genotype.sex = 'molly'
+        if not genotype:
+            if(randint(1, game.config['genetics_config']['intersex']) == 1) or (self.genotype.chimera and xor('Y' in self.genotype.sexgene, 'Y' in self.genotype.chimerageno.sexgene) and randint(1, round(game.config['genetics_config']['intersex']/4)) == 1):
+                self.genotype.sex = "intersex"
+                if(randint(1, 25) == 1 and 'Y' in self.genotype.sexgene):
+                    self.genotype.sex = 'molly'
 
         self.phenotype = Phenotype(self.genotype)
         self.phenotype.PhenotypeOutput(self.genotype.white_pattern)
@@ -2885,6 +2886,51 @@ class Cat:
             other_relationship.comfortable += 20
             other_relationship.trust += 10
             other_relationship.mate = True
+            
+    def unset_adoptive_parent(self, other_cat: Cat):
+        """Unset the adoptive parent from self"""
+        self.adoptive_parents.remove(other_cat.ID)
+        self.create_inheritance_new_cat()
+        other_cat.create_inheritance_new_cat()
+        if not self.dead:
+            if other_cat.ID not in self.relationships:
+                self.create_one_relationship(other_cat)
+            self_relationship = self.relationships[other_cat.ID]
+            self_relationship.platonic_like -= randint(10, 30)
+            self_relationship.comfortable -= randint(10, 30)
+            self_relationship.trust -= randint(5, 15)
+
+
+        if not other_cat.dead:
+            if self.ID not in other_cat.relationships:
+                other_cat.create_one_relationship(self)
+            other_relationship = other_cat.relationships[self.ID]
+            other_relationship.platonic_like -= 20
+            other_relationship.comfortable -= 20
+            other_relationship.trust -= 10
+            
+    def set_adoptive_parent(self, other_cat: Cat):
+        """Sets up a parent-child relationship between self and other_cat."""
+        self.adoptive_parents.append(other_cat.ID)
+        self.create_inheritance_new_cat()
+
+        # Set starting relationship values
+        if not self.dead:
+            if other_cat.ID not in self.relationships:
+                self.create_one_relationship(other_cat)
+            self_relationship = self.relationships[other_cat.ID]
+            self_relationship.platonic_like += 20
+            self_relationship.comfortable += 20
+            self_relationship.trust += 10
+
+
+        if not other_cat.dead:
+            if self.ID not in other_cat.relationships:
+                other_cat.create_one_relationship(self)               
+            other_relationship = other_cat.relationships[self.ID]
+            other_relationship.platonic_like += 20
+            other_relationship.comfortable += 20
+            other_relationship.trust += 10
 
     def create_inheritance_new_cat(self):
         """Creates the inheritance class for a new cat."""
@@ -3851,12 +3897,12 @@ def create_example_cats():
 
     for cat_index in range(12):
         if cat_index in warrior_indices:
-            game.choose_cats[cat_index] = create_cat(status="warrior", kittypet=True)
+            game.choose_cats[cat_index] = create_cat(status="warrior", kittypet=game.config["clan_creation"]["use_special_roller"])
         else:
             random_status = choice(
                 ["kitten", "apprentice", "warrior", "warrior", "elder"]
             )
-            game.choose_cats[cat_index] = create_cat(status=random_status, kittypet=True)
+            game.choose_cats[cat_index] = create_cat(status=random_status, kittypet=game.config["clan_creation"]["use_special_roller"])
 
 
 # CAT CLASS ITEMS

@@ -161,6 +161,84 @@
     }
   },
   {
+    "interaction_type": "invite",
+    "event_text": "Despite a long search, m_c could not be found by the Clan.",
+    "reputation": ["any"],
+    "rep_change": 1,
+    "m_c": {
+      "status": ["former clancat"],
+      "new_thought": "Wonders why c_n would be looking for {PRONOUN/m_c/object}",
+      "relationships": [
+        {
+          "cats_from": ["m_c"],
+          "cats_to": ["clan"],
+          "mutual": false,
+          "values": ["dislike"],
+          "amount": -5
+        },
+        {
+          "cats_from": ["m_c"],
+          "cats_to": ["clan"],
+          "mutual": false,
+          "values": ["platonic"],
+          "amount": 5
+        }
+      ]
+    }
+  },
+  {
+    "interaction_type": "hunt",
+    "event_text": "Despite a long search, m_c could not be found by the Clan.",
+    "reputation": ["any"],
+    "rep_change": -1,
+    "m_c": {
+      "status": ["former clancat"],
+      "new_thought": "Wonders why c_n would be looking for {PRONOUN/m_c/object}",
+      "relationships": [
+        {
+          "cats_from": ["m_c"],
+          "cats_to": ["clan"],
+          "mutual": false,
+          "values": ["dislike"],
+          "amount": 5
+        },
+        {
+          "cats_from": ["m_c"],
+          "cats_to": ["clan"],
+          "mutual": false,
+          "values": ["platonic"],
+          "amount": -5
+        }
+      ]
+    }
+  },
+  {
+    "interaction_type": "drive",
+    "event_text": "Despite a long search, m_c could not be found by the Clan.",
+    "reputation": ["any"],
+    "rep_change": -1,
+    "m_c": {
+      "status": ["former clancat"],
+      "new_thought": "Wonders why c_n would be looking for {PRONOUN/m_c/object}",
+      "relationships": [
+        {
+          "cats_from": ["m_c"],
+          "cats_to": ["clan"],
+          "mutual": false,
+          "values": ["dislike"],
+          "amount": 5
+        },
+        {
+          "cats_from": ["m_c"],
+          "cats_to": ["clan"],
+          "mutual": false,
+          "values": ["platonic"],
+          "amount": -5
+        }
+      ]
+    }
+  },
+  {
     "interaction_type": "search",
     "event_text": "Despite a long search, m_c could not be found by the Clan.",
     "reputation": ["any"],
