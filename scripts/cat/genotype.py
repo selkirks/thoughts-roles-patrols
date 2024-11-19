@@ -16,6 +16,7 @@ class Genotype:
             self.chimera = True if odds['chimera'] > 0 and randint(1, odds['chimera']) == 1 else False
         if self.chimera:
             self.chimerageno = Genotype(self.odds, self.ban_genes, 'chimera')
+            print("Chimera!")
         else:
             self.chimerageno = None
 
