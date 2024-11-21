@@ -1014,7 +1014,11 @@ class Genotype:
         except:
             par2 = par2
         if not par2:
-            par2 = Genotype(self.odds, self.ban_genes, 'chimera')
+            print("No second parent genotype given")
+            par2 = Genotype(self.odds, self.ban_genes, 'no chimeras')
+        if not par1:
+            print("No first parent genotype given")
+            par1 = Genotype(self.odds, self.ban_genes, 'no chimeras')
 
         threepars = False
         try:
