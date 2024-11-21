@@ -398,10 +398,10 @@
   },
   "genetics_config": {
     "kittypet_breed": 75,
-    "other_breed": 500,
+    "other_breed": 1000,
 
-    "chimera": 500,
-    "identical_twins" : 222,
+    "chimera": 1000,
+    "identical_twins" : 333,
     "intersex": 100,
     "XXX/XXY": 1000,
     "brindled_bicolour": 750,
