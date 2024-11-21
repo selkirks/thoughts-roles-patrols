@@ -373,12 +373,12 @@ class Pregnancy_Events:
                     outside_parent = [choice(possible_affair_partners)]
                     backkit = 'outsider_roots2'
 
-                if surrogate and not other_cat[0].outside:
+                if surrogate:
+                    pregnant_cat = other_cat.pop(0)
+                if surrogate and not pregnant_cat.outside:
                     cats_involved = [cat.ID]
                     for par in other_cat:
                         cats_involved.append(par.ID)
-                    
-                    pregnant_cat = other_cat.pop(0)
                     text = choice(Pregnancy_Events.PREGNANT_STRINGS["announcement"])
                     severity = random.choices(["minor", "major"], [3, 1], k=1)
                     text += choice(Pregnancy_Events.PREGNANT_STRINGS[f"{severity[0]}_severity"])
@@ -426,20 +426,19 @@ class Pregnancy_Events:
                     insert = f'a litter of {len(kits)} kits'
                 if len(kits) > 0:
                     print_event = f"{cat.name} brought {insert} back to camp, but refused to talk about their origin."
-                    if surrogate:
-                        if outside_parent[0].outside:
-                            print_event = f"{cat.name} brought {insert} back to camp, telling the Clan of having found a surrogate."
-                            cat.birth_cooldown = game.config["pregnancy"]["birth_cooldown"]
-                            for p in cat.mate:
-                                par = Cat.fetch_cat(p)
-                                par.birth_cooldown = game.config["pregnancy"]["birth_cooldown"]
-                        else:
-                            print_event = f"{cat.name} thanks {outside_parent[0].name} for being a surrogate to a litter."
-                            outside_parent[0].get_injured("recovering from birth", event_triggered=True)
                     cats_involved = [cat.ID]
-                    for par in outside_parent:
-                        if par:
-                            cats_involved.append(par.ID)
+                    if surrogate:
+                        cats_involved.append(pregnant_cat.ID)
+                        print_event = f"{cat.name} brought {insert} back to camp, telling the Clan of having found a surrogate."
+                        cat.birth_cooldown = game.config["pregnancy"]["birth_cooldown"]
+                        pregnant_cat.get_injured("recovering from birth", event_triggered=True)
+                        for p in cat.mate:
+                            par = Cat.fetch_cat(p)
+                            par.birth_cooldown = game.config["pregnancy"]["birth_cooldown"]
+                    else:
+                        for par in outside_parent:
+                            if par:
+                                cats_involved.append(par.ID)
                     for kit in kits:
                         cats_involved.append(kit.ID)
                     game.cur_events_list.append(Single_Event(print_event, "birth_death", cats_involved))

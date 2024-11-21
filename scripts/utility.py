@@ -3658,8 +3658,8 @@ def generate_sprite(
                     righteye.blit(sprites.sprites['right' + cat_sprite], (0, 0))
                     lefteye.blit(sprites.sprites[genotype.lefteyetype.split(' ; ')[0] + ' ; blue' + "/" + cat_sprite], (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
                     righteye.blit(sprites.sprites[genotype.righteyetype.split(' ; ')[0] + ' ; blue' + "/" + cat_sprite], (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
-                    lefteye.set_alpha(150)
-                    righteye.set_alpha(150)
+                    lefteye.set_alpha(200)
+                    righteye.set_alpha(200)
                     gensprite.blit(lefteye, (0, 0))
                     gensprite.blit(righteye, (0, 0))
 
