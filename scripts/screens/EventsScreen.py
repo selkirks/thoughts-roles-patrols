@@ -121,6 +121,10 @@ class EventsScreen(Screens):
         ):  # everything else on button press to prevent blinking
             element = event.ui_element
             if element == self.timeskip_button:
+                # ensure we can't run the same timeskip multiple times
+                if self.events_thread is not None and self.events_thread.is_alive():
+                    return
+                self.timeskip_button.disable()
                 self.events_thread = self.loading_screen_start_work(
                     events_class.one_moon
                 )
@@ -776,3 +780,4 @@ class EventsScreen(Screens):
             item.set_relative_position((10, item.get_relative_rect()[1]))
 
         self.update_events_display()
+        self.timeskip_button.enable()

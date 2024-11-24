@@ -109,6 +109,8 @@ class ChooseMateScreen(Screens):
                 self.selected_mate_index = 0
                 self.change_screen("profile screen")
             elif event.ui_element == self.toggle_mate:
+                if self.work_thread is not None and self.work_thread.is_alive():
+                    return
                 self.work_thread = self.loading_screen_start_work(self.change_mate)
 
             elif event.ui_element == self.previous_cat_button:
@@ -1174,9 +1176,7 @@ class ChooseMateScreen(Screens):
     def on_use(self):
         super().on_use()
 
-        self.loading_screen_on_use(
-            self.work_thread, self.update_both
-        )
+        self.loading_screen_on_use(self.work_thread, self.update_both)
 
     def get_valid_mates(self):
         """Get a list of valid mates for the current cat"""
