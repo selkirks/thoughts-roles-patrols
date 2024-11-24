@@ -1,7 +1,7 @@
 """
 Module that handles the name generation for all cats.
 """
-
+import contextlib
 import os
 import random
 
@@ -77,30 +77,34 @@ class Name:
 
     def __init__(self,
                  Cat=None,
-                 status="warrior",
-                 genotype=None,
-                 phenotype=None,
-                 chimpheno=None,
-                 moons=None,
+                 cat=None,
                  prefix=None,
                  suffix=None,
-                 skills=None,
-                 personality=None,
                  honour=None,
                  biome=None,
                  specsuffix_hidden=False,
                  load_existing_name=False
                  ):
-        self.status = status
-        self.moons = moons
-        self.genotype = genotype
-        self.phenotype = phenotype
-        self.chimpheno = chimpheno
-        self.skills = skills
-        self.personality = personality
         self.prefix = prefix
         self.suffix = suffix
         self.specsuffix_hidden = specsuffix_hidden
+
+        try:
+            self.status = cat.status
+            self.moons = cat.moons
+            self.genotype = cat.genotype
+            self.phenotype = cat.phenotype
+            self.chimpheno = cat.chimerapheno if cat.genotype.chimera else None
+            skills = cat.skills
+            personality = cat.personality
+        except AttributeError:
+            self.status = None
+            self.moons = None
+            self.genotype = None
+            self.phenotype = None
+            self.chimpheno = None
+            skills = None
+            personality = None
 
         name_fixpref = False
         # Set prefix

@@ -615,15 +615,9 @@ class ChangeCatName(UIWindow):
                 self.prefix_entry_box.set_text(
                     Name(
                         Cat, 
-                        self.the_cat.status,
-                        self.the_cat.genotype,
-                        self.the_cat.phenotype,
-                        self.the_cat.chimerapheno if self.the_cat.genotype.chimera else None,
-                        self.the_cat.moons,
+                        self.the_cat,
                         None,
                         use_suffix,
-                        self.the_cat.skills,
-                        self.the_cat.personality,
                         biome=game.clan.biome
                     ).prefix
                 )
@@ -635,15 +629,9 @@ class ChangeCatName(UIWindow):
                 self.suffix_entry_box.set_text(
                     Name(
                         Cat,
-                        self.the_cat.status,
-                        self.the_cat.genotype,
-                        self.the_cat.phenotype,
-                        self.the_cat.chimerapheno if self.the_cat.genotype.chimera else None,
-                        self.the_cat.moons,
+                        self.the_cat,
                         use_prefix,
                         None,
-                        self.the_cat.skills,
-                        self.the_cat.personality,
                         self.the_cat.history.app_ceremony['honor'] if self.the_cat.history and self.the_cat.history.app_ceremony else None,
                         game.clan.biome
                     ).suffix

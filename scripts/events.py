@@ -445,15 +445,9 @@ class Events:
                                     if not invited_cat.name.suffix:
                                         invited_cat.name = Name(
                                             Cat,
-                                            invited_cat.status,
-                                            invited_cat.genotype,
-                                            invited_cat.phenotype,
-                                            invited_cat.chimerapheno if invited_cat.genotype.chimera else None,
-                                            invited_cat.moons,
+                                            invited_cat,
                                             invited_cat.name.prefix,
                                             invited_cat.name.suffix,
-                                            invited_cat.skills,
-                                            invited_cat.personality,
                                             biome=game.clan.biome,
                                         )
                                         invited_cat.name.give_suffix(

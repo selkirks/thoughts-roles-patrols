@@ -641,32 +641,21 @@ class Cat:
         if biome:
             self.name = Name(
                 self,
-                status,
-                self.genotype,
-                self.phenotype,
-                self.chimerapheno if self.genotype.chimera else None,
-                self.moons,
+                self,
                 prefix,
                 suffix,
-                self.skills,
-                self.personality,
                 biome=biome,
                 specsuffix_hidden=self.specsuffix_hidden,
                 load_existing_name=loading_cat,
             )
         else:
-            self.name = Name(self, 
-            status, 
-            self.genotype, 
-            self.phenotype, 
-            self.chimerapheno if self.genotype.chimera else None,
-            self.moons, 
-            prefix, 
-            suffix, 
-            self.skills,
-            self.personality,
-            specsuffix_hidden=self.specsuffix_hidden,
-            load_existing_name = loading_cat)
+            self.name = Name(
+                self, 
+                self, 
+                prefix, 
+                suffix, 
+                specsuffix_hidden=self.specsuffix_hidden,
+                load_existing_name = loading_cat)
         
         # Private Sprite
         self._sprite = None
@@ -690,7 +679,7 @@ class Cat:
         :return: None
         """
         self.ID = ID
-        self.name = Name(self, status, prefix=prefix, suffix=suffix)
+        self.name = Name(self, self, prefix=prefix, suffix=suffix)
         self.parent1 = None
         self.parent2 = None
         self.parent3 = None

@@ -617,11 +617,9 @@ class Pregnancy_Events:
                     name = choice(names.names_dict["normal_prefixes"])
 
                     if game.clan.clan_settings['new prefixes']:
-                        kit.name = Name(Cat, 'loner', kit.genotype, kit.phenotype, 
-                                        chimpheno = kit.chimerapheno if kit.genotype.chimera else None, suffix="")
+                        kit.name = Name(Cat, kit, suffix="")
                     else:
-                        kit.name = Name(Cat, 'loner', kit.genotype, kit.phenotype, 
-                                        chimpheno = kit.chimerapheno if kit.genotype.chimera else None, prefix=name, suffix="")
+                        kit.name = Name(Cat, kit, prefix=name, suffix="")
                 if other_cat and not other_cat[0].outside:
                     kit.backstory = "outsider2"
                 if cat.outside and not cat.exiled:
@@ -1194,7 +1192,7 @@ class Pregnancy_Events:
             tries = 0
             extant = [kitty.name.prefix for kitty in all_kitten if kitty.ID != kit.ID]
             while kit.name.prefix in extant:
-                kit.name = Name(Cat, "newborn", kit.genotype, kit.phenotype, kit.chimerapheno if kit.genotype.chimera else None)
+                kit.name = Name(Cat, kit)
 
             all_kitten.append(kit)
             # adoptive parents are set at the end, when everything else is decided

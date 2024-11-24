@@ -89,6 +89,7 @@ ipython_config.py
 
 # Saves
 saves/**
+saves - Copy/**
 #saves/clanlist.txt
 #saves/settings.txt
 #saves\
