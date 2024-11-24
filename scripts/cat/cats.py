@@ -379,21 +379,23 @@ class Cat:
         # load_existing_name is needed so existing cats don't get their names changed/fixed for no reason
         if self.pelt is not None:
             self.name = Name(
-                status,
                 prefix,
                 suffix,
-                self.pelt.colour,
-                self.pelt.eye_colour,
-                self.pelt.name,
-                self.pelt.tortiepattern,
                 biome=biome,
                 specsuffix_hidden=self.specsuffix_hidden,
                 load_existing_name=loading_cat,
+                cat=self,
             )
         else:
-            self.name = Name(status, prefix, suffix, eyes=self.pelt.eye_colour, specsuffix_hidden=self.specsuffix_hidden,
-                             load_existing_name = loading_cat)
-        
+            self.name = Name(
+                status,
+                prefix,
+                suffix,
+                specsuffix_hidden=self.specsuffix_hidden,
+                load_existing_name=loading_cat,
+                cat=self,
+            )
+
         # Private Sprite
         self._sprite = None
 
@@ -404,7 +406,7 @@ class Cat:
             Cat.insert_cat(self)
 
     def init_faded(self, ID, status, prefix, suffix, moons, **kwargs):
-        """Perform faded-specific initialisation
+        """Perform faded-specific initialization
 
         :param ID: Cat ID
         :param status: Cat status
@@ -416,7 +418,6 @@ class Cat:
         :return: None
         """
         self.ID = ID
-        self.name = Name(status, prefix=prefix, suffix=suffix)
         self.parent1 = None
         self.parent2 = None
         self.parent3 = None
@@ -430,6 +431,7 @@ class Cat:
         self.outside = False
         self.exiled = False
         self.inheritance = None  # This should never be used, but just for safety
+        self.name = Name(prefix=prefix, suffix=suffix, cat=self)
         if "df" in kwargs:
             self.df = kwargs["df"]
         else:
@@ -826,7 +828,7 @@ class Cat:
         return "CAT OBJECT:" + self.ID
 
     def __eq__(self, other):
-        return self.ID == other.ID if isinstance(other, Cat) else False
+        return False if not isinstance(other, Cat) else self.ID == other.ID
     
     def __hash__(self):
         return hash(self.ID)
