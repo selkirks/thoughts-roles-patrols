@@ -85,7 +85,6 @@ class Name:
         self.cat = cat
 
         try:
-            self.status = cat.status
             color = cat.pelt.colour
             eyes = cat.pelt.eye_colour
             pelt = cat.pelt.name

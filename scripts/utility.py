@@ -3212,7 +3212,11 @@ def generate_sprite(
                                     pointbase.set_alpha(102)
                                     if 'fawn' in whichcolour:
                                         pointbase.set_alpha(0)
-                                    whichmain.blit(sprites.sprites['lightbasecolours0'], (0, 0))
+
+                                    if 'blue' in whichcolour:
+                                        whichmain.blit(sprites.sprites['lightbasecolours1'], (0, 0))
+                                    else:
+                                        whichmain.blit(sprites.sprites['lightbasecolours0'], (0, 0))
                                     whichmain.blit(pointbase, (0, 0))
                                     pointbase.blit(whichmain, (0, 0))
                                     coloursurface = pointbase
@@ -3291,7 +3295,11 @@ def generate_sprite(
                                 pointbase.set_alpha(140)
                             if 'fawn' in whichcolour:
                                 pointbase.set_alpha(50)
-                            whichmain.blit(sprites.sprites['lightbasecolours0'], (0, 0))
+                            
+                            if 'blue' in whichcolour:
+                                whichmain.blit(sprites.sprites['lightbasecolours1'], (0, 0))
+                            else:
+                                whichmain.blit(sprites.sprites['lightbasecolours0'], (0, 0))
                             whichmain.blit(pointbase, (0, 0))
                             pointbase.blit(whichmain, (0, 0)) 
                             coloursurface = pointbase
@@ -3306,7 +3314,11 @@ def generate_sprite(
                                 pointbase.set_alpha(25)
                             else:
                                 pointbase.set_alpha(102)
-                            whichmain.blit(sprites.sprites['lightbasecolours0'], (0, 0))
+                            
+                            if 'blue' in whichcolour:
+                                whichmain.blit(sprites.sprites['lightbasecolours1'], (0, 0))
+                            else:
+                                whichmain.blit(sprites.sprites['lightbasecolours0'], (0, 0))
                             whichmain.blit(pointbase, (0, 0))
                             coloursurface = whichmain
                             whichmain = ApplySmokeEffects(whichmain)
