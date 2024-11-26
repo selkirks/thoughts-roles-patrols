@@ -3214,7 +3214,13 @@ def generate_sprite(
                                         pointbase.set_alpha(0)
 
                                     if 'blue' in whichcolour:
-                                        whichmain.blit(sprites.sprites['lightbasecolours1'], (0, 0))
+                                        if genotype.pointgene[0] == "cm":
+                                            whichmain.blit(sprites.sprites[whichcolour.replace('blue', 'fawn')], (0, 0))
+                                            whichmain.blit(pointbase, (0, 0))
+                                            pointbase.blit(sprites.sprites['lightbasecolours2'], (0, 0))
+                                            pointbase.set_alpha(50)
+                                        else:
+                                            whichmain.blit(sprites.sprites['lightbasecolours1'], (0, 0))
                                     else:
                                         whichmain.blit(sprites.sprites['lightbasecolours0'], (0, 0))
                                     whichmain.blit(pointbase, (0, 0))
@@ -3266,6 +3272,9 @@ def generate_sprite(
                                 pointbase.blit(pointbase2, (0, 0), 
                                             special_flags=pygame.BLEND_RGBA_MULT)
                         
+                            if genotype.pointgene[0] == "cm" and 'blue' in whichcolour:
+                                pointbase.set_alpha(102)
+
                             whichmain.blit(pointbase, (0, 0))        
                             
                     else:
