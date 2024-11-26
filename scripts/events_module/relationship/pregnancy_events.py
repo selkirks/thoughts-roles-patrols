@@ -376,7 +376,7 @@ class Pregnancy_Events:
                 if surrogate:
                     pregnant_cat = other_cat.pop(0)
                 if surrogate and not pregnant_cat.outside:
-                    cats_involved = [cat.ID]
+                    cats_involved = [cat.ID, pregnant_cat.ID]
                     for par in other_cat:
                         cats_involved.append(par.ID)
                     text = choice(Pregnancy_Events.PREGNANT_STRINGS["announcement"])
@@ -410,7 +410,7 @@ class Pregnancy_Events:
                     pregnant_cat.get_injured("pregnant", severity=severity[0])
                     return
 
-                kits = Pregnancy_Events.get_kits(amount, cat, outside_parent if not surrogate else [other_cat[0]], clan, backkit=backkit)
+                kits = Pregnancy_Events.get_kits(amount, cat, outside_parent if not surrogate else [pregnant_cat], clan, backkit=backkit)
 
                 for kit in kits:
                     if random.random() < stillborn_chance or kit.genotype.manx[1] == "Ab" or kit.genotype.manx[1] == "M" or kit.genotype.fold[1] == "Fd" or kit.genotype.munch[1] == "Mk" or ('NoDBE' not in kit.genotype.pax3 and 'DBEalt' not in kit.genotype.pax3):
@@ -731,7 +731,7 @@ class Pregnancy_Events:
                 if pregnant_cat.exiled:
                     kit.status = "loner"
                     name = choice(names.names_dict["normal_prefixes"])
-                    kit.name = Name('loner', prefix=name, suffix="")
+                    kit.name = Name(prefix=name, suffix="", cat=kit)
                 if other_cat and not other_cat[0].outside:
                     kit.backstory = "outsider2"
                 if pregnant_cat.outside and not pregnant_cat.exiled:

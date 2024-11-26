@@ -166,7 +166,7 @@
     "reputation": ["any"],
     "rep_change": 1,
     "m_c": {
-      "status": ["former clancat"],
+      "status": ["former Clancat"],
       "new_thought": "Wonders why c_n would be looking for {PRONOUN/m_c/object}",
       "relationships": [
         {
@@ -192,7 +192,7 @@
     "reputation": ["any"],
     "rep_change": -1,
     "m_c": {
-      "status": ["former clancat"],
+      "status": ["former Clancat"],
       "new_thought": "Wonders why c_n would be looking for {PRONOUN/m_c/object}",
       "relationships": [
         {
@@ -218,7 +218,7 @@
     "reputation": ["any"],
     "rep_change": -1,
     "m_c": {
-      "status": ["former clancat"],
+      "status": ["former Clancat"],
       "new_thought": "Wonders why c_n would be looking for {PRONOUN/m_c/object}",
       "relationships": [
         {

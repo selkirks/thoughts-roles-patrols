@@ -443,13 +443,10 @@ class Events:
                                     invited_cat.status = invited_cat.age
                                     if not invited_cat.name.suffix:
                                         invited_cat.name = Name(
-                                            invited_cat.status,
                                             invited_cat.name.prefix,
                                             invited_cat.name.suffix,
-                                            invited_cat.pelt.colour,
-                                            invited_cat.pelt.name,
-                                            invited_cat.pelt.tortiepattern,
                                             game.clan.biome,
+                                            cat=invited_cat
                                         )
                                         invited_cat.name.give_suffix(
                                             pelt=None,

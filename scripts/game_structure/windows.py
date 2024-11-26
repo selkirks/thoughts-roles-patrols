@@ -553,11 +553,11 @@ class ChangeCatName(UIWindow):
             container=self,
         )
 
-        if self.the_cat.name.status in self.the_cat.name.names_dict["special_suffixes"]:
+        if self.the_cat.status in self.the_cat.name.names_dict["special_suffixes"]:
             self.suffix_entry_box = pygame_gui.elements.UITextEntryLine(
                 ui_scale(pygame.Rect((159 + x_pos, 50 + y_pos), (120, 30))),
                 placeholder_text=self.the_cat.name.names_dict["special_suffixes"][
-                    self.the_cat.name.status
+                    self.the_cat.status
                 ],
                 manager=MANAGER,
                 container=self,
@@ -608,7 +608,7 @@ class ChangeCatName(UIWindow):
                 # Suffixes can be empty, if you want. However, don't change the suffix if it's currently being hidden
                 # by a special suffix.
                 if (
-                    self.the_cat.name.status
+                    self.the_cat.status
                     not in self.the_cat.name.names_dict["special_suffixes"]
                     or self.the_cat.name.specsuffix_hidden
                 ):
@@ -630,13 +630,9 @@ class ChangeCatName(UIWindow):
                     use_suffix = self.the_cat.name.suffix
                 self.prefix_entry_box.set_text(
                     Name(
-                        self.the_cat.status,
                         None,
                         use_suffix,
-                        self.the_cat.pelt.colour,
-                        self.the_cat.pelt.eye_colour,
-                        self.the_cat.pelt.name,
-                        self.the_cat.pelt.tortiepattern,
+                        cat=self.the_cat
                     ).prefix
                 )
             elif event.ui_element == self.random_suffix:
@@ -646,13 +642,9 @@ class ChangeCatName(UIWindow):
                     use_prefix = self.the_cat.name.prefix
                 self.suffix_entry_box.set_text(
                     Name(
-                        self.the_cat.status,
                         use_prefix,
                         None,
-                        self.the_cat.pelt.colour,
-                        self.the_cat.pelt.eye_colour,
-                        self.the_cat.pelt.name,
-                        self.the_cat.pelt.tortiepattern,
+                        cat=self.the_cat
                     ).suffix
                 )
             elif event.ui_element == self.toggle_spec_block_on:
@@ -2069,10 +2061,11 @@ class SelectFocusClans(UIWindow):
             object_id="#exit_window_button",
             container=self,
         )
-        self.save_button = UIImageButton(
+        self.save_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((80, 180), (139, 30))),
-            "",
-            object_id="#change_focus_button",
+            "Change Focus",
+            get_button_dict(ButtonStyles.SQUOVAL, (139, 30)),
+            object_id="@buttonstyles_squoval",
             container=self,
         )
         self.save_button.disable()

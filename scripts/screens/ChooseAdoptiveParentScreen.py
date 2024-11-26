@@ -103,6 +103,8 @@ class ChooseAdoptiveParentScreen(Screens):
                 self.selected_mate_index = 0
                 self.change_screen("profile screen")
             elif event.ui_element == self.toggle_adoptive_parent:
+                if self.work_thread is not None and self.work_thread.is_alive():
+                    return
                 self.work_thread = self.loading_screen_start_work(
                     self.change_adoptive_parent
                 )
@@ -902,9 +904,7 @@ class ChooseAdoptiveParentScreen(Screens):
     def on_use(self):
         super().on_use()
 
-        self.loading_screen_on_use(
-            self.work_thread, self.update_after_change
-        )
+        self.loading_screen_on_use(self.work_thread, self.update_after_change)
 
     def get_valid_adoptive_parents(self):
         """Get a list of valid parents for the current cat"""
