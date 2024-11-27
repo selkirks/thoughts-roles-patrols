@@ -26,9 +26,9 @@ class CanHaveKits(unittest.TestCase):
         # given
         test_clan = Clan(name="clan")
         test_clan.pregnancy_data = {}
-        cat1 = Cat(gender = 'molly')
+        cat1 = Cat(gender = 'molly', moons=25)
         cat1.no_kits = True
-        cat2 = Cat(gender = 'tom')
+        cat2 = Cat(gender = 'tom', moons=25)
 
         cat1.mate.append(cat2.ID)
         cat2.mate.append(cat1.ID)

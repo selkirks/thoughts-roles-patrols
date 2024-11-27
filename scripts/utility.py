@@ -1499,7 +1499,7 @@ def gather_cat_objects(
                 out_set.add(extra_cat)
             else:
                 out_set.add(event.main_cat)
-        if abbr == "r_c":
+        elif abbr == "r_c":
             out_set.add(event.random_cat)
         elif abbr == "p_l":
             out_set.add(event.patrol_leader)
@@ -1539,7 +1539,7 @@ def gather_cat_objects(
             if index < len(event.new_cats):
                 out_set.update(event.new_cats[index])
         else:
-            print(f"WARNING: Unsupported abbrevation {abbr}")
+            print(f"WARNING: Unsupported abbreviation {abbr}")
 
     return list(out_set)
 
