@@ -102,6 +102,7 @@
     "#med_cat_den_hover.tool_tip": {"misc": {"rect_width": "140"}},
     "#med_cat_den_hover_big.tool_tip": {"misc": {"rect_width": "230"}},
     "#blank_button.tool_tip": {"misc": {"rect_width": "350"}},
+    "#blank_button_dark.tool_tip": {"misc": {"rect_width": "350"}},
     "#blank_button_small.tool_tip": {"misc": {"rect_width": "250"}},
     "@mns_image.#moon.tool_tip": {"misc": {"rect_width": "100"}},
     "@mns_image.tool_tip": {"misc": {"rect_width": "100"}},
@@ -596,19 +597,15 @@
         "colours": {"normal_text": "#EFE5CE"}
     },
     "#blank_button": {
-        "images": {
-            "normal_image": {
-                "path": "resources\/images\/buttons\/blank.png"
-            },
-            "hovered_image": {
-                "path": "resources\/images\/buttons\/blank.png"
-            },
-            "selected_image": {
-                "path": "resources\/images\/buttons\/blank.png"
-            },
-            "disabled_image": {
-                "path": "resources\/images\/buttons\/blank.png"
-            }
+        "font": {
+            "name": "notosans",
+            "size": "14"
+        },
+        "colours": {
+            "normal_text": "#000000",
+            "hovered_text": "#000000",
+            "selected_text": "#000000",
+            "active_text": "#000000"
         }
     },
     "#blank_button_small": {
