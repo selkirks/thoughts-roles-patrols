@@ -19,7 +19,7 @@
 		"interactions": [
 			"r_c surprises m_c with something nice.",
 			"r_c goes out of {PRONOUN/r_c/poss} way to help m_c with something without being asked.",
-			"r_c brings m_c herbs from the medicine den for a headache.",
+			"r_c brings m_c herbs from the healer den for a headache.",
 			"r_c tells a Clanmate that m_c did a great job today.",
 			"m_c is grateful for something r_c did."
 		]

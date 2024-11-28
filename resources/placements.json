@@ -814,7 +814,7 @@
     },
     "Beachcamp4": {
         "leader den": [349, 125],
-        "medicine den": [100, 201],
+        "healer den": [100, 201],
         "nursery": [500, 183],
         "clearing": [313, 275],
         "apprentice den": [51, 393],
