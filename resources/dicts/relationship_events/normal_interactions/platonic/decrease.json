@@ -163,7 +163,7 @@
 		"interactions": [
 			"m_c snarls at r_c for coming too close to the herbs.",
 			"m_c shoos r_c away, not having time for curious little kits.",
-			"m_c tells r_c if {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} stay away from the medicine den {PRONOUN/m_c/subject} will feed {PRONOUN/r_c/object} nasty tasting herbs!"
+			"m_c tells r_c if {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} stay away from the healer den {PRONOUN/m_c/subject} will feed {PRONOUN/r_c/object} nasty tasting herbs!"
 		],
 		"main_status_constraint": [
 			"healer",
