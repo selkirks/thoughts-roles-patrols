@@ -976,7 +976,7 @@ class GenerateEvents:
                         if "lost" not in cat_info["status"]:
                             continue
                     elif (
-                        cat.status.casefold() not in cat_info["status"]
+                        cat.status.casefold() not in [x.casefold() for x in cat_info["status"]]
                         and "any" not in cat_info["status"]
                     ):
                         continue
