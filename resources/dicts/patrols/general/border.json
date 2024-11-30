@@ -97,8 +97,8 @@
                 "art": "gen_coyote_danger2_w1",
                 "dead_cats": ["r_c"],
                 "history_text": {
-                    "scar": "This cat is scarred from bravely defending the Clan against a dog.",
-                    "reg_death": "This cat died to keep c_n safe from a large dog.",
+                    "scar": "m_c was scarred from bravely defending the Clan against a dog.",
+                    "reg_death": "m_c died to keep c_n safe from a large dog.",
                     "lead_death": "died to keep c_n safe from a large dog"
                 },
                 "relationships": [
@@ -124,8 +124,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "This cat is scarred from bravely defending the Clan against a dog.",
-                    "reg_death": "This cat died to keep c_n safe from a large dog.",
+                    "scar": "m_c was scarred from bravely defending the Clan against a dog.",
+                    "reg_death": "m_c died to keep c_n safe from a large dog.",
                     "lead_death": "died to keep c_n safe from a large dog"
                 },
                 "relationships": [
@@ -290,8 +290,8 @@
                 "art": "gen_coyote_danger2_w1",
                 "dead_cats": ["r_c"],
                 "history_text": {
-                    "scar": "This cat is scarred from bravely defending the Clan against a dog.",
-                    "reg_death": "This cat died to keep the Clan safe from a large dog.",
+                    "scar": "m_c was scarred from bravely defending the Clan against a dog.",
+                    "reg_death": "m_c died to keep the Clan safe from a large dog.",
                     "lead_death": "died to keep c_n safe from a large dog"
                 },
                 "relationships": [
@@ -580,8 +580,8 @@
                 "weight": 10,
                 "dead_cats": ["r_c"],
                 "history_text": {
-                    "scar": "This cat got a scar from a fight with a small dog, but {PRONOUN/m_c/subject} always {VERB/m_c/say/says} it was a huge dog.",
-                    "reg_death": "This cat was killed in a fight with a small dog, but {PRONOUN/m_c/subject} took the dog out with {PRONOUN/m_c/object}.",
+                    "scar": "m_c got a scar from a fight with a small dog, but {PRONOUN/m_c/subject} always {VERB/m_c/say/says} it was a huge dog.",
+                    "reg_death": "m_c was killed in a fight with a small dog, but {PRONOUN/m_c/subject} took the dog out with {PRONOUN/m_c/object}.",
                     "lead_death": "killed in a fight with a small dog"
                 }
             },
@@ -597,8 +597,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "This cat got a scar from a fight with a small dog, but {PRONOUN/m_c/subject} always {VERB/m_c/say/says} it was a huge dog.",
-                    "reg_death": "This cat was killed in a fight with a small dog, but {PRONOUN/m_c/subject} took the dog out with {PRONOUN/m_c/object}.",
+                    "scar": "m_c got a scar from a fight with a small dog, but {PRONOUN/m_c/subject} always {VERB/m_c/say/says} it was a huge dog.",
+                    "reg_death": "m_c was killed in a fight with a small dog, but {PRONOUN/m_c/subject} took the dog out with {PRONOUN/m_c/object}.",
                     "lead_death": "killed in a fight with a small dog"
                 }
             }
@@ -684,7 +684,9 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "This cat got a scar from a fight with a small dog, but {PRONOUN/m_c/subject} always {VERB/m_c/say/says} it was a huge dog."
+                    "scar": "m_c got a scar from a fight with a small dog, but {PRONOUN/m_c/subject} always {VERB/m_c/say/says} it was a huge dog.",
+                    "reg_death": "m_c was died from injuries sustained in a fight with a small dog.",
+                    "lead_death": "died from {PRONOUN/m_c/poss} injuries"
                 }
             }
         ]
@@ -768,7 +770,9 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "This cat got a scar from a fight with a small dog, though {PRONOUN/m_c/subject} {VERB/m_c/insist/insists} it was huge."
+                    "scar": "m_c got a scar from a fight with a small dog, though {PRONOUN/m_c/subject} {VERB/m_c/insist/insists} it was huge.",
+                    "reg_death": "m_c was died from injuries sustained in a fight with a small dog.",
+                    "lead_death": "died from {PRONOUN/m_c/poss} injuries"
                 }
             }
         ]
@@ -1401,7 +1405,9 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred when {PRONOUN/m_c/subject} tried to sneak across the o_c_n border."
+                    "scar": "m_c was scarred when {PRONOUN/m_c/subject} tried to sneak across the o_c_n border.",
+                    "reg_death": "m_c died from injuries after trying to sneak across the o_c_n border.",
+                    "lead_death": "died of injuries after trying to sneak over the border"
                 },
                 "relationships": [
                     {
@@ -1435,7 +1441,9 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred when {PRONOUN/m_c/subject} tried to sneak across the o_c_n border."
+                    "scar": "m_c was scarred when {PRONOUN/m_c/subject} tried to sneak across the o_c_n border.",
+                    "reg_death": "m_c died from injuries after trying to sneak across the o_c_n border.",
+                    "lead_death": "died of injuries after trying to sneak over the border"
                 },
                 "relationships": [
                     {
@@ -1749,6 +1757,10 @@
                     "cats": ["r_c"],
                     "injuries": ["battle_injury", "battle_injury"]
                 },
+                "history_text": {
+                    "reg_death": "m_c died from {PRONOUN/r_c/poss} injuries after a fight with a rogue.",
+                    "scar": "m_c was scarred in a fight with a rogue."
+                },
                 "relationships": [
                     {
                         "cats_to": ["p_l"],
@@ -1818,11 +1830,15 @@
                 ]
             },
             {
-                "text": "As the duo are patroling, they are ambushed by a rogue! r_c is badly injured, and succumbs to the wounds when p_l flees, leaving {PRONOUN/r_c/object} behind.",
+                "text": "As the duo are patroling, they are ambushed by a rogue! r_c is badly injured and succumbs to the wounds when p_l flees, leaving {PRONOUN/r_c/object} behind.",
                 "exp": 0,
                 "weight": 5,
                 "art": "gen_dead_cat",
-                "dead_cats": ["r_c"]
+                "dead_cats": ["r_c"],
+                "history_text": {
+                    "reg_death": "m_c succumbed to injury after being ambushed by a rogue and abandoned on patrol.",
+                    "lead_death": "succumbed to injury after being ambushed and abandoned"
+                }
             },
             {
                 "text": "s_c can't resist the temptation to make pointed remarks {PRONOUN/s_c/subject} {VERB/s_c/know/knows} are hurtful to r_c. But when a verbal barb sinks too deep and r_c starts crying, s_c lashes their tail, snapping at r_c to focus on patrolling. r_c runs off, leaving s_c to finish the patrol alone.",
@@ -1935,6 +1951,11 @@
                     "cats": ["r_c"],
                     "injuries": ["battle_injury", "battle_injury"]
                 },
+                "history_text": {
+                    "scar": "m_c was scarred after being ambushed on patrol.",
+                    "reg_death": "m_c died of injuries sustained in an ambush.",
+                    "lead_death": "died of injuries sustained in an ambush"
+                },
                 "relationships": [
                     {
                         "cats_to": ["p_l"],
@@ -1994,6 +2015,11 @@
                     "cats": ["r_c", "p_l"],
                     "injuries": ["minor_injury","minor_injury","battle_injury"]
                 },
+                "history_text": {
+                    "scar": "m_c was scarred after brawling with a Clanmate.",
+                    "reg_death": "m_c died from injuries sustained in a brawl with a Clanmate.",
+                    "lead_death": "died from injuries sustained in a brawl with a Clanmate"
+                },
                 "relationships": [
                     {
                         "cats_to": ["p_l"],
@@ -2019,18 +2045,28 @@
                 ]
             },
             {
-                "text": "As the duo are patroling, too distracted by their argument, they didn't notice the shadow desending on them as they are ambushed by a rogue. r_c is badly injured, and succumbs to the wounds when p_l flees, leaving {PRONOUN/r_c/object} behind.",
+                "text": "As the duo are patroling, too distracted by their argument, they didn't notice the shadow desending on them as they are ambushed by a rogue. r_c is badly injured and succumbs to the wounds when p_l flees, leaving {PRONOUN/r_c/object} behind.",
                 "exp": 0,
                 "weight": 5,
                 "art": "gen_dead_cat",
-                "dead_cats": ["r_c"]
+                "dead_cats": ["r_c"],
+                "history_text": {
+                    "scar": "m_c was scarred after being ambushed on patrol.",
+                    "reg_death": "m_c died after {PRONOUN/m_c/poss} Clanmate abandoned {PRONOUN/m_c/object} to a rogue ambush.",
+                    "lead_death": "died after being abandoned and ambushed on patrol"
+                }
             },
             {
-                "text": "As the duo are patroling, they are ambushed by an o_c_n patrol! p_l is fighting for {PRONOUN/p_l/poss} life, when out of the corner of {PRONOUN/p_l/poss} eye {PRONOUN/p_l/subject} {VERB/p_l/see/sees} r_c fleeing. Outnumbered and overwhelmed, p_l is killed.",
+                "text": "As the duo are patroling, they are ambushed by a o_c_n patrol! p_l is fighting for {PRONOUN/p_l/poss} life, when out of the corner of {PRONOUN/p_l/poss} eye {PRONOUN/p_l/subject} {VERB/p_l/see/sees} r_c fleeing. Outnumbered and overwhelmed, p_l is killed.",
                 "exp": 0,
                 "weight": 5,
                 "art": "gen_big_fight_warriors_other_clan",
                 "dead_cats": ["p_l"],
+                "history_text": {
+                    "scar": "m_c was scarred in a o_c_n ambush.",
+                    "reg_death": "m_c died after {PRONOUN/m_c/poss} Clanmate abandoned them to a o_c_n ambush.",
+                    "lead_death": "died after being abandoned and ambushed on patrol"
+                },
                 "other_clan_rep": -2
             },
             {
@@ -2306,9 +2342,8 @@
                 ],
                 "history_text":
                 {
-                    "cats": [ "app1" ],
-                    "reg_death": "app1 died after picking a fight with a o_c_n apprentice on patrol.",
-                    "scar": "app1 was scarred by a o_c_n apprentice after a border scrum."
+                    "scar": "m_c was scarred by a o_c_n apprentice after a border scrum.",
+                    "reg_death": "m_c died after picking a fight with a o_c_n apprentice on patrol."
                 },
                 "relationships":[
                     {
@@ -2341,9 +2376,9 @@
                 ],
                 "history_text":
                 {
-                    "cats": [ "r_c" ],
-                    "reg_death": "r_c died from injuries sustained in a border skirmish.",
-                    "scar": "r_c was scarred in a border skirmish."
+                    "scar": "m_c was scarred in a border skirmish.",
+                    "reg_death": "m_c died from injuries sustained in a border skirmish.",
+                    "lead_death": "died from injuries sustained in a border skirmish"
                 },
                 "relationships":[
                     {
@@ -2366,7 +2401,12 @@
                         "injuries": [ "battle_injury" ],
                         "scar": [ "NECKBITE", "SNOUT" ]
                     }
-                ]
+                ],
+                "history_text": {
+                    "scar": "m_c was scarred in a border skirmish.",
+                    "reg_death": "m_c died of injuries sustained in a border skirmish.",
+                    "lead_death": "died of injuries sustained in a border skirmish"
+                }
             }
         ]
 
@@ -3107,9 +3147,8 @@
         "injuries": [ "grief stricken" ]
     }
 ],
-    "history": [
+    "history_text": [
                 {
-                    "cats": [ "p_l" ],
                     "scar": "m_c was scarred by {PRONOUN/m_c/poss} mate's Clanmates.",
                     "reg_death": "m_c died from injuries inflicted by {PRONOUN/m_c/poss} mate's Clanmates."
                 }
