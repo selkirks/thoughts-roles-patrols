@@ -373,6 +373,8 @@ class GenerateEvents:
             if "adoption" in event.tags:
                 if cat.no_kits:
                     continue
+                if cat.moons <= 14 + cat.age_moons["kitten"][1]:
+                    continue
                 if any(Cat_class.fetch_cat(i).no_kits for i in cat.mate):
                     continue
 
