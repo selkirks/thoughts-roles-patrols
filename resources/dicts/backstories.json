@@ -2,9 +2,6 @@
   "backstories": {
         "clan_founder": "m_c is one of the founding members of the Clan.",
         "clanborn": "m_c was born into the Clan where {PRONOUN/m_c/subject} currently {VERB/m_c/reside/resides}.",
-        "clanborn1": "m_c was born into the Clan, inheriting the legacy of generations of warriors within its boundaries.",
-        "clanborn2": "m_c was born into the Clan, where {PRONOUN/m_c/subject} learned the ways of the wild from {PRONOUN/m_c/poss} early moons.",
-        "clanborn3": "m_c was born into the Clan, surrounded by the familiar scents and sounds of {PRONOUN/m_c/poss} fellow Clanmates.",
 
         "halfclan1": "m_c was born into the Clan, but one of {PRONOUN/m_c/poss} parents resides in another Clan.",
         "halfclan2": "m_c was born in another Clan, but chose to come to this Clan to be with {PRONOUN/m_c/poss} other parent.",
@@ -108,7 +105,7 @@
       "loner1", "loner2", "loner3", "loner4", "refugee2", "tragedy_survivor4", "guided3", "refugee5", "wandering_healer2"
     ],
     "rogue_backstories": [
-      "rogue1", "rogue2", "rogue3","refugee4", "tragedy_survivor2", "guided2", "refugee5", "wandering_healer1"
+      "rogue1", "rogue2", "rogue3", "refugee4", "tragedy_survivor2", "guided2", "refugee5", "wandering_healer1"
     ],
     "kittypet_backstories": [
       "kittypet1", "kittypet2", "kittypet3", "kittypet4", "refugee3", "tragedy_survivor3", "guided1", "refugee6"
