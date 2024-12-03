@@ -187,7 +187,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "While neither blackberry nor raspberry, whose brambles look similar, lose their leaves completely, leaf-bare is hard on every plant, and p_l has to balance the plant's needs, the Clan's and {PRONOUN/p_l/poss} own frozen paws as PRONOUN/p_l/subject} {VERB/p_l/try/tries} to gather what leaves {PRONOUN/p_l/subject} can.",
+                "text": "While neither blackberry nor the similarly-brambled raspberry lose their leaves completely, leaf-bare is hard on every plant. p_l has to balance both the plant's and the Clan's needs as {PRONOUN/p_l/subject} {VERB/p_l/gather/gathers} what leaves {PRONOUN/p_l/subject} can with frozen paws. The patrol sees {PRONOUN/p_l/poss} stress and gathers around to support {PRONOUN/p_l/object}.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["raspberry", "blackberry"]
@@ -249,7 +249,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "While neither blackberry nor raspberry, whose brambles look similar, lose their leaves completely, leaf-bare is hard on every plant, and p_l has to balance the plant's needs, the Clan's and {PRONOUN/p_l/poss} own frozen paws as PRONOUN/p_l/subject} {VERB/p_l/try/tries} to gather what leaves {PRONOUN/p_l/subject} can. It's a great help having app1 with {PRONOUN/p_l/object}.",
+                "text": "While neither blackberry nor the similarly-brambled raspberry lose their leaves completely, leaf-bare is hard on every plant. p_l has to balance both the plant's and the Clan's needs as {PRONOUN/p_l/subject} {VERB/p_l/gather/gathers} what leaves {PRONOUN/p_l/subject} can with frozen paws. The patrol sees {PRONOUN/p_l/poss} stress and gathers around to support {PRONOUN/p_l/object}.",
                 "exp": 30,
                 "weight": 20,
                 "herbs": ["raspberry", "blackberry"],
@@ -390,7 +390,7 @@
         "chance_of_success": 20,
         "success_outcomes": [
             {
-                "text": "While neither blackberry nor raspberry, whose brambles look similar, lose their leaves completely, leaf-bare is hard on every plant, and p_l has to balance the plant's needs, the Clan's and {PRONOUN/p_l/poss} own frozen paws as PRONOUN/p_l/subject} {VERB/p_l/try/tries} to gather what leaves {PRONOUN/p_l/subject} can. The patrol sees {PRONOUN/p_l/poss} stress, and gathers around to support {PRONOUN/p_l/object}.",
+                "text": "While neither blackberry nor the similarly-brambled raspberry lose their leaves completely, leaf-bare is hard on every plant. p_l has to balance both the plant's and the Clan's needs as {PRONOUN/p_l/subject} {VERB/p_l/gather/gathers} what leaves {PRONOUN/p_l/subject} can with frozen paws. The patrol sees {PRONOUN/p_l/poss} stress and gathers around to support {PRONOUN/p_l/object}.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["raspberry", "blackberry"],
