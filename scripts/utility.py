@@ -316,16 +316,19 @@ def create_new_cat_block(
     thought = "Is looking around the camp with wonder"
     new_cats = None
 
-    # gather bio parents
+    # gather parents
     parent1 = None
     parent2 = None
+    adoptive_parents = []
     for tag in attribute_list:
-        match = re.match(r"parent:([,0-9]+)", tag)
-        if not match:
+        parent_match = re.match(r"parent:([,0-9]+)", tag)
+        adoptive_match = re.match(r"adoptive:(.+)", tag)
+        if not parent_match and not adoptive_match:
             continue
 
-        parent_indexes = match.group(1).split(",")
-        if not parent_indexes:
+        parent_indexes = parent_match.group(1).split(",") if parent_match else []
+        adoptive_indexes = adoptive_match.group(1).split(",") if adoptive_match else []
+        if not parent_indexes and not adoptive_indexes:
             continue
 
         parent_indexes = [int(index) for index in parent_indexes]
@@ -656,6 +659,28 @@ def create_new_cat_block(
                 start_relation.trust = 10 + y
                 n_c.relationships[par.ID] = start_relation
 
+            # ADOPTIVE PARENTS
+            for par in adoptive_parents:
+                if not par:
+                    continue
+
+                par = Cat.fetch_cat(par)
+
+                y = randrange(0, 20)
+                start_relation = Relationship(par, n_c, False, True)
+                start_relation.platonic_like += 30 + y
+                start_relation.comfortable = 10 + y
+                start_relation.admiration = 15 + y
+                start_relation.trust = 10 + y
+                par.relationships[n_c.ID] = start_relation
+
+                y = randrange(0, 20)
+                start_relation = Relationship(n_c, par, False, True)
+                start_relation.platonic_like += 30 + y
+                start_relation.comfortable = 10 + y
+                start_relation.admiration = 15 + y
+                start_relation.trust = 10 + y
+                n_c.relationships[par.ID] = start_relation
             # UPDATE INHERITANCE
             n_c.create_inheritance_new_cat()
 
@@ -708,7 +733,8 @@ def create_new_cat(
     :param bool alive: set this as False to generate the cat as already dead - default: True (alive)
     :param bool outside: set this as True to generate the cat as an outsider instead of as part of the Clan - default: False (Clan cat)
     :param str parent1: Cat ID to set as the biological parent1
-    :param str parent2: Cat ID object to set as the biological parert2
+    :param str parent2: Cat ID to set as the biological parent2
+    :param list adoptive_parents: Cat IDs to set as adoptive parents
     """
     # TODO: it would be nice to rewrite this to be less bool-centric
     accessory = None
