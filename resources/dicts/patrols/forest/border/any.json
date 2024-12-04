@@ -92,9 +92,9 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "This cat was badly scarred when rogues ambushed {PRONOUN/m_c/poss} patrol.",
-                    "reg_death": "This cat was killed when rogues ambushed {PRONOUN/m_c/poss} patrol.",
-                    "lead_death": "rogues ambushed {PRONOUN/m_c/poss} patrol"
+                    "scar": "m_c was badly scarred when rogues ambushed {PRONOUN/m_c/poss} patrol.",
+                    "reg_death": "m_c died of an injury sustained in a rogue ambush.",
+                    "lead_death": "died of an injury sustained in a rogue ambush"
                 },
                 "relationships": [
                     {
@@ -272,7 +272,7 @@
                 "dead_cats": ["multi"],
                 "history_text": {
                     "scar": "m_c was badly scarred when rogues attacked {PRONOUN/m_c/poss} patrol.",
-                    "reg_death": "This cat was killed when rogues attacked {PRONOUN/m_c/poss} patrol.",
+                    "reg_death": "m_c was killed when rogues attacked {PRONOUN/m_c/poss} patrol.",
                     "lead_death": "{VERB/m_c/were/was} killed when rogues attacked {PRONOUN/m_c/poss} patrol"
                 },
                 "relationships": [
@@ -298,8 +298,8 @@
                 ],
                 "history_text": {
                     "scar": "m_c was badly scarred when rogues attacked {PRONOUN/m_c/poss} patrol.",
-                    "reg_death": "This cat was killed when rogues attacked {PRONOUN/m_c/poss} patrol.",
-                    "lead_death": "{VERB/m_c/were/was} killed when rogues attacked {PRONOUN/m_c/poss} patrol"
+                    "reg_death": "m_c died of an injury sustained in a rogue ambush.",
+                    "lead_death": "died of an injury sustained in a rogue ambush"
                 },
                 "relationships": [
                     {
