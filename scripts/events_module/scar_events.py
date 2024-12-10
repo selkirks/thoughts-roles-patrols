@@ -75,7 +75,6 @@ class Scar_Events():
         "mangled leg": leg_scars,
         "torn ear": ear_scars,
         "frostbite": frostbite_scars,
-        "torn pelt": claw_scars + beak_scars,
         "damaged eyes": eye_scars,
         "quilled by porcupine": quill_scars,
         "claw-wound": claw_scars,

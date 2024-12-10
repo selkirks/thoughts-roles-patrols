@@ -2074,6 +2074,11 @@ def event_text_adjust(
         text = "This should not appear, report as a bug please! Tried to adjust the text, but no text was provided."
         print("WARNING: Tried to adjust text, but no text was provided.")
 
+    # this check is really just here to catch odd bug edge-cases from old saves, specifically in death history
+    # otherwise we should really *never* have lists being passed as the text
+    if isinstance(text, list):
+        text = text[0]
+
     replace_dict = {}
 
     # special lists - this needs to happen first for pronoun tag reasons

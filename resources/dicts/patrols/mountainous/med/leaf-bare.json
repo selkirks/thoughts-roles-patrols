@@ -1279,7 +1279,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "p_l can't say it's <i>fun,</i> swiping away snow to scrounge for the stems and roots of wilted dandelions below, but what matters currently is that it's <i>possible.</i> Still, PRONOUN/p_l/subject} {VERB/p_l/praise/praises} app1 as they head back home with their harvest - {PRONOUN/app1/subject} {VERB/app1/haven't/hasn't} uttered a single word of complaint about the miserable conditions, and was even the one to find the wild garlic on the way back home. p_l couldn't be prouder.",
+                "text": "p_l can't say it's <i>fun,</i> swiping away snow to scrounge for the stems and roots of wilted dandelions below, but what matters currently is that it's <i>possible.</i> Still, {PRONOUN/p_l/subject} {VERB/p_l/praise/praises} app1 as they head back home with their harvest - {PRONOUN/app1/subject} {VERB/app1/haven't/hasn't} uttered a single word of complaint about the miserable conditions, and was even the one to find the wild garlic on the way back home. p_l couldn't be prouder.",
                 "exp": 40,
                 "weight": 20,
                 "herbs": ["wild_garlic", "dandelion"],
