@@ -230,6 +230,10 @@ class HandleShortEvents:
                 trust=-30,
             )
 
+        # update gender
+        if self.chosen_event.new_gender:
+            self.handle_transition()
+
         # kill cats
         self.handle_death()
 
@@ -395,6 +399,25 @@ class HandleShortEvents:
 
         if acc_list:
             self.main_cat.pelt.accessory = random.choice(acc_list)
+
+    def handle_transition(self):
+        """
+        handles updating gender_align and pronouns
+        """
+        possible_genders = getattr(self.chosen_event, "new_gender", [])
+
+        if possible_genders:
+            new_gender = random.choice(possible_genders)
+            self.main_cat.genderalign = "intersex " if self.main_cat.genotype.sex == "intersex" else "" + new_gender.replace("female", "molly").replace("male", "tom").replace("nonbinary", "sam")
+
+            if new_gender == "nonbinary":
+                self.main_cat.pronouns = [self.main_cat.default_pronouns[0].copy()]
+            elif new_gender == "trans female":
+                self.main_cat.pronouns = [self.main_cat.default_pronouns[1].copy()]
+            elif new_gender == "trans male":
+                self.main_cat.pronouns = [self.main_cat.default_pronouns[2].copy()]
+            else:
+                print("No pronouns found for new_gender, keeping original pronouns.", new_gender)
 
     def handle_death(self):
         """

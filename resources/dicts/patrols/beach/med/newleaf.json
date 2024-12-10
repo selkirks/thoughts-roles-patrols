@@ -998,7 +998,7 @@
             "normal adult": [-1, -1]
         },
         "weight": 20,
-        "intro_text": "p_l tastes the air, trying to decide it it's warm enough to gather catmint yet. {PRONOUN/p_l/subject/CAP}'d really like to replenish the herb stocks after leaf-bare.",
+        "intro_text": "p_l tastes the air, trying to decide if it's warm enough to gather catmint yet. {PRONOUN/p_l/subject/CAP}'d really like to replenish the herb stocks after leaf-bare.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 40,
         "success_outcomes": [
@@ -1388,7 +1388,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Frustratingly, some herbivore has come through and feasted on the daisies p_l targets. The plants will recover, but these half-chewed on leaves are useless to c_n. {PRONOUN/p_l/subject/CAP} {VERB/p_l/avoid/avoids} snapping at app1, who seems unable to identify the common herb, but {PRONOUN/p_l/subject} definitely {VERB/p_l/come/comes} close.",
+                "text": "Frustratingly, some herbivore has come through and feasted on the daisies p_l targets. The plants will recover, but these half-chewed leaves are useless to c_n. {PRONOUN/p_l/subject/CAP} {VERB/p_l/avoid/avoids} snapping at app1, who seems unable to identify the common herb, but {PRONOUN/p_l/subject} definitely {VERB/p_l/come/comes} close.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1654,7 +1654,7 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "Truly, dandelions are an essential herb to keep in stock, crucial for poisons and stings. Both the potent milk in their roots and stems, and the fast-acting leaves... Even the fluffy dandelion heads are useful as a c_n kitten's favorite, shortlived toy- or even an apprentice's. app1's eyes bulge with excitement, crouching low, fixated on the fluffy head. With one quick leap, app1 pounces! The bulbous white seed splits apart, the wind carrying it to places far beyond c_n territory.",
+                "text": "Truly, dandelions are an essential herb to keep in stock, crucial for poisons and stings. Both the potent milk in their roots and stems, and the fast-acting leaves... Even the fluffy dandelion heads are useful as a c_n kitten's favorite, short lived toy- or even an apprentice's. app1's eyes bulge with excitement, crouching low, fixated on the fluffy head. With one quick leap, app1 pounces! The bulbous white seed splits apart, the wind carrying it to places far beyond c_n territory.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["dandelion"],
@@ -1765,7 +1765,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "Truly, dandelions are an essential herb to keep in stock, crucial for poisons and stings. Both the potent milk in their roots and stems, and the fast-acting leaves... Even the fluffy dandelion heads are useful as a c_n kitten's favorite, shortlived toy. The warriors smile at the sight, sharing fond nursery memories as they gather.",
+                "text": "Truly, dandelions are an essential herb to keep in stock, crucial for poisons and stings. Both the potent milk in their roots and stems, and the fast-acting leaves... Even the fluffy dandelion heads are useful as a c_n kitten's favorite, short lived toy. The warriors smile at the sight, sharing fond nursery memories as they gather.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["dandelion"],
@@ -1902,7 +1902,7 @@
                 "weight": 20
             },
             {
-                "text": "p_l, reaching out just a little too far to try and grab a branch of elder while balanced on another, loses {PRONOUN/p_l/poss} balance and tumbles to the ground. Unfortunately, the fall was too high, and p_l's body too fragile. A search party finds {PRONOUN/p_l/object} a day later, {PRONOUN/p_l/poss} neck jut out at an unnatural angle.",
+                "text": "p_l, reaching out just a little too far to try and grab a branch of elder while balanced on another, loses {PRONOUN/p_l/poss} balance and tumbles to the ground. Unfortunately, the fall was too high, and p_l's body was too fragile. A search party finds {PRONOUN/p_l/object} a day later, {PRONOUN/p_l/poss} neck jut out at an unnatural angle.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["p_l"],
@@ -2049,7 +2049,7 @@
                 ]
             },
             {
-                "text": "r_c, reaching out just a little too far to try and grab a branch of elder while balanced on another, loses {PRONOUN/r_c/poss} balance and tumbles to the ground. Unfortunately, the fall was too high, and r_c's body too fragile. m_c wails over {PRONOUN/m_c/poss} companion's body, sobs alerting a nearby patrol who takes r_c's body back home.",
+                "text": "r_c, reaching out just a little too far to try and grab a branch of elder while balanced on another, loses {PRONOUN/r_c/poss} balance and tumbles to the ground. Unfortunately, the fall was too high, and r_c's body was too fragile. m_c wails over {PRONOUN/m_c/poss} companion's body, sobs alerting a nearby patrol who takes r_c's body back home.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
@@ -2169,7 +2169,7 @@
                 ]
             },
             {
-                "text": "r_c, reaching out just a little too far to try and grab a branch of elder while balanced on another, loses {PRONOUN/r_c/poss} balance and tumbles to the ground. Unfortunately, the fall was too high, and r_c's body too fragile. {PRONOUN/r_c/poss/CAP} companions somberly bring {PRONOUN/r_c/poss} body back to camp.",
+                "text": "r_c, reaching out just a little too far to try and grab a branch of elder while balanced on another, loses {PRONOUN/r_c/poss} balance and tumbles to the ground. Unfortunately, the fall was too high, and r_c's body was too fragile. {PRONOUN/r_c/poss/CAP} companions somberly bring {PRONOUN/r_c/poss} body back to camp.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["r_c"],
@@ -2483,7 +2483,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "The many stems of goldenrod surround p_l as {PRONOUN/p_l/subject} {VERB/p_l/work/works}, snipping off stems and clumps of tiny yellow flowers to bring back to c_n's herb stores. The patrol chats as they work, exchanging gossip and news as the smell of cut stems wreathes around them.",
+                "text": "The many stems of goldenrod surround p_l as {PRONOUN/p_l/subject} {VERB/p_l/work/works}, snipping off stems and clumps of tiny yellow flowers to bring back to c_n's herb stores. The patrol chats as they work, exchanging gossip and news as the smell of cut stems wreaths around them.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["goldenrod"],
@@ -3131,7 +3131,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l searches until {PRONOUN/p_l/poss} pawpads are sore and {PRONOUN/p_l/poss} muscles exhausted, but can't find lungwort anywhere. {PRONOUN/p_l/subject/CAP} {VERB/p_l/return/returns} to camp disappointed but determined to try again. It's simply too important to not keep a good supply of.",
+                "text": "p_l searches until {PRONOUN/p_l/poss} paw pads are sore and {PRONOUN/p_l/poss} muscles exhausted, but can't find lungwort anywhere. {PRONOUN/p_l/subject/CAP} {VERB/p_l/return/returns} to camp disappointed but determined to try again. It's simply too important to not keep a good supply of.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -3145,7 +3145,7 @@
                 ]
             },
             {
-                "text": "p_l searches until {PRONOUN/p_l/poss} pawpads are sore and {PRONOUN/p_l/poss} muscles exhausted, but can't find lungwort anywhere. {PRONOUN/p_l/subject/CAP} {VERB/p_l/return/returns} to camp disappointed but determined to try again. It's simply too important to not keep a good supply of.",
+                "text": "p_l searches until {PRONOUN/p_l/poss} paw pads are sore and {PRONOUN/p_l/poss} muscles exhausted, but can't find lungwort anywhere. {PRONOUN/p_l/subject/CAP} {VERB/p_l/return/returns} to camp disappointed but determined to try again. It's simply too important to not keep a good supply of.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -3182,7 +3182,7 @@
             "normal adult": [1, 6]
         },
         "weight": 20,
-        "intro_text": "p_l is on a mission to find lungwort now that newleaf is here. As the only reliable cure for yellowcough, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} determined that c_n replenish their stocks of it. {PRONOUN/p_l/subject/CAP} {VERB/p_l/take/takes} along a warrior escort to help.",
+        "intro_text": "p_l is on a mission to find lungwort now that newleaf is here. As the only reliable cure for yellowcough, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} determined to replenish c_n's stocks of it. {PRONOUN/p_l/subject/CAP} {VERB/p_l/take/takes} along a warrior escort to help.",
         "decline_text": "A cat grabs p_l's attention before {PRONOUN/p_l/subject} can leave. p_l heaves a sigh - the expedition is delayed for another time.",
         "chance_of_success": 30,
         "success_outcomes": [
@@ -3253,7 +3253,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The cats search and search until their pawpads are sore and their muscles exhausted, but they just can't find lungwort anywhere. p_l returns to camp disappointed but determined to try again. It's simply too important to not keep a good supply of.",
+                "text": "The cat's search and search until their paw pads are sore and their muscles exhausted, but they just can't find lungwort anywhere. p_l returns to camp disappointed but determined to try again. It's simply too important to not keep a good supply of.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -3283,7 +3283,7 @@
                 ]
             },
             {
-                "text": "The cats search and search until their pawpads are sore and their muscles exhausted, but they just can't find lungwort anywhere. p_l returns to camp disappointed but determined to try again. It's simply too important to not keep a good supply of.",
+                "text": "The cat's search and search until their paw pads are sore and their muscles exhausted, but they just can't find lungwort anywhere. p_l returns to camp disappointed but determined to try again. It's simply too important to not keep a good supply of.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -3558,7 +3558,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "The soft, rose-like scent of the mallow bushes drifts around the patrol as they work. p_l snips off clumps of large, fuzzy, three-nubbed leaves, and the occasional pink flower, to be taken back to camp. The patrol chats as they work, exchanging gossip and news as the smell of cut stems wreathes around them.",
+                "text": "The soft, rose-like scent of the mallow bushes drifts around the patrol as they work. p_l snips off clumps of large, fuzzy, three-nubbed leaves, and the occasional pink flower, to be taken back to camp. The patrol chats as they work, exchanging gossip and news as the smell of cut stems wreaths around them.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["mallow"],
@@ -5114,7 +5114,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "These plants will be dead in leaf-fall, but the Clan won't stop needing painkillers in the colder seasons, so there's no time to waste. p_l goes out and brings back a decent harvest, with all the members of the patrol bringing back at least a couple dried flowerheads full of seeds each.",
+                "text": "These plants will be dead in leaf-fall, but the Clan won't stop needing painkillers in the colder seasons, so there's no time to waste. p_l goes out and brings back a decent harvest, with all the members of the patrol bringing back at least a couple dried flower heads full of seeds each.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["poppy"],
@@ -5591,7 +5591,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "The jagged edges of the raspberry leaves mark them as a gift from the stars. Their pain relief and ability to reduce bloodloss have saved countless lives, and brought kittens safely into the world.",
+                "text": "The jagged edges of the raspberry leaves mark them as a gift from the stars. Their pain relief and ability to reduce blood loss have saved countless lives, and brought kittens safely into the world.",
                 "exp": 30,
                 "weight": 20,
                 "herbs": ["raspberry"],

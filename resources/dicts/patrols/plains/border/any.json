@@ -785,8 +785,8 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by an invading rogue.",
-                    "reg_death": "m_c was killed by an invading rogue.",
-                    "lead_death": "{VERB/m_c/were/was} killed by an invading rogue"
+                    "reg_death": "m_c died from an injury inflicted by an invading rogue.",
+                    "lead_death": "died from an injury inflicted by an invading rogue"
                 }
             }
         ]
@@ -925,7 +925,11 @@
                         "scars": ["BRIDGE"]
                     }
                 ],
-                "history_text": { "scar": "m_c was scarred by an invading rogue." },
+                "history_text": {
+                    "scar": "m_c was scarred by an invading rogue.",
+                    "reg_death": "m_c died from an injury inflicted by an invading rogue.",
+                    "lead_death": "died from an injury inflicted by an invading rogue"
+                },
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -1072,7 +1076,11 @@
                         "scars": ["BRIDGE"]
                     }
                 ],
-                "history_text": { "scar": "m_c was scarred by an invading rogue." },
+                "history_text": {
+                    "scar": "m_c was scarred by an invading rogue.",
+                    "reg_death": "m_c died from an injury inflicted by an invading rogue.",
+                    "lead_death": "died from an injury inflicted by an invading rogue"
+                },
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -1154,7 +1162,11 @@
                         "scars": ["CHEEK"]
                     }
                 ],
-                "history_text": { "scar": "m_c was scarred by an invading rogue." }
+                "history_text": {
+                    "scar": "m_c was scarred by an invading rogue.",
+                    "reg_death": "m_c died from an injury inflicted by an invading rogue.",
+                    "lead_death": "died from an injury inflicted by an invading rogue"
+                }
             }
         ]
     },
