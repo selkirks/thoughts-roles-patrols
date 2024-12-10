@@ -515,30 +515,14 @@ class Events:
         """Check for mediator events"""
         # If the cat is a mediator, check if they visited other clans
         if cat.status in ["mediator", "mediator apprentice"] and not cat.not_working():
-            # 1 /10 chance
+            # 1/10 chance
             if not int(random.random() * 10):
-                increase = random.randint(-2, 6)
-                clan = random.choice(game.clan.all_clans)
-                clan.relations += increase
-                dispute_type = random.choice(
-                    ["hunting", "border", "personal", "herb-gathering"]
-                )
-                text = (
-                    f"{cat.name} travels to {clan} to "
-                    f"resolve some recent {dispute_type} disputes. "
-                )
-                if increase > 4:
-                    text += (
-                        f"The meeting goes better than expected, and "
-                        f"{cat.name} returns with a plan to solve the "
-                        f"issue for good."
-                    )
-                elif increase == 0:
-                    text += "However, no progress was made."
-                elif increase < 0:
-                    text += f"However, it seems {cat.name} only made {clan} more upset."
-
-                game.cur_events_list.append(Single_Event(text, "other_clans", cat.ID))
+                random_cat = get_random_moon_cat(Cat, main_cat=cat)
+                handle_short_events.handle_event(event_type="misc",
+                                                 main_cat=cat,
+                                                 random_cat=random_cat,
+                                                 sub_type=["mediator"],
+                                                 freshkill_pile=game.clan.freshkill_pile)
 
         if game.clan.clan_settings["become_mediator"]:
             # Note: These chances are large since it triggers every moon.
