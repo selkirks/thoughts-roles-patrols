@@ -724,7 +724,7 @@
     "sub_type": ["accessory"],
     "weight": 10,
     "event_text": "m_c always seems to have acc_plural stuck in {PRONOUN/m_c/poss} fur.",
-    "new_accessory": ["HERBS", "PETALS", "DRY HERBS", "DRY CATMINT", "DRY LAURELS", "DRY NETTLES", "RED FEATHERS","BLUE FEATHERS", "JAY FEATHERS", "HESPERIS", "CATNIP FLOWERS","GULL FEATHERS", "SPARROW FEATHERS"
+    "new_accessory": ["HERBS", "PETALS", "DRY HERBS", "DRY CATMINT", "DRY LAURELS", "DRY NETTLES", "RED FEATHERS","BLUE FEATHERS", "JAY FEATHERS", "HESPERIS", "CATNIP FLOWER","GULL FEATHERS", "SPARROW FEATHERS"
   ],
     "m_c":{
       "age": ["any"],

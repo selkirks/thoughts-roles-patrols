@@ -363,7 +363,7 @@
     "season": ["any"],
     "weight": 20,
     "event_text": "m_c eyes a pink-nosed rat that wandered into the apprentice's den. Before r_c can even think about stopping {PRONOUN/m_c/object}, m_c befriends the weird little thing with a few leftover acorns.",
-    "": ["RAT"],
+    "new_accessory": ["RAT"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
@@ -504,7 +504,7 @@
     "season": ["any"],
     "weight": 20,
     "event_text": "m_c grins toothily at a acc_singular that wandered into camp! Instead of diving toward it like anyone would expect a cat to do, m_c decides to befriend it with seeds and nuts.",
-    "": ["WHITE MOUSE", "BLACK MOUSE", "GRAY MOUSE", "BROWN MOUSE", "RAT"],
+    "new_accessory": ["WHITE MOUSE", "BLACK MOUSE", "GRAY MOUSE", "BROWN MOUSE", "RAT"],
     "m_c": {
       "age": ["any"],
       "status": ["any"]
