@@ -381,7 +381,7 @@ class HandleShortEvents:
             acc_list.extend(pelts.bandana_collars)
         if "BONE" in possible_accs:
             acc_list.extend(pelts.bone_accessories)
-        if "TEETHDOGCOLLARS" in possible_accs:
+        if "TEETHCOLLAR" in possible_accs:
             acc_list.extend(pelts.dogteeth_collars)
         if "HARNESS" in possible_accs:
             acc_list.extend(pelts.harness_accessories)
