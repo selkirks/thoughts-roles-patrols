@@ -19,7 +19,7 @@ from scripts.game_structure.ui_elements import (
     UISpriteButton,
     UISurfaceImageButton,
 )
-from scripts.patrol.patrol import Patrol
+from scripts.events_module.patrol.patrol import Patrol
 from scripts.utility import get_text_box_theme, ui_scale, ui_scale_blit, ui_scale_offset
 from scripts.utility import ui_scale_dimensions
 from .Screens import Screens

@@ -11,7 +11,7 @@ from scripts.game_structure.ui_elements import (
     UISpriteButton,
     UISurfaceImageButton,
 )
-from scripts.patrol.patrol import Patrol
+from scripts.events_module.patrol.patrol import Patrol
 from scripts.utility import (
     get_text_box_theme,
     ui_scale,

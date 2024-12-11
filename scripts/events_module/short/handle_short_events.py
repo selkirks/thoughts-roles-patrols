@@ -12,7 +12,7 @@ from scripts.clan_resources.freshkill import (
 )
 from scripts.event_class import Single_Event
 from scripts.events_module.generate_events import GenerateEvents
-from scripts.events_module.relation_events import Relation_Events
+from scripts.events_module.relationship.relation_events import Relation_Events
 from scripts.game_structure.game_essentials import game
 from scripts.utility import (
     event_text_adjust,

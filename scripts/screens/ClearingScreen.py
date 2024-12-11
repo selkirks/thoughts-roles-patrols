@@ -19,7 +19,7 @@ from scripts.utility import (
     ui_scale_dimensions,
 )
 from .Screens import Screens
-from ..events_module.condition_events import Condition_Events
+from scripts.events_module.short.condition_events import Condition_Events
 from ..game_structure.screen_settings import MANAGER
 from ..ui.generate_box import BoxStyles, get_box
 from ..ui.generate_button import ButtonStyles, get_button_dict

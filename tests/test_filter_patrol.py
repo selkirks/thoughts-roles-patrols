@@ -4,7 +4,7 @@ import unittest
 from scripts.cat.cats import Cat
 from scripts.cat_relations.relationship import Relationship
 from scripts.clan import Clan
-from scripts.patrol.patrol import PatrolEvent, Patrol
+from scripts.events_module.patrol.patrol import PatrolEvent, Patrol
 
 from scripts.utility import filter_relationship_type
 

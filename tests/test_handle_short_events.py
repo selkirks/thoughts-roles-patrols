@@ -1,7 +1,7 @@
 import unittest
 
 from scripts.cat.cats import Cat
-from scripts.events_module.handle_short_events import HandleShortEvents
+from scripts.events_module.short.handle_short_events import HandleShortEvents
 
 
 class TestHandleEvent(unittest.TestCase):

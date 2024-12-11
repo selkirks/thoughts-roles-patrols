@@ -302,7 +302,7 @@
             "Is telling on r_c for something m_c was told {PRONOUN/m_c/subject} couldn't do"
         ],
         "main_trait_constraint": [
-            "attention_seeker",
+            "attention-seeker",
             "bossy",
             "know-it-all",
             "noisy",
@@ -1312,6 +1312,12 @@
         ],
         "main_trait_constraint": [
             "know-it-all"
+        ],
+        "random_status_constraint": [
+            "kitten"
+        ],
+        "relationship_constraint": [
+            "strangers"
         ],
         "random_living_status": [
             "living"

@@ -3,7 +3,7 @@ import unittest
 from scripts.cat.cats import Cat
 from scripts.cat.history import History
 from scripts.clan import Clan
-from scripts.patrol.patrol import Patrol
+from scripts.events_module.patrol.patrol import Patrol
 
 
 class TestCondition(unittest.TestCase):
