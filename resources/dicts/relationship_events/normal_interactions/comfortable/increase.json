@@ -280,7 +280,7 @@
 			"r_c's words of comfort mean more to m_c than {PRONOUN/r_c/subject} {VERB/r_c/know/knows}.",
 			"m_c gets excellent advice from r_c about something {PRONOUN/m_c/subject} had been worrying about.",
 			"r_c says something very sincere and comforting to m_c.",
-			"m_c can tell r_c worries about {PRONOUN/m_c/object} health and safety.",
+			"m_c can tell r_c worries about {PRONOUN/m_c/poss} health and safety.",
 			"m_c overhears r_c saying something nice about {PRONOUN/m_c/object}.",
 			"m_c has had a lot of good dreams about r_c lately.",
 			"Whenever r_c's name is mentioned, m_c relaxes.",
