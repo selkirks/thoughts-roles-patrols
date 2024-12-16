@@ -229,7 +229,7 @@
   },
   {
     "interaction_type": "praise",
-    "event_text": "At the Gathering, o_c_n's leader announces that their medicine cats received an omen. m_c proposes an extremely literal interpretation, at which the medicine cats sigh and assure m_c they had already considered it.",
+    "event_text": "At the Gathering, o_c_n's leader announces that their healers received an omen. m_c proposes an extremely literal interpretation, at which the healers sigh and assure m_c they had already considered it.",
     "rel_change": -3,
     "m_c": {
       "trait": ["childish", "oblivious"],
@@ -240,7 +240,7 @@
   },
   {
     "interaction_type": "praise",
-    "event_text": "At the Gathering, o_c_n's leader announces that their medicine cats received an prophecy. m_c proposes an extremely literal interpretation, at which the medicine cats sigh and assure m_c they had already considered it.",
+    "event_text": "At the Gathering, o_c_n's leader announces that their healers received an prophecy. m_c proposes an extremely literal interpretation, at which the healers sigh and assure m_c they had already considered it.",
     "rel_change": -3,
     "m_c": {
       "trait": ["childish", "oblivious"],
@@ -771,7 +771,7 @@
   },
   {
     "interaction_type": "befriend",
-    "event_text": "At the Gathering, o_c_n's leader announces a prophecy that the o_c_n medicine cats received. m_c offers {PRONOUN/m_c/poss} interpretation, but o_c_n's leader coolly replies that o_c_n will handle it alone.",
+    "event_text": "At the Gathering, o_c_n's leader announces a prophecy that the o_c_n healers received. m_c offers {PRONOUN/m_c/poss} interpretation, but o_c_n's leader coolly replies that o_c_n will handle it alone.",
     "rel_change": -2,
     "m_c": {
       "skill": [ "PROPHET,1" ]

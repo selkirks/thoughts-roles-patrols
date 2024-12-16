@@ -13,8 +13,8 @@ import ujson
 from scripts.cat.cats import Cat
 from scripts.clan import Clan
 from scripts.game_structure.game_essentials import game
-from scripts.patrol.patrol_event import PatrolEvent
-from scripts.patrol.patrol_outcome import PatrolOutcome
+from scripts.events_module.patrol.patrol_event import PatrolEvent
+from scripts.events_module.patrol.patrol_outcome import PatrolOutcome
 from scripts.special_dates import get_special_date, contains_special_date_tag
 from scripts.utility import (
     get_personality_compatibility,

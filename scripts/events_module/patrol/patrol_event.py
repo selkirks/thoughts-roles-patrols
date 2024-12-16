@@ -2,7 +2,7 @@
 # -*- coding: ascii -*-
 from typing import List, Union
 
-from scripts.patrol.patrol_outcome import PatrolOutcome
+from scripts.events_module.patrol.patrol_outcome import PatrolOutcome
 
 
 class PatrolEvent:

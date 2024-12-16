@@ -1081,7 +1081,7 @@
         "biome": ["desert"],
         "season": ["any"],
         "types": ["training"],
-        "tags": ["romantic", "pos_jealousy"],
+        "tags": ["romantic"],
         "patrol_art": "train_general_intro",
         "min_cats": 2,
         "max_cats": 2,
