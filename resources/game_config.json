@@ -208,52 +208,52 @@
     "modded_primary_chance_mated": 50,
     "modded_primary_chance_unmated": 100,
     "one_kit_modded": {
-      "young adult": 64,
-      "adult": 4,
-      "senior adult": 8,
-      "senior": 64
-    },
-    "two_kit_modded": {
       "young adult": 128,
       "adult": 8,
       "senior adult": 16,
       "senior": 128
     },
-    "three_kit_modded": {
-      "young adult": 128,
+    "two_kit_modded": {
+      "young adult": 256,
       "adult": 16,
       "senior adult": 32,
-      "senior": 128
+      "senior": 256
+    },
+    "three_kit_modded": {
+      "young adult": 256,
+      "adult": 32,
+      "senior adult": 64,
+      "senior": 256
     },
     "four_kit_modded": {
-      "young adult": 128,
-      "adult": 16,
-      "senior adult": 32,
-      "senior": 64
+      "young adult": 256,
+      "adult": 32,
+      "senior adult": 64,
+      "senior": 128
     },
     "five_kit_modded": {
+      "young adult": 128,
+      "adult": 32,
+      "senior adult": 64,
+      "senior": 64
+    },
+    "six_kit_modded": {
       "young adult": 64,
       "adult": 16,
       "senior adult": 32,
       "senior": 32
     },
-    "six_kit_modded": {
-      "young adult": 32,
-      "adult": 8,
-      "senior adult": 16,
-      "senior": 16
-    },
     "nine_kit_modded": {
-      "young adult": 8,
-      "adult": 2,
-      "senior adult": 3,
-      "senior": 4
+      "young adult": 16,
+      "adult": 4,
+      "senior adult": 6,
+      "senior": 3
     },
     "max_kit_modded": {
       "young adult": 1,
       "adult": 1,
       "senior adult": 1,
-      "senior": 1
+      "senior": 0
     },
     "stillborn_chances": {
       "small": 0.01,

@@ -611,7 +611,7 @@
   },
   {
     "interaction_type": "praise",
-    "event_text": "At the Gathering, o_c_n's leader announces that their medicine cats received an omen. m_c proposes an extremely literal interpretation, which the medicine cats admit they hadn't considered.",
+    "event_text": "At the Gathering, o_c_n's leader announces that their healers received an omen. m_c proposes an extremely literal interpretation, which the healers admit they hadn't considered.",
     "rel_change": 5,
     "m_c": {
       "trait": ["childish", "oblivious"],
@@ -622,7 +622,7 @@
   },
   {
     "interaction_type": "praise",
-    "event_text": "At the Gathering, o_c_n's leader announces that their medicine cats received a prophecy. m_c proposes an extremely literal interpretation, which the medicine cats admit they hadn't considered.",
+    "event_text": "At the Gathering, o_c_n's leader announces that their healers received a prophecy. m_c proposes an extremely literal interpretation, which the healers admit they hadn't considered.",
     "rel_change": 5,
     "m_c": {
       "trait": ["childish", "oblivious"],
@@ -666,7 +666,7 @@
   },
   {
     "interaction_type": "praise",
-    "event_text": "At the Gathering, m_c speaks with o_c_n's medicine cats about a prophecy they received, offering valuable insight about the threat o_c_n faces. m_c encourages o_c_n's leader to take immediate, violent action and snuff out this threat.",
+    "event_text": "At the Gathering, m_c speaks with o_c_n's healers about a prophecy they received, offering valuable insight about the threat o_c_n faces. m_c encourages o_c_n's leader to take immediate, violent action and snuff out this threat.",
     "rel_change": 4,
     "m_c": {
       "trait": ["bloodthirsty"],
@@ -813,7 +813,7 @@
   },
   {
     "interaction_type": "provoke",
-    "event_text": "When o_c_n's leader explains the treatment of a badly injured warrior at the Gathering, m_c interrupts to instruct the medicine cats of o_c_n on a better course of treatment.",
+    "event_text": "When o_c_n's leader explains the treatment of a badly injured warrior at the Gathering, m_c interrupts to instruct the healers of o_c_n on a better course of treatment.",
     "rel_change": -3,
     "m_c": {
       "skill": [ "HEALER,1" ],
@@ -979,7 +979,7 @@
   },
   {
     "interaction_type": "provoke",
-    "event_text": "During the Gathering, o_c_n's leader brags about recent successes in border skirmishes. m_c remarks that they're obfuscating how badly wounded some warriors are and how overworked their medicine cats seem.",
+    "event_text": "During the Gathering, o_c_n's leader brags about recent successes in border skirmishes. m_c remarks that they're obfuscating how badly wounded some warriors are and how overworked their healers seem.",
     "rel_change": -3,
     "m_c": {
       "skill": [ "INSIGHTFUL,1", "SENSE,1"]
@@ -1110,7 +1110,7 @@
   },
   {
     "interaction_type": "provoke",
-    "event_text": "At the Gathering, o_c_n's leader announces their interpretation of a prophecy received by their medicine cats. m_c counters this with another interpretation and challenges o_c_n's medicine cats to admit which interpretation is more plausible. The medicine cats hem and haw, avoiding their leader's gaze.",
+    "event_text": "At the Gathering, o_c_n's leader announces their interpretation of a prophecy received by their healers. m_c counters this with another interpretation and challenges o_c_n's healers to admit which interpretation is more plausible. The healers hem and haw, avoiding their leader's gaze.",
     "rel_change": -5,
     "m_c": { 
       "skill": [ "PROPHET,1" ],
@@ -1591,7 +1591,7 @@
   },
   {
     "interaction_type": "befriend",
-    "event_text": "At the Gathering, o_c_n's leader discusses an omen received by their medicine cats. m_c expresses great interest and insight, and o_c_n's leader is surprised, given how icy and removed m_c usually is.",
+    "event_text": "At the Gathering, o_c_n's leader discusses an omen received by their healers. m_c expresses great interest and insight, and o_c_n's leader is surprised, given how icy and removed m_c usually is.",
     "rel_change": 5,
     "m_c": {
       "trait": ["cold" ],

@@ -1,4 +1,19 @@
 {
+    "json.schemas": [
+        {
+            "url": "./schemas/thought.schema.json",
+            "fileMatch": [
+                "thoughts/**/*.json"
+            ]
+        },
+        {
+            "url": "./schemas/patrol.schema.json",
+            "fileMatch": [
+                "patrols/**/*.json",
+                "!patrols/explicit_patrol_art.json"
+            ]
+        }
+    ],
     "python.formatting.provider": "yapf",
     "editor.formatOnSave": false,
     "python.linting.enabled": true,

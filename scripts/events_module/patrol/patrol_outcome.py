@@ -8,10 +8,10 @@ from typing import List, Dict, Union, TYPE_CHECKING, Optional, Tuple
 
 import pygame
 
-from scripts.events_module.handle_short_events import INJURY_GROUPS
+from scripts.events_module.short.handle_short_events import INJURY_GROUPS
 
 if TYPE_CHECKING:
-    from scripts.patrol.patrol import Patrol
+    from scripts.events_module.patrol.patrol import Patrol
 
 from scripts.cat.history import History
 from scripts.clan import HERBS

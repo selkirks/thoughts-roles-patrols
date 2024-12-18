@@ -1,4 +1,8 @@
+import os
 import unittest
+
+os.environ["SDL_VIDEODRIVER"] = "dummy"
+os.environ["SDL_AUDIODRIVER"] = "dummy"
 
 from scripts.cat.cats import Cat, Relationship
 from scripts.events_module.relationship.romantic_events import Romantic_Events
