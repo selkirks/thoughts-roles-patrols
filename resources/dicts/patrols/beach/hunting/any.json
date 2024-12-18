@@ -1606,7 +1606,7 @@
         "biome": ["beach"],
         "season": ["any"],
         "types": ["hunting"],
-        "tags": ["retirement"],
+        "tags": [],
         "patrol_art": "gen_hunt_thunderpath",
         "min_cats": 2,
         "max_cats": 4,
@@ -1692,7 +1692,7 @@
         "biome": ["beach"],
         "season": ["any"],
         "types": ["hunting"],
-        "tags": ["retirement", "cruel_season"],
+        "tags": ["cruel_season"],
         "patrol_art": "gen_hunt_thunderpath",
         "min_cats": 2,
         "max_cats": 4,
@@ -1778,7 +1778,7 @@
         "biome": ["beach"],
         "season": ["any"],
         "types": ["hunting"],
-        "tags": ["retirement"],
+        "tags": [],
         "patrol_art": "gen_hunt_thunderpath",
         "min_cats": 5,
         "max_cats": 6,
@@ -1860,7 +1860,7 @@
         "biome": ["beach"],
         "season": ["any"],
         "types": ["hunting"],
-        "tags": ["retirement", "cruel_season"],
+        "tags": ["cruel_season"],
         "patrol_art": "gen_hunt_thunderpath",
         "min_cats": 5,
         "max_cats": 6,
@@ -2384,7 +2384,7 @@
                     {
                         "cats": ["r_c"],
                         "injuries": ["beak_bite"],
-                        "scars": ["beak_scars"]
+                        "scars": ["BEAKCHEEK", "BEAKLOWER", "BEAKSIDE"]
                     }
                 ],
                 "history_text": {
@@ -2419,7 +2419,7 @@
                     {
                         "cats": ["r_c"],
                         "injuries": ["beak_bite"],
-                        "scars": ["beak_scars"]
+                        "scars": ["BEAKCHEEK", "BEAKLOWER", "BEAKSIDE"]
                     }
                 ],
                 "history_text": {
@@ -2572,7 +2572,7 @@
                     {
                         "cats": ["r_c"],
                         "injuries": ["beak_bite"],
-                        "scars": ["beak_scars"]
+                        "scars": ["BEAKCHEEK", "BEAKLOWER", "BEAKSIDE"]
                     }
                 ],
                 "history_text": { 
@@ -2743,7 +2743,7 @@
                     {
                         "cats": ["r_c"],
                         "injuries": ["beak_bite"],
-                        "scars": ["beak_scars"]
+                        "scars": ["BEAKCHEEK", "BEAKLOWER", "BEAKSIDE"]
                     }
                 ],
                 "history_text": {

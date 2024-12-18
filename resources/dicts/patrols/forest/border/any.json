@@ -1963,10 +1963,7 @@
         "biome": ["forest"],
         "season": ["any"],
         "types": ["border"],
-        "tags": [
-            "patrol_rel",
-            "pos_fail"
-        ],
+        "tags": [],
         "patrol_art": "bord_general_intro",
         "min_cats": 2,
         "max_cats": 3,
@@ -2198,10 +2195,7 @@
         "biome": ["forest"],
         "season": ["any"],
         "types": ["border"],
-        "tags": [
-            "patrol_rel",
-            "pos_fail"
-        ],
+        "tags": [],
         "patrol_art": "bord_general_intro",
         "min_cats": 4,
         "max_cats": 6,

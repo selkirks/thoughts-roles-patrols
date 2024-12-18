@@ -2229,7 +2229,7 @@
         "biome": ["desert"],
         "season": ["greenleaf"],
         "types": ["hunting"],
-        "tags": ["illness"],
+        "tags": [],
         "patrol_art": "gen_hunt_heat",
         "min_cats": 1,
         "max_cats": 1,

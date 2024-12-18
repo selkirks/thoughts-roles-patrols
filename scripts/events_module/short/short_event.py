@@ -85,6 +85,8 @@ class ShortEvent:
                 self.r_c["backstory"] = []
             if "dies" not in self.r_c:
                 self.r_c["dies"] = False
+            if "gender" not in self.r_c:
+                self.r_c["gender"] = []
 
         self.new_cat = new_cat if new_cat else []
         self.injury = injury if injury else []

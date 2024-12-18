@@ -2265,7 +2265,7 @@
         "biome": ["desert"],
         "season": ["leaf-fall"],
         "types": ["hunting"],
-        "tags": ["illness"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 1,
         "max_cats": 1,
