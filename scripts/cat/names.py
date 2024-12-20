@@ -322,7 +322,7 @@ class Name:
         try:
             if self.prefix in names.prefix_history:
                 # do this recurively until a name that isn't on the history list is chosses.
-                self.give_prefix(eyes, colour, biome)
+                self.give_prefix(Cat, biome, no_suffix)
                 # prevent infinite recursion
                 if len(names.prefix_history) > 0:
                     names.prefix_history.pop(0)
@@ -368,6 +368,8 @@ class Name:
                 for i in range(5):
                     options.append(self.mod_suffixes['other']['common'])
 
+                if self.phenotype.length == 'long':
+                    options.append(self.mod_suffixes['other']['appearance']['longhair'])
                 if self.phenotype.tabby != "" and (self.genotype.white[1] not in ['ws', 'wt'] or self.genotype.whitegrade < 4):
                     if self.genotype.ticked[0] == 'Ta' and (not self.genotype.breakthrough or self.genotype.mack[0] != 'mc'):
                         options.append(self.mod_suffixes['other']['appearance']['ticked'])
@@ -382,9 +384,13 @@ class Name:
                 if (self.phenotype.tortie and (self.genotype.white[1] not in ['ws', 'wt'] or self.genotype.whitegrade < 4)) or\
                     (self.genotype.white[1] in ['ws', 'wt'] and self.genotype.whitegrade < 4) or\
                     (self.genotype.white[0] in ['ws', 'wt'] and self.genotype.white[1] not in ['ws', 'wt'] and self.genotype.whitegrade > 2):
+                    if (self.genotype.tortiepattern and self.genotype.tortiepattern[0].replace('rev', '') in self.phenotype.def_tortie_low_patterns):
+                        options.append(self.mod_suffixes['other']['appearance']['spotted'])
                     options.append(self.mod_suffixes['other']['appearance']['patchy'])
                 if (self.phenotype.point and (self.genotype.white[1] not in ['ws', 'wt'] or self.genotype.whitegrade < 4)):
                     options.append(self.mod_suffixes['other']['appearance']['pointed'])
+                if 'curl' in self.phenotype.eartype or 'curl' in self.phenotype.tailtype or 'rexed' in self.phenotype.furtype:
+                    options.append(self.mod_suffixes['other']['appearance']['curled'])
                 self.suffix = None
 
                 while not self.suffix:
