@@ -442,7 +442,29 @@
                 ]
             },
             {
-                "text": "p_l and r_c have an in-depth conversation about r_c's vision as they walk. p_l listens to r_c's dream of clair_list/r_c. p_l reassures r_c, but inwardly was left worried over what it could mean.",
+                "text": "p_l takes r_c aside, giving {PRONOUN/r_c/object} the full benefits of p_l's experience as they discuss r_c's vision, which contained clair_list. As a healer, {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} take the responsibility lightly, and both of them work together to divine the vision's meaning.",
+                "exp": 20,
+                "weight": 20,
+                "herbs": ["random_herbs"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": true,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": true,
+                        "values": ["jealous"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "p_l and r_c have an in-depth conversation about r_c's vision as they walk. p_l listens to r_c's dream of clair_list. p_l reassures r_c, but inwardly was left worried over what it could mean.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["random_herbs"],
@@ -695,7 +717,6 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "healer": [1, 6],
             "healer cats": [1, 6]
         },
         "weight": 5,
@@ -908,7 +929,7 @@
                 ]
             },
             {
-                "text": "s_c chooses to pad pelt-to-pelt with app1, the more experienced healer gently guiding the conversation. r_c feels deeply privileged, and far more at peace, after confiding in {PRONOUN/s_c/object}, and {PRONOUN/r_c/subject} {VERB/r_c/know/knows} that c_n is in safe paws. It also proves to be a valuable learning experience.",
+                "text": "s_c chooses to pad pelt-to-pelt with app1, the more experienced healer gently guiding the conversation. app1 feels deeply privileged, and far more at peace, after confiding in {PRONOUN/s_c/object}, and {PRONOUN/r_c/subject} {VERB/r_c/know/knows} that c_n is in safe paws. It also proves to be a valuable learning experience.",
                 "exp": 20,
                 "weight": 20,
                 "art": "gen_train_talkingMA",
@@ -956,7 +977,7 @@
                 ]
             },
             {
-                "text": "At first app1 doesn't speak up, however p_l notices the apprentice is distracted, and gently asks what's wrong. app1 admits to the vision, and the two have a discussion of the clair_list/app1 app1 experienced in the dream, leaving app1 feeling relieved.",
+                "text": "At first app1 doesn't speak up. But p_l notices the apprentice is distracted, and gently asks what's wrong. app1 admits to the vision, and the two have a discussion of the clair_list app1 experienced in the dream, leaving app1 feeling relieved.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["random_herbs"],
@@ -1020,7 +1041,7 @@
                 ]
             },
             {
-                "text": "p_l shakes {PRONOUN/p_l/poss} head, telling app1 that {PRONOUN/app1/poss} dream is just a dream.",
+                "text": "p_l shakes {PRONOUN/p_l/poss} head, telling app1 that sometimes a dream is just a dream.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -1890,7 +1911,7 @@
                         "cats_from": ["clan"],
                         "mutual": false,
                         "values": ["trust"],
-                        "amount": -5
+                        "amount": -3
                     }
                 ]
             }
@@ -2518,7 +2539,6 @@
                     }
                 ]
             },
-            
             {
                 "text": "r_c makes a humming sound and asks p_l if {PRONOUN/p_l/subject} ever {VERB/p_l/ponder/ponders} {PRONOUN/p_l/poss} own mortality. p_l swishes {PRONOUN/p_l/poss} tail and answers that {PRONOUN/p_l/subject}'d never really thought about it, past knowing {PRONOUN/p_l/subject}'ll go to StarClan when {PRONOUN/p_l/subject} {VERB/p_l/die/dies}. It certainly makes for interesting conversation, and it's all too soon that they pick the herbs and have their mouths too full to continue.",
                 "exp": 20,

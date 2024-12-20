@@ -2940,5 +2940,154 @@
                 ]
             }
         ]
+    },
+    {
+        "patrol_id": "bch_med_medwar_puddles",
+        "biome": ["any"],
+        "season": ["any"],
+        "types": ["herb_gathering"],
+        "tags": [],
+        "patrol_art": "med_general_intro",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "healer": [1, 1],
+            "healer cats": [1, 1],
+            "all apprentices": [-1, -1],
+            "normal adult": [1, 6]
+        },
+        "weight": 20,
+        "intro_text": "It's been one of the worst storms of the season, leaving p_l in an unavoidably grumpy mood. Herbs strewn about, prey in hiding, it's going to take forever to find anything. r_c attempts to find a way to cheer up the healer.",
+        "decline_text": "Before r_c can come up with a plan, a cry from the camp forces p_l to return in a hurry.",
+        "chance_of_success": 60,
+        "success_outcomes": [
+            {
+                "text": "r_c splashes water from a puddle onto p_l's fur. p_l fluffs up like a bottlebrush, turning around to quickly send a wave of water back towards r_c! The two engage in a small water fight, and when they resume the herb patrol, r_c is glad to see p_l looks much happier.",
+                "exp": 20,
+                "weight": 20,
+                "herbs": ["random_herbs"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["respect", "comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "Nothing comes to mind, no magical way to make the herb gathering patrol easier. But little does r_c know, the consideration and determination {PRONOUN/r_c/subject} {VERB/r_c/show/shows} in {PRONOUN/r_c/poss} diligent work makes all the difference to p_l.",
+                "exp": 20,
+                "weight": 10,
+                "herbs": ["random_herbs"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["dislike", "jealous"],
+                        "amount": -10
+                    }
+                ]
+            },
+            {
+                "text": "Patiently, r_c listens to p_l as the healer describes {PRONOUN/p_l/poss} troubles. r_c can't make the plants healthy again, or repair the damage from the storm, but {PRONOUN/r_c/poss} compassion for p_l makes the day seem so much more hopeful. Sometimes healers need to vent too.",
+                "exp": 20,
+                "weight": 20,
+                "can_have_stat": ["r_c"],
+                "stat_trait": [
+                	"compassionate",
+                	"faithful",
+                	"loving",
+                	"responsible",
+                	"thoughtful"
+            	],
+                "herbs": ["random_herbs"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["dislike", "jealous"],
+                        "amount": -10
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["respect", "comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "r_c splashes water from a puddle at p_l. p_l turns around and hisses at r_c that {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} have time for kit games! The two continue their patrol, but p_l's sour mood distracts them from any usable herbs they could find.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["respect", "comfort", "trust"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "r_c can't think of anything to be able to help p_l's mood. As the patrol continues, p_l's foul mood infects r_c, making {PRONOUN/r_c/object} grumpy and irritable as well, until the patrol is called off.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["respect", "comfort", "trust"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "p_l's fur bristles, feeling r_c <i>still</i> staring at {PRONOUN/p_l/object}. With a hiss, p_l demands that r_c stops staring at {PRONOUN/p_l/object} and make {PRONOUN/r_c/self} useful by actually gathering herbs.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["comfort", "trust"],
+                        "amount": -5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["dislike"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "r_c splashes water from a puddle at p_l. p_l turns around and hisses at r_c that they don't have time to waste fooling around! r_c tries to explain that {PRONOUN/r_c/subject} {VERB/r_c/were/was} just trying to cheer p_l up. Well <i>perfect</i>, now p_l is probably going to come down with whitecough, just what {PRONOUN/p_l/subject} needed to help with the destroyed herb plants.",
+                "exp": 0,
+                "weight": 20,
+                "can_have_stat": ["p_l"],
+                "stat_trait": ["lonesome", "cold", "fierce", "righteous", "strict", "gloomy", "grumpy", "vengeful", "arrogant"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["comfort"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
     }
 ]
