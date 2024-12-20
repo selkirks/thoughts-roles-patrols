@@ -928,7 +928,7 @@ def create_new_cat(
             if kittypet:
                 name = choice(names.names_dict["loner_names"])
                 if bool(getrandbits(1)):
-                    accessory = choice(Pelt.collars)
+                    choice([ choice(Pelt.collars), choice(Pelt.bandana_collars), choice(Pelt.harness_accessories), choice(Pelt.bows_accessories)])
             elif loner and bool(
                 getrandbits(1)
             ):  # try to give name from full loner name list
@@ -938,6 +938,11 @@ def create_new_cat(
                     names.names_dict["normal_prefixes"]
                 )  # otherwise give name from prefix list (more nature-y names)
 
+                # loner acc
+            if loner :
+                name = choice(names.names_dict["loner_names"])
+                if bool(getrandbits(1)):
+                    accessory = choice([ choice(Pelt.bone_accessories), choice(Pelt.butterflies_accessories), choice(Pelt.stuff_accessories), choice(Pelt.plant_accessories), choice(Pelt.wild_accessories), choice(Pelt.tail_accessories), choice(Pelt.flower_accessories), choice(Pelt.plant2_accessories), choice(Pelt.snake_accessories), choice(Pelt.smallAnimal_accessories), choice(Pelt.deadInsect_accessories), choice(Pelt.aliveInsect_accessories), choice(Pelt.fruit_accessories), choice(Pelt.crafted_accessories), choice(Pelt.tail2_accessories)])
             # now we make the cats
             if new_name:  # these cats get new names
                 if bool(getrandbits(1)):  # adding suffix to OG name
@@ -3850,20 +3855,62 @@ def generate_sprite(
         # draw accessories
         if not acc_hidden:
             if cat.pelt.accessory in cat.pelt.plant_accessories:
-                new_sprite.blit(
-                    sprites.sprites["acc_herbs" + cat.pelt.accessory + cat_sprite],
-                    (0, 0),
-                )
+                new_sprite.blit(sprites.sprites['acc_herbs' + cat.pelt.accessory + cat_sprite], (0, 0))
             elif cat.pelt.accessory in cat.pelt.wild_accessories:
-                new_sprite.blit(
-                    sprites.sprites["acc_wild" + cat.pelt.accessory + cat_sprite],
-                    (0, 0),
-                )
+                new_sprite.blit(sprites.sprites['acc_wild' + cat.pelt.accessory + cat_sprite], (0, 0))
             elif cat.pelt.accessory in cat.pelt.collars:
-                new_sprite.blit(
-                    sprites.sprites["collars" + cat.pelt.accessory + cat_sprite], (0, 0)
-                )
+                new_sprite.blit(sprites.sprites['collars' + cat.pelt.accessory + cat_sprite], (0, 0))
+            elif cat.pelt.accessory in cat.pelt.plant2_accessories:
+                new_sprite.blit(sprites.sprites['acc_plant2' + cat.pelt.accessory + cat_sprite], (0, 0))
+            elif cat.pelt.accessory in cat.pelt.flower_accessories:
+                new_sprite.blit(sprites.sprites['acc_flower' + cat.pelt.accessory + cat_sprite], (0, 0))
+            elif cat.pelt.accessory in cat.pelt.snake_accessories:
+                new_sprite.blit(sprites.sprites['acc_snake' + cat.pelt.accessory + cat_sprite], (0, 0))
+            elif cat.pelt.accessory in cat.pelt.smallAnimal_accessories:
+                new_sprite.blit(sprites.sprites['acc_smallAnimal' + cat.pelt.accessory + cat_sprite], (0, 0))
+            elif cat.pelt.accessory in cat.pelt.deadInsect_accessories:
+                new_sprite.blit(sprites.sprites['acc_deadInsect' + cat.pelt.accessory + cat_sprite], (0, 0))
+            elif cat.pelt.accessory in cat.pelt.aliveInsect_accessories:
+                new_sprite.blit(sprites.sprites['acc_aliveInsect' + cat.pelt.accessory + cat_sprite], (0, 0))
+            elif cat.pelt.accessory in cat.pelt.fruit_accessories:
+                new_sprite.blit(sprites.sprites['acc_fruit' + cat.pelt.accessory + cat_sprite], (0, 0))
+            elif cat.pelt.accessory in cat.pelt.crafted_accessories:
+                new_sprite.blit(sprites.sprites['acc_crafted' + cat.pelt.accessory + cat_sprite], (0, 0))
+            elif cat.pelt.accessory in cat.pelt.tail2_accessories:
+                new_sprite.blit(sprites.sprites['acc_tail2' + cat.pelt.accessory + cat_sprite], (0, 0))
 
+            elif cat.pelt.accessory in cat.pelt.bone_accessories:
+                new_sprite.blit(
+                    sprites.sprites["acc_bones" + cat.pelt.accessory + cat_sprite],
+                    (0, 0),
+               )
+            
+            elif cat.pelt.accessory in cat.pelt.butterflies_accessories:
+                new_sprite.blit(
+                    sprites.sprites["acc_butterflymoth" + cat.pelt.accessory + cat_sprite],
+                    (0, 0)
+                )
+            elif cat.pelt.accessory in cat.pelt.stuff_accessories:
+                new_sprite.blit(
+                    sprites.sprites["acc_twolegstuff" + cat.pelt.accessory + cat_sprite],
+                    (0, 0)
+                )
+            elif cat.pelt.accessory in cat.pelt.bandana_collars:
+                new_sprite.blit(
+                    sprites.sprites["bandanas" + cat.pelt.accessory + cat_sprite], (0, 0),
+                )
+            elif cat.pelt.accessory in cat.pelt.harness_accessories:
+                new_sprite.blit(
+                    sprites.sprites["harnesses" + cat.pelt.accessory + cat_sprite], (0, 0),
+                )
+            elif cat.pelt.accessory in cat.pelt.bows_accessories:
+                new_sprite.blit(
+                    sprites.sprites["bows" + cat.pelt.accessory + cat_sprite], (0, 0),
+                )
+            elif cat.pelt.accessory in cat.pelt.dogteeth_collars:
+                new_sprite.blit(
+                    sprites.sprites["teethcollars" + cat.pelt.accessory + cat_sprite], (0, 0),
+                )
         # Apply fading fog
         if (
             cat.pelt.opacity <= 97

@@ -2395,10 +2395,15 @@ class Cat:
             "RED FEATHERS",
             "BLUE FEATHERS",
             "JAY FEATHERS",
+            'SEAWEED', 'DAISY CORSAGE',
+            "SNAKE",
+            "OLD SILVER WATCH",
+            "OLD GOLD WATCH",
+            "BAUBLES"
             "GULL FEATHERS",
             "SPARROW FEATHERS",
-            "CLOVER",
-            "DAISY",
+            "CLOVERTAIL",
+            "DAISYTAIL",
         ]:
             self.pelt.accessory = None
 

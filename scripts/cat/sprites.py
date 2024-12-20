@@ -132,6 +132,8 @@ class Sprites:
             'collars', 'bellcollars', 'bowcollars', 'nyloncollars',
             'shadersnewwhite', 'lightingnew', 
             'fademask', 'fadestarclan', 'fadedarkforest',
+            'bandanas', 'plant2_accessories', 'flower_accessories', 'snake_accessories', 'harnesses', 'bows', 'teethcollars', 'smallAnimal_accessories', 'aliveInsect_accessories',
+    'deadInsect_accessories', 'fruit_accessories', 'crafted_accessories', 'tail2_accessories', 'bonesacc', 'butterflymothacc', 'twolegstuff',
             'symbols'
 
         ]:
@@ -377,13 +379,13 @@ class Sprites:
         medcatherbs_data = [
             ["MAPLE LEAF", "HOLLY", "BLUE BERRIES", "FORGET ME NOTS", "RYE STALK", "CATTAIL", "POPPY", "ORANGE POPPY", "CYAN POPPY", "WHITE POPPY", "PINK POPPY"],
             ["BLUEBELLS", "LILY OF THE VALLEY", "SNAPDRAGON", "HERBS", "PETALS", "NETTLE", "HEATHER", "GORSE", "JUNIPER", "RASPBERRY", "LAVENDER"],
-            ["OAK LEAVES", "CATMINT", "MAPLE SEED", "LAUREL", "BULB WHITE", "BULB YELLOW", "BULB ORANGE", "BULB PINK", "BULB BLUE", "CLOVER", "DAISY"]
+            ["OAK LEAVES", "CATMINT", "MAPLE SEED", "LAUREL", "BULB WHITE", "BULB YELLOW", "BULB ORANGE", "BULB PINK", "BULB BLUE", "CLOVERTAIL", "DAISYTAIL"]
         ]
         dryherbs_data = [
             ["DRY HERBS", "DRY CATMINT", "DRY NETTLES", "DRY LAURELS"]
         ]
         wild_data = [
-            ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS", "GULL FEATHERS", "SPARROW FEATHERS", "MOTH WINGS", "ROSY MOTH WINGS", "MORPHO BUTTERFLY", "MONARCH BUTTERFLY", "CICADA WINGS", "BLACK CICADA"]
+            ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS", "GULL FEATHERS", "SPARROW FEATHERS", "MOTH WINGS", "ROSY MOTH WINGS", "MORPHO BUTTERFLY", "MONARCH BUTTERFLY1", "CICADA WINGS", "BLACK CICADA"]
         ]
 
         collars_data = [
@@ -408,6 +410,90 @@ class Sprites:
             ["CRIMSONNYLON", "BLUENYLON", "YELLOWNYLON", "CYANNYLON", "REDNYLON", "LIMENYLON"],
             ["GREENNYLON", "RAINBOWNYLON", "BLACKNYLON", "SPIKESNYLON", "WHITENYLON"],
             ["PINKNYLON", "PURPLENYLON", "MULTINYLON", "INDIGONYLON"]
+        ]
+
+        plant2_data = [
+            ["CLOVER", "STICK", "PUMPKIN", "MOSS", "IVY", "ACORN", "MOSS PELT", "REEDS", "BAMBOO"]
+        ]
+
+        crafted_data = [
+            ["WILLOWBARK BAG", "CLAY DAISY POT", "CLAY AMANITA POT", "CLAY BROWNCAP POT", "BIRD SKULL", "LEAF BOW"]
+        ]
+
+        flower_data = [
+            ["DAISY", "DIANTHUS", "BLEEDING HEARTS", "FRANGIPANI", "BLUE GLORY", "CATNIP FLOWER", "BLANKET FLOWER", "ALLIUM", "LACELEAF", "PURPLE GLORY"],
+            ["YELLOW PRIMROSE", "HESPERIS", "MARIGOLD", "WISTERIA"]
+        ]
+
+        snake_data = [
+            ["GRASS SNAKE", "BLUE RACER", "WESTERN COACHWHIP", "KINGSNAKE"]
+        ]
+
+        deadInsect_data = [
+            ["LUNAR MOTH", "ROSY MAPLE MOTH", "MONARCH BUTTERFLY", "DAPPLED MONARCH", "POLYPHEMUS MOTH", "MINT MOTH"]
+        ]
+
+        aliveInsect_data = [
+            ["BROWN SNAIL", "RED SNAIL", "WORM", "BLUE SNAIL", "ZEBRA ISOPOD", "DUCKY ISOPOD", "DAIRY COW ISOPOD", "BEETLEJUICE ISOPOD", "BEE", "RED LADYBUG"],
+            ["ORANGE LADYBUG", "YELLOW LADYBUG"]
+        ]
+
+        fruit_data = [
+            ["OGRASPBERRY", "BLACKBERRY", "GOLDEN RASPBERRY", "CHERRY", "YEW"]
+        ]
+
+        smallAnimal_data = [
+            ["GRAY SQUIRREL", "RED SQUIRREL", "CRAB", "WHITE RABBIT", "BLACK RABBIT", "BROWN RABBIT", "INDIAN GIANT SQUIRREL", "FAWN RABBIT", "BROWN AND WHITE RABBIT", "BLACK AND WHITE RABBIT"],
+            ["WHITE AND FAWN RABBIT", "BLACK VITILIGO RABBIT", "BROWN VITILIGO RABBIT", "FAWN VITILIGO RABBIT", "BLACKBIRD", "ROBIN", "JAY", "THRUSH", "CARDINAL", "MAGPIE"],
+            ["CUBAN TROGON", "TAN RABBIT", "TAN AND WHITE RABBIT", "TAN VITILIGO RABBIT", "RAT", "WHITE MOUSE", "BLACK MOUSE", "GRAY MOUSE", "BROWN MOUSE", "GRAY RABBIT"],
+            ["GRAY AND WHITE RABBIT", "GRAY VITILIGO RABBIT"]
+        ]
+
+        tail2_data = [
+            ["SEAWEED", "DAISY CORSAGE"]
+        ]
+        bones_data = [
+            ["SNAKE", "BAT WINGS", "CANIDAE SKULL", "DEER ANTLERS", "RAM HORN", "GOAT HORN", "OX SKULL",
+             "RAT SKULL", "TEETH COLLAR", "ROE SKULL"],
+            ["BIRD SKULL1", "RIBS", "FISH BONES"]
+        ]
+        
+        butterflymoth_data = [
+            ["PEACOCK BUTTERFLY", "DEATH HEAD HAWKMOTH", "GARDEN TIGER MOTH", "ATLAS MOTH", "CECOROPIA MOTH", "WHITE ERMINE MOTH",
+             "IO MOTH", "COMET MOTH", "JADE HAWKMOTH", "HUMMINGBIRD HAWKMOTH"],
+            ["OWL BUTTERFLY", "GLASSWING BUTTERFLY", "QUEEN ALEXANDRA BIRDWING BUTTERFLY", "GREEN DRAGONTAIL BUTTERFLY",
+             "MENELAUS BLUE MORPHO BUTTERFLY", "DEAD LEAF BUTTERFLY"]
+            
+        ]
+        
+        twolegstuff_data = [
+            ["OLD GOLD WATCH", "OLD SILVER WATCH", "GOLDEN KEY", "SILVER KEY", "DVD", "OLD PENCIL", "OLD BRUSH",
+             "BANANA PEEL", "BROKEN VHS TAPE", "OLD NEWSPAPER"],
+            ["SEA GLASS", "BAUBLES", "MUD AND DIRT"]
+        ]
+        bandanas_data = [
+            ["CRIMSONBANDANA", "BLUEBANDANA", "YELLOWANDANA", "CYANBANDANA", "REDBANDANA", "LIMEBANDANA"],
+            ["GREENBANDANA", "RAINBOWBANDANA", "BLACKBANDANA", "SPIKESBANDANA", "WHITEBANDANA"],
+            ["PINKBANDANA", "PURPLEBANDANA", "MULTIBANDANA", "INDIGOBANDANA"]
+        ]
+        
+        harnesses_data = [
+            ["CRIMSONH", "BLUEH", "YELLOWH", "CYANH", "REDH", "LIMEH"],
+            ["GREENH", "RAINBOWH", "BLACKH", "SPIKESH", "WHITEH"],
+            ["PINKH", "PURPLEH", "MULTIH", "INDIGOH"]
+        ]
+        
+        bows_data = [
+            ["CRIMSONBOWS", "BLUEBOWS", "YELLOWBOWS", "CYANBOWS", "REDBOWS", "LIMEBOWS"],
+            ["GREENBOWS", "RAINBOWBOWS", "BLACKBOWS", "SPIKESBOWS", "WHITEBOWS"],
+            ["PINKBOWS", "PURPLEBOWS", "MULTIBOWS", "INDIGOBOWS"]
+        ]
+       
+        dog_teeth_collars_data = [
+            ["CRIMSONTEETHCOLLAR", "BLUETEETHCOLLAR", "YELLOWTEETHCOLLAR", "CYANTEETHCOLLAR", "REDTEETHCOLLAR",
+             "LIMETEETHCOLLAR"],
+            ["GREENTEETHCOLLAR", "RAINBOWTEETHCOLLAR", "BLACKTEETHCOLLAR", "SPIKESTEETHCOLLAR", "WHITETEETHCOLLAR"],
+            ["PINKTEETHCOLLAR", "PURPLETEETHCOLLAR", "MULTITEETHCOLLAR", "INDIGOTEETHCOLLAR"]
         ]
 
         # medcatherbs
@@ -443,6 +529,72 @@ class Sprites:
             for col, nyloncollar in enumerate(nyloncollars):
                 self.make_group('nyloncollars', (col, row), f'collars{nyloncollar}')
 
+        # ohdan's accessories :3
+        for row, plant2_accessories in enumerate(plant2_data):
+            for col, plant2_accessory in enumerate(plant2_accessories):
+                self.make_group('plant2_accessories', (col, row), f'acc_plant2{plant2_accessory}')
+
+        for row, crafted_accessories in enumerate(crafted_data):
+            for col, crafted_accessory in enumerate(crafted_accessories):
+                self.make_group('crafted_accessories', (col, row), f'acc_crafted{crafted_accessory}')
+        
+        for row, flower_accessories in enumerate(flower_data):
+            for col, flower_accessory in enumerate(flower_accessories):
+                self.make_group('flower_accessories', (col, row), f'acc_flower{flower_accessory}')
+        
+        for row, snake_accessories in enumerate(snake_data):
+            for col, snake_accessory in enumerate(snake_accessories):
+                self.make_group('snake_accessories', (col, row), f'acc_snake{snake_accessory}')
+
+        for row, deadInsect_accessories in enumerate(deadInsect_data):
+            for col, deadInsect_accessory in enumerate(deadInsect_accessories):
+                self.make_group('deadInsect_accessories', (col, row), f'acc_deadInsect{deadInsect_accessory}')
+            
+        for row, aliveInsect_accessories in enumerate(aliveInsect_data):
+            for col, aliveInsect_accessory in enumerate(aliveInsect_accessories):
+                self.make_group('aliveInsect_accessories', (col, row), f'acc_aliveInsect{aliveInsect_accessory}')
+
+        for row, fruit_accessories in enumerate(fruit_data):
+            for col, fruit_accessory in enumerate(fruit_accessories):
+                self.make_group('fruit_accessories', (col, row), f'acc_fruit{fruit_accessory}')
+
+        for row, smallAnimal_accessories in enumerate(smallAnimal_data):
+            for col, smallAnimal_accessory in enumerate(smallAnimal_accessories):
+                self.make_group('smallAnimal_accessories', (col, row), f'acc_smallAnimal{smallAnimal_accessory}')
+
+        for row, tail2_accessories in enumerate(tail2_data):
+            for col, tail2_accessory in enumerate(tail2_accessories):
+                self.make_group('tail2_accessories', (col, row), f'acc_tail2{tail2_accessory}')
+
+                # bones
+        for row, bones in enumerate(bones_data):
+            for col, bone in enumerate(bones):
+                self.make_group('bonesacc', (col, row), f'acc_bones{bone}')
+                
+      # butterflies and moths
+        for row, butterflymoth in enumerate(butterflymoth_data):
+            for col, butterflies in enumerate(butterflymoth):
+                self.make_group('butterflymothacc', (col, row), f'acc_butterflymoth{butterflies}')
+        # twoleg stuff
+        for row, twolegstuff in enumerate(twolegstuff_data):
+            for col, stuff in enumerate(twolegstuff):
+                self.make_group('twolegstuff', (col, row), f'acc_twolegstuff{stuff}')
+        # bandanas
+        for row, bandanas in enumerate(bandanas_data):
+            for col, bandana in enumerate(bandanas):
+                self.make_group('bandanas', (col, row), f'bandanas{bandana}')
+        # harnesses
+        for row, harnesses in enumerate(harnesses_data):
+            for col, harness in enumerate(harnesses):
+                self.make_group('harnesses', (col, row), f'harnesses{harness}')
+        # bows (on ear and tail) 
+        for row, bows in enumerate(bows_data):
+            for col, bow in enumerate(bows):
+                self.make_group('bows', (col, row), f'bows{bow}')
+        # dog teeth collars
+        for row, teethcollars in enumerate(dog_teeth_collars_data):
+            for col, teethcollar in enumerate(teethcollars):
+                self.make_group('teethcollars', (col, row), f'teethcollars{teethcollar}')
     def load_symbols(self):
         """
         loads clan symbols
