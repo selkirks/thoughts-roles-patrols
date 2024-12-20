@@ -1743,20 +1743,22 @@
             }
         ]
     },
-	{
-        "patrol_id": "dst_hunt_mouse1",
-        "biome": ["any"],
+    {
+        "patrol_id": "dst_hunt_mouse2",
+        "biome": ["desert"],
         "season": ["any"],
         "types": ["hunting"],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_hunt_mouse",
         "min_cats": 1,
         "max_cats": 3,
-        "min_max_status": {},
-        "weight": 20,
+        "min_max_status": {
+            "apprentice": [-1, -1]
+        },
+        "weight": 5,
         "intro_text": "The patrol catches scent of a mouse nearby.",
         "decline_text": "The patrol ignores the mouse.",
-        "chance_of_success": 60,
+        "chance_of_success": 50,
         "success_outcomes": [
             {
                 "text": "r_c locates the mouse and begins to stalk. The mouse nibbles on a seed, unaware of the hunting cat. r_c waggles {PRONOUN/r_c/poss} haunches and leaps, pinning the mouse beneath a paw as {PRONOUN/r_c/subject} {VERB/r_c/make/makes} the killing bite.",
@@ -1781,22 +1783,22 @@
         ]
     },
     {
-        "patrol_id": "dst_hunt_mouse2",
-        "biome": ["any"],
+        "patrol_id": "dst_hunt_mouse_warriorapp1",
+        "biome": ["desert"],
         "season": ["any"],
         "types": ["hunting"],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_hunt_mouse",
         "min_cats": 1,
         "max_cats": 3,
         "min_max_status": {
             "apprentice": [1, 6],
             "normal adult": [1, 6]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "The patrol comes across a mouse.",
         "decline_text": "The patrol ignores the mouse.",
-        "chance_of_success": 60,
+        "chance_of_success": 50,
         "success_outcomes": [
             {
                 "text": "r_c pounces on the mouse, with a squeak of surprise from both prey and apprentice.",
@@ -1805,7 +1807,7 @@
                 "prey": ["small"]
             },
             {
-                "text": "app1 leaps onto the mouse and makes the kill easily! They're really getting the hang of hunting!",
+                "text": "app1 leaps onto the mouse, an easy kill! {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} really getting the hang of hunting!",
                 "exp": 10,
                 "weight": 5,
                 "prey": ["small"]
@@ -1821,97 +1823,16 @@
         ]
     },
     {
-        "patrol_id": "dst_hunt_rat1",
-        "biome": ["any"],
-        "season": ["any"],
-        "types": ["hunting"],
-        "tags": [],
-        "patrol_art": "hunt_general_intro",
-        "min_cats": 2,
-        "max_cats": 6,
-        "min_max_status": {},
-        "weight": 20,
-        "intro_text": "The patrol comes across a large rat.",
-        "decline_text": "The patrol ignores the rat.",
-        "chance_of_success": 50,
-        "success_outcomes": [
-            {
-                "text": "The patrol catches the rat! More fresh-kill!",
-                "exp": 20,
-                "weight": 20,
-                "prey": ["medium"]
-            },
-            {
-                "text": "The rat rears up and hisses at r_c, but while it's distracted, p_l takes it out with a quick strike.",
-                "exp": 20,
-                "weight": 5,
-                "prey": ["medium"]
-            },
-            {
-                "text": "The rat is huge and quick, but s_c is quicker, bringing it down just before it scurries out of reach. Everyone gathers around them in congratulations of the skillful kill.",
-                "exp": 20,
-                "weight": 20,
-                "stat_skill": ["HUNTER,2"],
-                "prey": ["large"]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "The patrol misses the rat, and their confidence is shaken.",
-                "exp": 0,
-                "weight": 20
-            }
-        ]
-    },
-    {
-        "patrol_id": "dst_hunt_hare1",
-        "biome": ["any"],
-        "season": ["any"],
-        "types": ["hunting"],
-        "tags": [],
-        "patrol_art": "hunt_general_intro",
-        "min_cats": 4,
-        "max_cats": 6,
-        "min_max_status": {},
-        "weight": 20,
-        "intro_text": "The patrol comes across a large hare.",
-        "decline_text": "The patrol ignores the hare.",
-        "chance_of_success": 10,
-        "success_outcomes": [
-            {
-                "text": "The patrol catches the hare!",
-                "exp": 10,
-                "weight": 20,
-                "prey": ["large"]
-            },
-            {
-                "text": "s_c runs the hare down in a huge display of athleticism and skill.",
-                "exp": 10,
-                "weight": 20,
-                "stat_skill": ["HUNTER,3"],
-                "prey": ["large"]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "The patrol narrowly misses the hare.",
-                "exp": 0,
-                "weight": 20,
-                "prey": ["very_small"]
-            }
-        ]
-    },
-    {
         "patrol_id": "dst_hunt_bird1",
-        "biome": ["any"],
+        "biome": ["desert"],
         "season": ["any"],
         "types": ["hunting"],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_hunt_bird",
         "min_cats": 1,
         "max_cats": 3,
         "min_max_status": {},
-        "weight": 20,
+        "weight": 5,
         "intro_text": "The patrol comes across a bird that's occupied scratching at the ground for insects.",
         "decline_text": "The patrol ignores the bird.",
         "chance_of_success": 50,
@@ -1939,181 +1860,16 @@
         ]
     },
     {
-        "patrol_id": "dst_hunt_squirrel1",
-        "biome": ["any"],
-        "season": ["any"],
-        "types": ["hunting"],
-        "tags": [],
-        "patrol_art": "hunt_general_intro",
-        "min_cats": 1,
-        "max_cats": 3,
-        "min_max_status": {},
-        "weight": 20,
-        "intro_text": "The patrol comes across a squirrel. It's engrossed in nibbling at a morsel beneath a tree.",
-        "decline_text": "The patrol ignores the squirrel.",
-        "chance_of_success": 50,
-        "success_outcomes": [
-            {
-                "text": "Stealthily, r_c stalks forward. The squirrel has no idea what's coming as {PRONOUN/r_c/subject} {VERB/r_c/pounce/pounces} on it and {VERB/r_c/break/breaks} its neck. r_c sends a silent thanks to StarClan for this prey.",
-                "exp": 10,
-                "weight": 20,
-                "prey": ["medium"]
-            },
-            {
-                "text": "r_c rapidly pads towards the squirrel, their tailtip twitching in excitement. The squirrel is alerted to their presence by a bird's alarm call, but r_c launches themself forward and cuts off its escape with a bite to the back of the head.",
-                "exp": 10,
-                "weight": 5,
-                "prey": ["medium"]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "The patrol narrowly misses the squirrel as it's alerted by a bird's alarm call.",
-                "exp": 0,
-                "weight": 20,
-                "prey": ["very_small"]
-            }
-        ]
-    },
-    {
-        "patrol_id": "dst_hunt_fish1",
-        "biome": ["any"],
-        "season": ["any"],
-        "types": ["hunting"],
-        "tags": [],
-        "patrol_art": "hunt_general_intro",
-        "min_cats": 1,
-        "max_cats": 3,
-        "min_max_status": {},
-        "weight": 20,
-        "intro_text": "The patrol glimpses the shadow of a fish as they pad past a stream.",
-        "decline_text": "The patrol ignores the fish.",
-        "chance_of_success": 50,
-        "success_outcomes": [
-            {
-                "text": "r_c very carefully walks to the water's edge and waits for their chance. When the fish is near, they hook it out of the water with their claws. More fresh-kill!",
-                "exp": 10,
-                "weight": 20,
-                "prey": ["medium"]
-            },
-            {
-                "text": "r_c pads closer to the water's edge, careful to keep their shadow away from the water. The fish doesn't seem to notice them and darts too close. r_c's paw flashes into the water and the fish flops onto the bank. r_c kills it and happily carries it back to camp.",
-                "exp": 10,
-                "weight": 5,
-                "prey": ["medium"]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "The patrol moves too suddenly. The flickering shadow causes the fish to quickly vanish into murkier water.",
-                "exp": 0,
-                "weight": 20,
-                "prey": ["very_small"]
-            }
-        ]
-    },
-    {
-        "patrol_id": "dst_hunt_fish2",
-        "biome": ["any"],
-        "season": ["any"],
-        "types": ["hunting"],
-        "tags": [],
-        "patrol_art": "hunt_general_intro",
-        "min_cats": 4,
-        "max_cats": 6,
-        "min_max_status": {},
-        "weight": 20,
-        "intro_text": "The patrol sees the shadow of a school of fish in the river.",
-        "decline_text": "The patrol ignores the fish.",
-        "chance_of_success": 10,
-        "success_outcomes": [
-            {
-                "text": "p_l leads a successful fishing session, with almost everyone walking home with a fishy mouthful.",
-                "exp": 10,
-                "weight": 20,
-                "prey": ["large"]
-            },
-            {
-                "text": "s_c makes fishing look easy, giving out tips to any interested cats.",
-                "exp": 10,
-                "weight": 20,
-                "stat_skill": ["HUNTER,1"],
-                "prey": ["large"]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "The patrol moves too suddenly. The flickering shadow causes the fish to quickly vanish into murkier water.",
-                "exp": 0,
-                "weight": 20,
-                "prey": ["very_small"]
-            }
-        ]
-    },
-    {
-        "patrol_id": "gen_hunt_rabbit1",
-        "biome": ["any"],
+        "patrol_id": "dst_hunt_rabbit2",
+        "biome": ["desert"],
         "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "gen_hunt_rabbit",
-        "min_cats": 1,
-        "max_cats": 6,
+        "min_cats": 2,
+        "max_cats": 4,
         "min_max_status": {},
-        "weight": 20,
-        "intro_text": "r_c spots a rabbit up ahead, but it seems to be acting strange. The patrol can see its tremors from a few fox-lengths away.",
-        "decline_text": "r_c avoids catching the rabbit and looks for other prey.",
-        "chance_of_success": 40,
-        "success_outcomes": [
-            {
-                "text": "r_c catches the rabbit, and it is eaten as normal.",
-                "exp": 10,
-                "weight": 20,
-                "prey": ["large"]
-            },
-            {
-                "text": "r_c catches the rabbit, but when they report about the strange incident at camp, the dead rabbit is taken far away and buried.",
-                "exp": 10,
-                "weight": 5
-            },
-            {
-                "text": "s_c stops the patrol from catching the rabbit and takes the opportunity to teach them about illnesses that can pass from prey to cat.",
-                "exp": 10,
-                "weight": 20,
-                "stat_skill": ["CLEVER,1"]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "r_c leaps for the rabbit but it still manages to slip away, despite its obvious illness.",
-                "exp": 0,
-                "weight": 20
-            },
-            {
-                "text": "r_c catches the rabbit, but later they and the cats who eat it become violently ill.",
-                "exp": 0,
-                "weight": 10,
-                "injury": [
-                    {
-                        "cats": ["r_c", "some_clan"],
-                        "injuries": ["poisoned"],
-                        "scars": []
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "patrol_id": "dst_hunt_rabbit2",
-        "biome": ["any"],
-        "season": ["any"],
-        "types": ["hunting"],
-        "tags": [],
-        "patrol_art": "hunt_general_intro",
-        "min_cats": 1,
-        "max_cats": 6,
-        "min_max_status": {},
-        "weight": 20,
+        "weight": 5,
         "intro_text": "A rabbit bursts out from cover, startled by the patrol.",
         "decline_text": "They watch it go, just as startled.",
         "chance_of_success": 40,
@@ -2146,6 +1902,36 @@
                         "mutual": false,
                         "values": ["trust"],
                         "amount": 5
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "Claws tearing into the ground, s_c bounds after the rabbit, reaching full sprint before the rest of the patrol has worked out what's going on. {PRONOUN/s_c/subject/CAP} {VERB/s_c/collide/collides} with the fleeing prey, bringing it down in a dramatic tangle of kicking legs.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["RUNNER,1"],
+                "prey": ["large"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
                     }
                 ]
             }
@@ -2161,23 +1947,30 @@
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["trust"],
-                        "amount": -5
+                        "amount": -2
                     }
                 ],
                 "prey": ["very_small"]
             },
             {
-                "text": "s_c is quicker than anyone else, tearing after the rabbit, but in their haste, they put a paw wrong and stop as a sharp twinge of pain shoots up {PRONOUN/s_c/poss} leg.",
+                "text": "s_c is quicker than anyone else, tearing after the rabbit, but in {PRONOUN/s_c/poss} haste {PRONOUN/s_c/subject} {VERB/s_c/put/puts} a paw wrong and {VERB/s_c/stop/stops} as a sharp twinge of pain shoots up {PRONOUN/s_c/poss} leg.",
                 "exp": 0,
                 "weight": 20,
-                "stat_skill": ["RUNNER,2"],
+                "stat_skill": ["RUNNER,1"],
+                "injury": [
+                    {
+                        "cats": ["s_c"],
+                        "injuries": ["sprain"],
+                        "scars": []
+                    }
+                ],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["trust"],
-                        "amount": -5
+                        "amount": -2
                     }
                 ],
                 "prey": ["very_small"]
@@ -2185,81 +1978,105 @@
         ]
     },
     {
-        "patrol_id": "dst_hunt_vision1",
-        "biome": ["any"],
+        "patrol_id": "dst_hunt_rabbit3",
+        "biome": ["desert"],
         "season": ["any"],
         "types": ["hunting"],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_hunt_rabbit",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {},
+        "weight": 5,
+        "intro_text": "A rabbit bursts out from cover, startled by r_c.",
+        "decline_text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/watch/watches} it go, just as startled.",
+        "chance_of_success": 40,
+        "success_outcomes": [
+            {
+                "text": "r_c manages to corner and catch the rabbit!",
+                "exp": 10,
+                "weight": 20,
+                "prey": ["huge"]
+            },
+            {
+                "text": "s_c reacts quickly, tearing off after the rabbit and slamming a paw on its head to bring it down.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["HUNTER,2"],
+                "prey": ["huge"]
+            },
+            {
+                "text": "<b>BAM</b>. s_c slams into the rabbit in a tumbling collision of teeth and claws.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["RUNNER,1"],
+                "prey": ["huge"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "r_c jumps after it, but the rabbit has too great of a head start.",
+                "exp": 0,
+                "weight": 20,
+                "prey": ["very_small"]
+            },
+            {
+                "text": "s_c reacts quickly, tearing after the rabbit, but in {PRONOUN/s_c/poss} haste {PRONOUN/s_c/subject} {VERB/s_c/put/puts} a paw wrong and {VERB/s_c/stop/stops} as a sharp twinge of pain shoots up {PRONOUN/s_c/poss} leg.",
+                "exp": 0,
+                "weight": 20,
+                "stat_skill": ["RUNNER,1"],
+                "injury": [
+                    {
+                        "cats": ["s_c"],
+                        "injuries": ["sprain"],
+                        "scars": []
+                    }
+                ],
+                "prey": ["very_small"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "dst_hunt_strangerabbit1",
+        "biome": ["desert"],
+        "season": ["any"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "gen_hunt_strangerabbit",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
-        "weight": 20,
-        "intro_text": "As the patrol spreads out to hunt, r_c admits they think they had a vision from StarClan last night.",
-        "decline_text": "The patrol doesn't talk about the vision.",
-        "chance_of_success": 40,
+        "weight": 5,
+        "intro_text": "r_c spots a rabbit up ahead, but it seems to be acting strange. The patrol can see its tremors from a few fox-lengths away.",
+        "decline_text": "r_c avoids catching the rabbit and looks for other prey.",
+        "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "The patrol talks to them about whether it was a real vision as they hunt.",
-                "exp": 20,
+                "text": "r_c catches the rabbit and it is eaten as normal.",
+                "exp": 10,
                 "weight": 20,
-                "prey": ["medium"],
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["respect", "trust"],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["jealous"],
-                        "amount": -5
-                    }
-                ]
+                "prey": ["large"]
             },
             {
-                "text": "p_l takes r_c aside, giving them the full benefits of p_l's seniority and experience as they discuss r_c's vision.",
+                "text": "r_c catches the rabbit, but when {PRONOUN/r_c/subject} {VERB/r_c/report/reports} about the strange incident at camp, the dead rabbit is taken far away and buried.",
                 "exp": 20,
-                "weight": 5,
-                "prey": ["medium"],
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["respect", "trust"],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["jealous"],
-                        "amount": -5
-                    }
-                ]
+                "weight": 5
             },
             {
-                "text": "s_c chooses to hunt with r_c, the spiritual warrior gently guiding the conversation. r_c feels deeply privileged and far more at peace after confiding in them.",
-                "exp": 20,
+                "text": "s_c stops the patrol from catching the rabbit and takes the opportunity to teach them about illnesses that can pass from prey to cat.",
+                "exp": 30,
                 "weight": 20,
-                "stat_skill": ["STAR,1"],
-                "stat_trait": ["faithful"],
-                "prey": ["medium"],
+                "stat_skill": ["CLEVER,1"],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
+                        "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": 5
                     },
                     {
-                        "cats_to": ["patrol"],
+                        "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["jealous"],
@@ -2270,158 +2087,42 @@
         ],
         "fail_outcomes": [
             {
-                "text": "No one can make sense of the vision.",
+                "text": "r_c leaps for the rabbit but it still manages to slip away, despite its obvious illness.",
                 "exp": 0,
-                "weight": 20,
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["respect", "trust"],
-                        "amount": -5
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["jealous"],
-                        "amount": 5
-                    }
-                ],
-                "prey": ["very_small"]
-            },
-            {
-                "text": "r_c notices p_l looking at them enviously, withdraws from the rest of the patrol, and dismisses the dream as unimportant.",
-                "exp": 0,
-                "weight": 20,
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["respect", "trust"],
-                        "amount": -5
-                    },
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["jealous"],
-                        "amount": 5
-                    }
-                ],
-                "prey": ["very_small"]
-            }
-        ]
-    },
-    {
-        "patrol_id": "dst_hunt_vision2",
-        "biome": ["any"],
-        "season": ["any"],
-        "types": ["hunting"],
-        "tags": [],
-        "patrol_art": "hunt_general_intro",
-        "min_cats": 1,
-        "max_cats": 1,
-        "min_max_status": {},
-        "weight": 20,
-        "intro_text": "As {PRONOUN/r_c/subject} head out to hunt, r_c thinks about the dream {PRONOUN/r_c/subject} had last night... was it sent by StarClan?",
-        "decline_text": "{PRONOUN/r_c/subject/CAP} push it from their mind.",
-        "chance_of_success": 40,
-        "success_outcomes": [
-            {
-                "text": "It definitely distracts {PRONOUN/r_c/object} from the hunt, but r_c uses the time by {PRONOUN/r_c/self} to put {PRONOUN/r_c/poss} thoughts in order. It was a sign from {PRONOUN/r_c/poss} ancestors. Now {PRONOUN/r_c/subject} need to figure out what to do next.",
-                "exp": 20,
                 "weight": 20
             },
             {
-                "text": "Somehow hunting brings r_c to an almost meditative state, and not only are {PRONOUN/r_c/subject} fairly confident of their next steps having been given this vision, but {PRONOUN/r_c/subject} also bring back a good haul to the prey pile.",
-                "exp": 20,
-                "weight": 5,
-                "prey": ["large"]
-            },
-            {
-                "text": "s_c often feels like StarClan walks with {PRONOUN/s_c/object}, and this is just another instance on the path. They use the solo patrol to collect their thoughts, and by the time {PRONOUN/s_c/subject} {VERB/s_c/pad/pads} home with a good catch, {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} ready for the next step {PRONOUN/s_c/poss} vision hinted at.",
-                "exp": 20,
-                "stat_skill": ["STAR,1"],
-                "stat_trait": ["faithful"],
-                "weight": 20,
-                "prey": ["large"]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "r_c can't make sense of the vision.",
+                "text": "r_c catches the rabbit, but later {PRONOUN/r_c/subject} and the cats who eat it become violently ill.",
                 "exp": 0,
                 "weight": 20,
-                "prey": ["very_small"]
-            }
-        ]
-    },
-	{
-        "patrol_id": "dst_hunt_sneakprey1",
-        "biome": ["any"],
-        "season": ["any"],
-        "types": ["hunting"],
-        "tags": [],
-        "patrol_art": "hunt_general_intro",
-        "min_cats": 1,
-        "max_cats": 1,
-        "min_max_status": {
-            "all apprentices": [-1, -1]
-        },
-        "weight": 20,
-        "intro_text": "r_c is tempted to eat the prey they just caught.",
-        "decline_text": "r_c decides against breaking the Warrior Code",
-        "chance_of_success": 50,
-        "success_outcomes": [
-            {
-                "text": "They resist the temptation, going on to make a couple of great catches to make sure the elders are fed.",
-                "exp": 20,
-                "weight": 20,
-                "prey": ["large"],
+                "prey": ["very_small"],
                 "relationships": [
                     {
                         "cats_to": ["r_c"],
-                        "cats_from": ["clan"],
-                        "mutual": false,
-                        "values": ["respect", "trust"],
-                        "amount": 5
-                    }
-                ]
-            },
-            {
-                "text": "After all, they have caught enough on this solo hunt that they won't be able to carry it all back to camp. They stop for a quick snack and return to camp laden with prey for the fresh-kill pile.",
-                "exp": 20,
-                "weight": 5,
-                "prey": ["huge"],
-                "relationships": [
-                    {
-                        "cats_to": ["r_c"],
-                        "cats_from": ["clan"],
-                        "mutual": false,
-                        "values": ["respect", "trust"],
-                        "amount": 5
-                    }
-                ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "r_c gives in to their grumbling belly, reasoning that no one will notice, but when they arrive back at camp empty-pawed and with blood on their lips they feel the stares of the other warriors on their pelt.",
-                "exp": 0,
-                "weight": 20,
-                "relationships": [
-                    {
-                        "cats_to": ["r_c"],
-                        "cats_from": ["clan"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": -5
+                    },
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["trust", "respect"],
+                        "amount": -5
                     }
                 ],
-                "prey": ["very_small"]
+                "injury": [
+                    {
+                        "cats": ["r_c", "some_clan"],
+                        "injuries": ["poisoned"],
+                        "scars": []
+                    }
+                ],
+                "history_text": {
+                    "reg_death": "This cat died after eating tainted prey.",
+                    "lead_death": "after eating tainted prey"
+                }
             }
         ]
     },
@@ -2449,8 +2150,8 @@
                 "prey": ["large"],
                 "relationships": [
                     {
-                        "cats_to": ["r_c"],
-                        "cats_from": ["clan"],
+                        "cats_to": ["r_c", "r_c"],
+                        "cats_from": ["clan", "patrol"],
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": 5
