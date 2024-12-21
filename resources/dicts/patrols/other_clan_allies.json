@@ -2177,5 +2177,177 @@
                 "other_clan_rep": -1
             }
         ]
+    },
+    {
+        "patrol_id": "gen_bord_allies_otherclankits1",
+        "biome": ["any"],
+        "season": ["any"],
+        "types": ["border"],
+        "tags": [],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+            "normal adult": [1, 6]
+        },
+        "weight": 5,
+        "intro_text": "Since c_n is on good terms with o_c_n, the patrol is at ease as they patrol along the section of borders, however p_l spots two kits from o_c_n playing close to the border.",
+        "decline_text": "It's not {PRONOUN/p_l/poss} problem that those kits are alone and vulnerable. o_c_n should keep a closer eye on their kits.",
+        "chance_of_success": 55,
+        "success_outcomes": [
+            {
+                "text": "p_l wouldn't be able to forgive {PRONOUN/p_l/self} if something happened to those kits. {PRONOUN/p_l/subject/CAP} {VERB/p_l/order/orders} the patrol other than r_c to go back to camp, and r_c and p_l go to bring the kits back to o_c_n. With gratitude, o_c_n thanks them.",
+                "exp": 20,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 10
+                    }
+                ],
+                "other_clan_rep": 2
+            },
+            {
+                "text": "p_l orders the patrol except r_c back to camp. p_l and r_c grab the kits by their scruffs despite their protests, and on their journey to o_c_n they are greeted by a concerned patrol that is very happy and grateful to see the kits safe, thanking them profusely.",
+                "exp": 20,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 10
+                    }
+                ],
+                "other_clan_rep": 2
+            },
+            {
+                "text": "p_l orders the patrol to go back to camp asking that r_c be left behind to help {PRONOUN/p_l/object}. They go up to the little kits convincing them that they are gonna give them the best badger ride ever. As they approach o_c_n's camp, with the kits squealing with joy on their back, they are greeted with relief and laughter.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["SPEAKER,1", "MEDIATOR,1"],
+                "can_have_stat": ["adult"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 10
+                    }
+                ],
+                "other_clan_rep": 2
+            },
+            {
+                "text": "p_l decides to bring r_c with {PRONOUN/p_l/object} to o_c_n and orders the others back to camp. As they approach o_c_n, they are immediately greeted by the leader, who recognizes p_l - knowing {PRONOUN/p_l/object} to be a kind and caring cat - and thanks both of them sincerely.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": ["compassionate", "loving", "charismatic"],
+                "can_have_stat": ["adult"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 10
+                    }
+                ],
+                "other_clan_rep": 2
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "As p_l goes to step over the border with r_c to retrieve the kits and bring them to their Clan, they stop as they hear a o_c_n patrol shouting for the kits. p_l is relieved to know they will be safe with their own Clan and resume {PRONOUN/p_l/poss} patrol. The patrol doesn't realize that the o_c_n cats saw them cross the border and now look upon their departing backs with suspicious eyes.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": -10
+                    }
+                ],
+                "other_clan_rep": -1
+            },
+            {
+                "text": "As p_l crosses the border with r_c to grab the kits by their scruff, a o_c_n patrol suddenly appears, looking furious, with their claws out and fangs bared! r_c gently drops the kit and attempts to explain the situation but is immediately and viciously killed. p_l races back over to their side of the border, just barely escaping the wrath of o_c_n warriors.",
+                "exp": 0,
+                "weight": 10,
+                "dead_cats": ["r_c"],
+                "history_text": {
+                    "reg_death": "m_c was slain by o_c_n warriors",
+                    "lead_death": "lost a life by o_c_n warriors"
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": -10
+                    }
+                ],
+                "other_clan_rep": -3
+            }
+        ],
+        "antag_fail_outcomes": [
+            {
+                "text": "p_l and the patrol cross the border to attack the two kits when they are thwarted by an o_c_n patrol that was looking for the kits. Fox-dung, a good opportunity to weaken o_c_n has failed.",
+                "exp": 0,
+                "weight": 20,
+                "other_clan_rep": -1
+            },
+            {
+                "text": "p_l and the patrol cross the border to steal the two kits when they are thwarted by an o_c_n patrol that was looking for the kits. Fox-dung, a good opportunity to weaken o_c_n has failed.",
+                "exp": 0,
+                "weight": 20,
+                "other_clan_rep": -1
+            },
+            {
+                "text": "p_l gasps at seeing the two kits, how did they get so far from camp? Ordering the patrol to bring the kits back to camp, p_l doesn't notice the patrol exchange glances before r_c informs p_l that those are o_c_n kits.",
+                "exp": 0,
+                "weight": 20,
+                "other_clan_rep": -1
+            }
+        ],
+        "antag_success_outcomes": [
+            {
+                "text": "p_l seizes the opportunity to weaken o_c_n and orders the patrol to attack and kill the kits.",
+                "exp": 20,
+                "weight": 20,
+                "other_clan_rep": -2
+            },
+            {
+                "text": "p_l seizes the opportunity to weaken o_c_n and orders the patrol to steal the two kits.",
+                "exp": 20,
+                "weight": 10,
+                "can_have_stat": ["p_l"],
+                "stat_trait":["bloodthirsty", "cold", "troublesome","shameless", "arrogant", "ambitious"],
+                "other_clan_rep": -8,
+                "new_cat": [
+                    ["age: kitten", "backstory: otherclan5"],
+                    ["age: kitten", "backstory: otherclan5"]
+                ]
+            },
+            {
+                "text": "p_l gasps at seeing the two kits, how did they get so far from camp? Ordering the patrol to bring the kits back to camp, p_l doesn't notice the patrol exchange glances before keeping silent as they steal the kits from o_c_n.",
+                "exp": 20,
+                "weight": 10,
+                "can_have_stat": ["p_l"],
+                "stat_trait":["oblivious"],
+                "other_clan_rep": -8,
+                "new_cat": [
+                    ["age: kitten", "backstory: otherclan5"],
+                    ["age: kitten", "backstory: otherclan5"]
+                ]
+            }
+        ]
     }
 ]

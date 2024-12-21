@@ -5335,10 +5335,85 @@
         ]
     },
     {
-        "patrol_id": "bch_hunt_wareprey_lorelocked1",
+        "patrol_id": "bch_hunt_fish1",
         "biome": ["beach"],
         "season": ["any"],
         "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "gen_hunt_fish",
+        "min_cats": 1,
+        "max_cats": 3,
+        "min_max_status": {},
+        "weight": 5,
+        "intro_text": "The patrol glimpses the shadows of fish as they pad past along the coast.",
+        "decline_text": "The patrol ignores the fish.",
+        "chance_of_success": 50,
+        "success_outcomes": [
+            {
+                "text": "r_c very carefully walks to the water's edge and waits for {PRONOUN/r_c/poss} chance. When the fish is near, {PRONOUN/r_c/subject} {VERB/r_c/hook/hooks} it out of the water with {PRONOUN/r_c/poss} claws. More fresh-kill!",
+                "exp": 10,
+                "weight": 20,
+                "prey": ["medium"]
+            },
+            {
+                "text": "r_c pads closer to the water's edge, careful to keep {PRONOUN/r_c/poss} shadow away from the water. The fish doesn't seem to notice {PRONOUN/r_c/object} and darts too close. r_c's paw flashes into the water and the fish flops onto the rock. {PRONOUN/r_c/subject/CAP} {VERB/r_c/kill/kills} it and happily {VERB/r_c/carry/carries} it back to camp.",
+                "exp": 10,
+                "weight": 5,
+                "prey": ["medium"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The patrol moves too suddenly. The flickering shadow causes the fish to quickly vanish into murkier water.",
+                "exp": 0,
+                "weight": 20,
+                "prey": ["very_small"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "bch_hunt_fish2",
+        "biome": ["beach"],
+        "season": ["any"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "gen_hunt_fish",
+        "min_cats": 4,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 5,
+        "intro_text": "The patrol sees the shadow of a school of fish in the rockpools.",
+        "decline_text": "The patrol ignores the fish.",
+        "chance_of_success": 40,
+        "success_outcomes": [
+            {
+                "text": "p_l leads a successful fishing session, with almost everyone walking home with a fishy mouthful.",
+                "exp": 10,
+                "weight": 20,
+                "prey": ["large"]
+            },
+            {
+                "text": "s_c makes fishing look easy, giving out tips to any interested cats.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["HUNTER,1"],
+                "prey": ["large"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The patrol moves too suddenly. The flickering shadow causes the fish to quickly vanish into murkier water.",
+                "exp": 0,
+                "weight": 20,
+                "prey": ["very_small"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "bch_hunt_wareprey_lorelocked1",
+        "biome": ["beach"],
+        "season": ["newleaf"],
+        "types": [],
         "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 3,

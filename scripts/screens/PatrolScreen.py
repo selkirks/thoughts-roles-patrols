@@ -729,7 +729,7 @@ class PatrolScreen(Screens):
         self.update_button()
 
     def run_patrol_start(self):
-        """Runs patrol start. To be run in a seperate thread."""
+        """Runs patrol start. To be run in a separate thread."""
         try:
             self.display_text = self.patrol_obj.setup_patrol(
                 self.current_patrol, self.patrol_type
@@ -866,7 +866,7 @@ class PatrolScreen(Screens):
             self.elements["antagonize"].hide()
 
     def run_patrol_proceed(self, user_input):
-        """Proceeds the patrol - to be run in the seperate thread."""
+        """Proceeds the patrol - to be run in the separate thread."""
         if user_input in ["nopro", "notproceed"]:
             (
                 self.display_text,

@@ -184,10 +184,9 @@ def rel_fulfill_rel_constraints(relationship, constraint, interaction_id) -> boo
                 f"which is higher than the max value of a relationship (100)."
             )
             break
-
-        if threshold <= 0:
+        elif threshold <= 0:
             print(
-                f"ERROR: patrol {interaction_id} has a relationship constraints for the value {v_type}, "
+                f"ERROR: interaction {interaction_id} has a relationship constraints for the value {v_type}, "
                 f"which is lower than the min value of a relationship or 0."
             )
             break

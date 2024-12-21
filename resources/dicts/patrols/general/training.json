@@ -1,291 +1,5 @@
 [
     {
-        "patrol_id": "gen_train_berrybush1",
-        "biome": ["any"],
-        "season": ["greenleaf"],
-        "types": ["training"],
-        "tags": [],
-        "patrol_art": "train_general_intro",
-        "min_cats": 3,
-        "max_cats": 6,
-        "min_max_status": {},
-        "weight": 10,
-        "intro_text": "While out training, r_c stumbles upon a bush of red berries.",
-        "decline_text": "r_c decides not to touch the berries.",
-        "chance_of_success": 40,
-        "success_outcomes": [
-            {
-                "text": "Unsure but remembering the nursery tales of red deathberries, r_c avoids them and gives the rest of the patrol a heads-up about the possibly dangerous bush.",
-                "exp": 20,
-                "weight": 20,
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["comfort", "trust"],
-                        "amount": 5,
-                        "log": "r_c warned the patrol {PRONOUN/r_c/subject} {VERB/r_c/were/was} with about some potentially dangerous red berries"
-                    }
-                ]
-            },
-            {
-                "text": "After careful consideration and consulting with the other cats, r_c recognizes them as raspberries and brings the rare berries back to the medicine cat den.",
-                "exp": 20,
-                "weight": 5,
-                "herbs": ["raspberry"],
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["comfort", "trust"],
-                        "amount": 5
-                    }
-                ]
-            },
-            {
-                "text": "Astutely, s_c recognizes the cranberries and carefully chews off a branch laden with them to bring back to camp - the herb stocks can use this odd fruit.",
-                "exp": 20,
-                "weight": 20,
-                "stat_skill": ["CLEVER,2"],
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["comfort", "trust"],
-                        "amount": 5
-                    }
-                ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "r_c confidently gathers them and prances back to camp with the patrol, where {PRONOUN/r_c/subject} {VERB/r_c/are/is} then informed that redcurrants aren't a useful medicinal herb.",
-                "exp": 0,
-                "weight": 20,
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["comfort", "trust"],
-                        "amount": -5
-                    }
-                ]
-            },
-            {
-                "text": "While plucking them from the bush, r_c is surprised to find they taste pretty good. Before anyone can stop {PRONOUN/r_c/object}, {PRONOUN/r_c/subject} {VERB/r_c/eat/eats} a few and {VERB/r_c/are/is} rushed back to camp for deathberry poisoning.",
-                "exp": 0,
-                "weight": 10,
-                "injury": [
-                    {
-                        "cats": ["r_c"],
-                        "injuries": ["poisoned"],
-                        "scars": []
-                    }
-                ],
-                "history_text": {
-                    "reg_death": "m_c mistook deathberries for something edible.",
-                    "lead_death": "after eating deathberries"
-                },
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["comfort", "trust"],
-                        "amount": -5
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "patrol_id": "gen_train_berrybush2",
-        "biome": ["any"],
-        "season": ["greenleaf"],
-        "types": ["training"],
-        "tags": [],
-        "patrol_art": "train_general_intro",
-        "min_cats": 3,
-        "max_cats": 6,
-        "min_max_status": {
-            "apprentice": [1, 6]
-        },
-        "weight": 20,
-        "intro_text": "While helping gather herbs, app1 stumbles upon a bush of red berries.",
-        "decline_text": "app1 decides not to touch the berries.",
-        "chance_of_success": 40,
-        "success_outcomes": [
-            {
-                "text": "Unsure but remembering the nursery tales of red deathberries, app1 avoids them and alerts the others, who confirm with one wary look that this a deathberry bush.",
-                "exp": 20,
-                "weight": 20
-            },
-            {
-                "text": "Whatever. Identifying them is a medicine cat problem. app1 plucks the berries and brings them back to camp, where it turns out they're called raspberries.",
-                "exp": 20,
-                "weight": 5,
-                "herbs": ["raspberry"]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "app1 confidently gathers them and prances back to camp, where {PRONOUN/app1/subject} {VERB/app1/are/is} then informed that redcurrants aren't a useful medicinal herb.",
-                "exp": 0,
-                "weight": 20
-            },
-            {
-                "text": "Whatever. Identifying them is a medicine cat problem. app1 plucks the berries, surprised at the pleasant taste, and swallows a few. {PRONOUN/app1/subject/CAP} {VERB/app1/collapse/collapses} on the way back to camp. There's nothing any cat can do for app1, who was unable to identify deathberries before eating them.",
-                "exp": 0,
-                "weight": 10,
-                "dead_cats": ["app1"],
-                "history_text": {
-                    "reg_death": "m_c mistook deathberries for something edible.",
-                    "lead_death": "after eating deathberries"
-                }
-            },
-            {
-                "text": "Whatever. Identifying them is a medicine cat problem. app1 plucks the tasty berries, swallowing a few and taking the rest back to camp where the medicine cat immediately has {PRONOUN/app1/object} swallow yarrow to save {PRONOUN/app1/object} from deathberry poisoning.",
-                "exp": 0,
-                "weight": 10,
-                "injury": [
-                    {
-                        "cats": ["app1"],
-                        "injuries": ["poisoned"],
-                        "scars": []
-                    }
-                ],
-                "history_text": {
-                    "reg_death": "m_c mistook deathberries for something edible.",
-                    "lead_death": "after eating deathberries"
-                }
-            }
-        ]
-    },
-    {
-        "patrol_id": "gen_train_berrybush3",
-        "biome": ["any"],
-        "season": ["leaf-fall"],
-        "types": ["training"],
-        "tags": [],
-        "patrol_art": "train_general_intro",
-        "min_cats": 3,
-        "max_cats": 6,
-        "min_max_status": {},
-        "weight": 10,
-        "intro_text": "While helping gather herbs, r_c stumbles upon a bush of red berries.",
-        "decline_text": "r_c decides not to touch the berries.",
-        "chance_of_success": 40,
-        "success_outcomes": [
-            {
-                "text": "Unsure but remembering the nursery tales of red deathberries, r_c avoids them and gives the rest of the patrol a heads-up about the possibly dangerous bush.",
-                "exp": 20,
-                "weight": 20
-            },
-            {
-                "text": "After careful consideration, r_c recognizes them as raspberries and brings the rare berries back to the medicine cat den.",
-                "exp": 20,
-                "weight": 5,
-                "herbs": ["raspberry"]
-            },
-            {
-                "text": "Astutely, s_c recognizes the cranberries and carefully chews off a branch laden with them to bring back to camp - the herb stocks can use this odd fruit.",
-                "exp": 20,
-                "weight": 20,
-                "stat_skill": ["CLEVER,2"]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "r_c confidently gathers them and prances back to camp with the patrol, where {PRONOUN/r_c/subject} {VERB/r_c/are/is} informed that redcurrants aren't a useful medicinal herb.",
-                "exp": 0,
-                "weight": 20
-            },
-            {
-                "text": "While plucking them from the bush, r_c finds them tasty and eats a few, only for p_l to notice what {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} eating. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'re/'s} rushed back to camp, where the medicine cat treats {PRONOUN/r_c/object} for deathberry poisoning.",
-                "exp": 0,
-                "weight": 10,
-                "injury": [
-                    {
-                        "cats": ["r_c"],
-                        "injuries": ["poisoned"],
-                        "scars": []
-                    }
-                ],
-                "history_text": {
-                    "reg_death": "m_c mistook deathberries for something edible.",
-                    "lead_death": "after eating deathberries"
-                }
-            }
-        ]
-    },
-    {
-        "patrol_id": "gen_train_berrybush4",
-        "biome": ["any"],
-        "season": ["leaf-fall"],
-        "types": ["training"],
-        "tags": [],
-        "patrol_art": "train_general_intro",
-        "min_cats": 3,
-        "max_cats": 6,
-        "min_max_status": {
-            "apprentice": [1, 6]
-        },
-        "weight": 10,
-        "intro_text": "While helping gather herbs, app1 stumbles upon a bush of red berries.",
-        "decline_text": "app1 decides not to touch the berries.",
-        "chance_of_success": 20,
-        "success_outcomes": [
-            {
-                "text": "Unsure but remembering the nursery tales of red deathberries, app1 avoids them and alerts the others, who confirm with one wary look that this a deathberry bush.",
-                "exp": 20,
-                "weight": 20
-            },
-            {
-                "text": "Whatever. Identifying them is a medicine cat problem. app1 plucks the berries and brings them back to camp, where it turns out they're called raspberries.",
-                "exp": 20,
-                "weight": 5,
-                "herbs": ["raspberry"]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "app1 confidently gathers them and prances back to camp, where {PRONOUN/app1/subject} {VERB/app1/are/is} informed that redcurrants aren't a useful medicinal herb.",
-                "exp": 0,
-                "weight": 20
-            },
-            {
-                "text": "Whatever. Identifying them is a medicine cat problem. app1 plucks the berries, surprised at the pleasant taste, and swallows a few. {PRONOUN/app1/subject/CAP} {VERB/app1/collapse/collapses} on the way back to camp, and there's nothing any cat can do for {PRONOUN/r_c/object}, who was unable to identify deathberries before eating them.",
-                "exp": 0,
-                "weight": 10,
-                "dead_cats": ["app1"],
-                "history_text": {
-                    "reg_death": "m_c mistook deathberries for something edible.",
-                    "lead_death": "after eating deathberries"
-                }
-            },
-            {
-                "text": "Whatever. Identifying them is a medicine cat problem. app1 plucks the tasty berries, swallowing a few, and takes the rest back to camp where the medicine cat immediately has {PRONOUN/app1/object} swallow yarrow to save {PRONOUN/app1/object} from deathberry poisoning.",
-                "exp": 0,
-                "weight": 10,
-                "injury": [
-                    {
-                        "cats": ["app1"],
-                        "injuries": ["poisoned"],
-                        "scars": []
-                    }
-                ],
-                "history_text": {
-                    "reg_death": "m_c mistook deathberries for something edible.",
-                    "lead_death": "after eating deathberries"
-                }
-            }
-        ]
-    },
-    {
         "patrol_id": "gen_train_soloreflect1",
         "biome": ["any"],
         "season": ["any"],
@@ -297,7 +11,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 10,
+        "weight": 5,
         "intro_text": "While alone, {PRONOUN/r_c/subject} {VERB/r_c/think/thinks} about life. Is r_c really headed where {PRONOUN/r_c/subject} {VERB/r_c/want/wants} to go? Is r_c doing a good job of pursuing what's important to {PRONOUN/r_c/object}?",
         "decline_text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/decide/decides} to stay focused on training instead.",
         "chance_of_success": 60,
@@ -347,9 +61,9 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 10,
-        "intro_text": "r_c feels overwhelmed trying to train by {PRONOUN/r_c/self}.",
-        "decline_text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/join/joins} up with an outgoing hunting patrol to avoid a lonely training session.",
+        "weight": 5,
+        "intro_text": "r_c feels a little overwhelmed trying to train by {PRONOUN/r_c/self}.",
+        "decline_text": "Instead {PRONOUN/r_c/subject} {VERB/r_c/join/joins} up with an outgoing hunting patrol.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
@@ -442,7 +156,7 @@
             "deputy": [1, 1],
 	        "leader": [-1, -1]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "While training, p_l admits that {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} think that {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} a good deputy.",
         "decline_text": "The rest of the patrol hastily changes the subject.",
         "chance_of_success": 50,
@@ -622,7 +336,7 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
-        "weight": 10,
+        "weight": 5,
         "intro_text": "The patrol finds a nice spot to sun themselves.",
         "decline_text": "They decide to stay focused instead.",
         "chance_of_success": 50,
@@ -778,7 +492,7 @@
         "min_max_status": {
             "all apprentices":[-1, -1]
         },
-        "weight": 10,
+        "weight": 5,
         "intro_text": "r_c finds a nice spot to sun {PRONOUN/r_c/self}.",
         "decline_text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/decide/decides} to stay focused instead.",
         "chance_of_success": 60,
@@ -824,7 +538,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "p_l and r_c find a nice spot to sun themselves.",
         "decline_text": "They decide to stay focused instead.",
         "chance_of_success": 60,
@@ -919,7 +633,7 @@
             "apprentice": [1, 6],
             "all apprentices": [2, 2]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "app1 and app2 find a nice spot to sun themselves.",
         "decline_text": "They decide to stay focused instead.",
         "chance_of_success": 60,
@@ -1015,7 +729,7 @@
             "apprentice": [1, 6],
             "normal adult": [1, 6]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "The pair find a nice spot to sun themselves.",
         "decline_text": "They decide to stay focused instead.",
         "chance_of_success": 60,
@@ -1049,7 +763,7 @@
                 ]
             },
             {
-                "text": "It's important to take time to rest, s_c tells app1, trying to hit a middle ground between advice and command. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'ve/'s} seen how hard app1 has been working and commends {PRONOUN/app1/object} for it, but it'll do the Clan no good if {PRONOUN/app1/subject} burns {PRONOUN/app1/self} out. All things in their time.",
+                "text": "It's important to take time to rest, s_c tells app1, trying to hit a middle ground between advice and command. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'ve/'s} seen how hard app1 has been working, and {VERB/p_l/commend/commends} {PRONOUN/app1/object} for it, but it'll do the Clan no good if app1 burns {PRONOUN/app1/self} out. All things in their time.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -1102,7 +816,7 @@
             "apprentice": [1, 6],
             "normal adult": [1, 6]
         },
-        "weight": 40,
+        "weight": 5,
         "intro_text": "The pair find a nice spot to sun themselves.",
         "decline_text": "They decide to stay focused instead.",
         "chance_of_success": 60,
@@ -1130,7 +844,7 @@
                 ]
             },
             {
-                "text": "Settling down, p_l asks after how app1 is finding {PRONOUN/app1/poss} training. They spend a lovely afternoon chatting, quality time that's been so rare since app1 became a paw. Not that p_l regrets that, of course; app1 is going to be a wonderful warrior.",
+                "text": "Settling down, p_l wants to know how app1 is finding {PRONOUN/app1/poss} training. It turns into a lovely conversation, a perfect moment spent with one another, time that's been so rare since app1 became a paw. Not that p_l regrets that, of course, app1 is going to be a wonderful warrior.",
                 "exp": 20,
                 "weight": 5,
                 "relationships": [
@@ -1151,7 +865,7 @@
                 ]
             },
             {
-                "text": "The pair sit down, and app1 feels awkward. But that all melts away as p_l starts talking about how {PRONOUN/app1/subject}{VERB/app1/'ve/'s} come so far with {PRONOUN/app1/poss} training, picking out particular moments {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} seen recently until app1 is puffed up with flustered, thrilled pride.",
+                "text": "The pair sit down, app1 acting very awkward. But that all melts away as p_l starts talking about how {PRONOUN/app1/subject}{VERB/app1/'ve/'s} come so far with {PRONOUN/app1/poss} training, picking out particular moments {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} seen recently until app1 is puffed up with embarrassed, thrilled pride.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -2275,7 +1989,7 @@
             "deputy": [-1, -1],
             "leader": [-1, -1]
         },
-        "weight": 10,
+        "weight": 5,
         "intro_text": "The patrol has a disagreement and looks to p_l to settle the dispute.",
         "decline_text": "The patrol decides to head home.",
         "chance_of_success": 50,
@@ -2444,14 +2158,14 @@
                 "can_have_stat": ["p_l"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
+                        "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["respect", "comfort", "trust"],
                         "amount": -5
                     },
                     {
-                        "cats_to": ["p_l"],
+                        "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["dislike"],
@@ -2474,13 +2188,13 @@
             "apprentice": [1, 6],
             "warrior": [1, 6]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "While out training together, app1 starts an argument with p_l about the technique they're working on.",
         "decline_text": "The patrol decides to head home.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "With a deep sigh, p_l keeps {PRONOUN/p_l/poss} temper and instead sits down to explain {PRONOUN/p_l/poss} reasoning to the young cat. {PRONOUN/p_l/subject/CAP} can see why app1 thinks differently, but practicing this way will help app1 build muscle faster than taking the easy way out. app1 also sighs and apologizes for {PRONOUN/app1/poss} outburst.",
+                "text": "With a deep sigh, p_l holds back {PRONOUN/p_l/poss} temper, and instead sits down to explain {PRONOUN/p_l/poss} reasoning to the young cat. {PRONOUN/p_l/subject/CAP} can see why app1 thinks differently, but practicing this way will help app1 build muscle better than taking the cheap way out. app1 also sighs, apologizing for {PRONOUN/app1/poss} outburst.",
                 "exp": 20,
                 "weight": 20,
                 "relationships": [
@@ -2494,7 +2208,7 @@
                 ]
             },
             {
-                "text": "Tired of hearing about how {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't understand, p_l swings around and executes the technique flawlessly. Chastened, app1 lowers {PRONOUN/app1/poss} gaze. {PRONOUN/app1/subject/CAP}'ll follow p_l's way of doing things, then.",
+                "text": "Tired of hearing about how {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} understand, p_l swings around, performing a flawless rendition of the technique. Chastened, app1 lowers {PRONOUN/app1/poss} gaze. {PRONOUN/app1/subject/CAP}'ll follow p_l's way of doing things then.",
                 "exp": 20,
                 "weight": 5,
                 "relationships": [
@@ -2524,7 +2238,7 @@
                 ]
             },
             {
-                "text": "This is unlike app1. s_c stops in {PRONOUN/s_c/poss} tracks, plopping {PRONOUN/s_c/poss} butt down in the middle of the path and refusing to move until app1 tells {PRONOUN/s_c/object} what's bothering {PRONOUN/app1/object}. No, what's <i>actually</i> bothering {PRONOUN/app1/object}.",
+                "text": "This is unlike app1. s_c stops in {PRONOUN/s_c/poss} tracks, sitting {PRONOUN/s_c/poss} butt down in the middle of the path and refusing to move until app1 tells {PRONOUN/s_c/object} what's bothering {PRONOUN/app1/object}. No, what's <i>actually</i> bothering {PRONOUN/app1/object}.",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -2538,7 +2252,7 @@
                 "can_have_stat": ["adult"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
+                        "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["comfort", "dislike"],
@@ -2547,7 +2261,7 @@
                 ]
             },
             {
-                "text": "s_c has taken valuable time out of {PRONOUN/s_c/poss} day to personally help app1 with {PRONOUN/s_c/poss} training, and this is completely juvenile behavior. s_c isn't shy about telling app1 so, and by the time they're back in camp the apprentice is cowed, but respectful once more. ",
+                "text": "s_c has taken valuable time out of {PRONOUN/s_c/poss} day to personally help app1 with {PRONOUN/app1/poss} studies, and this is completely juvenile behavior. s_c isn't shy about telling app1 so, and by the time they're back in camp the apprentice is cowed, but respectful once more. ",
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
@@ -2563,7 +2277,7 @@
                 "can_have_stat": ["adult", "p_l"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
+                        "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["respect", "dislike"],
@@ -2588,7 +2302,7 @@
                 ]
             },
             {
-                "text": "Well, p_l won't be teaching app1, not until the less-experienced cat comes back with a proper apology. That was some astonishing disrespect if p_l has ever seen it!",
+                "text": "Well, s_c won't be teaching app1, not until the less experienced cat comes back with a proper apology. That was some stars-damned disrespect if s_c has ever seen it!",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -2604,7 +2318,7 @@
                 "can_have_stat": ["adult"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
+                        "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["comfort", "dislike"],
@@ -2613,7 +2327,7 @@
                 ]
             },
             {
-                "text": "p_l lets the disrespectful apprentice completely push {PRONOUN/p_l/object} around - no one gets any learning done, and certainly no one has any respect for authority instilled in them.",
+                "text": "s_c lets the disrespectful apprentice completely push {PRONOUN/s_c/object} around - no one gets any learning done, and certainly no one has any respect for authority installed in them.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": [
@@ -2627,7 +2341,7 @@
                 "can_have_stat": ["adult"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
+                        "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["respect", "dislike"],
@@ -2651,7 +2365,7 @@
             "deputy": [1, 6],
             "leader": [-1, -1]
         },
-        "weight": 10,
+        "weight": 5,
         "intro_text": "The patrol has a disagreement and looks to p_l to settle the dispute.",
         "decline_text": "The patrol decides to head home.",
         "chance_of_success": 50,
@@ -2699,21 +2413,21 @@
                 ]
             },
             {
-                "text": "c_n's deputy always knows what to say - even if that sometimes includes laying down the law. p_l convinces the patrol that arguing over something so small is beneath them.",
+                "text": "c_n's deputy always knows what to say - even if sometimes, that includes laying down the law. s_c convinces the patrol that arguing over something so small is beneath them.",
                 "exp": 20,
                 "weight": 20,
                 "can_have_stat": ["p_l"],
                 "stat_skill": ["SPEAKER,1"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
+                        "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["respect", "comfort", "trust"],
                         "amount": 5
                     },
                     {
-                        "cats_to": ["p_l"],
+                        "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["dislike"],
@@ -2722,21 +2436,21 @@
                 ]
             },
             {
-                "text": "There's always room to understand one another. p_l helps both sides of the disagreement see what they do agree on, which in turn helps them solve the issues they don't see eye to eye on.",
+                "text": "There's always room to understand one another. s_c helps both sides of the disagreement see what they do agree on, which in turn helps them solve the issues they don't see eye to eye on.",
                 "exp": 20,
                 "weight": 20,
                 "can_have_stat": ["p_l"],
                 "stat_skill": ["MEDIATOR,1"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
+                        "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["respect", "comfort", "trust"],
                         "amount": 5
                     },
                     {
-                        "cats_to": ["p_l"],
+                        "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["dislike"],
@@ -2752,14 +2466,14 @@
                 "stat_skill": ["CLEVER,1"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
+                        "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["respect", "comfort", "trust"],
                         "amount": 5
                     },
                     {
-                        "cats_to": ["p_l"],
+                        "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["dislike"],
@@ -2775,14 +2489,14 @@
                 "stat_skill": ["INSIGHTFUL,1"],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
+                        "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["respect", "comfort", "trust"],
                         "amount": 5
                     },
                     {
-                        "cats_to": ["p_l"],
+                        "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["dislike"],
@@ -2964,7 +2678,7 @@
         "min_max_status": {
             "normal adult": [1, 6]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "As the patrol gathers together to train under p_l's leadership, r_c admits {PRONOUN/r_c/subject} {VERB/r_c/think/thinks} {PRONOUN/r_c/subject} had a vision from StarClan last night.",
         "decline_text": "The patrol doesn't talk about the vision.",
         "chance_of_success": 70,
@@ -3214,7 +2928,7 @@
             "apprentice": [1, 6],
             "normal adult": [1, 6]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "While app1 and p_l are out walking, app1 seems preoccupied. When p_l brings their patrol to a halt and asks what's wrong, {PRONOUN/app1/subject} {VERB/app1/reveal/reveals} {PRONOUN/app1/subject}{VERB/app1/'ve/'s} been having a hard time sleeping. {PRONOUN/app1/poss/CAP} dreams are filled with shadows and... images.",
         "decline_text": "This is beyond p_l's sphere of teachable subjects, but {PRONOUN/p_l/subject} {VERB/p_l/promise/promises} that there'll be another cat back at camp who can help. app1 should probably talk to a medicine cat.",
         "chance_of_success": 70,
@@ -3592,7 +3306,7 @@
         "min_max_status": {
             "apprentice": [1, 6]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "app1 is tempted to eat the prey {PRONOUN/app1/subject} just caught. After all, {PRONOUN/app1/subject}{VERB/app1/'re/'s} only practice hunting, right? And since it's  <i>technically</i> not a <i>true</i> hunting patrol, it's <i>technically</i> {PRONOUN/app1/inposs}, right...?",
         "decline_text": "app1 decides against breaking the Warrior Code, resisting the temptation.",
         "chance_of_success": 60,
@@ -3754,7 +3468,7 @@
         "min_max_status": {
             "all apprentices":[-1, -1]
         },
-        "weight": 10,
+        "weight": 5,
         "intro_text": "p_l suggests this might be a good chance for the cats to practice teamwork.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 25,
@@ -4051,7 +3765,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 10,
+        "weight": 5,
         "intro_text": "p_l suggests this might be a good chance to practice teamwork with r_c.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 60,
@@ -4143,7 +3857,7 @@
                 ]
             },
             {
-                "text": "They don't need to be so serious about it! s_c baps r_c, claws sheathed, and runs off cackling to avoid getting tagged back.",
+                "text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/don't/doesn't} need to be so serious about it! s_c baps r_c, claws sheathed, and runs off cackling to avoid getting tagged back.",
                 "exp": 20,
                 "weight": 40,
                 "stat_trait": [
@@ -4324,7 +4038,7 @@
             "apprentice": [1, 6],
             "normal adult": [1, 6]
         },
-        "weight": 10,
+        "weight": 5,
         "intro_text": "p_l suggests this might be a good chance for the cats to practice teamwork, particularly with app1.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 40,
@@ -4514,7 +4228,7 @@
             "apprentice": [1, 6],
             "normal adult": [1, 6]
         },
-        "weight": 10,
+        "weight": 5,
         "intro_text": "p_l suggests this might be a good chance to practice teamwork with app1.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 60,
@@ -4689,7 +4403,7 @@
             "all apprentices": [2, 2],
             "normal adult": [1, 6]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "As p_l sets the cats up to practice together, app1 and app2 sit in the back, hiding their lashing tails as they plan their prank.",
         "decline_text": "They never get the chance to execute the break, because p_l decides to focus on a different skill instead.",
         "chance_of_success": 20,
@@ -4776,7 +4490,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "p_l suggests this might be a good chance to practice teamwork with r_c.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 60,
@@ -4985,7 +4699,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 60,
+        "weight": 20,
         "intro_text": "p_l suggests this might be a good chance to practice teamwork with {PRONOUN/p_l/poss} mate.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 60,
@@ -5190,7 +4904,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 60,
+        "weight": 20,
         "intro_text": "p_l suggests this might be a good chance to practice teamwork with {PRONOUN/p_l/poss} mates.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 60,
@@ -5243,7 +4957,7 @@
                 ]
             },
             {
-                "text": "s_c isn't a confident cat - but with their mates around {PRONOUN/s_c/object}, {PRONOUN/s_c/subject} {VERB/s_c/feel/feels} light as a feather, ready to tackle any challenge.",
+                "text": "s_c isn't a confident cat - but with {PRONOUN/s_c/poss} mates around {PRONOUN/s_c/object}, {PRONOUN/s_c/subject} {VERB/s_c/feel/feels} light as a feather, ready to tackle any challenge.",
                 "exp": 20,
                 "weight": 40,
                 "stat_trait": [
@@ -5370,7 +5084,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 60,
+        "weight": 20,
         "intro_text": "p_l suggests this might be a good chance to practice teamwork with {PRONOUN/p_l/poss} mates.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 60,
@@ -5557,7 +5271,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 10,
+        "weight": 5,
         "intro_text": "p_l suggests this might be a good chance for the cats to practice new hunting techniques.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 20,
@@ -5723,7 +5437,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 10,
+        "weight": 5,
         "intro_text": "p_l suggests this might be a good chance to practice new hunting techniques with r_c.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 60,
@@ -5966,7 +5680,7 @@
             "all apprentices": [1, 5],
             "normal adult": [1, 6]
         },
-        "weight": 10,
+        "weight": 5,
         "intro_text": "p_l suggests this might be a good chance for the cats to practice new hunting techniques, particularly with app1 present.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 20,
@@ -6197,7 +5911,7 @@
             "apprentice": [1, 6],
             "normal adult": [1, 6]
         },
-        "weight": 10,
+        "weight": 5,
         "intro_text": "p_l suggests this might be a good chance to practice new hunting techniques with app1.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 60,
@@ -6275,10 +5989,10 @@
         "max_cats": 6,
         "min_max_status": {
             "apprentice": [1, 6],
-            "all apprentices": [2, 2],
+            "all apprentices": [2, 5],
             "normal adult": [1, 6]
         },
-        "weight": 10,
+        "weight": 5,
         "intro_text": "p_l suggests this might be a good chance for the cats to practice new hunting techniques, particularly with apprentices present.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 20,
@@ -6346,207 +6060,6 @@
         ]
     },
     {
-        "patrol_id": "gen_train_huntingskill6",
-        "biome": ["any"],
-        "season": ["any"],
-        "types": ["training"],
-        "tags": [],
-        "patrol_art": "gen_train_huntingskill",
-        "min_cats": 3,
-        "max_cats": 6,
-        "min_max_status": {
-            "apprentice": [1, 6],
-            "all apprentices": [3, 3],
-            "normal adult": [1, 6]
-        },
-        "weight": 10,
-        "intro_text": "p_l suggests this might be a good chance for the cats to practice new hunting techniques, particularly with apprentices present.",
-        "decline_text": "They decide to focus on working on a different skill instead.",
-        "chance_of_success": 20,
-        "success_outcomes": [
-            {
-                "text": "Everyone has a nice practice session, picking up a good selection of new tricks to try out on their next hunting patrol. app1 really gets into it, and p_l praises {PRONOUN/app1/object} for {PRONOUN/app1/poss} focus and enthusiasm.",
-                "exp": 30,
-                "weight": 20,
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["platonic", "trust"],
-                        "amount": 5
-                    }
-                ]
-            },
-            {
-                "text": "s_c takes charge and coordinates exercises for the training patrol. Soon cats are practicing stalking each other, sharing tips about different terrain types, and discussing prey varieties.",
-                "exp": 30,
-                "weight": 20,
-                "stat_skill": ["TEACHER,1", "HUNTER,1"],
-                "can_have_stat": ["adult"],
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["platonic", "trust"],
-                        "amount": 5
-                    }
-                ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "Unfortunately, no one steps up to teach. It makes everything feel awkward and like a waste of time, and the cats give up and return to camp a little irritated.",
-                "exp": 0,
-                "weight": 20,
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["platonic", "trust"],
-                        "amount": -5
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "patrol_id": "gen_train_huntingskill7",
-        "biome": ["any"],
-        "season": ["any"],
-        "types": ["training"],
-        "tags": [],
-        "patrol_art": "gen_train_huntingskill",
-        "min_cats": 3,
-        "max_cats": 6,
-        "min_max_status": {
-            "apprentice": [1, 6],
-            "all apprentices": [4, 4],
-            "normal adult": [1, 6]
-        },
-        "weight": 10,
-        "intro_text": "p_l suggests this might be a good chance for the cats to practice new hunting techniques, particularly with apprentices present.",
-        "decline_text": "They decide to focus on working on a different skill instead.",
-        "chance_of_success": 20,
-        "success_outcomes": [
-            {
-                "text": "Everyone has a nice practice session, picking up a good selection of new tricks to try out on their next hunting patrol. app1 really gets into it, and p_l praises {PRONOUN/app1/object} for {PRONOUN/app1/poss} focus and enthusiasm.",
-                "exp": 30,
-                "weight": 20,
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["platonic", "trust"],
-                        "amount": 5
-                    }
-                ]
-            },
-            {
-                "text": "s_c takes charge and coordinates exercises for the training patrol. Soon cats are practicing stalking each other, sharing tips about different terrain types, and discussing prey varieties.",
-                "exp": 30,
-                "weight": 20,
-                "stat_skill": ["TEACHER,1", "HUNTER,1"],
-                "can_have_stat": ["adult"],
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["platonic", "trust"],
-                        "amount": 5
-                    }
-                ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "Unfortunately, no one steps up to teach. It makes everything feel awkward and like a waste of time, and the cats give up and return to camp a little irritated.",
-                "exp": 0,
-                "weight": 20,
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["platonic", "trust"],
-                        "amount": -5
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "patrol_id": "gen_train_huntingskill8",
-        "biome": ["any"],
-        "season": ["any"],
-        "types": ["training"],
-        "tags": [],
-        "patrol_art": "gen_train_huntingskill",
-        "min_cats": 3,
-        "max_cats": 6,
-        "min_max_status": {
-            "apprentice": [1, 6],
-            "all apprentices": [5, 5],
-            "normal adult": [1, 6]
-        },
-        "weight": 10,
-        "intro_text": "p_l suggests this might be a good chance for the cats to practice new hunting techniques, particularly with apprentices present.",
-        "decline_text": "They decide to focus on working on a different skill instead.",
-        "chance_of_success": 20,
-        "success_outcomes": [
-            {
-                "text": "Everyone has a nice practice session, picking up a good selection of new tricks to try out on their next hunting patrol. app1 really gets into it, and p_l praises {PRONOUN/app1/object} for {PRONOUN/app1/poss} focus and enthusiasm.",
-                "exp": 30,
-                "weight": 20,
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["platonic", "trust"],
-                        "amount": 5
-                    }
-                ]
-            },
-            {
-                "text": "s_c takes charge and coordinates exercises for the training patrol. Soon cats are practicing stalking each other, sharing tips about different terrain types, and discussing prey varieties.",
-                "exp": 30,
-                "weight": 20,
-                "stat_skill": ["TEACHER,1", "HUNTER,1"],
-                "can_have_stat": ["adult"],
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["platonic", "trust"],
-                        "amount": 5
-                    }
-                ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "Unfortunately, no one steps up to teach. It makes everything feel awkward and like a waste of time, and the cats give up and return to camp a little irritated.",
-                "exp": 0,
-                "weight": 20,
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["platonic", "trust"],
-                        "amount": -5
-                    }
-                ]
-            }
-        ]
-    },
-    {
         "patrol_id": "gen_train_fightingskill1",
         "biome": ["any"],
         "season": ["any"],
@@ -6558,7 +6071,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "p_l suggests this might be a good chance for the cats to practice new fighting techniques.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 20,
@@ -6620,7 +6133,7 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {},
-        "weight": 20,
+        "weight": 5,
         "intro_text": "p_l suggests this might be a good chance to practice new fighting techniques with r_c.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 60,
@@ -6686,7 +6199,7 @@
             "all apprentices": [1, 1],
             "normal adult": [1, 6]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "p_l suggests this might be a good chance for the cats to practice new fighting techniques, particularly with app1 here to learn from them.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 20,
@@ -6752,7 +6265,7 @@
             "apprentice": [1, 6],
             "normal adult": [1, 6]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "p_l suggests this might be a good chance to practice new fighting techniques with app1.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 60,
@@ -6816,211 +6329,10 @@
         "max_cats": 6,
         "min_max_status": {
             "apprentice": [1, 6],
-            "all apprentices": [2, 2],
+            "all apprentices": [2, 5],
             "normal adult": [1, 6]
         },
-        "weight": 20,
-        "intro_text": "p_l suggests this might be a good chance for the cats to practice new fighting techniques, particularly with the apprentices here to learn from them.",
-        "decline_text": "They decide to focus on working on a different skill instead.",
-        "chance_of_success": 20,
-        "success_outcomes": [
-            {
-                "text": "Everyone has a nice practice session, picking up a good selection of new tricks to try out in their next skirmish. app1 really gets into it, and p_l praises {PRONOUN/app1/object} for {PRONOUN/app1/poss} focus and enthusiasm.",
-                "exp": 30,
-                "weight": 20,
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["platonic", "trust"],
-                        "amount": 5
-                    }
-                ]
-            },
-            {
-                "text": "s_c takes charge and coordinates exercises for the training patrol. Soon cats are practicing trips, twists, and tumbles.",
-                "exp": 30,
-                "weight": 20,
-                "stat_skill": ["TEACHER,1", "FIGHTER,1"],
-                "can_have_stat": ["adult"],
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["platonic", "trust"],
-                        "amount": 5
-                    }
-                ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "Unfortunately, no one steps up to teach. It makes everything feel awkward and like a waste of time, and the cats give up and return to camp a little irritated.",
-                "exp": 0,
-                "weight": 20,
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["platonic", "trust"],
-                        "amount": -5
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "patrol_id": "gen_train_fightingskill6",
-        "biome": ["any"],
-        "season": ["any"],
-        "types": ["training"],
-        "tags": [],
-        "patrol_art": "gen_train_fightingskill",
-        "min_cats": 3,
-        "max_cats": 6,
-        "min_max_status": {
-            "apprentice": [1, 6],
-            "all apprentices": [3, 3],
-            "normal adult": [1, 6]
-        },
-        "weight": 20,
-        "intro_text": "p_l suggests this might be a good chance for the cats to practice new fighting techniques, particularly with the apprentices here to learn from them.",
-        "decline_text": "They decide to focus on working on a different skill instead.",
-        "chance_of_success": 20,
-        "success_outcomes": [
-            {
-                "text": "Everyone has a nice practice session, picking up a good selection of new tricks to try out in their next skirmish. app1 really gets into it, and p_l praises {PRONOUN/app1/object} for {PRONOUN/app1/poss} focus and enthusiasm.",
-                "exp": 30,
-                "weight": 20,
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["platonic", "trust"],
-                        "amount": 5
-                    }
-                ]
-            },
-            {
-                "text": "s_c takes charge and coordinates exercises for the training patrol. Soon cats are practicing trips, twists, and tumbles.",
-                "exp": 30,
-                "weight": 20,
-                "stat_skill": ["TEACHER,1", "FIGHTER,1"],
-                "can_have_stat": ["adult"],
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["platonic", "trust"],
-                        "amount": 5
-                    }
-                ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "Unfortunately, no one steps up to teach. It makes everything feel awkward and like a waste of time, and the cats give up and return to camp a little irritated.",
-                "exp": 0,
-                "weight": 20,
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["platonic", "trust"],
-                        "amount": -5
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "patrol_id": "gen_train_fightingskill7",
-        "biome": ["any"],
-        "season": ["any"],
-        "types": ["training"],
-        "tags": [],
-        "patrol_art": "gen_train_fightingskill",
-        "min_cats": 3,
-        "max_cats": 6,
-        "min_max_status": {
-            "apprentice": [1, 6],
-            "all apprentices": [4, 4],
-            "normal adult": [1, 6]
-        },
-        "weight": 20,
-        "intro_text": "p_l suggests this might be a good chance for the cats to practice new fighting techniques, particularly with the apprentices here to learn from them.",
-        "decline_text": "They decide to focus on working on a different skill instead.",
-        "chance_of_success": 20,
-        "success_outcomes": [
-            {
-                "text": "Everyone has a nice practice session, picking up a good selection of new tricks to try out in their next skirmish. app1 really gets into it, and p_l praises {PRONOUN/app1/object} for {PRONOUN/app1/poss} focus and enthusiasm.",
-                "exp": 30,
-                "weight": 20,
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["platonic", "trust"],
-                        "amount": 5
-                    }
-                ]
-            },
-            {
-                "text": "s_c takes charge and coordinates exercises for the training patrol. Soon cats are practicing trips, twists, and tumbles.",
-                "exp": 30,
-                "weight": 20,
-                "stat_skill": ["TEACHER,1", "FIGHTER,1"],
-                "can_have_stat": ["adult"],
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["platonic", "trust"],
-                        "amount": 5
-                    }
-                ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "Unfortunately, no one steps up to teach. It makes everything feel awkward and like a waste of time, and the cats give up and return to camp a little irritated.",
-                "exp": 0,
-                "weight": 20,
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["platonic", "trust"],
-                        "amount": -5
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "patrol_id": "gen_train_fightingskill8",
-        "biome": ["any"],
-        "season": ["any"],
-        "types": ["training"],
-        "tags": [],
-        "patrol_art": "gen_train_fightingskill",
-        "min_cats": 3,
-        "max_cats": 6,
-        "min_max_status": {
-            "apprentice": [1, 6],
-            "all apprentices": [5, 5],
-            "normal adult": [1, 6]
-        },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "p_l suggests this might be a good chance for the cats to practice new fighting techniques, particularly with the apprentices here to learn from them.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 20,
@@ -7085,13 +6397,13 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "p_l suggests this might be a good chance to practice new hunting techniques with r_c.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "As p_l and r_c run around c_n's territory, theoretically training, r_c feels wild and free, like {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} going to burst with unexpected happiness! {PRONOUN/r_c/subject/CAP} {VERB/r_c/turn/turns} and {VERB/r_c/pounce/pounces} on p_l, starting a play-fight with their 'prey.'",
+                "text": "As p_l and r_c run around c_n's territory, theoretically training, r_c feels wild and free and like {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} going to burst with unexpected happiness! {PRONOUN/r_c/subject/CAP} {VERB/r_c/turn/turns} and {VERB/r_c/pounce/pounces} on p_l, starting a little play fight with {PRONOUN/r_c/poss} mock-prey.",
                 "exp": 10,
                 "weight": 20,
                 "relationships": [
@@ -7154,7 +6466,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "p_l suggests this might be a good chance to practice new fighting techniques with r_c.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 70,
@@ -7223,7 +6535,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "As they wander aimlessly towards the sparring area for a training session, r_c stops p_l and asks for {PRONOUN/p_l/poss} advice with something.",
         "decline_text": "It's not the right time for this conversation... Maybe once they're back at camp.",
         "chance_of_success": 70,
@@ -7292,7 +6604,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "Quietly, r_c brings p_l aside as they work on their chores, asking for help with wording something difficult.",
         "decline_text": "Both of them are interrupted by a request from a Clanmate - this conversation will have to wait.",
         "chance_of_success": 70,
@@ -7363,7 +6675,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "During an odd moment of downtime, r_c asks p_l if {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} a good teacher.",
         "decline_text": "They are interrupted by some Clanmates who need help and go off to attend to their duties.",
         "chance_of_success": 70,
@@ -7442,7 +6754,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "p_l gets taken aside by r_c as {PRONOUN/r_c/subject} {VERB/r_c/ask/asks} why {PRONOUN/r_c/subject} {VERB/r_c/feel/feels} like StarClan ignores {PRONOUN/r_c/object}.",
         "decline_text": "Neither of them have the time for such a conversation today - it'll have to wait.",
         "chance_of_success": 70,
@@ -7522,7 +6834,7 @@
         "min_max_status": {
             "all apprentices": [2, 2]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "app1 and app2, while exploring the territory, come across the forbidden tunnels.",
         "decline_text": "They don't want to get into trouble, and they have a lot more territory to explore anyway.",
         "chance_of_success": 50,
@@ -7542,7 +6854,7 @@
                 ]
             },
             {
-                "text": "app1 expected a little hesitation, but app2 defies that expectation and darts right into the tunnels, playfully batting at {PRONOUN/app1/object} as they do so. They play for what seems like forever, and they make up a lie to tell their mentors on their way back to camp.",
+                "text": "app1 expected a little hesitation, but app2 defies that expectation and darts right into the tunnels, playfully batting at {PRONOUN/app1/object} as {PRONOUN/app2/subject} {VERB/app2/do/does} so. They play for what seems like forever and they make up a lie to tell their mentors on their way back to camp.",
                 "exp": 10,
                 "weight": 10,
                 "relationships": [
@@ -7619,7 +6931,7 @@
             "all apprentices": [1, 1],
             "normal adult": [1, 6]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "app1 isn't acting like {PRONOUN/app1/poss} usual self.",
         "decline_text": "p_l has no time today to get to the bottom of it.",
         "chance_of_success": 60,
@@ -7684,7 +6996,7 @@
             "apprentice": [1, 6],
             "normal adult": [1, 6]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "p_l takes app1 out of camp to gather moss.",
         "decline_text": "Before they even leave the camp, r_c's expertise is required in another matter.",
         "chance_of_success": 40,
@@ -7944,7 +7256,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "r_c stutters so much that it's honestly a miracle p_l doesn't pounce on the chance to make fun of {PRONOUN/r_c/object} for it - {PRONOUN/r_c/subject} {VERB/r_c/do/does}n't think {PRONOUN/r_c/subject} could take that right now. But p_l seems similarly preoccupied and distracted. Neither of them manages any productive training.",
+                "text": "r_c stutters so much that it's honestly a miracle p_l doesn't justifiably make fun of {PRONOUN/r_c/object} for it - {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} think {PRONOUN/r_c/subject} could take that right now. But p_l seems similarly preoccupied and distracted. Neither of them manages any productive training.",
                 "exp": 0,
                 "weight": 20
             }
@@ -8326,7 +7638,7 @@
         "relationship_constraint": ["dislike_40", "romantic_40", "not_mates"],
         "success_outcomes": [
             {
-                "text": "p_l gapes at {PRONOUN/r_c/object}, mouth hanging open like a fish, and r_c glares at {PRONOUN/p_l/object} for making such a mouse-brained expression look so unfairly attractive. Fine. r_c hates {PRONOUN/p_l/object} too then, just like p_l wants.",
+                "text": "p_l gapes at {PRONOUN/r_c/object}, mouth hanging open like a dumb fish, and r_c glares at {PRONOUN/p_l/object} for making such a dumb expression look so stupidly pretty. Fine. r_c hates {PRONOUN/p_l/object} too then, just like p_l wants.",
                 "exp": 15,
                 "weight": 20,
                 "relationships": [
@@ -8356,7 +7668,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "r_c fails to get p_l alone - their Clanmates seen determined to never give the two of them any privacy.",
+                "text": "r_c fails to get p_l alone - {PRONOUN/r_c/poss} Clanmates seem determined to never give the two of them any privacy.",
                 "exp": 0,
                 "weight": 20
             }
@@ -8441,8 +7753,8 @@
             "all apprentices": [2, 2],
             "normal adult": [1, 6]
         },
-        "weight": 30,
-        "intro_text": "p_l leads the patrol towards the borders, wanting to test the apprentices on identifying o_c_n scent. But for some reason, the walk seems to be taking longer than usual, and p_l keeps hearing odd yelps and grunts from behind {PRONOUN/p_l/object}.",
+        "weight": 5,
+        "intro_text": "p_l leads the patrol towards the borders, wanting to test the apprentices on identifying o_c_n scent. But for some reason the walk seems to be taking longer than usual, and p_l keeps hearing odd yelps and grunts from behind {PRONOUN/p_l/object}.",
         "decline_text": "p_l comments offhandedly that, seeing they seem to have so much energy, both apprentices can help around the camp when they get back instead of resting. The rest of the patrol is spent in sullen silence.",
         "chance_of_success": 60,
         "relationship_constraint": ["not_mates"],
@@ -9020,7 +8332,7 @@
             "normal adult": [1, 6]
         },
         "weight": 30,
-        "intro_text": "p_l looks down at the group they have to try and teach, feeling doubtful. Camp maintenance isn't a glamourous topic, especially in the eyes of younger cats.",
+        "intro_text": "p_l looks down at the group {PRONOUN/p_l/subject} {VERB/p_l/have/has} to try and teach, face doubtful. Camp maintenance isn't a glamourous topic, especially in the eyes of younger cats.",
         "decline_text": "p_l calls off the lesson.",
         "chance_of_success": 60,
         "pl_skill_constraint": ["TEACHER,1", "INSIGHTFUL,1", "KIT,1", "CAMP,1"],
@@ -9150,8 +8462,8 @@
             "normal adult": [1, 6]
         },
         "weight": 30,
-        "intro_text": "Leading the group of cats around them to a good vantage point, p_l settles down. Has anyone heard the tale of <i>The Cat Who Time Forgot?</i>",
-        "decline_text": "The patrol has heard this tale before - better to go for a short hunt instead. The cats disperse, much to p_l's disappointment.",
+        "intro_text": "Leading the group of cats around {PRONOUN/p_l/object} to a good vantage point, p_l settles down. Has anyone heard the tale of <i>The Cat Who Time Forgot?</i>",
+        "decline_text": "The patrol has heard this tale before - better to go for a short hunt instead, and the cats disperse, much to p_l's disappointment.",
         "chance_of_success": 60,
         "pl_skill_constraint": ["STORY,1"],
         "success_outcomes": [
@@ -10077,13 +9389,13 @@
             "normal adult": [1, 6]
         },
         "weight": 30,
-        "intro_text": "While practicing their pounce, app1 goes down hard, falling in exactly the wrong way. {PRONOUN/app1/subject/CAP} {VERB/app1/scramble/scrambles} up with a yelp, one paw held off the ground.",
+        "intro_text": "While practicing {PRONOUN/app1/poss} pounce, app1 goes down hard, falling in exactly the wrong way. {PRONOUN/app1/subject/CAP} {VERB/app1/scramble/scrambles} up with a yelp, one paw held off the ground.",
         "decline_text": "It's only a couple minutes before {PRONOUN/app1/subject}{VERB/app1/'re/'s} bouncing around again - apprentices are made of cotton-fluff.",
         "chance_of_success": 60,
         "pl_skill_constraint": ["HEALER,1"],
         "success_outcomes": [
             {
-                "text": "Carefully, p_l has app1 sit back down, where p_l grooms the injured paw all over. By the time {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} finished their assessment, app1 is already feeling a lot better - it was just a jolt of pain, nothing more, and training can continue unimpeded.",
+                "text": "Carefully, p_l has app1 sit back down, where p_l grooms the injured paw all over. By the time {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} finished {PRONOUN/p_l/poss} assessment, app1 is already feeling a lot better - it was just a jolt of pain, nothing more, and training can continue unimpeded.",
                 "exp": 30,
                 "weight": 20,
                 "relationships": [
@@ -10427,7 +9739,7 @@
             "normal adult": [1, 6]
         },
         "weight": 30,
-        "intro_text": "While the cats are out training, the discussion turns to rogues. p_l perks {PRONOUN/p_l/poss} ears up - {PRONOUN/p_l/object} know all about it.",
+        "intro_text": "While the cats are out training, the discussion turns to rogues. p_l perks {PRONOUN/p_l/poss} ears up - {PRONOUN/p_l/object} {VERB/p_l/know/knows} all about it.",
         "decline_text": "But {PRONOUN/p_l/object} {VERB/p_l/decide/decides} to listen instead of joining in the conversation.",
         "chance_of_success": 60,
         "pl_skill_constraint": ["ROGUE,0", "LONER,0"],
@@ -10866,7 +10178,7 @@
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["dislike"],
-                        "amount": -5
+                        "amount": -6
                     }
                 ]
             },
@@ -10916,7 +10228,7 @@
                 ]
             },
             {
-                "text": "At this rate, the patrol is going to impede app1's chances to get {PRONOUN/app1/poss} warrior's name. app1 leaves the patrol to their bickering and goes off on {PRONOUN/app1/poss} own to hunt. {PRONOUN/app1/poss/CAP} thoughts swim with curses toward the others in the patrol. It should have been obvious - this was {PRONOUN/app1/poss} assessment, after all. The only warning of danger to break {PRONOUN/app1/object} out of {PRONOUN/app1/poss} thoughts is the screech of a raging monster before nothingness.",
+                "text": "At this rate the patrol is going to impede app1's chances to get {PRONOUN/app1/poss} warrior's name. app1 leaves the patrol to their bickering and goes off on {PRONOUN/app1/poss} own to hunt. {PRONOUN/app1/poss/CAP} thoughts swim with curses toward the others in the patrol. It should have been obvious - this was {PRONOUN/app1/poss} assessment, after all. The only warning of danger to break {PRONOUN/app1/object} out of {PRONOUN/app1/poss} thoughts is the screech of a raging monster before nothingness.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["app1"],
@@ -10990,13 +10302,13 @@
             "warrior": [1, 1],
             "deputy": [-1, -1]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "It is almost dawn when the deputy rouses app1 for {PRONOUN/app1/poss} assessment. {PRONOUN/app1/subject/CAP} {VERB/app1/are/is} meant to find p_l posing as an enemy warrior somewhere on the territory and handle the situation. p_l could be anywhere!",
         "decline_text": "app1 sheepishly looks up at the deputy, a guilty gleam in {PRONOUN/app1/poss} eyes, and says that {PRONOUN/app1/subject} {VERB/app1/have/has} a stomachache. {PRONOUN/app1/subject/CAP} hurriedly {VERB/app1/run/runs} to the medicine cat den, wondering how {PRONOUN/app1/subject} {VERB/app1/are/is} going to get away with this fake illness at sunhigh when the Clan shares tongues.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "Sluggishly, app1 heads out into the territory to find p_l. By the time the sun starts to set, {PRONOUN/app1/subject} {VERB/app1/are/is} about to lose hope. However, {PRONOUN/app1/subject} {VERB/app1/spot/spots} p_l nibbling on a pigeon's wing. Imagining an enemy warrior, app1 attacks p_l and catches {PRONOUN/p_l/object} off-guard! After a brief tussle, p_l admits defeat and guides app1 home.",
+                "text": "Sluggishly, app1 heads out into the territory to find p_l. By the time the sun starts to set, {PRONOUN/app1/subject} {VERB/app1/are/is} about to lose hope. However, {PRONOUN/app1/subject} {VERB/app1/spot/spots} p_l nibbling on a pigeon's wing. Imagining an enemy warrior, app1 attacks p_l and catches {PRONOUN/p_l/object} off-guard! After a brief tussle, p_l admits defeat, and guides app1 home.",
                 "exp": 15,
                 "weight": 20,
                 "relationships": [
@@ -11041,6 +10353,7 @@
                 "text": "app1 was already awake and raring to go. {PRONOUN/app1/subject/CAP} {VERB/app1/run/runs} off before the deputy can say anything. It's just a game of hide and seek, after all. When {PRONOUN/app1/subject} {VERB/app1/find/finds} p_l, {PRONOUN/app1/subject} {VERB/app1/have/has} to stifle {PRONOUN/app1/poss} chitters of excited pleasure. p_l must have heard {PRONOUN/app1/object}, because app1 sees {PRONOUN/p_l/poss} whiskers twitch in amusement. Oh well - {PRONOUN/app1/subject} gleefully {VERB/app1/charge/charges} forward anyway.",
                 "exp": 15,
                 "weight": 20,
+                "can_have_stat": ["app1"],
                 "stat_skill": ["RUNNER,0", "CLEVER,0"],
                 "relationships": [
                     {
@@ -11063,6 +10376,7 @@
                 "text": "app1 has waited for this for moons. {PRONOUN/app1/subject/CAP} {VERB/app1/disguise/disguises} {PRONOUN/app1/poss} scent and carefully {VERB/app1/work/works} {PRONOUN/app1/poss} way through the territory, checking strategic hiding places. Before long, {PRONOUN/app1/subject} {VERB/app1/pinpoint/pinpoints} p_l's hiding spot, and {VERB/app1/sneak/sneaks} behind the warrior. Without hesitation, app1 pounces on p_l and pins {PRONOUN/p_l/object} to the ground, a paw on {PRONOUN/p_l/poss} throat.",
                 "exp": 15,
                 "weight": 20,
+                "can_have_stat": ["app1"],
                 "stat_trait": ["sneaky", "cunning", "cold"],
                 "relationships": [
                     {
@@ -11133,6 +10447,7 @@
                 "text": "Why did it have to be this assessment? app1 struggles to make a decision. What if {PRONOUN/app1/subject} cannot find p_l before the time limit? Who decided there should be a time limit? Maybe app1 would be better off as a medicine cat... {PRONOUN/app1/poss/CAP} mentor's arrival startles {PRONOUN/app1/object}, and app1 realizes {PRONOUN/app1/subject} wasted too much time second-guessing {PRONOUN/app1/self}.",
                 "exp": 0,
                 "weight": 20,
+                "can_have_stat": ["app1"],
                 "stat_trait": ["nervous", "insecure", "oblivious"],
                 "relationships": [
                     {
@@ -11167,7 +10482,7 @@
             "all apprentices": [1, 1]
         },
     
-        "weight": 20,
+        "weight": 5,
         "chance_of_success": 50,
         "intro_text": "p_l is surprised when app1 makes a mistake on a simple move p_l thought {PRONOUN/app1/subject} had mastered. Before p_l can say anything, app1 runs out of the training grounds. When p_l finds {PRONOUN/app1/object} huddled in camp, {PRONOUN/app1/subject} {VERB/app1/sob/sobs} out a confession: {PRONOUN/app1/subject} will never be ready to be a warrior.",
         "decline_text": "It wouldn't help to talk to app1 while {PRONOUN/app1/subject} {VERB/app1/are/is} in this state. p_l tells {PRONOUN/app1/object} {PRONOUN/p_l/subject}'ll leave {PRONOUN/app1/object} alone and to come find {PRONOUN/p_l/object} if {PRONOUN/app1/subject}'d like to keep training today. app1 never does.",

@@ -2963,6 +2963,15 @@ def apply_opacity(surface, opacity):
 def chunks(L, n):
     return [L[x : x + n] for x in range(0, len(L), n)]
 
+def clamp(value: float, minimum_value: float, maximum_value: float) ->float: 
+    """
+    Takes a value and return it constrained to a certain range
+    """
+    if value < minimum_value:
+        return minimum_value
+    elif value > maximum_value:
+        return maximum_value
+    return value
 
 def is_iterable(y):
     try:

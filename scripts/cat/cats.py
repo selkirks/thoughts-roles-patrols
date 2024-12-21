@@ -35,6 +35,7 @@ from scripts.game_structure.game_essentials import game
 from scripts.game_structure.screen_settings import screen
 from scripts.housekeeping.datadir import get_save_dir
 from scripts.utility import (
+    clamp,
     get_alive_status_cats,
     get_personality_compatibility,
     event_text_adjust,
@@ -1579,16 +1580,18 @@ class Cat:
 
         # this figures out where the cat is
         where_kitty = None
-        if not self.dead and not self.outside:
-            where_kitty = "inside"
-        elif self.dead and not self.df and not self.outside:
-            where_kitty = "starclan"
-        elif self.dead and self.df:
-            where_kitty = "hell"
-        elif self.dead:
-            where_kitty = "UR"
-        else:
+        if self.dead:
+            if self.df:
+                where_kitty = "hell"
+            elif self.outside:
+                where_kitty = "UR"
+            else:
+                where_kitty = "starclan"
+        elif self.outside:
             where_kitty = "outside"
+        else:
+            where_kitty = "inside"    
+
         # get other cat
         i = 0
         # for cats inside the clan
@@ -2369,10 +2372,11 @@ class Cat:
             return
         if self.ID in mentor_cat.apprentice:
             mentor_cat.apprentice.remove(self.ID)
-        if self.moons > 6 and self.ID not in mentor_cat.former_apprentices:
-            mentor_cat.former_apprentices.append(self.ID)
-        if self.moons > 6 and mentor_cat.ID not in self.former_mentor:
-            self.former_mentor.append(mentor_cat.ID)
+        if self.moons > 6:
+            if self.ID not in mentor_cat.former_apprentices:
+                mentor_cat.former_apprentices.append(self.ID)
+            if mentor_cat.ID not in self.former_mentor:
+                self.former_mentor.append(mentor_cat.ID)
         self.mentor = None
 
     def __add_mentor(self, new_mentor_id: str):
@@ -2730,50 +2734,28 @@ class Cat:
                 jealousy = 0
                 trust = 0
                 if game.settings["random relation"]:
-                    if game.clan:
-                        if (
-                            the_cat == game.clan.instructor
-                            and game.clan.instructor.dead_for >= self.moons
-                        ):
+                    if game.clan and the_cat == game.clan.instructor and game.clan.instructor.dead_for >= self.moons:
                             pass
-                        elif randint(1, 20) == 1 and romantic_love < 1:
-                            dislike = randint(10, 25)
-                            jealousy = randint(5, 15)
-                            if randint(1, 30) == 1:
-                                trust = randint(1, 10)
-                        else:
-                            like = randint(0, 35)
-                            comfortable = randint(0, 25)
-                            trust = randint(0, 15)
-                            admiration = randint(0, 20)
-                            if (
-                                randint(1, 100 - like) == 1
-                                and self.moons > 11
-                                and the_cat.moons > 11
-                            ):
-                                romantic_love = randint(15, 30)
-                                comfortable = int(comfortable * 1.3)
-                                trust = int(trust * 1.2)
+                    elif randint(1, 20) == 1 and romantic_love < 1:
+                        dislike = randint(10, 25)
+                        jealousy = randint(5, 15)
+                        if randint(1, 30) == 1:
+                            trust = randint(1, 10)
                     else:
-                        if randint(1, 20) == 1 and romantic_love < 1:
-                            dislike = randint(10, 25)
-                            jealousy = randint(5, 15)
-                            if randint(1, 30) == 1:
-                                trust = randint(1, 10)
-                        else:
-                            like = randint(0, 35)
-                            comfortable = randint(0, 25)
-                            trust = randint(0, 15)
-                            admiration = randint(0, 20)
-                            if (
-                                randint(1, 100 - like) == 1
-                                and self.moons > 11
-                                and the_cat.moons > 11
-                            ):
-                                romantic_love = randint(15, 30)
-                                comfortable = int(comfortable * 1.3)
-                                trust = int(trust * 1.2)
-
+                        like = randint(0, 35)
+                        comfortable = randint(0, 25)
+                        trust = randint(0, 15)
+                        admiration = randint(0, 20)
+                        if (
+                            randint(1, 100 - like) == 1
+                            and self.moons > 11
+                            and the_cat.moons > 11
+                            and self.age == the_cat.age
+                        ):
+                            romantic_love = randint(15, 30)
+                            comfortable = int(comfortable * 1.3)
+                            trust = int(trust * 1.2)
+                    
                 if are_parents and like < 60:
                     like = 60
                 if siblings and like < 30:
@@ -2997,7 +2979,7 @@ class Cat:
                         -(randint(ran[0], ran[1]) + bonus) + personality_bonus,
                     )
                     rel2.romantic_love = Cat.effect_relation(
-                        rel1.romantic_love,
+                        rel2.romantic_love,
                         -(randint(ran[0], ran[1]) + bonus) + personality_bonus,
                     )
                     output += "Romantic interest decreased. "
@@ -3153,19 +3135,13 @@ class Cat:
                         rel2.jealousy,
                         -(randint(ran[0], ran[1]) + bonus) - personality_bonus,
                     )
-                    output += "Jealousy decreased . "
+                    output += "Jealousy decreased. "
 
         return output
 
     @staticmethod
     def effect_relation(current_value, effect):
-        if effect < 0 and abs(effect) >= current_value:
-            return 0
-
-        if effect > 0 and current_value + effect >= 100:
-            return 100
-
-        return current_value + effect
+        return clamp(current_value + effect, 0, 100)
 
     def set_faded(self):
         """This function is for cats that are faded. It will set the sprite and the faded tag"""
