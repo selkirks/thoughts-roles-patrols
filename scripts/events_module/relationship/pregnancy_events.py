@@ -6,6 +6,7 @@ from copy import deepcopy
 import ujson
 
 from scripts.cat.cats import Cat
+from scripts.cat.enums import CatAgeEnum
 from scripts.cat.history import History
 from scripts.cat.genotype import Genotype
 from scripts.cat.names import names, Name
@@ -915,7 +916,7 @@ class Pregnancy_Events:
         # decide chances of having kits, and if it's possible at all.
         # Including - age, dead statis, having kits turned off.
         not_correct_age = (
-            cat.age in ["newborn", "kitten", "adolescent"] or cat.moons < 15
+            cat.age in [CatAgeEnum.NEWBORN, CatAgeEnum.KITTEN, CatAgeEnum.ADOLESCENT] or cat.moons < 15
         )
         if not_correct_age or cat.no_kits or cat.dead:
             return False
@@ -1636,25 +1637,25 @@ class Pregnancy_Events:
         
         if(clan.clan_settings['modded_kits']):
 
-            one_kit = [1] * game.config["pregnancy"]["one_kit_modded"][cat.age]
-            two_kits = [2] * game.config["pregnancy"]["two_kit_modded"][cat.age]
-            three_kits = [3] * game.config["pregnancy"]["three_kit_modded"][cat.age]
-            four_kits = [4] * game.config["pregnancy"]["four_kit_modded"][cat.age]
-            five_kits = [5] * game.config["pregnancy"]["five_kit_modded"][cat.age]
-            six_kits = [choice([6, 7, 8])] * game.config["pregnancy"]["six_kit_modded"][cat.age]
-            nine_kits = [choice([9, 10, 11, 12])] * game.config["pregnancy"]["nine_kit_modded"][cat.age]
-            max_kits = [choice([13, 14, 15, 16, 17, 18, 19])] * game.config["pregnancy"]["max_kit_modded"][cat.age]
+            one_kit = [1] * game.config["pregnancy"]["one_kit_modded"][cat.age.value]
+            two_kits = [2] * game.config["pregnancy"]["two_kit_modded"][cat.age.value]
+            three_kits = [3] * game.config["pregnancy"]["three_kit_modded"][cat.age.value]
+            four_kits = [4] * game.config["pregnancy"]["four_kit_modded"][cat.age.value]
+            five_kits = [5] * game.config["pregnancy"]["five_kit_modded"][cat.age.value]
+            six_kits = [choice([6, 7, 8])] * game.config["pregnancy"]["six_kit_modded"][cat.age.value]
+            nine_kits = [choice([9, 10, 11, 12])] * game.config["pregnancy"]["nine_kit_modded"][cat.age.value]
+            max_kits = [choice([13, 14, 15, 16, 17, 18, 19])] * game.config["pregnancy"]["max_kit_modded"][cat.age.value]
 
             amount = choice(one_kit + two_kits + three_kits + four_kits + five_kits + six_kits + nine_kits + max_kits)
 
         else:
             min_kits = game.config["pregnancy"]["min_kits"]
-            min_kit = [min_kits] * game.config["pregnancy"]["one_kit_possibility"][cat.age]
-            two_kits = [min_kits + 1] * game.config["pregnancy"]["two_kit_possibility"][cat.age]
-            three_kits = [min_kits + 2] * game.config["pregnancy"]["three_kit_possibility"][cat.age]
-            four_kits = [min_kits + 3] * game.config["pregnancy"]["four_kit_possibility"][cat.age]
-            five_kits = [min_kits + 4] * game.config["pregnancy"]["five_kit_possibility"][cat.age]
-            max_kits = [game.config["pregnancy"]["max_kits"]] * game.config["pregnancy"]["max_kit_possibility"][cat.age]
+            min_kit = [min_kits] * game.config["pregnancy"]["one_kit_possibility"][cat.age.value]
+            two_kits = [min_kits + 1] * game.config["pregnancy"]["two_kit_possibility"][cat.age.value]
+            three_kits = [min_kits + 2] * game.config["pregnancy"]["three_kit_possibility"][cat.age.value]
+            four_kits = [min_kits + 3] * game.config["pregnancy"]["four_kit_possibility"][cat.age.value]
+            five_kits = [min_kits + 4] * game.config["pregnancy"]["five_kit_possibility"][cat.age.value]
+            max_kits = [game.config["pregnancy"]["max_kits"]] * game.config["pregnancy"]["max_kit_possibility"][cat.age.value]
 
             amount = choice(min_kit + two_kits + three_kits + four_kits + five_kits + max_kits)
         

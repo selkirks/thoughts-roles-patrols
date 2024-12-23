@@ -12,6 +12,7 @@ import pygame_gui
 import ujson
 
 from scripts.cat.cats import Cat, BACKSTORIES
+from ..cat.enums import CatAgeEnum
 from scripts.cat.pelts import Pelt
 from scripts.clan_resources.freshkill import FRESHKILL_ACTIVE
 from scripts.game_structure import image_cache
@@ -767,12 +768,12 @@ class ProfileScreen(Screens):
         output += "\n"
 
         # AGE
-        if the_cat.age == "kitten":
+        if the_cat.age == CatAgeEnum.KITTEN:
             output += "young"
-        elif the_cat.age == "senior":
+        elif the_cat.age == CatAgeEnum.SENIOR:
             output += "senior"
         else:
-            output += the_cat.age
+            output += the_cat.age.value
         # NEWLINE ----------
         output += "\n"
 
@@ -797,7 +798,7 @@ class ProfileScreen(Screens):
         output += "\n"
         
         # HEIGHT
-        output += "height: " + the_cat.genotype.height_label
+        output += "size: " + the_cat.genotype.height_label
         if game.clan.clan_settings["showheight"]:
             if game.clan.clan_settings["metric_toggle"]:
                 output += f" ({the_cat.genotype.shoulder_height * 2.54:.2f} cm)"

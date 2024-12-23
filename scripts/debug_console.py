@@ -211,6 +211,9 @@ class DebugMode:
         Updates *before* the UI has been drawn.
         """
 
+        self.debug_menu.always_on_top = False
+        self.debug_menu.always_on_top = True # Force window to render on top, if there's another option, please change this.
+
         # Showcoords
         if game.debug_settings["showcoords"]:
             if self.coords_display.visible == 0:

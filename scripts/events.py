@@ -14,6 +14,7 @@ from collections import Counter
 import ujson
 
 from scripts.cat.cats import Cat, cat_class, BACKSTORIES
+from scripts.cat.enums import CatAgeEnum
 from scripts.cat.history import History
 from scripts.cat.names import Name
 from scripts.clan import HERBS
@@ -1541,11 +1542,14 @@ class Events:
                     self.ceremony(cat, "elder")
 
             # apprentice a kitten to either med or warrior
-            if cat.moons == cat_class.age_moons["adolescent"][0]:
-                if cat.status == 'kitten':
-                    med_cat_list = [i for i in Cat.all_cats_list if
-                                    i.status in ["healer", "healer apprentice"] and not (
-                                            i.dead or i.outside)]
+            if cat.moons == cat_class.age_moons[CatAgeEnum.ADOLESCENT][0]:
+                if cat.status == "kitten":
+                    med_cat_list = [
+                        i
+                        for i in Cat.all_cats_list
+                        if i.status in ["healer", "healer apprentice"]
+                        and not (i.dead or i.outside)
+                    ]
 
                     # check if the healer is an elder
                     has_elder_med = [c for c in med_cat_list if c.age == 'senior' and c.status == "healer"]
@@ -2056,9 +2060,9 @@ class Events:
         chance = acc_chances["base_acc_chance"]
         if cat.status in ['healer', 'healer apprentice']:
             chance += acc_chances["med_modifier"]
-        if cat.age in ["kitten", "adolescent"]:
+        if cat.age in [CatAgeEnum.KITTEN, CatAgeEnum.ADOLESCENT]:
             chance += acc_chances["baby_modifier"]
-        elif cat.age in ["senior adult", "senior"]:
+        elif cat.age in [CatAgeEnum.SENIOR_ADULT, CatAgeEnum.SENIOR]:
             chance += acc_chances["elder_modifier"]
         if cat.personality.trait in [
             "adventurous",
@@ -2115,12 +2119,12 @@ class Events:
             if cat.not_working() and int(random.random() * 3):
                 return
 
-            if cat.age == "kitten":
+            if cat.age == CatAgeEnum.KITTEN:
                 return
 
-            if cat.age == "adolescent":
+            if cat.age == CatAgeEnum.ADOLESCENT:
                 ran = game.config["outside_ex"]["base_adolescent_timeskip_ex"]
-            elif cat.age == "senior":
+            elif cat.age == CatAgeEnum.SENIOR:
                 ran = game.config["outside_ex"]["base_senior_timeskip_ex"]
             else:
                 ran = game.config["outside_ex"]["base_adult_timeskip_ex"]
@@ -2227,8 +2231,7 @@ class Events:
 
         if (
             not int(random.random() * chance)
-            and cat.age != "kitten"
-            and cat.age != "adolescent"
+            and not cat.age.is_baby()
             and not self.new_cat_invited
         ):
             self.new_cat_invited = True
@@ -2322,7 +2325,7 @@ class Events:
         relationships = cat.relationships.values()
         targets = []
 
-        if cat.age in ["kitten", "newborn"]:
+        if cat.age.is_baby():
             return
 
         # if this cat is unstable and aggressive, we lower the random murder chance
@@ -2598,16 +2601,16 @@ class Events:
     def coming_out(self, cat):
         """turnin' the kitties trans..."""
 
-        if cat.age in ["kitten", "newborn"]:
+        if cat.age.is_baby():
             return
 
         random_cat = get_random_moon_cat(Cat, main_cat=cat)
 
         transing_chance = game.config["transition_related"]
         chance = transing_chance["base_trans_chance"]
-        if cat.age in ["adolescent"]:
+        if cat.age in [CatAgeEnum.ADOLESCENT]:
             chance += transing_chance["adolescent_modifier"]
-        elif cat.age in ["adult", "senior adult", "senior"]:
+        elif cat.age in [CatAgeEnum.ADULT, CatAgeEnum.SENIOR_ADULT, CatAgeEnum.SENIOR]:
             chance += transing_chance["older_modifier"]
 
         if not int(random.random() * chance):

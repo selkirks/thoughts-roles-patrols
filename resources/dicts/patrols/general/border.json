@@ -178,7 +178,7 @@
                 "text": "p_l identifies the tracks as belonging to two-legs, and p_l decides to head back to camp to inform the others.",
                 "exp": 5,
                 "weight": 20
-            }            
+            }
         ],
         "fail_outcomes": [
             {

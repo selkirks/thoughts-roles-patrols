@@ -136,7 +136,9 @@
 			"r_c noticed m_c was struggling, and offered to help {PRONOUN/m_c/object}."
 		],
 		"random_trait_constraint": [
-			"empathetic"
+			"compassionate",
+			"loving",
+			"thoughtful"
 		]
 	},
 	{
@@ -180,7 +182,7 @@
 			"r_c helps m_c with a tedious task and it makes the whole day a lot easier."
 		],
 		"random_trait_constraint": [
-			"patient"
+			"calm"
 		]
 	},
 	{
@@ -257,11 +259,11 @@
 		"id": "comfort_med_inc_medium1",
 		"interactions": [
 			"m_c thanks r_c for checking when {PRONOUN/r_c/subject} {VERB/r_c/ask/asks} if {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} feeling alright.",
-			"m_c drops into the healer den to ask r_c if {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} eaten yet.",
+			"m_c drops into the medicine den to ask r_c if {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} eaten yet.",
 			"m_c brings r_c a piece of fresh-kill after a long day of healing work.",
-			"m_c helps r_c fix nests in the healer den.",
+			"m_c helps r_c fix nests in the medicine den.",
 			"m_c lets r_c vent to {PRONOUN/m_c/object} about the difficulties as a healer.",
-			"After a rough storm gets into the healer den, m_c helps r_c pick up herbs."
+			"After a rough storm gets into the medicine den, m_c helps r_c pick up herbs."
 		],
 		"random_status_constraint": [
 			"healer",
