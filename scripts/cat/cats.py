@@ -431,13 +431,8 @@ class Cat:
         nb_chance = randint(0, 75)
 
         # GENDER IDENTITY
-        if self.age.is_baby():
-            # newborns can't be trans, sorry babies
-            pass
-        elif nb_chance == 1:
-            self.genderalign = "nonbinary"
-        elif trans_chance == 1:
-            if self.gender == "female":
+        if self.gender == "female" and not self.status in ['newborn', 'kitten']:
+            if trans_chance == 1:
                 self.genderalign = "trans male"
             elif nb_chance == 1:
                 self.genderalign = choice(nonbiney_list)
