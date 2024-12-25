@@ -20,6 +20,7 @@ from pygame_gui.core import ObjectID
 
 logger = logging.getLogger(__name__)
 from scripts.game_structure import image_cache
+from scripts.cat.enums import CatAgeEnum
 from scripts.cat.history import History
 from scripts.cat.names import names
 from scripts.cat.pelts import Pelt
@@ -300,9 +301,7 @@ def change_clan_relations(other_clan, difference):
     game.clan.all_clans[y].relations = clan_relations
 
 
-def create_new_cat_block(
-    Cat, Relationship, event, in_event_cats: dict, i: int, attribute_list: List[str]
-) -> list:
+def create_new_cat_block(Cat, Relationship, event, in_event_cats: dict, i: int, attribute_list: List[str]) -> list:
     """
     Creates a single new_cat block and then generates and returns the cats within the block
     :param Cat Cat: always pass Cat class
@@ -431,15 +430,17 @@ def create_new_cat_block(
             continue
 
         if match.group(1) in Cat.age_moons:
+            min_age, max_age = Cat.age_moons[CatAgeEnum(match.group(1))]
             age = randint(
-                Cat.age_moons[match.group(1)][0], Cat.age_moons[match.group(1)][1]
+                min_age, max_age
             )
             break
 
         # Set same as first mate
         if match.group(1) == "mate" and give_mates:
+            min_age, max_age = Cat.age_moons[give_mates[0].age]
             age = randint(
-                Cat.age_moons[give_mates[0].age][0], Cat.age_moons[give_mates[0].age][1]
+                min_age, max_age
             )
             break
 
@@ -450,7 +451,7 @@ def create_new_cat_block(
     if status and not age:
         if status in ["apprentice", "mediator apprentice", "medicine cat apprentice"]:
             age = randint(
-                Cat.age_moons["adolescent"][0], Cat.age_moons["adolescent"][1]
+                Cat.age_moons[CatAgeEnum.ADOLESCENT][0], Cat.age_moons[CatAgeEnum.ADOLESCENT][1]
             )
         elif status in ["warrior", "mediator", "medicine cat"]:
             age = randint(
@@ -501,7 +502,7 @@ def create_new_cat_block(
     for _tag in attribute_list:
         match = re.match(r"backstory:(.+)", _tag)
         if match:
-            bs_list = [x for x in match.group(1).split(",")]
+            bs_list = [x for x in re.split(r", ?", match.group(1))]
             stor = []
             for story in bs_list:
                 if story in BACKSTORIES["backstories"]:
@@ -510,6 +511,8 @@ def create_new_cat_block(
                     stor.extend(BACKSTORIES["backstory_categories"][story])
             bs_override = True
             break
+    if bs_override:
+        chosen_backstory = choice(stor)
 
     # KITTEN THOUGHT
     if status in ["kitten", "newborn"]:
@@ -2624,7 +2627,7 @@ def generate_sprite(
     if life_state is not None:
         age = life_state
     else:
-        age = cat.age
+        age = cat.age.value
 
     if always_living:
         dead = False

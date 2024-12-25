@@ -12,6 +12,15 @@
                 "patrols/**/*.json",
                 "!patrols/explicit_patrol_art.json"
             ]
+        },
+        {
+            "url": "./schemas/shortevent.schema.json",
+            "fileMatch": [
+                "events/death/*.json",
+                "events/misc/*.json",
+                "events/new_cat/*.json",
+                "events/injury/*.json"
+            ]
         }
     ],
     "python.formatting.provider": "yapf",

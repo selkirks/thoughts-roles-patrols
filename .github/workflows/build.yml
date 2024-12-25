@@ -1,6 +1,13 @@
 name: PyInstaller build
 
-on: [push]
+on:
+  push:
+    paths-ignore:
+      - ".github/workflows/build-docs.yml"
+      - "docs/**"
+      - "docs-resources/**"
+      - "mkdocs.yml"
+      - "Dockerfile"
 
 permissions:
   contents: write
