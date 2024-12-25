@@ -9,11 +9,10 @@ import itertools
 import os.path
 import sys
 from random import choice, randint, sample, random, getrandbits, randrange
-from typing import Dict, List, Any, Callable
+from typing import Dict, List, Any
 
 import ujson  # type: ignore
 
-from scripts.cat.enums import CatAgeEnum
 from scripts.cat.history import History
 from scripts.cat.names import Name
 from scripts.cat.pelts import Pelt
@@ -44,20 +43,31 @@ from scripts.utility import (
     leader_ceremony_text_adjust,
 )
 
+
 class Cat:
     """The cat class."""
 
     dead_cats = []
     used_screen = screen
 
+    ages = [
+        "newborn",
+        "kitten",
+        "adolescent",
+        "young adult",
+        "adult",
+        "senior adult",
+        "senior",
+    ]
+
     age_moons = {
-        CatAgeEnum.NEWBORN: game.config["cat_ages"]["newborn"],
-        CatAgeEnum.KITTEN: game.config["cat_ages"]["kitten"],
-        CatAgeEnum.ADOLESCENT: game.config["cat_ages"]["adolescent"],
-        CatAgeEnum.YOUNG_ADULT: game.config["cat_ages"]["young adult"],
-        CatAgeEnum.ADULT: game.config["cat_ages"]["adult"],
-        CatAgeEnum.SENIOR_ADULT: game.config["cat_ages"]["senior adult"],
-        CatAgeEnum.SENIOR: game.config["cat_ages"]["senior"],
+        "newborn": game.config["cat_ages"]["newborn"],
+        "kitten": game.config["cat_ages"]["kitten"],
+        "adolescent": game.config["cat_ages"]["adolescent"],
+        "young adult": game.config["cat_ages"]["young adult"],
+        "adult": game.config["cat_ages"]["adult"],
+        "senior adult": game.config["cat_ages"]["senior adult"],
+        "senior": game.config["cat_ages"]["senior"],
     }
 
     # This in is in reverse order: top of the list at the bottom
@@ -263,14 +273,14 @@ class Cat:
 
         # age and status
         if status is None and moons is None:
-            self.age = choice(list(CatAgeEnum))
+            self.age = choice(self.ages)
         elif moons is not None:
             self.moons = moons
             if moons > 300:
                 # Out of range, always elder
-                self.age = CatAgeEnum.SENIOR
+                self.age = "senior"
             elif moons == 0:
-                self.age = CatAgeEnum.NEWBORN
+                self.age = "newborn"
             else:
                 # In range
                 for key_age in self.age_moons.keys():
@@ -280,19 +290,19 @@ class Cat:
                         self.age = key_age
         else:
             if status == "newborn":
-                self.age = CatAgeEnum.NEWBORN
+                self.age = "newborn"
             elif status == "kitten":
-                self.age = CatAgeEnum.KITTEN
+                self.age = "kitten"
             elif status == "elder":
-                self.age = CatAgeEnum.SENIOR
+                self.age = "senior"
             elif status in [
                 "apprentice",
                 "mediator apprentice",
                 "medicine cat apprentice",
             ]:
-                self.age = CatAgeEnum.ADOLESCENT
+                self.age = "adolescent"
             else:
-                self.age = choice([CatAgeEnum.YOUNG_ADULT, CatAgeEnum.ADULT, CatAgeEnum.ADULT, CatAgeEnum.SENIOR_ADULT])
+                self.age = choice(["young adult", "adult", "adult", "senior adult"])
             self.moons = randint(
                 self.age_moons[self.age][0], self.age_moons[self.age][1]
             )
@@ -407,9 +417,9 @@ class Cat:
         """
         if moons > 300:
             # Out of range, always elder
-            self.age = CatAgeEnum.SENIOR
+            self.age = "senior"
         elif moons == 0:
-            self.age = CatAgeEnum.NEWBORN
+            self.age = "newborn"
         else:
             # In range
             for key_age in self.age_moons.keys():
@@ -429,15 +439,8 @@ class Cat:
         theythemdefault = game.settings["they them default"]
         trans_chance = randint(0, 50)
         nb_chance = randint(0, 75)
-
-        # GENDER IDENTITY
-        if self.age.is_baby():
-            # newborns can't be trans, sorry babies
-            pass
-        elif nb_chance == 1:
-            self.genderalign = "nonbinary"
-        elif trans_chance == 1:
-            if self.gender == "female":
+        if self.gender == "female" and not self.status in ['newborn', 'kitten']:
+            if trans_chance == 1:
                 self.genderalign = "trans male"
             elif nb_chance == 1:
                 self.genderalign = choice(nonbiney_list)
@@ -485,15 +488,15 @@ class Cat:
         )
 
         # Personality
-        self.personality = Personality(kit_trait=self.age.is_baby())
+        self.personality = Personality(kit_trait=self.is_baby())
 
         # experience and current patrol status
-        if self.age.is_baby():
+        if self.age in ["young", "newborn"]:
             self.experience = 0
-        elif self.age == CatAgeEnum.ADOLESCENT:
+        elif self.age in ["adolescent"]:
             m = self.moons
             self.experience = 0
-            while m > Cat.age_moons[CatAgeEnum.ADOLESCENT][0]:
+            while m > Cat.age_moons["adolescent"][0]:
                 ran = game.config["graduation"]["base_app_timeskip_ex"]
                 exp = choice(
                     list(range(ran[0][0], ran[0][1] + 1))
@@ -501,17 +504,17 @@ class Cat:
                 )
                 self.experience += exp + 3
                 m -= 1
-        elif self.age in [CatAgeEnum.YOUNG_ADULT, CatAgeEnum.ADULT]:
+        elif self.age in ["young adult", "adult"]:
             self.experience = randint(
                 Cat.experience_levels_range["prepared"][0],
                 Cat.experience_levels_range["proficient"][1],
             )
-        elif self.age == CatAgeEnum.SENIOR_ADULT:
+        elif self.age in ["senior adult"]:
             self.experience = randint(
                 Cat.experience_levels_range["competent"][0],
                 Cat.experience_levels_range["expert"][1],
             )
-        elif self.age == CatAgeEnum.SENIOR:
+        elif self.age in ["senior"]:
             self.experience = randint(
                 Cat.experience_levels_range["competent"][0],
                 Cat.experience_levels_range["master"][1],
@@ -996,7 +999,7 @@ class Cat:
         if not (self.outside or self.exiled):
             return
 
-        self.personality.set_kit(self.age.is_baby())  # Update kit trait stuff
+        self.personality.set_kit(self.is_baby())  # Update kit trait stuff
 
     def describe_cat(self, short=False):
         """Generates a string describing the cat's appearance and gender.
@@ -1540,7 +1543,7 @@ class Cat:
 
         if self.exiled or self.outside:
             # this is handled in events.py
-            self.personality.set_kit(self.age.is_baby())
+            self.personality.set_kit(self.is_baby())
             self.thoughts()
             return
 
@@ -1553,7 +1556,7 @@ class Cat:
             self.personality.facet_wobble(facet_max=2)
 
         # Set personality to correct type
-        self.personality.set_kit(self.age.is_baby())
+        self.personality.set_kit(self.is_baby())
         # Upon age-change
 
         if self.status in [
@@ -1890,8 +1893,8 @@ class Cat:
             return
 
         illness = ILLNESSES[name]
-        mortality = illness["mortality"][self.age.value]
-        med_mortality = illness["medicine_mortality"][self.age.value]
+        mortality = illness["mortality"][self.age]
+        med_mortality = illness["medicine_mortality"][self.age]
         illness_severity = illness["severity"] if severity == "default" else severity
         duration = illness["duration"]
         med_duration = illness["medicine_duration"]
@@ -1961,7 +1964,7 @@ class Cat:
             return
 
         injury = INJURIES[name]
-        mortality = injury["mortality"][self.age.value]
+        mortality = injury["mortality"][self.age]
         duration = injury["duration"]
         med_duration = injury["medicine_duration"]
 
@@ -2117,7 +2120,7 @@ class Cat:
                 return
         condition = PERMANENT[name]
         new_condition = False
-        mortality = condition["mortality"][self.age.value]
+        mortality = condition["mortality"][self.age]
         if mortality != 0 and (game.clan and game.clan.game_mode == "cruel season"):
             mortality = int(mortality * 0.65)
 
@@ -2489,8 +2492,9 @@ class Cat:
             ):
                 return False
 
+        age_restricted_ages = ["newborn", "kitten", "adolescent"]
         if (
-            not self.age.can_have_mate() or not other_cat.age.can_have_mate()
+            self.age in age_restricted_ages or other_cat.age in age_restricted_ages
         ) and self.age != other_cat.age:
             return False
 
@@ -3144,13 +3148,13 @@ class Cat:
         self.faded = True
 
         # Silhouette sprite
-        if self.age == CatAgeEnum.NEWBORN:
+        if self.age == "newborn":
             file_name = "faded_newborn"
-        elif self.age == CatAgeEnum.KITTEN:
+        elif self.age == "kitten":
             file_name = "faded_kitten"
-        elif self.age in [CatAgeEnum.ADULT, CatAgeEnum.YOUNG_ADULT, CatAgeEnum.SENIOR_ADULT]:
+        elif self.age in ["adult", "young adult", "senior adult"]:
             file_name = "faded_adult"
-        elif self.age == CatAgeEnum.ADOLESCENT:
+        elif self.age == "adolescent":
             file_name = "faded_adol"
         else:
             file_name = "faded_senior"
@@ -3369,7 +3373,7 @@ class Cat:
                 self.age = key_age
         try:
             if not updated_age and self.age is not None:
-                self.age = CatAgeEnum.SENIOR
+                self.age = "senior"
         except AttributeError:
             print(f"ERROR: cat has no age attribute! Cat ID: {self.ID}")
 
@@ -3386,6 +3390,9 @@ class Cat:
     # ---------------------------------------------------------------------------- #
     #                                  other                                       #
     # ---------------------------------------------------------------------------- #
+
+    def is_baby(self):
+        return self.age in ["kitten", "newborn"]
 
     def get_save_dict(self, faded=False):
         if faded:
@@ -3483,13 +3490,10 @@ class Cat:
                 "accessories": self.pelt.accessories if self.pelt.accessories else [],
             }
 
-    def determine_next_and_previous_cats(self, filter_func: Callable[[Cat], bool] = None):
+    def determine_next_and_previous_cats(self, status: List[str] = None, exclude_status: List[str] = None):
         """Determines where the next and previous buttons point to, relative to this cat.
 
         :param status: Allows you to constrain the list by status
-        :param filter_func: Allows you to constrain the list by any attribute of 
-            the Cat object. Takes a function which takes in a Cat instance and 
-            returns a boolean.
         """
         sorted_specific_list = [
             check_cat
@@ -3500,11 +3504,18 @@ class Cat:
             and not check_cat.faded
         ]
 
-        if filter_func is not None:
+        if status is not None:
             sorted_specific_list = [
                 check_cat
                 for check_cat in sorted_specific_list
-                if filter_func(check_cat)
+                if check_cat.status in status
+            ]
+
+        if exclude_status is not None:
+            sorted_specific_list = [
+                check_cat
+                for check_cat in sorted_specific_list
+                if check_cat.status not in exclude_status
             ]
 
         idx = sorted_specific_list.index(self)

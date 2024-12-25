@@ -277,12 +277,7 @@ del loading_animation
 del load_data
 
 pygame.mixer.pre_init(buffer=44100)
-try:
-    pygame.mixer.init()
-except pygame.error:
-    print("Failed to initialize sound. Sound will be disabled.")
-    music_manager.audio_disabled = True
-    music_manager.muted = True
+pygame.mixer.init()
 AllScreens.start_screen.screen_switches()
 
 # dev screen info now lives in scripts/screens/screens_core
@@ -364,7 +359,7 @@ while 1:
         game.all_screens[game.last_screen_forupdate].exit_screen()
         game.all_screens[game.current_screen].screen_switches()
         game.switch_screens = False
-    if not music_manager.audio_disabled and not pygame.mixer.music.get_busy() and not music_manager.muted:
+    if not pygame.mixer.music.get_busy() and not music_manager.muted:
         music_manager.play_queued()
 
     debug_mode.pre_update(clock)

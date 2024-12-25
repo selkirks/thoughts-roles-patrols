@@ -10,7 +10,6 @@ import ujson
 import math
 
 from scripts.cat.cats import Cat, BACKSTORIES
-from ..cat.enums import CatAgeEnum
 from scripts.cat.pelts import Pelt
 from scripts.cat.sprites import sprites
 from scripts.clan_resources.freshkill import FRESHKILL_ACTIVE
@@ -759,12 +758,12 @@ class ProfileScreen(Screens):
         output += "\n"
 
         # AGE
-        if the_cat.age == CatAgeEnum.KITTEN:
+        if the_cat.age == "kitten":
             output += "young"
-        elif the_cat.age == CatAgeEnum.SENIOR:
+        elif the_cat.age == "senior":
             output += "senior"
         else:
-            output += the_cat.age.value
+            output += the_cat.age
         # NEWLINE ----------
         output += "\n"
 

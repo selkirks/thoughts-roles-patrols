@@ -107,8 +107,8 @@
             "dies": true
         },
         "r_c": {
-            "age": ["any"],
-            "status": ["apprentice", "warrior", "deputy"],
+            "age": ["apprentice", "warrior", "deputy"],
+            "status": [ "any" ],
             "not_skill": [
                 "RUNNER,2"
             ]
