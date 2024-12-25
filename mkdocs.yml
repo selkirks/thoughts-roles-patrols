@@ -1,0 +1,126 @@
+site_name: ClanGen Documentation
+site_url: https://clangen.io/clangen-docs/
+repo_url: https://github.com/ClanGenOfficial/clangen
+repo_name: ClanGenOfficial/clangen
+edit_uri: https://github.com/ClanGenOfficial/clangen/edit/development/docs/
+nav:
+  - index.md
+  - Project Basics:
+      - project-basics/index.md
+      - project-basics/documentation-resources.md
+      - project-basics/development-team-roles.md
+      - project-basics/getting-started-with-github-and-clangen.md
+  - Code:
+      - code/index.md
+      - code/content-adding.md
+  - Writing:
+      - writing/index.md
+      - writing/patrols.md
+      - writing/shortevents.md
+      - writing/leaders-den-events.md
+      - writing/thoughts.md
+      - writing/leader-ceremonies.md
+      - writing/advanced-documentation.md
+  - Art:
+      - art/index.md
+      - art/cat-sprites.md
+      - art/patrol-sprites.md
+      - art/clan-symbols.md
+      - art/camp-backgrounds.md
+  - Audio:
+      - audio/index.md
+  - Contribute Documentation:
+      - contributing/index.md
+theme:
+  name: material
+  logo: assets/main.png
+  favicon: assets/main.ico
+  features:
+    - content.action.edit
+    - content.action.view
+    - content.tooltips
+    - content.code.copy
+    - content.code.annotate
+    - navigation.top
+    - navigation.indexes
+  custom_dir: docs-resources
+  palette:
+    - media: "(prefers-color-scheme)"
+      scheme: clangen_light
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to ClanGen light mode
+
+    # Palette toggle for clangen light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: clangen_light
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to basic light mode
+
+    # Palette toggle for basic light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to ClanGen dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: clangen_dark
+      toggle:
+        icon: material/weather-night
+        name: Switch to basic dark mode
+
+    # Palette toggle for basic dark mode
+    - media: "(prefers-color-scheme: og-dark)"
+      scheme: slate
+      primary: black
+      accent: deep purple
+      toggle:
+        icon: material/weather-night
+        name: Switch to system preference
+extra:
+  homepage: https://clangen.io/
+extra_css:
+  - stylesheets/extra.css
+markdown_extensions:
+  - abbr
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tilde
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      options:
+        custom_icons:
+          - docs-resources/.icons
+  - pymdownx.inlinehilite
+  - pymdownx.snippets:
+      auto_append:
+        - docs-resources/includes/abbreviations.md
+  - md_in_html
+  - toc:
+      permalink: True
+
+watch:
+  - docs-resources/includes
+plugins:
+  - search
+  - git-committers:
+      enabled: !ENV [GIT_COMMITTERS_ENABLED, False]
+      repository: ClanGenOfficial/clangen
+      branch: development
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: timeago

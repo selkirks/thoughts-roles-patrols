@@ -803,7 +803,8 @@ class ChooseMateScreen(Screens):
         (
             self.next_cat,
             self.previous_cat,
-        ) = self.the_cat.determine_next_and_previous_cats(exclude_status=["kitten", "medicine cat apprentice", "mediator apprentice", "apprentice"])
+        ) = self.the_cat.determine_next_and_previous_cats(
+            filter_func = (lambda cat: cat.age in ["young adult", "adult", "senior adult", "senior"]))
         self.next_cat_button.disable() if self.next_cat == 0 else self.next_cat_button.enable()
         self.previous_cat_button.disable() if self.previous_cat == 0 else self.previous_cat_button.enable()
 

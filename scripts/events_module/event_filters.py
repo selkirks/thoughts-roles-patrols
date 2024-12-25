@@ -8,7 +8,6 @@ from scripts.utility import (
     filter_relationship_type,
 )
 
-
 def event_for_location(locations: list) -> bool:
     """
     checks if the clan is within the given locations
@@ -291,10 +290,7 @@ def _check_cat_age(cat, ages: list) -> bool:
     if "any" in ages or not ages:
         return True
 
-    if cat.age in ages:
-        return True
-
-    return False
+    return cat.age.value in ages
 
 
 def _check_cat_status(cat, statuses: list) -> bool:

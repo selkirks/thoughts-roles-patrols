@@ -634,10 +634,7 @@ class MediationScreen(Screens):
             # ROMANTIC LOVE
             # CHECK AGE DIFFERENCE
             same_age = the_relationship.cat_to.age == cat.age
-            adult_ages = ["young adult", "adult", "senior adult", "senior"]
-            both_adult = (
-                the_relationship.cat_to.age in adult_ages and cat.age in adult_ages
-            )
+            both_adult = cat.age.can_have_mate() and the_relationship.cat_to.age.can_have_mate()
             check_age = both_adult or same_age
 
             # If they are not both adults, or the same age, OR they are related, don't display any romantic affection,

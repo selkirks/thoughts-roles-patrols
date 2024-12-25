@@ -26,6 +26,7 @@ from scripts.utility import (
 from scripts.game_structure.game_essentials import game
 from scripts.cat.skills import SkillPath
 from scripts.cat.cats import Cat, ILLNESSES, INJURIES, PERMANENT
+from scripts.cat.enums import CatAgeEnum
 from scripts.cat.pelts import Pelt
 from scripts.cat_relations.relationship import Relationship
 from scripts.clan_resources.freshkill import (
@@ -805,9 +806,7 @@ class PatrolOutcome:
 
         for i, attribute_list in enumerate(self.new_cat):
             patrol.new_cats.append(
-                create_new_cat_block(
-                    Cat, Relationship, patrol, in_event_cats, i, attribute_list
-                )
+                create_new_cat_block(Cat, Relationship, patrol, in_event_cats, i, attribute_list)
             )
 
             for cat in patrol.new_cats[-1]:
