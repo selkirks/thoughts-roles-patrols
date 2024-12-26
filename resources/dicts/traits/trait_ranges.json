@@ -467,8 +467,7 @@
             "sociability": [10, 16],
             "aggression": [0, 8],
             "stability": [0, 8]
-        },
-        
+        }, 
         "idealistic": {
             "lawfulness": [8, 16],
             "sociability": [0, 8],
