@@ -62,8 +62,8 @@
       },
       "focus_herbs": {
         "zero": "Despite the focus of the Clan, no additional herbs could be gathered.",
-        "one": "With the focus of the Clan, %{herb_amount} additional herb was gathered.",
-        "many": "With the focus of the Clan, %{herb_amount} additional herbs were gathered."
+        "one": "With the focus of the Clan, %{count} additional herb was gathered.",
+        "many": "With the focus of the Clan, %{count} additional herbs were gathered."
       },
       "focus_herbs_log": "With the additional focus of the Clan, the following herbs were gathered: %{herbs}.",
       "focus_raid_prey": {

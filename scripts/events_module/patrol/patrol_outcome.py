@@ -560,11 +560,12 @@ class PatrolOutcome:
                     _cat.pelt.scars.append("TNR")
                 _cat.get_permanent_condition("infertility", False, custom_reveal=2 if 'pregnant' in _cat.injuries else None)
 
-        return i18n.t(
-            "patrol.lost_cats",
-            count=len(cats_to_lose),
-            cats=adjust_list_text([str(cat.name) for cat in cats_to_lose]),
-        )
+        # return i18n.t(
+        #     "patrol.lost_cats",
+        #     count=len(cats_to_lose),
+        #     cats=adjust_list_text([str(cat.name) for cat in cats_to_lose]),
+        # )
+        return " ".join(results)
 
     def _handle_condition_and_scars(self, patrol: "Patrol") -> str:
         """Handle injuring cats, or giving scars"""

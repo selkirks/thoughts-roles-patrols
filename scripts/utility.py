@@ -608,7 +608,7 @@ def create_new_cat_block(
                     stor.extend(BACKSTORIES["backstory_categories"][story])
             bs_override = True
             break
-    if bs_override:
+    if bs_override and stor:
         chosen_backstory = choice(stor)
 
     # KITTEN THOUGHT
@@ -946,8 +946,6 @@ def create_new_cat(
             # grab starting names and accs for loners/kittypets
             if kittypet:
                 name = choice(names.names_dict["loner_names"])
-                if bool(getrandbits(1)):
-                    accessory = choice(Cat.pelt.collars)
             elif loner and bool(
                 getrandbits(1)
             ):  # try to give name from full loner name list
@@ -1003,6 +1001,10 @@ def create_new_cat(
                     kittypet=kittypet,
                     adoptive_parents=adoptive_parents if adoptive_parents else []
                 )
+
+            if kittypet:
+                if bool(getrandbits(1)):
+                    accessory = choice(new_cat.pelt.collars)
 
         # give em a collar if they got one
         if accessory:
@@ -1950,6 +1952,7 @@ def adjust_list_text(list_of_items) -> str:
     :param list_of_items: the list of items you want converted
     :return: the new string
     """
+    list_of_items = list(list_of_items)
     if len(list_of_items) == 0:
         item1 = ""
         item2 = ""

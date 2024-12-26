@@ -559,7 +559,7 @@ class FamilyTreeScreen(Screens):
             if len(additional_info["type"]) > 0:  # types is always real
                 try:
                     rel_types = [
-                        str(rel_type.value) for rel_type in additional_info["type"]
+                        str(rel_type.name) for rel_type in additional_info["type"]
                     ]
                 except:
                     rel_types = [

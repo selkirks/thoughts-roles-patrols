@@ -313,11 +313,11 @@ class Condition_Events:
                     illness = f"a {chosen_illness}"
                 # try to translate the illness
                 illness = i18n.t(f"conditions.illness.{chosen_illness}")
-                illness.replace("conditions.illness.", "")
-                event_string = i18n.t(
+                illness = illness.replace("conditions.illness.", "")
+                event_string = event_text_adjust(Cat, i18n.t(
                     "defaults.illness_get_event",
                     illness=illness,
-                )
+                ), main_cat=cat)
 
         # if an event happened, then add event to cur_event_list and save death if it happened.
         if event_string:
@@ -1330,12 +1330,12 @@ class Condition_Events:
                     if risk["chance"] < 0:
                         risk["chance"] = 0
 
-            text = i18n.t(
+            text = event_text_adjust(Cat, i18n.t(
                 "conditions.herbs.herb_used",
                 herb=i18n.t(f"conditions.herbs.{herb_used}", count=2),
                 condition=translated_name,
                 effect=effect_message,
-            )
+            ), main_cat=cat)
             game.herb_events_list.append(text)
         else:
             # if they didn't get any herbs, make them more likely to die!! kill the kitties >:)

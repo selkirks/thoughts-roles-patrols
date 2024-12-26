@@ -239,7 +239,7 @@ class Events:
 
             else:
                 event = i18n.t("hardcoded.event_deaths", count=1)
-                event_text_adjust(Cat, event, main_cat=Cat.dead_cats[0])
+                event = event_text_adjust(Cat, event, main_cat=Cat.dead_cats[0])
 
             game.cur_events_list.append(
                 Single_Event(event, ["birth_death"], [i.ID for i in Cat.dead_cats])
@@ -750,18 +750,9 @@ class Events:
             log_text = i18n.t(
                 "hardcoded.focus_herbs_log",
                 herbs=adjust_list_text(
-                    i18n.t(f"conditions.herbs.{herb}", count=2) for herb in herbs_found
+                    [str(amount) + " " + i18n.t(f"conditions.herbs.{herb}", count=2) for herb, amount in herb_counter.items()]
                 ),
             )
-            idx = 0
-            for herb, amount in herb_counter.items():
-                log_text += str(amount) + " " + herb.replace("_", " ")
-                idx += 1
-                if idx < len(herb_counter) - 1:
-                    log_text += ", "
-                elif idx < len(herb_counter):
-                    log_text += " and "
-            log_text += "."
             game.herb_events_list.append(log_text)
 
         elif game.clan.clan_settings.get("threaten outsiders"):
