@@ -23,6 +23,7 @@ from ..game_structure.screen_settings import MANAGER, toggle_fullscreen
 from ..housekeeping.datadir import get_data_dir
 from ..housekeeping.version import get_version_info
 from ..ui.generate_button import get_button_dict, ButtonStyles
+from ..game_structure.windows import DeleteCatCheck, DeleteCatHistoryCheck
 
 logger = logging.getLogger(__name__)
 
@@ -84,6 +85,12 @@ class ClanSettingsScreen(Screens):
                         subprocess.Popen(["xdg-open", get_data_dir()])
                     except OSError:
                         logger.exception("Failed to call to xdg-open.")
+                return
+            elif event.ui_element == self.deleted_faded_button:
+                DeleteCatCheck(self.change_screen, game.clan.name)
+                return
+            elif event.ui_element == self.deleted_faded_history_button:
+                DeleteCatHistoryCheck(self.change_screen, game.clan.name)
                 return
             elif event.ui_element == self.relation_settings_button:
                 self.open_relation_settings()
@@ -182,6 +189,24 @@ class ClanSettingsScreen(Screens):
             tool_tip_text="buttons.open_data_directory_tooltip",
         )
 
+        self.deleted_faded_button = UISurfaceImageButton(
+            ui_scale(pygame.Rect((210, 645), (178, 30))),
+            "Delete Faded Cats",
+            get_button_dict(ButtonStyles.SQUOVAL, (178, 30)),
+            object_id="@buttonstyles_squoval",
+            manager=MANAGER,
+            tool_tip_text="Deletes faded cats where possible. ",
+        )
+
+        self.deleted_faded_history_button = UISurfaceImageButton(
+            ui_scale(pygame.Rect((395, 645), (178, 30))),
+            "Delete Faded Histories",
+            get_button_dict(ButtonStyles.SQUOVAL, (178, 30)),
+            object_id="@buttonstyles_squoval",
+            manager=MANAGER,
+            tool_tip_text="Deletes faded cats' histories. ",
+        )
+
         screentext = "windowed" if game.settings["fullscreen"] else "fullscreen"
         rect = ui_scale(pygame.Rect((0, 0), (158, 36)))
         rect.bottomright = ui_scale_offset((-5, -25))
@@ -236,6 +261,10 @@ class ClanSettingsScreen(Screens):
         del self.role_settings_button
         self.open_data_directory_button.kill()
         del self.open_data_directory_button
+        self.deleted_faded_button.kill()
+        del self.deleted_faded_button
+        self.deleted_faded_history_button.kill()
+        del self.deleted_faded_history_button
         self.clan_stats_button.kill()
         del self.clan_stats_button
         self.hide_menu_buttons()

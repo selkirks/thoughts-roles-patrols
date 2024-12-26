@@ -918,3 +918,12 @@ class Inheritance:
             return RelationType.RELATED
         else:
             return RelationType.NOT_BLOOD
+
+    @staticmethod
+    def get_all_cat_ids():
+        id_list = []
+        for inh in Inheritance.all_inheritances.values():
+            id_list = list(set(id_list + inh.all_involved))
+        
+        return id_list
+
