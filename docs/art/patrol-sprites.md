@@ -67,7 +67,7 @@ We work off of strict color palettes for cat silhouettes and other specific enti
 
 Cats are color-coded by status, follow the below ref sheet.
 
-![clangen_patrol_sprite_palettes](https://github.com/ClanGenOfficial/clangen/assets/115410010/829fbbb0-458c-4902-a9b5-0cbaaf2bf2ff)
+![patrol palette guide](img/color-palette-guide.png)
 
 - As you can see, some ranks (app and med cat) have specific colors, while other ranks (like warrior and leader) have no specific colors.  If the patrol text does not refer to a cat as being an app or med cat, then you should use the "unspecified rank" colors.  There are multiple "unspecified rank" palettes to choose from in order to make it easy to distinguish multiple "unspecified rank" cats from each other.
 

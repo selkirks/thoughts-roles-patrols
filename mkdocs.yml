@@ -9,6 +9,9 @@ nav:
       - project-basics/index.md
       - project-basics/development-team-roles.md
       - project-basics/getting-started-with-github-and-clangen.md
+      - Contributing Documentation:
+          - contributing/index.md
+          - contributing/documentation-resources.md
   - Code:
       - code/index.md
       - code/content-adding.md
@@ -20,6 +23,7 @@ nav:
       - writing/leaders-den-events.md
       - writing/thoughts.md
       - writing/leader-ceremonies.md
+      - writing/localization.md
       - writing/advanced-documentation.md
   - Art:
       - art/index.md
@@ -29,13 +33,11 @@ nav:
       - art/camp-backgrounds.md
   - Audio:
       - audio/index.md
-  - Contribute Documentation:
-      - contributing/index.md
-      - contributing/documentation-resources.md
 theme:
   name: material
   logo: assets/main.png
   favicon: assets/main.ico
+  # if you add a feature, add a link to it's matching documentation to contributing/documentation-resources.md
   features:
     - content.action.edit
     - content.action.view
@@ -85,6 +87,8 @@ extra:
   homepage: https://clangen.io/
 extra_css:
   - stylesheets/extra.css
+
+# if you add an extension, add a link to it's matching documentation to contributing/documentation-resources.md
 markdown_extensions:
   - abbr
   - admonition
@@ -98,7 +102,6 @@ markdown_extensions:
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.inlinehilite
-  - pymdownx.snippets
   - attr_list
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
@@ -106,7 +109,6 @@ markdown_extensions:
       options:
         custom_icons:
           - docs-resources/.icons
-  - pymdownx.inlinehilite
   - pymdownx.snippets:
       auto_append:
         - docs-resources/includes/abbreviations.md

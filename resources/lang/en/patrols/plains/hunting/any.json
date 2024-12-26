@@ -389,16 +389,12 @@
                 "exp": 0,
                 "weight": 20,
                 "prey": ["very_small"]
-            }
-        ],
-        "antag_fail_outcomes": [
+            },
             {
                 "text": "The Twoleg kits wandering around are unimpressed by the patrol and chase the cats for fun.",
                 "exp": 0,
                 "weight": 20
-            }
-        ],
-        "antag_success_outcomes": [
+            },
             {
                 "text": "A Twoleg kit approaches the patrol, and they send it away squawking with its blood on their claws.",
                 "exp": 10,
@@ -419,19 +415,95 @@
         "weight": 20,
         "intro_text": "The patrol approaches a little Twoleg nest on the prairie while hunting. Next to it, a strange tower makes a soft thump, its leaves circling slowly in the wind.",
         "decline_text": "The patrol decides to hunt elsewhere.",
-        "chance_of_success": 10,
+        "chance_of_success": 30,
         "success_outcomes": [
             {
                 "text": "The patrol cats split up, using sentries to ensure that the Twolegs don't disturb their hunts.",
                 "exp": 10,
                 "weight": 20,
-                "prey": ["medium"]
+                "prey": ["medium"],
+                "art": "gen_hunt_twolegdencatdare",
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": 3
+                    }
+                ]
+            },
+            {
+                "text": "This den has the stillness of abandonment, or possibly hibernation. The patrol proceeds without fear, fishing out p_tp_p and a p_tp_s from the thick grass growing uncut near the den's walls. There's even a pair of fat p_mp_p that p_l manages to corner in a woodpile, making for a productive afternoon of hunting.",
+                "exp": 10,
+                "weight": 20,
+                "prey": ["medium"],
+                "art": "gen_hunt_twolegdencatdare",
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": 3
+                    }
+                ]
             },
             {
                 "text": "The patrol finds some astonishingly fat chickens running around the Twoleg nest and help themselves to as many as they can carry.",
                 "exp": 10,
                 "weight": 5,
                 "prey": ["large"]
+            },
+            {
+                "text": "Twolegs are mysterious, dangerous beasts. It's not courage or risk-taking that's needed here, no. Instead, the clever s_c plots out their strategy, gesturing with {PRONOUN/s_c/poss} paws to sketch out the safe routes near the dwelling, the dead monster that will block the Twoleg's line of sight.",
+                "exp": 20,
+                "weight": 20,
+                "art": "gen_hunt_twolegdencatdare",
+                "can_have_stat": ["any"],
+                "stat_skill": ["CLEVER,1"],
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": 3
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "Twolegs squawk inside, loud and unpredictably dangerous. But outside the bigger predators have brought down a deer that stinks of smoke and killing metal. s_c twitches {PRONOUN/s_c/poss} tail. Surely the twolegs won't miss a little bit of such large prey.",
+                "exp": 20,
+                "weight": 20,
+                "art": "gen_hunt_strange",
+                "can_have_stat": ["any"],
+                "stat_trait": ["careful", "cunning", "sneaky"],
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": 3
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
+                    }
+                ]
             }
         ],
         "fail_outcomes": [
@@ -440,20 +512,148 @@
                 "exp": 0,
                 "weight": 20,
                 "prey": ["very_small"]
-            }
-        ],
-        "antag_fail_outcomes": [
+            },
             {
                 "text": "The Twoleg kits wandering around are unimpressed by the patrol and chase the cats for fun.",
                 "exp": 0,
                 "weight": 20
-            }
-        ],
-        "antag_success_outcomes": [
+            },
             {
                 "text": "Finding a Twoleg kit wandering alone, the cats harass it until it flees squawking, its blood on their claws.",
                 "exp": 10,
                 "weight": 20
+            }
+        ]
+    },
+    {
+        "patrol_id": "pln_hunt_rabbit4",
+        "biome": ["plains"],
+        "season": ["any"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "pln_bord_shortswim1",
+        "min_cats": 4,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "The land dips gently beside the water here, and p_l draws the morning air over the roof of {PRONOUN/p_l/poss} mouth, hoping the warren hasn't yet retreated underground. With the sun barely risen, they should have good hunting this morning.",
+        "decline_text": "Unfortunately another predator seems to have driven the warren into its burrows for the day.",
+        "chance_of_success": 40,
+        "success_outcomes": [
+            {
+                "text": "p_l acts as lookout, subtly directing the other cats with the smallest ear and tail twitches. If someone pounces too soon, the hunt will be ruined for their other Clanmates. Only once every cat in the patrol has a target is the trap triggered. They don't get all their targets - but they get enough, multiple rabbits for the fresh-kill pile.",
+                "exp": 20,
+                "weight": 20,
+                "prey": ["medium"],
+                "art": "gen_hunt_rabbit",
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": 3
+                    }
+                ]
+            },
+            {
+                "text": "The patrol's attention is caught by an old animal, one that limps as it grazes. They creep forward on their bellies, tightening the noose around the weakened animal. Survival of the fittest.",
+                "exp": 20,
+                "weight": 20,
+                "prey": ["medium"],
+                "art": "gen_hunt_strangerabbit",
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": 3
+                    }
+                ]
+            },
+            {
+                "text": "Sometimes it's better to let the prey come to you. s_c, with the knowledge of a builder, positions the patrol between the best rabbit feeding grounds and the rabbits' burrows. Then all they have to do is wait.",
+                "exp": 20,
+                "weight": 20,
+                "art": "gen_hunt_burrow",
+                "can_have_stat": ["any"],
+                "stat_skill": ["CAMP,1"],
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": 3
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c makes sure that as the sun creeps over the horizon it flashes its light into the eyes of the patrol's prey. The trick wins both prey and purrs from {PRONOUN/s_c/poss} Clanmates.",
+                "exp": 20,
+                "weight": 20,
+                "art": "gen_hunt_rabbit",
+                "can_have_stat": ["any"],
+                "stat_skill": ["CLEVER,1", "HUNTER,1"],
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": 3
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Some days you win some - some days you lose some. It's nobody's fault.",
+                "exp": 0,
+                "weight": 20,
+                "art": "gen_hunt_rabbit"
+            },
+            {
+                "text": "This warren was a bad call, and its rabbits twitch out of sight with the vigilence of the recently-hunted. Though p_l picks up a mouse on the way home, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} still disappointed.",
+                "exp": 0,
+                "weight": 20,
+                "art": "gen_hunt_sneakprey",
+                "prey": ["very_small"]
+            },
+            {
+                "text": "Boldly, s_c charges towards a feeding bunny. And sure, s_c gets <i>{PRONOUN/s_c/poss}</i> rabbit, but what about the rest of the patrol? It does not leave the rest of them feeling particularly impressed.",
+                "exp": 20,
+                "weight": 20,
+                "art": "gen_hunting_rabbit",
+                "can_have_stat": ["any"],
+                "stat_trait": ["ambitious", "arrogant", "bold", "competitive", "confident", "daring", "rebellious", "troublesome"],
+                "prey": ["small"],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": -5
+                    }
+                ]
             }
         ]
     },
@@ -2415,7 +2615,7 @@
         "season": ["any"],
         "types": ["hunting"],
         "tags": [],
-        "patrol_art": "gen_hunting_rabbit.png",
+        "patrol_art": "gen_hunting_rabbit",
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {},
@@ -2428,7 +2628,7 @@
                 "text": "Rudely, their first target bolts, and it needs the entire patrol to bring it down, swerving and jolting, zig zagging until cornered. But they <i>do</i> corner it. One rabbit split between so many cats isn't a huge bounty, but they're too tired to continue hunting.",
                 "exp": 20,
                 "weight": 10,
-                "art": "gen_hunt_rabbit.png",
+                "art": "gen_hunt_rabbit",
                 "prey": ["small"],
                 "relationships": [
                     {
@@ -2444,7 +2644,7 @@
                 "text": "The rabbits aren't interested in cooperating. Between every cat present, they only manage a single kill. But it's not a failure, and as they pad home, s_c tells the story of the Prince with a Thousand Enemies, digger, listener, runner, the prince with the swift warning.",
                 "exp": 20,
                 "weight": 10,
-                "art": "gen_hunt_rabbit.png",
+                "art": "gen_hunt_rabbit",
                 "can_have_stat": ["any"],
                 "stat_skill": ["LORE,1", "STORY,1"],
                 "prey": ["small"],
@@ -2469,7 +2669,7 @@
                 "text": "The ambush goes cartoonishly poorly, and it's only s_c's skill that still nets them one rabbit, snatching a sliver of victory form the jaws of failure.",
                 "exp": 20,
                 "weight": 10,
-                "art": "fst_hunt_fun1.png",
+                "art": "fst_hunt_fun1",
                 "can_have_stat": ["any"],
                 "stat_skill": ["HUNTER,1", "RUNNER,1"],
                 "prey": ["small"],
@@ -2496,7 +2696,7 @@
                 "text": "Isn't <i>every</i> season rabbit season? The unnecessry confusion starts an equally unecessary argument, and no hunting gets down as the patrol talks in circles.",
                 "exp": 0,
                 "weight": 20,
-                "art": "gen_train_argue.png",
+                "art": "gen_train_argue",
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -2511,7 +2711,7 @@
                 "text": "It doesn't matter how tightly the patrol locks down the entrance to this burrow - the rabbits escape elsewhere. Crafty wabbits.",
                 "exp": 0,
                 "weight": 20,
-                "art": "gen_hunt_burrow.png"
+                "art": "gen_hunt_burrow"
             }
         ]
     },
