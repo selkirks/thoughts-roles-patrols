@@ -1,0 +1,108 @@
+{
+    "en": {
+        "herb_used": "m_c was given %{herb} as treatment for %{condition}. %{effect}",
+        "mortality_down": "{PRONOUN/m_c/subject/CAP} will be less likely to die.",
+        "duration_down": "{PRONOUN/m_c/subject/CAP} will heal sooner.",
+        "risks_down": "The risks associated with {PRONOUN/m_c/poss} condition are lowered.",
+        "elder_leaves": {
+            "one": "elder leaf",
+            "many": "elder leaves"
+        },
+        "cobwebs": {
+            "one": "cobweb",
+            "many": "cobwebs"
+        },
+        "daisy": {
+            "one": "daisy",
+            "many": "daisies"
+        },
+        "horsetail": {
+            "one": "horsetail",
+            "many": "horsetail"
+        },
+        "juniper": {
+            "one": "juniper",
+            "many": "juniper"
+        },
+        "lungwort": {
+            "one": "lungwort",
+            "many": "lungwort"
+        },
+        "mallow": {
+            "one": "mallow",
+            "many": "mallow"
+        },
+        "marigold": {
+            "one": "marigold",
+            "many": "marigold"
+        },
+        "moss": {
+            "one": "moss",
+            "many": "moss"
+        },
+        "oak_leaves": {
+            "one": "oak leaf",
+            "many": "oak leaves"
+        },
+        "ragwort": {
+            "one": "ragwort",
+            "many": "ragwort"
+        },
+        "raspberry": {
+            "one": "raspberry",
+            "many": "raspberries"
+        },
+        "tansy": {
+            "one": "tansy",
+            "many": "tansy"
+        },
+        "thyme": {
+            "one": "thyme",
+            "many": "thyme"
+        },
+        "wild_garlic": {
+            "one": "wild garlic",
+            "many": "wild garlic"
+        },
+        "dandelion": {
+            "one": "dandelion",
+            "many": "dandelions"
+        },
+        "mullein": {
+            "one": "mullein",
+            "many": "mullein"
+        },
+        "rosemary": {
+            "one": "rosemary",
+            "many": "rosemary"
+        },
+        "burdock": {
+            "one": "burdock",
+            "many": "burdock"
+        },
+        "blackberry": {
+            "one": "blackberry",
+            "many": "blackberries"
+        },
+        "betony": {
+            "one": "betony",
+            "many": "betony"
+        },
+        "goldenrod": {
+            "one": "goldenrod",
+            "many": "goldenrod"
+        },
+        "poppy": {
+            "one": "poppy",
+            "many": "poppies"
+        },
+        "plantain": {
+            "one": "plantain",
+            "many": "plantain"
+        },
+        "catmint": {
+            "one": "catmint",
+            "many": "catmint"
+        }
+    }
+}
