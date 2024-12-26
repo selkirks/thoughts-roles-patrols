@@ -1,8 +1,7 @@
 import random
 from random import choice, randint
-from typing import Dict, List, Union, Optional
 
-import i18n
+import ujson
 
 from scripts.cat.cats import Cat
 from scripts.cat.enums import CatAgeEnum
@@ -19,26 +18,17 @@ from scripts.utility import (
     get_personality_compatibility,
     change_relationship_values,
     get_alive_status_cats,
-    adjust_list_text,
 )
-from scripts.game_structure.localization import load_lang_resource
 
 
 class Pregnancy_Events:
     """All events which are related to pregnancy such as kitting and defining who are the parents."""
 
     biggest_family = {}
-    PREGNANT_STRINGS: Optional[Dict[str, Union[List, Dict[str, List]]]] = {}
-    currently_loaded_lang: str = None
 
-    @staticmethod
-    def rebuild_strings():
-        if Pregnancy_Events.currently_loaded_lang == i18n.config.get("locale"):
-            return
-        Pregnancy_Events.PREGNANT_STRINGS = load_lang_resource(
-            "conditions/pregnancy.json"
-        )
-        Pregnancy_Events.currently_loaded_lang = i18n.config.get("locale")
+    PREGNANT_STRINGS = None
+    with open(f"resources/dicts/conditions/pregnancy.json", "r") as read_file:
+        PREGNANT_STRINGS = ujson.loads(read_file.read())
 
     @staticmethod
     def set_biggest_family():
@@ -173,24 +163,24 @@ class Pregnancy_Events:
             amount, None, None, clan, adoptive_parents=adoptive_parents
         )
 
-        event = "hardcoded.adoption_kittens_single"
-        cats_names = str(cat.name)
-        if other_cat:
-            event = "hardcoded.adoption_kittens_pair"
-            cats_names = adjust_list_text([str(cat.name), str(other_cat.name)])
+        insert = "this should not display"
+        insert2 = "this should not display"
+        if amount == 1:
+            insert = "a single kitten"
+            insert2 = "it"
+        if amount > 1:
+            insert = f"a litter of {amount} kits"
+            insert2 = "them"
 
-        print_event = i18n.t(
-            event,
-            names=cats_names,
-            insert=i18n.t("conditions.pregnancy.kit_amount", count=amount),
-            count=amount,
-        )
+        print_event = f"{cat.name} found {insert} and decides to adopt {insert2}."
+        if other_cat:
+            print_event = f"{cat.name} and {other_cat.name} found {insert} and decided to adopt {insert2}."
 
         cats_involved = [cat.ID]
         if other_cat:
             cats_involved.append(other_cat.ID)
         for kit in kits:
-            kit.thought = "hardcoded.new_kit_thought"
+            kit.thought = f"Snuggles up to the belly of {cat.name}"
 
         # Normally, birth cooldown is only applied to cat who gave birth
         # However, if we don't apply birth cooldown to adoption, we get
@@ -222,18 +212,17 @@ class Pregnancy_Events:
         if (cat and cat.no_kits) or (other_cat and other_cat.no_kits):
             return
 
-        Pregnancy_Events.rebuild_strings()
-
         if clan.clan_settings["same sex birth"]:
             # 50/50 for single cats to get pregnant or just bring a litter back
             if not other_cat and random.randint(0, 1):
                 amount = Pregnancy_Events.get_amount_of_kits(cat)
                 kits = Pregnancy_Events.get_kits(amount, cat, None, clan)
-                print_event = i18n.t(
-                    "pregnant.pregnant_secret",
-                    name=cat.name,
-                    insert=i18n.t("pregnant.kit_amount", count=amount),
-                )
+                insert = "this should not display"
+                if amount == 1:
+                    insert = "a single kitten"
+                if amount > 1:
+                    insert = f"a litter of {amount} kits"
+                print_event = f"{cat.name} brought {insert} back to camp, but refused to talk about their origin."
                 cats_involved = [cat.ID]
                 for kit in kits:
                     cats_involved.append(kit.ID)
@@ -260,11 +249,12 @@ class Pregnancy_Events:
             if not other_cat and cat.gender == "male":
                 amount = Pregnancy_Events.get_amount_of_kits(cat)
                 kits = Pregnancy_Events.get_kits(amount, cat, None, clan)
-                print_event = i18n.t(
-                    "pregnant.pregnant_secret",
-                    name=cat.name,
-                    insert=i18n.t("pregnant.kit_amount", count=amount),
-                )
+                insert = "this should not display"
+                if amount == 1:
+                    insert = "a single kitten"
+                if amount > 1:
+                    insert = f"a litter of {amount} kits"
+                print_event = f"{cat.name} brought {insert} back to camp, but refused to talk about their origin."
                 cats_involved = [cat.ID]
                 for kit in kits:
                     cats_involved.append(kit.ID)
@@ -327,8 +317,6 @@ class Pregnancy_Events:
             correct_guess = "small"
         else:
             correct_guess = "large"
-
-        Pregnancy_Events.rebuild_strings()
 
         if thinking_amount[0] == "correct":
             if correct_guess == "small":
@@ -397,7 +385,10 @@ class Pregnancy_Events:
                 kit.relationships = {}
                 kit.create_one_relationship(cat)
 
-        insert = i18n.t("conditions.pregnancy.kit_amount", count=kits_amount)
+        if kits_amount == 1:
+            insert = "single kitten"
+        else:
+            insert = f"litter of {kits_amount} kits"
 
         # Since cat has given birth, apply the birth cooldown.
         cat.birth_cooldown = game.config["pregnancy"]["birth_cooldown"]
@@ -405,7 +396,6 @@ class Pregnancy_Events:
         # choose event string
         # TODO: currently they don't choose which 'mate' is the 'blood' parent or not
         # change or leaf as it is?
-        Pregnancy_Events.rebuild_strings()
         events = Pregnancy_Events.PREGNANT_STRINGS
         event_list = []
         if not cat.outside and other_cat is None:
@@ -470,24 +460,18 @@ class Pregnancy_Events:
             if cat.status == "leader":
                 clan.leader_lives -= 1
                 cat.die()
-                death_event = i18n.t("conditions.pregnancy.leader_kitting_death")
+                death_event = "died shortly after kitting"
             else:
                 cat.die()
-                death_event = i18n.t(
-                    "conditions.pregnancy.kitting_death", name=cat.name
-                )
+                death_event = f"{cat.name} died while kitting."
             History.add_death(cat, death_text=death_event)
         elif not cat.outside:  # if cat doesn't die, give recovering from birth
             cat.get_injured("recovering from birth", event_triggered=True)
             if "blood loss" in cat.injuries:
                 if cat.status == "leader":
-                    death_event = i18n.t(
-                        "conditions.pregnancy.leader_kitting_death_severe"
-                    )
+                    death_event = "died after a harsh kitting"
                 else:
-                    death_event = i18n.t(
-                        "conditions.pregnancy.kitting_death_harsh", name=cat.name
-                    )
+                    death_event = f"{cat.name} died after a harsh kitting."
                 History.add_possible_history(cat, "blood loss", death_text=death_event)
                 possible_events = events["birth"]["difficult_birth"]
                 # just makin sure meds aren't mentioned if they aren't around or if they are a parent
@@ -781,10 +765,10 @@ class Pregnancy_Events:
                 # No parents provided, give a blood parent - this is an adoption.
                 if not blood_parent:
                     # Generate a blood parent if we haven't already.
-                    thought = i18n.t(
-                        "conditions.pregnancy.halfblood_kitting_thought",
-                        count=kits_amount,
-                    )
+                    insert = "their kits are"
+                    if kits_amount == 1:
+                        insert = "their kit is"
+                    thought = f"Is glad that {insert} safe"
                     blood_parent = create_new_cat(
                         Cat,
                         status=random.choice(["loner", "kittypet"]),
@@ -808,13 +792,13 @@ class Pregnancy_Events:
                 kit = Cat(
                     parent1=cat.ID, parent2=other_cat.ID, moons=0, status="newborn"
                 )
-                kit.thought = i18n.t("hardcoded.new_kit_thought", name=str(cat.name))
+                kit.thought = f"Snuggles up to the belly of {cat.name}"
             else:
                 # A one blood parent litter is the only option left.
                 kit = Cat(
                     parent1=cat.ID, moons=0, backstory=backstory, status="newborn"
                 )
-                kit.thought = i18n.t("hardcoded.new_kit_thought", name=str(cat.name))
+                kit.thought = f"Snuggles up to the belly of {cat.name}"
 
             # Prevent duplicate prefixes in the same litter
             while kit.name.prefix in [kitty.name.prefix for kitty in all_kitten]:

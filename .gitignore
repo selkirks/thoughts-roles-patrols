@@ -95,10 +95,7 @@ saves/**
 #saves\settings.txt
 
 #User's generated theming (for screen scale)
-/resources/theme/generated/screen_scale.json
-
-#anything used for testing localization
-resources/lang/po/
+resources/theme/generated/screen_scale.json
 
 # Logs
 logs/

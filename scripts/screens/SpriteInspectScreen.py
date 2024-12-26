@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: ascii -*-
-import i18n
 import pygame
 import pygame_gui
 
@@ -19,6 +18,7 @@ from .Screens import Screens
 from ..game_structure.screen_settings import MANAGER
 from ..game_structure.windows import SaveAsImage
 from ..ui.generate_button import get_button_dict, ButtonStyles
+from ..ui.get_arrow import get_arrow
 
 
 class SpriteInspectScreen(Screens):
@@ -138,7 +138,7 @@ class SpriteInspectScreen(Screens):
 
         self.next_cat_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((622, 25), (153, 30))),
-            "buttons.next_cat",
+            "Next Cat " + get_arrow(3, arrow_left=False),
             get_button_dict(ButtonStyles.SQUOVAL, (153, 30)),
             object_id="@buttonstyles_squoval",
             manager=MANAGER,
@@ -146,7 +146,7 @@ class SpriteInspectScreen(Screens):
         )
         self.previous_cat_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((25, 25), (153, 30))),
-            "buttons.previous_cat",
+            get_arrow(2, arrow_left=True) + " Previous Cat",
             get_button_dict(ButtonStyles.SQUOVAL, (153, 30)),
             object_id="@buttonstyles_squoval",
             manager=MANAGER,
@@ -154,7 +154,7 @@ class SpriteInspectScreen(Screens):
         )
         self.back_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((25, 60), (105, 30))),
-            "buttons.back",
+            get_arrow(2) + " Back",
             get_button_dict(ButtonStyles.SQUOVAL, (105, 30)),
             object_id="@buttonstyles_squoval",
             manager=MANAGER,
@@ -176,38 +176,38 @@ class SpriteInspectScreen(Screens):
 
         self.save_image_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((25, 95), (135, 30))),
-            "screens.sprite_inspect.save_image",
+            "Save as Image",
             get_button_dict(ButtonStyles.SQUOVAL, (135, 30)),
             object_id="@buttonstyles_squoval",
         )
 
         # Toggle Text:
         self.platform_shown_text = pygame_gui.elements.UITextBox(
-            "screens.sprite_inspect.show_platform",
+            "Show Platform",
             ui_scale(pygame.Rect((150, 580), (-1, 50))),
             object_id=get_text_box_theme("#text_box_34_horizcenter"),
             starting_height=2,
         )
         self.scars_shown_text = pygame_gui.elements.UITextBox(
-            "screens.sprite_inspect.show_scars",
+            "Show Scar(s)",
             ui_scale(pygame.Rect((350, 580), (-1, 50))),
             object_id=get_text_box_theme("#text_box_34_horizcenter"),
             starting_height=2,
         )
         self.acc_shown_text = pygame_gui.elements.UITextBox(
-            "screens.sprite_inspect.show_accessory",
+            "Show Accessory",
             ui_scale(pygame.Rect((545, 580), (-1, 50))),
             object_id=get_text_box_theme("#text_box_34_horizcenter"),
             starting_height=2,
         )
         self.override_dead_lineart_text = pygame_gui.elements.UITextBox(
-            "screens.sprite_inspect.show_living",
+            "Show as Living",
             ui_scale(pygame.Rect((250, 630), (-1, 50))),
             object_id=get_text_box_theme("#text_box_34_horizcenter"),
             starting_height=2,
         )
         self.override_not_working_text = pygame_gui.elements.UITextBox(
-            "screens.sprite_inspect.show_healthy",
+            "Show as Healthy",
             ui_scale(pygame.Rect((450, 630), (-1, 100))),
             object_id=get_text_box_theme("#text_box_34_horizcenter"),
             starting_height=2,
@@ -267,7 +267,9 @@ class SpriteInspectScreen(Screens):
 
         cat_name = str(self.the_cat.name)  # name
         if self.the_cat.dead:
-            cat_name = i18n.t("general.dead_label", name=cat_name)
+            cat_name += (
+                " (dead)"  # A dead cat will have the (dead) sign next to their name
+            )
         short_name = shorten_text_to_fit(cat_name, 195, 20)
 
         self.cat_elements["cat_name"] = pygame_gui.elements.UITextBox(
@@ -286,9 +288,9 @@ class SpriteInspectScreen(Screens):
             "",
             object_id="#fav_star" if self.the_cat.favourite else "#not_fav_star",
             manager=MANAGER,
-            tool_tip_text="general.remove_favorite"
+            tool_tip_text="Remove favorite"
             if self.the_cat.favourite
-            else "general.mark_favorite",
+            else "Mark as favorite",
             starting_height=2,
             anchors={"right": "right", "right_target": self.cat_elements["cat_name"]},
         )

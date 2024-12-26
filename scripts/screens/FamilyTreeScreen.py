@@ -1,6 +1,5 @@
 from typing import Dict
 
-import i18n
 import pygame.transform
 import pygame_gui.elements
 
@@ -17,12 +16,12 @@ from scripts.utility import (
     ui_scale,
     shorten_text_to_fit,
     ui_scale_dimensions,
-    adjust_list_text,
 )
 from .Screens import Screens
 from ..game_structure.screen_settings import MANAGER
 from ..ui.generate_box import BoxStyles, get_box
 from ..ui.generate_button import get_button_dict, ButtonStyles
+from ..ui.get_arrow import get_arrow
 from ..ui.icon import Icon
 
 
@@ -191,7 +190,7 @@ class FamilyTreeScreen(Screens):
         # prev/next and back buttons
         self.next_cat_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((622, 25), (153, 30))),
-            "buttons.next_cat",
+            "Next Cat " + get_arrow(3, arrow_left=False),
             get_button_dict(ButtonStyles.SQUOVAL, (153, 30)),
             object_id="@buttonstyles_squoval",
             manager=MANAGER,
@@ -199,7 +198,7 @@ class FamilyTreeScreen(Screens):
         )
         self.previous_cat_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((25, 25), (153, 30))),
-            "buttons.previous_cat",
+            get_arrow(2, arrow_left=True) + " Previous Cat",
             get_button_dict(ButtonStyles.SQUOVAL, (153, 30)),
             object_id="@buttonstyles_squoval",
             manager=MANAGER,
@@ -207,7 +206,7 @@ class FamilyTreeScreen(Screens):
         )
         self.back_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((25, 60), (105, 30))),
-            "buttons.back",
+            get_arrow(2) + " Back",
             get_button_dict(ButtonStyles.SQUOVAL, (105, 30)),
             object_id="@buttonstyles_squoval",
             manager=MANAGER,
@@ -315,11 +314,10 @@ class FamilyTreeScreen(Screens):
         self.the_cat = Cat.all_cats[game.switches["cat"]]
 
         self.cat_elements["screen_title"] = pygame_gui.elements.UITextBox(
-            "screens.family_tree.heading",
+            f"{self.the_cat.name}'s Family Tree",
             ui_scale(pygame.Rect((150, 25), (500, 50))),
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
             manager=MANAGER,
-            text_kwargs={"name": self.the_cat.name, "m_c": self.the_cat},
         )
 
         # will need these later to adjust positioning
@@ -403,11 +401,10 @@ class FamilyTreeScreen(Screens):
         name = str(self.the_cat.name)
         short_name = shorten_text_to_fit(name, 130, 11)
         self.cat_elements["viewing_cat_text"] = pygame_gui.elements.UITextBox(
-            "screens.family_tree.lineage",
+            f"Viewing {short_name}'s Lineage",
             ui_scale(pygame.Rect((75, 641), (150, 75))),
             object_id=get_text_box_theme("#text_box_22_horizcenter_spacing_95"),
             manager=MANAGER,
-            text_kwargs={"name": short_name, "m_c": self.the_cat},
         )
         self.center_cat_frame = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((x_pos, y_pos), (80, 90))),
@@ -534,7 +531,7 @@ class FamilyTreeScreen(Screens):
         self.update_tab()
         if not self.current_group:
             self.relation_elements["no_cats_notice"] = pygame_gui.elements.UITextBox(
-                "screens.family_tree.no_cats",
+                "None",
                 ui_scale(pygame.Rect((275, 540), (450, 30))),
                 object_id=get_text_box_theme("#text_box_30_horizcenter"),
                 manager=MANAGER,
@@ -557,23 +554,23 @@ class FamilyTreeScreen(Screens):
             info_text = f"{str(_kitty.name)}"
             additional_info = self.the_cat.inheritance.get_cat_info(kitty)
             if len(additional_info["type"]) > 0:  # types is always real
-                rel_types = [str(rel_type.name) for rel_type in additional_info["type"]]
+                rel_types = [
+                    str(rel_type.value) for rel_type in additional_info["type"]
+                ]
                 rel_types = set(rel_types)  # remove duplicates
-                if "NOT_BLOOD" in rel_types and len(rel_types) > 1:
+                if "not blood related" in rel_types and len(rel_types) > 1:
                     # in the edge case of a cat being not related and also related in some way
                     # (usually from adoption shenanigans), make blood relation have priority
-                    rel_types.remove("NOT_BLOOD")
-                if "BLOOD" in rel_types:
-                    rel_types.remove("BLOOD")  # removes empty
+                    rel_types.remove("not blood related")
+                if "" in rel_types:
+                    rel_types.remove("")  # removes empty
                 if len(rel_types) > 0:
                     info_text += "\n"
-                    info_text += adjust_list_text(
-                        [i18n.t(f"general.relation_{rel}") for rel in rel_types]
-                    )
+                    info_text += ", ".join(rel_types)
                 if len(additional_info["additional"]) > 0:
                     add_info = set(additional_info["additional"])  # remove duplicates
                     info_text += "\n"
-                    info_text += adjust_list_text(add_info)
+                    info_text += ", ".join(add_info)
 
             self.relation_elements["cat" + str(i)] = UISpriteButton(
                 ui_scale(pygame.Rect((324 + pos_x, 485 + pos_y), (50, 50))),
@@ -581,7 +578,6 @@ class FamilyTreeScreen(Screens):
                 cat_id=_kitty.ID,
                 manager=MANAGER,
                 tool_tip_text=info_text,
-                tool_tip_text_kwargs={"r_c": _kitty},
                 starting_height=2,
             )
 
@@ -612,7 +608,7 @@ class FamilyTreeScreen(Screens):
         self.tabs = {
             "label": UISurfaceImageButton(
                 ui_scale(pygame.Rect((561, 445), (148, 34))),
-                f"screens.family_tree.{self.current_group_name}",
+                self.current_group_name.replace("_", "' "),
                 get_button_dict(ButtonStyles.HORIZONTAL_TAB, (148, 34)),
                 object_id="@buttonstyles_horizontal_tab",
                 manager=MANAGER,

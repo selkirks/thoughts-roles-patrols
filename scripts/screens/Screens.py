@@ -384,9 +384,9 @@ class Screens:
                     cls.menu_buttons[den].show()
 
     @classmethod
-    def update_heading_text(cls, text, text_kwargs=None):
+    def update_heading_text(cls, text):
         """Updates the menu heading text"""
-        cls.menu_buttons["heading"].set_text(text, text_kwargs=text_kwargs)
+        cls.menu_buttons["heading"].set_text(text)
 
         # Update if moons and seasons UI is on
 
@@ -565,6 +565,8 @@ class Screens:
             container=cls.menu_buttons["moons_n_seasons"],
         )
 
+        moons_text = "moon" if game.clan.age == 1 else "moons"
+
         cls.moons_n_seasons_moon = UIImageButton(
             ui_scale(pygame.Rect((14, 10), (24, 24))),
             "",
@@ -573,12 +575,11 @@ class Screens:
             container=cls.menu_buttons["moons_n_seasons"],
         )
         cls.moons_n_seasons_text = pygame_gui.elements.UITextBox(
-            "general.moons_age",
+            f"{game.clan.age} {moons_text}",
             ui_scale(pygame.Rect((42, 6), (100, 30))),
             container=cls.menu_buttons["moons_n_seasons"],
             manager=MANAGER,
             object_id="#text_box_30_horizleft_light",
-            text_kwargs={"count": game.clan.age},
         )
 
         if game.clan.current_season == "Newleaf":
@@ -600,7 +601,7 @@ class Screens:
             container=cls.menu_buttons["moons_n_seasons"],
         )
         cls.moons_n_seasons_text2 = pygame_gui.elements.UITextBox(
-            f"general.{game.clan.current_season.lower()}".capitalize(),
+            f"{game.clan.current_season}",
             ui_scale(pygame.Rect((42, 36), (100, 30))),
             container=cls.menu_buttons["moons_n_seasons"],
             manager=MANAGER,
@@ -632,6 +633,11 @@ class Screens:
             container=cls.menu_buttons["moons_n_seasons"],
         )
 
+        if game.clan.age == 1:
+            moons_text = "moon"
+        else:
+            moons_text = "moons"
+
         cls.moons_n_seasons_moon = UIImageButton(
             ui_scale(pygame.Rect((14, 10), (24, 24))),
             "",
@@ -639,8 +645,7 @@ class Screens:
             object_id="#mns_image_moon",
             container=cls.menu_buttons["moons_n_seasons"],
             starting_height=2,
-            tool_tip_text=f"general.moons_age",
-            tool_tip_text_kwargs={"count": game.clan.age},
+            tool_tip_text=f"{game.clan.age} {moons_text}",
         )
 
         if game.clan.current_season == "Newleaf":
@@ -900,9 +905,7 @@ class Screens:
         try:
             return "dark" if game.settings["dark mode"] else "light"
         except AttributeError:
-            with open(
-                "resources/gamesettings.json", "r", encoding="utf-8"
-            ) as read_file:
+            with open("resources/gamesettings.json", "r") as read_file:
                 _settings = ujson.loads(read_file.read())
                 return "dark" if _settings["dark mode"] else "light"
 

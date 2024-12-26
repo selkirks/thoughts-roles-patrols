@@ -2,6 +2,7 @@ from typing import Optional, Tuple
 
 import pygame
 import pygame_gui
+from pygame_gui.core import ObjectID
 
 import scripts.game_structure.screen_settings
 from scripts.game_structure import image_cache
@@ -11,6 +12,7 @@ from scripts.game_structure.ui_elements import UISurfaceImageButton, UIImageButt
 from scripts.housekeeping.version import get_version_info
 from scripts.ui.generate_box import get_box, BoxStyles
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
+from scripts.ui.get_arrow import get_arrow
 from scripts.ui.icon import Icon
 from scripts.utility import (
     ui_scale,
@@ -49,16 +51,16 @@ def rebuild_core(*, should_rebuild_bgs=True):
     # they have to be added individually as some of them rely on others in anchors
     menu_buttons["events_screen"] = UISurfaceImageButton(
         ui_scale(pygame.Rect((246, 60), (82, 30))),
-        "screens.core.events",
+        "Events",
         get_button_dict(ButtonStyles.MENU_LEFT, (82, 30)),
         visible=False,
         manager=MANAGER,
-        object_id=pygame_gui.core.ObjectID("#events_button", "@buttonstyles_menu_left"),
+        object_id=ObjectID("#events_button", "@buttonstyles_menu_left"),
         starting_height=5,
     )
     menu_buttons["camp_screen"] = UISurfaceImageButton(
         ui_scale(pygame.Rect((0, 60), (58, 30))),
-        "screens.core.camp",
+        "Camp",
         get_button_dict(ButtonStyles.MENU_MIDDLE, (58, 30)),
         visible=False,
         manager=MANAGER,
@@ -68,7 +70,7 @@ def rebuild_core(*, should_rebuild_bgs=True):
     )
     menu_buttons["catlist_screen"] = UISurfaceImageButton(
         ui_scale(pygame.Rect((0, 60), (88, 30))),
-        "screens.core.cat_list",
+        "Cat List",
         get_button_dict(ButtonStyles.MENU_MIDDLE, (88, 30)),
         visible=False,
         object_id="@buttonstyles_menu_middle",
@@ -77,7 +79,7 @@ def rebuild_core(*, should_rebuild_bgs=True):
     )
     menu_buttons["patrol_screen"] = UISurfaceImageButton(
         ui_scale(pygame.Rect((0, 60), (80, 30))),
-        "screens.core.patrol",
+        "Patrol",
         get_button_dict(ButtonStyles.MENU_RIGHT, (80, 30)),
         visible=False,
         manager=MANAGER,
@@ -87,7 +89,7 @@ def rebuild_core(*, should_rebuild_bgs=True):
     )
     menu_buttons["main_menu"] = UISurfaceImageButton(
         ui_scale(pygame.Rect((25, 25), (153, 30))),
-        "buttons.main_menu",
+        get_arrow(3) + " Main Menu",
         get_button_dict(ButtonStyles.SQUOVAL, (153, 30)),
         visible=False,
         manager=MANAGER,
@@ -100,11 +102,11 @@ def rebuild_core(*, should_rebuild_bgs=True):
     scale_rect.topright = ui_scale_offset((-25, 25))
     menu_buttons["allegiances"] = UISurfaceImageButton(
         scale_rect,
-        "screens.core.allegiances",
+        "Allegiances",
         get_button_dict(ButtonStyles.SQUOVAL, (118, 30)),
         visible=False,
         manager=MANAGER,
-        object_id=pygame_gui.core.ObjectID(class_id="@image_button", object_id=None),
+        object_id=ObjectID(class_id="@image_button", object_id=None),
         starting_height=5,
         anchors={"top": "top", "right": "right"},
     )
@@ -114,11 +116,11 @@ def rebuild_core(*, should_rebuild_bgs=True):
     scale_rect.topright = ui_scale_offset((-25, 5))
     menu_buttons["clan_settings"] = UISurfaceImageButton(
         scale_rect,
-        "screens.core.settings",
+        "Settings",
         get_button_dict(ButtonStyles.SQUOVAL, (85, 30)),
         visible=False,
         manager=MANAGER,
-        object_id=pygame_gui.core.ObjectID(class_id="@image_button", object_id=None),
+        object_id=ObjectID(class_id="@image_button", object_id=None),
         starting_height=5,
         anchors={"top_target": menu_buttons["allegiances"], "right": "right"},
     )
@@ -149,9 +151,7 @@ def rebuild_core(*, should_rebuild_bgs=True):
         heading_rect,
         visible=False,
         manager=MANAGER,
-        object_id=pygame_gui.core.ObjectID(
-            "#text_box_34_horizcenter_vertcenter", "#dark"
-        ),
+        object_id=ObjectID("#text_box_34_horizcenter_vertcenter", "#dark"),
         starting_height=5,
         anchors={
             "bottom": "bottom",
@@ -189,7 +189,7 @@ def rebuild_core(*, should_rebuild_bgs=True):
     )
     menu_buttons["dens"] = UISurfaceImageButton(
         ui_scale(pygame.Rect((25, 5), (71, 30))),
-        "screens.core.dens",
+        "Dens",
         get_button_dict(ButtonStyles.SQUOVAL, (71, 30)),
         visible=False,
         manager=MANAGER,
@@ -199,7 +199,7 @@ def rebuild_core(*, should_rebuild_bgs=True):
     )
     menu_buttons["lead_den"] = UISurfaceImageButton(
         ui_scale(pygame.Rect((25, 100), (112, 28))),
-        "screens.core.leader_den",
+        "leader's den",
         get_button_dict(ButtonStyles.ROUNDED_RECT, (112, 28)),
         visible=False,
         manager=MANAGER,
@@ -208,7 +208,7 @@ def rebuild_core(*, should_rebuild_bgs=True):
     )
     menu_buttons["med_cat_den"] = UISurfaceImageButton(
         ui_scale(pygame.Rect((25, 140), (151, 28))),
-        "screens.core.medicine_cat_den",
+        "medicine cat den",
         get_button_dict(ButtonStyles.ROUNDED_RECT, (151, 28)),
         object_id="@buttonstyles_rounded_rect",
         visible=False,
@@ -217,7 +217,7 @@ def rebuild_core(*, should_rebuild_bgs=True):
     )
     menu_buttons["warrior_den"] = UISurfaceImageButton(
         ui_scale(pygame.Rect((25, 180), (121, 28))),
-        "screens.core.warriors_den",
+        "warriors' den",
         get_button_dict(ButtonStyles.ROUNDED_RECT, (121, 28)),
         object_id="@buttonstyles_rounded_rect",
         visible=False,
@@ -226,7 +226,7 @@ def rebuild_core(*, should_rebuild_bgs=True):
     )
     menu_buttons["clearing"] = UISurfaceImageButton(
         ui_scale(pygame.Rect((25, 220), (81, 28))),
-        "screens.core.clearing",
+        "clearing",
         get_button_dict(ButtonStyles.ROUNDED_RECT, (81, 28)),
         visible=False,
         manager=MANAGER,
@@ -255,9 +255,8 @@ def rebuild_core(*, should_rebuild_bgs=True):
     if get_version_info().is_source_build or get_version_info().is_dev():
         dev_watermark = pygame_gui.elements.UILabel(
             ui_scale(pygame.Rect((525, 660), (300, 50))),
-            "screens.core.dev_watermark",
+            "Dev Build: " + version_number.text,
             object_id="#dev_watermark",
-            text_kwargs={"ver": version_number.text},
         )
         version_number.kill()
         version_number = None

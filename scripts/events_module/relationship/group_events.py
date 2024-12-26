@@ -2,7 +2,7 @@ import os
 from copy import deepcopy
 from random import choice, shuffle
 
-import i18n.config
+import ujson
 
 from scripts.cat.cats import Cat
 from scripts.cat.history import History
@@ -13,38 +13,50 @@ from scripts.cat_relations.interaction import (
 )
 from scripts.event_class import Single_Event
 from scripts.game_structure.game_essentials import game
-from scripts.utility import (
-    change_relationship_values,
-    process_text,
-)
-from scripts.game_structure.localization import load_lang_resource
+from scripts.utility import change_relationship_values, process_text
 
 
 class GroupEvents:
-    abbreviations_cat_id = {}
-    cat_abbreviations_counter = {}
-    chosen_interaction = None
-    current_lang = None
 
     # ---------------------------------------------------------------------------- #
     #                   build master dictionary for interactions                   #
     # ---------------------------------------------------------------------------- #
-    @classmethod
-    def rebuild_dicts(cls):
-        cls.GROUP_INTERACTION_MASTER_DICT = {}
-        directory = "events/relationship_events/group_interactions"
-        for cat_amount in os.listdir(
-            os.path.join("resources", "lang", i18n.config.get("fallback"), directory)
-        ):  # use the fallback path because English strings will always exist or something has gone DREADFULLY wrong
-            if cat_amount == "group_types.json":
-                continue
-            cls.GROUP_INTERACTION_MASTER_DICT[cat_amount] = {}
-            for file in ["neutral.json", "positive.json", "negative.json"]:
-                cls.GROUP_INTERACTION_MASTER_DICT[cat_amount][
-                    file[:-5]
-                ] = create_group_interaction(
-                    load_lang_resource(f"{directory}/{cat_amount}/{file}")
-                )
+
+    base_path = os.path.join(
+        "resources", "dicts", "relationship_events", "group_interactions"
+    )
+
+    GROUP_INTERACTION_MASTER_DICT = {}
+    for cat_amount in os.listdir(base_path):
+        if cat_amount == "group_types.json":
+            continue
+        file_path = os.path.join(base_path, cat_amount, "neutral.json")
+        GROUP_INTERACTION_MASTER_DICT[cat_amount] = {}
+        with open(file_path, "r") as read_file:
+            welcome_list = ujson.load(read_file)
+            GROUP_INTERACTION_MASTER_DICT[cat_amount]["neutral"] = (
+                create_group_interaction(welcome_list)
+            )
+
+        file_path = os.path.join(base_path, cat_amount, "positive.json")
+        with open(file_path, "r") as read_file:
+            welcome_list = ujson.load(read_file)
+            GROUP_INTERACTION_MASTER_DICT[cat_amount]["positive"] = (
+                create_group_interaction(welcome_list)
+            )
+
+        file_path = os.path.join(base_path, cat_amount, "negative.json")
+        with open(file_path, "r") as read_file:
+            welcome_list = ujson.load(read_file)
+            GROUP_INTERACTION_MASTER_DICT[cat_amount]["negative"] = (
+                create_group_interaction(welcome_list)
+            )
+
+    del base_path
+
+    abbreviations_cat_id = {}
+    cat_abbreviations_counter = {}
+    chosen_interaction = None
 
     @staticmethod
     def start_interaction(cat: Cat, interact_cats: list) -> list:
@@ -62,13 +74,9 @@ class GroupEvents:
         list
             returns the list of the cat id's, which interacted with each other
         """
-        abbreviations_cat_id = {
-            "m_c": cat.ID
-        }  # keeps track of which abbreviation is which cat
-
-        if GroupEvents.current_lang != i18n.config.get("locale"):
-            GroupEvents.rebuild_dicts()
-            GroupEvents.current_lang = i18n.config.get("locale")
+        abbreviations_cat_id = {}  # keeps track of which abbreviation is which cat
+        abbreviations_cat_id["m_c"] = cat.ID  # set the main cat
+        chosen_interaction = None
 
         cat_amount = choice(list(GroupEvents.GROUP_INTERACTION_MASTER_DICT.keys()))
         inter_type = choice(["negative", "positive", "neutral"])
@@ -78,7 +86,7 @@ class GroupEvents:
         if len(interact_cats) < int(cat_amount):
             return []
 
-        # set up the abbreviations_cat_id dictionary
+        # setup the abbreviations_cat_id dictionary
         for integer in range(int(cat_amount) - 1):
             new_key = "r_c" + str(integer + 1)
             abbreviations_cat_id[new_key] = None
@@ -132,9 +140,7 @@ class GroupEvents:
         )
         # TODO: add the interaction to the relationship log?
 
-        interaction_str = interaction_str + i18n.t(
-            f"screens.relationships.{inter_type}_postscript"
-        )
+        interaction_str = interaction_str + f" ({inter_type} effect)"
         ids = list(abbreviations_cat_id.values())
         relevant_event_tabs = ["relation", "interaction"]
         if chosen_interaction.get_injuries:
@@ -239,11 +245,10 @@ class GroupEvents:
 
         """
         # first handle the abbreviations possibilities for the cats
-        (
-            abbr_per_interaction,
-            cat_abbreviations_counter,
-        ) = GroupEvents.get_abbreviations_possibilities(
-            interactions, int(amount), interact_cats
+        abbr_per_interaction, cat_abbreviations_counter = (
+            GroupEvents.get_abbreviations_possibilities(
+                interactions, int(amount), interact_cats
+            )
         )
         abbr_per_interaction = GroupEvents.remove_abbreviations_missing_cats(
             abbr_per_interaction
@@ -274,8 +279,10 @@ class GroupEvents:
                 continue
 
             # now check for relationship constraints
-            relationship_allow_interaction = GroupEvents.relationship_allow_interaction(
-                interact, abbreviations_cat_id
+            relationship_allow_interaction = (
+                GroupEvents.relationship_allow_interaction(
+                    interact, abbreviations_cat_id
+                )
             )
             if not relationship_allow_interaction:
                 continue
@@ -677,7 +684,9 @@ class GroupEvents:
                 injuries.append(inj)
 
             possible_scar = (
-                GroupEvents.prepare_text(injury_dict["scar_text"], abbreviations_cat_id)
+                GroupEvents.prepare_text(
+                    injury_dict["scar_text"], abbreviations_cat_id
+                )
                 if "scar_text" in injury_dict
                 else None
             )

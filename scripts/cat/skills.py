@@ -2,8 +2,6 @@ import random
 from enum import Enum, Flag, auto
 from typing import Union
 
-import i18n
-
 
 class SkillPath(Enum):
     TEACHER = ("quick to help", "good teacher", "great teacher", "excellent teacher")
@@ -547,6 +545,7 @@ class Skill:
     }
 
     def __init__(self, path: SkillPath, points: int = 0, interest_only: bool = False):
+
         self.path = path
         self.interest_only = interest_only
         if points > self.point_range[1]:
@@ -758,6 +757,7 @@ class CatSkills:
         hidden_skill: HiddenSkillEnum = None,
         interest_only=False,
     ):
+
         if skill_dict:
             self.primary = Skill.generate_from_save_string(skill_dict["primary"])
             self.secondary = Skill.generate_from_save_string(skill_dict["secondary"])
@@ -828,20 +828,19 @@ class CatSkills:
 
         if short:
             if self.primary:
-                output.append(i18n.t(f"cat.skills.{self.primary.get_short_skill()}"))
+                output.append(self.primary.get_short_skill())
             if self.secondary:
-                output.append(i18n.t(f"cat.skills.{self.secondary.get_short_skill()}"))
+                output.append(self.secondary.get_short_skill())
         else:
             if self.primary:
-                output.append(i18n.t(f"cat.skills.{self.primary.skill}"))
+                output.append(self.primary.skill)
             if self.secondary:
-                output.append(i18n.t(f"cat.skills.{self.secondary.skill}"))
+                output.append(self.secondary.skill)
 
         if not output:
             return "???"
 
-        out = " & ".join(output)
-        return out
+        return " & ".join(output)
 
     def mentor_influence(self, mentor):
         """Handles mentor influence on the cat's skill

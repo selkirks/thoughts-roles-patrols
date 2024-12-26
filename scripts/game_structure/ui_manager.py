@@ -54,7 +54,6 @@ class UIManager(pygame_gui.UIManager):
         )
         self.root_container.set_focus_set(None)
         self.root_container.set_position(offset)
-        self.root_container.is_window_root_container = True
 
         self.ui_window_stack = None
         self.ui_window_stack = UIWindowStack(
@@ -111,12 +110,7 @@ class UIManager(pygame_gui.UIManager):
         self.ui_window_stack.root_container.set_position(offset)
 
 
-class UIManagerContainer(
-    pygame_gui.core.UIContainer,
-    pygame_gui.core.UIElement,
-    pygame_gui.core.interfaces.IUIContainerInterface,
-    pygame_gui.core.interfaces.IContainerLikeInterface,
-):
+class UIManagerContainer(pygame_gui.core.UIContainer):
     """For exclusive use by the UIManager to ensure we blit backgrounds to the right place"""
 
     def __init__(

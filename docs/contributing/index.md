@@ -1,20 +1,14 @@
-# Contributing Documentation
+# Contribute Documentation
 
-Thank you for your interest in contributing to ClanGen's documentation!
+Thank you for your interest in contributing to Clangen's documentation!
 
-## Getting Started
-
-### Editing Pages
+## Editing Pages
 
 To make a change in the documentation, just edit the corresponding `.md` file in the `/docs` folder. Note that every page has an edit button (:material-file-edit-outline:) in the top right that will take you directly to its corresponding file.
 
-### Creating New Pages
+## Creating New Pages
 
 If you want to create a new page, create a new `.md` file. Then edit `mkdocs.yml` (in the main clangen folder) to add your new page to the navigation on the sidebar.
-
-### Additional Resources
-
-[Documentation Resources](documentation-resources.md){ .md-button .md-button--primary}
 
 ## Build Instructions
 
@@ -26,7 +20,7 @@ If you want to create a new page, create a new `.md` file. Then edit `mkdocs.yml
 1. Install Poetry (see [CONTRIBUTING.md](https://github.com/ClanGenOfficial/clangen/blob/development/CONTRIBUTING.md) for details).
 2. Install dependencies:
    ```
-   poetry install --only docs --no-root
+   poetry install --with docs --no-root
    ```
 3. Build and serve documentation:
    ```

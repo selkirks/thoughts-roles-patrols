@@ -6,7 +6,6 @@ from os.path import exists as path_exists
 from random import choice, choices
 from typing import List, Dict, Union, TYPE_CHECKING, Optional, Tuple
 
-import i18n
 import pygame
 
 from scripts.events_module.short.handle_short_events import INJURY_GROUPS
@@ -23,7 +22,6 @@ from scripts.utility import (
     event_text_adjust,
     create_new_cat_block,
     gather_cat_objects,
-    adjust_list_text,
 )
 from scripts.game_structure.game_essentials import game
 from scripts.cat.skills import SkillPath
@@ -479,48 +477,27 @@ class PatrolOutcome:
             body = False
 
         results = []
-        catnames = []
         for _cat in cats_to_kill:
             if _cat.status == "leader":
                 if "all_lives" in self.dead_cats:
                     game.clan.leader_lives = 0
-                    results.append(
-                        event_text_adjust(
-                            Cat, i18n.t("cat.history.leader_death_all"), main_cat=_cat
-                        )
-                    )
+                    results.append(f"{_cat.name} lost all of their lives.")
                 elif "some_lives" in self.dead_cats:
                     lives_lost = random.randint(1, max(1, game.clan.leader_lives - 1))
                     game.clan.leader_lives -= lives_lost
-                    results.append(
-                        event_text_adjust(
-                            Cat,
-                            i18n.t("cat.history.leader_death_all", count=lives_lost),
-                            main_cat=_cat,
-                        )
-                    )
+                    if lives_lost == 1:
+                        results.append(f"{_cat.name} lost one life.")
+                    else:
+                        results.append(f"{_cat.name} lost {lives_lost} lives.")
                 else:
                     game.clan.leader_lives -= 1
-                    results.append(
-                        event_text_adjust(
-                            Cat,
-                            i18n.t("cat.history.leader_death_all", count=1),
-                            main_cat=_cat,
-                        )
-                    )
+                    results.append(f"{_cat.name} lost one life.")
             else:
-                catnames.append(str(_cat.name))
+                results.append(f"{_cat.name} died.")
+
             # Kill Cat
             self.__handle_death_history(_cat, patrol)
             _cat.die(body)
-        if catnames is not []:
-            results.append(
-                i18n.t(
-                    "cat.history.regular_death",
-                    cats=adjust_list_text(catnames),
-                    count=len(catnames),
-                )
-            )
 
         return " ".join(results)
 
@@ -540,13 +517,13 @@ class PatrolOutcome:
             )
             return ""
 
-        [_cat.gone() for _cat in cats_to_lose]
+        results = []
+        for _cat in cats_to_lose:
+            results.append(f"{_cat.name} has been lost.")
+            _cat.gone()
+            # _cat.greif(body=False)
 
-        return i18n.t(
-            "patrol.lost_cats",
-            count=len(cats_to_lose),
-            cats=adjust_list_text([str(cat.name) for cat in cats_to_lose]),
-        )
+        return " ".join(results)
 
     def _handle_condition_and_scars(self, patrol: "Patrol") -> str:
         """Handle injuring cats, or giving scars"""
@@ -651,11 +628,13 @@ class PatrolOutcome:
 
         change_clan_reputation(self.outsider_rep)
         if self.outsider_rep > 0:
-            return i18n.t("screens.patrol.outsider_rep_improved")
+            insert = "improved"
         elif self.outsider_rep == 0:
-            return i18n.t("screens.patrol.outsider_rep_neutral")
+            insert = "remained neutral"
         else:
-            return i18n.t("screens.patrol.outsider_rep_worsened")
+            insert = "worsened"
+
+        return f"Your Clan's reputation towards Outsiders has {insert}."
 
     def _handle_other_clan_relations(self, patrol: "Patrol") -> str:
         """Handles relations changes with other clans"""
@@ -665,11 +644,13 @@ class PatrolOutcome:
 
         change_clan_relations(patrol.other_clan, self.other_clan_rep)
         if self.other_clan_rep > 0:
-            return i18n.t("screens.patrol.clan_rep_improved", clan=patrol.other_clan)
+            insert = "improved"
         elif self.other_clan_rep == 0:
-            return i18n.t("screens.patrol.clan_rep_neutral", clan=patrol.other_clan)
+            insert = "remained neutral"
         else:
-            return i18n.t("screens.patrol.clan_rep_worsened", clan=patrol.other_clan)
+            insert = "worsened"
+
+        return f"Relations with {patrol.other_clan} have {insert}."
 
     def _handle_herbs(self, patrol: "Patrol") -> str:
         """Handle giving herbs"""
@@ -696,7 +677,6 @@ class PatrolOutcome:
             return ""
 
         patrol_size_modifier = int(len(patrol.patrol_cats) * 0.5)
-        herb_names = []
         for _herb in specific_herbs:
             if large_bonus:
                 amount_gotten = 6
@@ -711,22 +691,24 @@ class PatrolOutcome:
             else:
                 game.clan.herbs[_herb] = amount_gotten
 
-            herb_names.append(i18n.t(f"conditions.herbs.{_herb}", count=amount_gotten))
+        plural_herbs_list = ["cobwebs", "oak leaves"]
 
-        herb_string = adjust_list_text(herb_names)
-        game.herb_events_list.append(
-            i18n.t(
-                "screens.patrol.herb_log",
-                count=len(herb_names),
-                herbs=herb_string,
-            ).capitalize()
-        )
+        if len(specific_herbs) == 1 and specific_herbs[0] not in plural_herbs_list:
+            insert = f"{specific_herbs[0]} was"
+        elif len(specific_herbs) == 1 and specific_herbs[0] in plural_herbs_list:
+            insert = f"{specific_herbs[0]} were"
+        elif len(specific_herbs) == 2:
+            if str(specific_herbs[0]) == str(specific_herbs[1]):
+                insert = f"{specific_herbs[0]} was"
+            else:
+                insert = f"{specific_herbs[0]} and {specific_herbs[1]} were"
+        else:
+            insert = f"{', '.join(specific_herbs[:-1])}, and {specific_herbs[-1]} were"
 
-        return i18n.t(
-            "screens.patrol.herbs_gathered",
-            count=len(herb_names),
-            herbs=herb_string,
-        ).capitalize()
+        insert = re.sub("[_]", " ", insert)
+
+        game.herb_events_list.append(f"{insert.capitalize()} gathered on a patrol.")
+        return f"{insert.capitalize()} gathered."
 
     def _handle_prey(self, patrol: "Patrol") -> str:
         """Handle giving prey"""
@@ -794,13 +776,17 @@ class PatrolOutcome:
 
         results = ""
         if total_amount > 0:
+            amount_text = used_tag
+            if "_" in amount_text:
+                amount_text = amount_text.replace("_", " ")
+
             total_amount = round(total_amount, 2)
             print(f"PREY ADDED: {total_amount}")
             game.freshkill_event_list.append(
                 f"{total_amount} pieces of prey were caught on a patrol."
             )
             game.clan.freshkill_pile.add_freshkill(total_amount)
-            results = i18n.t(f"screens.patrol.prey_{used_tag}")
+            results = f"A {amount_text} amount of prey is brought to camp."
 
         return results
 
@@ -822,30 +808,14 @@ class PatrolOutcome:
             patrol.new_cats.append(
                 create_new_cat_block(Cat, Relationship, patrol, in_event_cats, i, attribute_list)
             )
-            dead = []
-            outside = []
-            new = []
+
             for cat in patrol.new_cats[-1]:
                 if cat.dead:
-                    dead.append(cat.name)
+                    results.append(f"{cat.name}'s ghost now wanders.")
                 elif cat.outside:
-                    outside.append(cat.name)
+                    results.append(f"The patrol met {cat.name}.")
                 else:
-                    new.append(cat.name)
-            for type_list, string in [
-                (dead, "screens.patrol.dead_outsider"),
-                (outside, "screens.patrol.met_outsider"),
-                (new, "screens.patrol.new_outsider"),
-            ]:
-                if type_list:
-                    results.append(
-                        i18n.t(
-                            string,
-                            cats=adjust_list_text(type_list),
-                            count=len(type_list),
-                        )
-                    )
-            del type_list, string
+                    results.append(f"{cat.name} joined the Clan.")
 
         # TODO: i think this is handled in the create_new_cat_block?
         # Check to see if any young litters joined with alive parents.
@@ -1005,7 +975,7 @@ class PatrolOutcome:
             final_death_history = self.history_reg_death
 
         if not final_death_history:
-            final_death_history = i18n.t("defaults.patrol_regular_death")
+            final_death_history = "m_c died on patrol."
 
         if final_death_history and isinstance(final_death_history, str):
             final_death_history = final_death_history.replace(
