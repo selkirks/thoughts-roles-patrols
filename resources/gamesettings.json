@@ -87,7 +87,7 @@
         true
       ],
       "ban problem genes": [
-        "Hide genes directly associated with health issues.",
+        "Hide genes directly associated with health issues",
         "Newly generated cats will not have genes that are directly correlated with permanent conditions.",
         false
       ],
@@ -100,9 +100,9 @@
     "..": "these are special. they do not have a display name or a tooltip",
     "__other": {
         "language": [
-            "english",
-            "spanish",
-            "german"
+            "en",
+            "es",
+            "de"
         ],
         "text size": [
             "0",

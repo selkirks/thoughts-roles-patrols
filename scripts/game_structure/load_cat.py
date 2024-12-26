@@ -4,9 +4,11 @@ import traceback
 from math import floor
 from random import choice
 
+import i18n
 import ujson
 
 from scripts.cat.cats import Cat, BACKSTORIES
+from scripts.game_structure.localization import get_new_pronouns
 from ..cat.personality import Personality
 from scripts.cat.pelts import Pelt
 from scripts.cat_relations.inheritance import Inheritance
@@ -29,13 +31,14 @@ def load_cats():
 
 def json_load():
     all_cats = []
-    cat_data = None
     clanname = game.switches["clan_list"][0]
     clan_cats_json_path = f"{get_save_dir()}/{clanname}/clan_cats.json"
-    with open(f"resources/dicts/conversion_dict.json", "r") as read_file:
+    with open(
+        f"resources/dicts/conversion_dict.json", "r", encoding="utf-8"
+    ) as read_file:
         convert = ujson.loads(read_file.read())
     try:
-        with open(clan_cats_json_path, "r") as read_file:
+        with open(clan_cats_json_path, "r", encoding="utf-8") as read_file:
             cat_data = ujson.loads(read_file.read())
     except PermissionError as e:
         game.switches["error_message"] = f"Can\t open {clan_cats_json_path}!"
@@ -131,11 +134,10 @@ def json_load():
             )
 
             new_cat.genderalign = cat["gender_align"]
-            # new_cat.pronouns = cat["pronouns"]
             new_cat.pronouns = (
                 cat["pronouns"]
                 if "pronouns" in cat
-                else [new_cat.default_pronouns[0].copy()]
+                else {i18n.config.get("locale"): get_new_pronouns(new_cat.genderalign)}
             )
             new_cat.backstory = cat["backstory"] if "backstory" in cat else None
             if new_cat.backstory in BACKSTORIES["conversion"]:
@@ -224,15 +226,14 @@ def json_load():
                 key = f" ID #{cat['ID']} "
             else:
                 key = f" at index {i} "
-            game.switches["error_message"] = (
-                f"Cat{key}in clan_cats.json is missing {e}!"
-            )
+            game.switches[
+                "error_message"
+            ] = f"Cat{key}in clan_cats.json is missing {e}!"
             game.switches["traceback"] = e
             raise
 
     # replace cat ids with cat objects and add other needed variables
     for cat in all_cats:
-
         cat.load_conditions()
 
         # this is here to handle paralyzed cats in old saves
@@ -251,9 +252,9 @@ def json_load():
             logger.exception(
                 f"There was an error loading relationships for cat #{cat}."
             )
-            game.switches["error_message"] = (
-                f"There was an error loading relationships for cat #{cat}."
-            )
+            game.switches[
+                "error_message"
+            ] = f"There was an error loading relationships for cat #{cat}."
             game.switches["traceback"] = e
             raise
 
@@ -266,9 +267,9 @@ def json_load():
             logger.exception(
                 f"There was an error when thoughts for cat #{cat} are created."
             )
-            game.switches["error_message"] = (
-                f"There was an error when thoughts for cat #{cat} are created."
-            )
+            game.switches[
+                "error_message"
+            ] = f"There was an error when thoughts for cat #{cat} are created."
             game.switches["traceback"] = e
             raise
 
