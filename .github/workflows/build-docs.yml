@@ -50,7 +50,7 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
           secrets: |
-            github_token=${{ secrets.GITHUB_TOKEN }}
+            mkdocs_git_committers_apikey=${{ secrets.GITHUB_TOKEN }}
       - name: Set up kubernetex context
         uses: azure/setup-kubectl@v3
       - name: Set Kubernetes context

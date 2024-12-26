@@ -12,7 +12,6 @@ When considering patrols, keep in mind challenge vs reward. That isn't to say ce
 !!! todo "TODO"
     add guide to hunting filtering code
 
-[Full ClanGen writing universal guidelines](index.md#the-basics)
 
 ### Replacement Text
 When writing the text for patrol events, we use a variety of abbreviations that will later be replaced automatically before displaying to the player.  These are things like names and pronouns.  Pronoun Tagging is discussed in the basic guidelines.
@@ -140,7 +139,6 @@ How to make sure your patrol_id is unique:
 !!! caution
     No NSFW patrol_ids. No exceptions.
 
-[Back to Patrol Template](#patrol-template)
 
 ***
 
@@ -159,7 +157,6 @@ How to make sure your patrol_id is unique:
 
 Please have a look at the [full biome differences list](index.md#clangen-biomes) when thinking about writing patrols. 
 
-[Back to Patrol Template](#patrol-template)
 
 ***
 
@@ -188,7 +185,6 @@ Please have a look at the [full biome differences list](index.md#clangen-biomes)
 !!! tip
 	There are two further subtypes of patrols which occur as isolated events within the four main types. These are other_clan and new_cat patrols. Other clan patrols deal with the Clans neighboring the player Clan and are discussed [here](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#other_clan_rep). New cat patrols deal with patrols where a new cat joins the player Clan. The chance of finding a new_cat patrol is discussed [here](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#outsider_rep), the new_cat tag is discussed [here](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#tags-liststr), and the code to generate a new_cat is discussed [here](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#new_cat-listliststr). A patrol is firstly one of the four types, e.g herb gathering, and then can also be a other_clan or new_cat (or both!) patrol in addition to the four basic types. 
 
-[Back to Patrol Template](#patrol-template)
 
 ***
 
@@ -205,7 +201,6 @@ Please have a look at the [full biome differences list](index.md#clangen-biomes)
 | "april_fools"  | Used to mark patrols that should only occur on april fools                                                                                                                                                                                                                                                            |
 | "new_years"    | Used to mark patrols that should only occur on new years.                                                                                                                                                                                                                                                             |
 
-[Back to Patrol Template](#patrol-template)
 
 ***
 
@@ -214,7 +209,6 @@ Please have a look at the [full biome differences list](index.md#clangen-biomes)
 >
 > Example: "patrol_art": "bord_general_intro",
 
-[Back to Patrol Template](#patrol-template)
 
 ***
 
@@ -223,21 +217,18 @@ Please have a look at the [full biome differences list](index.md#clangen-biomes)
 >
 > Example: "patrol_art_clean": "bord_general_intro",
 
-[Back to Patrol Template](#patrol-template)
 
 ***
 
 #### min_cats: int
 >Minimum total number of cats for this patrol. An _integer_ (number) is needed here.
 
-[Back to Patrol Template](#patrol-template)
 
 ***
 
 #### max_cats: int
 >Maximum total number of cats for this patrol. An _integer_ (number) is needed here.
 
-[Back to Patrol Template](#patrol-template)
 
 ***
 
@@ -260,7 +251,6 @@ Please have a look at the [full biome differences list](index.md#clangen-biomes)
 | "normal adult"            | Total number of warriors, leaders and deputies                      |
 | "all apprentices"         | Total number of warrior apprentices and medicine cat apprentices.   |
 
-[Back to Patrol Template](#patrol-template)
 
 ***
 
@@ -276,7 +266,6 @@ Please have a look at the [full biome differences list](index.md#clangen-biomes)
 !!! tip
 	Hunting patrols have an additional level of filtering active above the patrol weights. First the game decides what prey reward the patrol should give (based on chances that change depending on the biome and season), and then, from the patrols that give that prey reward _as a non-stat success_, the acceptable patrols are weighed against each other. This naturally makes patrols that give huge prey rewards rare, no matter how many of those patrols you write. Don't worry about weighing hunting patrols according to their prey reward. Instead make each hunting patrol give roughly the same prey reward for all non-stat successes. The hunting filtering code will make sure the appropriate amount of prey is given. 
 
-[Back to Patrol Template](#patrol-template)
 
 ***
 
@@ -306,9 +295,7 @@ Please have a look at the [full biome differences list](index.md#clangen-biomes)
 | herb_gathering          | 50                     |
 | training                | 60                     |
 
-[Back to chance of success](#chance-of-success-int)
 
-[Back to Patrol Template](#patrol-template)
 
 ##### Default Success Beach: 
 
@@ -339,9 +326,7 @@ Please have a look at the [full biome differences list](index.md#clangen-biomes)
 | newleaf                     | herb_gathering         | 50                     |
 |-----------------------------|------------------------|------------------------|
 
-[Back to chance of success](#chance-of-success-int)
 
-[Back to Patrol Template](#patrol-template)
 
 ##### Default Success Desert: 
 
@@ -372,9 +357,7 @@ Please have a look at the [full biome differences list](index.md#clangen-biomes)
 | newleaf                     | herb_gathering         | 40                     |
 |-----------------------------|------------------------|------------------------|
 
-[Back to chance of success](#chance-of-success-int)
 
-[Back to Patrol Template](#patrol-template)
 
 ##### Default Success Forest: 
 
@@ -405,9 +388,7 @@ Please have a look at the [full biome differences list](index.md#clangen-biomes)
 | newleaf                     | herb_gathering         | 50                     |
 |-----------------------------|------------------------|------------------------|
 
-[Back to chance of success](#chance-of-success-int)
 
-[Back to Patrol Template](#patrol-template)
 
 ##### Default Success Mountainous: 
 
@@ -438,9 +419,7 @@ Please have a look at the [full biome differences list](index.md#clangen-biomes)
 | newleaf                     | herb_gathering         | 60                     |
 |-----------------------------|------------------------|------------------------|
 
-[Back to chance of success](#chance-of-success-int)
 
-[Back to Patrol Template](#patrol-template)
 
 ##### Default Success Plains: 
 
@@ -471,9 +450,7 @@ Please have a look at the [full biome differences list](index.md#clangen-biomes)
 | newleaf                     | herb_gathering         | 50                     |
 |-----------------------------|------------------------|------------------------|
 
-[Back to chance of success](#chance-of-success-int)
 
-[Back to Patrol Template](#patrol-template)
 
 ##### Default Success Wetlands: 
 
@@ -504,9 +481,7 @@ Please have a look at the [full biome differences list](index.md#clangen-biomes)
 | newleaf                     | herb_gathering         | 60                     |
 |-----------------------------|------------------------|------------------------|
 
-[Back to chance of success](#chance-of-success-int)
 
-[Back to Patrol Template](#patrol-template)
 
 ***
 
@@ -527,7 +502,6 @@ Please have a look at the [full biome differences list](index.md#clangen-biomes)
 | "jealousy_{value}"    | Value is an integer between 0 and 100. Every patrol member must have more than {value} jealousy to all other patrol members.      |
 | "trust_{value}"       | Value is an integer between 0 and 100. Every patrol member must have more than {value} trust to all other patrol members.         |
 
-[Back to Patrol Template](#patrol-template)
 
 ***
 
@@ -536,21 +510,18 @@ Please have a look at the [full biome differences list](index.md#clangen-biomes)
 
 >Example: `"pl_skill_constraint": ["TEACHER,1", "INSIGHTFUL,1", "KIT,1", "CAMP,1"],`
 
-[Back to Patrol Template](#patrol-template)
 
 ***
 
 #### intro_text: str
 >The text that displays when the patrol first starts.
 
-[Back to Patrol Template](#patrol-template)
 
 ***
 
 #### decline_text: str
 >The text that displays if the patrol is declined (do not proceed)
 
-[Back to Patrol Template](#patrol-template)
 
 ***
 
@@ -623,28 +594,24 @@ What each parameter does, and what the options are for outcomes.
 #### text: str
 >The displayed text. Unlike intro text, can include stat cat (s_c) and new cat (n_c:{index}) names.
 >
->[Back to Outcome Block Template](#outcome-block-template)
 
 ***
 
 #### exp: int
 >The amount of exp cats receive (sorta). The exact amount also depends on the number of cats and current EXP levels, but in general, a higher number here means more exp. If exp is 0, no exp will be given. 
 >
->[Back to Outcome Block Template](#outcome-block-template)
 
 ***
 
 #### stat_skill: List[str]
 >Optional. Including this "stat_skill" or "stat_trait" makes this a stat outcome, which can only occur if a stat cat can be found. Requires stat cats to have at least one of these skills. For s_c to be used anywhere in the outcome, "stat_skill" or "stat_trait" must be included. See elsewhere for skill formatting. 
 >
->[Back to Outcome Block Template](#outcome-block-template)
 
 ***
 
 #### stat_trait: List[str]
 >Optional. Including this "stat_skill" or "stat_trait" makes this a stat outcome, which can only occur if a stat cat can be found. Requires stat cats to have one of these traits. For s_c to be used anywhere in the outcome, "stat_skill" or "stat_trait" must be included.
 >
->[Back to Outcome Block Template](#outcome-block-template)
 
 ***
 
@@ -676,19 +643,16 @@ What each parameter does, and what the options are for outcomes.
 | "healer" | Stat cat must be a medicine cat or medicine cat apprentice. Note that this doesn't override default behavior, only adds an additional requirement. |
 
 >
->[Back to Outcome Block Template](#outcome-block-template)
 
 ***
 
 #### prey: List[str]
 
->[Back to Outcome Block Template](#outcome-block-template)
 
 ***
 
 #### herbs: List[str]
 
->[Back to Outcome Block Template](#outcome-block-template)
 
 ***
 
@@ -706,7 +670,6 @@ What each parameter does, and what the options are for outcomes.
 | "multi"  | Multiple, but not all, of the patrol becomes lost |
 
 >
->[Back to Outcome Block Template](#outcome-block-template)
 
 ***
 
@@ -724,7 +687,6 @@ What each parameter does, and what the options are for outcomes.
 | "multi"  | Multiple, but not all, of the patrol will die |
 
 >
->[Back to Outcome Block Template](#outcome-block-template)
 
 ***
 
@@ -756,14 +718,14 @@ What each parameter does, and what the options are for outcomes.
 
 >**injuries: List[str]:** Pool of injures to draw from
 >
->[Injury List](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Basic#injuries)
+>[Injury List](reference.md#__tabbed_1_1)
 >
 >The above list includes both singular injuries and injury pools.  Adding an injury pool will allow for any of the injuries within that pool to be possible.  One will be chosen at random.  You don't have to pick just one injury or injury pool, you can include as many as you like!
 
 >**scars: List[str]:** 
 >Optional. If in classic mode, a scar is chosen from this pool to be given instead of an injury.  If in expanded mode, a scar is chosen from this pool to possibly be given upon healing their injury.
 >
->[Scar List](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Basic#scars)
+>[Scar List](reference.md#__tabbed_1_5)
 
 >**no_results: bool:** 
 >Optional. Controls if the injury "got" message shows up in patrol results, as well as potential history text.
@@ -774,7 +736,6 @@ What each parameter does, and what the options are for outcomes.
 | false | Default. A "got" message will appear in patrols results, and any given history text will be used.                                                                                                                                               |
 
 >
->[Back to Outcome Block Template](#outcome-block-template)
 
 ***
 
@@ -794,7 +755,6 @@ What each parameter does, and what the options are for outcomes.
 | "scar"       | Scar history. Whole sentence.                       |
 
 >
->[Back to Outcome Block Template](#outcome-block-template)
 
 ***
 
@@ -865,7 +825,6 @@ What each parameter does, and what the options are for outcomes.
 | {any integer} | The amount the relationship will be affected. 5 is a normal amount, and 15 is a large amount. Try to stay within those bounds. |
 
 >
->[Back to Outcome Block Template](#outcome-block-template)
 
 ***
 
@@ -905,7 +864,6 @@ What each parameter does, and what the options are for outcomes.
 | "mate:{index},{index}"                      | Indexes of mates. Mates must be created BEFORE the cat with this tag. You can also specify patrol-cats (p_l, r_c, or s_c)                                                                                                                                                                                                                                            |
 
 >
->[Back to Outcome Block Template](#outcome-block-template)
 
 ***
 
@@ -914,19 +872,17 @@ What each parameter does, and what the options are for outcomes.
 >
 > Example: "art": "bord_general_intro",
 >
->[Back to Outcome Block Template](#outcome-block-template)
 
 #### art_clean: str
 >Optional. Name of non-gore outcome-specific art, without file extension (no .png). Adding a clean version of the art marks the normal version as containing gore. The game will then use the clean version if the "Allow mild gore and blood in patrol artwork" setting is off, and the explicit version if this setting is on.
 >
 > Example: "art_clean": "bord_general_intro",
 >
->[Back to Outcome Block Template](#outcome-block-template)
 
 #### outsider_rep
 > This parameter is used for **all** patrols that involve new_cats, loners, and rogues (regardless of if the new cat joins, or if the loner or rogue is even open to joining the clan). It changes the reputation the player Clan has among outsiders, those who don't belong to any Clan. 
 >
-> If the player Clan has a welcoming reputation (above 71), new_cat patrols tagged with the ["new_cat" tag](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#tags-liststr) have a increased chance to appear, and will be generated from the resources/dicts/patrols/new_cat_welcoming.json. 
+> If the player Clan has a welcoming reputation (above 71), new_cat patrols tagged with the "new_cat" tag have an increased chance to appear, and will be generated from the resources/dicts/patrols/new_cat_welcoming.json. 
 >
 > If the player Clan has a neutral reputation (between 31 to 70), new_cat patrols have no increased or deceased chance to appear, and will be generated from the resources/dicts/patrols/new_cat.json.
 >
@@ -948,7 +904,6 @@ Outsider reputation changes
 >
 > Please check with the other developers before changing from these defaults. However, there are lots of reasons why outsider_rep might be effected more or less than these defaults. For example, rescuing a mother cats and her newborn kittens may have a greater positive effect on a Clan's reputation than allowing random loner number 27 to join the Clan.
 
->[Back to Outcome Block Template](#outcome-block-template)
 
 #### other_clan_rep
 > This parameter is used for **all** patrols that involve the other Clans that border the player Clan. It changes the reputation the player Clan has among it neighbors. 
@@ -974,7 +929,6 @@ Other clan reputation changes
 
 > Please check with the other developers before changing from these defaults. However, there are lots of reasons why other_clan_rep might be effected more or less than these defaults. For example, failing to antagonize an enemy clan and getting your warriors killed in a border skirmish might make the player Clan absolutely _hate_ the other_clan. Create an argument for why your patrol deserves a greater effect and talk to the other developers.
 >
->[Back to Outcome Block Template](#outcome-block-template)
 
 ***
 

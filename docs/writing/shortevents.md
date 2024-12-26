@@ -232,9 +232,9 @@ lowercase season names + "any"
 ### m_c:dict[str, various]
 >Specifies the requirements for the main cat (m_c) of the event. 
 >
->**age:[list]** : a list of ages m_c can be. if they can be anything, use "any".  [Possible Ages](index.md#ages)
+>**age:[list]** : a list of ages m_c can be. if they can be anything, use "any".  [Possible Ages](reference.md#__tabbed_2_1)
 >
->**status:[list]** : a list of statuses m_c can b. if they can be anything, use "any".  [Possible Statuses](index.md#statuses)
+>**status:[list]** : a list of statuses m_c can b. if they can be anything, use "any".  [Possible Statuses](reference.md#__tabbed_2_2)
 
 !!! tip
     Keep in mind that the status and ages you input can limit each other! For example, if you add "kitten" to `age`, remember that kitten age cats can only ever have the kitten status.  This means that you *could* leave `status` as "any" and be secure in the knowledge that kitten status cats will be the only ones chosen.  
@@ -381,18 +381,18 @@ lowercase season names + "any"
 
 >**injuries: List[str]:** Pool of injures to draw from
 >
->[Injury List](index.md#injuries)
+>[Injury List](reference.md#__tabbed_1_1)
 >
 >The above list includes both singular injuries and injury pools.  Adding an injury pool will allow for any of the injuries within that pool to be possible.  One will be chosen at random.  You don't have to pick just one injury or injury pool, you can include as many as you like!
 
 >**scars: List[str]:** 
->Optional. If in classic mode, a scar is chosen from this pool to be given instead of an injury.  If in expanded mode, a scar is chosen from this pool to possibly be given upon healing their injury.
+>Optional. A scar is chosen from this pool to possibly be given upon healing their injury.
 >
->[Scar List](index.md#scars)
+>[Scar List](reference.md#__tabbed_1_5)
 
 ## history_text: Dict[str, str]:
 >Controls the history-text for scars and death. You must include a list of cats for whom the history will be assigned (i.e. "m_c", "r_c").
->[History Writing Guidelines](index.md#writing-histories)
+>[History Writing Guidelines](reference.md#writing-histories)
 >
 >Block:
 >

@@ -1,6 +1,4 @@
-<svg width="1e3" height="1e3" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+<svg width="17" height="17" version="1.1" viewBox="0 0 17 17" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><g fill="currentColor" stroke-width=".02619">
     
     
-    <g transform="matrix(-1 0 0 1 1e3 0)" fill="currentColor"><path d="m440 320h-60v30h-30v30h-30v30h-30v30h-30l0.9224 60h31.82l-2.7422 30h30v30h30v30h30v30h60v-90h120v-30h90v-30h-30v-30h-30v-30h-150z" />
-        <path d="m680 530v-30h30v30z"/>
-        <path d="m740 470h-60v-30h-30v-30h60v30h30z"/></g></svg>
+    <path d="m10.071 4.5715h1.5714v0.7857h0.7857v0.7857h0.7857v0.7857h0.7857v0.7857h0.7857l-0.02416 1.5714h-0.83336l0.07182 0.7857h-0.7857v0.7857h-0.7857v0.7857h-0.7857v0.7857h-1.5714v-2.3571h-3.1428v-0.7857h-2.3571v-0.7857h0.7857v-0.7857h0.7857v-0.7857h3.9285z"/><path d="m3.7858 10.071v-0.7857h-0.7857v0.7857z"/><path d="m2.2144 8.5h1.5714v-0.7857h0.7857v-0.7857h-1.5714v0.7857h-0.7857z"/></g></svg>

@@ -6,7 +6,7 @@ import ujson
 
 from scripts.cat.cats import Cat
 from scripts.events_module.relationship.group_events import GroupEvents
-from scripts.events_module.relationship.romantic_events import Romantic_Events
+from scripts.events_module.relationship.romantic_events import RomanticEvents
 from scripts.events_module.relationship.welcoming_events import Welcoming_Events
 from scripts.game_structure.game_essentials import game
 from scripts.utility import (
@@ -24,9 +24,8 @@ class Relation_Events:
 
     base_path = os.path.join("resources", "dicts", "relationship_events")
 
-    GROUP_TYPES = {}
     types_path = os.path.join(base_path, "group_interactions", "group_types.json")
-    with open(types_path, "r") as read_file:
+    with open(types_path, "r", encoding="utf-8") as read_file:
         GROUP_TYPES = ujson.load(read_file)
     del base_path
 
@@ -56,7 +55,7 @@ class Relation_Events:
         if not random.getrandbits(4):
             Relation_Events.romantic_events(cat)
 
-        Romantic_Events.handle_mating_and_breakup(cat)
+        RomanticEvents.handle_mating_and_breakup(cat)
 
     # ---------------------------------------------------------------------------- #
     #                                new event types                               #
@@ -135,7 +134,7 @@ class Relation_Events:
             return
 
         other_cat = choice(cat_to_choose_from)
-        if Romantic_Events.start_interaction(cat, other_cat):
+        if RomanticEvents.start_interaction(cat, other_cat):
             Relation_Events.trigger_event(cat)
             Relation_Events.trigger_event(other_cat)
 

@@ -2,6 +2,7 @@
 # -*- coding: ascii -*-
 import random
 
+import i18n
 import ujson
 
 from scripts.events_module.event_filters import (
@@ -20,8 +21,11 @@ from scripts.game_structure.game_essentials import game
 from scripts.utility import (
     get_living_clan_cat_count,
 )
+from scripts.game_structure.localization import load_lang_resource
 
-resource_directory = "resources/dicts/events/"
+
+def get_resource_directory(fallback=False):
+    return f"resources/lang/{i18n.config.get('locale') if not fallback else i18n.config.get('fallback')}/events/"
 
 
 # ---------------------------------------------------------------------------- #
@@ -34,25 +38,36 @@ class GenerateEvents:
 
     INJURY_DISTRIBUTION = None
     with open(
-            f"resources/dicts/conditions/event_injuries_distribution.json", "r"
+        f"resources/dicts/conditions/event_injuries_distribution.json",
+        "r",
+        encoding="utf-8",
     ) as read_file:
         INJURY_DISTRIBUTION = ujson.loads(read_file.read())
 
     INJURIES = None
-    with open(f"resources/dicts/conditions/injuries.json", "r") as read_file:
+    with open(
+        f"resources/dicts/conditions/injuries.json", "r", encoding="utf-8"
+    ) as read_file:
         INJURIES = ujson.loads(read_file.read())
 
     @staticmethod
     def get_short_event_dicts(file_path):
         try:
             with open(
-                    file_path,
-                    "r",
+                get_resource_directory() + file_path, "r", encoding="utf-8"
             ) as read_file:
                 events = ujson.loads(read_file.read())
         except:
-            print(f"ERROR: Unable to load {file_path}.")
-            return None
+            try:
+                with open(
+                    get_resource_directory(fallback=True) + file_path,
+                    "r",
+                    encoding="utf-8",
+                ) as read_file:
+                    events = ujson.loads(read_file.read())
+            except:
+                print(f"ERROR: Unable to load {file_path}.")
+                return None
 
         return events
 
@@ -60,10 +75,7 @@ class GenerateEvents:
     def get_ongoing_event_dicts(file_path):
         events = None
         try:
-            with open(
-                    file_path,
-                    "r",
-            ) as read_file:
+            with open(file_path, "r", encoding="utf-8") as read_file:
                 events = ujson.loads(read_file.read())
         except:
             print(f"ERROR: Unable to load events from biome {file_path}.")
@@ -72,25 +84,15 @@ class GenerateEvents:
 
     @staticmethod
     def get_death_reaction_dicts(family_relation, rel_value):
-        try:
-            file_path = f"{resource_directory}/death/death_reactions/{family_relation}/{family_relation}_{rel_value}.json"
-            with open(
-                    file_path,
-                    "r",
-            ) as read_file:
-                events = ujson.loads(read_file.read())
-        except:
-            events = None
-            print(
-                f"ERROR: Unable to load death reaction events for {family_relation}_{rel_value}."
-            )
-        return events
+        return load_lang_resource(
+            f"events/death/death_reactions/{family_relation}/{family_relation}_{rel_value}.json"
+        )
 
     @staticmethod
     def get_lead_den_event_dicts(event_type: str, success: bool):
         try:
-            file_path = f"{resource_directory}/leader_den/{'success' if success else 'fail'}/{event_type}.json"
-            with open(file_path, "r") as read_file:
+            file_path = f"{get_resource_directory()}leader_den/{'success' if success else 'fail'}/{event_type}.json"
+            with open(file_path, "r", encoding="utf-8") as read_file:
                 events = ujson.loads(read_file.read())
         except:
             events = None
@@ -106,7 +108,7 @@ class GenerateEvents:
 
     @staticmethod
     def generate_short_events(event_triggered, biome):
-        file_path = f"{resource_directory}{event_triggered}/{biome}.json"
+        file_path = f"{event_triggered}/{biome}.json"
 
         try:
             if file_path in GenerateEvents.loaded_events:
@@ -150,7 +152,7 @@ class GenerateEvents:
                         outsider=event["outsider"] if "outsider" in event else {},
                         other_clan=event["other_clan"] if "other_clan" in event else {},
                         supplies=event["supplies"] if "supplies" in event else [],
-                        new_gender=event["new_gender"] if "new_gender" in event else []
+                        new_gender=event["new_gender"] if "new_gender" in event else [],
                     )
                     event_list.append(event)
 
@@ -162,12 +164,12 @@ class GenerateEvents:
 
     @staticmethod
     def generate_ongoing_events(event_type, biome, specific_event=None):
-        file_path = f"resources/dicts/events/{event_type}/{biome}.json"
+        file_path = f"{get_resource_directory()}/{event_type}/{biome}.json"
 
         if file_path in GenerateEvents.loaded_events:
             return GenerateEvents.loaded_events[file_path]
         else:
-            events_dict = GenerateEvents.get_ongoing_event_dicts(file_path)
+            events_dict = GenerateEvents.get_short_event_dicts(file_path)
 
             if not specific_event:
                 event_list = []
@@ -232,14 +234,14 @@ class GenerateEvents:
 
     @staticmethod
     def filter_possible_short_events(
-            Cat_class,
-            possible_events,
-            cat,
-            random_cat,
-            other_clan,
-            freshkill_active,
-            freshkill_trigger_factor,
-            sub_types=None,
+        Cat_class,
+        possible_events,
+        cat,
+        random_cat,
+        other_clan,
+        freshkill_active,
+        freshkill_trigger_factor,
+        sub_types=None,
     ):
         final_events = []
         incorrect_format = []
@@ -254,12 +256,12 @@ class GenerateEvents:
         for event in possible_events:
             if event.history:
                 if (
-                        not isinstance(event.history, list)
-                        or "cats" not in event.history[0]
+                    not isinstance(event.history, list)
+                    or "cats" not in event.history[0]
                 ):
                     if (
-                            f"{event.event_id} history formatted incorrectly"
-                            not in incorrect_format
+                        f"{event.event_id} history formatted incorrectly"
+                        not in incorrect_format
                     ):
                         incorrect_format.append(
                             f"{event.event_id} history formatted incorrectly"
@@ -267,8 +269,8 @@ class GenerateEvents:
             if event.injury:
                 if not isinstance(event.injury, list) or "cats" not in event.injury[0]:
                     if (
-                            f"{event.event_id} injury formatted incorrectly"
-                            not in incorrect_format
+                        f"{event.event_id} injury formatted incorrectly"
+                        not in incorrect_format
                     ):
                         incorrect_format.append(
                             f"{event.event_id} injury formatted incorrectly"
@@ -299,40 +301,37 @@ class GenerateEvents:
 
             # check for old age
             if (
-                    "old_age" in event.sub_type
-                    and cat.moons < game.config["death_related"]["old_age_death_start"]
+                "old_age" in event.sub_type
+                and cat.moons < game.config["death_related"]["old_age_death_start"]
             ):
                 continue
             # remove some non-old age events to encourage elders to die of old age more often
             if (
-                    "old_age" not in event.sub_type
-                    and cat.moons > game.config["death_related"]["old_age_death_start"]
-                    and int(random.random() * 3)
+                "old_age" not in event.sub_type
+                and cat.moons > game.config["death_related"]["old_age_death_start"]
+                and int(random.random() * 3)
             ):
                 continue
 
             # check if already trans
-            if (
-                    "transition" in event.sub_type
-                    and cat.gender != cat.genderalign
-            ):
+            if "transition" in event.sub_type and cat.gender != cat.genderalign:
                 continue
 
             if event.m_c:
                 if not event_for_cat(
-                        cat_info=event.m_c,
-                        cat=cat,
-                        cat_group=[cat, random_cat] if random_cat else None,
-                        event_id=event.event_id
+                    cat_info=event.m_c,
+                    cat=cat,
+                    cat_group=[cat, random_cat] if random_cat else None,
+                    event_id=event.event_id,
                 ):
                     continue
 
             if event.r_c and random_cat:
                 if not event_for_cat(
-                        cat_info=event.r_c,
-                        cat=random_cat,
-                        cat_group=[random_cat, cat],
-                        event_id=event.event_id
+                    cat_info=event.r_c,
+                    cat=random_cat,
+                    cat_group=[random_cat, cat],
+                    event_id=event.event_id,
                 ):
                     continue
 
@@ -367,16 +366,16 @@ class GenerateEvents:
                     for injury in block["injuries"]:
                         if injury in GenerateEvents.INJURIES:
                             if (
-                                    GenerateEvents.INJURIES[injury]["severity"]
-                                    != allowed_severity
+                                GenerateEvents.INJURIES[injury]["severity"]
+                                != allowed_severity
                             ):
                                 discard = True
                                 break
 
                             if "m_c" in block["cats"]:
                                 if injury == "mangled tail" and (
-                                        "NOTAIL" in cat.pelt.scars
-                                        or "HALFTAIL" in cat.pelt.scars
+                                    "NOTAIL" in cat.pelt.scars
+                                    or "HALFTAIL" in cat.pelt.scars
                                 ):
                                     continue
 
@@ -384,14 +383,14 @@ class GenerateEvents:
                                     continue
                             if "r_c" in block["cats"]:
                                 if injury == "mangled tail" and (
-                                        "NOTAIL" in random_cat.pelt.scars
-                                        or "HALFTAIL" in random_cat.pelt.scars
+                                    "NOTAIL" in random_cat.pelt.scars
+                                    or "HALFTAIL" in random_cat.pelt.scars
                                 ):
                                     continue
 
                                 if (
-                                        injury == "torn ear"
-                                        and "NOEAR" in random_cat.pelt.scars
+                                    injury == "torn ear"
+                                    and "NOEAR" in random_cat.pelt.scars
                                 ):
                                     continue
 
@@ -408,7 +407,9 @@ class GenerateEvents:
                 if not other_clan:
                     continue
 
-                if not event_for_clan_relations(event.other_clan["current_rep"], other_clan):
+                if not event_for_clan_relations(
+                    event.other_clan["current_rep"], other_clan
+                ):
                     continue
 
                 # during a war we want to encourage the clans to have positive events
@@ -416,8 +417,8 @@ class GenerateEvents:
                 if "war" in event.sub_type:
                     rel_change_type = game.switches["war_rel_change_type"]
                     if (
-                            event.other_clan["changed"] < 0
-                            and rel_change_type != "rel_down"
+                        event.other_clan["changed"] < 0
+                        and rel_change_type != "rel_down"
                     ):
                         continue
 
@@ -436,10 +437,10 @@ class GenerateEvents:
                             continue
 
                         if not event_for_freshkill_supply(
-                                game.clan.freshkill_pile,
-                                trigger,
-                                freshkill_trigger_factor,
-                                clan_size
+                            game.clan.freshkill_pile,
+                            trigger,
+                            freshkill_trigger_factor,
+                            clan_size,
                         ):
                             discard = True
                             break
@@ -447,10 +448,7 @@ class GenerateEvents:
                             discard = False
 
                     else:  # if supply type wasn't freshkill, then it must be a herb type
-                        if not event_for_herb_supply(
-                                trigger,
-                                supply_type,
-                                clan_size):
+                        if not event_for_herb_supply(trigger, supply_type, clan_size):
                             discard = True
                             break
                         else:
@@ -510,13 +508,13 @@ class GenerateEvents:
         return possible_events
 
     def possible_lead_den_events(
-            self,
-            cat,
-            event_type: str,
-            interaction_type: str,
-            success: bool,
-            other_clan_temper=None,
-            player_clan_temper=None,
+        self,
+        cat,
+        event_type: str,
+        interaction_type: str,
+        success: bool,
+        other_clan_temper=None,
+        player_clan_temper=None,
     ) -> list:
         """
         finds and generates a list of possible leader den events
@@ -536,13 +534,13 @@ class GenerateEvents:
 
             if "other_clan_temper" in event or "player_clan_temper" in event:
                 if (
-                        other_clan_temper not in event["other_clan_temper"]
-                        and "any" not in event["other_clan_temper"]
+                    other_clan_temper not in event["other_clan_temper"]
+                    and "any" not in event["other_clan_temper"]
                 ):
                     continue
                 if (
-                        player_clan_temper not in event["player_clan_temper"]
-                        and "any" not in event["player_clan_temper"]
+                    player_clan_temper not in event["player_clan_temper"]
+                    and "any" not in event["player_clan_temper"]
                 ):
                     continue
 
@@ -551,10 +549,7 @@ class GenerateEvents:
                     continue
 
             cat_info = event["m_c"]
-            if not event_for_cat(
-                    cat_info=cat_info,
-                    cat=cat
-            ):
+            if not event_for_cat(cat_info=cat_info, cat=cat):
                 continue
 
             possible_events.append(event)

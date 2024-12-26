@@ -73,13 +73,13 @@ These should be flavored as occurring during the Gathering and should specify as
       "skill": []
     }
 ```
-> **status: list[str]** - [status list](index.md#statuses)  In addition to leader, the following statuses can be sent to the Gathering in the leader's stead: ["leader", "deputy", "medicine cat", "medicine cat apprentice"]
+> **status: list[str]** - [status list](reference.md#__tabbed_2_1)  In addition to leader, the following statuses can be sent to the Gathering in the leader's stead: ["leader", "deputy", "medicine cat", "medicine cat apprentice"]
 
-> **age: list[str]** - [age list](index.md#ages) Ages from adolescent to senior can be sent to the Gathering as per statuses listed above.  Kittens can never be sent to a Gathering.
+> **age: list[str]** - [age list](reference.md#__tabbed_2_1) Ages from adolescent to senior can be sent to the Gathering as per statuses listed above.  Kittens can never be sent to a Gathering.
 
-> **trait: list[str]** - [trait list](index.md#traits)
+> **trait: list[str]** - [trait list](reference.md#__tabbed_3_2)
 
-> **skill: list[str]** - [skill list](index.md#skills)
+> **skill: list[str]** - [skill list](reference.md#__tabbed_3_1)
 
 
 ***
@@ -187,13 +187,13 @@ These events are flavored as the Clan going out to deliberately interact with th
       ]
     }
 ```
-> **status: list[str]** - list of statuses allowed: ["loner", "rogue", "kittypet", "exiled", "lost"].  Remember, "exiled" and "lost" cats were previously part of the Clan.
+> **status: list[str]** - list of statuses allowed: ["loner", "rogue", "kittypet", "exiled", "lost", "former clancat"].  Remember, "exiled" and "lost" cats were previously part of the Clan.
 
-> **age: list[str]** - [age list](index.md#ages)  (yes, Outsider kittens could be chosen for these interactions)
+> **age: list[str]** - [age list](reference.md#__tabbed_2_1)  (yes, Outsider kittens could be chosen for these interactions)
 
-> **trait: list[str]** - [trait list](index.md#traits)
+> **trait: list[str]** - [trait list](reference.md#__tabbed_3_2)
 
-> **skill: list[str]** - [skill list](index.md#skills)
+> **skill: list[str]** - [skill list](reference.md#__tabbed_3_1)
 
 > **new_thought: str** - The thought the Outsider will have on this moon as a result of the event.
 
