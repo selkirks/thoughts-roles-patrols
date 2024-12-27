@@ -216,10 +216,13 @@ def determine_screen_scale(x, y, ingame_switch):
 
         screen_config = game.settings
     else:
-        with open(
-            get_save_dir() + "/settings.json", "r", encoding="utf-8"
-        ) as read_config:
-            screen_config = ujson.load(read_config.read())
+        try:
+            with open(
+                get_save_dir() + "/settings.json", "r", encoding="utf-8"
+            ) as read_config:
+                screen_config = ujson.load(read_config.read())
+        except:
+            screen_config = {}
 
     if "fullscreen scaling" in screen_config and screen_config["fullscreen scaling"]:
         scalex = (x - 20) // 80
