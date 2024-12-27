@@ -52,6 +52,7 @@ from scripts.game_structure.localization import load_lang_resource
 
 import scripts.game_structure.localization as pronouns
 
+
 class Cat:
     """The cat class."""
 
@@ -909,12 +910,12 @@ class Cat:
 
     def get_genderalign_string(self):
         # translate it if it's default
-        if self.genderalign in [
-            "female",
-            "male",
-            "trans female",
-            "trans male",
-            "nonbinary",
+        if self.genderalign.replace('intersex ', '') in [
+            "molly",
+            "tom",
+            "trans molly",
+            "trans tom",
+            "sam",
         ]:
             return i18n.t(f"general.{self.genderalign}")
         # otherwise, it's custom - just return it directly

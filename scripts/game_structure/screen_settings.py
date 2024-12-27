@@ -1,3 +1,4 @@
+import logging
 import os.path
 from typing import TYPE_CHECKING
 
@@ -16,6 +17,8 @@ import pygame_gui
 
 from scripts.game_structure.ui_manager import UIManager
 from scripts.ui.generate_screen_scale_json import generate_screen_scale
+
+logger = logging.getLogger(__name__)
 
 
 offset = (0, 0)
@@ -291,7 +294,7 @@ def load_manager(res: Tuple[int, int], screen_offset: Tuple[int, int], scale: fl
         return
 
     translation_paths = []
-    for root, dirs, files in os.walk("resources\\lang"):
+    for root, dirs, files in os.walk(os.path.join("resources", "lang")):
         for directory in dirs:
             translation_paths.append(os.path.join(root, directory))
         break
@@ -307,6 +310,7 @@ def load_manager(res: Tuple[int, int], screen_offset: Tuple[int, int], scale: fl
             del new_settings
 
     # initialize pygame_gui manager, and load themes
+
     manager = UIManager(
         res,
         screen_offset,
