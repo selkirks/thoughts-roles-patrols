@@ -44,6 +44,7 @@ from scripts.utility import (
     leader_ceremony_text_adjust,
 )
 
+
 class Cat:
     """The cat class."""
 
