@@ -310,10 +310,10 @@ class FreshkillPileTest(unittest.TestCase):
     def test_queen_handling(self) -> None:
         # given
         # young enough kid
-        mother = Cat()
+        mother = Cat(gender="fem")
         mother.gender = "female"
         mother.status = "warrior"
-        father = Cat()
+        father = Cat(gender="masc")
         father.gender = "male"
         father.status = "warrior"
         kid = Cat()

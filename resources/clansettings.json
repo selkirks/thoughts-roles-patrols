@@ -42,12 +42,12 @@
         ],
         "showheight": [
             "Show exact cat shoulder height on profile",
-            "Adds exact shoulder height in inches to cats",
+            "Adds exact shoulder height in inches to cats.",
             false
         ],
         "metric_toggle": [
             "Convert inches to cm",
-            "Converts heights from inches to centimetres",
+            "Converts heights from inches to centimetres.",
             false,
             [
                 "showheight",
@@ -249,7 +249,7 @@
         ],
         "sabotage other clans": [
             "Sabotaging Other Clans",
-            "Your mediator and warriors work together to undermine the other Clans. Only available if you have a working mediator. Selecting this will also allow you to choose which Clans you target.",
+            "Your mediators and warriors work together to undermine the other Clans. Only available if you have a working mediator. Selecting this will also allow you to choose which Clans you target.",
             false,
             "sabotage_focus",
             "#sabotage_focus_button"
