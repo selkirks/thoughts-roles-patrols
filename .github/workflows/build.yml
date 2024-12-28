@@ -81,7 +81,7 @@ jobs:
         env:
           IS_RELEASE: 1
       - name: Create archive (.tar.xz)
-        run: tar -caf MegaMerge_Linux64_glibc2.31+.tar.xz -C dist MegaMerge
+        run: tar -caf MegaMerge_Linux64_glibc2.31+.tar.xz -C dist Clangen
       - uses: actions/upload-artifact@v4
         with:
           name: MegaMerge_Linux64_glibc2.31+.tar.xz
@@ -107,10 +107,10 @@ jobs:
             -H 'accept: */*' \
             -H 'Content-Type: multipart/form-data' \
             -F 'fileBundle=@MegaMerge_Linux64_glibc2.31+.tar.xz' \
-            -F 'fileBundle=MegaMerge_Linux64_glibc2.31+.tar.xz.sig' \
+            -F 'fileBundle=@MegaMerge_Linux64_glibc2.31+.tar.xz.sig' \
             --http1.1
       - name: Set up butler
-        uses: thlumyn/setup-butlerMegaMerge
+        uses: thlumyn/setup-butler@clangen
       - name: Upload build to itch.io
         env:
           BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
@@ -200,11 +200,11 @@ jobs:
             -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
             -H 'accept: */*' \
             -H 'Content-Type: multipart/form-data' \
-            -F 'fileBundle=MegaMerge_Linux64_glibc2.35+.tar.xz' \
-            -F 'fileBundle=MegaMerge_Linux64_glibc2.35+.tar.xz.sig' \
+            -F 'fileBundle=@MegaMerge_Linux64_glibc2.35+.tar.xz' \
+            -F 'fileBundle=@MegaMerge_Linux64_glibc2.35+.tar.xz.sig' \
             --http1.1
       - name: Set up butler
-        uses: thlumyn/setup-butlerMegaMerge
+        uses: thlumyn/setup-butler@clangen
       - name: Upload build to itch.io
         env:
           BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
@@ -318,11 +318,11 @@ jobs:
             -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
             -H 'accept: */*' \
             -H 'Content-Type: multipart/form-data' \
-            -F 'fileBundle=MegaMerge_Win32.zip;type=application/zip' \
-            -F 'fileBundle=MegaMerge_Win32.zip.sig' \
+            -F 'fileBundle=@MegaMerge_Win32.zip;type=application/zip' \
+            -F 'fileBundle=@MegaMerge_Win32.zip.sig' \
             --http1.1
       - name: Set up butler
-        uses: thlumyn/setup-butlerMegaMerge
+        uses: thlumyn/setup-butler@clangen
       - name: Upload build to itch.io
         if: startsWith(github.ref, 'refs/tags/') && env.BUTLER_API_KEY != ''
         env:
@@ -442,11 +442,11 @@ jobs:
             -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
             -H 'accept: */*' \
             -H 'Content-Type: multipart/form-data' \
-            -F 'fileBundle=MegaMerge_Win64.zip;type=application/zip' \
-            -F 'fileBundle=MegaMerge_Win64.zip.sig' \
+            -F 'fileBundle=@MegaMerge_Win64.zip;type=application/zip' \
+            -F 'fileBundle=@MegaMerge_Win64.zip.sig' \
             --http1.1
       - name: Set up butler
-        uses: thlumyn/setup-butlerMegaMerge
+        uses: thlumyn/setup-butler@clangen
       - name: Upload build to itch.io
         env:
           BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
@@ -566,11 +566,11 @@ jobs:
             -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
             -H 'accept: */*' \
             -H 'Content-Type: multipart/form-data' \
-            -F 'fileBundle=MegaMerge_Win64_Windows10+.zip;type=application/zip' \
-            -F 'fileBundle=MegaMerge_Win64_Windows10+.zip.sig' \
+            -F 'fileBundle=@MegaMerge_Win64_Windows10+.zip;type=application/zip' \
+            -F 'fileBundle=@MegaMerge_Win64_Windows10+.zip.sig' \
             --http1.1
       - name: Set up butler
-        uses: thlumyn/setup-butlerMegaMerge
+        uses: thlumyn/setup-butler@clangen
       - name: Upload build to itch.io
         env:
           BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
@@ -669,11 +669,11 @@ jobs:
             -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
             -H 'accept: */*' \
             -H 'Content-Type: multipart/form-data' \
-            -F 'fileBundle=MegaMerge_macOS64.dmg.zip;type=application/zip' \
-            -F 'fileBundle=MegaMerge_macOS64.dmg.zip.sig' \
+            -F 'fileBundle=@MegaMerge_macOS64.dmg.zip;type=application/zip' \
+            -F 'fileBundle=@MegaMerge_macOS64.dmg.zip.sig' \
             --http1.1
       - name: Set up butler
-        uses: thlumyn/setup-butlerMegaMerge
+        uses: thlumyn/setup-butler@clangen
       - name: Upload build to itch.io
         env:
           BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
