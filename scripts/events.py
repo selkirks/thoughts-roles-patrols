@@ -335,11 +335,11 @@ class Events:
             rel_change = chosen_event["rel_change"]
             other_clan.relations += rel_change
             if rel_change > 0:
-                event_text += f" (o_c_n relations improved.)"
+                event_text += i18n.t("hardcoded.relations_improved")
             elif rel_change == 0:
-                event_text += f" (o_c_n relations unchanged.)"
+                event_text += i18n.t("hardcoded.relations_neutral")
             else:
-                event_text += f" (o_c_n relations worsened.)"
+                event_text += i18n.t("hardcoded.relations_worsened")
 
             # adjust text and add to event list
             event_text = event_text_adjust(
@@ -732,18 +732,15 @@ class Events:
             else:
                 focus_text = f"Despite the additional focus of the Clan, no herbs could be gathered."
 
-            log_text = (
-                "With the additional focus of the Clan, following herbs were gathered: "
+            log_text = i18n.t(
+                "hardcoded.focus_herbs_log",
+                herbs=adjust_list_text(
+                    [
+                        i18n.t(f"conditions.herbs.{herb}", count=2)
+                        for herb in herbs_found
+                    ]
+                ),
             )
-            idx = 0
-            for herb, amount in herb_counter.items():
-                log_text += str(amount) + " " + herb.replace("_", " ")
-                idx += 1
-                if idx < len(herb_counter) - 1:
-                    log_text += ", "
-                elif idx < len(herb_counter):
-                    log_text += " and "
-            log_text += "."
             game.herb_events_list.append(log_text)
 
         elif game.clan.clan_settings.get("threaten outsiders"):

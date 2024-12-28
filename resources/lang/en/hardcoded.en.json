@@ -9,7 +9,7 @@
             "one": "So much grief and death has taken its toll on the cats of c_n. %{insert} is particularly shaken by it.",
             "many": "So much grief and death has taken its toll on the cats of c_n. %{insert} are particularly shaken by it."
         },
-        "relation_improved": " (o_c_n relations improved.)",
+        "relations_improved": " (o_c_n relations improved.)",
         "relations_neutral": " (o_c_n relations unchanged.)",
         "relations_worsened": " (o_c_n relations worsened.)",
         "lead_den_killed": "m_c was killed by c_n.",
