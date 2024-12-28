@@ -72,12 +72,12 @@ jobs:
             ./*.AppImage
       - name: Run PyInstaller
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
-        run: poetry run python3 -m PyInstaller MegaMerge.spec
+        run: poetry run python3 -m PyInstaller Clangen.spec
         env:
           IS_RELEASE: 0
       - name: Run PyInstaller
         if: ${{ startsWith(github.ref, 'refs/tags/') }}
-        run: poetry run python3 -m PyInstaller MegaMerge.spec
+        run: poetry run python3 -m PyInstaller Clangen.spec
         env:
           IS_RELEASE: 1
       - name: Create archive (.tar.xz)
@@ -166,12 +166,12 @@ jobs:
           git log --pretty=oneline -15 --no-decorate  --no-merges > changelog.txt
       - name: Run PyInstaller
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
-        run: poetry run python3 -m PyInstaller MegaMerge.spec
+        run: poetry run python3 -m PyInstaller Clangen.spec
         env:
           IS_RELEASE: 0
       - name: Run PyInstaller
         if: ${{ startsWith(github.ref, 'refs/tags/') }}
-        run: poetry run python3 -m PyInstaller MegaMerge.spec
+        run: poetry run python3 -m PyInstaller Clangen.spec
         env:
           IS_RELEASE: 1
       - name: Create archive (.tar.xz)
@@ -281,12 +281,12 @@ jobs:
           cp target/release/self_updater.exe ../resources/
       - name: Run PyInstaller
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
-        run: poetry run PyInstaller MegaMerge.spec
+        run: poetry run PyInstaller Clangen.spec
         env:
           IS_RELEASE: 0
       - name: Run PyInstaller
         if: ${{ startsWith(github.ref, 'refs/tags/') }}
-        run: poetry run PyInstaller MegaMerge.spec
+        run: poetry run PyInstaller Clangen.spec
         env:
           IS_RELEASE: 1
       - name: Create archive (.zip)
@@ -405,12 +405,12 @@ jobs:
           cp target/release/self_updater.exe ../resources/
       - name: Run PyInstaller
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
-        run: poetry run PyInstaller MegaMerge.spec
+        run: poetry run PyInstaller Clangen.spec
         env:
           IS_RELEASE: 0
       - name: Run PyInstaller
         if: ${{ startsWith(github.ref, 'refs/tags/') }}
-        run: poetry run PyInstaller MegaMerge.spec
+        run: poetry run PyInstaller Clangen.spec
         env:
           IS_RELEASE: 1
       - name: Create archive (.zip)
@@ -529,12 +529,12 @@ jobs:
           cp target/release/self_updater.exe ../resources/
       - name: Run PyInstaller
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
-        run: poetry run PyInstaller MegaMerge.spec
+        run: poetry run PyInstaller Clangen.spec
         env:
           IS_RELEASE: 0
       - name: Run PyInstaller
         if: ${{ startsWith(github.ref, 'refs/tags/') }}
-        run: poetry run PyInstaller MegaMerge.spec
+        run: poetry run PyInstaller Clangen.spec
         env:
           IS_RELEASE: 1
       - name: Create archive (.zip)
@@ -630,12 +630,12 @@ jobs:
           git log --pretty="format:%H|||%cd|||%b|||%s" -15 --no-decorate --merges --grep="Merge pull request" --date=short > changelog.txt
       - name: Run PyInstaller
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
-        run: poetry run python -m PyInstaller MegaMerge.spec
+        run: poetry run python -m PyInstaller Clangen.spec
         env:
           IS_RELEASE: 0
       - name: Run PyInstaller
         if: ${{ startsWith(github.ref, 'refs/tags/') }}
-        run: poetry run python -m PyInstaller MegaMerge.spec
+        run: poetry run python -m PyInstaller Clangen.spec
         env:
           IS_RELEASE: 1
       - name: Create archive (.tar.xz)
