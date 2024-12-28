@@ -834,6 +834,7 @@ class Patrol:
             ("BORDER_GEN", "general/border.json"),
             ("MEDCAT_GEN", "general/medcat.json"),
             ("TRAINING_GEN", "general/training.json"),
+            ("DISASTER", "disaster.json"),
         ]
         for patrol_property, location in resources:
             try:

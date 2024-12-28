@@ -93,10 +93,14 @@ class LeaderDenScreen(Screens):
                         self.focus_clan = game.clan.all_clans[i]
                         self.update_other_clan_focus()
             elif event.ui_element == self.focus_frame_elements["negative_interaction"]:
-                text = self.focus_frame_elements["negative_interaction"].text
+                text = self.focus_frame_elements["negative_interaction"].text.replace(
+                    "screens.leader_den.", ""
+                )
                 self.update_clan_interaction_choice(text)
             elif event.ui_element == self.focus_frame_elements["positive_interaction"]:
-                text = self.focus_frame_elements["positive_interaction"].text
+                text = self.focus_frame_elements["positive_interaction"].text.replace(
+                    "screens.leader_den.", ""
+                )
                 self.update_clan_interaction_choice(text)
             elif event.ui_element == self.focus_frame_elements["clans_tab"]:
                 self.open_clans_tab()
