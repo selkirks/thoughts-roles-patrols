@@ -1,5 +1,8 @@
 import random
 from typing import List
+import i18n
+
+from scripts.game_structure import localization
 
 from scripts.cat.cats import Cat
 from scripts.cat.enums import CatAgeEnum
@@ -330,12 +333,16 @@ class HandleShortEvents:
             # check if we want to add some extra info to the event text and if we need to welcome
             for cat in self.new_cats[-1]:
                 if cat.dead:
-                    extra_text = f"{cat.name}'s ghost now wanders."
+                    extra_text = event_text_adjust(
+                        Cat, i18n.t("defaults.event_dead_outsider"), main_cat=cat
+                    )
                 elif cat.outside:
                     if "unknown" in attribute_list:
                         extra_text = ""
                     else:
-                        extra_text = f"The Clan has encountered {cat.name}."
+                        extra_text = event_text_adjust(
+                            Cat, i18n.t("defaults.event_met_outsider"), main_cat=cat
+                        )
                 else:
                     Relation_Events.welcome_new_cats([cat])
                 self.involved_cats.append(cat.ID)
@@ -438,14 +445,9 @@ class HandleShortEvents:
             new_gender = random.choice(possible_genders)
             self.main_cat.genderalign = new_gender
 
-            if new_gender == "nonbinary":
-                self.main_cat.pronouns = [self.main_cat.default_pronouns[0].copy()]
-            elif new_gender == "trans female":
-                self.main_cat.pronouns = [self.main_cat.default_pronouns[1].copy()]
-            elif new_gender == "trans male":
-                self.main_cat.pronouns = [self.main_cat.default_pronouns[2].copy()]
-            else:
-                print("No pronouns found for new_gender, keeping original pronouns.", new_gender)
+            self.main_cat.pronouns = localization.get_new_pronouns(
+                self.main_cat.genderalign
+            )
 
     def handle_death(self):
         """
@@ -654,9 +656,7 @@ class HandleShortEvents:
                         self.current_lives -= 1
                         if self.current_lives != game.clan.leader_lives:
                             while self.current_lives > game.clan.leader_lives:
-                                History.add_death(
-                                    cat, "multi_lives"
-                                )
+                                History.add_death(cat, "multi_lives")
                                 self.current_lives -= 1
                     History.add_death(cat, death_history)
 
