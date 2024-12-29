@@ -13,14 +13,20 @@ from itertools import combinations
 from math import floor
 from random import choice, choices, randint, random, sample, randrange, getrandbits
 from sys import exit as sys_exit
-from typing import List, Tuple
+from typing import List, Tuple, TYPE_CHECKING, Type, Union
 
+import i18n
 import pygame
 import ujson
 from pygame_gui.core import ObjectID
 
+from scripts.game_structure.localization import (
+    load_lang_resource,
+    determine_plural_pronouns,
+)
+
 logger = logging.getLogger(__name__)
-from scripts.game_structure import image_cache
+from scripts.game_structure import image_cache, localization
 from scripts.cat.enums import CatAgeEnum
 from scripts.cat.history import History
 from scripts.cat.names import names
@@ -28,6 +34,8 @@ from scripts.cat.sprites import sprites
 from scripts.game_structure.game_essentials import game
 import scripts.game_structure.screen_settings  # must be done like this to get updates when we change screen size etc
 
+if TYPE_CHECKING:
+    from scripts.cat.cats import Cat
 
 # ---------------------------------------------------------------------------- #
 #                               Getting Cats                                   #
@@ -77,7 +85,10 @@ def get_alive_clan_queens(living_cats):
 
 
 def get_alive_status_cats(
-    Cat, get_status: list, working: bool = False, sort: bool = False
+    Cat: Union["Cat", Type["Cat"]],
+    get_status: list,
+    working: bool = False,
+    sort: bool = False,
 ) -> list:
     """
     returns a list of cat objects for all living cats of get_status in Clan
@@ -301,7 +312,9 @@ def change_clan_relations(other_clan, difference):
     game.clan.all_clans[y].relations = clan_relations
 
 
-def create_new_cat_block(Cat, Relationship, event, in_event_cats: dict, i: int, attribute_list: List[str]) -> list:
+def create_new_cat_block(
+    Cat, Relationship, event, in_event_cats: dict, i: int, attribute_list: List[str]
+) -> list:
     """
     Creates a single new_cat block and then generates and returns the cats within the block
     :param Cat Cat: always pass Cat class
@@ -312,7 +325,7 @@ def create_new_cat_block(Cat, Relationship, event, in_event_cats: dict, i: int, 
     :param list[str] attribute_list: attribute list contained within the block
     """
 
-    thought = "Is looking around the camp with wonder"
+    thought = i18n.t("hardcoded.thought_new_cat")
     new_cats = None
 
     # gather parents
@@ -431,17 +444,13 @@ def create_new_cat_block(Cat, Relationship, event, in_event_cats: dict, i: int, 
 
         if match.group(1) in Cat.age_moons:
             min_age, max_age = Cat.age_moons[CatAgeEnum(match.group(1))]
-            age = randint(
-                min_age, max_age
-            )
+            age = randint(min_age, max_age)
             break
 
         # Set same as first mate
         if match.group(1) == "mate" and give_mates:
             min_age, max_age = Cat.age_moons[give_mates[0].age]
-            age = randint(
-                min_age, max_age
-            )
+            age = randint(min_age, max_age)
             break
 
         if match.group(1) == "has_kits":
@@ -451,7 +460,8 @@ def create_new_cat_block(Cat, Relationship, event, in_event_cats: dict, i: int, 
     if status and not age:
         if status in ["apprentice", "mediator apprentice", "medicine cat apprentice"]:
             age = randint(
-                Cat.age_moons[CatAgeEnum.ADOLESCENT][0], Cat.age_moons[CatAgeEnum.ADOLESCENT][1]
+                Cat.age_moons[CatAgeEnum.ADOLESCENT][0],
+                Cat.age_moons[CatAgeEnum.ADOLESCENT][1],
             )
         elif status in ["warrior", "mediator", "medicine cat"]:
             age = randint(
@@ -524,7 +534,7 @@ def create_new_cat_block(Cat, Relationship, event, in_event_cats: dict, i: int, 
 
     # KITTEN THOUGHT
     if status in ["kitten", "newborn"]:
-        thought = "Is snuggled safe in the nursery"
+        thought = i18n.t("hardcoded.thought_new_kitten")
 
     # MEETING - DETERMINE IF THIS IS AN OUTSIDE CAT
     outside = False
@@ -532,7 +542,7 @@ def create_new_cat_block(Cat, Relationship, event, in_event_cats: dict, i: int, 
         outside = True
         status = cat_type
         new_name = False
-        thought = "Is wondering about those new cats"
+        thought = i18n.t("hardcoded.thought_meeting")
         if age is not None and age <= 6 and not bs_override:
             chosen_backstory = "outsider1"
 
@@ -540,7 +550,7 @@ def create_new_cat_block(Cat, Relationship, event, in_event_cats: dict, i: int, 
     alive = True
     if "dead" in attribute_list:
         alive = False
-        thought = "Explores a new, starry world"
+        thought = i18n.t("hardcoded.thought_new_dead")
 
     # check if we can use an existing cat here
     chosen_cat = None
@@ -708,7 +718,7 @@ def get_other_clan(clan_name):
 
 
 def create_new_cat(
-    Cat,
+    Cat: Union["Cat", Type["Cat"]],
     new_name: bool = False,
     loner: bool = False,
     kittypet: bool = False,
@@ -719,7 +729,7 @@ def create_new_cat(
     status: str = None,
     age: int = None,
     gender: str = None,
-    thought: str = "Is looking around the camp with wonder",
+    thought: str = None,
     alive: bool = True,
     outside: bool = False,
     parent1: str = None,
@@ -747,6 +757,8 @@ def create_new_cat(
     :param str parent2: Cat ID to set as the biological parent2
     :param list adoptive_parents: Cat IDs to set as adoptive parents
     """
+    if thought is None:
+        thought = i18n.t("hardcoded.thought_new_cat")
     # TODO: it would be nice to rewrite this to be less bool-centric
     accessory = None
     if isinstance(backstory, list):
@@ -1535,9 +1547,9 @@ def unpack_rel_block(
                 positive = True
 
         if positive:
-            effect = f" (positive effect)"
+            effect = i18n.t("relationships.positive_postscript")
         else:
-            effect = f" (negative effect)"
+            effect = i18n.t("relationships.negative_postscript")
 
         # Get log
         log1 = None
@@ -1564,7 +1576,7 @@ def unpack_rel_block(
                         f"WARNING: event changed relationships but did not create a relationship log"
                     )
             else:
-                log1 = "These cats recently interacted." + effect
+                log1 = i18n.t("defaults.relationship_log") + effect
         if not log2:
             if hasattr(event, "text"):
                 try:
@@ -1574,7 +1586,7 @@ def unpack_rel_block(
                         f"WARNING: event changed relationships but did not create a relationship log"
                     )
             else:
-                log2 = f"These cats recently interacted." + effect
+                log2 = i18n.t("defaults.relationship_log") + effect
 
         change_relationship_values(
             cats_to_ob,
@@ -1690,20 +1702,13 @@ def change_relationship_values(
                   " /Trust: " + str(trust)) if changed else print("No relationship change")"""
 
             if log and isinstance(log, str):
-                if single_cat_to.moons <= 1:
-                    log_text = (
-                        log
-                        + f"- {single_cat_to.name} was {single_cat_to.moons} moon old"
-                    )
-                    if log_text not in rel.log:
-                        rel.log.append(log_text)
-                else:
-                    log_text = (
-                        log
-                        + f"- {single_cat_to.name} was {single_cat_to.moons} moons old"
-                    )
-                    if log_text not in rel.log:
-                        rel.log.append(log_text)
+                log_text = log + i18n.t(
+                    "relationships.age_postscript",
+                    name=str(single_cat_to.name),
+                    count=single_cat_to.moons,
+                )
+                if log_text not in rel.log:
+                    rel.log.append(log_text)
 
 
 # ---------------------------------------------------------------------------- #
@@ -1715,19 +1720,9 @@ def get_leader_life_notice() -> str:
     """
     Returns a string specifying how many lives the leader has left or notifying of the leader's full death
     """
-    text = ""
-
-    lives = game.clan.leader_lives
-
-    if lives > 0:
-        text = f"The leader has {int(lives)} lives left."
-    elif lives <= 0:
-        if game.clan.instructor.df is False:
-            text = "The leader has no lives left and has travelled to StarClan."
-        else:
-            text = "The leader has no lives left and has travelled to the Dark Forest."
-
-    return text
+    if game.clan.instructor.df:
+        return i18n.t("cat.history.leader_lives_left_df", count=game.clan.leader_lives)
+    return i18n.t("cat.history.leader_lives_left_sc", count=game.clan.leader_lives)
 
 
 def get_other_clan_relation(relation):
@@ -1754,16 +1749,47 @@ def pronoun_repl(m, cat_pronouns_dict, raise_exception=False):
         return m.group(0)
 
     inner_details = m.group(1).split("/")
+    out = None
 
     try:
-        d = cat_pronouns_dict[inner_details[1]][1]
+        if inner_details[1].upper() == "PLURAL":
+            inner_details.pop(1)  # remove plural tag so it can be processed as normal
+            catlist = []
+            for cat in inner_details[1].split("+"):
+                try:
+                    catlist.append(cat_pronouns_dict[cat][1])
+                except KeyError:
+                    print(f"Missing pronouns for {cat}")
+                    continue
+            d = determine_plural_pronouns(catlist)
+        else:
+            try:
+                d = cat_pronouns_dict[inner_details[1]][1]
+            except KeyError:
+                if inner_details[0].upper() == "ADJ":
+                    # find the default - this is a semi-expected behaviour for the adj tag as it may be called when
+                    # there is no relevant cat
+                    return inner_details[localization.get_default_adj()]
+                else:
+                    logger.warning(
+                        f"Could not get pronouns for {inner_details[1]}. Using default."
+                    )
+                    print(
+                        f"Could not get pronouns for {inner_details[1]}. Using default."
+                    )
+                    d = choice(localization.get_new_pronouns("default"))
+
         if inner_details[0].upper() == "PRONOUN":
-            pro = d[inner_details[2]]
-            if inner_details[-1] == "CAP":
-                pro = pro.capitalize()
-            return pro
+            out = d[inner_details[2]]
         elif inner_details[0].upper() == "VERB":
-            return inner_details[d["conju"] + 1]
+            out = inner_details[d["conju"] + 1]
+        elif inner_details[0].upper() == "ADJ":
+            out = inner_details[(d["gender"] + 2) if "gender" in d else 2]
+
+        if out is not None:
+            if inner_details[-1] == "CAP":
+                out = out.capitalize()
+            return out
 
         if raise_exception:
             raise KeyError(
@@ -1790,7 +1816,7 @@ def name_repl(m, cat_dict):
 def process_text(text, cat_dict, raise_exception=False):
     """Add the correct name and pronouns into a string."""
     adjust_text = re.sub(
-        r"\{(.*?)\}", lambda x: pronoun_repl(x, cat_dict, raise_exception), text
+        r"(?<!%)\{(.*?)}", lambda x: pronoun_repl(x, cat_dict, raise_exception), text
     )
 
     name_patterns = [r"(?<!\{)" + re.escape(l) + r"(?!\})" for l in cat_dict]
@@ -1807,21 +1833,31 @@ def adjust_list_text(list_of_items) -> str:
     :param list_of_items: the list of items you want converted
     :return: the new string
     """
-    if len(list_of_items) == 1:
-        insert = f"{list_of_items[0]}"
+    if len(list_of_items) == 0:
+        item1 = ""
+        item2 = ""
+    elif len(list_of_items) == 1:
+        item1 = list_of_items[0]
+        item2 = ""
     elif len(list_of_items) == 2:
-        insert = f"{list_of_items[0]} and {list_of_items[1]}"
+        item1 = list_of_items[0]
+        item2 = list_of_items[1]
     else:
-        item_line = ", ".join(list_of_items[:-1])
-        insert = f"{item_line}, and {list_of_items[-1]}"
+        item1 = ", ".join(list_of_items[:-1])
+        item2 = list_of_items[-1]
 
-    return insert
+    return i18n.t("utility.items", count=len(list_of_items), item1=item1, item2=item2)
 
 
 def adjust_prey_abbr(patrol_text):
     """
     checks for prey abbreviations and returns adjusted text
     """
+    global PREY_LISTS
+    if langs["prey"] != i18n.config.get("locale"):
+        langs["prey"] = i18n.config.get("locale")
+        PREY_LISTS = load_lang_resource("patrols/prey_text_replacements.json")
+
     for abbr in PREY_LISTS["abbreviations"]:
         if abbr in patrol_text:
             chosen_list = PREY_LISTS["abbreviations"].get(abbr)
@@ -1854,6 +1890,10 @@ def get_special_snippet_list(
     :return: a list of the chosen items from chosen_list or a formatted string if format is True
     """
     biome = game.clan.biome.casefold()
+    global SNIPPETS
+    if langs["snippet"] != i18n.config.get("locale"):
+        langs["snippet"] = i18n.config.get("locale")
+        SNIPPETS = load_lang_resource("snippet_collections.json")
 
     # these lists don't get sense specific snippets, so is handled first
     if chosen_list in ["dream_list", "story_list"]:
@@ -2049,7 +2089,7 @@ def ongoing_event_text_adjust(Cat, text, clan=None, other_clan_name=None):
 
 
 def event_text_adjust(
-    Cat,
+    Cat: Type["Cat"],
     text,
     *,
     patrol_leader=None,
@@ -2164,7 +2204,7 @@ def event_text_adjust(
     if "n_c" in text:
         for i, cat_list in enumerate(new_cats):
             if len(new_cats) > 1:
-                pronoun = Cat.default_pronouns[0]  # They/them for multiple cats
+                pronoun = localization.get_new_pronouns("default plural")[0]
             else:
                 pronoun = choice(cat_list[0].pronouns)
 
@@ -2258,22 +2298,20 @@ def event_text_adjust(
     # acc_plural (only works for main_cat's acc)
     if "acc_plural" in text:
         text = text.replace(
-            "acc_plural", str(ACC_DISPLAY[main_cat.pelt.accessory]["plural"])
+            "acc_plural", i18n.t(f"cat.accessories.{main_cat.pelt.accessory}", count=2)
         )
 
     # acc_singular (only works for main_cat's acc)
     if "acc_singular" in text:
         text = text.replace(
-            "acc_singular", str(ACC_DISPLAY[main_cat.pelt.accessory]["singular"])
+            "acc_singular",
+            i18n.t(f"cat.accessories.{main_cat.pelt.accessory}", count=1),
         )
-    
 
-    
-    
     if "given_herb" in text:
-        if "_" in chosen_herb:
-            chosen_herb = chosen_herb.replace("_", " ")
-        text = text.replace("given_herb", str(chosen_herb))
+        text = text.replace(
+            "given_herb", i18n.t(f"conditions.herbs.{chosen_herb}", count=2)
+        )
 
     return text
 
@@ -2416,17 +2454,10 @@ def ceremony_text_adjust(
     return adjust_text, random_living_parent, random_dead_parent
 
 
-def get_pronouns(Cat):
+def get_pronouns(Cat: "Cat"):
     """Get a cat's pronoun even if the cat has faded to prevent crashes (use gender-neutral pronouns when the cat has faded)"""
-    if Cat.pronouns == []:
-        return {
-            "subject": "they",
-            "object": "them",
-            "poss": "their",
-            "inposs": "theirs",
-            "self": "themself",
-            "conju": 1,
-        }
+    if Cat.pronouns == {}:
+        return localization.get_new_pronouns("default")
     else:
         return choice(Cat.pronouns)
 
@@ -2974,9 +3005,14 @@ def apply_opacity(surface, opacity):
 def chunks(L, n):
     return [L[x : x + n] for x in range(0, len(L), n)]
 
-def clamp(value: float, minimum_value: float, maximum_value: float) ->float: 
+
+def clamp(value: float, minimum_value: float, maximum_value: float) -> float:
     """
-    Takes a value and return it constrained to a certain range
+    Takes a value and returns it constrained to a certain range
+    :param value: The input value
+    :param minimum_value: Lower bound
+    :param maximum_value: Upper bound
+    :return: Clamped float.
     """
     if value < minimum_value:
         return minimum_value
@@ -3023,11 +3059,10 @@ with open(
 ) as read_file:
     PERMANENT = ujson.loads(read_file.read())
 
-with open(f"resources/dicts/acc_display.json", "r") as read_file:
-    ACC_DISPLAY = ujson.loads(read_file.read())
+langs = {"snippet": None, "prey": None}
 
-with open(f"resources/dicts/snippet_collections.json", "r") as read_file:
-    SNIPPETS = ujson.loads(read_file.read())
+SNIPPETS = None
+PREY_LISTS = None
 
 with open(
     os.path.normpath("resources/dicts/backstories.json"), "r", encoding="utf-8"
