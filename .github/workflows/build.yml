@@ -72,11 +72,13 @@ jobs:
             ./*.AppImage
       - name: Run PyInstaller
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
+        run: poetry run python3 -m PyInstaller MegaMerge.spec
         run: poetry run python3 -m PyInstaller Clangen.spec
         env:
           IS_RELEASE: 0
       - name: Run PyInstaller
         if: ${{ startsWith(github.ref, 'refs/tags/') }}
+        run: poetry run python3 -m PyInstaller MegaMerge.spec
         run: poetry run python3 -m PyInstaller Clangen.spec
         env:
           IS_RELEASE: 1
@@ -107,8 +109,20 @@ jobs:
             -H 'accept: */*' \
             -H 'Content-Type: multipart/form-data' \
             -F 'fileBundle=@MegaMerge_Linux64_glibc2.31+.tar.xz' \
-            -F 'fileBundle=@MegaMerge_Linux64_glibc2.31+.tar.xz.sig' \
+            -F 'fileBundle=MegaMerge_Linux64_glibc2.31+.tar.xz.sig' \
             --http1.1
+      - name: Set up butler
+        uses: thlumyn/setup-butlerMegaMerge
+      - name: Upload build to itch.io
+        env:
+          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+        if: startsWith(github.ref, 'refs/tags/') && env.BUTLER_API_KEY != ''
+        run: butler push MegaMerge_Linux64_glibc2.31+.tar.xz sablesteel/clan-gen-fan-edit:linux64_glibc_231 --userversion "${{ env.VERSION_NUMBER }}"
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: MegaMerge_Linux64_glibc2.31+.tar.xz
 
   build_ubuntu_22_04:
     runs-on: ubuntu-22.04
@@ -154,11 +168,13 @@ jobs:
           git log --pretty=oneline -15 --no-decorate  --no-merges > changelog.txt
       - name: Run PyInstaller
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
+        run: poetry run python3 -m PyInstaller MegaMerge.spec
         run: poetry run python3 -m PyInstaller Clangen.spec
         env:
           IS_RELEASE: 0
       - name: Run PyInstaller
         if: ${{ startsWith(github.ref, 'refs/tags/') }}
+        run: poetry run python3 -m PyInstaller MegaMerge.spec
         run: poetry run python3 -m PyInstaller Clangen.spec
         env:
           IS_RELEASE: 1
@@ -188,9 +204,21 @@ jobs:
             -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
             -H 'accept: */*' \
             -H 'Content-Type: multipart/form-data' \
-            -F 'fileBundle=@MegaMerge_Linux64_glibc2.35+.tar.xz' \
-            -F 'fileBundle=@MegaMerge_Linux64_glibc2.35+.tar.xz.sig' \
+            -F 'fileBundle=MegaMerge_Linux64_glibc2.35+.tar.xz' \
+            -F 'fileBundle=MegaMerge_Linux64_glibc2.35+.tar.xz.sig' \
             --http1.1
+      - name: Set up butler
+        uses: thlumyn/setup-butlerMegaMerge
+      - name: Upload build to itch.io
+        env:
+          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+        if: startsWith(github.ref, 'refs/tags/') && env.BUTLER_API_KEY != ''
+        run: butler push MegaMerge_Linux64_glibc2.35+.tar.xz sablesteel/clan-gen-fan-edit:linux64_glibc_235 --userversion "${{ env.VERSION_NUMBER }}"
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: MegaMerge_Linux64_glibc2.35+.tar.xz
 
   build_win32:
     runs-on: windows-2019
@@ -257,11 +285,13 @@ jobs:
           cp target/release/self_updater.exe ../resources/
       - name: Run PyInstaller
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
+        run: poetry run PyInstaller MegaMerge.spec
         run: poetry run PyInstaller Clangen.spec
         env:
           IS_RELEASE: 0
       - name: Run PyInstaller
         if: ${{ startsWith(github.ref, 'refs/tags/') }}
+        run: poetry run PyInstaller MegaMerge.spec
         run: poetry run PyInstaller Clangen.spec
         env:
           IS_RELEASE: 1
@@ -294,9 +324,21 @@ jobs:
             -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
             -H 'accept: */*' \
             -H 'Content-Type: multipart/form-data' \
-            -F 'fileBundle=@MegaMerge_Win32.zip;type=application/zip' \
-            -F 'fileBundle=@MegaMerge_Win32.zip.sig' \
+            -F 'fileBundle=MegaMerge_Win32.zip;type=application/zip' \
+            -F 'fileBundle=MegaMerge_Win32.zip.sig' \
             --http1.1
+      - name: Set up butler
+        uses: thlumyn/setup-butlerMegaMerge
+      - name: Upload build to itch.io
+        if: startsWith(github.ref, 'refs/tags/') && env.BUTLER_API_KEY != ''
+        env:
+          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+        run: butler push MegaMerge_Win32.zip sablesteel/clan-gen-fan-edit:win32 --userversion "${{ env.VERSION_NUMBER }}"
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: MegaMerge_Win32.zip
 
   build_win64:
     runs-on: windows-latest
@@ -369,11 +411,13 @@ jobs:
           cp target/release/self_updater.exe ../resources/
       - name: Run PyInstaller
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
+        run: poetry run PyInstaller MegaMerge.spec
         run: poetry run PyInstaller Clangen.spec
         env:
           IS_RELEASE: 0
       - name: Run PyInstaller
         if: ${{ startsWith(github.ref, 'refs/tags/') }}
+        run: poetry run PyInstaller MegaMerge.spec
         run: poetry run PyInstaller Clangen.spec
         env:
           IS_RELEASE: 1
@@ -406,9 +450,21 @@ jobs:
             -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
             -H 'accept: */*' \
             -H 'Content-Type: multipart/form-data' \
-            -F 'fileBundle=@MegaMerge_Win64.zip;type=application/zip' \
-            -F 'fileBundle=@MegaMerge_Win64.zip.sig' \
+            -F 'fileBundle=MegaMerge_Win64.zip;type=application/zip' \
+            -F 'fileBundle=MegaMerge_Win64.zip.sig' \
             --http1.1
+      - name: Set up butler
+        uses: thlumyn/setup-butlerMegaMerge
+      - name: Upload build to itch.io
+        env:
+          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+        if: startsWith(github.ref, 'refs/tags/') && env.BUTLER_API_KEY != ''
+        run: butler push MegaMerge_Win64.zip sablesteel/clan-gen-fan-edit:win64 --userversion "${{ env.VERSION_NUMBER }}"
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: MegaMerge_Win64.zip
 
   build_win64_py311:
     runs-on: windows-latest
@@ -481,11 +537,13 @@ jobs:
           cp target/release/self_updater.exe ../resources/
       - name: Run PyInstaller
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
+        run: poetry run PyInstaller MegaMerge.spec
         run: poetry run PyInstaller Clangen.spec
         env:
           IS_RELEASE: 0
       - name: Run PyInstaller
         if: ${{ startsWith(github.ref, 'refs/tags/') }}
+        run: poetry run PyInstaller MegaMerge.spec
         run: poetry run PyInstaller Clangen.spec
         env:
           IS_RELEASE: 1
@@ -518,9 +576,21 @@ jobs:
             -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
             -H 'accept: */*' \
             -H 'Content-Type: multipart/form-data' \
-            -F 'fileBundle=@MegaMerge_Win64_Windows10+.zip;type=application/zip' \
-            -F 'fileBundle=@MegaMerge_Win64_Windows10+.zip.sig' \
+            -F 'fileBundle=MegaMerge_Win64_Windows10+.zip;type=application/zip' \
+            -F 'fileBundle=MegaMerge_Win64_Windows10+.zip.sig' \
             --http1.1
+      - name: Set up butler
+        uses: thlumyn/setup-butlerMegaMerge
+      - name: Upload build to itch.io
+        env:
+          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+        if: startsWith(github.ref, 'refs/tags/') && env.BUTLER_API_KEY != ''
+        run: butler push MegaMerge_Win64_Windows10+.zip sablesteel/clan-gen-fan-edit:win64_10 --userversion "${{ env.VERSION_NUMBER }}"
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: MegaMerge_Win64_Windows10+.zip
 
   build_macos64:
     # For commits to the original mac build action see:
@@ -570,11 +640,13 @@ jobs:
           git log --pretty="format:%H|||%cd|||%b|||%s" -15 --no-decorate --merges --grep="Merge pull request" --date=short > changelog.txt
       - name: Run PyInstaller
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
+        run: poetry run python -m PyInstaller MegaMerge.spec
         run: poetry run python -m PyInstaller Clangen.spec
         env:
           IS_RELEASE: 0
       - name: Run PyInstaller
         if: ${{ startsWith(github.ref, 'refs/tags/') }}
+        run: poetry run python -m PyInstaller MegaMerge.spec
         run: poetry run python -m PyInstaller Clangen.spec
         env:
           IS_RELEASE: 1
@@ -609,9 +681,21 @@ jobs:
             -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
             -H 'accept: */*' \
             -H 'Content-Type: multipart/form-data' \
-            -F 'fileBundle=@MegaMerge_macOS64.dmg.zip;type=application/zip' \
-            -F 'fileBundle=@MegaMerge_macOS64.dmg.zip.sig' \
+            -F 'fileBundle=MegaMerge_macOS64.dmg.zip;type=application/zip' \
+            -F 'fileBundle=MegaMerge_macOS64.dmg.zip.sig' \
             --http1.1
+      - name: Set up butler
+        uses: thlumyn/setup-butlerMegaMerge
+      - name: Upload build to itch.io
+        env:
+          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+        if: startsWith(github.ref, 'refs/tags/') && env.BUTLER_API_KEY != ''
+        run: butler push MegaMerge_macOS64.dmg sablesteel/clan-gen-fan-edit:osx64 --userversion "${{ env.VERSION_NUMBER }}"
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: MegaMerge_macOS64.dmg
 
   confirm_release_ubuntu_22_04:
     runs-on: ubuntu-22.04
