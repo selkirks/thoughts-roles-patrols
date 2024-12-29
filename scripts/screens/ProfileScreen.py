@@ -4,6 +4,7 @@ import os
 from random import choice
 from re import sub
 
+import i18n
 import pygame
 import pygame_gui
 import ujson
@@ -34,12 +35,12 @@ from scripts.utility import (
 )
 from .Screens import Screens
 from ..cat.history import History
+from ..game_structure.localization import get_new_pronouns
 from ..game_structure.screen_settings import MANAGER
 from ..game_structure.windows import ChangeCatName, KillCat, ChangeCatToggles
 from ..housekeeping.datadir import get_save_dir
 from ..ui.generate_box import get_box, BoxStyles
 from ..ui.generate_button import ButtonStyles, get_button_dict
-from ..ui.get_arrow import get_arrow
 from ..ui.icon import Icon
 
 
@@ -51,58 +52,27 @@ def accessory_display_name(cat):
 
     if accessory is None:
         return ""
-    acc_display = accessory.lower()
 
-    if accessory in Pelt.collars:
-        collar_colors = {
-            "crimson": "red",
-            "blue": "blue",
-            "yellow": "yellow",
-            "cyan": "cyan",
-            "red": "orange",
-            "lime": "lime",
-            "green": "green",
-            "rainbow": "rainbow",
-            "black": "black",
-            "spikes": "spiky",
-            "white": "white",
-            "pink": "pink",
-            "purple": "purple",
-            "multi": "multi",
-            "indigo": "indigo",
-        }
-        collar_color = next(
-            (color for color in collar_colors if acc_display.startswith(color)), None
-        )
-
-        if collar_color:
-            if acc_display.endswith("bow") and not collar_color == "rainbow":
-                acc_display = collar_colors[collar_color] + " bow"
-            elif acc_display.endswith("bell"):
-                acc_display = collar_colors[collar_color] + " bell collar"
-            else:
-                acc_display = collar_colors[collar_color] + " collar"
-
-    elif accessory in Pelt.wild_accessories:
-        if acc_display == "blue feathers":
-            acc_display = "crow feathers"
-        elif acc_display == "red feathers":
-            acc_display = "cardinal feathers"
-
-    return acc_display
+    return i18n.t(f"cat.accessories.{accessory}", count=0)
 
 
 # ---------------------------------------------------------------------------- #
 #               assigns backstory blurbs to the backstory                      #
 # ---------------------------------------------------------------------------- #
 def bs_blurb_text(cat):
-    backstory = cat.backstory
-    backstory_text = BACKSTORIES["backstories"][backstory]
-
     if cat.status in ["kittypet", "loner", "rogue", "former Clancat"]:
-        return f"This cat is a {cat.status} and currently resides outside of the Clans."
-
-    return backstory_text
+        return event_text_adjust(
+            Cat,
+            i18n.t(
+                "cat.backstories.cats_outside_the_clan",
+                status=i18n.t(f"general.{cat.status}"),
+            ),
+            main_cat=cat,
+        )
+    else:
+        return event_text_adjust(
+            Cat, i18n.t(f"cat.backstories.{cat.backstory}"), main_cat=cat
+        )
 
 
 # ---------------------------------------------------------------------------- #
@@ -131,6 +101,9 @@ class ProfileScreen(Screens):
     conditions_tab = image_cache.load_image(
         "resources/images/conditions_tab_backdrop.png"
     ).convert_alpha()
+
+    df = image_cache.load_image("resources/images/buttons/exile_df.png").convert_alpha()
+    sc = image_cache.load_image("resources/images/buttons/guide_sc.png").convert_alpha()
 
     # Keep track of current tabs open. Can be used to keep tabs open when pages are switched, and
     # helps with exiting the screen
@@ -328,19 +301,7 @@ class ProfileScreen(Screens):
                 elif self.the_cat.genderalign in ["trans female", "trans male", "intersex"]:
                     self.the_cat.genderalign = choice(nonbiney_list)
                 # pronoun handler
-                if self.the_cat.genderalign in ["female", "trans female"]:
-                    self.the_cat.pronouns = [self.the_cat.default_pronouns[1].copy()]
-                elif self.the_cat.genderalign in ["male", "trans male"]:
-                    self.the_cat.pronouns = [self.the_cat.default_pronouns[2].copy()]
-                elif self.the_cat.genderalign in ["nonbinary"]:
-                    self.the_cat.pronouns = [self.the_cat.default_pronouns[0].copy()]
-                elif self.the_cat.genderalign not in [
-                    "female",
-                    "trans female",
-                    "male",
-                    "trans male",
-                ]:
-                    self.the_cat.pronouns = [self.the_cat.default_pronouns[0].copy()]
+                self.the_cat.pronouns = get_new_pronouns(self.the_cat.genderalign)
                 self.clear_profile()
                 self.build_profile()
                 self.update_disabled_buttons_and_text()
@@ -441,7 +402,7 @@ class ProfileScreen(Screens):
         # Set up the menu buttons, which appear on all cat profile images.
         self.next_cat_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((622, 25), (153, 30))),
-            "Next Cat " + get_arrow(3, arrow_left=False),
+            "buttons.next_cat",
             get_button_dict(ButtonStyles.SQUOVAL, (153, 30)),
             object_id="@buttonstyles_squoval",
             sound_id="page_flip",
@@ -449,7 +410,7 @@ class ProfileScreen(Screens):
         )
         self.previous_cat_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((25, 25), (153, 30))),
-            get_arrow(2, arrow_left=True) + " Previous Cat",
+            "buttons.previous_cat",
             get_button_dict(ButtonStyles.SQUOVAL, (153, 30)),
             object_id="@buttonstyles_squoval",
             sound_id="page_flip",
@@ -457,7 +418,7 @@ class ProfileScreen(Screens):
         )
         self.back_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((25, 60), (105, 30))),
-            get_arrow(2) + " Back",
+            "buttons.back",
             get_button_dict(ButtonStyles.SQUOVAL, (105, 30)),
             object_id="@buttonstyles_squoval",
             manager=MANAGER,
@@ -470,28 +431,28 @@ class ProfileScreen(Screens):
         )
         self.relations_tab_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((48, 420), (176, 30))),
-            "relations",
+            "screens.profile.tab_relations",
             get_button_dict(ButtonStyles.PROFILE_LEFT, (176, 30)),
             object_id="@buttonstyles_profile_left",
             manager=MANAGER,
         )
         self.roles_tab_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((224, 420), (176, 30))),
-            "roles",
+            "screens.profile.tab_roles",
             get_button_dict(ButtonStyles.PROFILE_MIDDLE, (176, 30)),
             object_id="@buttonstyles_profile_middle",
             manager=MANAGER,
         )
         self.personal_tab_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((400, 420), (176, 30))),
-            "personal",
+            "screens.profile.tab_personal",
             get_button_dict(ButtonStyles.PROFILE_MIDDLE, (176, 30)),
             object_id="@buttonstyles_profile_middle",
             manager=MANAGER,
         )
         self.dangerous_tab_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((576, 420), (176, 30))),
-            "dangerous",
+            "screens.profile.tab_dangerous",
             get_button_dict(ButtonStyles.PROFILE_RIGHT, (176, 30)),
             object_id="@buttonstyles_profile_right",
             manager=MANAGER,
@@ -499,7 +460,7 @@ class ProfileScreen(Screens):
 
         self.backstory_tab_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((48, 622), (176, 30))),
-            "history",
+            "screens.profile.tab_history",
             get_button_dict(ButtonStyles.PROFILE_LEFT, (176, 30)),
             object_id="@buttonstyles_profile_left",
             manager=MANAGER,
@@ -507,7 +468,7 @@ class ProfileScreen(Screens):
 
         self.conditions_tab_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((224, 622), (176, 30))),
-            "conditions",
+            "screens.profile.tab_conditions",
             get_button_dict(ButtonStyles.PROFILE_MIDDLE, (176, 30)),
             object_id="@buttonstyles_profile_middle",
             manager=MANAGER,
@@ -549,7 +510,7 @@ class ProfileScreen(Screens):
         self.profile_elements = {}
 
         if self.user_notes:
-            self.user_notes = "Click the check mark to enter notes about your cat!"
+            self.user_notes = i18n.t("screens.profile.user_notes")
 
         for box in self.checkboxes:
             self.checkboxes[box].kill()
@@ -598,20 +559,14 @@ class ProfileScreen(Screens):
         cat_name = str(self.the_cat.name)
         cat_name = shorten_text_to_fit(cat_name, 500, 20)
         if self.the_cat.dead:
-            cat_name += (
-                " (dead)"  # A dead cat will have the (dead) sign next to their name
-            )
+            cat_name = i18n.t("general.dead_label", name=cat_name)
         if is_sc_instructor:
-            self.the_cat.thought = (
-                "Hello. I am here to guide the dead cats of "
-                + game.clan.name
-                + "Clan into StarClan."
+            self.the_cat.thought = i18n.t(
+                "screens.profile.guide_thought_sc", clan=game.clan.name
             )
         if is_df_instructor:
-            self.the_cat.thought = (
-                "Hello. I am here to drag the dead cats of "
-                + game.clan.name
-                + "Clan into the Dark Forest."
+            self.the_cat.thought = i18n.t(
+                "screens.profile.guide_thought_df", clan=game.clan.name
             )
 
         self.profile_elements["cat_name"] = pygame_gui.elements.UITextBox(
@@ -674,7 +629,7 @@ class ProfileScreen(Screens):
         # if cat is a med or med app, show button for their den
         self.profile_elements["med_den"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((100, 380), (151, 28))),
-            "medicine cat den",
+            "screens.core.medicine_cat_den",
             get_button_dict(ButtonStyles.ROUNDED_RECT, (151, 28)),
             object_id="@buttonstyles_rounded_rect",
             manager=MANAGER,
@@ -696,9 +651,9 @@ class ProfileScreen(Screens):
             "",
             object_id="#fav_star" if self.the_cat.favourite else "#not_fav_star",
             manager=MANAGER,
-            tool_tip_text="Remove favorite"
+            tool_tip_text="general.remove_favorite"
             if self.the_cat.favourite
-            else "Mark as favorite",
+            else "general.mark_favorite",
             starting_height=2,
             anchors={
                 "right": "right",
@@ -733,7 +688,7 @@ class ProfileScreen(Screens):
                 ui_scale(pygame.Rect((383, 110), (34, 34))),
                 "",
                 object_id="#leader_ceremony_button",
-                tool_tip_text="Leader Ceremony",
+                tool_tip_text="screens.profile.leader_ceremony",
                 manager=MANAGER,
             )
         elif self.the_cat.status in ["mediator", "mediator apprentice"]:
@@ -751,19 +706,19 @@ class ProfileScreen(Screens):
         output = ""
         # SEX/GENDER
         if the_cat.genderalign is None or the_cat.genderalign == the_cat.gender:
-            output += str(the_cat.gender)
+            output += the_cat.get_gender_string()
         else:
-            output += str(the_cat.genderalign)
+            output += the_cat.get_genderalign_string()
         # NEWLINE ----------
         output += "\n"
 
         # AGE
         if the_cat.age == CatAgeEnum.KITTEN:
-            output += "young"
+            output += i18n.t("general.kitten_profile")
         elif the_cat.age == CatAgeEnum.SENIOR:
-            output += "senior"
+            output += i18n.t(f"general.{the_cat.age.value}", count=1)
         else:
-            output += the_cat.age.value
+            output += i18n.t(f"general.{the_cat.age.value}", count=1)
         # NEWLINE ----------
         output += "\n"
 
@@ -791,43 +746,23 @@ class ProfileScreen(Screens):
         # NEWLINE ----------
 
         # ACCESSORY
-        if the_cat.pelt.accessories:
-            if len(the_cat.pelt.accessories) > 0:
-                if the_cat.pelt.accessories[0]:
-                    try:
-                        output += "\n"
-                        output += 'accessories: ' + str(ACC_DISPLAY[the_cat.pelt.accessories[0]]["default"])
-                        if len(the_cat.pelt.accessories) > 1:
-                            output += ' and ' + str(len(the_cat.pelt.accessories) - 1) + ' more'
-                    except:
-                        print("error with column1")
-
-        elif the_cat.pelt.accessory and the_cat.pelt.accessory in the_cat.pelt.accessories:
+        if the_cat.pelt.accessory:
             output += "\n"
-            output += "accessory: " + str(
-                ACC_DISPLAY[the_cat.pelt.accessory]["default"]
-            )            
-                    
-                    # NEWLINE ----------
+            output += i18n.t(
+                "screens.profile.accessory_label",
+                accessory=i18n.t(f"cat.accessories.{the_cat.pelt.accessory}", count=0),
+            )
+            # NEWLINE ----------
 
         # PARENTS
         all_parents = [Cat.fetch_cat(i) for i in the_cat.get_parents()]
         if all_parents:
             output += "\n"
-            if len(all_parents) == 1:
-                output += "parent: " + str(all_parents[0].name)
-            elif len(all_parents) > 2:
-                output += (
-                    "parents: "
-                    + ", ".join([str(i.name) for i in all_parents[:2]])
-                    + f", and {len(all_parents) - 2} "
-                )
-                if len(all_parents) - 2 == 1:
-                    output += "other"
-                else:
-                    output += "others"
-            else:
-                output += "parents: " + ", ".join([str(i.name) for i in all_parents])
+            output += i18n.t(
+                "screens.profile.parent_label",
+                count=len(all_parents),
+                parents=adjust_list_text([str(cat.name) for cat in all_parents]),
+            )
 
         # MOONS
         output += "\n"

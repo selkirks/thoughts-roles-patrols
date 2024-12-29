@@ -1,5 +1,6 @@
 from typing import Dict
 
+import i18n
 import pygame
 import pygame_gui
 
@@ -253,7 +254,7 @@ class EventsScreen(Screens):
         )
 
         self.clan_info["heading"] = pygame_gui.elements.UITextBox(
-            "Timeskip to progress your Clan's life.",
+            "screens.events.heading",
             ui_scale(pygame.Rect((340, 155), (250, -1))),
             object_id=get_text_box_theme("#text_box_30_horizleft_spacing_95"),
             starting_height=1,
@@ -262,31 +263,29 @@ class EventsScreen(Screens):
         )
 
         self.clan_info["season"] = pygame_gui.elements.UITextBox(
-            f"Current season: {game.clan.current_season}",
+            "screens.events.season",
             ui_scale(pygame.Rect((340, 102), (600, 40))),
             object_id=get_text_box_theme("#text_box_30"),
             starting_height=1,
             container=self.event_screen_container,
             manager=MANAGER,
+            text_kwargs={
+                "season": i18n.t(game.clan.current_season.lower()).capitalize()
+            },
         )
         self.clan_info["age"] = pygame_gui.elements.UITextBox(
-            "",
+            "screens.events.age",
             ui_scale(pygame.Rect((340, 122), (600, 40))),
             object_id=get_text_box_theme("#text_box_30"),
             starting_height=1,
             container=self.event_screen_container,
             manager=MANAGER,
+            text_kwargs={"count": game.clan.age},
         )
-
-        # Set text for Clan age
-        if game.clan.age == 1:
-            self.clan_info["age"].set_text(f"Clan age: {game.clan.age} moon")
-        if game.clan.age != 1:
-            self.clan_info["age"].set_text(f"Clan age: {game.clan.age} moons")
 
         self.timeskip_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((310, 218), (180, 30))),
-            "Timeskip One Moon",
+            "screens.events.timeskip_button",
             get_button_dict(ButtonStyles.SQUOVAL, (180, 30)),
             object_id="@buttonstyles_squoval",
             starting_height=1,
@@ -313,7 +312,7 @@ class EventsScreen(Screens):
         for event_type in self.tabs:
             self.event_buttons[f"{event_type}"] = UISurfaceImageButton(
                 ui_scale(pygame.Rect((16, 19 + y_pos), (150, 30))),
-                event_type,
+                f"screens.events.{event_type}",
                 get_button_dict(ButtonStyles.VERTICAL_TAB, (150, 30)),
                 object_id="@buttonstyles_vertical_tab",
                 starting_height=1,
@@ -562,11 +561,15 @@ class EventsScreen(Screens):
         """
 
         # UPDATE CLAN INFO
-        self.clan_info["season"].set_text(f"Current season: {game.clan.current_season}")
-        if game.clan.age == 1:
-            self.clan_info["age"].set_text(f"Clan age: {game.clan.age} moon")
-        else:
-            self.clan_info["age"].set_text(f"Clan age: {game.clan.age} moons")
+        self.clan_info["season"].set_text(
+            "screens.events.season",
+            text_kwargs={
+                "season": i18n.t(game.clan.current_season.lower()).capitalize()
+            },
+        )
+        self.clan_info["age"].set_text(
+            "screens.events.age", text_kwargs={"count": game.clan.age}
+        )
 
         self.make_event_scrolling_container()
 
@@ -733,9 +736,7 @@ class EventsScreen(Screens):
                 self.event_buttons[tab].enable()
 
         if not self.all_events:
-            self.all_events.append(
-                Single_Event("Nothing interesting happened this moon.")
-            )
+            self.all_events.append(Single_Event(i18n.t("screens.events.no_events")))
 
         self.display_events = self.all_events
 

@@ -22,6 +22,7 @@ import shutil
 import sys
 import threading
 import time
+from importlib import reload
 from importlib.util import find_spec
 
 if not getattr(sys, "frozen", False):
@@ -153,12 +154,38 @@ else:
 print("Version Name: ", VERSION_NAME)
 print("Running on commit " + get_version_info().version_number)
 
+import pygame_gui
+from scripts.game_structure.monkeypatch import translate
+
+# MONKEYPATCH
+
+pygame_gui.core.utility.translate = translate
+for module_name, module in list(sys.modules.items()):
+    if module and hasattr(module, "translate"):  # Check for the attribute
+        if (
+            module.translate is pygame_gui.core.utility.translate
+        ):  # Ensure it's the original reference
+            setattr(module, "translate", translate)
+            break
+
+for module_name, module in list(sys.modules.items()):
+    if module_name.startswith(f"pygame_gui."):
+        if (
+            not module_name.endswith("utility")
+            and not module_name.endswith("container_interface")
+            and not module_name.endswith("_constants")
+            and not module_name.endswith("layered_gui_group")
+            and not module_name.endswith("object_id")
+        ):
+            # Reload the module
+            reload(module)
+
 # Load game
 from scripts.game_structure.audio import sound_manager, music_manager
 from scripts.game_structure.load_cat import load_cats, version_convert
 from scripts.game_structure.windows import SaveCheck
-from scripts.game_structure.game_essentials import game
 from scripts.game_structure.screen_settings import screen_scale, MANAGER, screen
+from scripts.game_structure.game_essentials import game
 from scripts.game_structure.discord_rpc import _DiscordRPC
 from scripts.cat.sprites import sprites
 from scripts.clan import clan_class
@@ -304,11 +331,15 @@ while 1:
     game.all_screens[game.current_screen].on_use()
     # EVENTS
     for event in pygame.event.get():
-        if event.type == pygame.KEYDOWN and game.settings["keybinds"] and debug_mode.debug_menu.visible:
+        if (
+            event.type == pygame.KEYDOWN
+            and game.settings["keybinds"]
+            and debug_mode.debug_menu.visible
+        ):
             pass
         else:
             game.all_screens[game.current_screen].handle_event(event)
-        sound_manager.handle_sound_events(event)
+            sound_manager.handle_sound_events(event)
 
         if event.type == pygame.QUIT:
             # Don't display if on the start screen or there is no clan.
@@ -336,7 +367,7 @@ while 1:
                 if game.settings["fullscreen"]:
                     print(f"(x: {_[0]}, y: {_[1]})")
                 else:
-                    print(f"(x: {_[0]*screen_scale}, y: {_[1]*screen_scale})")
+                    print(f"(x: {_[0] * screen_scale}, y: {_[1] * screen_scale})")
                 del _
 
         # F2 turns toggles visual debug mode for pygame_gui, allowed for easier bug fixes.
@@ -345,7 +376,7 @@ while 1:
                 MANAGER.print_layer_debug()
             elif event.key == pygame.K_F3:
                 debug_mode.toggle_debug_mode()
-                #debugmode.toggle_console()
+                # debugmode.toggle_console()
             elif event.key == pygame.K_F11:
                 scripts.game_structure.screen_settings.toggle_fullscreen(
                     source_screen=getattr(

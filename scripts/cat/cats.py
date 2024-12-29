@@ -9,7 +9,9 @@ import itertools
 import os.path
 import sys
 from random import choice, randint, sample, random, getrandbits, randrange
-from typing import Dict, List, Any, Callable
+from typing import Dict, List, Any, Union, Callable
+
+import i18n
 
 import ujson  # type: ignore
 
@@ -43,6 +45,9 @@ from scripts.utility import (
     update_sprite,
     leader_ceremony_text_adjust,
 )
+from scripts.game_structure.localization import load_lang_resource
+
+import scripts.game_structure.localization as pronouns
 
 
 class Cat:
@@ -50,7 +55,7 @@ class Cat:
 
     dead_cats = []
     used_screen = screen
-
+    current_pronoun_lang = None
     age_moons = {
         CatAgeEnum.NEWBORN: game.config["cat_ages"]["newborn"],
         CatAgeEnum.KITTEN: game.config["cat_ages"]["kitten"],
@@ -96,33 +101,6 @@ class Cat:
         "grandmaster": (411, 411)
     }
 
-    default_pronouns = [
-        {
-            "subject": "they",
-            "object": "them",
-            "poss": "their",
-            "inposs": "theirs",
-            "self": "themself",
-            "conju": 1,
-        },
-        {
-            "subject": "she",
-            "object": "her",
-            "poss": "her",
-            "inposs": "hers",
-            "self": "herself",
-            "conju": 2,
-        },
-        {
-            "subject": "he",
-            "object": "him",
-            "poss": "his",
-            "inposs": "his",
-            "self": "himself",
-            "conju": 2,
-        },
-    ]
-
     all_cats: Dict[str, Cat] = {}  # ID: object
     outside_cats: Dict[str, Cat] = {}  # cats outside the clan
     id_iter = itertools.count()
@@ -140,6 +118,7 @@ class Cat:
         backstory="clanborn",
         parent1=None,
         parent2=None,
+        adoptive_parents=None,
         suffix=None,
         specsuffix_hidden=False,
         ID=None,
@@ -197,7 +176,7 @@ class Cat:
         )
         self.parent1 = parent1
         self.parent2 = parent2
-        self.adoptive_parents = []
+        self.adoptive_parents = adoptive_parents if adoptive_parents else []
         self.pelt = pelt if pelt else Pelt()
         self.former_mentor = []
         self.patrol_with_mentor = 0
@@ -206,7 +185,7 @@ class Cat:
         self.relationships = {}
         self.mate = []
         self.previous_mates = []
-        self.pronouns = [self.default_pronouns[0].copy()]
+        self._pronouns: Dict[str, List[Dict[str, Union[str, int]]]] = {}
         self.placement = None
         self.example = example
         self.dead = False
@@ -293,7 +272,14 @@ class Cat:
             ]:
                 self.age = CatAgeEnum.ADOLESCENT
             else:
-                self.age = choice([CatAgeEnum.YOUNG_ADULT, CatAgeEnum.ADULT, CatAgeEnum.ADULT, CatAgeEnum.SENIOR_ADULT])
+                self.age = choice(
+                    [
+                        CatAgeEnum.YOUNG_ADULT,
+                        CatAgeEnum.ADULT,
+                        CatAgeEnum.ADULT,
+                        CatAgeEnum.SENIOR_ADULT,
+                    ]
+                )
             self.moons = randint(
                 self.age_moons[self.age][0], self.age_moons[self.age][1]
             )
@@ -381,7 +367,7 @@ class Cat:
         self.adoptive_parents = []
         self.mate = []
         self.status = status
-        self.pronouns = []  # Needs to be set as a list
+        self._pronouns = {}  # Needs to be set as a dict
         self.moons = moons
         self.dead_for = 0
         self.dead = True
@@ -428,6 +414,7 @@ class Cat:
         # trans cat chances
         nonbiney_list = ["nonbinary", "genderfluid", "demigirl", "demiboy", "genderfae", "genderfaun", "bigender", "genderqueer", "agender", "???", "deminonbinary", "trigender", "genderflux", "polygender"]
         theythemdefault = game.settings["they them default"]
+        self.genderalign = self.gender
         trans_chance = randint(0, 50)
         nb_chance = randint(0, 75)
 
@@ -459,19 +446,6 @@ class Cat:
                 self.genderalign = self.gender
         else:
             self.genderalign = self.gender
-
-        # PRONOUNS
-        if theythemdefault is True:
-            self.pronouns = [self.default_pronouns[0].copy()]
-        else:
-            # Assigning pronouns based on gender
-            if self.genderalign in ["female", "trans female", "intersex"]:
-                self.pronouns = [self.default_pronouns[1].copy()]
-            elif self.genderalign in ["male", "trans male", "intersex"]:
-                self.pronouns = [self.default_pronouns[2].copy()]
-            else:
-                self.genderalign = "nonbinary"
-                self.pronouns = [self.default_pronouns[0].copy()]
 
         # APPEARANCE
         self.pelt = Pelt.generate_new_pelt(
@@ -542,6 +516,56 @@ class Cat:
                 f"Mentor ID {mentor_id} of type {type(mentor_id)} isn't valid :("
                 "\nCat.mentor has to be either None (no mentor) or the mentor's ID as a string."
             )
+
+    @property
+    def pronouns(self) -> List[Dict[str, Union[str, int]]]:
+        """
+        Loads the correct pronouns for the loaded language.
+        :return: List of dicts for the cat's pronouns
+        """
+        locale = i18n.config.get("locale")
+        value = self._pronouns.get(locale)
+        if value is None:
+            self._pronouns[locale] = pronouns.get_new_pronouns(self.genderalign)
+            value = self._pronouns[locale]
+        return value
+
+    @pronouns.setter
+    def pronouns(
+        self,
+        val: Union[
+            Dict[str, List[Dict[str, Union[str, int]]]],
+            List[Dict[str, Union[str, int]]],
+        ],
+    ):
+        """
+        Sets the pronouns for the cat. Contains protection for "old-style" pronouns
+        :param val:
+        :return:
+        """
+        if isinstance(val, dict):
+            self._pronouns = val
+            return
+        elif isinstance(val, list):
+            # possibly old-style pronouns
+            self._pronouns[i18n.config.get("locale")] = val
+            return
+
+    def get_genderalign_string(self):
+        # translate it if it's default
+        if self.genderalign in [
+            "female",
+            "male",
+            "trans female",
+            "trans male",
+            "nonbinary",
+        ]:
+            return i18n.t(f"general.{self.genderalign}")
+        # otherwise, it's custom - just return it directly
+        return self.genderalign
+
+    def get_gender_string(self):
+        return i18n.t(f"general.{self.gender}")
 
     def is_alive(self):
         """Check if this cat is alive
@@ -649,7 +673,7 @@ class Cat:
         """
         compiles grief moon event text
         """
-        if body is True:
+        if body:
             body_status = "body"
         else:
             body_status = "no_body"
@@ -657,6 +681,8 @@ class Cat:
         # Keep track is the body was treated with rosemary.
         body_treated = False
         text = None
+
+        load_grief_reactions()
 
         # apply grief to cats with high positive relationships to dead cat
         for cat in Cat.all_cats.values():
@@ -705,7 +731,7 @@ class Cat:
                     major_chance -= 1
 
                 # decrease major grief chance if grave herbs are used
-                if not body_treated and "rosemary" in game.clan.herbs:
+                if body and not body_treated and "rosemary" in game.clan.herbs:
                     body_treated = True
                     game.clan.herbs["rosemary"] -= 1
                     if game.clan.herbs["rosemary"] <= 0:
@@ -1002,7 +1028,11 @@ class Cat:
         """
         output = Pelt.describe_appearance(self, short)
         # Add "a" or "an"
-        output = f"an {output}" if output[0].lower() in "aeiou" else f"a {output}"
+        if i18n.config.get("locale") == "en":
+            output = f"an {output}" if output[0].lower() in "aeiou" else f"a {output}"
+        # else:
+        #     output = i18n.t("utility.indefinite", text=output, m_c=self)
+        event_text_adjust(Cat, output, main_cat=self)
         return output
 
     def describe_eyes(self):
@@ -1168,6 +1198,8 @@ class Cat:
 
     def generate_lead_ceremony(self):
         """Create a leader ceremony and add it to the history"""
+
+        load_leader_ceremonies()
 
         # determine which dict we're pulling from
         if game.clan.instructor.df:
@@ -1583,7 +1615,7 @@ class Cat:
         elif self.outside:
             where_kitty = "outside"
         else:
-            where_kitty = "inside"    
+            where_kitty = "inside"
 
         # get other cat
         i = 0
@@ -1632,7 +1664,11 @@ class Cat:
         )
 
         chosen_thought = event_text_adjust(
-            Cat, chosen_thought, main_cat=self, random_cat=other_cat, clan=game.clan
+            self.__class__,
+            chosen_thought,
+            main_cat=self,
+            random_cat=other_cat,
+            clan=game.clan,
         )
 
         # insert thought
@@ -2726,8 +2762,12 @@ class Cat:
                 jealousy = 0
                 trust = 0
                 if game.settings["random relation"]:
-                    if game.clan and the_cat == game.clan.instructor and game.clan.instructor.dead_for >= self.moons:
-                            pass
+                    if (
+                        game.clan
+                        and the_cat == game.clan.instructor
+                        and game.clan.instructor.dead_for >= self.moons
+                    ):
+                        pass
                     elif randint(1, 20) == 1 and romantic_love < 1:
                         dislike = randint(10, 25)
                         jealousy = randint(5, 15)
@@ -3144,7 +3184,11 @@ class Cat:
             file_name = "faded_newborn"
         elif self.age == CatAgeEnum.KITTEN:
             file_name = "faded_kitten"
-        elif self.age in [CatAgeEnum.ADULT, CatAgeEnum.YOUNG_ADULT, CatAgeEnum.SENIOR_ADULT]:
+        elif self.age in [
+            CatAgeEnum.ADULT,
+            CatAgeEnum.YOUNG_ADULT,
+            CatAgeEnum.SENIOR_ADULT,
+        ]:
             file_name = "faded_adult"
         elif self.age == CatAgeEnum.ADOLESCENT:
             file_name = "faded_adol"
@@ -3383,6 +3427,52 @@ class Cat:
     #                                  other                                       #
     # ---------------------------------------------------------------------------- #
 
+    def get_info_block(self, *, make_clan=False, patrol=False, relationship=False):
+        if make_clan:
+            return "\n".join(
+                [
+                    self.genderalign,
+                    i18n.t(
+                        f"general.{self.age}"
+                        if self.age != "kitten"
+                        else "general.kitten_profile",
+                        count=1,
+                    ),
+                    i18n.t(f"cat.personality.{self.personality.trait}"),
+                    self.skills.skill_string(),
+                ]
+            )
+        elif patrol:
+            return "<br>".join(
+                [
+                    i18n.t(f"general.{self.status.lower()}", count=1),
+                    i18n.t(f"cat.personality.{self.personality.trait}"),
+                    self.skills.skill_string(short=True),
+                    i18n.t(f"cat.skills.{self.experience_level}")
+                    + (
+                        f" ({str(self.experience)})\n"
+                        if game.clan.clan_settings["showxp"]
+                        else "\n"
+                    ),
+                ]
+            )
+        elif relationship:
+            return "\n".join(
+                [
+                    i18n.t("general.moons_age", count=self.moons),
+                    self.genderalign,
+                    i18n.t(f"cat.personality.{self.personality.trait}"),
+                ]
+            )
+
+        return "\n".join(
+            [
+                i18n.t("general.moons_age", count=self.moons),
+                i18n.t(f"general.{self.status.lower()}", count=1),
+                self.genderalign,
+                i18n.t(f"cat.personality.{self.personality.trait}"),
+            ]
+        )
     def get_save_dict(self, faded=False):
         if faded:
             return {
@@ -3406,7 +3496,9 @@ class Cat:
                 "specsuffix_hidden": self.name.specsuffix_hidden,
                 "gender": self.gender,
                 "gender_align": self.genderalign,
-                "pronouns": self.pronouns,
+                "pronouns": self._pronouns
+                if self._pronouns is not None
+                else {i18n.config.get("locale"): self.pronouns},
                 "birth_cooldown": self.birth_cooldown,
                 "status": self.status,
                 "backstory": self.backstory or None,
@@ -3479,12 +3571,14 @@ class Cat:
                 "accessories": self.pelt.accessories if self.pelt.accessories else [],
             }
 
-    def determine_next_and_previous_cats(self, filter_func: Callable[[Cat], bool] = None):
+    def determine_next_and_previous_cats(
+        self, filter_func: Callable[[Cat], bool] = None
+    ):
         """Determines where the next and previous buttons point to, relative to this cat.
 
         :param status: Allows you to constrain the list by status
-        :param filter_func: Allows you to constrain the list by any attribute of 
-            the Cat object. Takes a function which takes in a Cat instance and 
+        :param filter_func: Allows you to constrain the list by any attribute of
+            the Cat object. Takes a function which takes in a Cat instance and
             returns a boolean.
         """
         sorted_specific_list = [
@@ -3586,17 +3680,37 @@ with open(
     f"{resource_directory}permanent_conditions.json", "r", encoding="utf-8"
 ) as read_file:
     PERMANENT = ujson.loads(read_file.read())
+MINOR_MAJOR_REACTION = None
+grief_lang = None
 
-resource_directory = "resources/dicts/events/death/death_reactions/"
 
-with open(f"{resource_directory}minor_major.json", "r", encoding="utf-8") as read_file:
-    MINOR_MAJOR_REACTION = ujson.loads(read_file.read())
+def load_grief_reactions():
+    global MINOR_MAJOR_REACTION, grief_lang
+    if grief_lang == i18n.config.get("locale"):
+        return
+    MINOR_MAJOR_REACTION = load_lang_resource(
+        "events/death/death_reactions/minor_major.json"
+    )
+    grief_lang = i18n.config.get("locale")
 
-with open("resources/dicts/lead_ceremony_sc.json", "r", encoding="utf-8") as read_file:
-    LEAD_CEREMONY_SC = ujson.loads(read_file.read())
 
-with open("resources/dicts/lead_ceremony_df.json", "r", encoding="utf-8") as read_file:
-    LEAD_CEREMONY_DF = ujson.loads(read_file.read())
+load_grief_reactions()
+
+LEAD_CEREMONY_SC = None
+LEAD_CEREMONY_DF = None
+lead_ceremony_lang = None
+
+
+def load_leader_ceremonies():
+    global LEAD_CEREMONY_SC, LEAD_CEREMONY_DF, lead_ceremony_lang
+    if lead_ceremony_lang == i18n.config.get("locale"):
+        return
+    LEAD_CEREMONY_SC = load_lang_resource("events/lead_ceremony_sc.json")
+    LEAD_CEREMONY_DF = load_lang_resource("events/lead_ceremony_df.json")
+    lead_ceremony_lang = i18n.config.get("locale")
+
+
+load_leader_ceremonies()
 
 with open("resources/dicts/backstories.json", "r", encoding="utf-8") as read_file:
     BACKSTORIES = ujson.loads(read_file.read())
