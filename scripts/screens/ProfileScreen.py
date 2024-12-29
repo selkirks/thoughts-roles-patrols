@@ -24,6 +24,7 @@ from scripts.game_structure.ui_elements import (
 from scripts.utility import (
     event_text_adjust,
     ui_scale,
+    ACC_DISPLAY,
     process_text,
     chunks,
     get_text_box_theme,
