@@ -30,7 +30,6 @@ from scripts.game_structure import image_cache, localization
 from scripts.cat.enums import CatAgeEnum
 from scripts.cat.history import History
 from scripts.cat.names import names
-from scripts.cat.pelts import Pelt
 from scripts.cat.sprites import sprites
 from scripts.game_structure.game_essentials import game
 import scripts.game_structure.screen_settings  # must be done like this to get updates when we change screen size etc
@@ -843,12 +842,6 @@ def create_new_cat(
                 name = choice(
                     names.names_dict["normal_prefixes"]
                 )  # otherwise give name from prefix list (more nature-y names)
-
-                # loner acc
-            if loner :
-                name = choice(names.names_dict["loner_names"])
-                if bool(getrandbits(1)):
-                    accessory = choice([ choice(Pelt.bone_accessories), choice(Pelt.butterflies_accessories), choice(Pelt.stuff_accessories), choice(Pelt.plant_accessories), choice(Pelt.wild_accessories), choice(Pelt.tail_accessories), choice(Pelt.flower_accessories), choice(Pelt.plant2_accessories), choice(Pelt.snake_accessories), choice(Pelt.smallAnimal_accessories), choice(Pelt.deadInsect_accessories), choice(Pelt.aliveInsect_accessories), choice(Pelt.fruit_accessories), choice(Pelt.crafted_accessories), choice(Pelt.tail2_accessories)])
 
             # now we make the cats
             if new_name:  # these cats get new names
