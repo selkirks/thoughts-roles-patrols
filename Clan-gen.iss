@@ -1,7 +1,7 @@
 ; Clan-gen Installer Script
 
-#define ApplicationBaseName "Clan-gen"
-#define ApplicationFullName "Clan-gen (fan edit) by Sablesteel"
+#define ApplicationBaseName "MegaMerge"
+#define ApplicationFullName "MegaMerge_Clangen (fan edit) by Sablesteel"
 
 ; Update this line to the date of the latest Clan-gen (fan edit) by Sablesteel release 
 ; (or choose your own version-numbering scheme)

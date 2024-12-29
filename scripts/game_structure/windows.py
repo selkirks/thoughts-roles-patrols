@@ -1346,7 +1346,7 @@ class UpdateAvailablePopup(UIWindow):
         current_version_number = "{:.16}".format(get_version_info().version_number)
 
         self.game_over_message = UITextBoxTweaked(
-            f"<strong>Update to ClanGen {latest_version_number}</strong>",
+            f"<strong>Update to MegaMerge {latest_version_number}</strong>",
             ui_scale(pygame.Rect((10, 80), (400, -1))),
             line_spacing=0.8,
             object_id="#update_popup_title",
