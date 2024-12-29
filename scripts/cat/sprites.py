@@ -30,13 +30,15 @@ class Sprites:
 
     def load_tints(self):
         try:
-            with open("sprites/dicts/tint.json", 'r') as read_file:
+            with open("sprites/dicts/tint.json", "r", encoding="utf-8") as read_file:
                 self.cat_tints = ujson.loads(read_file.read())
         except IOError:
             print("ERROR: Reading Tints")
 
         try:
-            with open("sprites/dicts/white_patches_tint.json", 'r') as read_file:
+            with open(
+                "sprites/dicts/white_patches_tint.json", "r", encoding="utf-8"
+            ) as read_file:
                 self.white_patches_tints = ujson.loads(read_file.read())
         except IOError:
             print("ERROR: Reading White Patches Tints")
@@ -51,14 +53,9 @@ class Sprites:
         """
         self.spritesheets[name] = pygame.image.load(a_file).convert_alpha()
 
-    def make_group(self,
-                   spritesheet,
-                   pos,
-                   name,
-                   sprites_x=3,
-                   sprites_y=7,
-                   no_index=False):  # pos = ex. (2, 3), no single pixels
-
+    def make_group(
+        self, spritesheet, pos, name, sprites_x=3, sprites_y=7, no_index=False
+    ):  # pos = ex. (2, 3), no single pixels
         """
         Divide sprites on a spritesheet into groups of sprites that are easily accessible
         :param spritesheet: Name of spritesheet file
@@ -702,8 +699,10 @@ class Sprites:
         loads clan symbols
         """
 
-        if os.path.exists('resources/dicts/clan_symbols.json'):
-            with open('resources/dicts/clan_symbols.json') as read_file:
+        if os.path.exists("resources/dicts/clan_symbols.json"):
+            with open(
+                "resources/dicts/clan_symbols.json", encoding="utf-8"
+            ) as read_file:
                 self.symbol_dict = ujson.loads(read_file.read())
 
         # U and X omitted from letter list due to having no prefixes

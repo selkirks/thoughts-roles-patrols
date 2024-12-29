@@ -13,6 +13,7 @@ It then loads the settings, and then loads the start screen.
 
 
 
+
 """  # pylint: enable=line-too-long
 # DO NOT ADD YOUR IMPORTS HERE.
 # Scroll down to the "Load game" comment and add them there.
@@ -81,7 +82,6 @@ if os.path.exists("auto-updated"):
 
 setup_data_dir()
 timestr = time.strftime("%Y%m%d_%H%M%S")
-
 
 stdout_file = open(get_log_dir() + f"/stdout_{timestr}.log", "a")
 stderr_file = open(get_log_dir() + f"/stderr_{timestr}.log", "a")
@@ -192,10 +192,10 @@ from scripts.clan import clan_class
 from scripts.utility import (
     quit,
 )  # pylint: disable=redefined-builtin
+
 # from scripts.debug_menu import debugmode
 from scripts.debug_console import debug_mode
 import pygame
-
 
 # import all screens for initialization (Note - must be done after pygame_gui manager is created)
 from scripts.screens.all_screens import AllScreens
