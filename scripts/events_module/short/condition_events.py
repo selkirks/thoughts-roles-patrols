@@ -2,6 +2,7 @@ import random
 from copy import deepcopy
 
 import i18n
+import ujson
 
 from scripts.cat.cats import Cat
 from scripts.cat.enums import CatAgeEnum
