@@ -806,16 +806,32 @@ class PatrolOutcome:
 
         for i, attribute_list in enumerate(self.new_cat):
             patrol.new_cats.append(
-                create_new_cat_block(Cat, Relationship, patrol, in_event_cats, i, attribute_list)
+                create_new_cat_block(
+                    Cat, Relationship, patrol, in_event_cats, i, attribute_list
+                )
             )
 
             for cat in patrol.new_cats[-1]:
                 if cat.dead:
-                    results.append(f"{cat.name}'s ghost now wanders.")
+                    dead.append(str(cat.name))
                 elif cat.outside:
-                    results.append(f"The patrol met {cat.name}.")
+                    outside.append(str(cat.name))
                 else:
-                    results.append(f"{cat.name} joined the Clan.")
+                    new.append(str(cat.name))
+            for type_list, string in [
+                (dead, "screens.patrol.dead_outsider"),
+                (outside, "screens.patrol.met_outsider"),
+                (new, "screens.patrol.new_outsider"),
+            ]:
+                if type_list:
+                    results.append(
+                        i18n.t(
+                            string,
+                            cats=adjust_list_text(type_list),
+                            count=len(type_list),
+                        )
+                    )
+            del type_list, string
 
         # TODO: i think this is handled in the create_new_cat_block?
         # Check to see if any young litters joined with alive parents.

@@ -736,103 +736,34 @@ class Patrol:
         return (success_outcome if success else fail_outcome, success)
 
     def update_resources(self, biome_dir, leaf):
-        resource_dir = "resources/dicts/patrols/"
-        # HUNTING #
-        self.HUNTING_SZN = None
-        with open(
-            f"{resource_dir}{biome_dir}hunting/{leaf}.json", "r", encoding="ascii"
-        ) as read_file:
-            self.HUNTING_SZN = ujson.loads(read_file.read())
-        self.HUNTING = None
-        with open(
-            f"{resource_dir}{biome_dir}hunting/any.json", "r", encoding="ascii"
-        ) as read_file:
-            self.HUNTING = ujson.loads(read_file.read())
-        # BORDER #
-        self.BORDER_SZN = None
-        with open(
-            f"{resource_dir}{biome_dir}border/{leaf}.json", "r", encoding="ascii"
-        ) as read_file:
-            self.BORDER_SZN = ujson.loads(read_file.read())
-        self.BORDER = None
-        with open(
-            f"{resource_dir}{biome_dir}border/any.json", "r", encoding="ascii"
-        ) as read_file:
-            self.BORDER = ujson.loads(read_file.read())
-        # TRAINING #
-        self.TRAINING_SZN = None
-        with open(
-            f"{resource_dir}{biome_dir}training/{leaf}.json", "r", encoding="ascii"
-        ) as read_file:
-            self.TRAINING_SZN = ujson.loads(read_file.read())
-        self.TRAINING = None
-        with open(
-            f"{resource_dir}{biome_dir}training/any.json", "r", encoding="ascii"
-        ) as read_file:
-            self.TRAINING = ujson.loads(read_file.read())
-        # MED #
-        self.MEDCAT_SZN = None
-        with open(
-            f"{resource_dir}{biome_dir}med/{leaf}.json", "r", encoding="ascii"
-        ) as read_file:
-            self.MEDCAT_SZN = ujson.loads(read_file.read())
-        self.MEDCAT = None
-        with open(
-            f"{resource_dir}{biome_dir}med/any.json", "r", encoding="ascii"
-        ) as read_file:
-            self.MEDCAT = ujson.loads(read_file.read())
-        # NEW CAT #
-        self.NEW_CAT = None
-        with open(f"{resource_dir}new_cat.json", "r", encoding="ascii") as read_file:
-            self.NEW_CAT = ujson.loads(read_file.read())
-        self.NEW_CAT_HOSTILE = None
-        with open(
-            f"{resource_dir}new_cat_hostile.json", "r", encoding="ascii"
-        ) as read_file:
-            self.NEW_CAT_HOSTILE = ujson.loads(read_file.read())
-        self.NEW_CAT_WELCOMING = None
-        with open(
-            f"{resource_dir}new_cat_welcoming.json", "r", encoding="ascii"
-        ) as read_file:
-            self.NEW_CAT_WELCOMING = ujson.loads(read_file.read())
-        # OTHER CLAN #
-        self.OTHER_CLAN = None
-        with open(f"{resource_dir}other_clan.json", "r", encoding="ascii") as read_file:
-            self.OTHER_CLAN = ujson.loads(read_file.read())
-        self.OTHER_CLAN_ALLIES = None
-        with open(
-            f"{resource_dir}other_clan_allies.json", "r", encoding="ascii"
-        ) as read_file:
-            self.OTHER_CLAN_ALLIES = ujson.loads(read_file.read())
-        self.OTHER_CLAN_HOSTILE = None
-        with open(
-            f"{resource_dir}other_clan_hostile.json", "r", encoding="ascii"
-        ) as read_file:
-            self.OTHER_CLAN_HOSTILE = ujson.loads(read_file.read())
-        self.DISASTER = None
-        with open(f"{resource_dir}disaster.json", "r", encoding="ascii") as read_file:
-            self.DISASTER = ujson.loads(read_file.read())
-        # sighing heavily as I add general patrols back in
-        self.HUNTING_GEN = None
-        with open(
-            f"{resource_dir}general/hunting.json", "r", encoding="ascii"
-        ) as read_file:
-            self.HUNTING_GEN = ujson.loads(read_file.read())
-        self.BORDER_GEN = None
-        with open(
-            f"{resource_dir}general/border.json", "r", encoding="ascii"
-        ) as read_file:
-            self.BORDER_GEN = ujson.loads(read_file.read())
-        self.TRAINING_GEN = None
-        with open(
-            f"{resource_dir}general/training.json", "r", encoding="ascii"
-        ) as read_file:
-            self.TRAINING_GEN = ujson.loads(read_file.read())
-        self.MEDCAT_GEN = None
-        with open(
-            f"{resource_dir}general/medcat.json", "r", encoding="ascii"
-        ) as read_file:
-            self.MEDCAT_GEN = ujson.loads(read_file.read())
+        resources = [
+            ("HUNTING_SZN", f"{biome_dir}hunting/{leaf}.json"),
+            ("HUNTING", f"{biome_dir}hunting/any.json"),
+            ("BORDER_SZN", f"{biome_dir}border/{leaf}.json"),
+            ("BORDER", f"{biome_dir}border/any.json"),
+            ("TRAINING_SZN", f"{biome_dir}training/{leaf}.json"),
+            ("TRAINING", f"{biome_dir}training/any.json"),
+            ("MEDCAT_SZN", f"{biome_dir}med/{leaf}.json"),
+            ("MEDCAT", f"{biome_dir}med/any.json"),
+            ("NEW_CAT", "new_cat.json"),
+            ("NEW_CAT_HOSTILE", "new_cat_hostile.json"),
+            ("NEW_CAT_WELCOMING", "new_cat_welcoming.json"),
+            ("OTHER_CLAN", "other_clan.json"),
+            ("OTHER_CLAN_HOSTILE", "other_clan_hostile.json"),
+            ("OTHER_CLAN_ALLIES", "other_clan_allies.json"),
+            ("HUNTING_GEN", "general/hunting.json"),
+            ("BORDER_GEN", "general/border.json"),
+            ("MEDCAT_GEN", "general/medcat.json"),
+            ("TRAINING_GEN", "general/training.json"),
+            ("DISASTER", "disaster.json"),
+        ]
+        for patrol_property, location in resources:
+            try:
+                setattr(
+                    self, patrol_property, load_lang_resource(f"patrols/{location}")
+                )
+            except:
+                raise Exception("Something went wrong loading patrols!")
 
     def balance_hunting(self, possible_patrols: list):
         """Filter the incoming hunting patrol list to balance the different kinds of hunting patrols.
