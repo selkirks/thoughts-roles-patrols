@@ -538,7 +538,7 @@ class MedDenScreen(Screens):
             if cat.injuries:
                 condition_list.extend(
                     [
-                        i18n.t(f"injuries.{injury}")
+                        i18n.t(f"conditions.injuries.{injury}")
                         for injury in list(cat.injuries.keys())
                     ]
                 )

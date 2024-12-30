@@ -184,7 +184,9 @@ class Events:
             insert = adjust_list_text(ghost_names)
 
             if len(Cat.dead_cats) > 1:
-                event = i18n.t("hardcoded.event_deaths", count=2, insert=insert)
+                event = i18n.t(
+                    "hardcoded.event_deaths", count=len(Cat.dead_cats), insert=insert
+                )
 
                 if len(ghost_names) > 2:
                     alive_cats = list(
@@ -231,10 +233,16 @@ class Events:
 
             else:
                 event = i18n.t("hardcoded.event_deaths", count=1)
-                event_text_adjust(Cat, event, main_cat=Cat.dead_cats[0])
 
             game.cur_events_list.append(
-                Single_Event(event, ["birth_death"], [i.ID for i in Cat.dead_cats])
+                Single_Event(
+                    event,
+                    ["birth_death"],
+                    [i.ID for i in Cat.dead_cats],
+                    cat_dict={"m_c": Cat.dead_cats[0]}
+                    if len(Cat.dead_cats) == 1
+                    else None,
+                )
             )
             if extra_event:
                 game.cur_events_list.append(

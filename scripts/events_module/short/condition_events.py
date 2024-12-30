@@ -201,7 +201,9 @@ class Condition_Events:
                 cat.get_ill("malnourished")
 
             types = ["birth_death"]
-            game.cur_events_list.append(Single_Event(event, types, [cat.ID]))
+            game.cur_events_list.append(
+                Single_Event(event, types, cat_dict={"m_c": cat})
+            )
             return
 
         # heal cat if percentage is high enough and cat is ill
@@ -252,7 +254,9 @@ class Condition_Events:
         if event:
             event_text = event_text_adjust(Cat, event, main_cat=cat)
             types = ["health"]
-            game.cur_events_list.append(Single_Event(event_text, types, [cat.ID]))
+            game.cur_events_list.append(
+                Single_Event(event_text, types, cat_dict={"m_c": cat})
+            )
 
     @staticmethod
     def handle_illnesses(cat, season=None):
@@ -311,18 +315,30 @@ class Condition_Events:
                 # make em sick
                 cat.get_ill(chosen_illness)
 
+                # try to translate the illness
+                illness = i18n.t(f"conditions.illnesses.{chosen_illness}")
+
                 # create event text
-                if chosen_illness in ["running nose", "stomachache"]:
-                    event_string = f"{cat.name} has gotten a {chosen_illness}."
-                else:
-                    event_string = f"{cat.name} has gotten {chosen_illness}."
+                if i18n.config.get("locale") == "en" and chosen_illness in [
+                    "running nose",
+                    "stomachache",
+                ]:
+                    illness = f"a {chosen_illness}"
+                
+                illness.replace("conditions.illnesses.", "")
+                event_string = i18n.t(
+                    "defaults.illness_get_event",
+                    illness=illness,
+                )
 
         # if an event happened, then add event to cur_event_list and save death if it happened.
         if event_string:
             types = ["health"]
             if cat.dead:
                 types.append("birth_death")
-            game.cur_events_list.append(Single_Event(event_string, types, cat.ID))
+            game.cur_events_list.append(
+                Single_Event(event_string, types, cat.ID, cat_dict={"m_c": cat})
+            )
 
         # just double-checking that trigger is only returned True if the cat is dead
         if cat.dead:
@@ -647,7 +663,13 @@ class Condition_Events:
             if injury in game.switches["skip_conditions"]:
                 continue
 
-            Condition_Events.use_herbs(cat, injury, injuries, Condition_Events.INJURIES)
+            Condition_Events.use_herbs(
+                cat,
+                injury,
+                injuries,
+                Condition_Events.INJURIES,
+                translated_name=i18n.t(f"conditions.injuries.{injury}"),
+            )
 
             skipped = cat.moon_skip_injury(injury)
             if skipped:
@@ -805,6 +827,8 @@ class Condition_Events:
             "partial hearing loss": "deaf",
         }
 
+        cat_dict = {"m_c": cat}
+
         conditions = deepcopy(cat.permanent_condition)
         for condition in conditions:
             # checking if the cat has a congenital condition to reveal and handling duration and death
@@ -879,11 +903,14 @@ class Condition_Events:
                     med_cat = random.choice(med_list)
                     if med_cat == cat:
                         random_index = 1
+                        med_cat = None
                 event = possible_string_list[random_index]
                 event = event_text_adjust(
                     Cat, event, main_cat=cat, random_cat=med_cat
                 )  # adjust the text
                 event_list.append(event)
+                if med_cat:
+                    cat_dict["r_c"] = med_cat
                 continue
 
             # trying herbs
@@ -913,7 +940,9 @@ class Condition_Events:
 
         if len(event_list) > 0:
             event_string = " ".join(event_list)
-            game.cur_events_list.append(Single_Event(event_string, event_types, cat.ID))
+            game.cur_events_list.append(
+                Single_Event(event_string, event_types, [cat.ID], cat_dict=cat_dict)
+            )
         return
 
     @staticmethod
@@ -969,6 +998,7 @@ class Condition_Events:
                 chance = int(retire_chances.get(cat.age))
                 if not int(random.random() * chance):
                     retire_involved = [cat.ID]
+                    cat_dict = {"m_c": cat}
                     if cat.age == CatAgeEnum.ADOLESCENT:
                         event = (
                             f"{cat.name} decides they'd rather spend their time helping around camp and entertaining the "
@@ -1005,7 +1035,12 @@ class Condition_Events:
                     cat.retire_cat()
                     # Don't add this to the condition event list: instead make it it's own event, a ceremony.
                     game.cur_events_list.append(
-                        Single_Event(event, "ceremony", retire_involved)
+                        Single_Event(
+                            event_text_adjust(Cat, event, main_cat=cat),
+                            "ceremony",
+                            retire_involved,
+                            cat_dict=cat_dict,
+                        )
                     )
 
     @staticmethod
