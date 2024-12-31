@@ -195,7 +195,9 @@ class Condition_Events:
                 cat.get_ill("malnourished")
 
             types = ["birth_death"]
-            game.cur_events_list.append(Single_Event(event, types, [cat.ID]))
+            game.cur_events_list.append(
+                Single_Event(event, types, cat_dict={"m_c": cat})
+            )
             return
 
         # heal cat if percentage is high enough and cat is ill
@@ -246,7 +248,9 @@ class Condition_Events:
         if event:
             event_text = event_text_adjust(Cat, event, main_cat=cat)
             types = ["health"]
-            game.cur_events_list.append(Single_Event(event_text, types, [cat.ID]))
+            game.cur_events_list.append(
+                Single_Event(event_text, types, cat_dict={"m_c": cat})
+            )
 
     @staticmethod
     def handle_illnesses(cat, season=None):
@@ -305,15 +309,16 @@ class Condition_Events:
                 # make em sick
                 cat.get_ill(chosen_illness)
 
+                # try to translate the illness
+                illness = i18n.t(f"conditions.illnesses.{chosen_illness}")
+
                 # create event text
                 if i18n.config.get("locale") == "en" and chosen_illness in [
                     "running nose",
                     "stomachache",
                 ]:
                     illness = f"a {chosen_illness}"
-                # try to translate the illness
-                illness = i18n.t(f"conditions.illness.{chosen_illness}")
-                illness.replace("conditions.illness.", "")
+                illness.replace("conditions.illnesses.", "")
                 event_string = i18n.t(
                     "defaults.illness_get_event",
                     illness=illness,
@@ -324,7 +329,9 @@ class Condition_Events:
             types = ["health"]
             if cat.dead:
                 types.append("birth_death")
-            game.cur_events_list.append(Single_Event(event_string, types, cat.ID))
+            game.cur_events_list.append(
+                Single_Event(event_string, types, cat.ID, cat_dict={"m_c": cat})
+            )
 
         # just double-checking that trigger is only returned True if the cat is dead
         if cat.dead:
@@ -667,7 +674,7 @@ class Condition_Events:
                 injury,
                 injuries,
                 Condition_Events.INJURIES,
-                translated_name=i18n.t(f"injuries.{injury}"),
+                translated_name=i18n.t(f"conditions.injuries.{injury}"),
             )
 
             skipped = cat.moon_skip_injury(injury)
@@ -856,6 +863,8 @@ class Condition_Events:
             "partial hearing loss": "deaf",
         }
 
+        cat_dict = {"m_c": cat}
+
         conditions = deepcopy(cat.permanent_condition)
         for condition in conditions:
             # checking if the cat has a congenital condition to reveal and handling duration and death
@@ -949,11 +958,14 @@ class Condition_Events:
                     med_cat = random.choice(med_list)
                     if med_cat == cat:
                         random_index = 1
+                        med_cat = None
                 event = possible_string_list[random_index]
                 event = event_text_adjust(
                     Cat, event, main_cat=cat, random_cat=med_cat
                 )  # adjust the text
                 event_list.append(event)
+                if med_cat:
+                    cat_dict["r_c"] = med_cat
                 continue
 
             # trying herbs
@@ -989,7 +1001,9 @@ class Condition_Events:
 
         if len(event_list) > 0:
             event_string = " ".join(event_list)
-            game.cur_events_list.append(Single_Event(event_string, event_types, cat.ID))
+            game.cur_events_list.append(
+                Single_Event(event_string, event_types, [cat.ID], cat_dict=cat_dict)
+            )
         return
 
     @staticmethod
@@ -1045,6 +1059,7 @@ class Condition_Events:
                 chance = int(retire_chances.get(cat.age))
                 if not int(random.random() * chance):
                     retire_involved = [cat.ID]
+                    cat_dict = {"m_c": cat}
                     if cat.age == CatAgeEnum.ADOLESCENT:
                         event = i18n.t(
                             "hardcoded.condition_retire_adolescent", name=cat.name
@@ -1077,6 +1092,7 @@ class Condition_Events:
                             event_text_adjust(Cat, event, main_cat=cat),
                             "ceremony",
                             retire_involved,
+                            cat_dict=cat_dict,
                         )
                     )
 
