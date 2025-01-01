@@ -299,7 +299,6 @@ class Cat:
             if intersexchance < 5 and example is False:
                 self.gender = "intersex"
                 intersex_condition = choice (["excess testosterone", "testosterone deficiency", "aneuploidy", "mosaicism", "chimerism"])
-                self.get_permanent_condition(intersex_condition, born_with=True)
             else:
                 self.gender = choice(["female", "male"])
         self.g_tag = self.gender_tags[self.gender]
