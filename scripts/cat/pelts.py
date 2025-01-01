@@ -179,6 +179,7 @@ class Pelt:
         "GREENYELLOW",
         "BRONZE",
         "SILVER",
+        "ORANGE"
     ]
     yellow_eyes = [
         "YELLOW",
@@ -189,6 +190,7 @@ class Pelt:
         "GREENYELLOW",
         "BRONZE",
         "SILVER",
+        "ORANGE"
     ]
     blue_eyes = [
         "BLUE",
@@ -468,6 +470,7 @@ class Pelt:
         "GREENYELLOW",
         "BRONZE",
         "SILVER",
+        "ORANGE"
     ]
     little_white = [
         "LITTLE",

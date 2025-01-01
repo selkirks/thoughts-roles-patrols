@@ -453,7 +453,8 @@ class Cat:
         nb_chance = randint(0, 75)
         if self.age.is_baby():
             # newborns can't be trans, sorry babies
-            pass
+            nb_chance = 0
+            trans_chance = 0
         self.genderalign = ""
         if(self.gender == 'intersex'):
             self.genderalign = 'intersex '
@@ -1088,11 +1089,9 @@ class Cat:
                     major_chance -= 1
 
                 # decrease major grief chance if grave herbs are used
-                if body and not body_treated and "rosemary" in game.clan.herbs:
+                if body and not body_treated and "rosemary" in game.clan.herb_supply.entire_supply:
                     body_treated = True
-                    game.clan.herbs["rosemary"] -= 1
-                    if game.clan.herbs["rosemary"] <= 0:
-                        game.clan.herbs.pop("rosemary")
+                    game.clan.herb_supply.remove_herb("rosemary", -1)
                     game.herb_events_list.append(
                         f"Rosemary was used for {self.name}'s body."
                     )
@@ -2352,21 +2351,19 @@ class Cat:
                 "blood loss" in new_injury.also_got
                 and len(get_alive_status_cats(Cat, ["healer"], working=True)) != 0
             ):
-                clan_herbs = set()
+                clan_herbs = set(game.clan.herb_supply.entire_supply.keys())
                 needed_herbs = {"horsetail", "raspberry", "marigold", "cobwebs"}
-                clan_herbs.update(game.clan.herbs.keys())
-                herb_set = needed_herbs.intersection(clan_herbs)
-                usable_herbs = []
-                usable_herbs.extend(herb_set)
+                usable_herbs = list(needed_herbs.intersection(clan_herbs))
 
                 if usable_herbs:
                     # deplete the herb
                     herb_used = choice(usable_herbs)
-                    game.clan.herbs[herb_used] -= 1
-                    if game.clan.herbs[herb_used] <= 0:
-                        game.clan.herbs.pop(herb_used)
+                    game.clan.herb_supply.remove_herb(herb_used, -1)
                     avoided = True
-                    text = f"{herb_used.capitalize()} was used to stop blood loss for {self.name}."
+                    text = i18n.t(
+                        "screens.med_den.blood_loss",
+                        name=self.name
+                    )
                     game.herb_events_list.append(text)
 
             if not avoided:
@@ -2579,7 +2576,7 @@ class Cat:
                 text = f"{self.name} had contact with {cat.name} and now has {illness_name}."
                 # game.health_events_list.append(text)
                 game.cur_events_list.append(
-                    Single_Event(text, "health", [self.ID, cat.ID])
+                    Single_Event(text, "health", cat_dict={"m_c": self})
                 )
                 self.get_ill(illness_name)
 
@@ -3959,6 +3956,7 @@ def create_example_cats():
                 ["kitten", "apprentice", "warrior", "warrior", "elder"]
             )
             game.choose_cats[cat_index] = create_cat(status=random_status, kittypet=game.config["clan_creation"]["use_special_roller"])
+
 
 
 # CAT CLASS ITEMS

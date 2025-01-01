@@ -15,7 +15,6 @@ if TYPE_CHECKING:
     from scripts.events_module.patrol.patrol import Patrol
 
 from scripts.cat.history import History
-from scripts.clan import HERBS
 from scripts.utility import (
     change_clan_relations,
     change_clan_reputation,
@@ -560,12 +559,11 @@ class PatrolOutcome:
                     _cat.pelt.scars.append("TNR")
                 _cat.get_permanent_condition("infertility", False, custom_reveal=2 if 'pregnant' in _cat.injuries else None)
 
-        # return i18n.t(
-        #     "patrol.lost_cats",
-        #     count=len(cats_to_lose),
-        #     cats=adjust_list_text([str(cat.name) for cat in cats_to_lose]),
-        # )
-        return " ".join(results)
+        return i18n.t(
+            "screens.patrol.lost_cats",
+            count=len(cats_to_lose),
+            cats=adjust_list_text([str(cat.name) for cat in cats_to_lose]),
+        )
 
     def _handle_condition_and_scars(self, patrol: "Patrol") -> str:
         """Handle injuring cats, or giving scars"""
@@ -696,56 +694,60 @@ class PatrolOutcome:
         if not self.herbs or game.clan.game_mode == "classic":
             return ""
 
+        list_of_herb_strs = []
+
         large_bonus = False
         if "many_herbs" in self.herbs:
             large_bonus = True
 
-        # Determine which herbs get picked
-        specific_herbs = [x for x in self.herbs if x in HERBS]
+        if len(patrol.patrol_cats) > 2:
+            patrol_size_modifier = int(len(patrol.patrol_cats) * 0.5)
+        else:
+            patrol_size_modifier = 1
+
+        full_amount_count = 0
+
         if "random_herbs" in self.herbs:
-            specific_herbs += random.sample(
-                HERBS, k=choices([1, 2, 3], [6, 5, 1], k=1)[0]
+            list_of_herb_strs, found_herbs = game.clan.herb_supply.get_found_herbs(
+                med_cat=patrol.patrol_leader,
+                general_amount_bonus=large_bonus,
+                specific_quantity_bonus=patrol_size_modifier,
             )
+        else:
+            found_herbs = {}
+            for herb in [
+                x for x in self.herbs if x not in ["many_herbs", "random_herbs"]
+            ]:
+                amount = choices([2, 3, 4], weights=[2, 1, 1], k=1)[0]
+                amount *= patrol_size_modifier
+                if large_bonus:
+                    amount *= 2
 
-        # Remove duplicates
-        specific_herbs = list(set(specific_herbs))
+                found_herbs[herb] = amount
 
-        if not specific_herbs:
-            print(f"{self.herbs} - gave no herbs to give")
-            return ""
+            for herb, count in found_herbs.items():
+                game.clan.herb_supply.add_herb(herb, count)
+                full_amount_count += count
+                if count > 1:
+                    list_of_herb_strs.append(
+                        f"{count} {game.clan.herb_supply.herb[herb].plural_display}"
+                    )
+                else:
+                    list_of_herb_strs.append(
+                        f"{count} {game.clan.herb_supply.herb[herb].singular_display}"
+                    )
 
-        patrol_size_modifier = int(len(patrol.patrol_cats) * 0.5)
-        herb_names = []
-        for _herb in specific_herbs:
-            if large_bonus:
-                amount_gotten = 6
-            else:
-                amount_gotten = choices([2, 4, 6], [2, 3, 1], k=1)[0]
+        herb_string = adjust_list_text(list_of_herb_strs).capitalize()
 
-            amount_gotten = int(amount_gotten * patrol_size_modifier)
-            amount_gotten = max(1, amount_gotten)
-
-            if _herb in game.clan.herbs:
-                game.clan.herbs[_herb] += amount_gotten
-            else:
-                game.clan.herbs[_herb] = amount_gotten
-
-            herb_names.append(i18n.t(f"conditions.herbs.{_herb}", count=amount_gotten))
-
-        herb_string = adjust_list_text(herb_names)
         game.herb_events_list.append(
             i18n.t(
-                "screens.patrol.herb_log",
-                count=len(herb_names),
-                herbs=herb_string,
-            ).capitalize()
+                "screens.patrol.herb_log", count=full_amount_count, herbs=herb_string
+            )
         )
 
         return i18n.t(
-            "screens.patrol.herbs_gathered",
-            count=len(herb_names),
-            herbs=herb_string,
-        ).capitalize()
+            "screens.patrol.herbs_gathered", count=full_amount_count, herbs=herb_string
+        )
 
     def _handle_prey(self, patrol: "Patrol") -> str:
         """Handle giving prey"""
@@ -839,18 +841,20 @@ class PatrolOutcome:
 
         for i, attribute_list in enumerate(self.new_cat):
             patrol.new_cats.append(
-                create_new_cat_block(Cat, Relationship, patrol, in_event_cats, i, attribute_list)
+                create_new_cat_block(
+                    Cat, Relationship, patrol, in_event_cats, i, attribute_list
+                )
             )
             dead = []
             outside = []
             new = []
             for cat in patrol.new_cats[-1]:
                 if cat.dead:
-                    dead.append(cat.name)
+                    dead.append(str(cat.name))
                 elif cat.outside:
-                    outside.append(cat.name)
+                    outside.append(str(cat.name))
                 else:
-                    new.append(cat.name)
+                    new.append(str(cat.name))
             for type_list, string in [
                 (dead, "screens.patrol.dead_outsider"),
                 (outside, "screens.patrol.met_outsider"),
