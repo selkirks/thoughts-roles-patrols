@@ -2166,6 +2166,8 @@ class MakeClanScreen(Screens):
         # game.clan.starclan_cats.clear()
         game.cur_events_list.clear()
         game.herb_events_list.clear()
+        game.clan.herb_supply.start_storage(len(self.members))
+        game.clan.save_herb_supply(game.clan)
         Cat.grief_strings.clear()
         Cat.sort_cats()
 

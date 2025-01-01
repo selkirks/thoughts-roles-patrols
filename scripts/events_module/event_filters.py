@@ -190,61 +190,30 @@ def event_for_herb_supply(trigger, supply_type, clan_size) -> bool:
     if "always" in trigger:
         return True
 
-    herb_supply = game.clan.herbs.copy()
-    possible_herbs = HERBS
-    num_of_herbs = len(possible_herbs)
+    herb_supply = game.clan.herb_supply
 
-    if not herb_supply and "low" in trigger:
+    if not herb_supply.entire_supply and "empty" in trigger:
         return True
 
-    for herb in possible_herbs:
-        if herb not in herb_supply:
-            herb_supply[herb] = 0
-
-    needed_amount = clan_size * 2
-    half_amount = needed_amount / 2
-
     if supply_type == "all_herb":
-        if "low" in trigger and len([x for x in herb_supply if herb_supply[x] < half_amount]) == num_of_herbs:
+        if herb_supply.get_overall_rating() in trigger:
             return True
-        elif "adequate" in trigger and len(
-                [x for x in herb_supply if half_amount < herb_supply[x] <= needed_amount]) == num_of_herbs:
-            return True
-        elif "full" in trigger and len(
-                [x for x in herb_supply if needed_amount < herb_supply[x] <= needed_amount * 2]) == num_of_herbs:
-            return True
-        elif "excess" in trigger and len(
-                [x for x in herb_supply if needed_amount * 2 < herb_supply[x]]) == num_of_herbs:
-            return True
-
         return False
 
     if supply_type == "any_herb":
-        if "low" in trigger and [x for x in herb_supply if herb_supply[x] < half_amount]:
-            return True
-        elif "adequate" in trigger and [x for x in herb_supply if half_amount < herb_supply[x] <= needed_amount]:
-            return True
-        elif "full" in trigger and [x for x in herb_supply if needed_amount < herb_supply[x] <= needed_amount * 2]:
-            return True
-        elif "excess" in trigger and [x for x in herb_supply if needed_amount * 2 < herb_supply[x]]:
-            return True
-
+        for herb in herb_supply.entire_supply:
+            if herb_supply.get_herb_rating(herb) in trigger:
+                return True
         return False
 
     else:
+        possible_herbs = herb_supply.base_herb_list
         chosen_herb = supply_type
-        if chosen_herb not in possible_herbs:
+        if chosen_herb not in possible_herbs.keys():
             print(f"WARNING: possible typo in supply constraint: {chosen_herb}")
             return False
-        if "low" in trigger and herb_supply[chosen_herb] < half_amount:
+        if herb_supply.get_herb_rating(chosen_herb) in trigger:
             return True
-        elif "adequate" in trigger and half_amount < herb_supply[chosen_herb] <= needed_amount:
-            return True
-        elif "full" in trigger and needed_amount < herb_supply[chosen_herb] <= needed_amount * 2:
-            return True
-        elif "excess" in trigger and needed_amount * 2 < herb_supply[chosen_herb]:
-            return True
-
         return False
 
 
@@ -389,8 +358,3 @@ def _check_cat_gender(cat, genders: list) -> bool:
         return True
 
     return False
-
-
-# until we make a herbs class, this will have to live here too to avoid a circular import. i am screaming.
-with open("resources/dicts/herbs.json", "r", encoding="utf-8") as read_file:
-    HERBS = ujson.loads(read_file.read())
