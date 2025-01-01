@@ -256,7 +256,7 @@
             "Merle_long": "colorfully splashed %{color}",
             "Monarch_long": "uniquely spotted %{color}",
             "Oceloid_long": "oddly spotted %{color}",
-            "PinstripeTabby_long": "strangely striped%{color}",
+            "PinstripeTabby_long": "strangely striped %{color}",
             "Snowflake_long": "oddly dappled %{color}"
     }
 }
