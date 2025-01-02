@@ -738,7 +738,7 @@ def create_new_cat_block(
 
         for n_c in new_cats:
 
-            if n_c.genotype.manx[1] == "Ab" or n_c.genotype.manx[1] == "M" or n_c.genotype.fold[1] == "Fd" or n_c.genotype.munch[1] == "Mk" or ('NoDBE' not in n_c.genotype.pax3 and 'DBEalt' not in n_c.genotype.pax3):
+            if n_c.genotype.manx[1] == "Ab" or n_c.genotype.manx[1] == "M" or n_c.genotype.munch[1] == "Mk" or ('NoDBE' not in n_c.genotype.pax3 and 'DBEalt' not in n_c.genotype.pax3):
                 n_c.moons = 0
                 n_c.status = "newborn"
                 n_c.dead = True
@@ -2939,19 +2939,7 @@ def generate_sprite(
             def TabbyBase(whichcolour, whichbase, cat_unders, special = None):
                 is_red = ('red' in whichcolour or 'cream' in whichcolour or 'honey' in whichcolour or 'ivory' in whichcolour or 'apricot' in whichcolour)
                 whichmain = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
-                if not is_red and 'silver' not in whichbase:
-                    overlay = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
-                    if genotype.dilute[0] == 'D' and genotype.pinkdilute[0] == "Dp":
-                        overlay.blit(sprites.sprites[whichbase], (0, 0))
-                        overlay.set_alpha(191)
-                        whichmain.blit(sprites.sprites[whichcolour], (0, 0))
-                    else:
-                        overlay.blit(sprites.sprites[whichcolour], (0, 0))
-                        overlay.set_alpha(51)
-                        whichmain.blit(sprites.sprites[whichbase], (0, 0))
-                    whichmain.blit(overlay, (0, 0))
-                else:
-                    whichmain.blit(sprites.sprites[whichbase], (0, 0))
+                whichmain.blit(sprites.sprites[whichbase], (0, 0))
                 if special !='copper' and sprite_age > 12 and (genotype.silver[0] == 'I' and genotype.corin[0] == 'fg' and (get_current_season() == 'Leaf-fall' or get_current_season() == 'Leaf-bare' or 'infertility' in cat.permanent_condition)):
                     sunshine = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
                     
@@ -3026,11 +3014,11 @@ def generate_sprite(
                     smokeLayer = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
                     smokeLayer.blit(sprites.sprites['smoke' + cat_sprite], (0, 0))
                     if genotype.wbtype == 'low' and cat.pelt.length == 'long':
-                        smokeLayer.set_alpha(50)
+                        smokeLayer.set_alpha(75)
                     elif genotype.wbtype == 'low':
-                        smokeLayer.set_alpha(100)
+                        smokeLayer.set_alpha(150)
                     else:
-                        smokeLayer.set_alpha(175)
+                        smokeLayer.set_alpha(200)
                     whichmain.blit(smokeLayer, (0, 0))
                 if('light smoke' in phenotype.silvergold):
                     smokeLayer = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
@@ -3038,7 +3026,7 @@ def generate_sprite(
                     if genotype.wbtype == 'high':
                         smokeLayer.set_alpha(100)
                     elif cat.pelt.length != 'long':
-                        smokeLayer.set_alpha(175)                    
+                        smokeLayer.set_alpha(200)                    
                     whichmain.blit(smokeLayer, (0, 0))
                 
                 return whichmain

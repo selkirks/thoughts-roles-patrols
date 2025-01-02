@@ -778,6 +778,9 @@ class Phenotype():
             
             maincolour = colour + str(self.genotype.saturation)
 
+            if self.genotype.saturation < 3 and colour in ['blue', 'lilac', 'fawn']:
+                colour = "pale_" + colour
+
             rufousing = ""
             banding = ""
             
@@ -801,7 +804,7 @@ class Phenotype():
                     unders_opacity = self.GetSilverUnders(banding)
                 else:
                     unders_colour = self.FindEumUnders(genes, banding, rufousing)
-                    unders_opacity = 33
+                    unders_opacity = 20
                 
                 colour = colour + rufousing + banding + "0"
                 
@@ -918,7 +921,7 @@ class Phenotype():
                     self.caramel = 'caramel'
             if rufousing != "silver":
                 unders_colour = self.FindEumUnders(genes, banding, rufousing)
-                unders_opacity = 33
+                unders_opacity = 25
         
         return [maincolour, colour, unders_colour, unders_opacity]
     

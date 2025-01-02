@@ -258,7 +258,7 @@ class Cat:
         self.faded = faded  # This is only used to flag cats that are faded, but won't be added to the faded list until
         # the next save.
         
-        if self.genotype.munch[1] == "Mk" or self.genotype.fold[1] == "Fd" or (self.genotype.manx[1] == "Ab" or self.genotype.manx[1] == "M") or ('NoDBE' not in self.genotype.pax3 and 'DBEalt' not in self.genotype.pax3):
+        if self.genotype.munch[1] == "Mk" or (self.genotype.manx[1] == "Ab" or self.genotype.manx[1] == "M") or ('NoDBE' not in self.genotype.pax3 and 'DBEalt' not in self.genotype.pax3):
             self.dead = True
 
         self.favourite = False
@@ -832,7 +832,10 @@ class Cat:
             self.get_permanent_condition('infertility', born_with=True, genetic=True)
         
         if self.genotype.fold[0] == 'Fd' or ('manx syndrome' in self.permanent_condition and 'M' in self.genotype.manx and self.phenotype.bobtailnr < 4 and self.phenotype.bobtailnr > 1 and random() < 0.05):
-            self.get_permanent_condition('constant joint pain', born_with=True, genetic=True)
+            if not self.genotype.fold[1] == 'Fd':
+                self.get_permanent_condition('constant joint pain', born_with=True, genetic=True, custom_reveal=randint(3, 36))
+            else:
+                self.get_permanent_condition('constant joint pain', born_with=True, genetic=True)
         if 'manx syndrome' in self.permanent_condition and ((self.phenotype.bobtailnr < 2 and random() > 0.5) or (self.phenotype.bobtailnr > 1 and random() > ((self.phenotype.bobtailnr) * 0.24))):
             self.get_permanent_condition('incontinence', born_with=True, genetic=True)
         if 'manx syndrome' in self.permanent_condition and ((self.phenotype.bobtailnr < 2 and random() > 0.2) or (self.phenotype.bobtailnr > 1 and random() > ((self.phenotype.bobtailnr) * 0.3))):
