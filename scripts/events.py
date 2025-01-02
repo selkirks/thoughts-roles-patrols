@@ -463,15 +463,16 @@ class Events:
                                 invited_cat.status = invited_cat.age
                                 if not invited_cat.name.suffix:
                                     invited_cat.name = Name(
+                                        Cat,
+                                        invited_cat,
                                         invited_cat.name.prefix,
                                         invited_cat.name.suffix,
-                                        game.clan.biome,
-                                        cat=invited_cat
+                                        biome=game.clan.biome,
                                     )
                                     invited_cat.name.give_suffix(
-                                        pelt=None,
-                                        biome=game.clan.biome,
-                                        tortiepattern=None,
+                                        skills=invited_cat.skills,
+                                        personality=invited_cat.personality,
+                                        biome=game.clan.biome
                                     )
                                     invited_cat.specsuffix_hidden = False
 
@@ -1574,6 +1575,17 @@ class Events:
 
         involved_cats = [cat.ID]  # Clearly, the cat the ceremony is about is involved.
 
+        # Changing prefix if needed
+        if game.clan.clan_settings['dynamic prefixes']:
+            cer_type = 'apprentice-warrior'
+            if 'apprentice' in promoted_to:
+                cer_type = 'kit-apprentice'
+            elif promoted_to == 'elder':
+                cer_type = 'warrior-elder'
+            
+            cat.name.change_prefix(Cat, cat.moons, game.clan.biome, cer_type)
+            
+
         # Time to gather ceremonies. First, lets gather all the ceremony ID's.
 
         # ensure the right ceremonies are loaded for the given language
@@ -1761,6 +1773,9 @@ class Events:
             except KeyError:
                 random_honor = i18n.t("defaults.ceremony_honor")
 
+            if game.clan.clan_settings['new suffixes']:
+                cat.name.give_suffix(cat.skills, cat.personality, game.clan.biome, random_honor)
+
         if cat.status in ["warrior", "healer", "mediator"]:
             History.add_app_ceremony(cat, random_honor)
 
@@ -1815,6 +1830,12 @@ class Events:
 
         # remove duplicates
         involved_cats = list(set(involved_cats))
+
+        if str(cat.name) != old_name:
+            if cat.history:
+                cat.history.prev_names.append(old_name)
+            else:
+                cat.history = History(prev_names=[old_name])
 
         game.cur_events_list.append(
             Single_Event(ceremony_text, "ceremony", involved_cats)

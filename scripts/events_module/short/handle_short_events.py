@@ -234,9 +234,19 @@ class HandleShortEvents:
                 trust=-30,
             )
 
+        name_change = False
         # update gender
         if self.chosen_event.new_gender:
             self.handle_transition()
+            if game.clan.clan_settings['dynamic prefixes']:
+                chance = game.config["cat_name_controls"]["trans_prefix_change_chance"]
+                if chance and random.randint(1, chance) == 1:
+                    if not self.main_cat.history:
+                        self.main_cat.history = History()
+                    self.main_cat.history.prev_names.append(str(self.main_cat.name))
+                    self.main_cat.name.moons = self.main_cat.moons
+                    self.chosen_event.text += i18n.t("hardcoded.trans_newname")
+                    name_change = True
 
         # kill cats
         self.handle_death()
@@ -301,6 +311,8 @@ class HandleShortEvents:
             other_clan=self.other_clan,
             chosen_herb=self.chosen_herb,
         )
+        if name_change:
+            self.main_cat.name.give_prefix(Cat, game.clan.biome)
 
         if self.chosen_herb:
             game.herb_events_list.append(f"{self.chosen_event} {self.herb_notice}.")

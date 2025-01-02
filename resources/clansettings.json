@@ -20,65 +20,85 @@
         }
     ],
     "general": {
-        "autosave": [
-            "Automatically save every five moons",
-            "Automatically save every five moons.",
-            false
-        ],
-        "disasters": [
-            "Allow mass extinction events",
-            "This may result in up to 1/3rd of your Clan dying in one moon.",
-            false
-        ],
-        "modded_kits": [
-            "Use modded litters",
-            "Gives larger litters, and higher kit death chances",
-            false
-        ],
-        "tnr_mode": [
-            "Cats can be spayed/neutered by Twolegs",
-            "Kittypets, loners, and Clan cats caught by Twolegs now have a chance of ending up spayed or neutered",
-            false
-        ],
-        "showheight": [
-            "Show exact cat shoulder height on profile",
-            "Adds exact shoulder height in inches to cats.",
-            false
-        ],
-        "metric_toggle": [
-            "Convert inches to cm",
-            "Converts heights from inches to centimetres.",
-            false,
-            [
-                "showheight",
-                true
-            ]
-        ],
-        "showxp": [
-            "Show exact XP and nutrition status",
-            "Will turn 'experience: proficient' into 'experience: proficient (151)'; and 'nutrition: full' into 'nutrition: full (70)'.",
-            false
-        ],
-        "fading": [
-            "Allow dead cats to fade away",
-            "After 202 moons, dead cats will be unloaded, and saved separately. No family relations will be lost.",
-            true
-        ],
-        "save_faded_copy": [
-            "Save a complete copy of faded cats information",
-            "A complete copy of faded cat save info will be saved in plain-text.",
-            false
-        ],
-        "backgrounds": [
-            "Enable Clan page background",
-            "Even with this off, the camp you choose will still affect the events you encounter.",
-            true
-        ],
-        "moons and seasons": [
-            "Show moons and seasons widget",
-            "Displays Clan age and current Clan season on several pages.",
-            false
-        ]
+      "autosave": [
+        "Automatically save every five moons",
+        "Automatically save every five moons.",
+        false
+      ],
+      "disasters": [
+        "Allow mass extinction events",
+        "This may result in up to 1/3rd of your Clan dying in one moon.",
+        false
+      ],
+      "modded_kits": [
+        "Use modded litters",
+        "Gives larger litters, and higher kit death chances",
+        false
+      ],
+      "tnr_mode": [
+        "Cats can be spayed/neutered by Twolegs",
+        "Kittypets, loners, and Clan cats caught by Twolegs now have a chance of ending up spayed or neutered",
+        false
+      ],
+      "showheight": [
+        "Show exact cat shoulder height on profile",
+        "Adds exact shoulder height in inches to cats.",
+        false
+      ],
+      "metric_toggle": [
+        "Convert inches to cm",
+        "Converts heights from inches to centimetres.",
+        false,
+        ["showheight", true]
+      ],
+      "showxp": [
+        "Show exact XP and nutrition status",
+        "Will turn 'experience: proficient' into 'experience: proficient (151)'; and 'nutrition: full' into 'nutrition: full (70)'.",
+        false
+      ],
+      "fading": [
+        "Allow dead cats to fade away",
+        "After 202 moons, dead cats will be unloaded, and saved separately. No family relations will be lost.",
+        true
+      ],
+      "save_faded_copy": [
+        "Save a complete copy of faded cats information",
+        "A complete copy of faded cat save info will be saved in plain-text.",
+        false
+      ],
+      "backgrounds": [
+        "Enable Clan page background",
+        "Even with this off, the camp you choose will still affect the events you encounter.",
+        true
+      ],
+      "moons and seasons": [
+        "Show moons and seasons widget",
+        "Displays Clan age and current Clan season on several pages.",
+        false
+      ],
+      "modded names": [
+        "Use altered name generation",
+        "Enables altered prefix & suffix generation",
+        true
+      ],
+      "new prefixes": [
+        "Use new prefixes",
+        "New prefixes will be generated from a new pelt-based list",
+        true,
+        ["modded names", true]
+      ],
+      "dynamic prefixes": [
+        "Allow changing prefixes",
+        "Cats may change prefixes during ceremonies",
+        false,
+        ["modded names", true]
+      ],
+      "new suffixes": [
+        "Use new suffixes (WIP)",
+        "Cats will gain suffixes based on skills, traits, and what they're honoured for.",
+        true,
+        ["modded names", true]
+      ]
     },
     "role": {
       "deputy": [

@@ -18,6 +18,7 @@ from pygame_gui.elements import UIWindow
 from pygame_gui.windows import UIMessageWindow
 
 from scripts.cat.history import History
+from scripts.cat.cats import Cat
 from scripts.cat.names import Name
 from scripts.cat.cats import Cat
 from scripts.cat_relations.inheritance import Inheritance
@@ -780,7 +781,13 @@ class ChangeCatName(UIWindow):
                 else:
                     use_suffix = self.the_cat.name.suffix
                 self.prefix_entry_box.set_text(
-                    Name(None, use_suffix, cat=self.the_cat).prefix
+                    Name(
+                        Cat, 
+                        self.the_cat,
+                        None,
+                        use_suffix,
+                        biome=game.clan.biome
+                    ).prefix
                 )
             elif event.ui_element == self.random_suffix:
                 if self.prefix_entry_box.text:
@@ -788,7 +795,14 @@ class ChangeCatName(UIWindow):
                 else:
                     use_prefix = self.the_cat.name.prefix
                 self.suffix_entry_box.set_text(
-                    Name(use_prefix, None, cat=self.the_cat).suffix
+                    Name(
+                        Cat,
+                        self.the_cat,
+                        use_prefix,
+                        None,
+                        self.the_cat.history.app_ceremony['honor'] if self.the_cat.history and self.the_cat.history.app_ceremony else None,
+                        game.clan.biome
+                    ).suffix
                 )
             elif event.ui_element == self.toggle_spec_block_on:
                 self.specsuffic_hidden = True

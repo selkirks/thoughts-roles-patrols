@@ -353,8 +353,15 @@ def _check_cat_gender(cat, genders: list) -> bool:
         """
     if not genders:
         return True
+    
+    equivalents = {
+        "male" : ["tom", "intersex tom", "intersex trans tom", "trans tom"],
+        "female" : ["molly", "intersex molly", "intersex trans molly", "trans molly"],
+        "nonbinary" : ["sam", "intersex sam"]
+    }
 
-    if cat.gender in genders:
-        return True
+    for g in genders:
+        if cat.gender in equivalents.get(g, []):
+            return True
 
     return False
