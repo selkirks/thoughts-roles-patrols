@@ -104,7 +104,7 @@
       "scar_event0": "m_c's %{injury} has healed, but {PRONOUN/m_c/subject}'ll always carry evidence of it on {PRONOUN/m_c/poss} pelt.",
       "scar_event1": "m_c healed from {PRONOUN/m_c/poss} %{injury} but will forever be marked by a scar.",
       "scar_event2": "m_c's %{injury} has healed, but the injury left {PRONOUN/m_c/object} scarred.",
-      "move_on_dead_mate": "m_c will always love %[mate}, but has decided to move on.",
+      "move_on_dead_mate": "m_c will always love %{mate}, but has decided to move on.",
       "breakup_angy": "m_c and r_c had a huge fight and broke up.",
       "breakup_chill": "m_c and r_c broke up.",
       "trans_newname" : " After some thought, a new name seems in order too.",

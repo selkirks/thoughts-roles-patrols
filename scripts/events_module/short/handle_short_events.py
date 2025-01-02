@@ -238,7 +238,7 @@ class HandleShortEvents:
         # update gender
         if self.chosen_event.new_gender:
             self.handle_transition()
-            if game.clan.clan_settings['dynamic prefixes']:
+            if game.clan.clan_settings["modded names"] and game.clan.clan_settings['dynamic prefixes']:
                 chance = game.config["cat_name_controls"]["trans_prefix_change_chance"]
                 if chance and random.randint(1, chance) == 1:
                     if not self.main_cat.history:

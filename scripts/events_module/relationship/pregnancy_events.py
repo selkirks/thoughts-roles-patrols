@@ -757,7 +757,7 @@ class Pregnancy_Events:
                     kit.status = "loner"
                     name = choice(names.names_dict["normal_prefixes"])
 
-                    if game.clan.clan_settings['new prefixes']:
+                    if game.clan.clan_settings["modded names"] and game.clan.clan_settings['new prefixes']:
                         kit.name = Name(Cat, kit, suffix="")
                     else:
                         kit.name = Name(Cat, kit, prefix=name, suffix="")

@@ -967,7 +967,7 @@ def create_new_cat(
                 name = choice(
                     names.names_dict["normal_prefixes"]
                 )  # otherwise give name from prefix list (more nature-y names)
-                if game.clan.clan_settings['new prefixes'] and random() < 0.9:
+                if game.clan.clan_settings["modded names"] and game.clan.clan_settings['new prefixes'] and random() < 0.9:
                     overwrite_prefix = True
 
             # now we make the cats

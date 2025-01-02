@@ -243,7 +243,7 @@ class Name:
             used_prefixes = []
 
         namer = Namer(used_prefixes, self.mod_prefixes, self.moons)
-        if not game.clan or game.clan.clan_settings['new prefixes']:
+        if not game.clan or (game.clan.clan_settings["modded names"] and game.clan.clan_settings['new prefixes']):
             self.prefix = namer.start(self.genotype, self.phenotype, self.chimpheno)
             if no_suffix:
                 if self.prefix == "Striped":
@@ -329,7 +329,7 @@ class Name:
     # Generate possible suffix
     def give_suffix(self, skills, personality, biome, honour=None):
         try:
-            if (not game.clan or game.clan.clan_settings['new suffixes']) and skills and personality:
+            if (not game.clan or (game.clan.clan_settings["modded names"] and game.clan.clan_settings['new suffixes'])) and skills and personality:
                 options = []
                 for i in range(4):
                     try:
