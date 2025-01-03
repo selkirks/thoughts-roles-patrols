@@ -62,6 +62,7 @@ class Pelt:
         "NOLEFTEAR",
         "NORIGHTEAR",
         "NOEAR",
+        "TNR"
     ]
 
     # "special" scars that could only happen in a special event

@@ -1576,7 +1576,7 @@ class Events:
         involved_cats = [cat.ID]  # Clearly, the cat the ceremony is about is involved.
 
         # Changing prefix if needed
-        if game.clan.clan_settings['dynamic prefixes']:
+        if game.clan.clan_settings["modded names"] and game.clan.clan_settings['dynamic prefixes']:
             cer_type = 'apprentice-warrior'
             if 'apprentice' in promoted_to:
                 cer_type = 'kit-apprentice'
@@ -1773,7 +1773,7 @@ class Events:
             except KeyError:
                 random_honor = i18n.t("defaults.ceremony_honor")
 
-            if game.clan.clan_settings['new suffixes']:
+            if game.clan.clan_settings["modded names"] and game.clan.clan_settings['new suffixes']:
                 cat.name.give_suffix(cat.skills, cat.personality, game.clan.biome, random_honor)
 
         if cat.status in ["warrior", "healer", "mediator"]:

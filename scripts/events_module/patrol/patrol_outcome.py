@@ -504,7 +504,7 @@ class PatrolOutcome:
                     results.append(
                         event_text_adjust(
                             Cat,
-                            i18n.t("cat.history.leader_death_all", count=lives_lost),
+                            i18n.t("cat.history.leader_lost_lives", count=lives_lost),
                             main_cat=_cat,
                         )
                     )
@@ -513,7 +513,7 @@ class PatrolOutcome:
                     results.append(
                         event_text_adjust(
                             Cat,
-                            i18n.t("cat.history.leader_death_all", count=1),
+                            i18n.t("cat.history.leader_lost_lives", count=1),
                             main_cat=_cat,
                         )
                     )

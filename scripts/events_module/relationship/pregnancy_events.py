@@ -206,7 +206,7 @@ class Pregnancy_Events:
         cats_names = str(cat.name)
         if other_cat:
             event = "hardcoded.adoption_kittens_pair"
-            cats_names = adjust_list_text([str(cat.name), str(other_cat.name)])
+            cats_names = adjust_list_text([str(cat.name)] + [str(c.name) for c in other_cat])
 
         print_event = i18n.t(
             event,

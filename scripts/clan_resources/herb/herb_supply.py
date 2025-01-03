@@ -250,6 +250,10 @@ class HerbSupply:
         """
         returns the rating of given supply, aka how "full" the supply is compared to clan size
         """
+        
+        if game.clan.game_mode == "classic":
+            return Supply.FULL
+
         if not self.entire_supply:
             return Supply.EMPTY
 

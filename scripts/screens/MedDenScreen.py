@@ -375,11 +375,12 @@ class MedDenScreen(Screens):
                     clan=game.clan
                 )
 
-            med_messages.append(event_text_adjust(
-                Cat,
-                meds_cover,
-                main_cat=self.meds[0]
-            ))
+            if meds_cover:
+                med_messages.append(event_text_adjust(
+                    Cat,
+                    meds_cover,
+                    main_cat=self.meds[0]
+                ))
 
             if self.meds:
                 med_messages.append(game.clan.herb_supply.get_status_message(choice(self.meds)))
