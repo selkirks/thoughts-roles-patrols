@@ -930,7 +930,7 @@ class LeaderDenScreen(Screens):
             and self.focus_cat.status
             not in ["kittypet", "loner", "rogue", "former Clancat"]
         ):
-            self.focus_button["invite"].set_text("screens.leader_den.search_for")
+            self.focus_button["invite"].set_text("screens.leader_den.search")
         else:
             self.focus_button["invite"].set_text("screens.leader_den.invite")
 

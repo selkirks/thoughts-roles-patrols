@@ -56,7 +56,7 @@
         "drive_off": "drive off",
         "drive_off_tooltip": "This cat will be driven out of the area if found ({PRONOUN/r_c/subject} will no longer be accessible in-game).",
         "invite": "invite in",
-        "search_for": "search for",
+        "search": "search for",
         "invite_tooltip": "This cat will join the Clan if found."
     }
 }
