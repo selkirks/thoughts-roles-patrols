@@ -206,7 +206,7 @@ class Sprites:
 
         for x in ["black", "blue", "pale_blue", "dove", "platinum",
                   "chocolate", "lilac", "pale_lilac", "champagne", "lavender",
-                  "cinnamon", "fawn", "buff", "beige",
+                  "cinnamon", "fawn", "pale_fawn", "buff", "beige",
                   "red", "cream", "honey", "ivory"]:
             for a, i in enumerate(['rufousedlow', 'rufousedmedium', 'rufousedhigh', 'rufousedshaded', 'rufousedchinchilla']):
                 self.make_group('Tabby/'+x, (a, 0), f'{x}{i}', sprites_x=1, sprites_y=1)

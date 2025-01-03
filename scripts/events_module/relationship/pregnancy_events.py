@@ -220,7 +220,7 @@ class Pregnancy_Events:
             for x in other_cat:
                 cats_involved.append(x.ID)
         for kit in kits:
-            kit.thought = i18n.t("hardcoded.new_kit_thought")
+            kit.thought = i18n.t("hardcoded.new_kit_thought", name=str(cat.name))
             cats_involved.append(kit.ID)
 
         # Normally, birth cooldown is only applied to cat who gave birth
@@ -1426,10 +1426,10 @@ class Pregnancy_Events:
                                                 status=cat_type,
                                                 gender='fem',
                                                 alive=choice([True, False]),
-                                                thought=thought,
                                                 age=parage,
                                                 outside=True,
                                                 is_parent=True)[0]
+                    blood_parent.thought = event_text_adjust(Cat, thought, main_cat=blood_parent)
                     blood_parent2 = []
                     
                     for i in range(0, nr_of_parents):
@@ -1450,7 +1450,7 @@ class Pregnancy_Events:
                                                         age=parage if parage > 14 else 15,
                                                         outside=True,
                                                         is_parent=True)[0]
-                        blood_par2.thought = thought
+                        blood_par2.thought = event_text_adjust(Cat, thought, main_cat=blood_par2)
 
                         blood_parent2.append(blood_par2)
 
