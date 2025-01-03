@@ -26,7 +26,7 @@
         "action_clan_declare": "m_c has decided to declare war on o_c_n.",
         "action_outsider_hunt_down": "m_c has decided to hunt r_c down.",
         "action_outsider_drive_off": "m_c has decided to drive r_c off.",
-        "action_outsider_invite_in": "m_c has decided to invite r_c in.",
+        "action_outsider_invite": "m_c has decided to invite r_c in.",
         "action_outsider_search": "m_c has decided to search for r_c.",
         "temper_text": "The other Clans think c_n is %{temper}.",
         "outsider_rep": "Outsiders view your Clan as %{reputation}.",
@@ -55,8 +55,8 @@
         "hunt_down_tooltip": "This cat will be killed if found.",
         "drive_off": "drive off",
         "drive_off_tooltip": "This cat will be driven out of the area if found ({PRONOUN/r_c/subject} will no longer be accessible in-game).",
-        "invite_in": "invite in",
+        "invite": "invite in",
         "search_for": "search for",
-        "invite_in_tooltip": "This cat will join the Clan if found."
+        "invite_tooltip": "This cat will join the Clan if found."
     }
 }

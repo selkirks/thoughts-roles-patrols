@@ -1414,7 +1414,7 @@ class Pregnancy_Events:
                         nr_of_parents = randint(2, game.config['pregnancy']["multi-sire_max_sires"])
                     
                     thought = i18n.t(
-                        "conditions.pregnancy.halfblood_kitting_thought",
+                        "conditions.pregnancy.half_blood_kitting_thought",
                         count=kits_amount,
                     )
                     parage = randint(15,120)

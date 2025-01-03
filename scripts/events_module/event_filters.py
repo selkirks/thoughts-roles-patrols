@@ -361,7 +361,7 @@ def _check_cat_gender(cat, genders: list) -> bool:
     }
 
     for g in genders:
-        if cat.gender in equivalents.get(g, []):
+        if cat.genderalign in equivalents.get(g, []):
             return True
 
     return False

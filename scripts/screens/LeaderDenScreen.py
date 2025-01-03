@@ -907,12 +907,12 @@ class LeaderDenScreen(Screens):
             },
         )
 
-        self.focus_button["invite_in"] = UISurfaceImageButton(
+        self.focus_button["invite"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((0, 5), (121, 30))),
-            "screens.leader_den.invite_in",
+            "screens.leader_den.invite",
             get_button_dict(ButtonStyles.SQUOVAL, (121, 30)),
             object_id="@buttonstyles_squoval",
-            tool_tip_text="screens.leader_den.invite_in_tooltip",
+            tool_tip_text="screens.leader_den.invite_tooltip",
             tool_tip_text_kwargs={"r_c": self.focus_cat},
             container=self.focus_outsider_button_container,
             starting_height=3,
@@ -930,11 +930,11 @@ class LeaderDenScreen(Screens):
             and self.focus_cat.status
             not in ["kittypet", "loner", "rogue", "former Clancat"]
         ):
-            self.focus_button["invite_in"].set_text("screens.leader_den.search_for")
+            self.focus_button["invite"].set_text("screens.leader_den.search_for")
         else:
-            self.focus_button["invite_in"].set_text("screens.leader_den.invite_in")
+            self.focus_button["invite"].set_text("screens.leader_den.invite")
 
-        self.focus_button["invite_in"].show()
+        self.focus_button["invite"].show()
 
         self.focus_outsider_button_container.enable()
         if (
