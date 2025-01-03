@@ -328,7 +328,7 @@ class Pregnancy_Events:
                 unknowns = []
                 for outcat in Cat.all_cats:
                     outcat = Cat.all_cats.get(outcat)
-                    if not outcat.dead and outcat.status in ['kittypet', 'loner', 'rogue']:    
+                    if not outcat.dead and outcat.status in ['kittypet', 'loner', 'rogue', 'former Clancat']:    
                         unknowns.append(outcat)
 
                 possible_affair_partners = [i for i in unknowns if
@@ -456,8 +456,8 @@ class Pregnancy_Events:
                         for par in outside_parent:
                             if par:
                                 cats_involved.append(par.ID)
-                                cat.birth_cooldown = game.config["pregnancy"]["birth_cooldown"]
-                                cat.get_injured("recovering from birth", event_triggered=True)
+                                par.birth_cooldown = game.config["pregnancy"]["birth_cooldown"]
+                                par.get_injured("recovering from birth", event_triggered=True)
                     for kit in kits:
                         cats_involved.append(kit.ID)
                     game.cur_events_list.append(Single_Event(print_event, "birth_death", cats_involved=cats_involved))
