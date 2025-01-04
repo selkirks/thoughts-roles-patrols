@@ -267,7 +267,7 @@ class Name:
             "lilac" : ["PALEGREY", "SILVER", "LILAC"],
             "cinnamon" : ["SIENNA", "DARKGINGER", "GOLDEN-BROWN"],
             "fawn" : ["LIGHTBROWN"],
-            "red" : ["GINGER", "DARKGINGER"],
+            "ginger" : ["GINGER", "DARKGINGER"],
             "cream" : ["CREAM", "PALEGINGER"],
             "white" : ["WHITE"],
             "silver shaded" : ["WHITE"]
@@ -427,7 +427,7 @@ class Name:
                     pelt.append("Smoke")
             if (self.genotype.white[1] in ['ws', 'wt'] and self.genotype.whitegrade < 4) or\
                 (self.genotype.white[0] in ['ws', 'wt'] and self.genotype.white[1] not in ['ws', 'wt'] and self.genotype.whitegrade > 2):
-                options.append("TwoColour")
+                pelt.append("TwoColour")
 
         if named_after_pelt and len(pelt) > 0:
             self.suffix = random.choice(self.names_dict["pelt_suffixes"][random.choice(pelt)])
