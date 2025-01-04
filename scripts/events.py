@@ -846,10 +846,7 @@ class Events:
 
         names = ', '.join([str(x.name) for x in eligible_cats[:-1]]) + ' and ' + str(eligible_cats[-1].name) if len(eligible_cats) > 1 else eligible_cats[0].name
 
-        if len(eligible_cats) > 1:
-            text = 'To the shock of everyone, ' + names + ' have found their way home with reports of the Twolegs releasing them nearby.'
-        else:
-            text = 'To the shock of everyone, m_c has found {PRONOUN/m_c/poss} way home with reports of the Twolegs releasing {PRONOUN/m_c/object} nearby.'   
+        text = i18n.t('hardcoded.event_tnr_return', cats=names, count=len(eligible_cats))   
         for cat in eligible_cats:
             cat.outside = False
             additional = cat.add_to_clan()
@@ -858,7 +855,7 @@ class Events:
                     Cat.all_cats[x].status = 'kittypet'
                     Cat.all_cats[x].name.suffix = ''
                     Cat.all_cats[x].get_permanent_condition("infertility", False, custom_reveal=4-Cat.all_cats[x].moons)
-            text = event_text_adjust(Cat, text, main_cat=eligible_cats[0], clan=game.clan)
+        text = event_text_adjust(Cat, text, main_cat=eligible_cats[0], clan=game.clan)
         game.cur_events_list.append(Single_Event(text, "misc", cat_IDs))
         
         self.handle_lost_cats_return(cat_IDs)
@@ -2422,7 +2419,7 @@ class Events:
                     event = i18n.t(
                         "hardcoded.flea_spread",
                         cats=adjust_list_text(infected_names),
-                        count=len(infected_names),
+                        count=len(infected_names)-1,
                     )
                 else:
                     event = i18n.t(

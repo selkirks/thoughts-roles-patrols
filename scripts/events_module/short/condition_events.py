@@ -854,8 +854,7 @@ class Condition_Events:
             "one bad eye": "failing eyesight",
             "failing eyesight": "blind",
             "partial hearing loss": "deaf",
-            "partial hearing loss in one ear" : "deaf in one ear",
-            "partial hearing loss in one ear" : "partial hearing loss",
+            "partial hearing loss in one ear" : ["deaf in one ear", "partial hearing loss"],
             "deaf in one ear" : "deaf"
         }
 
@@ -866,6 +865,17 @@ class Condition_Events:
             # checking if the cat has a congenital condition to reveal and handling duration and death
             prev_lives = game.clan.leader_lives
             status = cat.moon_skip_permanent_condition(condition)
+
+            if condition in condition_progression:
+                progs = condition_progression[condition]
+                if isinstance(progs, list):
+                    for cond in progs:
+                        if cond in condition:
+                            cat.permanent_condition.pop(condition)
+                            continue
+                elif progs in condition:
+                    cat.permanent_condition.pop(condition)
+                    continue
 
             # if cat is dead, break
             if cat.dead or game.clan.leader_lives < prev_lives:

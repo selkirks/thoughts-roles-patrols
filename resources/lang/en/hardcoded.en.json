@@ -85,12 +85,16 @@
         "one": " {PRONOUN/m_c/subject/CAP} {VERB/m_c/bring/brings} along {PRONOUN/m_c/poss} kitten.",
         "many": " {PRONOUN/m_c/subject/CAP} {VERB/m_c/bring/brings} along {PRONOUN/m_c/poss} kittens."
       },
+      "event_tnr_return": {
+        "one": "To the shock of everyone, m_c has found {PRONOUN/m_c/poss} way home with reports of the Twolegs releasing {PRONOUN/m_c/object} nearby.",
+        "many": "To the shock of everyone, %{cats} have found their way home with reports of the Twolegs releasing them nearby."
+      },
       "kittencough_spread": {
         "one": "Kittencough has spread around the nursery. %{kits} is affected.",
         "many": "Kittencough has spread around the nursery. %{kits} are affected."
       },
       "flea_spread": {
-        "two": "Fleas have been hopping from pelt to pelt and now %{cats} are both infested.",
+        "one": "Fleas have been hopping from pelt to pelt and now %{cats} are both infested.",
         "many": "Fleas have been hopping from pelt to pelt and now %{cats} are all infested."
       },
       "illness_spread": "%{illness} has spread around the camp. %{cats} have been infected.",
@@ -107,7 +111,7 @@
       "move_on_dead_mate": "m_c will always love %{mate}, but has decided to move on.",
       "breakup_angy": "m_c and r_c had a huge fight and broke up.",
       "breakup_chill": "m_c and r_c broke up.",
-      "trans_newname" : " After some thought, a new name seems in order too.",
+      "trans_newname": " After some thought, a new name seems in order too.",
       "expired_prey": {
         "one": "A piece of freshkill expired and was removed from the freshkill pile.",
         "many": "%{count} pieces of prey expired and were removed from the freshkill pile."
