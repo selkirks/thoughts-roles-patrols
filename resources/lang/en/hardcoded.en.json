@@ -45,7 +45,7 @@
         "one": "%{names} found a %{insert} and decide to adopt it.",
         "many": "%{names} found a %{insert} and decide to adopt them."
       },
-      "new_kit_thought": "Snuggles up to the belly of r_c",
+      "new_kit_thought": "Snuggles up to the belly of %{name}",
       "event_mediator_app": "m_c has chosen to use {PRONOUN/m_c/poss} skills and experience to help solve the Clan's disagreements. A meeting is called, and {PRONOUN/m_c/subject} {VERB/m_c/become/becomes} the Clan's newest mediator.",
       "herbs_found": {
         "zero": "med_name could not find any herbs this moon.",
@@ -62,10 +62,9 @@
       },
       "focus_herbs": {
         "zero": "Despite the focus of the Clan, no additional herbs could be gathered.",
-        "one": "With the focus of the Clan, %{count} additional herb was gathered.",
-        "many": "With the focus of the Clan, %{count} additional herbs were gathered."
+        "one": "With the focus of the Clan, %{herbs} was gathered.",
+        "many": "With the focus of the Clan, %{herbs} were gathered."
       },
-      "focus_herbs_log": "With the additional focus of the Clan, the following herbs were gathered: %{herbs}.",
       "focus_raid_prey": {
         "one": "With the focus of the Clan, %{amount} piece of prey was... acquired.",
         "many": "With the focus of the Clan, %{amount} pieces of prey were... acquired."
@@ -78,21 +77,6 @@
         "one": "A cat got %{condition} while raiding other Clans for more prey.",
         "many": "Multiple cats got %{condition} while raiding other Clans for more prey."
       },
-      "focus_multi_prey_herbs": {
-        "zero": "With the focus of the Clan, %{warrior_amount} additional pieces of prey were gathered, but no herbs were found.",
-        "one": "With the focus of the Clan, %{warrior_amount} additional pieces of prey and %{count} herb were gathered.",
-        "many": "With the focus of the Clan, %{warrior_amount} additional pieces of prey and %{count} herbs were gathered."
-      },
-      "focus_one_prey_herbs": {
-        "zero": "With the focus of the Clan, %{warrior_amount} additional piece of prey was gathered, but no herbs were found.",
-        "one": "With the focus of the Clan, %{warrior_amount} additional piece of prey and %{count} herb were gathered.",
-        "many": "With the focus of the Clan, %{warrior_amount} additional piece of prey and %{count} herbs were gathered."
-      },
-      "focus_no_prey_herbs": {
-        "zero": "Despite the additional focus of the Clan, neither prey nor herbs could be gathered.",
-        "one": "With the focus of the Clan, no additional prey was gathered, but %{count} herb was gathered.",
-        "many": "With the focus of the Clan, no additional prey was gathered, but %{count} herbs were gathered."
-      },
       "event_lost1": "After a long journey, m_c has finally returned home to c_n.",
       "event_lost2": "m_c was found at the border, tired but happy to be home.",
       "event_lost3": "m_c strides into camp, much to the everyone's surprise. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} home!",
@@ -101,12 +85,16 @@
         "one": " {PRONOUN/m_c/subject/CAP} {VERB/m_c/bring/brings} along {PRONOUN/m_c/poss} kitten.",
         "many": " {PRONOUN/m_c/subject/CAP} {VERB/m_c/bring/brings} along {PRONOUN/m_c/poss} kittens."
       },
+      "event_tnr_return": {
+        "one": "To the shock of everyone, m_c has found {PRONOUN/m_c/poss} way home with reports of the Twolegs releasing {PRONOUN/m_c/object} nearby.",
+        "many": "To the shock of everyone, %{cats} have found their way home with reports of the Twolegs releasing them nearby."
+      },
       "kittencough_spread": {
         "one": "Kittencough has spread around the nursery. %{kits} is affected.",
         "many": "Kittencough has spread around the nursery. %{kits} are affected."
       },
       "flea_spread": {
-        "two": "Fleas have been hopping from pelt to pelt and now %{cats} are both infested.",
+        "one": "Fleas have been hopping from pelt to pelt and now %{cats} are both infested.",
         "many": "Fleas have been hopping from pelt to pelt and now %{cats} are all infested."
       },
       "illness_spread": "%{illness} has spread around the camp. %{cats} have been infected.",
@@ -115,14 +103,15 @@
       "thought_meeting": "Is wondering about those new cats",
       "thought_new_dead": "Explores a new, starry world",
       "thought_outside_dam": "Is wondering what their kits are doing",
-      "thought_outside_sire": "",
-      "thought_outside_surrogate": "",
+      "thought_outside_sire": "Is wondering how %{name} is doing",
+      "thought_outside_surrogate": "Wonders about those oddly named cats",
       "scar_event0": "m_c's %{injury} has healed, but {PRONOUN/m_c/subject}'ll always carry evidence of it on {PRONOUN/m_c/poss} pelt.",
       "scar_event1": "m_c healed from {PRONOUN/m_c/poss} %{injury} but will forever be marked by a scar.",
       "scar_event2": "m_c's %{injury} has healed, but the injury left {PRONOUN/m_c/object} scarred.",
-      "move_on_dead_mate": "m_c will always love %[mate}, but has decided to move on.",
+      "move_on_dead_mate": "m_c will always love %{mate}, but has decided to move on.",
       "breakup_angy": "m_c and r_c had a huge fight and broke up.",
       "breakup_chill": "m_c and r_c broke up.",
+      "trans_newname": " After some thought, a new name seems in order too.",
       "expired_prey": {
         "one": "A piece of freshkill expired and was removed from the freshkill pile.",
         "many": "%{count} pieces of prey expired and were removed from the freshkill pile."
