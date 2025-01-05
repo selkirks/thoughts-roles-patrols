@@ -1591,7 +1591,7 @@ def unpack_appearance_ruleset(cat, rule, short, pelt, color):
             for scar in cat.pelt.scars:
                 if scar in _scar_details:
                     scarlist.append(i18n.t(f"cat.pelts.{scar}"))
-            return adjust_list_text(set(scarlist)) if len(scarlist) > 0 else ""
+            return adjust_list_text(list(set(scarlist))) if len(scarlist) > 0 else "" # note: this doesn't preserve order!
     else:
         raise Exception(f"Unmatched ruleset item {rule} in describe_appearance!")
     return ""

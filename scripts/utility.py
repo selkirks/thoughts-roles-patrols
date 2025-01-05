@@ -1835,6 +1835,10 @@ def adjust_list_text(list_of_items: List) -> str:
     :return: the new string
     """
 
+    if not isinstance(list_of_items, list):
+        logger.warning("non-list object was passed to adjust_list_text")
+        list_of_items = list(list_of_items)
+
     if len(list_of_items) == 0:
         item1 = ""
         item2 = ""
