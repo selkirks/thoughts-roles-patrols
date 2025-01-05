@@ -23,7 +23,7 @@
       "ceremony_leader_3": "%{oldname} has received {PRONOUN/m_c/poss} nine lives and has become the new leader of the Clan. {PRONOUN/m_c/subject/CAP} {VERB/m_c/feel/feels} like {PRONOUN/m_c/subject} {VERB/m_c/are/is}n't ready for this new responsibility, but will try {PRONOUN/m_c/poss} best to do what is right for the Clan.",
       "ceremony_closer": "Visit %{name}'s profile to see {PRONOUN/m_c/poss} full leader ceremony.",
       "ceremony_deputy_bloodthirsty": "m_c has been chosen as the new deputy. {PRONOUN/m_c/subject/CAP} {VERB/m_c/look/looks} at the Clan leader with an odd glint in {PRONOUN/m_c/poss} eyes.",
-      "ceremony_deputy": "m_c chooses r_c to take over as deputy. %{previous}",
+      "ceremony_deputy": "lead_name chooses m_c to take over as deputy. %{previous}",
       "ceremony_deputy_prev0": "{PRONOUN/m_c/subject/CAP} {VERB/m_c/know/knows} dep_name would approve.",
       "ceremony_deputy_prev1": "{PRONOUN/m_c/subject/CAP} {VERB/m_c/hope/hopes} dep_name would approve.",
       "ceremony_deputy_prev2": "{PRONOUN/m_c/subject/CAP} {VERB/m_c/don't/doesn't} know if dep_name would approve, but life must go on.",

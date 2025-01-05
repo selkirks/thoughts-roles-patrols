@@ -433,19 +433,9 @@ class Pelt:
                 "NOEAR": "no ears"
             }
 
-            additional_details = []
+            scarlist = []
             for scar in cat.pelt.scars:
-                if scar in scar_details and scar_details[scar] not in additional_details:
-                    additional_details.append(scar_details[scar])
-
-            if len(additional_details) > 2:
-                color_name = f"{color_name} with {', '.join(additional_details[:-1])}, and {additional_details[-1]}"
-            elif len(additional_details) == 2:
-                color_name = f"{color_name} with {' and '.join(additional_details)}"
-            elif additional_details:
-                color_name = f"{color_name} with {additional_details[0]}"
-        
-            if len(cat.pelt.scars) >= 3:
-                color_name = f"scarred {color_name}"
-
+                if scar in scar_details:
+                    scarlist.append(i18n.t(f"cat.pelts.{scar}"))
+            color_name += adjust_list_text(list(set(scarlist))) if len(scarlist) > 0 else "" # note: this doesn't preserve order!
         return color_name

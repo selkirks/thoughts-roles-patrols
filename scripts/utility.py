@@ -1971,7 +1971,11 @@ def adjust_list_text(list_of_items: List) -> str:
     :param list_of_items: the list of items you want converted
     :return: the new string
     """
-    list_of_items = list(list_of_items)
+
+    if not isinstance(list_of_items, list):
+        logger.warning("non-list object was passed to adjust_list_text")
+        list_of_items = list(list_of_items)
+
     if len(list_of_items) == 0:
         item1 = ""
         item2 = ""
