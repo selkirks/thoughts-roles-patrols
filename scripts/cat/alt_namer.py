@@ -263,6 +263,7 @@ class Namer():
             else:
                 possible_prefixes = deepcopy(self.all_prefixes[base]['solid'][white + '_white'])
 
+        possible_prefixes *= 2
 
         possible_prefixes += self.all_prefixes['general']['any']
         if self.moons < 3:
@@ -336,6 +337,8 @@ class Namer():
             extra_prefixes = extra_prefixes[white + '_white']
         
         possible_prefixes += extra_prefixes
+        possible_prefixes *= 2
+
         possible_prefixes += self.all_prefixes['general']['any']
         if self.moons < 3:
             possible_prefixes += self.all_prefixes['general']['big']
@@ -398,6 +401,8 @@ class Namer():
             except:
                 pass
         
+
+        possible_prefixes *= 2
         possible_prefixes += self.all_prefixes['general']['any']
         if self.moons < 3:
             possible_prefixes += self.all_prefixes['general']['big']
