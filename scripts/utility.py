@@ -954,6 +954,7 @@ def create_new_cat(
             if kittypet:
                 name = choice(names.names_dict["loner_names"])
                 if bool(getrandbits(1)):
+                    from scripts.cat.pelts import Pelt
                     choice([ choice(Pelt.collars), choice(Pelt.bandana_collars), choice(Pelt.harness_accessories), choice(Pelt.bows_accessories)])
             elif loner and bool(
                 getrandbits(1)
@@ -966,6 +967,7 @@ def create_new_cat(
 
                 # loner acc
             if loner :
+                from scripts.cat.pelts import Pelt
                 name = choice(names.names_dict["loner_names"])
                 if bool(getrandbits(1)):
                     accessory = choice([ choice(Pelt.bone_accessories), choice(Pelt.butterflies_accessories), choice(Pelt.stuff_accessories), choice(Pelt.plant_accessories), choice(Pelt.wild_accessories), choice(Pelt.tail_accessories), choice(Pelt.flower_accessories), choice(Pelt.plant2_accessories), choice(Pelt.snake_accessories), choice(Pelt.smallAnimal_accessories), choice(Pelt.deadInsect_accessories), choice(Pelt.aliveInsect_accessories), choice(Pelt.fruit_accessories), choice(Pelt.crafted_accessories), choice(Pelt.tail2_accessories)])
