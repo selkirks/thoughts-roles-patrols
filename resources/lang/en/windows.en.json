@@ -64,7 +64,7 @@
         "update_message": "Update in progress.",
         "downloading_update": "Downloading update...",
         "restart_announce": "The game will automatically restart in %{count}...",
-        "update_available": "<strong>Update to ClanGen %{latest_version_number}</strong>",
+        "update_available": "<strong>Update to Genemod %{latest_version_number}</strong>",
         "current_version": "Your current version: %{ver}",
         "install_update": "Install update now?",
         "dont_ask_again": "Don't ask again",

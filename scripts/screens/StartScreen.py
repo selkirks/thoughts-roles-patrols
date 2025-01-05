@@ -320,7 +320,7 @@ class StartScreen(Screens):
                 not get_version_info().is_source_build
                 and not get_version_info().is_itch
                 and get_version_info().upstream.lower()
-                == "ClanGenOfficial/clangen".lower()
+                == "ChinchBug/clangen-genemod".lower()
                 and game.settings["check_for_updates"]
                 and not has_checked_for_update
             ):
