@@ -249,7 +249,7 @@ class Namer():
             if base != 'black':
                 point = 'colourpoint'
 
-        return [base, tortie, tabby, white, point]
+        return [base, tortie, tabby, white, point, False]
 
     def filter(self, all, used, filter_out):
         return [x for x in all if x not in used and x not in filter_out]
