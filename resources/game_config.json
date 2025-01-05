@@ -272,21 +272,24 @@
   },
   "cat_generation": {
     "base_permanent_condition": 90,
+    "base_male_tortie": 13,
+    "base_female_tortie": 4,
+    "base_heterochromia": 120,
+    "direct_inheritance": 15,
+    "wildcard_tortie": 9,
+    "vit_chance": 8,
+    "random_point_chance": 5,
     "physical_trait_chance": 20,
 		"physical_trait_inherit_chance": 50
   },
   "cat_name_controls": {
-    "prefix_change_chance" : {
-      "kit-apprentice" : 75,
-      "apprentice-warrior" : 75,
-      "warrior-elder" : 75,
-      "pelt-change-modifier" : 15
-    },
-    "trans_prefix_change_chance": 25,
+    "always_name_after_appearance": false,
+    "allow_eye_names": false,
     "comment": [
-      "If prefix changing is allowed: how often should a prefix swap happen.",
-      "Pelt change modifier defines how much more often it should happen when a cat's pelt is one that changes over time - such as ", 
-      "with colourpoints darkening, amber cats turning orange, etc. This'll only effect it once"
+      "Set always_name_after_appearance to true if you always want cats named after the color of their pelt.",
+      "This overrides the chances of it otherwise. If cats can't find a pelt color, they will choose from normal_prefixes",
+      "So as not to cause an error - false by default",
+      "allow_eye_names allows cats to be named after the color of their eyes - true by default"
     ]
   },
   "accessory_generation": {
@@ -422,57 +425,57 @@
     "dominant white": 15,
     "white spotting": 3,
     "birman gloving": 10,
-    "thai white": 300,
-    "salmiak": 150,
+    "thai white": 200,
+    "salmiak": 125,
     "colourpoint": 10,
     "sepia": 15,
-    "mocha": 300,
-    "albino": 200,
+    "mocha": 175,
+    "albino": 175,
     "silver": 10,
     "solid": 2,
-    "charcoal": 150,
-    "blotched": 3,
-    "ticked": 10,
+    "charcoal": 75,
+    "blotched": 2,
+    "ticked": 5,
 
-    "pink-eyed dilute": 400,
-    "dilute modifier": 150,
-    "grizzle": 300,
-    "carnelian": 175,
-    "russet": 225,
-    "amber": 100,
-    "sunshine": 100,
-    "extreme sunshine": 125,
-    "copper": 125,
-    "karpati": 300,
-    "bleaching": 400,
-    "ghosting": 400,
-    "satin": 400,
-    "glitter": 150,
+    "pink-eyed dilute": 150,
+    "dilute modifier": 100,
+    "grizzle": 100,
+    "carnelian": 100,
+    "russet": 100,
+    "amber": 75,
+    "sunshine": 75,
+    "extreme sunshine": 100,
+    "copper": 100,
+    "karpati": 100,
+    "bleaching": 125,
+    "ghosting": 125,
+    "satin": 125,
+    "glitter": 100,
 
-    "wirehair": 400,
-    "laperm": 400,
-    "cornish": 200,
-    "urals": 200,
-    "tenn": 200,
-    "fleece": 200,
-    "selkirk": 400,
-    "devon": 200,
-    "canadian hairless": 300,
-    "russian hairless": 400,
-    "lykoi": 400,
+    "wirehair": 200,
+    "laperm": 200,
+    "cornish": 150,
+    "urals": 150,
+    "tenn": 150,
+    "fleece": 150,
+    "selkirk": 200,
+    "devon": 150,
+    "canadian hairless": 225,
+    "russian hairless": 250,
+    "lykoi": 125,
 
-    "curl": 400,
-    "fold": 400,
-    "manx": 400,
-    "american bobtail": 300,
-    "karelian bobtail": 500,
-    "kurilian bobtail": 500,
-    "japanese bobtail": 300,
-    "toybob": 400,
-    "ringtail": 400,
-    "munchkin": 400,
-    "polydactyl": 150,
-    "DBE": 150,
+    "curl": 200,
+    "fold": 200,
+    "manx": 225,
+    "american bobtail": 200,
+    "karelian bobtail": 200,
+    "kurilian bobtail": 250,
+    "japanese bobtail": 175,
+    "toybob": 200,
+    "ringtail": 150,
+    "munchkin": 200,
+    "polydactyl": 75,
+    "DBE": 100,
 
     "body_ranges": [1, 4, 12, 60, 12, 4, 1],
     "height_ranges": [1, 4, 12, 60, 180, 60, 12, 2, 2, 1],
@@ -540,6 +543,11 @@
       "apprentice": 1,
       "emergency": 1,
       "comment": "Defines how much a working warrior(leader/deputy) or apprentice gathers additionally."
+    },
+    "herb gathering": {
+      "med": 3,
+      "med_apprentice": 2,
+      "comment": "Defines how much a working warrior(leader/deputy) or (apprentice) healer gathers additionally."
     },
     "outsiders": {
       "reputation": 5,
@@ -663,57 +671,5 @@
     }
   },
   "lock_season": false,
-  "comment": "Forces the season to be locked at the Clan's starting_season",	
-  "clan_resources": {
-		"herbs": {
-			"comment": "Clan size * required_herbs_per_cat / adequate number will determine adequate supply qualifier. Clan size * required_herbs_per_cat * excess number will determine excess supply qualifier",
-			"required_herbs_per_cat": 2,
-			"adequate": 2,
-			"excess": 2,
-			"primary_sense": 3,
-			"secondary_sense": 2,
-			"primary_clever": 3,
-			"secondary_clever": 2,
-			"base_mortality_effect": 3,
-			"base_duration_effect": 1,
-			"base_risk_effect": 3,
-			"general_amount_bonus": 2,
-			"forest": {
-				"newleaf": [2, 3, 2],
-				"greenleaf": [1, 2, 3],
-				"leaf-fall": [2, 3, 2],
-				"leaf-bare": [5, 2, 1]
-			},
-			"mountainous": {
-				"newleaf": [2, 3, 2],
-				"greenleaf": [1, 2, 3],
-				"leaf-fall": [2, 3, 2],
-				"leaf-bare": [5, 2, 1]
-			},
-			"plains": {
-				"newleaf": [2, 3, 2],
-				"greenleaf": [1, 2, 3],
-				"leaf-fall": [2, 3, 2],
-				"leaf-bare": [5, 2, 1]
-			},
-			"beach": {
-				"newleaf": [2, 3, 2],
-				"greenleaf": [1, 2, 3],
-				"leaf-fall": [2, 3, 2],
-				"leaf-bare": [5, 2, 1]
-			},
-			"desert": {
-				"newleaf": [2, 3, 2],
-				"greenleaf": [1, 2, 3],
-				"leaf-fall": [2, 3, 2],
-				"leaf-bare": [5, 2, 1]
-			},
-			"wetlands": {
-				"newleaf": [2, 3, 2],
-				"greenleaf": [1, 2, 3],
-				"leaf-fall": [2, 3, 2],
-				"leaf-bare": [5, 2, 1]
-			}
-		}
-	}
+  "comment": "Forces the season to be locked at the Clan's starting_season"
 }

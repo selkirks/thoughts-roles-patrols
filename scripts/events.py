@@ -10,6 +10,7 @@ import random
 
 # pylint: enable=line-too-long
 import traceback
+from collections import Counter
 
 import i18n
 
@@ -17,6 +18,7 @@ from scripts.cat.cats import Cat, cat_class, BACKSTORIES
 from scripts.cat.enums import CatAgeEnum
 from scripts.cat.history import History
 from scripts.cat.names import Name
+from scripts.clan import HERBS
 from scripts.clan_resources.freshkill import FRESHKILL_EVENT_ACTIVE
 from scripts.conditions import (
     medical_cats_condition_fulfilled,
@@ -190,9 +192,7 @@ class Events:
             insert = adjust_list_text(ghost_names)
 
             if len(Cat.dead_cats) > 1:
-                event = i18n.t(
-                    "hardcoded.event_deaths", count=len(Cat.dead_cats), insert=insert
-                )
+                event = i18n.t("hardcoded.event_deaths", count=2, insert=insert)
 
                 if len(ghost_names)-len(faded_kits) > 2:
                     alive_cats = list(
@@ -239,17 +239,10 @@ class Events:
 
             else:
                 event = i18n.t("hardcoded.event_deaths", count=1)
-                #event = event_text_adjust(Cat, event, main_cat=Cat.dead_cats[0])
+                event = event_text_adjust(Cat, event, main_cat=Cat.dead_cats[0])
 
             game.cur_events_list.append(
-                Single_Event(
-                    event,
-                    ["birth_death"],
-                    [i.ID for i in Cat.dead_cats],
-                    cat_dict={"m_c": Cat.dead_cats[0]}
-                    if len(Cat.dead_cats) == 1
-                    else None,
-                )
+                Single_Event(event, ["birth_death"], [i.ID for i in Cat.dead_cats])
             )
             if extra_event:
                 game.cur_events_list.append(
@@ -272,26 +265,15 @@ class Events:
                 game.cur_events_list.insert(0, Single_Event(event_string))
                 game.freshkill_event_list.append(event_string)
 
+        self.herb_gather()
         self.handle_focus()
-
-        # handle the herb supply for the moon
-        game.clan.herb_supply.handle_moon(
-            clan_size=get_living_clan_cat_count(Cat),
-            clan_cats=Cat.all_cats_list,
-            med_cats=get_alive_status_cats(
-                Cat,
-                get_status=["healer", "healer apprentice"],
-                working=True
-            )
-        )
 
         if game.clan.game_mode in ["expanded", "cruel season"]:
             amount_per_med = get_amount_cat_for_one_medic(game.clan)
-            med_fulfilled = medical_cats_condition_fulfilled(
+            med_fullfilled = medical_cats_condition_fulfilled(
                 Cat.all_cats.values(), amount_per_med
             )
-
-            if not med_fulfilled:
+            if not med_fullfilled:
                 string = i18n.t("defaults.warn_low_medcats")
                 game.cur_events_list.insert(0, Single_Event(string, "health"))
         else:
@@ -463,16 +445,15 @@ class Events:
                                 invited_cat.status = invited_cat.age
                                 if not invited_cat.name.suffix:
                                     invited_cat.name = Name(
-                                        Cat,
-                                        invited_cat,
                                         invited_cat.name.prefix,
                                         invited_cat.name.suffix,
-                                        biome=game.clan.biome,
+                                        game.clan.biome,
+                                        cat=invited_cat
                                     )
                                     invited_cat.name.give_suffix(
-                                        skills=invited_cat.skills,
-                                        personality=invited_cat.personality,
-                                        biome=game.clan.biome
+                                        pelt=None,
+                                        biome=game.clan.biome,
+                                        tortiepattern=None,
                                     )
                                     invited_cat.specsuffix_hidden = False
 
@@ -589,6 +570,71 @@ class Events:
         )
         game.clan.freshkill_pile.add_freshkill(prey_amount)
 
+    def herb_gather(self):
+        """
+        TODO: DOCS
+        """
+        if game.clan.game_mode == "classic":
+            # in classic, you have a random amount of herbs.
+            # the actual herb doesn't matter; it's just the count.
+            herb_owned = random.choice(HERBS)
+            # values that will change the text that is displayed to say how many herbs you have
+            required_herbs = get_living_clan_cat_count(Cat) * 4
+            adjustment_factor = random.choices(
+                [0.25, 0.5, 1, 2, 3], weights=[1, 2, 3, 2, 1], k=1
+            )[0]
+            herb_amount = int(required_herbs * adjustment_factor)
+            game.clan.herbs = {herb_owned: herb_amount}
+        else:
+            event_list = []
+            meds_available = get_alive_status_cats(
+                Cat,
+                ["healer", "healer apprentice"],
+                working=True,
+                sort=True,
+            )
+            for med in meds_available:
+                if game.clan.current_season in ["Newleaf", "Greenleaf"]:
+                    amount = random.choices([1, 2, 3, 4], weights=[1, 2, 2, 2], k=1)
+                elif game.clan.current_season == "Leaf-fall":
+                    amount = random.choices([0, 1, 2], weights=[3, 2, 1], k=1)
+                else:
+                    amount = random.choices([0, 1], weights=[3, 1], k=1)
+                if amount[0] != 0:
+                    herbs_found = random.sample(HERBS, k=amount[0])
+                    herb_display = []
+                    for herb in herbs_found:
+                        if herb in ["blackberry"]:
+                            continue
+                        if game.clan.current_season in ["Newleaf", "Greenleaf"]:
+                            amount = random.choices([2, 5, 8], weights=[3, 3, 1], k=1)
+                        else:
+                            amount = random.choices([2, 4], weights=[4, 1], k=1)
+                        if herb in game.clan.herbs:
+                            game.clan.herbs[herb] += amount[0]
+                        else:
+                            game.clan.herbs.update({herb: amount[0]})
+                        herb_display.append(herb.replace("_", " "))
+                else:
+                    herbs_found = []
+                    herb_display = []
+                if not herbs_found:
+                    event_list.append(
+                        i18n.t("hardcoded.herbs_found", insert="", count=0)
+                    )
+                else:
+                    try:
+                        insert = adjust_list_text(herb_display)
+                        event_list.append(
+                            i18n.t("hardcoded.herbs_found", insert=insert, count=2)
+                        )
+                    except IndexError:
+                        event_list.append(
+                            i18n.t("hardcoded.herbs_found", insert="", count=0)
+                        )
+                        return
+            game.herb_events_list.extend(event_list)
+
     def handle_focus(self):
         """
         This function should be called late in the 'one_moon' function and handles all focuses which are possible to handle here:
@@ -668,20 +714,46 @@ class Events:
             game.freshkill_event_list.append(focus_text)
 
         elif game.clan.clan_settings.get("herb gathering"):
-            # get healers
-            healthy_meds = get_alive_status_cats(
-                Cat,
-                get_status=["healer", "healer apprentice"],
-                working=True
-            )
-            # get warriors to help
-            healthy_warriors = get_alive_status_cats(
-                Cat,
-                get_status=["warrior", "deputy", "leader"],
-                working=True
-            )
+            herbs_found = []
 
-            focus_text = game.clan.herb_supply.handle_focus(healthy_meds, healthy_warriors)
+            # handle healers
+            healthy_meds = list(filter(
+                lambda c: c.status == "healer" and not c.dead
+                and not c.outside and not c.exiled and not c.not_working(),
+                Cat.all_cats.values()
+            ))
+            med_amount = game.config["focus"]["herb gathering"]["med"]
+            for med in healthy_meds:
+                herbs_found.extend(random.sample(HERBS, k=med_amount))
+
+            # handle healer apprentices
+            healthy_med_apps = list(
+                filter(
+                    lambda c: c.status == "healer apprentice"
+                    and not c.dead
+                    and not c.outside
+                    and not c.exiled
+                    and not c.not_working(),
+                    Cat.all_cats.values(),
+                )
+            )
+            med_amount = game.config["focus"]["herb gathering"]["med_apprentice"]
+            for med in healthy_med_apps:
+                herbs_found.extend(random.sample(HERBS, k=med_amount))
+
+            # finish
+            herb_amount = len(herbs_found)
+            herb_counter = Counter(herbs_found)
+            game.clan.herbs.update(herb_counter)
+            focus_text = i18n.t("hardcoded.focus_herbs", count=herb_amount)
+
+            log_text = i18n.t(
+                "hardcoded.focus_herbs_log",
+                herbs=adjust_list_text(
+                    [str(amount) + " " + i18n.t(f"conditions.herbs.{herb}", count=2) for herb, amount in herb_counter.items()]
+                ),
+            )
+            game.herb_events_list.append(log_text)
 
         elif game.clan.clan_settings.get("threaten outsiders"):
             amount = game.config["focus"]["outsiders"]["reputation"]
@@ -731,6 +803,7 @@ class Events:
             )
 
             # handle herbs
+            herbs_found = []
             healthy_meds = list(
                 filter(
                     lambda c: c.status == "healer"
@@ -741,8 +814,19 @@ class Events:
                     Cat.all_cats.values(),
                 )
             )
+            med_amount = info_dict["herb_medicine"]
+            for med in healthy_meds:
+                herbs_found.extend(random.sample(HERBS, k=med_amount))
+            herb_amount = len(herbs_found)
+            if herb_amount > 0:
+                herb_counter = Counter(herbs_found)
+                herbs = adjust_list_text(
+                    i18n.t(f"conditions.herbs.{herb}", count=2) for herb in herbs_found
+                )
+                game.clan.herbs.update(herb_counter)
+                log_text = i18n.t("hardcoded.focus_herbs_log", herbs=herbs)
 
-            herb_focus_text = game.clan.herb_supply.handle_focus(healthy_meds)
+                game.herb_events_list.append(log_text)
 
             # handle injuries / illness
             relevant_cats = healthy_warriors + healthy_meds
@@ -806,13 +890,24 @@ class Events:
                     )
                 )
 
-            focus_text = i18n.t(
-                "hardcoded.focus_prey",
-                count=warrior_amount
-            )
-
-            if herb_focus_text:
-                focus_text += f" {herb_focus_text}"
+            if warrior_amount > 1:
+                focus_text = i18n.t(
+                    "hardcoded.multi_prey_herbs",
+                    warrior_amount=warrior_amount,
+                    count=herb_amount,
+                )
+            elif warrior_amount == 1:
+                focus_text = i18n.t(
+                    "hardcoded.one_prey_herbs",
+                    warrior_amount=warrior_amount,
+                    count=herb_amount,
+                )
+            elif warrior_amount <= 0:
+                focus_text = i18n.t(
+                    "hardcoded.no_prey_herbs",
+                    warrior_amount=warrior_amount,
+                    count=herb_amount,
+                )
 
         if focus_text:
             game.cur_events_list.insert(0, Single_Event(focus_text, "misc"))
@@ -846,7 +941,10 @@ class Events:
 
         names = ', '.join([str(x.name) for x in eligible_cats[:-1]]) + ' and ' + str(eligible_cats[-1].name) if len(eligible_cats) > 1 else eligible_cats[0].name
 
-        text = i18n.t('hardcoded.event_tnr_return', cats=names, count=len(eligible_cats))   
+        if len(eligible_cats) > 1:
+            text = 'To the shock of everyone, ' + names + ' have found their way home with reports of the Twolegs releasing them nearby.'
+        else:
+            text = 'To the shock of everyone, m_c has found {PRONOUN/m_c/poss} way home with reports of the Twolegs releasing {PRONOUN/m_c/object} nearby.'   
         for cat in eligible_cats:
             cat.outside = False
             additional = cat.add_to_clan()
@@ -855,7 +953,7 @@ class Events:
                     Cat.all_cats[x].status = 'kittypet'
                     Cat.all_cats[x].name.suffix = ''
                     Cat.all_cats[x].get_permanent_condition("infertility", False, custom_reveal=4-Cat.all_cats[x].moons)
-        text = event_text_adjust(Cat, text, main_cat=eligible_cats[0], clan=game.clan)
+            text = event_text_adjust(Cat, text, main_cat=eligible_cats[0], clan=game.clan)
         game.cur_events_list.append(Single_Event(text, "misc", cat_IDs))
         
         self.handle_lost_cats_return(cat_IDs)
@@ -1572,17 +1670,6 @@ class Events:
 
         involved_cats = [cat.ID]  # Clearly, the cat the ceremony is about is involved.
 
-        # Changing prefix if needed
-        if game.clan.clan_settings["modded names"] and game.clan.clan_settings['dynamic prefixes']:
-            cer_type = 'apprentice-warrior'
-            if 'apprentice' in promoted_to:
-                cer_type = 'kit-apprentice'
-            elif promoted_to == 'elder':
-                cer_type = 'warrior-elder'
-            
-            cat.name.change_prefix(Cat, cat.moons, game.clan.biome, cer_type)
-            
-
         # Time to gather ceremonies. First, lets gather all the ceremony ID's.
 
         # ensure the right ceremonies are loaded for the given language
@@ -1770,9 +1857,6 @@ class Events:
             except KeyError:
                 random_honor = i18n.t("defaults.ceremony_honor")
 
-            if game.clan.clan_settings["modded names"] and game.clan.clan_settings['new suffixes']:
-                cat.name.give_suffix(cat.skills, cat.personality, game.clan.biome, random_honor)
-
         if cat.status in ["warrior", "healer", "mediator"]:
             History.add_app_ceremony(cat, random_honor)
 
@@ -1827,12 +1911,6 @@ class Events:
 
         # remove duplicates
         involved_cats = list(set(involved_cats))
-
-        if str(cat.name) != old_name:
-            if cat.history:
-                cat.history.prev_names.append(old_name)
-            else:
-                cat.history = History(prev_names=[old_name])
 
         game.cur_events_list.append(
             Single_Event(ceremony_text, "ceremony", involved_cats)
@@ -2419,7 +2497,7 @@ class Events:
                     event = i18n.t(
                         "hardcoded.flea_spread",
                         cats=adjust_list_text(infected_names),
-                        count=len(infected_names)-1,
+                        count=len(infected_names),
                     )
                 else:
                     event = i18n.t(

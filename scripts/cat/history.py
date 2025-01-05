@@ -17,10 +17,8 @@ class History:
                  possible_history=None,
                  died_by=None,
                  scar_events=None,
-                 murder=None,
-                 prev_names=None
+                 murder=None
                  ):
-        self.prev_names = prev_names if prev_names else []
         self.beginning = beginning if beginning else {}
         self.mentor_influence = mentor_influence if mentor_influence else {"trait": {}, "skill": {}}
         self.app_ceremony = app_ceremony if app_ceremony else {}
@@ -142,7 +140,6 @@ class History:
     @staticmethod
     def make_dict(cat):
         history_dict = {
-            "prev_names": cat.history.prev_names,
             "beginning": cat.history.beginning,
             "mentor_influence": cat.history.mentor_influence,
             "app_ceremony": cat.history.app_ceremony,

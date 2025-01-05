@@ -5,7 +5,6 @@ import pygame.transform
 import pygame_gui.elements
 
 from scripts.cat.cats import Cat
-from scripts.cat_relations.inheritance import RelationType
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.ui_elements import (
@@ -564,7 +563,7 @@ class FamilyTreeScreen(Screens):
                     ]
                 except:
                     rel_types = [
-                        str(RelationType(rel_type).name) for rel_type in additional_info["type"]
+                        rel_type for rel_type in additional_info["type"]
                     ]
                 rel_types = set(rel_types)  # remove duplicates
                 if "NOT_BLOOD" in rel_types and len(rel_types) > 1:
@@ -581,7 +580,7 @@ class FamilyTreeScreen(Screens):
                 if len(additional_info["additional"]) > 0:
                     add_info = set(additional_info["additional"])  # remove duplicates
                     info_text += "\n"
-                    info_text += adjust_list_text(list(add_info))
+                    info_text += adjust_list_text(add_info)
 
             self.relation_elements["cat" + str(i)] = UISpriteButton(
                 ui_scale(pygame.Rect((324 + pos_x, 485 + pos_y), (50, 50))),

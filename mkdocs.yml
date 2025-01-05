@@ -17,9 +17,7 @@ nav:
         - dev/code/content-adding.md
     - Writing:
         - dev/writing/index.md
-        - Reference:
-          - dev/writing/reference/index.md
-          - dev/writing/reference/trait-dictionary.md
+        - dev/writing/reference.md
         - dev/writing/patrols.md
         - dev/writing/shortevents.md
         - dev/writing/leaders-den-events.md
