@@ -1441,7 +1441,6 @@ class Pregnancy_Events:
                                                         status=cat_type,
                                                         gender='masc',
                                                         alive=choice([True, False]),
-                                                        thought=thought,
                                                         age=parage if parage > 14 else 15,
                                                         outside=True,
                                                         is_parent=True)[0]
