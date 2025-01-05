@@ -324,6 +324,7 @@ class StartScreen(Screens):
                 and game.settings["check_for_updates"]
                 and not has_checked_for_update
             ):
+                print(has_update(UpdateChannel(get_version_info().release_channel)))
                 if has_update(UpdateChannel(get_version_info().release_channel)):
                     update_available = True
                     show_popup = True

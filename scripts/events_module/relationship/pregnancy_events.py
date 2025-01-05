@@ -1413,10 +1413,6 @@ class Pregnancy_Events:
                     if clan.clan_settings['multisire'] and randint(1, game.config['pregnancy']["multi-sire_chance"]) == 1:
                         nr_of_parents = randint(2, game.config['pregnancy']["multi-sire_max_sires"])
                     
-                    thought = i18n.t(
-                        "conditions.pregnancy.half_blood_kitting_thought",
-                        count=kits_amount,
-                    )
                     parage = randint(15,120)
                     cat_type = random.choice(["loner", "kittypet"])
                     blood_parent = create_new_cat(Cat,
@@ -1429,7 +1425,6 @@ class Pregnancy_Events:
                                                 age=parage,
                                                 outside=True,
                                                 is_parent=True)[0]
-                    blood_parent.thought = event_text_adjust(Cat, thought, main_cat=blood_parent)
                     blood_parent2 = []
                     
                     for i in range(0, nr_of_parents):
@@ -1450,11 +1445,8 @@ class Pregnancy_Events:
                                                         age=parage if parage > 14 else 15,
                                                         outside=True,
                                                         is_parent=True)[0]
-                        blood_par2.thought = event_text_adjust(Cat, thought, main_cat=blood_par2)
-
                         blood_parent2.append(blood_par2)
 
-                    blood_parent.thought = thought
                 sire = choice(blood_parent2)
                 chimera_sire = choice(blood_parent2)
                 kit = Cat(parent1=blood_parent.ID, parent2=sire.ID, extrapar=chimera_sire if sire.ID != chimera_sire.ID else None,moons=litter_age, backstory=backstory, status='newborn' if litter_age == 0 else 'kitten')
@@ -1580,6 +1572,15 @@ class Pregnancy_Events:
 
             #### GIVE HISTORY ######
             History.add_beginning(kit, clan_born=bool(cat))
+
+        if blood_parent or blood_parent2:
+            thought = i18n.t(
+                "conditions.pregnancy.half_blood_kitting_thought",
+                count=kits_amount,
+            )
+            blood_parent.thought = event_text_adjust(Cat, thought, main_cat = blood_parent)
+            for par in range(len(blood_parent2)):
+                blood_parent2[par].thought = event_text_adjust(Cat, thought, main_cat = blood_parent2[par])
 
         # check other cats of Clan for siblings
         for kitten in all_kitten:

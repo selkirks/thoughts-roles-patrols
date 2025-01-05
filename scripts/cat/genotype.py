@@ -1378,15 +1378,17 @@ class Genotype:
         height = self.shoulder_height
         if self.munch[0] == 'Mk':
             height *= 1.5
+        if 'Y' in self.sexgene[0]:
+            height /= 1.1
         height = round(height, 2)
 
         if height <= 5.00:
-            height = 0
+            height = 5.00
             if self.height_value >= self.height_indexes[0]:
                 self.height_value = randint(0, self.height_indexes[0]-1)
             return
-        elif height >= 16.00:
-            height = 0
+        elif height >= 15.00:
+            height = 15.00
             if self.height_value < self.height_indexes[8]:
                 self.height_value = randint(self.height_indexes[8], self.height_indexes[9]-1)
             return
@@ -1406,19 +1408,19 @@ class Genotype:
             if self.height_indexes[3] > self.height_value or self.height_value >= self.height_indexes[4]:
                 self.height_value = randint(self.height_indexes[3], self.height_indexes[4]-1)
             return
-        elif 12.51 > height > 11.00:
+        elif 12.50 > height > 11.00:
             if self.height_indexes[4] > self.height_value or self.height_value >= self.height_indexes[5]:
                 self.height_value = randint(self.height_indexes[4], self.height_indexes[5]-1)
             return
-        elif 14.01 > height > 12.50:
+        elif 13.50 > height > 12.49:
             if self.height_indexes[5] > self.height_value or self.height_value >= self.height_indexes[6]:
                 self.height_value = randint(self.height_indexes[5], self.height_indexes[6]-1)
             return
-        elif 15.00 > height > 14.00:
+        elif 14.50 > height > 13.49:
             if self.height_indexes[6] > self.height_value or self.height_value >= self.height_indexes[7]:
                 self.height_value = randint(self.height_indexes[6], self.height_indexes[7]-1)
             return
-        elif 16.00 > height > 14.99:
+        elif 15.00 > height > 14.49:
             if self.height_indexes[7] > self.height_value or self.height_value >= self.height_indexes[8]:
                 self.height_value = randint(self.height_indexes[7], self.height_indexes[8]-1)
             return
@@ -1561,23 +1563,25 @@ class Genotype:
             self.shoulder_height = 9 + value * (random() * step)
         elif index == 5:
             value = self.height_value - self.height_indexes[index-1]
-            step = (12.5-11.01) / self.height_ranges[index]
+            step = (12.49-11.01) / self.height_ranges[index]
             self.shoulder_height = 11.01 + value * (random() * step)
         elif index == 6:
             value = self.height_value - self.height_indexes[index-1]
-            step = (14-12.51) / self.height_ranges[index]
-            self.shoulder_height = 12.51 + value * (random() * step)
+            step = (13.49-12.50) / self.height_ranges[index]
+            self.shoulder_height = 12.50 + value * (random() * step)
         elif index == 7:
             value = self.height_value - self.height_indexes[index-1]
-            step = (14.99-14.01) / self.height_ranges[index]
-            self.shoulder_height = 14.01 + value * (random() * step)
+            step = (14.49-13.50) / self.height_ranges[index]
+            self.shoulder_height = 13.50 + value * (random() * step)
         elif index == 8:
             value = self.height_value - self.height_indexes[index-1]
-            step = (15.99-15.00) / self.height_ranges[index]
-            self.shoulder_height = 15.00 + value * (random() * step)
+            step = (14.99-14.50) / self.height_ranges[index]
+            self.shoulder_height = 14.50 + value * (random() * step)
         elif index == 9:
-            self.shoulder_height = 16.00
+            self.shoulder_height = 15.00
         
+        if 'Y' in self.sexgene:
+            self.shoulder_height *= 1.1
         if self.munch[0] == 'Mk':
             self.shoulder_height /= 1.5
         self.shoulder_height = round(self.shoulder_height, 2)
