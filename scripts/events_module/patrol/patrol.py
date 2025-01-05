@@ -646,6 +646,21 @@ class Patrol:
             possible_patrols, biome, camp, current_season, patrol_type
         )
 
+        if patrol_type == "herb_gathering":
+            target_herbs = game.clan.herb_supply.sorted_by_need
+            herb_filtered_patrols = []
+            herb_romance_patrols = []
+
+            i = 0
+            while not herb_filtered_patrols and i <= len(target_herbs):
+                i += 1
+                herb_filtered_patrols = [patrol for patrol in filtered_patrols if target_herbs[i] in patrol.herbs_given or "random_herbs" in patrol.herbs_given]
+                herb_romance_patrols = [patrol for patrol in romantic_patrols if target_herbs[i] in patrol.herbs_given or "random_herbs" in patrol.herbs_given]
+
+            if herb_filtered_patrols:
+                filtered_patrols = herb_filtered_patrols
+                romantic_patrols = herb_romance_patrols
+
         if not filtered_patrols:
             print(
                 "No normal patrols possible. Repeating filter with used patrols cleared."
@@ -812,9 +827,6 @@ class Patrol:
         return (success_outcome if success else fail_outcome, success)
 
     def update_resources(self, biome_dir, leaf):
-        resource_dir = f"resources/lang/{i18n.config.get('locale')}/patrols/"
-        fallback_dir = f"resources/lang/{i18n.config.get('fallback')}/patrols/"
-
         resources = [
             ("HUNTING_SZN", f"{biome_dir}hunting/{leaf}.json"),
             ("HUNTING", f"{biome_dir}hunting/any.json"),

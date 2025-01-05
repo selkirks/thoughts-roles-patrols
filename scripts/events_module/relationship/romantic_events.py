@@ -303,7 +303,12 @@ class RomanticEvents:
         if len(chosen_interaction.get_injuries) > 0:
             relevant_event_tabs.append("health")
         game.cur_events_list.append(
-            Single_Event(interaction_str, relevant_event_tabs, [cat_to.ID, cat_from.ID])
+            Single_Event(
+                interaction_str,
+                relevant_event_tabs,
+                [cat_to.ID, cat_from.ID],
+                cat_dict={"m_c": cat_to, "r_c": cat_from},
+            )
         )
 
         # now add the age of the cats before the string is sent to the cats' relationship logs
@@ -401,7 +406,9 @@ class RomanticEvents:
                         "hardcoded.move_on_dead_mate", mate=str(cat_mate.name)
                     )
                     game.cur_events_list.append(
-                        Single_Event(text, "relation", [cat.ID, cat_mate.ID])
+                        Single_Event(
+                            text, "relation", cat_dict={"m_c": cat, "r_c": cat_mate}
+                        )
                     )
                     cat.unset_mate(cat_mate)
 
@@ -415,7 +422,9 @@ class RomanticEvents:
             cat_from.set_mate(cat_to)
             game.cur_events_list.append(
                 Single_Event(
-                    mate_string, ["relation", "misc"], [cat_from.ID, cat_to.ID]
+                    mate_string,
+                    ["relation", "misc"],
+                    cat_dict={"m_c": cat_from, "r_c": cat_to},
                 )
             )
             return True
@@ -475,7 +484,12 @@ class RomanticEvents:
         else:
             text = i18n.t("hardcoded.breakup_chill")
         game.cur_events_list.append(
-            Single_Event(text, ["relation", "misc"], [cat_from.ID, cat_to.ID])
+            Single_Event(
+                text,
+                ["relation", "misc"],
+                [cat_from.ID, cat_to.ID],
+                cat_dict={"m_c": cat_from, "r_c": cat_to},
+            )
         )
         return True
 
@@ -562,7 +576,11 @@ class RomanticEvents:
             mate_string, cat_from, cat_to
         )
         game.cur_events_list.append(
-            Single_Event(mate_string, ["relation", "misc"], [cat_from.ID, cat_to.ID])
+            Single_Event(
+                mate_string,
+                ["relation", "misc"],
+                cat_dict={"m_c": cat_from, "r_c": cat_to},
+            )
         )
 
         if become_mate:

@@ -258,7 +258,7 @@ class Cat:
         self.faded = faded  # This is only used to flag cats that are faded, but won't be added to the faded list until
         # the next save.
         
-        if self.genotype.munch[1] == "Mk" or self.genotype.fold[1] == "Fd" or (self.genotype.manx[1] == "Ab" or self.genotype.manx[1] == "M") or ('NoDBE' not in self.genotype.pax3 and 'DBEalt' not in self.genotype.pax3):
+        if self.genotype.munch[1] == "Mk" or (self.genotype.manx[1] == "Ab" or self.genotype.manx[1] == "M") or ('NoDBE' not in self.genotype.pax3 and 'DBEalt' not in self.genotype.pax3):
             self.dead = True
 
         self.favourite = False
@@ -355,25 +355,25 @@ class Cat:
             
         # NAME
         # load_existing_name is needed so existing cats don't get their names changed/fixed for no reason
-        if self.pelt is not None:
+        if biome:
             self.name = Name(
+                self,
+                self,
                 prefix,
                 suffix,
                 biome=biome,
                 specsuffix_hidden=self.specsuffix_hidden,
-                load_existing_name=loading_cat,
-                cat=self,
+                load_existing_name=loading_cat
             )
         else:
             self.name = Name(
-                status,
-                prefix,
-                suffix,
+                self, 
+                self, 
+                prefix, 
+                suffix, 
                 specsuffix_hidden=self.specsuffix_hidden,
-                load_existing_name=loading_cat,
-                cat=self,
-            )
-
+                load_existing_name = loading_cat)
+        
         # Private Sprite
         self._sprite = None
 
@@ -396,6 +396,7 @@ class Cat:
         :return: None
         """
         self.ID = ID
+        self.name = Name(self, self, prefix=prefix, suffix=suffix)
         self.parent1 = None
         self.parent2 = None
         self.parent3 = None
@@ -453,7 +454,8 @@ class Cat:
         nb_chance = randint(0, 75)
         if self.age.is_baby():
             # newborns can't be trans, sorry babies
-            pass
+            nb_chance = 0
+            trans_chance = 0
         self.genderalign = ""
         if(self.gender == 'intersex'):
             self.genderalign = 'intersex '
@@ -831,7 +833,10 @@ class Cat:
             self.get_permanent_condition('infertility', born_with=True, genetic=True)
         
         if self.genotype.fold[0] == 'Fd' or ('manx syndrome' in self.permanent_condition and 'M' in self.genotype.manx and self.phenotype.bobtailnr < 4 and self.phenotype.bobtailnr > 1 and random() < 0.05):
-            self.get_permanent_condition('constant joint pain', born_with=True, genetic=True)
+            if not self.genotype.fold[1] == 'Fd':
+                self.get_permanent_condition('constant joint pain', born_with=True, genetic=True, custom_reveal=randint(3, 36))
+            else:
+                self.get_permanent_condition('constant joint pain', born_with=True, genetic=True)
         if 'manx syndrome' in self.permanent_condition and ((self.phenotype.bobtailnr < 2 and random() > 0.5) or (self.phenotype.bobtailnr > 1 and random() > ((self.phenotype.bobtailnr) * 0.24))):
             self.get_permanent_condition('incontinence', born_with=True, genetic=True)
         if 'manx syndrome' in self.permanent_condition and ((self.phenotype.bobtailnr < 2 and random() > 0.2) or (self.phenotype.bobtailnr > 1 and random() > ((self.phenotype.bobtailnr) * 0.3))):
@@ -1088,11 +1093,9 @@ class Cat:
                     major_chance -= 1
 
                 # decrease major grief chance if grave herbs are used
-                if body and not body_treated and "rosemary" in game.clan.herbs:
+                if body and not body_treated and "rosemary" in game.clan.herb_supply.entire_supply:
                     body_treated = True
-                    game.clan.herbs["rosemary"] -= 1
-                    if game.clan.herbs["rosemary"] <= 0:
-                        game.clan.herbs.pop("rosemary")
+                    game.clan.herb_supply.remove_herb("rosemary", -1)
                     game.herb_events_list.append(
                         f"Rosemary was used for {self.name}'s body."
                     )
@@ -2352,21 +2355,19 @@ class Cat:
                 "blood loss" in new_injury.also_got
                 and len(get_alive_status_cats(Cat, ["healer"], working=True)) != 0
             ):
-                clan_herbs = set()
+                clan_herbs = set(game.clan.herb_supply.entire_supply.keys())
                 needed_herbs = {"horsetail", "raspberry", "marigold", "cobwebs"}
-                clan_herbs.update(game.clan.herbs.keys())
-                herb_set = needed_herbs.intersection(clan_herbs)
-                usable_herbs = []
-                usable_herbs.extend(herb_set)
+                usable_herbs = list(needed_herbs.intersection(clan_herbs))
 
                 if usable_herbs:
                     # deplete the herb
                     herb_used = choice(usable_herbs)
-                    game.clan.herbs[herb_used] -= 1
-                    if game.clan.herbs[herb_used] <= 0:
-                        game.clan.herbs.pop(herb_used)
+                    game.clan.herb_supply.remove_herb(herb_used, -1)
                     avoided = True
-                    text = f"{herb_used.capitalize()} was used to stop blood loss for {self.name}."
+                    text = i18n.t(
+                        "screens.med_den.blood_loss",
+                        name=self.name
+                    )
                     game.herb_events_list.append(text)
 
             if not avoided:
@@ -2383,7 +2384,6 @@ class Cat:
         self.get_injured(injury, event_triggered=True)
 
     def congenital_condition(self, cat):
-        self.genetic_conditions()
         possible_conditions = []
 
         for condition in PERMANENT:
@@ -2584,7 +2584,7 @@ class Cat:
                 text = f"{self.name} had contact with {cat.name} and now has {illness_name}."
                 # game.health_events_list.append(text)
                 game.cur_events_list.append(
-                    Single_Event(text, "health", [self.ID, cat.ID])
+                    Single_Event(text, "health", cat_dict={"m_c": self})
                 )
                 self.get_ill(illness_name)
 
@@ -3972,6 +3972,7 @@ def create_example_cats():
                 ["kitten", "apprentice", "warrior", "warrior", "elder"]
             )
             game.choose_cats[cat_index] = create_cat(status=random_status, kittypet=game.config["clan_creation"]["use_special_roller"])
+
 
 
 # CAT CLASS ITEMS

@@ -314,7 +314,7 @@ class GenerateEvents:
                 continue
 
             # check if already trans
-            if "transition" in event.sub_type and cat.gender != cat.genderalign:
+            if "transition" in event.sub_type and ('trans' in cat.genderalign or 'sam' in cat.genderalign):
                 continue
 
             if event.m_c:
