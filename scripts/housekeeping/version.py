@@ -68,10 +68,10 @@ def get_version_info():
             is_thonny,
         )
 
-    print(is_source_build)
-    print(is_itch)
-    print(upstream)
-    print(release_channel)
+        print(is_source_build)
+        print(is_itch)
+        print(upstream)
+        print(release_channel)
     return get_version_info.instance
 
 
