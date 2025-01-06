@@ -435,6 +435,7 @@ class Pregnancy_Events:
 
                 if len(kits) > 0:
                     cats_involved = [cat.ID]
+                    cat.birth_cooldown = game.config["pregnancy"]["birth_cooldown"]
                     if surrogate:
                         cats_involved.append(pregnant_cat.ID)
                         print_event = i18n.t(
@@ -442,7 +443,6 @@ class Pregnancy_Events:
                             name=cat.name,
                             insert=i18n.t("conditions.pregnancy.kit_amount", count=len(kits)),
                         )
-                        cat.birth_cooldown = game.config["pregnancy"]["birth_cooldown"]
                         pregnant_cat.get_injured("recovering from birth", event_triggered=True)
                         for p in cat.mate:
                             par = Cat.fetch_cat(p)
@@ -457,7 +457,6 @@ class Pregnancy_Events:
                             if par:
                                 cats_involved.append(par.ID)
                                 par.birth_cooldown = game.config["pregnancy"]["birth_cooldown"]
-                                par.get_injured("recovering from birth", event_triggered=True)
                     for kit in kits:
                         cats_involved.append(kit.ID)
                     game.cur_events_list.append(Single_Event(print_event, "birth_death", cats_involved=cats_involved))
