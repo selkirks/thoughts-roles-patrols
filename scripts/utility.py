@@ -896,9 +896,9 @@ def create_new_cat(
         number_of_cats = choices([2, 3, 4, 5], [5, 4, 1, 1], k=1)[0]
 
     if (litter or kit):
-        thought = i18n.t("conditions.pregnancy.half_blood_kitting_thought", count=number_of_cats)
-        Cat.all_cats[parent1].thought = event_text_adjust(Cat, thought, main_cat=Cat.all_cats[parent1])
-        Cat.all_cats[parent2].thought = event_text_adjust(Cat, thought, main_cat=Cat.all_cats[parent2])
+        parent_thought = i18n.t("conditions.pregnancy.half_blood_kitting_thought", count=number_of_cats)
+        Cat.all_cats[parent1].thought = event_text_adjust(Cat, parent_thought, main_cat=Cat.all_cats[parent1])
+        Cat.all_cats[parent2].thought = event_text_adjust(Cat, parent_thought, main_cat=Cat.all_cats[parent2])
     
 
     if not isinstance(age, int):
