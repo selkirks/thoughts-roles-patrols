@@ -32,8 +32,7 @@ from scripts.utility import (
     ui_scale_dimensions,
     shorten_text_to_fit,
     ui_scale_offset,
-    adjust_list_text,
-)
+    adjust_list_text, )
 from .Screens import Screens
 from ..cat.history import History
 from ..game_structure.localization import get_new_pronouns
@@ -681,15 +680,7 @@ class ProfileScreen(Screens):
         ) = self.the_cat.determine_next_and_previous_cats()
 
         # Disable and enable next and previous cat buttons as needed.
-        if self.next_cat == 0:
-            self.next_cat_button.disable()
-        else:
-            self.next_cat_button.enable()
-
-        if self.previous_cat == 0:
-            self.previous_cat_button.disable()
-        else:
-            self.previous_cat_button.enable()
+        self.update_previous_next_cat_buttons()
 
         if self.open_tab == "history" and self.open_sub_tab == "user notes":
             self.load_user_notes()

@@ -1682,7 +1682,7 @@ class ChangelogPopup(UIWindow):
                     # So, to work around that, just add a little "link" at the end
                     info[
                         2
-                    ] += f" <a href='https://github.com/ChinchBug/clangen-genemod/pull/{pr_number.group(1)}'>(link)</a>"
+                    ] += f" <a href='https://github.com/Chinch-Bug/clangen-genemod/pull/{pr_number.group(1)}'>(link)</a>"
 
                 # Format: DATE- \n PR Title (link)
                 file_cont += f"<b>{info[1]}</b>\n- {info[2]}\n"

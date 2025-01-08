@@ -378,6 +378,9 @@ class Name:
                     if (self.genotype.tortiepattern and self.genotype.tortiepattern[0].replace('rev', '') in self.phenotype.def_tortie_low_patterns):
                         options.append(self.mod_suffixes['other']['appearance']['spotted'])
                     options.append(self.mod_suffixes['other']['appearance']['patchy'])
+                    if ((self.genotype.white[1] in ['ws', 'wt'] and self.genotype.whitegrade < 4) or\
+                    (self.genotype.white[0] in ['ws', 'wt'] and self.genotype.white[1] not in ['ws', 'wt'] and self.genotype.whitegrade > 2)):
+                        options.append(self.mod_suffixes['other']['appearance']['white_patchy']) 
                 if (self.phenotype.point and (self.genotype.white[1] not in ['ws', 'wt'] or self.genotype.whitegrade < 4)):
                     options.append(self.mod_suffixes['other']['appearance']['pointed'])
                 if 'curl' in self.phenotype.eartype or 'curl' in self.phenotype.tailtype or 'rexed' in self.phenotype.furtype:

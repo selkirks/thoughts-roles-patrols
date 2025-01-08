@@ -3014,10 +3014,12 @@ def generate_sprite(
                         ghostingbase.set_alpha(150)
                     
                     whichmain.blit(ghostingbase, (0, 0))
-                if (genotype.silver[0] == 'I' and cat.pelt.length == 'long'):
+                if genotype.silver[0] == 'I':
                     ghostingbase = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
                     ghostingbase.blit(sprites.sprites['ghost' + cat_sprite], (0, 0))
-                    if genotype.wbtype == 'low':
+                    if cat.pelt.length != 'long':
+                        ghostingbase.set_alpha(100)
+                    elif genotype.wbtype == 'low':
                         ghostingbase.set_alpha(150)
                     
                     whichmain.blit(ghostingbase, (0, 0))

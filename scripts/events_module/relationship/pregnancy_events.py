@@ -369,7 +369,7 @@ class Pregnancy_Events:
                                                 gender='fem' if 'Y' in cat.genotype.sexgene else 'masc',
                                                 outside=True,
                                                 is_parent=True)[0]
-                        outside_parent.thought = i18n.t("hardcoded.thought_outside_dam", count=amount)
+                        outside_parent.thought = event_text_adjust(Cat, i18n.t("hardcoded.thought_outside_dam", count=amount), main_cat=outside_parent)
                         outside_parent.birth_cooldown = game.config["pregnancy"]["birth_cooldown"]
                         if random.random() < 0.2:
                             outside_parent.set_mate(cat)
