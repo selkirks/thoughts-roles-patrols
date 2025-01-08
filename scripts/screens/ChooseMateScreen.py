@@ -1190,10 +1190,15 @@ class ChooseMateScreen(Screens):
             and (not self.single_only or not i.mate)
             and (
                 not self.have_kits_only
-                or game.clan.clan_settings["same sex birth"]
-                or xor('Y' in i.genotype.sexgene, 'Y' in self.the_cat.genotype.sexgene)
-                or 'infertility' in i.permanent_condition
-                or 'infertility' in self.the_cat.permanent_condition
+                or 
+                ((game.clan.clan_settings["same sex birth"]
+                or xor('Y' in i.genotype.sexgene, 'Y' in self.the_cat.genotype.sexgene)) and 
+                ('infertility' not in i.permanent_condition
+                and 'infertility' not in self.the_cat.permanent_condition))
+                or 
+                (('infertility' not in i.permanent_condition
+                or 'infertility' not in self.the_cat.permanent_condition) 
+                and game.clan.clan_settings["surrogates"])
             )
         ]
 

@@ -9,6 +9,7 @@
     "CLIMBER": [],
     "SWIMMER": [],
     "DIGGER": [],
+    "STEALTH": [],
     "SPEAKER": [],
     "MEDIATOR": [],
     "CLEVER": [],
@@ -1027,6 +1028,7 @@
       "swirled": [],
       "striped": [],
       "patchy": [],
+      "white_patchy": [],
       "point": [],
       "curled": [],
       "longhair": []
