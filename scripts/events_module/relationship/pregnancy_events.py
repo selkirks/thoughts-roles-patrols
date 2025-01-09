@@ -180,7 +180,8 @@ class Pregnancy_Events:
         if other_cat:
             cats_involved["r_c"] = other_cat
         for kit in kits:
-            kit.thought = f"Snuggles up to the belly of {cat.name}"
+            kit.thought = "hardcoded.new_kit_thought"
+            kit.thought = event_text_adjust(Cat, kit.thought, random_cat=cat)
 
         # Normally, birth cooldown is only applied to cat who gave birth
         # However, if we don't apply birth cooldown to adoption, we get
@@ -811,13 +812,15 @@ class Pregnancy_Events:
                 kit = Cat(
                     parent1=cat.ID, parent2=other_cat.ID, moons=0, status="newborn"
                 )
-                kit.thought = f"Snuggles up to the belly of {cat.name}"
+                kit.thought = i18n.t("hardcoded.new_kit_thought", name=str(cat.name))
+                kit.thought = event_text_adjust(Cat, kit.thought, random_cat=cat)
             else:
                 # A one blood parent litter is the only option left.
                 kit = Cat(
                     parent1=cat.ID, moons=0, backstory=backstory, status="newborn"
                 )
-                kit.thought = f"Snuggles up to the belly of {cat.name}"
+                kit.thought = i18n.t("hardcoded.new_kit_thought", name=str(cat.name))
+                kit.thought = event_text_adjust(Cat, kit.thought, random_cat=cat)
 
             # Prevent duplicate prefixes in the same litter
             while kit.name.prefix in [kitty.name.prefix for kitty in all_kitten]:

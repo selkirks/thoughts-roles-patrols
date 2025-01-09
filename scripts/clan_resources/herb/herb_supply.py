@@ -33,8 +33,8 @@ class HerbSupply:
         self.in_need_of: list = []
 
         self.herb = {}
+        self.base_herb_list = HERBS
         if game.clan:
-            self.base_herb_list = HERBS
             for name in self.base_herb_list:
                 self.herb[name] = Herb(
                     name
@@ -289,9 +289,9 @@ class HerbSupply:
         """
         messages: list = MESSAGES["storage_status"][self.get_overall_rating()]
         for message in messages.copy():
-            if "lead_name" in message and not game.clan.leader or game.clan.leader.dead or game.clan.leader.outside:
+            if "lead_name" in message and (not game.clan.leader or game.clan.leader.dead or game.clan.leader.outside):
                 messages.remove(message)
-            if "dep_name" in message and not game.clan.deputy or game.clan.deputy.dead or game.clan.deputy.outside:
+            if "dep_name" in message and (not game.clan.deputy or game.clan.deputy.dead or game.clan.deputy.outside):
                 messages.remove(message)
 
         return event_text_adjust(
