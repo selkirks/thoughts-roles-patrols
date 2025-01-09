@@ -1,6 +1,7 @@
 import random
 from random import choice, randint
 
+import i18n
 import ujson
 
 from scripts.cat.cats import Cat
