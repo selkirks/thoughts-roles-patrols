@@ -168,13 +168,13 @@ class Namer():
         elif ('silver' in phenotype.silvergold and ('shaded' in phenotype.tabby or 'chinchilla' in phenotype.tabby)):
             base = 'silver shaded'
             return [base, tortie, tabby, white, point]
-        elif (('o' not in genotype.sexgene or genotype.tortiepattern == ['revCRYPTIC']) or (genotype.ext[0] == 'ea' and ((self.moons > 11 and genotype.agouti[0] != 'a') or (self.moons > 23))) or (genotype.ext[0] == 'er' and self.moons > 23) or (genotype.ext[0] == 'ec' and self.moons > 0 and (genotype.agouti[0] != 'a' or self.moons > 5))) and not (genotype.silver[0] == 'I' and genotype.specialred in ['blue-red', 'cinnamon']):
+        elif (('o' not in genotype.sexgene or genotype.tortiepattern == ['revCRYPTIC']) or (genotype.ext[0] == 'ea' and ((self.moons > 11 and genotype.agouti[0] != 'a') or (self.moons > 23))) or (genotype.ext[0] == 'er' and self.moons > 23) or (genotype.ext[0] == 'ec' and self.moons > 0 and (genotype.agouti[0] != 'a' or self.moons > 5))) and not genotype.specialred in ['cinnamon'] and not (genotype.silver[0] == 'I' and genotype.specialred in ['blue-red']):
             if genotype.dilute[0] == 'd' or genotype.pinkdilute[0] == 'dp' or (genotype.silver[0] == 'I' and genotype.specialred in ['cameo', 'merle']):
                 base = 'cream'
             else:
                 base = 'ginger'
         else:
-            if ('O' in genotype.sexgene and not genotype.brindledbi and 'CRYPTIC' not in genotype.tortiepattern[0]) or 'bimetal' in phenotype.silvergold or (genotype.silver[0] == 'I' and genotype.specialred == 'merle'):
+            if ('O' in genotype.sexgene and not genotype.brindledbi and (not genotype.tortiepattern or 'CRYPTIC' not in genotype.tortiepattern[0])) or 'bimetal' in phenotype.silvergold or (genotype.silver[0] == 'I' and genotype.specialred == 'merle'):
                 tortie = True
             elif ('O' in genotype.sexgene and genotype.brindledbi):
                 white = 'mid'

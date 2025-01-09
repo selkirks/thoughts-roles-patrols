@@ -242,7 +242,7 @@ class Pregnancy_Events:
         if other_cat:
             other_cat_copy = []
             for x in other_cat:
-                if not(x.dead or (x.outside and x.status not in ['kittypet', 'loner', 'rogue']) or x.birth_cooldown > 0 or x.no_kits):
+                if not(x.dead or (x.outside and x.status not in ['kittypet', 'loner', 'rogue', 'former Clancat']) or x.birth_cooldown > 0 or x.no_kits):
                     other_cat_copy.append(x)
             other_cat = other_cat_copy
         
@@ -382,11 +382,9 @@ class Pregnancy_Events:
                     backkit = 'outsider_roots2'
 
                 if surrogate:
-                    pregnant_cat = other_cat.pop(0)
+                    pregnant_cat = other_cat[0]
                 if surrogate and not pregnant_cat.outside:
                     cats_involved = [cat.ID, pregnant_cat.ID]
-                    for par in other_cat:
-                        cats_involved.append(par.ID)
                     text = choice(Pregnancy_Events.PREGNANT_STRINGS["announcement"])
                     severity = random.choices(["minor", "major"], [3, 1], k=1)
                     text += choice(Pregnancy_Events.PREGNANT_STRINGS[f"{severity[0]}_severity"])
@@ -401,7 +399,9 @@ class Pregnancy_Events:
                     ids = [cat.ID]
                     if clan.clan_settings['multisire']:
                         for c in other_cat:
-                            ids.append(c.ID)
+                            if c != pregnant_cat:
+                                cats_involved.append(c.ID)
+                                ids.append(c.ID)
                     if len(pregnant_cat.illnesses) > 0:
                         for illness in pregnant_cat.illnesses:
                             if illness in ["greencough", "redcough", "yellowcough", "whitecough", 
@@ -633,7 +633,7 @@ class Pregnancy_Events:
         pregnant_cat = cat
 
         other_cat = []
-        if other_cat_id and type(other_cat_id) == list: 
+        if other_cat_id and isinstance(other_cat_id, list): 
             for id in other_cat_id:
                 other_cat.append(Cat.all_cats.get(id))
         elif other_cat_id:
@@ -645,11 +645,14 @@ class Pregnancy_Events:
             other_cat = None
 
         if surrogate_id:
-            if surrogate_id[0] == cat.ID:
-                cat = other_cat[0]
-            surrogate.append(Cat.all_cats.get(surrogate_id[0]))
+            if not isinstance(surrogate_id, list):
+                surrogate_id = [surrogate_id]
+            for sur in surrogate_id:
+                surrogate.append(Cat.all_cats.get(sur))
 
         if affair_partner_id:
+            if not isinstance(affair_partner_id, list):
+                affair_partner_id = [affair_partner_id]
             if not other_cat:
                 other_cat = []
             for id in affair_partner_id:
@@ -732,8 +735,6 @@ class Pregnancy_Events:
                     other_cat.append(choice(possible_affair_partners))
                     possible_affair_partners.remove(other_cat[i])
                 
-
-
         kits = Pregnancy_Events.get_kits(kits_amount, pregnant_cat, other_cat if not surrogate or pregnant_cat in surrogate else surrogate, clan, backkit=backkit)
         kits_amount = len(kits)
         for kit in kits:
@@ -805,11 +806,9 @@ class Pregnancy_Events:
         events = Pregnancy_Events.PREGNANT_STRINGS
         event_list = []
 
-
         if surrogate and cat in other_cat:
-            involved_cats.append(cat.ID)
+            involved_cats.append(pregnant_cat.ID)
             involved_cats.append(RandomChoice.ID)
-            cat = pregnant_cat
             if random.random() < 0.5:
                 event_list.append(choice(events["birth"]["surrogate_birth"]))
             else:
@@ -986,7 +985,7 @@ class Pregnancy_Events:
         returns:
         parent can have kits, kits are adopted
         """
-
+            
         if not second_parent or len(second_parent) == 1:
         # Checks for second parent alone:
             if not Pregnancy_Events.check_if_can_have_kits(second_parent[0] if second_parent else None, single_parentage, allow_affair):
@@ -1045,18 +1044,16 @@ class Pregnancy_Events:
         samesex = clan.clan_settings["same sex birth"]
         allow_affair = clan.clan_settings["affair"]
         mate = None
-        need_surrogate = False
-
+    
         # randomly select a mate of given cat
         if len(cat.mate) > 0:
+            mate = []
             if clan.clan_settings['multisire']:
                 mate_copy = cat.mate
-                mate = []
                 for x in mate_copy:
                     mate.append(cat.fetch_cat(x))
             else:
-                mate = choice(cat.mate)
-                mate = [cat.fetch_cat(mate)]
+                mate.append(cat.fetch_cat(choice(cat.mate)))
 
         # if the sex does matter, choose the best solution to allow kits
         if not samesex and mate and 'Y' not in cat.genotype.sexgene:
