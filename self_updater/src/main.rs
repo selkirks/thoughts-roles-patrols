@@ -50,7 +50,7 @@ fn move_update_files_win() -> io::Result<()> {
         }
     }
 
-    let entries = fs::read_dir(game_path.join("Downloads").join("Clangen"))?;
+    let entries = fs::read_dir(game_path.join("Downloads").join("Genemod"))?;
 
     println!("Applying updated files");
     for entry in entries {
@@ -74,7 +74,7 @@ fn move_update_files_win() -> io::Result<()> {
     Command::new("cmd.exe")
         .raw_arg("/C")
         .raw_arg("start")
-        .raw_arg("Clangen.exe")
+        .raw_arg("Genemod.exe")
         .current_dir(game_path)
         .creation_flags(0x00000008 | 0x01000000)
         .spawn()?;

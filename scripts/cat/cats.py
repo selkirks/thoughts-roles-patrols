@@ -1424,6 +1424,7 @@ class Cat:
 
         if not os.path.exists(cat_history_directory):
             self.history = History(
+                prev_names = [],
                 beginning={},
                 mentor_influence={},
                 app_ceremony={},
@@ -1438,6 +1439,7 @@ class Cat:
             with open(cat_history_directory, "r", encoding="utf-8") as read_file:
                 history_data = ujson.loads(read_file.read())
                 self.history = History(
+                    prev_names = history_data["prev_names"] if "prev_names" in history_data else [],
                     beginning=(
                         history_data["beginning"] if "beginning" in history_data else {}
                     ),
@@ -1493,6 +1495,7 @@ class Cat:
             game.safe_save(f"{history_dir}/{self.ID}_history.json", history_dict)
         except:
             self.history = History(
+                prev_names=[],
                 beginning={},
                 mentor_influence={},
                 app_ceremony={},

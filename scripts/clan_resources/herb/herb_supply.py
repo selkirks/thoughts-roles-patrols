@@ -292,9 +292,9 @@ class HerbSupply:
         """
         messages: list = MESSAGES["storage_status"][self.get_overall_rating()]
         for message in messages.copy():
-            if "lead_name" in message and not game.clan.leader or game.clan.leader.dead or game.clan.leader.outside:
+            if "lead_name" in message and (not game.clan.leader or game.clan.leader.dead or game.clan.leader.outside):
                 messages.remove(message)
-            if "dep_name" in message and not game.clan.deputy or game.clan.deputy.dead or game.clan.deputy.outside:
+            if "dep_name" in message and (not game.clan.deputy or game.clan.deputy.dead or game.clan.deputy.outside):
                 messages.remove(message)
 
         return event_text_adjust(
@@ -583,7 +583,7 @@ class HerbSupply:
                 herb_used = self.get_highest_herb_in_group(herbs_available)
                 total_herb_amount = self.get_single_herb_total(herb_used)
 
-                amount_used = randint(1, total_herb_amount if total_herb_amount < 4 else 4)
+                amount_used = randint(1, round(total_herb_amount) if total_herb_amount < 4 else 4)
                 strength = 1
                 for level, herb_list in source_dict[name]["herbs"].items():
                     if herb_used in herb_list:

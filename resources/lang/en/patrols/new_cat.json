@@ -4179,7 +4179,7 @@
                     }
                 ],
                 "new_cat": [
-                    ["dead"],
+                    ["meeting", "dead"],
                     ["litter", "parent:0", "status:kitten", "backstory:orphaned6"]
                 ],
                 "outsider_rep": 1

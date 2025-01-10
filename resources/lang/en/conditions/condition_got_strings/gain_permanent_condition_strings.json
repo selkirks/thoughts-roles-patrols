@@ -66,26 +66,31 @@
         ]
     },
     "frostbite": {
-        "lost a leg": [
-            "m_c doesn't want to look at {PRONOUN/m_c/poss} leg. {PRONOUN/m_c/subject/CAP} can no longer feel it at all and it's starting to produce a smell - obviously dead flesh. r_c says that it's probably best to remove it now before it gets worse, and m_c can't help but agree.",
-            "r_c tells m_c that the frostbite is far too severe. The leg will have to be removed completely.",
-            "m_c awoke with one less leg than {PRONOUN/m_c/subject} went to sleep with. Admittedly, it's more of a relief than anything. {PRONOUN/m_c/poss/CAP} dead, frostbitten flesh no longer had any feeling left anyway."
-        ],
-        "lost their tail": [
-            "m_c sighs sadly as r_c suggests that it's time to take {PRONOUN/m_c/poss} tail off. The flesh is blackened from frostbite and is obviously dead - there's no use in leaving it attached. m_c agrees.",
-            "m_c's tail can hardly even move. r_c tells {PRONOUN/m_c/object} that the frostbite has progressed too far: if m_c is to survive, the tail will have to be removed.",
-            "m_c's tail is finally gone. It's more of a relief than anything. The frostbitten flesh was already dead and blackened, so {PRONOUN/m_c/subject} had no issue with taking it off before it fell off on its own."
-        ],
-        "partial hearing loss": [
-            "r_c tells m_c that the frostbite had simply progressed too far into {PRONOUN/m_c/poss} ear; {PRONOUN/m_c/poss} hearing is permanently damaged.",
-            "m_c concentrates, trying hard to hear the soft whispers of r_c, but it's barely audible to {PRONOUN/m_c/object} at all. r_c shakes {PRONOUN/r_c/poss} head and tells m_c in a louder voice that {PRONOUN/m_c/poss} hearing was definitely damaged by the frostbite.",
-            "Ever since {PRONOUN/m_c/poss} ears were frostbitten, m_c has struggled to hear clearly."
-        ],
-        "deaf": [
-            "r_c does {PRONOUN/r_c/poss} best to communicate to m_c with rudimentary tail signals that m_c's hearing is permanently gone, the frostbite having damaged something deep within.",
-            "m_c watches as r_c talks to another cat in the healer den, glancing towards {PRONOUN/m_c/object} every so often. m_c can't hear a word they're saying. Truthfully, m_c can't hear anything at all anymore. The frostbite was more severe than {PRONOUN/m_c/subject} realized.",
-            "m_c sits and watches the Clan going about their business and tries to get used to the stark silence. {PRONOUN/m_c/subject/CAP} {VERB/m_c/know/knows}, instinctively, that {PRONOUN/m_c/poss} hearing is never coming back. The frostbite must have scarred something deep within {PRONOUN/m_c/poss} ears."
-        ]
+      "lost a leg": [
+        "m_c doesn't want to look at {PRONOUN/m_c/poss} leg. {PRONOUN/m_c/subject/CAP} can no longer feel it at all and it's starting to produce a smell - obviously dead flesh. r_c says that it's probably best to remove it now before it gets worse, and m_c can't help but agree.",
+        "r_c tells m_c that the frostbite is far too severe. The leg will have to be removed completely.",
+        "m_c awoke with one less leg than {PRONOUN/m_c/subject} went to sleep with. Admittedly, it's more of a relief than anything. {PRONOUN/m_c/poss/CAP} dead, frostbitten flesh no longer had any feeling left anyway."
+      ],
+      "lost their tail": [
+        "m_c sighs sadly as r_c suggests that it's time to take {PRONOUN/m_c/poss} tail off. The flesh is blackened from frostbite and is obviously dead - there's no use in leaving it attached. m_c agrees.",
+        "m_c's tail can hardly even move. r_c tells {PRONOUN/m_c/object} that the frostbite has progressed too far: if m_c is to survive, the tail will have to be removed.",
+        "m_c's tail is finally gone. It's more of a relief than anything. The frostbitten flesh was already dead and blackened, so {PRONOUN/m_c/subject} had no issue with taking it off before it fell off on its own."
+      ],
+      "partial hearing loss": [
+        "r_c tells m_c that the frostbite had simply progressed too far into {PRONOUN/m_c/poss} ears; {PRONOUN/m_c/poss} hearing is permanently damaged.",
+        "m_c concentrates, trying hard to hear the soft whispers of r_c, but it's barely audible to {PRONOUN/m_c/object} at all. r_c shakes {PRONOUN/r_c/poss} head and tells m_c in a louder voice that {PRONOUN/m_c/poss} hearing was definitely damaged by the frostbite.",
+        "Ever since {PRONOUN/m_c/poss} ears were frostbitten, m_c has struggled to hear clearly."
+      ],
+      "partial hearing loss in one ear": [
+        "r_c tells m_c that the frostbite had simply progressed too far into {PRONOUN/m_c/poss} ear; {PRONOUN/m_c/poss} hearing is permanently damaged.",
+        "m_c shakes {PRONOUN/m_c/poss} head, trying hard to clear {PRONOUN/m_c/poss} ear to hear r_c better, but it makes no difference. r_c shakes {PRONOUN/r_c/poss} head and tells m_c that {PRONOUN/m_c/poss} hearing was definitely damaged by the frostbite.",
+        "Ever since {PRONOUN/m_c/poss} ear was frostbitten, m_c has struggled to hear clearly on that side."
+      ],
+      "deaf": [
+        "r_c does {PRONOUN/r_c/poss} best to communicate to m_c with rudimentary tail signals that m_c's hearing is permanently gone, the frostbite having damaged something deep within.",
+        "m_c watches as r_c talks to another cat in the healer den, glancing towards {PRONOUN/m_c/object} every so often. m_c can't hear a word they're saying. Truthfully, m_c can't hear anything at all anymore. The frostbite was more severe than {PRONOUN/m_c/subject} realized.",
+        "m_c sits and watches the Clan going about their business and tries to get used to the stark silence. {PRONOUN/m_c/subject/CAP} {VERB/m_c/know/knows}, instinctively, that {PRONOUN/m_c/poss} hearing is never coming back. The frostbite must have scarred something deep within {PRONOUN/m_c/poss} ears."
+      ]
     },
     "water in their lungs": {
         "raspy lungs": [

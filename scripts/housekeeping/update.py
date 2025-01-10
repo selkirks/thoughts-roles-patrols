@@ -22,10 +22,10 @@ use_proxy = False  # Set this to True if you want to use a proxy for the update 
 
 
 class UpdateChannel(StrEnum):
-    STABLE = "stable"
-    STABLE_TEST = "stable-test"
-    DEVELOPMENT = "development"
-    DEVELOPMENT_TEST = "development-test"
+    STABLE = "genemod-stable"
+    STABLE_TEST = ""
+    DEVELOPMENT = "genemod-development"
+    DEVELOPMENT_TEST = ""
 
 
 if use_proxy:
@@ -132,7 +132,7 @@ def self_update(
     progress_bar: UIUpdateProgressBar = None,
     announce_restart_callback: callable = None,
 ):
-    print("Updating Clangen...")
+    print("Updating Genemod...")
 
     platform_name = determine_platform_name()
 
@@ -170,8 +170,7 @@ def self_update(
         "-----END+PGP+SIGNATURE-----", "-----END PGP SIGNATURE-----"
     )
     progress_bar.advance()
-
-    download_file("https://raw.githubusercontent.com/Thlumyn/clangen/development/verification/update_pubkey.asc")
+    download_file("https://raw.githubusercontent.com/Chinch-Bug/clangen-genemod/modded/verification/update_pubkey.asc")
     progress_bar.advance()
 
     key, _ = pgpy.PGPKey.from_file("./Downloads/update_pubkey.asc")
@@ -201,7 +200,7 @@ def self_update(
             zip_ref.extractall("Downloads")
         os.remove("download.tmp")
         shutil.copy(
-            "./Downloads/Clangen/_internal/resources/self_updater.exe",
+            "./Downloads/Genemod/_internal/resources/self_updater.exe",
             "./Downloads/self_updater.exe",
         )
         announce_restart_callback()
@@ -228,20 +227,20 @@ def self_update(
             progress_bar.advance()
 
             os.system(
-                f"hdiutil attach -nobrowse -mountpoint {mountdir} Downloads/Clangen_macOS64.dmg"
+                f"hdiutil attach -nobrowse -mountpoint {mountdir} Downloads/Genemod_macOS64.dmg"
             )
             progress_bar.advance()
 
-            shutil.rmtree("/Applications/Clangen.app.old", ignore_errors=True)
+            shutil.rmtree("/Applications/Genemod.app.old", ignore_errors=True)
             progress_bar.advance()
 
-            if os.path.exists("/Applications/Clangen.app"):
+            if os.path.exists("/Applications/Genemod.app"):
                 shutil.move(
-                    "/Applications/Clangen.app", "/Applications/Clangen.app.old"
+                    "/Applications/Genemod.app", "/Applications/Genemod.app.old"
                 )
             progress_bar.advance()
 
-            shutil.copytree(f"{mountdir}/Clangen.app", "/Applications/Clangen.app")
+            shutil.copytree(f"{mountdir}/Genemod.app", "/Applications/Genemod.app")
             progress_bar.advance()
 
             shutil.rmtree("Downloads", ignore_errors=True)
@@ -254,7 +253,7 @@ def self_update(
             progress_bar.advance()
         announce_restart_callback()
         time.sleep(3)
-        os.execv("/Applications/Clangen.app/Contents/MacOS/Clangen", sys.argv)
+        os.execv("/Applications/Genemod.app/Contents/MacOS/Genemod", sys.argv)
         quit()
 
     elif platform.system() == "Linux":
@@ -262,9 +261,9 @@ def self_update(
         with tarfile.open("download.tmp", "r") as tar_ref:
             tar_ref.extractall("Downloads")
         os.remove("download.tmp")
-        shutil.move("Downloads/Clangen", "../clangen_update")
+        shutil.move("Downloads/Genemod", "../genemod_update")
         shutil.rmtree(current_folder, ignore_errors=True)
-        shutil.move("../clangen_update", current_folder)
-        os.chmod(current_folder + "/Clangen", 0o755)
-        os.execv(current_folder + "/Clangen", sys.argv)
+        shutil.move("../genemod_update", current_folder)
+        os.chmod(current_folder + "/Genemod", 0o755)
+        os.execv(current_folder + "/Genemod", sys.argv)
         quit()

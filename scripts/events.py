@@ -1341,7 +1341,7 @@ class Events:
                     )
 
                 # game.ceremony_events_list.append(text)
-                text += i18n.t("hardcoded.ceremony_closer")
+                text += " " + i18n.t("hardcoded.ceremony_closer")
 
                 text = event_text_adjust(Cat, text, main_cat=cat)
 

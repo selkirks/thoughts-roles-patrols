@@ -335,7 +335,6 @@ def change_clan_relations(other_clan, difference):
     game.clan.all_clans[y].relations = clan_relations
 
 def create_bio_parents(Cat, cat_type, flip=False, second_parent=True):
-    thought = "Is happy their kits are safe"
     ages = [randint(15,120), 0]
     ages[1] = ages[0] + randint(0, 24) - 12
     
@@ -347,7 +346,6 @@ def create_bio_parents(Cat, cat_type, flip=False, second_parent=True):
                                     other_clan=cat_type == 'former Clancat',
                                     status=cat_type,
                                     alive=choice([True, True, True, False]),
-                                    thought=thought,
                                     age=ages[0],
                                     gender='fem' if flip else 'masc',
                                     outside=True,
@@ -361,7 +359,6 @@ def create_bio_parents(Cat, cat_type, flip=False, second_parent=True):
                                     other_clan=cat_type == 'former Clancat',
                                     status=cat_type,
                                     alive=choice([True, True, True, False]),
-                                    thought=thought,
                                     age=ages[0],
                                     gender='fem' if flip else 'masc',
                                     outside=True,
@@ -374,7 +371,6 @@ def create_bio_parents(Cat, cat_type, flip=False, second_parent=True):
                                     other_clan=cat_type == 'former Clancat',
                                     status=cat_type,
                                     alive=choice([True, True, True, False]),
-                                    thought=thought,
                                     age=ages[1] if ages[1] > 14 else 15,
                                     gender='masc' if flip else 'fem',
                                     outside=True,
@@ -388,7 +384,6 @@ def create_bio_parents(Cat, cat_type, flip=False, second_parent=True):
                                     other_clan=cat_type == 'former Clancat',
                                     status=cat_type,
                                     alive=choice([True, True, True, False]),
-                                    thought=thought,
                                     age=ages[0],
                                     gender='masc' if flip else 'fem',
                                     outside=True,
@@ -900,9 +895,10 @@ def create_new_cat(
     else:
         number_of_cats = choices([2, 3, 4, 5], [5, 4, 1, 1], k=1)[0]
 
-    if number_of_cats == 1 and (litter or kit):
-        Cat.all_cats[parent1].thought = Cat.all_cats[parent1].thought.replace('kits are safe', 'kit is safe')
-        Cat.all_cats[parent2].thought = Cat.all_cats[parent2].thought.replace('kits are safe', 'kit is safe')
+    if (litter or kit):
+        parent_thought = i18n.t("conditions.pregnancy.half_blood_kitting_thought", count=number_of_cats)
+        Cat.all_cats[parent1].thought = event_text_adjust(Cat, parent_thought, main_cat=Cat.all_cats[parent1])
+        Cat.all_cats[parent2].thought = event_text_adjust(Cat, parent_thought, main_cat=Cat.all_cats[parent2])
     
 
     if not isinstance(age, int):
@@ -1980,7 +1976,11 @@ def adjust_list_text(list_of_items: List) -> str:
     :param list_of_items: the list of items you want converted
     :return: the new string
     """
-    list_of_items = list(list_of_items)
+
+    if not isinstance(list_of_items, list):
+        logger.warning("non-list object was passed to adjust_list_text")
+        list_of_items = list(list_of_items)
+
     if len(list_of_items) == 0:
         item1 = ""
         item2 = ""
@@ -3023,10 +3023,12 @@ def generate_sprite(
                         ghostingbase.set_alpha(150)
                     
                     whichmain.blit(ghostingbase, (0, 0))
-                if (genotype.silver[0] == 'I' and cat.pelt.length == 'long'):
+                if genotype.silver[0] == 'I':
                     ghostingbase = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
                     ghostingbase.blit(sprites.sprites['ghost' + cat_sprite], (0, 0))
-                    if genotype.wbtype == 'low':
+                    if cat.pelt.length != 'long':
+                        ghostingbase.set_alpha(75)
+                    elif genotype.wbtype == 'low':
                         ghostingbase.set_alpha(150)
                     
                     whichmain.blit(ghostingbase, (0, 0))
