@@ -192,6 +192,7 @@
             "Oceloid": "oddly spotted c_n",
             "PinstripeTabby": "strangely striped c_n",
             "Snowflake": "oddly dappled c_n",
+            "Stain": "stained c_n",
             "Sterspeckled_long": "speckled %{color}",
             "Sillyspeckled_long": "speckled %{color}",
             "Dancespeckle_long": "speckled %{color}",
@@ -257,6 +258,7 @@
             "Monarch_long": "uniquely spotted %{color}",
             "Oceloid_long": "oddly spotted %{color}",
             "PinstripeTabby_long": "strangely striped %{color}",
-            "Snowflake_long": "oddly dappled %{color}"
+            "Snowflake_long": "oddly dappled %{color}",
+            "Stain_long": "stained %{color}"
     }
 }
