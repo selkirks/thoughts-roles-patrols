@@ -356,6 +356,7 @@ class MedDenScreen(Screens):
                 clansize=number,
                 count=len(self.meds)
             )
+
             if game.clan.game_mode == "classic":
                 meds_cover = ""
 
