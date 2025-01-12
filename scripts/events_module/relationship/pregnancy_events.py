@@ -219,12 +219,11 @@ class Pregnancy_Events:
             if not other_cat and random.randint(0, 1):
                 amount = Pregnancy_Events.get_amount_of_kits(cat)
                 kits = Pregnancy_Events.get_kits(amount, cat, None, clan)
-                insert = "this should not display"
-                if amount == 1:
-                    insert = "a single kitten"
-                if amount > 1:
-                    insert = f"a litter of {amount} kits"
-                print_event = f"{cat.name} brought {insert} back to camp, but refused to talk about their origin."
+                print_event = i18n.t(
+                    "conditions.pregnancy.pregnant_secret",
+                    name=cat.name,
+                    insert=i18n.t("pregnant.kit_amount", count=amount),
+                )
                 cats_involved = [cat.ID]
                 cat_dict = {"m_c": cat}
                 for kit in kits:
@@ -256,12 +255,11 @@ class Pregnancy_Events:
             if not other_cat and cat.gender == "male":
                 amount = Pregnancy_Events.get_amount_of_kits(cat)
                 kits = Pregnancy_Events.get_kits(amount, cat, None, clan)
-                insert = "this should not display"
-                if amount == 1:
-                    insert = "a single kitten"
-                if amount > 1:
-                    insert = f"a litter of {amount} kits"
-                print_event = f"{cat.name} brought {insert} back to camp, but refused to talk about their origin."
+                print_event = i18n.t(
+                    "conditions.pregnancy.pregnant_secret",
+                    name=cat.name,
+                    insert=i18n.t("pregnant.kit_amount", count=amount),
+                )
                 cats_involved = [cat.ID]
                 for kit in kits:
                     cats_involved.append(kit.ID)
