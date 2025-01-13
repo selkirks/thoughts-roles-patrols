@@ -2277,6 +2277,7 @@ class Breed_generator:
             genoclass.sokoke += '0'
 
         genoclass.body_value = randint(genoclass.body_indexes[3]+1, genoclass.body_indexes[4])
+        genoclass.height_value = randint(genoclass.height_indexes[1]+1, genoclass.height_indexes[3])
         
         genoclass.breeds["Singapura"] = 100
         return genoclass

@@ -583,7 +583,7 @@ class HerbSupply:
                 herb_used = self.get_highest_herb_in_group(herbs_available)
                 total_herb_amount = self.get_single_herb_total(herb_used)
 
-                amount_used = randint(1, round(total_herb_amount) if total_herb_amount < 4 else 4)
+                amount_used = randint(1, round(total_herb_amount) if total_herb_amount < 4 else 4) if total_herb_amount >= 2 else total_herb_amount
                 strength = 1
                 for level, herb_list in source_dict[name]["herbs"].items():
                     if herb_used in herb_list:

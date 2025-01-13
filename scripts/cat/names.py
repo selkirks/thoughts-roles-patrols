@@ -218,9 +218,9 @@ class Name:
             colour_changed = True
         elif change == "apprentice-warrior" and self.genotype.vitiligo:
             colour_changed = True
-        elif self.prefix in self.mod_prefixes['general']['small'] and self.genotype.height_label in ['goliath', 'giant', 'large', 'above average']:
+        elif self.prefix in self.mod_prefixes['general']['small'] and self.genotype.height_label in ['goliath', 'giant', 'large', 'above average', 'average']:
             colour_changed = True
-        elif self.prefix in self.mod_prefixes['general']['big'] and self.genotype.height_label in ['teacup', 'tiny', 'small', 'below average']:
+        elif self.prefix in self.mod_prefixes['general']['big'] and self.genotype.height_label in ['teacup', 'tiny', 'small', 'below average', 'average']:
             colour_changed = True
             
         chance = game.config["cat_name_controls"]["prefix_change_chance"][change]
@@ -354,37 +354,40 @@ class Name:
                             pass
                         options.append(self.mod_suffixes['honour'].get(honour, []))
 
-                for i in range(3):
+                for i in range(2):
                     options.append(self.mod_suffixes['other']['special'])
-                for i in range(5):
+                for i in range(4):
                     options.append(self.mod_suffixes['other']['common'])
 
-                if self.phenotype.length == 'long':
-                    options.append(self.mod_suffixes['other']['appearance']['longhair'])
+                appearance = []
+
+                if self.phenotype.length == 'longhaired':
+                    appearance += self.mod_suffixes['other']['appearance'].get('longhair', [])
                 if self.phenotype.tabby != "" and (self.genotype.white[1] not in ['ws', 'wt'] or self.genotype.whitegrade < 4):
                     if self.genotype.ticked[0] == 'Ta' and (not self.genotype.breakthrough or self.genotype.mack[0] != 'mc'):
-                        options.append(self.mod_suffixes['other']['appearance']['ticked'])
+                        appearance += self.mod_suffixes['other']['appearance'].get('ticked', [])
                     if 'spotted' in self.phenotype.tabby or 'servaline' in self.phenotype.tabby:
-                        options.append(self.mod_suffixes['other']['appearance']['spotted'])
+                        appearance += self.mod_suffixes['other']['appearance'].get('spotted', [])
                     if 'classic' in self.phenotype.tabby or 'marbled' in self.phenotype.tabby:
-                        options.append(self.mod_suffixes['other']['appearance']['swirled'])
+                        appearance += self.mod_suffixes['other']['appearance'].get('swirled', [])
                     if 'mackerel' in self.phenotype.tabby or 'braided' in self.phenotype.tabby or 'pinstripe' in self.phenotype.tabby:
-                        options.append(self.mod_suffixes['other']['appearance']['striped'])
+                        appearance += self.mod_suffixes['other']['appearance'].get('striped', [])
                     if 'rosette' in self.phenotype.tabby:
-                        options.append(self.mod_suffixes['other']['appearance']['patchy'])
+                        appearance += self.mod_suffixes['other']['appearance'].get('patchy', [])
                 if (self.phenotype.tortie and (self.genotype.white[1] not in ['ws', 'wt'] or self.genotype.whitegrade < 4)) or\
                     (self.genotype.white[1] in ['ws', 'wt'] and self.genotype.whitegrade < 4) or\
                     (self.genotype.white[0] in ['ws', 'wt'] and self.genotype.white[1] not in ['ws', 'wt'] and self.genotype.whitegrade > 2):
+                    appearance += self.mod_suffixes['other']['appearance'].get('patchy', [])
                     if (self.genotype.tortiepattern and self.genotype.tortiepattern[0].replace('rev', '') in self.phenotype.def_tortie_low_patterns):
-                        options.append(self.mod_suffixes['other']['appearance']['spotted'])
-                    options.append(self.mod_suffixes['other']['appearance']['patchy'])
+                        appearance += self.mod_suffixes['other']['appearance'].get('spotted', [])
                     if ((self.genotype.white[1] in ['ws', 'wt'] and self.genotype.whitegrade < 4) or\
                     (self.genotype.white[0] in ['ws', 'wt'] and self.genotype.white[1] not in ['ws', 'wt'] and self.genotype.whitegrade > 2)):
-                        options.append(self.mod_suffixes['other']['appearance']['white_patchy']) 
+                        appearance += self.mod_suffixes['other']['appearance'].get('white_patchy', [])
                 if (self.phenotype.point and (self.genotype.white[1] not in ['ws', 'wt'] or self.genotype.whitegrade < 4)):
-                    options.append(self.mod_suffixes['other']['appearance']['pointed'])
+                    appearance += self.mod_suffixes['other']['appearance'].get('pointed', [])
                 if 'curl' in self.phenotype.eartype or 'curl' in self.phenotype.tailtype or 'rexed' in self.phenotype.furtype:
-                    options.append(self.mod_suffixes['other']['appearance']['curled'])
+                    appearance += self.mod_suffixes['other']['appearance'].get('curled', [])
+                options.append(appearance)
                 self.suffix = None
 
                 while not self.suffix:
