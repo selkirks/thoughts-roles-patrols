@@ -222,7 +222,7 @@ class Pregnancy_Events:
                 print_event = i18n.t(
                     "conditions.pregnancy.pregnant_secret",
                     name=cat.name,
-                    insert=i18n.t("pregnant.kit_amount", count=amount),
+                    insert=i18n.t("conditions.pregnancy.kit_amount", count=amount),
                 )
                 cats_involved = [cat.ID]
                 cat_dict = {"m_c": cat}
@@ -258,7 +258,7 @@ class Pregnancy_Events:
                 print_event = i18n.t(
                     "conditions.pregnancy.pregnant_secret",
                     name=cat.name,
-                    insert=i18n.t("pregnant.kit_amount", count=amount),
+                    insert=i18n.t("conditions.pregnancy.kit_amount", count=amount),
                 )
                 cats_involved = [cat.ID]
                 for kit in kits:
