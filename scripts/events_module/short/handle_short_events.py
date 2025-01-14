@@ -422,7 +422,7 @@ class HandleShortEvents:
 
         for acc in possible_accs:
             if acc not in ["WILD", "PLANT", "COLLAR", "FLOWER", "CRAFTED", "PLANT2", "SMALLANIMAL", "DEADINSECT",
-                           "ALIVEINSECT", "FRUIT", "SNAKE", "TAIL2","BONE", "BUTTERFLIES", "STUFF"]:
+                           "ALIVEINSECT", "FRUIT", "SNAKE", "TAIL2","BONE", "BUTTERFLIES", "STUFF", "HARNESS", "BOWS", "TEETHCOLLAR"]:
                 acc_list.append(acc)
 
         if hasattr(self.main_cat.pelt, "scars"):
