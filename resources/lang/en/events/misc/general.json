@@ -10,7 +10,7 @@
     "m_c": {
       "age": ["any"],
       "status": ["any"],
-      "trait": ["righteous", "bold", "strict", "nervous", "insecure"]
+      "trait": ["righteous", "bold", "heroic", "strict", "earnest", "nervous", "insecure"]
     },
     "relationships": [
       {
@@ -39,7 +39,7 @@
     "m_c": {
       "age": ["any"],
       "status": ["any"],
-      "trait": ["oblivious", "arrogant", "daring", "bold", "confident", "flamboyant"]
+      "trait": ["oblivious", "arrogant", "daring", "bold", "confident", "flamboyant", "dynamic", "easy-going", "dramatic"]
     },
     "r_c": {
       "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
@@ -56,7 +56,7 @@
     "m_c": {
       "age": ["any"],
       "status": ["any"],
-      "trait": ["vengeful", "righteous", "rebellious", "troublesome", "bloodthirsty", "fierce", "cold"]
+      "trait": ["vengeful", "logical", "righteous", "rebellious", "elegant", "escapist", "troublesome", "bloodthirsty", "fierce", "cold"]
     },
     "r_c": {
       "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
@@ -74,7 +74,7 @@
     "m_c": {
       "age": ["any"],
       "status": ["any"],
-      "trait": ["vengeful", "righteous", "rebellious", "troublesome", "bloodthirsty", "fierce", "cold"]
+      "trait": ["vengeful", "righteous", "rebellious", "forceful", "troublesome", "bloodthirsty", "fierce", "cold"]
     },
     "relationships": [
       {
@@ -104,7 +104,7 @@
     "m_c": {
       "age": ["any"],
       "status": ["any"],
-      "trait": ["cold", "bold", "daring", "strict"]
+      "trait": ["cold", "bold", "daring", "moralistic", "morbid", "strict", "complex", "fair"]
     }
   },
   {
@@ -117,7 +117,7 @@
     "m_c": {
       "age": ["any"],
       "status": ["any"],
-      "trait": ["cold", "bold", "strict", "confident", "calm", "shameless", "arrogant"]
+      "trait": ["cold", "bold", "idealistic", "strict", "slug", "confident", "old-fasioned", "neutral", "casual", "calm", "shameless", "arrogant", "carefree"]
     },
     "r_c": {
       "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
@@ -134,7 +134,7 @@
     "m_c": {
       "age": ["any"],
       "status": ["any"],
-      "trait": ["bloodthirsty", "vengeful", "fierce"]
+      "trait": ["bloodthirsty", "vengeful", "intense", "fierce", "reserved", "cryptic"]
     },
     "r_c": {
       "age": ["young adult", "adult", "senior adult", "senior"],
@@ -167,7 +167,7 @@
     "m_c": {
       "age": ["any"],
       "status": ["any"],
-      "trait": ["bloodthirsty", "vengeful", "fierce"]
+      "trait": ["bloodthirsty", "vengeful", "unreligious", "fierce"]
     },
     "r_c": {
       "age": ["young adult", "adult", "senior adult", "senior"],
@@ -200,7 +200,7 @@
     "m_c": {
       "age": ["any"],
       "status": ["any"],
-      "trait": ["bloodthirsty", "vengeful", "confident", "playful", "troublesome", "arrogant", "cunning"]
+      "trait": ["bloodthirsty", "vengeful", "hypnotic", "dry", "confident", "playful", "troublesome", "arrogant", "cunning", "alert", "angry"]
     },
     "r_c": {
       "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
@@ -268,7 +268,7 @@
     "m_c": {
       "age": ["any"],
       "status": ["any"],
-     "trait": ["childish", "loving", "compassionate", "playful", "thoughtful", "loyal", "sincere"]
+     "trait": ["childish", "loving", "innocent", "hearty", "humorous", "generous", "gracious", "gentle", "unagressive", "fun loving", "tiny", "soft", "zoomy", "chummy", "folksy", "maternal", "emotional", "distracted", "forgiving", "bubbly", "dedicated", "absent-minded", "compassionate", "playful", "thoughtful", "loyal", "sincere", "appreciative"]
     },
     "r_c": {
       "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
