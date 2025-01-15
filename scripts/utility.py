@@ -2364,7 +2364,7 @@ def event_text_adjust(
 
     # med_name
     if "med_name" in text:
-        med = choice(get_alive_status_cats(Cat, ["healer"], working=True))
+        med = choice(get_alive_status_cats(Cat, ["healer", "healer apprentice"], working=True))
         replace_dict["med_name"] = (str(med.name), choice(med.pronouns))
 
     # assign all names and pronouns
