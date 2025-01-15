@@ -354,9 +354,9 @@ class Name:
                             pass
                         options.append(self.mod_suffixes['honour'].get(honour, []))
 
-                for i in range(2):
+                for i in range(1):
                     options.append(self.mod_suffixes['other']['special'])
-                for i in range(4):
+                for i in range(3):
                     options.append(self.mod_suffixes['other']['common'])
 
                 appearance = []

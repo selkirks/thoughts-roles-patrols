@@ -132,24 +132,25 @@ class Pregnancy_Events:
         chance = Pregnancy_Events.get_balanced_kit_chance(cat, second_parent if second_parent else None, is_affair, clan)
         
         All_Infertile = True
-        if second_parent and second_parent[0] == "Surrogate" and 'infertility' not in cat.permanent_condition:
+        if 'infertility' not in cat.permanent_condition:
             All_Infertile = False
-        elif second_parent and second_parent[0] == "Surrogate":
-            second_parent = None
-            if not game.clan.clan_settings["single parentage"]:
-                return
         elif second_parent:
-            for x in second_parent:
-                if 'infertility' not in x.permanent_condition:
-                    All_Infertile = False
+            if second_parent[0] == "Surrogate":
+                All_Infertile = False
+            else:
+                for x in second_parent:
+                    if 'infertility' not in x.permanent_condition:
+                        All_Infertile = False
 
         if not int(random.random() * chance):
             # If you've reached here - congrats, kits!
-            if kits_are_adopted or 'infertility' in cat.permanent_condition or (second_parent and All_Infertile):
+            if kits_are_adopted or ('infertility' in cat.permanent_condition and (not second_parent or second_parent[0] != "Surrogate")) or (second_parent and All_Infertile):
                 Pregnancy_Events.handle_adoption(cat, second_parent, clan)
             else:
                 surrogate = False
                 if second_parent and second_parent[0] == "Surrogate":
+                    if 'infertility' in cat.permanent_condition:
+                        cat = second_parent[1]
                     second_parent[0] = Pregnancy_Events.handle_surrogate(cat, clan)
                     if not second_parent[0]:
                         second_parent = None
@@ -443,7 +444,6 @@ class Pregnancy_Events:
                             name=cat.name,
                             insert=i18n.t("conditions.pregnancy.kit_amount", count=len(kits)),
                         )
-                        pregnant_cat.get_injured("recovering from birth", event_triggered=True)
                         for p in cat.mate:
                             par = Cat.fetch_cat(p)
                             par.birth_cooldown = game.config["pregnancy"]["birth_cooldown"]
@@ -992,8 +992,8 @@ class Pregnancy_Events:
                 return False, False, second_parent
 
             # Check to see if the pair can have kits.
-            if not xor('Y' in cat.genotype.sexgene, 'Y' in second_parent[0].genotype.sexgene):
-                if same_sex_birth:
+            if not xor('Y' in cat.genotype.sexgene, 'Y' in second_parent[0].genotype.sexgene) or ("infertility" in cat.permanent_condition or "infertility" in second_parent[0].permanent_condition):
+                if same_sex_birth and not ("infertility" in second_parent[0].permanent_condition):
                     return True, False, second_parent
                 elif surrogates:
                     return True, False, ["Surrogate"] + second_parent
@@ -1016,7 +1016,7 @@ class Pregnancy_Events:
             second_parent_copy = []
 
             for x in second_parent:
-                if xor('Y' in cat.genotype.sexgene, 'Y' in x.genotype.sexgene) or same_sex_birth:
+                if (xor('Y' in cat.genotype.sexgene, 'Y' in x.genotype.sexgene) or same_sex_birth) and not "infertility" in x.permanent_condition:
                     second_parent_copy.append(x)
             
             if len(second_parent_copy) < 1:
@@ -1026,7 +1026,15 @@ class Pregnancy_Events:
                     return True, True, second_parent
                 else:
                     return False, False, second_parent
-            
+            if "infertility" in cat.permanent_condition:
+                if surrogates:
+                    return True, False, ["Surrogate"] + second_parent
+                elif same_sex_adoption:
+                    return True, True, second_parent
+                else:
+                    return False, False, second_parent
+                
+
             return True, False, second_parent
 
 
