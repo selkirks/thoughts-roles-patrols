@@ -19,6 +19,7 @@
     "shorthair" : [],
     "mediumhair" : [],
     "longhair" : [],
+    "curly-fur" : ["Curl", "Fleece"],
     "small" : ["Little", "Small", "Tiny", "Short"],
     "big" : ["Large", "Big", "Giant", "Tall"],
     "any": []
