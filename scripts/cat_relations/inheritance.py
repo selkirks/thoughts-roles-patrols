@@ -462,9 +462,11 @@ class Inheritance:
                 inter_blood_parents.remove(self.cat.ID)
                 other_id = inter_blood_parents[0]
                 other_cat = self.cat.fetch_cat(other_id)
-                self.kits[inter_id]["additional"].append(
-                    i18n.t("inheritance.second_parent", name=str(other_cat.name))
-                )
+                if other_cat:
+                    self.all_involved.append(other_id)
+                    self.kits[inter_id]["additional"].append(
+                        i18n.t("inheritance.second_parent", name=str(other_cat.name))
+                    )
 
         # kit - adoptive
         if self.cat.ID in inter_cat.adoptive_parents:
