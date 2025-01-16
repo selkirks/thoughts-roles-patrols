@@ -534,7 +534,6 @@
             "aggression": [0, 1],
             "stability": [10, 16]
         },
-
         "passive-agressive": {
             "lawfulness": [0, 8],
             "sociability": [0, 8],

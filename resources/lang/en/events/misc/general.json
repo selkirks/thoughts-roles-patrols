@@ -10,7 +10,7 @@
     "m_c": {
       "age": ["any"],
       "status": ["any"],
-      "trait": ["righteous", "bold", "heroic", "strict", "earnest", "nervous", "insecure"]
+      "trait": ["righteous", "practical", "princibled", "leaderly", "stoic", "bold", "serious", "incorruptible", "incisive", "gallant", "heroic", "strict", "earnest", "nervous", "insecure"]
     },
     "relationships": [
       {
@@ -39,7 +39,7 @@
     "m_c": {
       "age": ["any"],
       "status": ["any"],
-      "trait": ["oblivious", "arrogant", "daring", "bold", "confident", "flamboyant", "dynamic", "easy-going", "dramatic"]
+      "trait": ["oblivious", "aimless", "arrogant", "sassy", "fun-loving", "daring", "bold", "confident", "flamboyant", "dynamic", "easy-going", "dramatic"]
     },
     "r_c": {
       "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
@@ -56,7 +56,7 @@
     "m_c": {
       "age": ["any"],
       "status": ["any"],
-      "trait": ["vengeful", "logical", "righteous", "rebellious", "elegant", "escapist", "troublesome", "bloodthirsty", "fierce", "cold"]
+      "trait": ["vengeful", "tidy", "logical", "optimistic", "free-thinking", "open", "righteous", "rebellious", "elegant", "escapist", "troublesome", "bloodthirsty", "fierce", "cold"]
     },
     "r_c": {
       "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
@@ -104,7 +104,7 @@
     "m_c": {
       "age": ["any"],
       "status": ["any"],
-      "trait": ["cold", "bold", "daring", "moralistic", "morbid", "strict", "complex", "fair"]
+      "trait": ["cold", "boring", "bold", "hefty", "daring", "pessimistic", "moralistic", "morbid", "strict", "complex", "fair"]
     }
   },
   {
@@ -117,7 +117,7 @@
     "m_c": {
       "age": ["any"],
       "status": ["any"],
-      "trait": ["cold", "bold", "idealistic", "strict", "slug", "confident", "old-fasioned", "neutral", "casual", "calm", "shameless", "arrogant", "carefree"]
+      "trait": ["cold", "bold", "charmless", "idealistic", "relaxed", "sarcastic", "strict", "slug", "confident", "old-fasioned", "neutral", "casual", "calm", "shameless", "arrogant", "carefree"]
     },
     "r_c": {
       "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
@@ -134,7 +134,7 @@
     "m_c": {
       "age": ["any"],
       "status": ["any"],
-      "trait": ["bloodthirsty", "vengeful", "intense", "fierce", "reserved", "cryptic"]
+      "trait": ["bloodthirsty", "secretive", "polished", "high-minded", "vengeful", "passive-agressive", "intense", "fierce", "reserved", "cryptic"]
     },
     "r_c": {
       "age": ["young adult", "adult", "senior adult", "senior"],
@@ -167,7 +167,7 @@
     "m_c": {
       "age": ["any"],
       "status": ["any"],
-      "trait": ["bloodthirsty", "vengeful", "unreligious", "fierce"]
+      "trait": ["bloodthirsty", "patient", "passionate", "vengeful", "farsighted", "unreligious", "fierce"]
     },
     "r_c": {
       "age": ["young adult", "adult", "senior adult", "senior"],
@@ -200,7 +200,7 @@
     "m_c": {
       "age": ["any"],
       "status": ["any"],
-      "trait": ["bloodthirsty", "vengeful", "hypnotic", "dry", "confident", "playful", "troublesome", "arrogant", "cunning", "alert", "angry"]
+      "trait": ["bloodthirsty", "persuasive", "vengeful", "hypnotic", "dry", "confident", "playful", "troublesome", "arrogant", "cunning", "alert", "angry"]
     },
     "r_c": {
       "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
@@ -268,7 +268,7 @@
     "m_c": {
       "age": ["any"],
       "status": ["any"],
-     "trait": ["childish", "loving", "innocent", "hearty", "humorous", "generous", "gracious", "gentle", "unagressive", "fun loving", "tiny", "soft", "zoomy", "chummy", "folksy", "maternal", "emotional", "distracted", "forgiving", "bubbly", "dedicated", "absent-minded", "compassionate", "playful", "thoughtful", "loyal", "sincere", "appreciative"]
+     "trait": ["childish", "warm", "organized", "self-pitying", "sensitive", "peaceful", "protective", "benevolent", "hardworking", "motherly", "loving", "innocent", "hearty", "humorous", "generous", "gracious", "gentle", "unagressive", "fun loving", "tiny", "soft", "zoomy", "chummy", "folksy", "maternal", "emotional", "distracted", "forgiving", "bubbly", "dedicated", "absent-minded", "compassionate", "playful", "thoughtful", "loyal", "sincere", "appreciative"]
     },
     "r_c": {
       "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
