@@ -350,7 +350,7 @@ class Namer():
         possible_prefixes += extra_prefixes
         possible_prefixes *= 2
 
-        possible_prefixes += self.get_extras(tortie, tabby, white)
+        possible_prefixes += self.get_extras(tortie, tabby['pattern'], white)
 
         filtered = deepcopy(possible_prefixes)
         try:
