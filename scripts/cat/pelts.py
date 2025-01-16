@@ -938,7 +938,7 @@ class Pelt:
                 choice(Pelt.bone_accessories),
                 choice(Pelt.butterflies_accessories),
                 choice(Pelt.stuff_accessories),
-                choice(Pelt.harness_accessories).
+                choice(Pelt.harness_accessories),
                 choice(Pelt.bows_accessories),
                 choice(Pelt.dogteeth_collars)
             ])
