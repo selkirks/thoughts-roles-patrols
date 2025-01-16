@@ -486,8 +486,7 @@ class Inheritance:
                 for blood_parent_id in inter_blood_parents:
                     blood_parent_cat = self.cat.fetch_cat(blood_parent_id)
                     if blood_parent_cat is None:
-                        pass
-                        #print(f"ERROR: the blood_parent of {str(inter_cat.name)}")
+                        print(f"ERROR: the blood_parent of {str(inter_cat.name)}")
                     else:
                         name.append(str(blood_parent_cat.name))
                 self.kits[inter_id]["additional"].append(

@@ -888,7 +888,10 @@ class Cat:
         locale = i18n.config.get("locale")
         value = self._pronouns.get(locale)
         if value is None:
-            self._pronouns[locale] = pronouns.get_new_pronouns(self.genderalign)
+            try:
+                self._pronouns[locale] = pronouns.get_new_pronouns(self.genderalign)
+            except:
+                self._pronouns[locale] = pronouns.get_new_pronouns('sam')
             value = self._pronouns[locale]
         return value
 
@@ -3569,7 +3572,7 @@ class Cat:
             ) as read_file:
                 cat_info = ujson.loads(read_file.read())
         except:
-            #print("ERROR: in loading faded cat")
+            print("ERROR: in loading faded cat")
             return False
 
         cat_ob = Cat(
