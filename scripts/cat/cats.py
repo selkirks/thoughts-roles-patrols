@@ -3569,7 +3569,7 @@ class Cat:
             ) as read_file:
                 cat_info = ujson.loads(read_file.read())
         except:
-            print("ERROR: in loading faded cat")
+            #print("ERROR: in loading faded cat")
             return False
 
         cat_ob = Cat(
