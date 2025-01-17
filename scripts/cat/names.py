@@ -390,7 +390,7 @@ class Name:
                 options.append(appearance)
                 self.suffix = None
 
-                while not self.suffix:
+                while not self.suffix or self.suffix in self.prefix.lower():
                     try:
                         self.suffix = random.choice(random.choice(options))
                     except:
@@ -435,17 +435,18 @@ class Name:
                 (self.genotype.white[0] in ['ws', 'wt'] and self.genotype.white[1] not in ['ws', 'wt'] and self.genotype.whitegrade > 2):
                 pelt.append("TwoColour")
 
-        if named_after_pelt and len(pelt) > 0:
-            self.suffix = random.choice(self.names_dict["pelt_suffixes"][random.choice(pelt)])
-        elif named_after_biome:
-            if biome in self.names_dict["biome_suffixes"]:
-                self.suffix = random.choice(
-                    self.names_dict["biome_suffixes"][biome]
-                )
+        while not self.suffix or self.suffix in self.prefix.lower():
+            if named_after_pelt and len(pelt) > 0:
+                self.suffix = random.choice(self.names_dict["pelt_suffixes"][random.choice(pelt)])
+            elif named_after_biome:
+                if biome in self.names_dict["biome_suffixes"]:
+                    self.suffix = random.choice(
+                        self.names_dict["biome_suffixes"][biome]
+                    )
+                else:
+                    self.suffix = random.choice(self.names_dict["normal_suffixes"])
             else:
                 self.suffix = random.choice(self.names_dict["normal_suffixes"])
-        else:
-            self.suffix = random.choice(self.names_dict["normal_suffixes"])
 
     def __repr__(self):
         # Handles predefined suffixes (such as newborns being kit),

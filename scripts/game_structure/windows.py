@@ -467,7 +467,25 @@ class DeleteCatCheck(UIWindow):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.delete_it_button:
                 rempath = get_save_dir() + "/" + self.clan_name + "/faded_cats/"
-                safe_ids = Inheritance.get_all_cat_ids() + list(Cat.all_cats.keys())
+                #get all former mentors (preserve history mentor influence text)
+                mentors = []
+                history_event_cats = []
+                for cat in Cat.all_cats.values():
+                    mentors += cat.former_mentor
+                #get any other cats relevant to history text
+                    if not cat.history:
+                        continue
+                    if cat.history.died_by:
+                        for event in cat.history.died_by:
+                            if 'r_c' in event["text"]:
+                                history_event_cats.append(event["involved"])
+                    if cat.history.scar_events and 'r_c' in cat.history.scar_events["text"]:
+                        for event in cat.history.scar_events:
+                            if 'r_c' in event["text"]:
+                                history_event_cats.append(event["involved"])
+                #get murder cats
+                #put together all living cat + family tree data with all that
+                safe_ids = Inheritance.get_all_cat_ids() + list(Cat.all_cats.keys()) + list(set(mentors)) + list(set(history_event_cats))
                 if os.path.exists(rempath):
                     for x in os.listdir(rempath):
                         fileName = x.split('.')
