@@ -1074,7 +1074,7 @@ class LeaderDenScreen(Screens):
 
         # percentage of success
         success_chance = (int(game.clan.reputation) / 100) / 1.5
-        if game.clan.leader.not_working:
+        if not game.clan.leader or game.clan.leader.not_working:
             success_chance = success_chance / 1.2
         # searching should be extra hard, after all those kitties are LOST
         if action == "search":

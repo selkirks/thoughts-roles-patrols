@@ -888,7 +888,10 @@ class Cat:
         locale = i18n.config.get("locale")
         value = self._pronouns.get(locale)
         if value is None:
-            self._pronouns[locale] = pronouns.get_new_pronouns(self.genderalign)
+            try:
+                self._pronouns[locale] = pronouns.get_new_pronouns(self.genderalign)
+            except:
+                self._pronouns[locale] = pronouns.get_new_pronouns('sam')
             value = self._pronouns[locale]
         return value
 

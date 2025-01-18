@@ -28,7 +28,13 @@ class Phenotype():
         self.vitiligo = ""
 
         self.genotype = genotype
-
+        self.def_tortie_low_patterns = ['DELILAH', 'MOTTLED', 'EYEDOT', 'BANDANA', 'SMUDGED', 'EMBER', 'BRINDLE', 'SAFI', 'BELOVED', 'BODY', 
+                                    'SHILOH', 'FRECKLED']
+        self.def_tortie_mid_patterns = ['ONE', 'TWO', 'SMOKE', 'MINIMALONE', 'MINIMALTWO', 'MINIMALTHREE', 'MINIMALFOUR', 'OREO', 'CHIMERA',
+                                'CHEST', 'GRUMPYFACE', 'SIDEMASK', 'PACMAN', 'BRIE' ,'ORIOLE', 'ROBIN', 'PAIGE', 'HEARTBEAT']
+        self.def_tortie_high_patterns = ['THREE', 'FOUR', 'REDTAIL', 'HALF', 'STREAK', 'MASK', 'SWOOP', 'ARMTAIL', 'STREAMSTRIKE', 'DAUB',
+                                'ROSETAIL', 'DAPPLENIGHT', 'BLANKET']
+        
     def FurtypeFinder(self):
         furtype = []
         
@@ -787,7 +793,7 @@ class Phenotype():
             if ('masked' in self.silvergold and genes.wbsum > 15) or (genes.agouti[0] != "a" and genes.ext[0] != "Eg") or (genes.ext[0] not in ['Eg', 'E']):
                 if genes.silver[0] == "I" or genes.brindledbi or (moons < 3 and genes.karp[0] == "K"):
                     rufousing = "silver"
-                elif genes.pointgene[0] != "C" or genes.agouti[0] == "Apb":
+                elif genes.pointgene[0] != "C" or genes.agouti[0] == "Apb" or self.length in ["hairless", "fur-pointed"]:
                     rufousing = "low"
                 else:
                     rufousing = genes.ruftype

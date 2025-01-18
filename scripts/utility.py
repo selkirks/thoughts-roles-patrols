@@ -2373,7 +2373,7 @@ def event_text_adjust(
 
     # med_name
     if "med_name" in text:
-        med = choice(get_alive_status_cats(Cat, ["healer"], working=True))
+        med = choice(get_alive_status_cats(Cat, ["healer", "healer apprentice"], working=True))
         replace_dict["med_name"] = (str(med.name), choice(med.pronouns))
 
     # assign all names and pronouns
@@ -2916,7 +2916,13 @@ def generate_sprite(
                     stripebase.blit(sprites.sprites[phenotype.GetTabbySprite() + cat_sprite], (0, 0))
 
                 charc = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
+                charc_shading = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
                 if(genotype.agouti[0] == "Apb" and ('red' not in stripecolour and 'cream' not in stripecolour and 'honey' not in stripecolour and 'ivory' not in stripecolour and 'apricot' not in stripecolour)):
+                    charc_shading.blit(sprites.sprites['lightbasecolours0'], (0, 0))
+                    charc_shading.set_alpha(175)
+                    if 'shaded' in whichbase or 'chinchilla' in whichbase:
+                        charc_shading.set_alpha(100)
+                    charc.blit(charc_shading, (0, 0))
                     charc.blit(sprites.sprites['charcoal' + cat_sprite], (0, 0))
                 
                 if(genotype.agouti == ["Apb", "Apb"]):

@@ -254,6 +254,36 @@ class Namer():
     def filter(self, all, used, filter_out):
         return [x for x in all if x not in used and x not in filter_out]
 
+    def get_extras(self, tortie, tabby, white):
+        extra_prefixes = []
+        extra_prefixes += self.all_prefixes['general']['any']
+        if self.moons < 3:
+            extra_prefixes += self.all_prefixes['general']['big']
+            extra_prefixes += self.all_prefixes['general']['small']
+            extra_prefixes += self.all_prefixes['general']['small']
+        else:
+            if self.genotype.shoulder_height > 11:
+                extra_prefixes += self.all_prefixes['general']['big']
+            elif self.genotype.shoulder_height < 9:
+                extra_prefixes += self.all_prefixes['general']['small']
+
+        try:
+            extra_prefixes += self.all_prefixes['general'][self.phenotype.length.replace('haired', 'hair')]
+        except:
+            pass
+
+        if 'rexed' in self.phenotype.furtype or 'brush-coated' in self.phenotype.furtype or 'wiry' in self.phenotype.furtype:
+            extra_prefixes += self.all_prefixes['general']["curly-fur"]
+
+        if white in ['mid', 'high']:
+            extra_prefixes += self.all_prefixes['general']['white_patches']
+        if tortie:
+            extra_prefixes += self.all_prefixes['general']['tortie']
+        if tabby and white != 'high':
+            extra_prefixes += self.all_prefixes['general'][tabby.replace('shaded', 'ticked')]
+
+        return extra_prefixes
+
     def solid(self, base, tortie, tabby, white):
         try:
             possible_prefixes = deepcopy(self.all_prefixes[base]['tortie' if tortie else 'plain']['solid'][white + '_white'])
@@ -265,27 +295,8 @@ class Namer():
 
         possible_prefixes *= 2
 
-        possible_prefixes += self.all_prefixes['general']['any']
-        if self.moons < 3:
-            possible_prefixes += self.all_prefixes['general']['big']
-            possible_prefixes += self.all_prefixes['general']['small']
-            possible_prefixes += self.all_prefixes['general']['small']
-        else:
-            if self.genotype.shoulder_height > 11:
-                possible_prefixes += self.all_prefixes['general']['big']
-            elif self.genotype.shoulder_height < 9:
-                possible_prefixes += self.all_prefixes['general']['small']
+        possible_prefixes += self.get_extras(tortie, tabby, white)
 
-        try:
-            possible_prefixes += self.all_prefixes['general'][self.phenotype.length.replace('haired', 'hair')]
-        except:
-            pass
-        if white in ['mid', 'high']:
-            possible_prefixes += self.all_prefixes['general']['white_patches']
-        if tortie:
-            possible_prefixes += self.all_prefixes['general']['tortie']
-        if tabby and white != 'high':
-            possible_prefixes += self.all_prefixes['general'][tabby.replace('shaded', 'ticked')]
         filtered = deepcopy(possible_prefixes)
         try:
             filtered = self.filter(filtered, self.used_prefixes, self.all_prefixes['filter_out'])
@@ -339,27 +350,8 @@ class Namer():
         possible_prefixes += extra_prefixes
         possible_prefixes *= 2
 
-        possible_prefixes += self.all_prefixes['general']['any']
-        if self.moons < 3:
-            possible_prefixes += self.all_prefixes['general']['big']
-            possible_prefixes += self.all_prefixes['general']['small']
-            possible_prefixes += self.all_prefixes['general']['small']
-        else:
-            if self.genotype.shoulder_height > 11:
-                possible_prefixes += self.all_prefixes['general']['big']
-            elif self.genotype.shoulder_height < 9:
-                possible_prefixes += self.all_prefixes['general']['small']
+        possible_prefixes += self.get_extras(tortie, tabby['pattern'], white)
 
-        try:
-            possible_prefixes += self.all_prefixes['general'][self.phenotype.length.replace('haired', 'hair')]
-        except:
-            pass
-        if white in ['mid', 'high']:
-            possible_prefixes += self.all_prefixes['general']['white_patches']
-        if tortie:
-            possible_prefixes += self.all_prefixes['general']['tortie']
-        if tabby['pattern'] and white != 'high':
-            possible_prefixes += self.all_prefixes['general'][tabby['pattern']]
         filtered = deepcopy(possible_prefixes)
         try:
             filtered = self.filter(filtered, self.used_prefixes, self.all_prefixes['filter_out'])
@@ -401,28 +393,10 @@ class Namer():
             except:
                 pass
         
-
         possible_prefixes *= 2
-        possible_prefixes += self.all_prefixes['general']['any']
-        if self.moons < 3:
-            possible_prefixes += self.all_prefixes['general']['big']
-            possible_prefixes += self.all_prefixes['general']['small']
-            possible_prefixes += self.all_prefixes['general']['small']
-        else:
-            if self.genotype.shoulder_height > 11:
-                possible_prefixes += self.all_prefixes['general']['big']
-            elif self.genotype.shoulder_height < 9:
-                possible_prefixes += self.all_prefixes['general']['small']
 
-        try:
-            possible_prefixes += self.all_prefixes['general'][self.phenotype.length.replace('haired', 'hair')]
-        except:
-            pass
-        if white in ['mid', 'high']:
-            possible_prefixes += self.all_prefixes['general']['white_patches']
-        if tortie:
-            possible_prefixes += self.all_prefixes['general']['tortie']
-        
+        possible_prefixes += self.get_extras(tortie, None, white)
+
         filtered = deepcopy(possible_prefixes)
         try:
             filtered = self.filter(filtered, self.used_prefixes, self.all_prefixes['filter_out'])

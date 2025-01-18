@@ -356,6 +356,7 @@ class MedDenScreen(Screens):
                 clansize=number,
                 count=len(self.meds)
             )
+
             if game.clan.game_mode == "classic":
                 meds_cover = ""
 
@@ -546,14 +547,14 @@ class MedDenScreen(Screens):
             if cat.injuries:
                 condition_list.extend(
                     [
-                        i18n.t(f"conditions.injuries.{injury}")
+                        event_text_adjust(Cat, i18n.t(f"conditions.injuries.{injury}"), main_cat=cat)
                         for injury in list(cat.injuries.keys())
                     ]
                 )
             if cat.illnesses:
                 condition_list.extend(
                     [
-                        i18n.t(f"conditions.illnesses.{illness}")
+                        event_text_adjust(Cat, i18n.t(f"conditions.illnesses.{illness}"), main_cat=cat)
                         for illness in list(cat.illnesses.keys())
                     ]
                 )
@@ -563,7 +564,7 @@ class MedDenScreen(Screens):
                         condition_list.extend(
                             [
                                 i18n.t(f"conditions.permanent_conditions.{permcond}")
-                                for permcond in list(cat.injuries.keys())
+                                for permcond in list(cat.permanent_condition.keys())
                             ]
                         )
                         break
