@@ -132,6 +132,8 @@ def json_load():
                 cat["backstory"] = "rogue1"
             if cat["backstory"] == "otherclan5":
                 cat["backstory"] = "otherclan1"
+            if cat["tint"] == "lightchocolate":
+                cat["tint"] = "lightorange"
 
             new_cat.pelt = Pelt(
                 name=cat["pelt_name"],
