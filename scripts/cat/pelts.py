@@ -984,11 +984,11 @@ class Pelt:
                 else:
                     # Normal generation
                     if self.tortiebase in ["singlestripe", "sterstripe", "sillystripe", "dancestripe", "mimistripe", 
-                                           "smoke","stersmoke", "sillysmoke", "dancesmoke", "mimismoke", "single", "smokepoint"]:
+                                           "smoke","stersmoke", "sillysmoke", "dancesmoke", "mimismoke", "mimisingle", "single", "smokepoint"]:
                         self.tortiepattern = choice(['tabby', 'stertabby', 'sillytabby', 'dancetabby', 'mimitabby',
                                                      'mackerel', 'stermackerel', 'sillymackerel', 'dancemackerel', 'mimimackerel',  
                                                      'classic', 'sterclassic', 'sillyclassic', 'danceclassic', 'mimiclassic', 'single', 'smoke',
-                                                     'stersmoke', 'sillysmoke', 'dancesmoke', 'mimismoke','agouti', 'steragouti', 'sillyagouti', 'danceagouti', 'mimiagouti',
+                                                     'stersmoke', 'sillysmoke', 'dancesmoke', 'mimismoke', "mimisingle", 'agouti', 'steragouti', 'sillyagouti', 'danceagouti', 'mimiagouti',
                                                      'ticked', 'sterticked', 'sillyticked', 'danceticked', 'mimiticked',
                                                      'brindle', 'spots'])
                     else:
