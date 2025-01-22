@@ -10,7 +10,7 @@
     "m_c": {
       "age": ["any"],
       "status": ["any"],
-      "trait": ["righteous", "fancy", "methodical", "hypocrite", "honest", "cooperative", "cool", "fearful", "weak-willed", "punctual", "reliable", "scholarly", "practical", "princibled", "leaderly", "stoic", "bold", "serious", "incorruptible", "incisive", "gallant", "heroic", "strict", "earnest", "nervous", "insecure"]
+      "trait": ["righteous", "fancy", "methodical", "hypocrite", "honest", "cooperative", "cool", "fearful", "weak-willed", "punctual", "reliable", "scholarly", "practical", "principled", "leaderly", "stoic", "bold", "serious", "incorruptible", "incisive", "gallant", "heroic", "strict", "earnest", "nervous", "insecure"]
     },
     "relationships": [
       {
@@ -268,7 +268,7 @@
     "m_c": {
       "age": ["any"],
       "status": ["any"],
-     "trait": ["childish", "whimsical", "sappy", "creative", "perfectionist", "polite", "delicate", "cheerful", "coward", "silly", "tranquil", "dependent", "romantic", "warm", "organized", "self-pitying", "sensitive", "peaceful", "protective", "benevolent", "hardworking", "motherly", "loving", "innocent", "hearty", "humorous", "generous", "gracious", "gentle", "unagressive", "fun loving", "tiny", "soft", "zoomy", "chummy", "folksy", "maternal", "emotional", "distracted", "forgiving", "bubbly", "dedicated", "absent-minded", "compassionate", "playful", "thoughtful", "loyal", "sincere", "appreciative"]
+     "trait": ["childish", "whimsical", "sappy", "creative", "perfectionist", "polite", "delicate", "cheerful", "coward", "silly", "tranquil", "dependent", "romantic", "warm", "organized", "self-pitying", "sensitive", "peaceful", "protective", "benevolent", "hardworking", "motherly", "loving", "innocent", "hearty", "humorous", "generous", "gracious", "gentle", "unagressive", "tiny", "soft", "zoomy", "chummy", "folksy", "maternal", "emotional", "distracted", "forgiving", "bubbly", "dedicated", "absent-minded", "compassionate", "playful", "thoughtful", "loyal", "sincere", "appreciative"]
     },
     "r_c": {
       "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],

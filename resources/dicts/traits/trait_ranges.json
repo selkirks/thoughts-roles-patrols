@@ -414,12 +414,6 @@
             "aggression": [0, 1],
             "stability": [10, 16]
         },
-        "fun loving": {
-            "lawfulness": [0, 8],
-            "sociability": [10, 16],
-            "aggression": [0, 12],
-            "stability": [0, 8]
-        },
         "gentle": {
             "lawfulness": [6, 12],
             "sociability": [8, 16],
@@ -696,7 +690,7 @@
             "aggression": [0, 8],
             "stability": [0, 6]
         },
-        "princibled": {
+        "principled": {
             "lawfulness": [0, 20],
             "sociability": [0, 10],
             "aggression": [0, 3],
