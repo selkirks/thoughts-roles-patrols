@@ -10,7 +10,7 @@
     "m_c": {
       "age": ["any"],
       "status": ["any"],
-      "trait": ["righteous", "fancy", "methodical", "hypocrite", "honest", "cooperative", "cool", "fearful", "weak-willed", "punctual", "reliable", "scholarly", "practical", "principled", "leaderly", "stoic", "bold", "serious", "incorruptible", "incisive", "gallant", "heroic", "strict", "earnest", "nervous", "insecure"]
+      "trait": ["righteous", "civil", "self-reliant", "fancy", "methodical", "hypocrite", "honest", "cooperative", "cool", "fearful", "weak-willed", "punctual", "reliable", "scholarly", "practical", "principled", "leaderly", "stoic", "bold", "serious", "incorruptible", "incisive", "gallant", "heroic", "strict", "earnest", "nervous", "insecure"]
     },
     "relationships": [
       {
@@ -39,7 +39,7 @@
     "m_c": {
       "age": ["any"],
       "status": ["any"],
-      "trait": ["oblivious", "annoying", "faithless", "enthusiastic", "rebellious", "talkative", "energetic", "clumsy", "hyper", "cheeky", "thoughtless", "nerdy", "arrogant", "sassy", "fun-loving", "daring", "bold", "confident", "flamboyant", "dynamic", "easy-going", "dramatic"]
+      "trait": ["oblivious", "loud", "witty", "sentimental", "annoying", "faithless", "enthusiastic", "rebellious", "talkative", "energetic", "clumsy", "hyper", "cheeky", "thoughtless", "nerdy", "arrogant", "sassy", "fun-loving", "daring", "bold", "confident", "flamboyant", "dynamic", "easy-going", "dramatic"]
     },
     "r_c": {
       "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
@@ -56,7 +56,7 @@
     "m_c": {
       "age": ["any"],
       "status": ["any"],
-      "trait": ["vengeful", "lazy", "judgemental", "monotone", "philosophical", "overthinker", "grim", "tidy", "logical", "optimistic", "free-thinking", "open", "righteous", "rebellious", "elegant", "escapist", "troublesome", "bloodthirsty", "fierce", "cold"]
+      "trait": ["vengeful", "predictable", "lazy", "frustrated", "judgemental", "monotone", "philosophical", "overthinker", "grim", "tidy", "logical", "optimistic", "free-thinking", "open", "righteous", "rebellious", "elegant", "escapist", "troublesome", "bloodthirsty", "fierce", "cold"]
     },
     "r_c": {
       "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
@@ -74,7 +74,7 @@
     "m_c": {
       "age": ["any"],
       "status": ["any"],
-      "trait": ["vengeful", "moody", "chaotic", "unpredictable", "unreliable", "goofy", "destructive", "righteous", "rebellious", "forceful", "troublesome", "bloodthirsty", "fierce", "cold"]
+      "trait": ["vengeful", "teacherly", "spontainious", "moody", "chaotic", "unpredictable", "unreliable", "goofy", "destructive", "righteous", "rebellious", "forceful", "troublesome", "bloodthirsty", "fierce", "cold"]
     },
     "relationships": [
       {
@@ -117,7 +117,7 @@
     "m_c": {
       "age": ["any"],
       "status": ["any"],
-      "trait": ["cold", "bold", "forgetful", "flirty", "charmless", "idealistic", "relaxed", "sarcastic", "strict", "slug", "confident", "old-fasioned", "neutral", "casual", "calm", "shameless", "arrogant", "carefree"]
+      "trait": ["cold", "tolerant", "questioning", "stable", "bold", "forgetful", "flirty", "charmless", "idealistic", "relaxed", "sarcastic", "strict", "slug", "confident", "old-fasioned", "neutral", "casual", "calm", "shameless", "arrogant", "carefree"]
     },
     "r_c": {
       "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
@@ -167,7 +167,7 @@
     "m_c": {
       "age": ["any"],
       "status": ["any"],
-      "trait": ["bloodthirsty", "malicious", "manipulative", "patient", "passionate", "vengeful", "farsighted", "unreligious", "fierce"]
+      "trait": ["bloodthirsty", "private", "malicious", "manipulative", "patient", "passionate", "vengeful", "farsighted", "unreligious", "fierce"]
     },
     "r_c": {
       "age": ["young adult", "adult", "senior adult", "senior"],
@@ -268,7 +268,7 @@
     "m_c": {
       "age": ["any"],
       "status": ["any"],
-     "trait": ["childish", "whimsical", "sappy", "creative", "perfectionist", "polite", "delicate", "cheerful", "coward", "silly", "tranquil", "dependent", "romantic", "warm", "organized", "self-pitying", "sensitive", "peaceful", "protective", "benevolent", "hardworking", "motherly", "loving", "innocent", "hearty", "humorous", "generous", "gracious", "gentle", "unagressive", "tiny", "soft", "zoomy", "chummy", "folksy", "maternal", "emotional", "distracted", "forgiving", "bubbly", "dedicated", "absent-minded", "compassionate", "playful", "thoughtful", "loyal", "sincere", "appreciative"]
+     "trait": ["childish", "ordinary", "youthful", "whimsical", "sappy", "creative", "perfectionist", "polite", "delicate", "cheerful", "coward", "silly", "tranquil", "dependent", "romantic", "warm", "organized", "self-pitying", "sensitive", "peaceful", "protective", "benevolent", "hardworking", "motherly", "loving", "innocent", "hearty", "humorous", "generous", "gracious", "gentle", "unagressive", "tiny", "soft", "zoomy", "chummy", "folksy", "maternal", "emotional", "distracted", "forgiving", "bubbly", "dedicated", "absent-minded", "compassionate", "playful", "thoughtful", "loyal", "sincere", "appreciative"]
     },
     "r_c": {
       "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
@@ -301,7 +301,7 @@
     "m_c": {
       "age": ["any"],
       "status": ["any"],
-     "trait": ["righteous", "aloof", "vulnerable", "confused", "fatalistic", "disgusted", "loyal", "sincere", "fierce", "bold", "responsible", "shameless", "wise", "compassionate"]
+     "trait": ["righteous", "enigmatic", "unfoolable", "sympathetic", "strong", "aloof", "vulnerable", "confused", "fatalistic", "disgusted", "loyal", "sincere", "fierce", "bold", "responsible", "shameless", "wise", "compassionate"]
     },
     "relationships": [
         {
@@ -334,7 +334,7 @@
     "r_c": {
       "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
       "status": ["any"],
-      "trait": ["bloodthirsty", "supportive", "spiteful", "cold", "vengeful", "cunning", "daring", "bold", "fierce"]
+      "trait": ["bloodthirsty", "macabre", "fox-hearted", "supportive", "spiteful", "cold", "vengeful", "cunning", "daring", "bold", "fierce"]
     },
     "relationships": [
         {
